@@ -6,7 +6,7 @@
                     <span class="carModel font-weight-bold">
                         {{car.model}}</span>
                     <span class="carEquipment">
-                        {{car.equipment}}</span>
+                        {{car.equipment.nameEquipment}}</span>
                     <small class="bodyType">
                         - {{car.bodyType}}</small>
                 </h1>
@@ -41,7 +41,7 @@
 
                             <h4>
                                 <span><strong>{{car.model}} </strong></span>
-                                <span>{{car.equipment}} - </span>
+                                <span>{{car.equipment.nameEquipment}} - </span>
                                 <span>{{car.bodyType}}</span>
                             </h4>
 
@@ -155,7 +155,15 @@
                     {
                         model:"Camry",
                         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: "Comfort",
+                        equipment: {
+                            nameEquipment: "Comfort",
+                            standart: [
+                                'Світлодіодні денні ходові вогні',
+                                'Круїз-контроль',
+                                '6 гучномовців',
+                                'Двозонний клімат-контроль'
+                                ]
+                        },
                         bodyType: "Седан бизнес-класса",
                         carColor: "#EDE7E1",
                         wheels: "",
@@ -175,7 +183,15 @@
                     {
                         model:"Camry",
                         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: "Elegance",
+                        equipment: {
+                            nameEquipment: "Elegance",
+                            standart: [
+                               '17-дюймові легкосплавні колісні диски з десятьма спицями',
+                                'Центральний підлокітник, оздоблений комбінованою шкірою',
+                                'Оббивка карт дверей з комбінованої шкіри',
+                                'Оббивка сидінь з комбінованої шкіри з перфорацією'
+                                ]
+                                    },
                         bodyType: "Седан бизнес-класса",
                         carColor: "#EDE7E1",
                         wheels: "",
@@ -194,7 +210,15 @@
                     {
                         model:"Camry",
                         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: "Prestige",
+                        equipment: {
+                            nameEquipment: "Prestige",
+                            standart: [
+                                'Транспондерна система відкривання дверей та пуску двигуна',
+                                'LDA - cистема сповіщення про з\'їзд зі смуги руху',
+                                'Система розпізнання та інформування водія про дорожні знаки',
+                                'ACC - круїз-контроль з функцією підтримки безпечної дистанції до автомобіля, що їде попереду'
+                            ]
+                        },
                         bodyType: "Седан бизнес-класса",
                         carColor: "#EDE7E1",
                         wheels: "",
@@ -213,7 +237,15 @@
                     {
                         model:"Camry",
                         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: "Premium",
+                        equipment: {
+                            nameEquipment: "Premium",
+                            standart: [
+                                '18-дюймові легкосплавні колісні диски з двадцятьма спицями',
+                                'Іформаційно-розважальна система Toyota з навігаційною системою GPS',
+                                'Сенсорний екран з діагоналлю 20,3 см (8 дюймів) на передній панелі',
+                                'Звуковідтворювальна система фірми JBL з підсилювачем та низкочастотним гучномовцем'
+                            ]
+                        },
                         bodyType: "Седан бизнес-класса",
                         carColor: "#EDE7E1",
                         wheels: "",
@@ -232,7 +264,15 @@
                     {
                         model:"Camry",
                         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: "Premium Hybrid",
+                        equipment: {
+                            nameEquipment: "Premium Hybrid",
+                            standart: [
+                                'Тоноване скло у вікнах задніх дверей',
+                                'Перемикач режимів їзди на центральній консолі',
+                                'Сенсори паркування передні (4 шт.) з функцією автоматичного гальмування',
+                                'Сенсори паркування задні (4 шт.) з функцією автоматичного гальмування'
+                            ]
+                        },
                         bodyType: "Седан бизнес-класса",
                         carColor: "#EDE7E1",
                         wheels: "",

@@ -6,8 +6,8 @@
 </template>
 
 <script>
+// import SelectModel from '@/components/SelectModel';
 import Configurator from "@/components/Configurator";
-// import SelectModel from '@/components/SelectModel'
 export default {
   name: 'App',
   components: {
