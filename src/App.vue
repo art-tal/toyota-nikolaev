@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <select-model></select-model>
-<!--    <configurator></configurator>-->
+<!--    <select-model></select-model>-->
+    <configurator></configurator>
   </div>
 </template>
 
 <script>
-// import Configurator from "@/components/Configurator";
-import SelectModel from '@/components/SelectModel/SelectModel'
+import Configurator from "@/components/Configurator";
+// import SelectModel from '@/components/SelectModel'
 export default {
   name: 'App',
   components: {
-    SelectModel,
-    // Configurator
+    // SelectModel,
+    Configurator
   }
 }
 </script>
