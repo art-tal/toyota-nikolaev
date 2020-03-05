@@ -11,10 +11,20 @@
                                     </h3>
                                 </div>
                                 <div class="col-md-12 col-sm-3">
-                                    <a href="#" class="editEquipment">
+                                    <router-link
+                                            class="nav-link ml-2 mr-2 editEquipment"
+                                            tag="a"
+                                            exact
+                                            active-class="active"
+                                            to="/select_model"
+                                    >
                                         <i class="fas fa-sync-alt"></i>
-                                        <span>Змінити комплектацію</span>
-                                    </a>
+                                        <span>Изменить комплектацию</span>
+                                        <!--                        <span class="sr-only">(current)</span>-->
+                                    </router-link>
+
+<!--                                    <a href="#" class="">-->
+<!--                                    </a>-->
                                 </div>
                             </div>
 
@@ -44,7 +54,7 @@
                     <div class="container">
                         <header class="row text-left">
                             <div class="col-md-8 col-sm-7">
-                                <h2 class="">Двигун</h2>
+                                <h2 class="">Двигатель</h2>
                             </div>
                         </header>
                         <div class="row">
@@ -52,26 +62,29 @@
                                 <div class="row text-left">
                                     <header class="col-9">
                                         <h2 class="font-weight-bold">
-                                            <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">2,5&nbsp;л Dual VVT-i (181&nbsp;к.&nbsp;с.)</a>
+                                            <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">{{car.engine.valueOfEngine}} {{car.engine.nameOfEngine}} ({{car.engine.maxPower}})</a>
                                         </h2>
-                                        <h3 class="">6-ступ. автомат.(Передній привод)</h3>
+                                        <h3 class="">{{car.transmision}}</h3>
                                     </header>
                                     <div class="engine_img col-3 text-right">
                                         <img src="https://webcarconfig.toyota-europe.com/toyota/svg/engine.svg" width="90" alt="" class="">
-                                        <div class="font-weight-bold font-italic text-uppercase">Бензиновий</div>
+                                        <div class="font-weight-bold font-italic text-uppercase">{{car.engine.typeOfEngine}}</div>
                                     </div>
                                 </div>
                                     <ul class="options text-left">
-                                        <li>Комбінований цикл: 8,3 л/100 км</li>
-                                        <li>Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км</li>
+                                        <li v-for="(i, key) in car.engine.info"
+                                        :key="key">{{i}}</li>
+<!--                                        <li>Комбінований цикл: 8,3 л/100 км</li>-->
+<!--                                        <li>Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км</li>-->
                                     </ul>
-                                    <footer class="">
-                                        <a href="?path=customize/b6866060-c84a-4a43-b968-25947907b9cc/97b1f1c6-0aab-4963-a46c-01bc214d6781&amp;financeOption=cash" class="btn ">
-                                            <span>Продовжити</span>
-                                            <i class="icon icon-chevron-right " aria-hidden="true"></i>
+                                    <footer class="row">
+                                        <a href="#" class="more_info col-5">
+                                            <i class="far fa-file"></i>
+                                            <span>Больше информации</span>
                                         </a>
-                                        <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300" class=""><i class="" aria-hidden="true"></i>
-                                            <span>Більше інформації</span>
+                                        <a href="#" class="btn btn-outline-danger col-4 text-center">
+                                            <span class="align-middle">Продолжить</span>
+                                            <i class="fas fa-angle-right"></i>
                                         </a>
                                     </footer>
                             </div>
@@ -119,7 +132,17 @@
                         fuelConsumption: 8.3,
                         photo:
                             "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
-                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png"
+                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png",
+                        engine: {
+                            nameOfEngine: 'Dual VVT-i',
+                            valueOfEngine: '2,5 л',
+                            typeOfEngine: 'Бензиновый',
+                            maxPower: '181 к. с.',
+                            info: ['Комбінований цикл: 8,3 л/100 км',
+                                'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
+                        },
+                        transmision: "6-ступ. автомат. (Передній привод)"
+
                     },
                     {
                         model:"Camry",
@@ -173,7 +196,16 @@
                         maxPower: 181,
                         fuelConsumption: 8.3,
                         photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
-                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png"
+                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png",
+                        engine: {
+                            nameOfEngine: 'Dual VVT-i',
+                            valueOfEngine: '2,5 л',
+                            typeOfEngine: 'Бензиновый',
+                            maxPower: '181 к. с.',
+                            info: ['Комбінований цикл: 8,3 л/100 км',
+                            'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
+                        },
+                        transmision: "6-ступ. автомат. (Передній привод)"
                     },
                     {
                         model:"Camry",
@@ -351,6 +383,30 @@
                             li {
                                 margin-bottom: 10px;
                             }
+                        }
+
+                        footer.row {
+                            font-size: 1.5rem;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding-bottom: 0;
+                            a.more_info {
+                                color: $font_color;
+                                i {
+                                    margin-right: 5px;
+                                }
+                            }
+                            a.btn {
+                                width: 165px;
+                                height: 46px;
+                                padding: 10px 30px 10px 30px;
+                                border-radius: 23px;
+                                font-size: 1.5rem;
+                                i {
+                                    margin-left: 10px;
+                                }
+                            }
+
                         }
                     }
                 }

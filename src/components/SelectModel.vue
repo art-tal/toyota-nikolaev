@@ -78,7 +78,9 @@
                 <div class="carDescription col-9 row">
                     <ul class="description col-3 text-left">
                         <li v-for="(desc, index) in car.description"
-                            :key="index">
+                            :key="index"
+                            :style="{'color': getFontColor(car.carColor.rgb )+ '!important'}"
+                        >
                             {{desc}}</li>
                     </ul>
 
@@ -123,7 +125,17 @@
 
         <div class="requestService row justify-content-center">
             <button class="col-2 btn btn-danger">Заказать тест-драйв</button>
-            <button class=" offset-md-1 col-2 btn btn-light">Сконфигурировать {{car.model}}</button>
+
+            <router-link
+                    class="nav-link ml-2 mr-2"
+                    tag="button"
+                    exact
+                    active-class="active"
+                    to="/configurator"
+            >
+                <span>Сконфигурировать</span>
+                <!--                        <span class="sr-only">(current)</span>-->
+            </router-link>
         </div>
 
 
@@ -299,10 +311,6 @@
             this.selectedColor = this.colors[2]
         },
 
-        // updated() {
-        //
-        // },
-
         methods: {
             activeted: function (obj) {
                 this.car = obj;
@@ -311,7 +319,7 @@
 
             getCar: function(model, color){
                 console.log('GET ---' + model + '----' + color );
-                this.$http.get('/src/car.php',
+                this.$http.get('../car.php',
                     {
                         "model": model,
                         "color": color
@@ -321,13 +329,13 @@
                         console.log(responce);
                         return responce;
                     },
-                    function () {
+                    function (responce) {
                         console.log('Произошла ошибка загрузки фото с сервера.');
-
+                        console.log(responce);
                         // return this.car.bigPhoto;
                         // return responce;
-                    }
-                ).then(() => {return this.car.bigPhoto;});
+                    }.then(() => {return this.car.bigPhoto;})
+                )
             },
 
             setColor: function (color) {
