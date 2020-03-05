@@ -311,7 +311,7 @@
 
             getCar: function(model, color){
                 console.log('GET ---' + model + '----' + color );
-                this.$http.get('/src/ajax/car.php',
+                this.$http.get('/src/car.php',
                     {
                         "model": model,
                         "color": color
@@ -319,18 +319,15 @@
                 ).then(
                     function (responce) {
                         console.log(responce);
-                        return responce.body;
+                        return responce;
                     },
                     function () {
                         console.log('Произошла ошибка загрузки фото с сервера.');
-                        return this.car.bigPhoto;
+
+                        // return this.car.bigPhoto;
+                        // return responce;
                     }
-                );
-                console.log('responce');
-            },
-
-            getCarPhoto: function() {
-
+                ).then(() => {return this.car.bigPhoto;});
             },
 
             setColor: function (color) {
@@ -338,8 +335,7 @@
                 this.car.carColor = color;
                 this.colors.forEach( (item) => {item.selected = false;});
                 color.selected = true;
-                console.log(this.car.bigPhoto);
-                 this.car.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
+                this.car.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
             },
 
             getFontColor: function (carColor) {
@@ -349,7 +345,6 @@
                     case '#5C5653':
                     case '#740310':
                         return '#FFFFFF';
-                        // break;
                     case '#FFFFFF':
                     case '#EDE7E1':
                     case '#F2F2F0':

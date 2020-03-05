@@ -2,15 +2,20 @@
   <div id="app">
 <!--    <select-model></select-model>-->
     <configurator></configurator>
+<!--    <engine></engine>-->
+
   </div>
 </template>
 
 <script>
 // import SelectModel from '@/components/SelectModel';
 import Configurator from "@/components/Configurator";
+// import Engine from '@/component/Engine';
+
 export default {
   name: 'App',
   components: {
+    // Engine,
     // SelectModel,
     Configurator
   }
