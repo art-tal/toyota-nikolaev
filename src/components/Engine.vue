@@ -6,8 +6,8 @@
                             <div class="row text-left">
                                 <div class="col-md-12 col-sm-9">
                                     <h2 class="carModel font-weight-bold">{{car.model}}</h2>
-                                    <h3 class="carEquipment">{{car.equipment.nameEquipment}}
-                                        <span class="bodyType">{{car.bodyType}}</span>
+                                    <h3 class="carEquipment font-weight-bold">{{car.equipment.nameEquipment}}
+                                        <span class="bodyType font-weight-normal">{{car.bodyType}}</span>
                                     </h3>
                                 </div>
                                 <div class="col-md-12 col-sm-3">

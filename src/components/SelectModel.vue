@@ -325,17 +325,19 @@
                         "color": color
                     }
                 ).then(
-                    function (responce) {
-                        console.log(responce);
-                        return responce;
+                    function (data) {
+                        console.log(data);
+                        return data;
                     },
-                    function (responce) {
+
+                    function (error) {
                         console.log('Произошла ошибка загрузки фото с сервера.');
-                        console.log(responce);
+                        console.log(error);
                         // return this.car.bigPhoto;
                         // return responce;
                     }.then(() => {return this.car.bigPhoto;})
                 )
+
             },
 
             setColor: function (color) {
