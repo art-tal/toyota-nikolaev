@@ -72,7 +72,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../styles/variables';
+    @import '../../styles/variables';
 
     .configurator {
         width: 100%;
@@ -80,16 +80,10 @@
         border-bottom: $border;
         nav {
                 color: $font_color;
-                /*height: 100%;*/
                 div.collapse {
-                    /*height: 100%;*/
                     align-content: center;
                     a {
-                        /*height: 100%;*/
-                        /*padding: 5px 25px;*/
-                        /*display: inline-block;*/
                         color: $font_color;
-                        /*vertical-align: middle;*/
                         font-size: 15px;
                         b {
                             width: 30px;

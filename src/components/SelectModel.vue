@@ -124,18 +124,23 @@
         </div>
 
         <div class="requestService row justify-content-center">
-            <button class="col-2 btn btn-danger">Заказать тест-драйв</button>
+            <div class="col-6 text-right">
+                <button class="col-6 btn btn-danger">Заказать тест-драйв</button>
 
-            <router-link
-                    class="nav-link ml-2 mr-2"
-                    tag="button"
-                    exact
-                    active-class="active"
-                    to="/configurator"
-            >
-                <span>Сконфигурировать</span>
-                <!--                        <span class="sr-only">(current)</span>-->
-            </router-link>
+            </div>
+            <div class="col-6 text-left">
+                <router-link
+                        class="nav-link ml-2 mr-2"
+                        tag="button"
+                        exact
+                        active-class="active"
+                        to="/configurator"
+                >
+                    <span>Сконфигурировать</span>
+                    <!--                        <span class="sr-only">(current)</span>-->
+                </router-link>
+            </div>
+
         </div>
 
 
@@ -143,6 +148,9 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    // const axios = require('axios');
+
 
     export default {
         name: "SelectModel",
@@ -177,7 +185,11 @@
                                 ]
                         },
                         bodyType: "Седан бизнес-класса",
-                        carColor: "#EDE7E1",
+                        carColor: {name: "Бежевый металик",
+                            rgb: "#EDE7E1",
+                            colorCode: "4x1",
+                            sampleOfColor: "//t1-carassets-2.toyota-europe.com/e65e0089-eafc-46ff-bc3c-f91846ce99ee.JPG",
+                            selected: true },
                         wheels: "",
                         description: [
                             "Светодиодные дневные ходовые огни",
@@ -314,29 +326,31 @@
         methods: {
             activeted: function (obj) {
                 this.car = obj;
-                this.getCar(obj.model, obj.carColor);
+                // this.car.bigPhoto =  this.getCar(obj.modelCode, obj.carColor);
             },
 
             getCar: function(model, color){
                 console.log('GET ---' + model + '----' + color );
-                this.$http.get('../car.php',
-                    {
-                        "model": model,
-                        "color": color
+               axios({
+                   method: 'get',
+                   url: 'http://localhost:8080/toyota-nikolaev/src/ajax/car.php',
+                   data: {
+                        model: model,
+                        color: color
                     }
-                ).then(
-                    function (data) {
-                        console.log(data);
-                        return data;
-                    },
+            })
+                   .then(
+                    function (response) {
+                        console.log(response.data);
+                        return response.data;
+                    }
 
-                    function (error) {
-                        console.log('Произошла ошибка загрузки фото с сервера.');
-                        console.log(error);
-                        // return this.car.bigPhoto;
-                        // return responce;
-                    }.then(() => {return this.car.bigPhoto;})
                 )
+                   .catch((error) => {
+                   console.log('Произошла ошибка загрузки фото с сервера.');
+                   console.log(error);
+                   return this.car.bigPhoto;
+               })
 
             },
 
@@ -386,6 +400,8 @@
                     width: 192px;
                     height: 40px;
                     text-align: left;
+                    background-color: #F0F0F0;
+                    filter: brightness(90%);
                     span {
                         display: inline-block;
                         margin-right: 20px;
@@ -529,14 +545,28 @@
 
         .specifications.row {
             margin-top: 25px;
+                p {
+                    font-size: 1.6rem;
+                }
+                .h1 {
+                    font-size: 4rem;
+                }
+                .h1 + span {
+                    font-size: 1.6rem;
+                }
         }
         .requestService.row {
             margin: 40px auto 100px;
-            width: 70%;
-            justify-content: space-around;
-            button {
-                @include button;
+            /*width: 70%;*/
+            /*justify-content: space-around;*/
+            div {
+                padding: 0 10px;
+                button {
+                    @include button;
+                    min-width: 250px;
+                }
             }
+
         }
     }
 

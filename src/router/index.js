@@ -1,10 +1,14 @@
 import VueRouter from "vue-router";
 import SelectModel from "@/components/SelectModel";
-import Configurator from "@/components/Configurator";
-import Engine from "@/components/Engine";
-import ColorAndOption from "@/components/ColorAndOption";
-import Result from "@/components/Result";
-import EditEquipment from "@/components/EditEquipment";
+import Configurator from "@/components/configurator/Configurator";
+import Engine from "@/components/configurator/Engine";
+import ColorAndOption from "@/components/configurator/ColorAndOption";
+import Result from "@/components/configurator/Result";
+import EditEquipment from "@/components/configurator/EditEquipment";
+import Colors from "@/components/configurator/options/Сolors";
+import Wheels from "@/components/configurator/options/Wheels";
+import Interior from "@/components/configurator/options/Interior";
+
 
 export default new VueRouter({
     routes: [
@@ -24,7 +28,25 @@ export default new VueRouter({
                 },
                 {
                     path: 'color_and_option',
-                    component: ColorAndOption
+                    name: "color_and_option",
+                    component: ColorAndOption,
+                    children: [
+                        {
+                            path: 'colors',
+                            name: 'colors',
+                            component: Colors,
+                        },
+                        {
+                            path: 'wheels',
+                            name: 'wheels',
+                            component: Wheels,
+                        },
+                        {
+                            path: 'interior',
+                            name: 'interior',
+                            component: Interior
+                        }
+                    ]
                 },
                 {
                     path: 'result',
