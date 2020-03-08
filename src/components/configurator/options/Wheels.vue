@@ -6,6 +6,7 @@
                 {{selectedWheel.description}}
             </div>
             <ul class="sampleOfWheel col-8 text-left">
+                <p></p>
                 <li v-for="(wheel, key) in wheels"
                     :key="key"
                     class="sample"
@@ -36,7 +37,7 @@
                         wheelCode: "accessories/16500",
                         description: "17-дюймові легкосплавні колісні диски з десятьма спицями",
                         sampleOfWheel: "//t1-carassets.toyota-europe.com/bfa8bb07-f7c5-4b18-9f80-5827fbce5238.PNG",
-                        selected: false
+                        selected: true
                     },
                     {
                         name: "option",

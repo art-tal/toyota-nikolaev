@@ -23,11 +23,12 @@
             </div>
 
             <footer class="options">
-                <menu class="container">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item active">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav justify-content-center">
+
                             <router-link
-                                    class="nav-link col-2"
+                                    class="nav-link"
                                     tag="a"
                                     exact
                                     active-class="active"
@@ -36,8 +37,7 @@
                                 <span>Цвет</span>
                                 <!--                        <span class="sr-only">(current)</span>-->
                             </router-link>
-                        </li>
-                        <li class="nav-item">
+
                             <router-link
                                     class="nav-link"
                                     tag="a"
@@ -48,10 +48,9 @@
                                 <span>Колеса</span>
                                 <!--                        <span class="sr-only">(current)</span>-->
                             </router-link>
-                        </li>
-                        <li class="nav-item">
+
                             <router-link
-                                    class="nav-link ml-2 mr-2 col-2"
+                                    class="nav-link ml-2 mr-2"
                                     tag="a"
                                     exact
                                     active-class="active"
@@ -60,9 +59,10 @@
                                 <span>Интерьер</span>
                                 <!--                        <span class="sr-only">(current)</span>-->
                             </router-link>
-                        </li>
+
                     </ul>
-                </menu>
+                    </div>
+                </nav>
                 <router-view></router-view>
             </footer>
         </article>
@@ -303,29 +303,26 @@
 
         .body {
             img {
-                width: 100%;
+                width: 60%;
+                margin: auto;
             }
         }
 
         footer.options {
-            menu {
+            nav {
                 ul {
-                    li {
-                        padding: 18px 20px 22px;
                         a {
-                          color: $font_color;
+                            color: $font_color;
+                            padding: 18px 20px 22px;
                             font-size: 1.5rem;
                             &:hover {
                                 color: #428bca;
                             }
+                            &.active {
+                                font-weight: bold;
+                                border-bottom: 1px solid red;
+                            }
                         }
-                        &.active {
-                            font-weight: bold;
-                            border-bottom: 1px solid red;
-                        }
-
-
-                    }
                 }
             }
         }
