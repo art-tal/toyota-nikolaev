@@ -52,7 +52,7 @@
                 this.selectedColor = color;
                 this.colors.forEach( (item) => {item.selected = false;});
                 color.selected = true;
-
+                console.log('child')
                 this.$emit("selectedColor", color);
 
                 // this.car.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);

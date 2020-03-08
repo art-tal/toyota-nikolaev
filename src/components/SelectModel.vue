@@ -333,7 +333,7 @@
                 console.log('GET ---' + model + '----' + color );
                axios({
                    method: 'get',
-                   url: 'http://localhost:8080/toyota-nikolaev/src/ajax/car.php',
+                   url: 'http://localhost:63342/toyota-nikolaev/src/ajax/car.php',
                    data: {
                         model: model,
                         color: color

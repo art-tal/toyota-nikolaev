@@ -37,6 +37,8 @@
 <!--    <select-model></select-model>-->
 <!--    <configurator></configurator>-->
 <!--    <engine></engine>-->
+      <all-modell></all-modell>
+
       <router-view></router-view>
 
   </div>
@@ -46,10 +48,12 @@
 // import SelectModel from '@/components/SelectModel';
 // import Configurator from "@/components/Configurator";
 // import Engine from '@/component/Engine';
+import AllModell from "./components/AllModell";
 
 export default {
   name: 'App',
   components: {
+      AllModell,
     // Engine,
     // SelectModel,
     // Configurator
