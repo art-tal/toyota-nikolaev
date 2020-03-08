@@ -18,8 +18,13 @@
 
             </header>
 
-            <div class="body view row text-center">
-                <img :src="car.photo.viewPhoto" :alt="car.photo.viewPhoto">
+            <div class="body view row text-center"
+                 @mousemove.left.exact="rotatePhoto($event)"
+            >
+                <img :src="car.photo.viewPhoto"
+                     :alt="car.photo.viewPhoto"
+                     @selectedColor="setCarColor(color)"
+                >
             </div>
 
             <footer class="options">
@@ -35,7 +40,6 @@
                                     to="/configurator/color_and_option/colors"
                             >
                                 <span>Цвет</span>
-                                <!--                        <span class="sr-only">(current)</span>-->
                             </router-link>
 
                             <router-link
@@ -46,7 +50,6 @@
                                     to="/configurator/color_and_option/wheels"
                             >
                                 <span>Колеса</span>
-                                <!--                        <span class="sr-only">(current)</span>-->
                             </router-link>
 
                             <router-link
@@ -57,7 +60,6 @@
                                     to="/configurator/color_and_option/interior"
                             >
                                 <span>Интерьер</span>
-                                <!--                        <span class="sr-only">(current)</span>-->
                             </router-link>
 
                     </ul>
@@ -94,6 +96,7 @@
                         bodyType: "Седан бизнес-класса",
                         carColor: "#EDE7E1",
                         wheels: "",
+                        wheelsCode: "accessories/16500",
                         description: [
                             "Светодиодные дневные ходовые огни",
                             "Круиз-контроль",
@@ -252,6 +255,8 @@
                 ],
 
                 car: {},
+                corner: 3,
+
             }
         },
 
@@ -259,6 +264,41 @@
             this.car = this.equipments[0];
             // this.selectedColor = this.colors[2]
         },
+
+        methods: {
+            rotatePhoto($event) {
+                this.corner++;
+                if (this.corner > 0 && this.corner < 35) {
+                    console.log($event);
+                    // if($event.pageX)
+                }
+            },
+
+            setCarColor(color) {
+                this.car.color = color;
+                this.car.photo.bigPhoto = this.getCarPhoto();
+            },
+
+            getCarPhoto() {
+                axios({
+                    method: 'get',
+                    url: 'http://localhost:8080/toyota-nikolaev/src/ajax/routeCar.php',
+                    data: {color: this.car.color.colorCode,
+                            model: this.car.modelCode,
+                            corner: this.corner,
+                            wheels: this.car.wheelsCode
+                    }
+                })
+                .then((response) => {return response.data})
+                .catch((error) => {
+                    console.log("Невозможно отобразить фотографию");
+                    console.log(error);
+                    return this.car.photo.bigPhoto;
+
+                })
+            },
+
+        }
     }
 </script>
 

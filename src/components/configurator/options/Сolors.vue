@@ -50,9 +50,11 @@
         methods: {
             setColor: function (color) {
                 this.selectedColor = color;
-                // this.car.carColor = color;
                 this.colors.forEach( (item) => {item.selected = false;});
                 color.selected = true;
+
+                this.$emit("selectedColor", color);
+
                 // this.car.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
             },
         },

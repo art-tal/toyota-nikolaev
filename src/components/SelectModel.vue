@@ -359,7 +359,7 @@
                 this.car.carColor = color;
                 this.colors.forEach( (item) => {item.selected = false;});
                 color.selected = true;
-                this.car.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
+                this.car.photo.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
             },
 
             getFontColor: function (carColor) {
