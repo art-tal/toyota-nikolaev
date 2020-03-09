@@ -15,7 +15,6 @@
                     >
                         <b class="font-weight-bold align-middle">1</b>
                         <span>Комплектация и двигатель</span>
-<!--                        <span class="sr-only">(current)</span>-->
                     </router-link>
 
                     <router-link

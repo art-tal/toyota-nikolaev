@@ -267,16 +267,15 @@
         },
 
         methods: {
-            // rotatePhoto($event) {
-            //     this.corner++;
-            //     if (this.corner > 0 && this.corner < 35) {
-            //         // console.log($event);
-            //         // if($event.pageX)
-            //     }
-            // },
+            rotatePhoto($event) {
+                this.corner++;
+                if (this.corner > 0 && this.corner < 35) {
+                    console.log($event);
+                    // if($event.pageX)
+                }
+            },
 
             setCarColor(color) {
-                console.log('parent');
                 this.car.color = color;
                 this.car.photo.bigPhoto = this.getCarPhoto();
             },
@@ -284,7 +283,7 @@
             getCarPhoto() {
                 axios({
                     method: 'get',
-                    url: 'http://localhost:63342/toyota-nikolaev/src/ajax/routeCar.php',
+                    url: 'http://localhost:8080/toyota-nikolaev/src/ajax/routeCar.php',
                     data: {color: this.car.color.colorCode,
                             model: this.car.modelCode,
                             corner: this.corner,

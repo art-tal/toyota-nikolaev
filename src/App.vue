@@ -1,43 +1,44 @@
 <template>
   <div id="app">
+      <navigation></navigation>
 
-      <nav class="navbar navbar-expand-lg navbar-light">
+<!--      <nav class="navbar navbar-expand-lg navbar-light">-->
 
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-              <ul class="navbar-nav">
+<!--          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">-->
+<!--              <ul class="navbar-nav">-->
 
-                  <router-link
-                          class="nav-link ml-2 mr-2"
-                          tag="a"
-                          exact
-                          active-class="active"
-                          to="/select_model"
-                  >
-<!--                      <b class="font-weight-bold align-middle">1</b>-->
-                      <span>Модельный ряд</span>
-                      <!--                        <span class="sr-only">(current)</span>-->
-                  </router-link>
+<!--                  <router-link-->
+<!--                          class="nav-link ml-2 mr-2"-->
+<!--                          tag="a"-->
+<!--                          exact-->
+<!--                          active-class="active"-->
+<!--                          to="/select_model"-->
+<!--                  >-->
+<!--&lt;!&ndash;                      <b class="font-weight-bold align-middle">1</b>&ndash;&gt;-->
+<!--                      <span>Модельный ряд</span>-->
+<!--                      &lt;!&ndash;                        <span class="sr-only">(current)</span>&ndash;&gt;-->
+<!--                  </router-link>-->
 
-                  <router-link
-                          class="nav-link ml-2 mr-2"
-                          tag="a"
-                          exact
-                          active-class="active"
-                          to="/configurator"
-                  >
-<!--                      <b class="font-weight-bold align-middle">2</b>-->
-                      <span>Сконфигурировать</span>
-                      <!--                        <span class="sr-only">(current)</span>-->
-                  </router-link>
+<!--                  <router-link-->
+<!--                          class="nav-link ml-2 mr-2"-->
+<!--                          tag="a"-->
+<!--                          exact-->
+<!--                          active-class="active"-->
+<!--                          to="/configurator"-->
+<!--                  >-->
+<!--&lt;!&ndash;                      <b class="font-weight-bold align-middle">2</b>&ndash;&gt;-->
+<!--                      <span>Сконфигурировать</span>-->
+<!--                      &lt;!&ndash;                        <span class="sr-only">(current)</span>&ndash;&gt;-->
+<!--                  </router-link>-->
 
 
-              </ul>
-          </div>
-      </nav>
+<!--              </ul>-->
+<!--          </div>-->
+<!--      </nav>-->
 <!--    <select-model></select-model>-->
 <!--    <configurator></configurator>-->
 <!--    <engine></engine>-->
-      <all-modell></all-modell>
+<!--      <all-modell></all-modell>-->
 
       <router-view></router-view>
 
@@ -45,15 +46,17 @@
 </template>
 
 <script>
+    import Navigation from "@/components/permanent/Navigation";
 // import SelectModel from '@/components/SelectModel';
 // import Configurator from "@/components/Configurator";
 // import Engine from '@/component/Engine';
-import AllModell from "./components/AllModell";
+// import AllModell from "./components/AllModell";
 
 export default {
   name: 'App',
   components: {
-      AllModell,
+      Navigation,
+      // AllModell,
     // Engine,
     // SelectModel,
     // Configurator
