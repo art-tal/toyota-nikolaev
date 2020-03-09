@@ -8,15 +8,31 @@ import EditEquipment from "@/components/configurator/EditEquipment";
 import Colors from "@/components/configurator/options/Сolors";
 import Wheels from "@/components/configurator/options/Wheels";
 import Interior from "@/components/configurator/options/Interior";
+import Lineup from "@/components/MainNav/Lineup";
 
 
 export default new VueRouter({
     routes: [
         {
-            path: '/select_model',
-            name: 'SelectModel',
-            component: SelectModel
+            path: '/lineup',
+            name: 'Lineup',
+            component: Lineup,
+            children: [
+                {
+                    path: '/lineup/select_model',
+                    name: 'SelectModel',
+                    component: SelectModel
+                },
+            ]
         },
+
+
+
+
+
+
+
+
         {
             path: '/configurator',
             name: 'Configurator',

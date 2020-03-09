@@ -2,6 +2,8 @@
   <div id="app">
       <navigation></navigation>
 
+
+
 <!--      <nav class="navbar navbar-expand-lg navbar-light">-->
 
 <!--          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">-->
@@ -42,11 +44,13 @@
 
       <router-view></router-view>
 
+      <Footer></Footer>
   </div>
 </template>
 
 <script>
     import Navigation from "@/components/permanent/Navigation";
+    import Footer from "@/components/permanent/Footer";
 // import SelectModel from '@/components/SelectModel';
 // import Configurator from "@/components/Configurator";
 // import Engine from '@/component/Engine';
@@ -56,6 +60,7 @@ export default {
   name: 'App',
   components: {
       Navigation,
+      Footer,
       // AllModell,
     // Engine,
     // SelectModel,
@@ -80,4 +85,6 @@ export default {
    header h1 {
         display: inline-block;
     }
+
+
 </style>

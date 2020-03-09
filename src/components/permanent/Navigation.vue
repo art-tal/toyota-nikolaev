@@ -16,7 +16,7 @@
                                         tag="a"
                                         exact
                                         active-class="active"
-                                        to="/configurator/"
+                                        to="/lineup"
                                 >
                                     <span>Модельный ряд</span>
                                     <span class="sr-only">(current)</span>
