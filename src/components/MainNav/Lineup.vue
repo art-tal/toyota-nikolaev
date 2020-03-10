@@ -8,9 +8,12 @@
         <div class="row">
             <div class="all_model col-9 row">
                 <div class="col-3 model" v-for="(model, key) in models" :key="key">
-                    <img :src="'http://' + model.image" :alt="model.image">
-                    <h2 class="">{{model.name}}</h2>
-                    <h3 v-if="model.hybrid">+ Гибрид</h3>
+                    <a href="#" class="text-left" @click.prevent="">
+                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
+                        <h2>{{model.name}}</h2>
+                        <h3 v-if="model.hybrid">+ Гибрид</h3>
+                    </a>
+
                 </div>
             </div>
 
@@ -77,7 +80,8 @@
             getModel() {
                 axios({
                     method: 'get',
-                    url: "http://lara.toyota.nikolaev.ua/all_model",
+                    // url: "http://lara.toyota.nikolaev.ua/all_model",
+                    url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
                     console.log(response.data);
                     this.models = response.data;
@@ -98,6 +102,7 @@
     @import '../../styles/variables';
 
     section.container-fluid {
+        background-color: #F0F0F0;
         .car_type {
             padding: 6px 40px 6px 73px;
             background-color: #f0f0f0;
@@ -114,14 +119,33 @@
         }
 
         .row {
+            padding: 0 44px 0 74px;
             .all_model {
-                padding: 25px;
+                padding: 15px;
+                margin-top: 20px;
                 .model {
-                    border-bottom: 1px solid #D7D7D7;
-                    h2 {
-                        font-size: 1.3rem;
-                        color: $font_color;
+                    padding: 20px;
+                    margin-bottom: 28px;
+                    align-self: flex-end;
+                    a {
+                        display: block;
+                        border-bottom: 1px solid #D7D7D7;
+                        text-decoration: none;
+                        img {
+                            width: 90%;
+                        }
+                        h2 {
+                            font-size: 1.3rem;
+                            margin-top: 15px;
+                            color: $font_color;
+                        }
+                        h3 {
+                            font-size: 1.2rem;
+                            text-transform: uppercase;
+                            color: #00A0F0;
+                        }
                     }
+
                 }
             }
             .buyers_tools {
