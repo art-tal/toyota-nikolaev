@@ -24,30 +24,53 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
         name: "colors",
+
+        props: ['id_mod'],
 
         data() {
             return {
                 selectedColor: "#EDE7E1",
-                colors: [
-                    {name: "Черный металик", rgb: "#000000", colorCode: "218", sampleOfColor: "http://t1-carassets-1.toyota-europe.com/8f0c43d2-90d7-4a76-8303-033c448c2560.JPG", selected: false },
-                    {name: "Темно-синий металик", rgb: "#182B66", colorCode: "8w7", sampleOfColor: "//t1-carassets-4.toyota-europe.com/c2375475-4cb7-4332-b68a-ea0739ecb570.JPG", selected: false },
-                    {name: "Бежевый металик", rgb: "#EDE7E1", colorCode: "4x1", sampleOfColor: "//t1-carassets-2.toyota-europe.com/e65e0089-eafc-46ff-bc3c-f91846ce99ee.JPG", selected: true },
-                    {name: "Серебристый металик", rgb: "#F2F2F0", colorCode: "1f7", sampleOfColor: "//t1-carassets-1.toyota-europe.com/05333956-36fc-4c17-95a2-3de514269d0f.JPG", selected: false },
-                    {name: "Коричневый металик", rgb: "#5C5653", colorCode: "4x7", sampleOfColor: "//t1-carassets-2.toyota-europe.com/eee65758-a2b9-49ba-9bad-e51e840c5b8b.JPG", selected: false },
-                    {name: "Красный металик", rgb: "#740310", colorCode: "3u5", sampleOfColor: "//t1-carassets-2.toyota-europe.com/b6433f4d-ccf4-453d-9e5c-083aedbf2fb5.JPG", selected: false },
-                    {name: "Белый металик", rgb: "#FFFFFF", colorCode: "089", sampleOfColor: "//t1-carassets-2.toyota-europe.com/c9d8d6eb-92db-4971-85a4-0c3a3f3ccd91.JPG", selected: false },
-                ],
+                // colors: [
+                //     {name: "Черный металик", rgb: "#000000", colorCode: "218", sampleOfColor: "http://t1-carassets-1.toyota-europe.com/8f0c43d2-90d7-4a76-8303-033c448c2560.JPG", selected: false },
+                //     {name: "Темно-синий металик", rgb: "#182B66", colorCode: "8w7", sampleOfColor: "//t1-carassets-4.toyota-europe.com/c2375475-4cb7-4332-b68a-ea0739ecb570.JPG", selected: false },
+                //     {name: "Бежевый металик", rgb: "#EDE7E1", colorCode: "4x1", sampleOfColor: "//t1-carassets-2.toyota-europe.com/e65e0089-eafc-46ff-bc3c-f91846ce99ee.JPG", selected: true },
+                //     {name: "Серебристый металик", rgb: "#F2F2F0", colorCode: "1f7", sampleOfColor: "//t1-carassets-1.toyota-europe.com/05333956-36fc-4c17-95a2-3de514269d0f.JPG", selected: false },
+                //     {name: "Коричневый металик", rgb: "#5C5653", colorCode: "4x7", sampleOfColor: "//t1-carassets-2.toyota-europe.com/eee65758-a2b9-49ba-9bad-e51e840c5b8b.JPG", selected: false },
+                //     {name: "Красный металик", rgb: "#740310", colorCode: "3u5", sampleOfColor: "//t1-carassets-2.toyota-europe.com/b6433f4d-ccf4-453d-9e5c-083aedbf2fb5.JPG", selected: false },
+                //     {name: "Белый металик", rgb: "#FFFFFF", colorCode: "089", sampleOfColor: "//t1-carassets-2.toyota-europe.com/c9d8d6eb-92db-4971-85a4-0c3a3f3ccd91.JPG", selected: false },
+                // ],
             }
         },
 
         created() {
-            this.selectedColor = this.colors[2];
-            this.setColor(this.selectedColor);
+            // this.selectedColor = this.colors[2];
+            // this.setColor(this.selectedColor);
+            this.colors();
+
         },
 
         methods: {
+            getColors() {
+                console.log(this.id_mode);
+                axios({
+                    method: 'get',
+                    url: "http://lara.toyota.nikolaev.ua/storage/lara.toyota.nikolaev.ua/ajax/mod_color",
+                    data: {id_mod: id_mod}
+                }).then( (response) => {
+                    this.colors = response.data;
+                    console.log(this.colors);
+                } )
+                    .catch( (error) => {
+                        console.log("Ошибка, не возможно загрузить доступные цвета");
+                        console.log(error);
+                    })
+            },
+
+
             setColor: function (color) {
                 this.selectedColor = color;
                 this.colors.forEach( (item) => {item.selected = false;});

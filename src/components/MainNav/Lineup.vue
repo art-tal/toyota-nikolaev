@@ -4,15 +4,17 @@
             <a href="#" class="new_car">Новые автомтобили</a>
             <a href="#" class="old_car">Автомобили с пробегом</a>
         </div>
-<!--        <button class="btn btn-primary" @click="allModels()">All Models</button>-->
+
         <div class="row">
             <div class="all_model col-9 row">
-                <div class="col-3 model" v-for="(model, key) in models" :key="key">
-                    <a href="#" class="text-left" @click.prevent="">
-                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
-                        <h2>{{model.name}}</h2>
-                        <h3 v-if="model.hybrid">+ Гибрид</h3>
-                    </a>
+                    <div class="col-3 model" v-for="(model, key) in models" :key="key">
+                        <div
+                                class="nav-link active text-left"
+                                @click="goSelectModel(model.id)">
+                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
+                            <h2>{{model.name}}</h2>
+                            <h3 v-if="model.hybrid">+ Гибрид</h3>
+                        </div>
 
                 </div>
             </div>
@@ -57,7 +59,8 @@
 </template>
 
 <script>
-    import axios from 'axios'
+    import axios from 'axios';
+
     export default {
         name: "AllModell",
         data() {
@@ -67,20 +70,13 @@
         },
 
         created() {
-            this.models = this.getModel();
-            console.log(this.models);
+            this.getModel();
         },
 
         methods: {
-            allModels() {
-                this.models = this.getModel();
-                console.log(this.models);
-            },
-
             getModel() {
                 axios({
                     method: 'get',
-                    // url: "http://lara.toyota.nikolaev.ua/all_model",
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
                     console.log(response.data);
@@ -88,12 +84,18 @@
                     // return response.data;
                 } )
                 .catch( (error) => {
-                    console.log("Ошибка");
+                    console.log("Ошибка, не возможно загрузить доступные модели");
                     console.log(error);
                 })
 
             },
+
+            goSelectModel(id) {
+                this.$router.push({name: "selectModel", params: {id: id}});
+            }
         },
+
+
 
     }
 </script>
@@ -126,8 +128,8 @@
                 .model {
                     padding: 20px;
                     margin-bottom: 28px;
-                    align-self: flex-end;
-                    a {
+                    align-self: flex-start;
+                    div {
                         display: block;
                         border-bottom: 1px solid #D7D7D7;
                         text-decoration: none;
@@ -143,6 +145,9 @@
                             font-size: 1.2rem;
                             text-transform: uppercase;
                             color: #00A0F0;
+                        }
+                        &:hover {
+                            border-bottom: 1px solid #E50000;
                         }
                     }
 

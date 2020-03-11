@@ -1,5 +1,5 @@
 import VueRouter from "vue-router";
-import SelectModel from "@/components/SelectModel";
+import SelectModel from "@/components/MainNav/SelectModel";
 import Configurator from "@/components/configurator/Configurator";
 import Engine from "@/components/configurator/Engine";
 import ColorAndOption from "@/components/configurator/ColorAndOption";
@@ -9,6 +9,7 @@ import Colors from "@/components/configurator/options/Сolors";
 import Wheels from "@/components/configurator/options/Wheels";
 import Interior from "@/components/configurator/options/Interior";
 import Lineup from "@/components/MainNav/Lineup";
+import Equipment from "@/components/configurator/Equipment";
 
 
 export default new VueRouter({
@@ -18,15 +19,24 @@ export default new VueRouter({
             name: 'Lineup',
             component: Lineup,
             children: [
-                {
-                    path: '/lineup/select_model',
-                    name: 'SelectModel',
-                    component: SelectModel
-                },
+
             ]
         },
 
+        {
+            path: '/select_model/:id',
+            name: 'selectModel',
+            component: SelectModel,
+            children: [
+                {
+                    path: '/select_model/equipment',
+                    name: 'Equipment',
+                    component: Equipment,
+                },
 
+
+            ]
+        },
 
 
 

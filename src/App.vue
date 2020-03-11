@@ -4,43 +4,7 @@
 
 
 
-<!--      <nav class="navbar navbar-expand-lg navbar-light">-->
 
-<!--          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">-->
-<!--              <ul class="navbar-nav">-->
-
-<!--                  <router-link-->
-<!--                          class="nav-link ml-2 mr-2"-->
-<!--                          tag="a"-->
-<!--                          exact-->
-<!--                          active-class="active"-->
-<!--                          to="/select_model"-->
-<!--                  >-->
-<!--&lt;!&ndash;                      <b class="font-weight-bold align-middle">1</b>&ndash;&gt;-->
-<!--                      <span>Модельный ряд</span>-->
-<!--                      &lt;!&ndash;                        <span class="sr-only">(current)</span>&ndash;&gt;-->
-<!--                  </router-link>-->
-
-<!--                  <router-link-->
-<!--                          class="nav-link ml-2 mr-2"-->
-<!--                          tag="a"-->
-<!--                          exact-->
-<!--                          active-class="active"-->
-<!--                          to="/configurator"-->
-<!--                  >-->
-<!--&lt;!&ndash;                      <b class="font-weight-bold align-middle">2</b>&ndash;&gt;-->
-<!--                      <span>Сконфигурировать</span>-->
-<!--                      &lt;!&ndash;                        <span class="sr-only">(current)</span>&ndash;&gt;-->
-<!--                  </router-link>-->
-
-
-<!--              </ul>-->
-<!--          </div>-->
-<!--      </nav>-->
-<!--    <select-model></select-model>-->
-<!--    <configurator></configurator>-->
-<!--    <engine></engine>-->
-<!--      <all-modell></all-modell>-->
 
       <router-view></router-view>
 
@@ -51,6 +15,7 @@
 <script>
     import Navigation from "@/components/permanent/Navigation";
     import Footer from "@/components/permanent/Footer";
+    // import axios from "axios";
 // import SelectModel from '@/components/SelectModel';
 // import Configurator from "@/components/Configurator";
 // import Engine from '@/component/Engine';
@@ -65,7 +30,22 @@ export default {
     // Engine,
     // SelectModel,
     // Configurator
-  }
+  },
+
+  // created() {
+  //     axios({
+  //         method: 'get',
+  //         url:"http://lara.toyota.nikolaev.ua/storage/lara.toyota.nikolaev.ua/ajax/id_mod",
+  //         data: {id_mod: 1}
+  //     })
+  //         .then( (response) => {
+  //             console.log(response.data);
+  //         } )
+  //         .catch( (error) => {
+  //             console.log("Ошибка, не возможно загрузить доступные модификации");
+  //             console.log(error);
+  //         } );
+  // },
 }
 </script>
 
