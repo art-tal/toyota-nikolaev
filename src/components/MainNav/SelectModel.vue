@@ -1,7 +1,9 @@
 <template>
-    <section class="selectModel">
-        <div class="container-fluid" >
-<!--            :style="{'background-color': car.carColor.rgb, 'color': getFontColor(car.carColor.rgb )+ '!important'}"-->
+    <section class="selectModel"
+             @selectedEquipment="selectedCar($event)"
+    >
+        <div class="container-fluid"  :style="{'background-color': carColor, 'color': getFontColor(carColor)+ '!important'}">
+
             <header class="row">
                 <h1 class="model col-10 text-left">
                     <span class="carModel font-weight-bold">
@@ -22,11 +24,11 @@
 <!--                        :to="'/select_model/' + id + '/equipment'"-->
                         <span v-if="!showEquipment">
                             Все комплектации</span>
-                        <span v-if="showEquipment">Скрыть</span>
+                        <span v-else>Скрыть</span>
                         <i class="fas fa-chevron-down"
                            v-if="!showEquipment"></i>
                         <i class="fas fa-chevron-up"
-                           v-if="showEquipment"></i>
+                           v-else></i>
                     </button>
                 </div>
 
@@ -35,6 +37,7 @@
             <equipment v-if="showEquipment"
                        :id="id"
                        :photo="'http://lara.toyota.nikolaev.ua/storage/' + car.image"
+                       :color="carColor"
             ></equipment>
 
 <!--            <div class="allEquipment" v-if="showEquipment">-->
@@ -166,6 +169,7 @@
 <script>
     import axios from 'axios';
     import Equipment from "@/components/configurator/Equipment";
+    import {eventEmitter} from "@/main";
     // import Colors from '@/components/configurator/options/Colors';
 
 
@@ -193,6 +197,10 @@
         created() {
             this.getCar();
             this.getEquipment();
+            eventEmitter.$on('selectedEquipment', (equip) => {
+                this.equipment = equip;
+                this.showEquipment = !this.showEquipment
+            })
         },
 
         methods: {

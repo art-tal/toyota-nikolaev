@@ -5,7 +5,7 @@ import Engine from "@/components/configurator/Engine";
 import ColorAndOption from "@/components/configurator/ColorAndOption";
 import Result from "@/components/configurator/Result";
 import EditEquipment from "@/components/configurator/EditEquipment";
-import Colors from "@/components/configurator/options/Сolors";
+// import Colors from "@/components/configurator/options/Сolors";
 import Wheels from "@/components/configurator/options/Wheels";
 import Interior from "@/components/configurator/options/Interior";
 import Lineup from "@/components/MainNav/Lineup";
