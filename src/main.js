@@ -5,8 +5,6 @@ import router from './router/index'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-
-
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 

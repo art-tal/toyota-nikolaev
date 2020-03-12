@@ -1,24 +1,25 @@
 <template>
     <section class="selectModel">
-<!--        <div class="container-fluid" :style="{'background-color': car.carColor.rgb, 'color': getFontColor(car.carColor.rgb )+ '!important'}">-->
+        <div class="container-fluid" >
+<!--            :style="{'background-color': car.carColor.rgb, 'color': getFontColor(car.carColor.rgb )+ '!important'}"-->
             <header class="row">
                 <h1 class="model col-10 text-left">
-<!--                    <span class="carModel font-weight-bold">-->
-<!--                        {{car.model}}</span>-->
+                    <span class="carModel font-weight-bold">
+                        {{equipment.model_name_pivot}}</span>
 <!--                    <span class="carEquipment">-->
-<!--                        {{car.equipment.nameEquipment}}</span>-->
-<!--                    <small class="bodyType">-->
-<!--                        - {{car.bodyType}}</small>-->
+<!--                        {{car.model_name_pivot}} - </span>-->
+<!--                    <small class="bodyType">{{car.bodyType}}</small>-->
                 </h1>
 
                 <div class="col-2">
-                    <router-link class="openChoice btn row"
+                    <button class="openChoice btn row"
                             name="selectEquipment"
                             id="selectEquipment"
-                            :style="{'background-color': car.carColor}"
+                            :style="{'background-color': carColor}"
                             @click="showEquipment = !showEquipment"
-                                 :to="'/select_model/' + id + '/equipment'"
+
                     >
+<!--                        :to="'/select_model/' + id + '/equipment'"-->
                         <span v-if="!showEquipment">
                             Все комплектации</span>
                         <span v-if="showEquipment">Скрыть</span>
@@ -26,12 +27,15 @@
                            v-if="!showEquipment"></i>
                         <i class="fas fa-chevron-up"
                            v-if="showEquipment"></i>
-                    </router-link>
+                    </button>
                 </div>
 
             </header>
 
-            <equipment v-if="showEquipment"></equipment>
+            <equipment v-if="showEquipment"
+                       :id="id"
+                       :photo="'http://lara.toyota.nikolaev.ua/storage/' + car.image"
+            ></equipment>
 
 <!--            <div class="allEquipment" v-if="showEquipment">-->
 
@@ -75,31 +79,32 @@
 
 
 
-<!--            <div class="compare text-left" v-show="!showEquipment">-->
-<!--                <a href="#" class="text-decoration-none" :style="{'color': getFontColor(car.carColor.rgb )+ '!important'}">-->
-<!--                    <i class="fas fa-exchange-alt"></i>-->
-<!--                    <span>Сравнить</span>-->
-<!--                </a>-->
-<!--            </div>-->
+            <div class="compare text-left" v-show="!showEquipment">
+                <a href="#" class="text-decoration-none" >
+<!--                    :style="{'color': getFontColor(car.carColor.rgb )+ '!important'}"-->
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Сравнить</span>
+                </a>
+            </div>
 
-<!--            <div class="carView row">-->
-<!--                <div class="carDescription col-9 row">-->
-<!--                    <ul class="description col-3 text-left">-->
+            <div class="carView row">
+                <div class="carDescription col-9 row">
+                    <ul class="description col-3 text-left">
 <!--                        <li v-for="(desc, index) in car.description"-->
 <!--                            :key="index"-->
 <!--                            :style="{'color': getFontColor(car.carColor.rgb )+ '!important'}"-->
 <!--                        >-->
 <!--                            {{desc}}</li>-->
-<!--                    </ul>-->
+                    </ul>
 
-<!--                    <div class="carPhoto col-9">-->
-<!--                        <img :src="car.bigPhoto" :alt="car.photo">-->
-<!--                    </div>-->
-<!--                </div>-->
+                    <div class="carPhoto col-9">
+                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + car.image" :alt="equipment.model_name_pivot">
+                    </div>
+                </div>
 
-        <colors
-                :id_mod="car.id_mod"
-        ></colors>
+<!--        <colors-->
+<!--                :id_mod="car.id_mod"-->
+<!--        ></colors>-->
 
 <!--                <div class="carColors col-3">-->
 <!--                    <ol class="colors row">-->
@@ -114,8 +119,8 @@
 <!--                        </li>-->
 <!--                    </ol>-->
 <!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+            </div>
+        </div>
 
 <!--        <div class="specifications row justify-content-center">-->
 <!--            <div class="fuelConsumption col-2">-->
@@ -149,7 +154,6 @@
                         to="/configurator"
                 >
                     <span>Сконфигурировать</span>
-                    <!--                        <span class="sr-only">(current)</span>-->
                 </router-link>
             </div>
 
@@ -160,9 +164,9 @@
 </template>
 
 <script>
-    // import axios from 'axios'
+    import axios from 'axios';
     import Equipment from "@/components/configurator/Equipment";
-    import Colors from '@/components/configurator/options/Colors';
+    // import Colors from '@/components/configurator/options/Colors';
 
 
     export default {
@@ -170,7 +174,7 @@
 
         components: {
             Equipment,
-            Colors
+            // Colors
         },
 
         data() {
@@ -179,60 +183,43 @@
                 showEquipment: false,
                 selectedColor: {},
                 equipments: [],
+                equipment: {},
+                carColor: "#fff",
 
                 car: {},
             }
         },
 
         created() {
-            // this.getEquipment();
-            console.log(this.id);
+            this.getCar();
+            this.getEquipment();
         },
 
         methods: {
 
-            // getEquipment() {
-            //     console.log(this.$route.params.id);
-            //     axios({
-            //         method: 'get',
-            //         url: 'http://lara.toyota.nikolaev.ua/storage/lara.toyota.nikolaev.ua/ajax/id_mod',
-            //         data: {id: this.$route.params.id}
-            //     })
-            //     .then( (response) => {
-            //         this.equipments = response.data;
-            //         this.car = this.equipments[0];
-            //         console.log(this.car);
-            //     } )
-            //     .catch( (error) => {
-            //         console.log("Ошибка, не возможно загрузить доступные модификации");
-            //         console.log(error);
-            //     } );
-            // }
+            getEquipment() {
+                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
+                .then( (response) => {
+                    this.equipments = response.data;
+                    this.equipment = this.equipments[0];
+                } )
+                .catch( (error) => {
+                    console.log("Ошибка, не возможно загрузить доступные модификации");
+                    console.log(error);
+                } );
+            },
 
-            // getCar: function(model, color){
-            //     console.log('GET ---' + model + '----' + color );
-            //    axios({
-            //        method: 'get',
-            //        url: 'http://localhost:63342/toyota-nikolaev/src/ajax/car.php',
-            //        data: {
-            //             model: model,
-            //             color: color
-            //         }
-            // })
-            //        .then(
-            //         function (response) {
-            //             console.log(response.data);
-            //             return response.data;
-            //         }
-            //
-            //     )
-            //        .catch((error) => {
-            //        console.log('Произошла ошибка загрузки фото с сервера.');
-            //        console.log(error);
-            //        return this.car.bigPhoto;
-            //    })
-            //
-            // },
+            getCar() {
+                axios.get( 'http://lara.toyota.nikolaev.ua/ajax/all_model')
+                   .then( (response) => {
+                        this.car = response.data[this.id - 1];
+                    })
+                   .catch((error) => {
+                   console.log('Произошла ошибка загрузки фото с сервера.');
+                   console.log(error);
+               })
+
+            },
 
             // setColor: function (color) {
             //     this.selectedColor = color;
@@ -242,19 +229,19 @@
             //     this.car.photo.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
             // },
 
-            // getFontColor: function (carColor) {
-            //     switch(carColor){
-            //         case '#000000':
-            //         case '#182B66':
-            //         case '#5C5653':
-            //         case '#740310':
-            //             return '#FFFFFF';
-            //         case '#FFFFFF':
-            //         case '#EDE7E1':
-            //         case '#F2F2F0':
-            //             return '#202020';
-            //     }
-            // }
+            getFontColor: function (carColor) {
+                switch(carColor){
+                    case '#000000':
+                    case '#182B66':
+                    case '#5C5653':
+                    case '#740310':
+                        return '#FFFFFF';
+                    case '#FFFFFF':
+                    case '#EDE7E1':
+                    case '#F2F2F0':
+                        return '#202020';
+                }
+            }
 
         }
 
@@ -391,35 +378,35 @@
                     }
                 }
 
-                .carColors{
-                    margin-bottom: 30px;
-                    .row {
-                        li {
-                            width: 48px;
-                            height: 48px;
-                            margin: 0 5px;
-                            position: relative;
-                            display: inline-block;
-                            list-style-type: none;
-                            &:hover {
-                                transform: scale(1.1);
-                            }
-                            img {
-                                width: 100%;
-                                border: 2px solid #fff;
-                                border-radius: 50%;
-                            }
-                            i {
-                                position: absolute;
-                                top: 18px;
-                                left: 18px;
-                                color: #999;
-                                font-size: 12px;
-                            }
-                        }
-                    }
+                /*.carColors{*/
+                /*    margin-bottom: 30px;*/
+                /*    .row {*/
+                /*        li {*/
+                /*            width: 48px;*/
+                /*            height: 48px;*/
+                /*            margin: 0 5px;*/
+                /*            position: relative;*/
+                /*            display: inline-block;*/
+                /*            list-style-type: none;*/
+                /*            &:hover {*/
+                /*                transform: scale(1.1);*/
+                /*            }*/
+                /*            img {*/
+                /*                width: 100%;*/
+                /*                border: 2px solid #fff;*/
+                /*                border-radius: 50%;*/
+                /*            }*/
+                /*            i {*/
+                /*                position: absolute;*/
+                /*                top: 18px;*/
+                /*                left: 18px;*/
+                /*                color: #999;*/
+                /*                font-size: 12px;*/
+                /*            }*/
+                /*        }*/
+                /*    }*/
 
-                }
+                /*}*/
             }
         }
 

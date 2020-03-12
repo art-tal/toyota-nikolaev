@@ -33,6 +33,11 @@ export default new VueRouter({
                     name: 'Equipment',
                     component: Equipment,
                 },
+                // {
+                //     path: 'colors',
+                //     name: 'colors',
+                //     component: Colors,
+                // },
 
 
             ]
@@ -57,11 +62,11 @@ export default new VueRouter({
                     name: "color_and_option",
                     component: ColorAndOption,
                     children: [
-                        {
-                            path: 'colors',
-                            name: 'colors',
-                            component: Colors,
-                        },
+                        // {
+                        //     path: 'colors',
+                        //     name: 'colors',
+                        //     component: Colors,
+                        // },
                         {
                             path: 'wheels',
                             name: 'wheels',

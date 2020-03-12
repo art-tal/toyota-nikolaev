@@ -1,18 +1,19 @@
 <template>
-    <div class="allEquipment" v-if="showEquipment">
+    <div class="allEquipment">
 
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item optionEquipment text-left d-block w-25"
-                     v-for="car in equipments"
-                     :key="car.equipment"
-                     @click="activeted(car)">
-                    <img :src="car.photo" :alt="car.photo" class="w-100">
+                     v-for="equipment in equipments"
+                     :key="equipment.model_name_pivot"
+                     @click="activeted(equipment)">
+                    <img :src="photo"
+                         :alt="equipment.model_name_pivot" class="w-100">
 
                     <h4>
-                        <span><strong>{{car.model}} </strong></span>
-                        <span>{{car.equipment.nameEquipment}} - </span>
-                        <span>{{car.bodyType}}</span>
+                        <span><strong>{{equipment.model_name_pivot}} </strong></span>
+<!--                        <span>{{car.equipment.nameEquipment}} - </span>-->
+<!--                        <span>{{car.bodyType}}</span>-->
                     </h4>
 
                     <div class="body">
@@ -44,6 +45,14 @@
     export default {
         name: "Equipment",
 
+        props: ['id', 'photo'],
+
+        data() {
+            return {
+                equipments: [],
+            }
+        },
+
         created() {
             this.getEquipment();
         },
@@ -51,21 +60,20 @@
         methods: {
 
             getEquipment() {
-                console.log(this.$route.params.id);
-                axios({
-                    method: 'get',
-                    url: 'http://lara.toyota.nikolaev.ua/storage/lara.toyota.nikolaev.ua/ajax/id_mod',
-                    data: {id: this.$route.params.id}
-                })
+                console.log(this.id);
+                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                     .then((response) => {
                         this.equipments = response.data;
-                        this.car = this.equipments[0];
-                        console.log(this.car);
+                        // console.log(this.equipments);
                     })
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
                         console.log(error);
                     });
+            },
+
+            activeted(car) {
+                console.log(car)
             }
         }
     }

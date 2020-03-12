@@ -2,22 +2,22 @@
 
     <div class="colors container">
         <div class="row">
-            <div class="colorName col-4 font-weight-bold text-left">
-                {{selectedColor.name}} ({{selectedColor.colorCode}})
-            </div>
-            <ul class="sampleOfColor col-8 text-left">
-                <li v-for="(color, key) in colors"
-                    :key="key"
-                    class="sample"
-                    @click="setColor(color)"
-                >
-                        <img :src="color.sampleOfColor" :alt="color.name">
-                        <div class="check text-center" v-if="color.selected">
-                            <i class="fas fa-check"></i>
-                        </div>
-                </li>
+<!--            <div class="colorName col-4 font-weight-bold text-left">-->
+<!--                {{selectedColor.name}} ({{selectedColor.colorCode}})-->
+<!--            </div>-->
+<!--            <ul class="sampleOfColor col-8 text-left">-->
+<!--                <li v-for="(color, key) in colors"-->
+<!--                    :key="key"-->
+<!--                    class="sample"-->
+<!--                    @click="setColor(color)"-->
+<!--                >-->
+<!--                        <img :src="color.sampleOfColor" :alt="color.name">-->
+<!--                        <div class="check text-center" v-if="color.selected">-->
+<!--                            <i class="fas fa-check"></i>-->
+<!--                        </div>-->
+<!--                </li>-->
 
-            </ul>
+<!--            </ul>-->
         </div>
     </div>
     
@@ -58,8 +58,8 @@
                 console.log(this.id_mode);
                 axios({
                     method: 'get',
-                    url: "http://lara.toyota.nikolaev.ua/storage/lara.toyota.nikolaev.ua/ajax/mod_color",
-                    data: {id_mod: id_mod}
+                    url: "http://lara.toyota.nikolaev.ua/ajax/mod_color",
+                    data: {id_mod: 1},//id_mod
                 }).then( (response) => {
                     this.colors = response.data;
                     console.log(this.colors);
