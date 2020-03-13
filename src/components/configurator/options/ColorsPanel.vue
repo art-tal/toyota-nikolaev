@@ -1,14 +1,11 @@
 <template>
-    <div class="colors container">
-        <article>ColorsPanel</article>
-        <div class="row">COLORS
-                        <div class="colorName col-4 font-weight-bold text-left">
-                            {{selectedColor.color_name}} ({{selectedColor.color_code}})
-                        </div>
-                        <ul class="sampleOfColor col-8 text-left">
+    <div class="carColors container navbar navbar-expand-lg">
+        <div class="col row collapse navbar-collapse" id="navbarNav">
+
+                        <ul class="sampleOfColor col-8 navbar-nav text-left">
                             <li v-for="(color, key) in colors"
                                 :key="key"
-                                class="sample"
+                                class="nav-item sample"
                                 @click="setColor(color)"
                             >
                                     <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
@@ -20,6 +17,8 @@
 
                         </ul>
         </div>
+
+
     </div>
 
 </template>
@@ -27,6 +26,9 @@
 <script>
     import axios from 'axios';
     import {eventEmitter} from "@/main";
+    import jQuery from "jquery";
+
+    let $ = jQuery;
 
     export default {
         name: "ColorsPanel",
@@ -36,18 +38,16 @@
         data() {
             return {
                 colors: [],
-                selectedColor: {},//colors[0],
+                selectedColor: {},
             }
         },
 
         created() {
             this.getColors();
-            this.selectedColor = this.colors[0];
         },
 
         watch: {
             mod_id() {
-                // console.log(this.mod_id);
                 this.getColors();
                 return this.mod_id;
             },
@@ -58,12 +58,14 @@
               console.log(this.mod_id);
               axios.get(
                   // `lara.toyota.nikolaev.ua/ajax/mod_color`,
-                  `lara.toyota.nikolaev.ua/ajax/mod_color?id=33`,
+                  `http://lara.toyota.nikolaev.ua/ajax/mod_color?id=33`,//${this.mod_id}
                   // {id: 33},//this.mod_id
               )
               .then( (response) => {
                   this.colors = response.data;
-                  console.log(this.colors);
+                  this.selectedColor = this.colors[1];
+                  console.log(this.selectedColor);
+                  eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
               } )
               .catch( (error) => {
                   console.log("Ошибка, не возможно загрузить доступные цвета");
@@ -71,9 +73,20 @@
               } )
           },
 
+
             setColor(color) {
-                eventEmitter.$emit('selectedColor', color.rgb);
+                eventEmitter.$emit('selectedColor', color);
+                color.selected = true;
+                $('color').addClass('active');
             },
+
+            // setColor: function (color) {
+            //     this.selectedColor = color;
+            //     this.car.carColor = color;
+            //     this.colors.forEach( (item) => {item.selected = false;});
+            //     color.selected = true;
+            //     this.car.photo.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
+            // },
         },
     }
 </script>
@@ -81,26 +94,30 @@
 <style lang="scss" scoped>
     @import '../../../styles/variables';
 
-    .colors {
-        background-color: #fff;
-        padding: 15px;
+    .carColors {
+        /*background-color: #fff;*/
+        padding: 5px;
+        /*filter: brightness(50%);*/
         div.row {
-            .colorName {
-                font-size: 1.5rem;
-
-            }
             ul.sampleOfColor {
                 list-style-type: none;
                 padding: 0;
+                display: flex;
                 li.sample {
-                    display: inline-block;
-                    padding: 15px;
+                    /*display: inline-block;*/
+                    padding: 5px;
                     position: relative;
-                    padding: 15px;
                     img {
                         width: 50px;
                         height: 50px;
                         border-radius: 50%;
+                        border: 2px solid #cccccc;
+                        &:hover,
+                        &.active {
+                            box-shadow: 0 0 5px 2px #eeeeee;
+                            transform: scale(1.1);
+                            transition: all 500ms;
+                        }
                     }
                     .check {
                         color: red;

@@ -5,7 +5,7 @@
 
         <sub-navigation></sub-navigation>
 
-        <div class="container-fluid"  :style="{'background-color': carColor, 'color': getFontColor(carColor)+ '!important'}">
+        <div class="container-fluid"  :style="{'background-color': carColor.rgb, 'color': fontColor + '!important'}">
 
             <header class="row">
                 <h1 class="model col-10 text-left">
@@ -20,11 +20,10 @@
                     <button class="openChoice btn row"
                             name="selectEquipment"
                             id="selectEquipment"
-                            :style="{'background-color': carColor}"
+                            :style="{'background-color': carColor.rgb, 'color': fontColor + '!important'}"
                             @click="showEquipment = !showEquipment"
 
                     >
-<!--                        :to="'/select_model/' + id + '/equipment'"-->
                         <span v-if="!showEquipment">
                             Все комплектации</span>
                         <span v-else>Скрыть</span>
@@ -46,8 +45,8 @@
 
 
             <div class="compare text-left" v-show="!showEquipment">
-                <a href="#" class="text-decoration-none" >
-<!--                    :style="{'color': getFontColor(car.carColor.rgb )+ '!important'}"-->
+                <a href="#" class="text-decoration-none" :style="{'color': fontColor + '!important'}">
+
                     <i class="fas fa-exchange-alt"></i>
                     <span>Сравнить</span>
                 </a>
@@ -68,9 +67,12 @@
                     </div>
                 </div>
 
-                <colors-panel
-                    :mod_id="equipment.mod_id"
-                ></colors-panel>
+                <div class="carColors col">
+                    <colors-panel
+                            :mod_id="equipment.mod_id"
+                    ></colors-panel>
+                </div>
+
 
             </div>
         </div>
@@ -142,6 +144,8 @@
                 equipment: {},
                 carColor: "#fff",
 
+                fontColor: "#202020",
+
                 car: {},
             }
         },
@@ -150,16 +154,16 @@
             this.getCar();
             this.getEquipment();
             eventEmitter.$on('selectedEquipment', (equip) => {
-                    this.equipment = equip;
-                    // console.log(this.equipment);
-                    this.showEquipment = !this.showEquipment;
+                this.equipment = equip;
+                // console.log(this.equipment);
+                this.showEquipment = !this.showEquipment;
             });
             eventEmitter.$on('selectedColor', (color) => {
                 this.carColor = color;
             });
         },
 
-        mounted() {
+        beforeUpdate() {
 
 
         },
@@ -169,6 +173,13 @@
                 console.log(this.equipment);
                 return this.equipment;
             },
+
+            carColor() {
+                console.log(this.carColor);
+                this.getFontColor();
+                // this.getColoredCar();
+                return this.carColor;
+            }
         },
 
         methods: {
@@ -194,28 +205,38 @@
                    console.log('Произошла ошибка загрузки фото с сервера.');
                    console.log(error);
                })
-
             },
 
-            // setColor: function (color) {
-            //     this.selectedColor = color;
-            //     this.car.carColor = color;
-            //     this.colors.forEach( (item) => {item.selected = false;});
-            //     color.selected = true;
-            //     this.car.photo.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
+            // getColoredCar() {
+            //     axios.get(
+            //         axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod`,
+            //             {id: this.id,
+            //                 color_code: this.carColor.color_code})
+            //             .then((response) => {
+            //                 this.car.image = response.data;
+            //                 // console.log(this.equipments);
+            //             })
+            //             .catch((error) => {
+            //                 console.log("Ошибка, не возможно загрузить изображение автомобиля");
+            //                 console.log(error);
+            //             })
+            //     )
             // },
 
-            getFontColor: function (carColor) {
-                switch(carColor){
-                    case '#000000':
-                    case '#182B66':
-                    case '#5C5653':
-                    case '#740310':
-                        return '#FFFFFF';
-                    case '#FFFFFF':
-                    case '#EDE7E1':
-                    case '#F2F2F0':
-                        return '#202020';
+
+
+            getFontColor: function () {
+                switch(this.carColor.rgb.toLowerCase()){
+                    case '#000000'.toLowerCase():
+                    case '#182B66'.toLowerCase():
+                    case '#5C5653'.toLowerCase():
+                    case '#740310'.toLowerCase():
+                    case '#ff0000'.toLowerCase():
+                        return this.fontColor = '#FFFFFF';
+                    case '#FFFFFF'.toLowerCase():
+                    case '#EDE7E1'.toLowerCase():
+                    case '#F2F2F0'.toLowerCase():
+                        return this.fontColor = '#202020';
                 }
             }
 
@@ -254,13 +275,11 @@
                         top: 13px;
                         right: 20px;
                     }
-
                 }
             }
             .compare {
                 margin: 0px 44px 0 74px;
                 a {
-                    /*color: #202020;*/
                     color: $font_color;
                     font-size: 20px;
                     span{
@@ -294,35 +313,9 @@
                     }
                 }
 
-                /*.carColors{*/
-                /*    margin-bottom: 30px;*/
-                /*    .row {*/
-                /*        li {*/
-                /*            width: 48px;*/
-                /*            height: 48px;*/
-                /*            margin: 0 5px;*/
-                /*            position: relative;*/
-                /*            display: inline-block;*/
-                /*            list-style-type: none;*/
-                /*            &:hover {*/
-                /*                transform: scale(1.1);*/
-                /*            }*/
-                /*            img {*/
-                /*                width: 100%;*/
-                /*                border: 2px solid #fff;*/
-                /*                border-radius: 50%;*/
-                /*            }*/
-                /*            i {*/
-                /*                position: absolute;*/
-                /*                top: 18px;*/
-                /*                left: 18px;*/
-                /*                color: #999;*/
-                /*                font-size: 12px;*/
-                /*            }*/
-                /*        }*/
-                /*    }*/
-
-                /*}*/
+                .carColors{
+                    align-self: flex-end;
+                }
             }
         }
 
@@ -339,9 +332,7 @@
                 }
         }
         .requestService.row {
-            margin: 40px auto 100px;
-            /*width: 70%;*/
-            /*justify-content: space-around;*/
+            margin: 60px auto 100px;
             div {
                 padding: 0 10px;
                 button {

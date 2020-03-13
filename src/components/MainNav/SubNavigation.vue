@@ -21,10 +21,12 @@
                         <a class="nav-link" href="#">Надежность и гарантия</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Сканфигурировать</a>
-                    </li>
+
                 </ul>
+
+                <div class="config">
+                    <a href="#">Сканфигурировать</a>
+                </div>
             </div>
         </nav>
     </menu>
@@ -48,6 +50,7 @@
             background-color: #000;
             .collapse {
                 ul {
+                    flex-grow: 1;
                     li.nav-item {
                         height: 60px;
                         display: table;
@@ -58,13 +61,23 @@
                             border-bottom: 3px solid #E50000;
                             font-weight: bold;
                         }
-                        &:last-child {
-                            border-left: 1px solid #ffffff;
-                            text-align: right;
-                        }
+
                         a {
                             display: table-cell;
                             vertical-align: middle;
+                        }
+                    }
+                }
+                .config {
+                    border-left: 1px solid #ffffff;
+                    padding: 0 20px;
+                    text-align: right;
+                    text-align: right;
+                    a {
+                        color: rgba(255,255,255,0.5);
+                        &:hover {
+                            text-decoration: none;
+                            color: rgba(255,255,255,0.8);
                         }
                     }
                 }
