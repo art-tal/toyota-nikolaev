@@ -12,7 +12,7 @@
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
                                 <router-link
-                                        class="nav-link active"
+                                        class="nav-link"
                                         tag="a"
                                         exact
                                         active-class="active"
@@ -29,7 +29,7 @@
                                         tag="a"
                                         exact
                                         active-class="active"
-                                        to=""
+                                        to="/to_buyers"
                                 >
                                     <span>Покупателям</span>
                                 </router-link>
@@ -40,7 +40,7 @@
                                         tag="a"
                                         exact
                                         active-class="active"
-                                        to=""
+                                        to="/to_the_owners"
                                 >
                                     <span>Владельцам</span>
                                 </router-link>
@@ -51,7 +51,7 @@
                                         tag="a"
                                         exact
                                         active-class="active"
-                                        to=""
+                                        to="/souvenir_products"
                                 >
                                     <span>Сувенирная продукция</span>
                                 </router-link>
@@ -62,7 +62,7 @@
                                         tag="a"
                                         exact
                                         active-class="active"
-                                        to=""
+                                        to="/why_toyota"
                                 >
                                     <span>Почему Toyota?</span>
                                 </router-link>
@@ -73,7 +73,7 @@
                                         tag="a"
                                         exact
                                         active-class="active"
-                                        to=""
+                                        to="/toyota_in_nikolaev"
                                 >
                                     <span>Toyota в Николаеве</span>
                                 </router-link>
@@ -84,7 +84,7 @@
                                         tag="a"
                                         exact
                                         active-class="active"
-                                        to=""
+                                        to="/mobility_for_everyone"
                                 >
                                     <span>Мобильность для всех</span>
                                 </router-link>

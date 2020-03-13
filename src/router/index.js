@@ -10,6 +10,12 @@ import Wheels from "@/components/configurator/options/Wheels";
 import Interior from "@/components/configurator/options/Interior";
 import Lineup from "@/components/MainNav/Lineup";
 import Equipment from "@/components/configurator/Equipment";
+import ToBuyers from "@/components/MainNav/ToBuyers";
+import ToTheOwners from "@/components/MainNav/ToTheOwners";
+import SouvenirProducts from "@/components/MainNav/SouvenirProducts";
+import WhyToyota from "@/components/MainNav/WhyToyota";
+import ToyotaInNikolaev from "@/components/MainNav/ToyotaInNikolaev";
+import MobilityForEveryone from "@/components/MainNav/MobilityForEveryone";
 
 
 export default new VueRouter({
@@ -35,12 +41,48 @@ export default new VueRouter({
                 },
                 // {
                 //     path: 'colors',
-                //     name: 'colors',
+                //     name: 'Colors',
                 //     component: Colors,
                 // },
 
 
             ]
+        },
+
+        {
+            path: '/to_buyers',
+            name: "ToBuyers",
+            component: ToBuyers,
+        },
+
+        {
+            path: "/to_the_owners",
+            name: "ToTheOwners",
+            component: ToTheOwners,
+        },
+
+        {
+            path: "/souvenir_products",
+            name: "SouvenirProducts",
+            component: SouvenirProducts,
+        },
+
+        {
+            path: "/why_toyota",
+            name: "WhyToyota",
+            component: WhyToyota,
+        },
+
+        {
+            path: "/toyota_in_nikolaev",
+            name: "ToyotaInNikolaev",
+            component: ToyotaInNikolaev,
+        },
+
+        {
+            path: "/mobility_for_everyone",
+            name: "MobilityForEveryone",
+            component: MobilityForEveryone,
         },
 
 

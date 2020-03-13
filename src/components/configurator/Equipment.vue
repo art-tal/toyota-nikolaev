@@ -41,11 +41,14 @@
         data() {
             return {
                 equipments: [],
+                equipment: {},
             }
         },
 
         created() {
             this.getEquipment();
+            this.equipment = this.equipments[0];
+            eventEmitter.$emit('selectedEquipment', this.equipment);
         },
 
         methods: {
@@ -55,7 +58,7 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                     .then((response) => {
                         this.equipments = response.data;
-                        console.log(this.equipments);
+                        // console.log(this.equipments);
                     })
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
@@ -64,9 +67,9 @@
             },
 
             activeted(equip) {
-                console.log(equip);
+                // console.log(equip);
                 // this.$emit('selectedEquipment', equip);
-                eventEmitter.$emit('selectedEquipment', equip)
+                eventEmitter.$emit('selectedEquipment', equip);
                 // $('this').addClass('active');
             },
 
