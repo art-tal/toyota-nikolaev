@@ -2,13 +2,9 @@
   <div id="app">
       <navigation></navigation>
 
-
-
-
-
       <router-view></router-view>
 
-      <Footer></Footer>
+      <app-footer></app-footer>
   </div>
 </template>
 
@@ -25,7 +21,7 @@ export default {
   name: 'App',
   components: {
       Navigation,
-      Footer,
+      appFooter: Footer,
       // AllModell,
     // Engine,
     // SelectModel,
@@ -51,6 +47,7 @@ export default {
 
 <style>
 #app {
+    min-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,9 +59,9 @@ export default {
         font-family: toyotadisplay_bd,Arial,Helvetica,sans-serif;;
     }
 
-   header h1 {
-        display: inline-block;
-    }
+   /*header h1 {*/
+   /*     display: inline-block;*/
+   /* }*/
 
 
 </style>

@@ -1,5 +1,6 @@
 <template>
     <section class="configurator">
+        <sub-navigation></sub-navigation>
 
         <nav class="navbar navbar-expand-lg navbar-light">
 
@@ -65,8 +66,14 @@
 </template>
 
 <script>
+    import SubNavigation from "@/components/MainNav/SubNavigation";
+
     export default {
-        name: "Configurator"
+        name: "Configurator",
+
+        components:{
+            SubNavigation,
+        }
     }
 </script>
 
@@ -75,8 +82,12 @@
 
     .configurator {
         width: 100%;
-        height: 56px;
+        /*height: 56px;*/
         border-bottom: $border;
+        menu {
+            margin: 0;
+            padding: 0;
+        }
         nav {
                 color: $font_color;
                 div.collapse {

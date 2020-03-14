@@ -31,10 +31,10 @@
             </div>
             <div class="col-6 text-right social">
                 <a href="#">
-                    <img src="../..//img/icons8-youtube-squared.png" alt="icons8-youtube-squared.svg">
+                    <img src="../../img/icons8-youtube-squared.png" alt="icons8-youtube-squared.svg">
                 </a>
                 <a href="#">
-                    <img src="../..//img/icons8-facebook-old.png" alt="icons8-facebook-old.svg">
+                    <img src="../../img/icons8-facebook-old.png" alt="icons8-facebook-old.svg">
                 </a>
                 <a href="#">
                     <img src="../../img/icons8-instagram.png" alt="icons8-instagram.svg">

@@ -110,7 +110,7 @@
                         tag="button"
                         exact
                         active-class="active"
-                        to="/configurator"
+                        to="/configurator/selected_engine"
                 >
                     <span>Сконфигурировать</span>
                 </router-link>

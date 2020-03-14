@@ -25,7 +25,15 @@
                 </ul>
 
                 <div class="config">
-                    <a href="#">Сканфигурировать</a>
+                    <router-link
+                            class="nav-link ml-2 mr-2"
+                            tag="a"
+                            exact
+                            active-class="active"
+                            to="/configurator/selected_engine"
+                    >
+                        <span>Сконфигурировать</span>
+                    </router-link>
                 </div>
             </div>
         </nav>
