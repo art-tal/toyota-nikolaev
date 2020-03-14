@@ -30,7 +30,8 @@ export default new VueRouter({
         },
 
         {
-            path: '/select_model/:id',
+            // path: '/select_model/:id',
+            path: '/select_model',
             name: 'selectModel',
             component: SelectModel,
             children: [

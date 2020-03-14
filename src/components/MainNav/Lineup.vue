@@ -10,7 +10,7 @@
                     <div class="col-3 model" v-for="(model, key) in models" :key="key">
                         <div
                                 class="nav-link active text-left"
-                                @click="goSelectModel(model.id)">
+                                @click="goSelectModel(model)">
                             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
                             <h2>{{model.name}}</h2>
                             <h3 v-if="model.hybrid">+ Гибрид</h3>
@@ -71,6 +71,7 @@
 
         created() {
             this.getModel();
+            this.$store.state.car
         },
 
         methods: {
@@ -90,8 +91,10 @@
 
             },
 
-            goSelectModel(id) {
-                this.$router.push({name: "selectModel", params: {id: id}});
+            goSelectModel(model) {
+                this.$store.state.model = model;
+                this.$router.push({name: "selectModel"});
+                // this.$router.push({name: "selectModel", params: {id: model.id}});
             }
         },
 

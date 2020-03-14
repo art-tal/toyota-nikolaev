@@ -1,16 +1,16 @@
 <template>
     <section class="selectModel"
-             @selectedEquipment="selectedCar($event)"
+             @selectedEquipment="selectedModel($event)"
     >
 
         <sub-navigation></sub-navigation>
 
-        <div class="container-fluid"  :style="{'background-color': carColor.rgb, 'color': fontColor + '!important'}">
+        <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">
 
             <header class="row">
                 <h1 class="model col-10 text-left">
                     <span class="carModel font-weight-bold">
-                        {{equipment.model_name_pivot}}</span>
+                        {{computedEquipment.model_name_pivot}}</span>
 <!--                    <span class="carEquipment">-->
 <!--                        {{car.model_name_pivot}} - </span>-->
 <!--                    <small class="bodyType">{{car.bodyType}}</small>-->
@@ -20,7 +20,7 @@
                     <button class="openChoice btn row"
                             name="selectEquipment"
                             id="selectEquipment"
-                            :style="{'background-color': carColor.rgb, 'color': fontColor + '!important'}"
+                            :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}"
                             @click="choice()"
 
                     >
@@ -36,16 +36,19 @@
 
             </header>
 
-            <equipment v-if="showEquipment"
-                       :id="id"
-                       :photo="'http://lara.toyota.nikolaev.ua/storage/' + car.image"
-                       :color="carColor"
-            ></equipment>
+            <equipment v-if="showEquipment"></equipment>
+
+<!--            <equipment v-if="showEquipment"-->
+<!--                       :id="id"-->
+<!--                       :photo="'http://lara.toyota.nikolaev.ua/storage/' + model.image"-->
+<!--                       :color="modelColor"-->
+<!--            ></equipment>-->
 
 
 
-            <div class="compare text-left" v-show="!showEquipment">
-                <a href="#" class="text-decoration-none" :style="{'color': fontColor + '!important'}">
+
+            <div class="compare text-left" v-if="!showEquipment">
+                <a href="#" class="text-decoration-none" :style="{'color': fontColored + '!important'}">
 
                     <i class="fas fa-exchange-alt"></i>
                     <span>Сравнить</span>
@@ -63,7 +66,8 @@
                     </ul>
 
                     <div class="carPhoto col-9">
-                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + car.image" :alt="equipment.model_name_pivot">
+<!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.model_name_pivot">-->
+                        <img :src="photo" :alt="computedEquipment.model_name_pivot">
                     </div>
                 </div>
 
@@ -137,84 +141,76 @@
 
         data() {
             return {
-                id: this.$route.params.id,
+                model: {},
+                id: 0,
+                // id: this.$route.params.id,
                 showEquipment: false,
                 selectedColor: {},
                 equipments: [],
                 equipment: {},
-                carColor: "#fff",
+                modelColor: "#fff",
 
                 fontColor: "#202020",
 
-                car: {},
             }
         },
 
+        computed: {
+            photo() {
+                return this.$store.getters.modelImage;
+            },
+
+            computedEquipment() {
+                return this.$store.getters.equip;
+            },
+
+            computedColor() {
+                return this.$store.getters.colored;
+            },
+
+            fontColored() {
+                return this.getFontColor();
+            },
+        },
+
         created() {
-            new Promise( this.getCar )
-            .then(this.getEquipment)
-            .then( () => {
-                eventEmitter.$on('selectedEquipment', (equip) => {
-                    this.equipment = equip;
-                    // console.log(this.equipment);
-                    this.showEquipment = !this.showEquipment;
-                });
-            } )
-            .then( () => {
-                eventEmitter.$on('selectedColor', (color) => {
-                    this.carColor = color;
-                });
-            } );
-
-
-            // console.log('start');
+            this.model = this.$store.state.model;
+            this.id = this.$store.state.model.id;
+            // this.equipment = this.$store.state.equipment;
             // this.getCar();
-            // console.log('getCar');
-            // this.getEquipment();
-            // console.log('getEquipment');
-            // eventEmitter.$on('selectedEquipment', (equip) => {
-            //     this.equipment = equip;
-            //     // console.log(this.equipment);
-            //     this.showEquipment = !this.showEquipment;
-            // });
-            // console.log('selectedEquipment');
+            // this.getColorModel();
+            this.getEquipment();
+            eventEmitter.$on('selectedEquipment', () => {
+                this.showEquipment = !this.showEquipment;
+                console.log(this.showEquipment);
+            });
+            this.color = this.$store.state.color;
+
             // eventEmitter.$on('selectedColor', (color) => {
             //     this.carColor = color;
             // });
-            // console.log('selectedColor');
         },
-
-        // updated() {
-        //     eventEmitter.$on('selectedEquipment', (equip) => {
-        //         this.equipment = equip;
-        //         // console.log(this.equipment);
-        //         this.showEquipment = !this.showEquipment;
-        //         return this.showEquipment;
-        //     });
-        // },
 
         watch: {
             equipment() {
-                console.log(this.equipment);
-                eventEmitter.$on('selectedEquipment', (equip) => {
-                    this.equipment = equip;
-                    this.showEquipment = !this.showEquipment;
-                });
-                return this.equipment;
+                return this.$store.state.equipment;
             },
 
-            carColor() {
-                console.log(this.carColor);
+            modelColor() {
+                this.modelColor = this.$store.getters.colored;
                 this.getFontColor();
-                // this.getColoredCar();
-                return this.carColor;
+                return this.modelColor;
+            },
+
+            showEquipment() {
+                return this.showEquipment;
             },
         },
 
         methods: {
 
             choice() {
-                this.showEquipment = !this.showEquipment
+                this.showEquipment = !(this.showEquipment);
                 console.log(this.showEquipment);
             },
 
@@ -222,8 +218,9 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                 .then( (response) => {
                     this.equipments = response.data;
-                    this.equipment = this.equipments[0];
-                    console.log(this.equipment.mod_id);
+                    // this.equipment = this.equipments[0];
+                    this.$store.state.equipment = this.equipments[0];
+                    console.log(this.$store.state.equipment);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модификации");
@@ -231,36 +228,10 @@
                 } );
             },
 
-            getCar() {
-                axios.get( 'http://lara.toyota.nikolaev.ua/ajax/all_model')
-                   .then( (response) => {
-                        this.car = response.data[this.id - 1];
-                       console.log(this.car);
-                    })
-                   .catch((error) => {
-                   console.log('Произошла ошибка загрузки фото с сервера.');
-                   console.log(error);
-               })
-            },
-
-            // getColoredCar() {
-            //         axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod`,
-            //             {id: this.id,
-            //                 color_code: this.carColor.color_code})
-            //             .then((response) => {
-            //                 this.car.image = response.data;
-            //                 // console.log(this.equipments);
-            //             })
-            //             .catch((error) => {
-            //                 console.log("Ошибка, не возможно загрузить изображение автомобиля");
-            //                 console.log(error);
-            //             })
-            // },
-
-
-
             getFontColor: function () {
-                switch(this.carColor.rgb.toLowerCase()){
+                console.log(this.computedColor.rgb);
+                try{
+                switch(this.computedColor.rgb.toLowerCase()){
                     case '#000000'.toLowerCase():
                     case '#182B66'.toLowerCase():
                     case '#5C5653'.toLowerCase():
@@ -272,6 +243,10 @@
                     case '#F2F2F0'.toLowerCase():
                         return this.fontColor = '#202020';
                 }
+            } catch (e) {
+                    console.log( "Шрифты пролетели" );
+                }
+
             }
 
         }

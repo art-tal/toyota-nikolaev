@@ -8,6 +8,7 @@
                                 class="nav-item sample"
                                 @click="setColor(color, key)"
                             >
+
                                     <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
                                          :alt="color.color_name"
                                          :title="color.color_name + ' (' + color.color_code + ')'"
@@ -27,28 +28,27 @@
 
 <script>
     import axios from 'axios';
-    import {eventEmitter} from "@/main";
-    // import jQuery from "jquery";
-
-    // let $ = jQuery;
+    // import {eventEmitter} from "@/main";
 
     export default {
         name: "ColorsPanel",
 
-        props: ['mod_id'],
-
         data() {
             return {
+                mod_id: 0,
                 colors: [],
                 selectedColor: {},
             }
         },
 
         created() {
-            console.log('start colorPanel');
-            console.log(this.mod_id);
+            this.mod_id = this.$store.state.equipment.mod_id;
             this.getColors();
-            eventEmitter.$emit('selectedColor', this.colors[0]);
+                // eventEmitter.$emit('selectedColor', this.colors[0]);
+        },
+
+        computed: {
+
         },
 
         watch: {
@@ -60,7 +60,7 @@
 
         methods: {
             getColors() {
-              console.log(this.mod_id);
+              // console.log(this.mod_id);
               axios.get(
                   // `lara.toyota.nikolaev.ua/ajax/mod_color`,
                   `http://lara.toyota.nikolaev.ua/ajax/mod_color?id=33`,//${this.mod_id}
@@ -68,9 +68,12 @@
               )
               .then( (response) => {
                   this.colors = response.data;
+                  this.colors.forEach( (c) => { c.selected = false;} );
                   this.selectedColor = this.colors[1];
-                  console.log(this.selectedColor);
-                  eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
+                  this.selectedColor.selected = true;
+                  this.$store.state.color = this.selectedColor;
+                      // console.log(this.selectedColor);
+                  // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
               } )
               .catch( (error) => {
                   console.log("Ошибка, не возможно загрузить доступные цвета");
@@ -78,22 +81,20 @@
               } )
           },
 
+            // getColorImege(image) {
+            //     return this.$store.commit('colorImage', image);
+            // },
+
 
             setColor(color, key) {
-                eventEmitter.$emit('selectedColor', color);
+                // eventEmitter.$emit('selectedColor', color);
+                this.$store.state.color = color;
                 this.colors.forEach( (c) => { c.selected = false;} )
                 this.colors[key].selected = true;
-                console.log(this.colors);
-                // $('color').addClass('active');
+                console.log(key);
             },
 
-            // setColor: function (color) {
-            //     this.selectedColor = color;
-            //     this.car.carColor = color;
-            //     this.colors.forEach( (item) => {item.selected = false;});
-            //     color.selected = true;
-            //     this.car.photo.bigPhoto = this.getCar(this.car.modelCode, this.car.carColor.colorCode);
-            // },
+
         },
     }
 </script>
@@ -134,8 +135,8 @@
                         border: 1px solid #cccccc;
                         background-color: #fff;
                         position: absolute;
-                        top: 15px;
-                        left: 15px;
+                        top: 5px;
+                        left: 5px;
                     }
 
                 }

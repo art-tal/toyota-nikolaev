@@ -36,20 +36,31 @@
     export default {
         name: "Equipment",
 
-        props: ['id', 'photo', 'color'],
+        // props: ['id', 'photo', 'color'],
 
         data() {
             return {
+                id: 0,
+                color: {},
                 equipments: [],
                 equipment: {},
                 fontColor: "#202020",
             }
         },
 
+        computed: {
+            photo() {
+                return this.$store.getters.modelImage;
+            },
+        },
+
         created() {
+            this.id = this.$store.state.model.id;
+            this.color = this.$store.state.color;
             this.getEquipment();
             this.equipment = this.equipments[0];
-            eventEmitter.$emit('selectedEquipment', this.equipment);
+            this.$store.state.equipment = this.equipment;
+            // eventEmitter.$emit('selectedEquipment', this.equipment);
         },
 
         watch: {
@@ -73,10 +84,11 @@
                     });
             },
 
-            activeted(equip) {
+            activeted(equipment) {
+                this.$store.state.equipment = equipment;
                 // console.log(equip);
                 // this.$emit('selectedEquipment', equip);
-                eventEmitter.$emit('selectedEquipment', equip);
+                eventEmitter.$emit('selectedEquipment');
             },
 
             getFontColor: function (color) {
