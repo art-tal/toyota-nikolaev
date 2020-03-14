@@ -21,7 +21,7 @@
                             name="selectEquipment"
                             id="selectEquipment"
                             :style="{'background-color': carColor.rgb, 'color': fontColor + '!important'}"
-                            @click="showEquipment = !showEquipment"
+                            @click="choice()"
 
                     >
                         <span v-if="!showEquipment">
@@ -151,26 +151,55 @@
         },
 
         created() {
-            this.getCar();
-            this.getEquipment();
-            eventEmitter.$on('selectedEquipment', (equip) => {
-                this.equipment = equip;
-                // console.log(this.equipment);
-                this.showEquipment = !this.showEquipment;
-            });
-            eventEmitter.$on('selectedColor', (color) => {
-                this.carColor = color;
-            });
+            new Promise( this.getCar )
+            .then(this.getEquipment)
+            .then( () => {
+                eventEmitter.$on('selectedEquipment', (equip) => {
+                    this.equipment = equip;
+                    // console.log(this.equipment);
+                    this.showEquipment = !this.showEquipment;
+                });
+            } )
+            .then( () => {
+                eventEmitter.$on('selectedColor', (color) => {
+                    this.carColor = color;
+                });
+            } );
+
+
+            // console.log('start');
+            // this.getCar();
+            // console.log('getCar');
+            // this.getEquipment();
+            // console.log('getEquipment');
+            // eventEmitter.$on('selectedEquipment', (equip) => {
+            //     this.equipment = equip;
+            //     // console.log(this.equipment);
+            //     this.showEquipment = !this.showEquipment;
+            // });
+            // console.log('selectedEquipment');
+            // eventEmitter.$on('selectedColor', (color) => {
+            //     this.carColor = color;
+            // });
+            // console.log('selectedColor');
         },
 
-        beforeUpdate() {
-
-
-        },
+        // updated() {
+        //     eventEmitter.$on('selectedEquipment', (equip) => {
+        //         this.equipment = equip;
+        //         // console.log(this.equipment);
+        //         this.showEquipment = !this.showEquipment;
+        //         return this.showEquipment;
+        //     });
+        // },
 
         watch: {
             equipment() {
                 console.log(this.equipment);
+                eventEmitter.$on('selectedEquipment', (equip) => {
+                    this.equipment = equip;
+                    this.showEquipment = !this.showEquipment;
+                });
                 return this.equipment;
             },
 
@@ -179,16 +208,22 @@
                 this.getFontColor();
                 // this.getColoredCar();
                 return this.carColor;
-            }
+            },
         },
 
         methods: {
+
+            choice() {
+                this.showEquipment = !this.showEquipment
+                console.log(this.showEquipment);
+            },
 
             getEquipment() {
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                 .then( (response) => {
                     this.equipments = response.data;
                     this.equipment = this.equipments[0];
+                    console.log(this.equipment.mod_id);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модификации");
@@ -200,6 +235,7 @@
                 axios.get( 'http://lara.toyota.nikolaev.ua/ajax/all_model')
                    .then( (response) => {
                         this.car = response.data[this.id - 1];
+                       console.log(this.car);
                     })
                    .catch((error) => {
                    console.log('Произошла ошибка загрузки фото с сервера.');
@@ -208,7 +244,6 @@
             },
 
             // getColoredCar() {
-            //     axios.get(
             //         axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod`,
             //             {id: this.id,
             //                 color_code: this.carColor.color_code})
@@ -220,7 +255,6 @@
             //                 console.log("Ошибка, не возможно загрузить изображение автомобиля");
             //                 console.log(error);
             //             })
-            //     )
             // },
 
 
@@ -256,7 +290,7 @@
 
     .selectModel {
         .container-fluid {
-            background-color: #EDE7E1;
+            /*background-color: #EDE7E1;*/
             header {
                 padding: 50px 44px 20px 74px;
                 button.openChoice.btn {

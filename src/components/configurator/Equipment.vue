@@ -1,25 +1,25 @@
 <template>
-    <div class="allEquipment">
+    <div class="allEquipment container-fluid w-100">
 
-        <div class="carousel" :style="{'background-color': color, 'color': getFontColor(color)}">
-            <div class="equip"
+        <div class="carousel row" :style="{'color': fontColor}">
+            <div class="equip col-3"
                  v-for="equipment in equipments"
                  :key="equipment.model_name_pivot"
-                 class-active="active"
                  @click="activeted(equipment)"
             >
+<!--                :style="{'border-top': '4px solid' + color}"-->
                 <img :src="photo" :alt="equipment.model_name_pivot">
                 <h4>
                     <span><strong>{{equipment.model_name_pivot}} </strong></span>
 <!--                    <span>{{car.equipment.nameEquipment}} - </span>-->
 <!--                    <span>{{car.bodyType}}</span>-->
                 </h4>
-                <div class="body">
-                    <a href="#">
-                        <i class="fas fa-exchange-alt"></i>
-                        <span>Сравнить</span>
-                    </a>
-                </div>
+<!--                <div class="body">-->
+<!--                    <a href="#">-->
+<!--                        <i class="fas fa-exchange-alt"></i>-->
+<!--                        <span>Сравнить</span>-->
+<!--                    </a>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -42,6 +42,7 @@
             return {
                 equipments: [],
                 equipment: {},
+                fontColor: "#202020",
             }
         },
 
@@ -49,6 +50,12 @@
             this.getEquipment();
             this.equipment = this.equipments[0];
             eventEmitter.$emit('selectedEquipment', this.equipment);
+        },
+
+        watch: {
+            color() {
+                return this.color;
+            },
         },
 
         methods: {
@@ -70,20 +77,20 @@
                 // console.log(equip);
                 // this.$emit('selectedEquipment', equip);
                 eventEmitter.$emit('selectedEquipment', equip);
-                // $('this').addClass('active');
             },
 
             getFontColor: function (color) {
-                switch(color){
-                    case '#000000':
-                    case '#182B66':
-                    case '#5C5653':
-                    case '#740310':
-                        return '#FFFFFF';
-                    case '#FFFFFF':
-                    case '#EDE7E1':
-                    case '#F2F2F0':
-                        return '#202020';
+                switch(color.rgb.toLowerCase()){
+                    case '#000000'.toLowerCase():
+                    case '#182B66'.toLowerCase():
+                    case '#5C5653'.toLowerCase():
+                    case '#740310'.toLowerCase():
+                    case '#ff0000'.toLowerCase():
+                        return this.fontColor = '#FFFFFF';
+                    case '#FFFFFF'.toLowerCase():
+                    case '#EDE7E1'.toLowerCase():
+                    case '#F2F2F0'.toLowerCase():
+                        return this.fontColor = '#202020';
                 }
             }
         }
@@ -103,20 +110,25 @@
             position: static;
             width: 85%;
             margin: auto;
-            display: flex;
-             flex-wrap: nowrap;
+            /*display: flex;*/
+            flex-wrap: wrap;
             justify-content: center;
             align-items: stretch;
             .equip {
+                box-sizing: border-box;
                 width: 20%;
-                border-top: 5px solid #D1D6D8;
+                height: 200px;
+                /*border-top: 5px solid #D1D6D8;*/
                 padding: 30px 40px;
                 box-sizing: border-box;
                 &.active,
                 &:hover{
+                    overflow: hidden;
                     align-self: stretch;
-                    background-color: #BCC0C2;
+                    background-color: #cccccc;
                     border-top: 5px solid black;
+                    transform: scale(1.1);
+                    transition: all 500ms;
                 }
                    h4 {
                         font-size: 18px;

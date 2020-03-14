@@ -6,10 +6,12 @@
                             <li v-for="(color, key) in colors"
                                 :key="key"
                                 class="nav-item sample"
-                                @click="setColor(color)"
+                                @click="setColor(color, key)"
                             >
                                     <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
-                                         :alt="color.color_name">
+                                         :alt="color.color_name"
+                                         :title="color.color_name + ' (' + color.color_code + ')'"
+                                    >
                                     <div class="check text-center" v-if="color.selected">
                                         <i class="fas fa-check"></i>
                                     </div>
@@ -26,9 +28,9 @@
 <script>
     import axios from 'axios';
     import {eventEmitter} from "@/main";
-    import jQuery from "jquery";
+    // import jQuery from "jquery";
 
-    let $ = jQuery;
+    // let $ = jQuery;
 
     export default {
         name: "ColorsPanel",
@@ -43,7 +45,10 @@
         },
 
         created() {
+            console.log('start colorPanel');
+            console.log(this.mod_id);
             this.getColors();
+            eventEmitter.$emit('selectedColor', this.colors[0]);
         },
 
         watch: {
@@ -74,10 +79,12 @@
           },
 
 
-            setColor(color) {
+            setColor(color, key) {
                 eventEmitter.$emit('selectedColor', color);
-                color.selected = true;
-                $('color').addClass('active');
+                this.colors.forEach( (c) => { c.selected = false;} )
+                this.colors[key].selected = true;
+                console.log(this.colors);
+                // $('color').addClass('active');
             },
 
             // setColor: function (color) {
