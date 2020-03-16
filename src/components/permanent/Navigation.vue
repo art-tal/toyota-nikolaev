@@ -2,7 +2,7 @@
     <header class="container-fluid">
         <div class="row">
 
-            <nav class=" col-xl-7 col-lg-8 col-md-8 col-6 navbar navbar-expand-lg navbar-light">
+            <nav class="col-xl-7 col-lg-8 col-md-12 navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="#"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -99,7 +99,7 @@
 
 
 
-            <div class="dealers col-xl-5 col-lg-4 col-md-4 col-6">
+            <div class="dealers col-xl-5 col-lg-4 col-md-1">
                 <ul class="navbar-nav mr-auto text-right">
                     <li class="nav-item active ">
                         <router-link
@@ -247,7 +247,7 @@
     }
 
 
-    @media (min-width: 1200px) and (max-width: 1399.9px) {
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
         header {
             .row {
                 .dealers {
@@ -334,6 +334,10 @@
                 }
 
                 .dealers {
+                    height: 70px;
+                    position: absolute;
+                    right: 100px;
+                    top: 0;
                     ul {
                         li {
                             a {
@@ -354,6 +358,7 @@
 
     @media (max-width: 767.9px) {
         header {
+            min-width: 350px;
             .row {
                 nav.navbar {
                     .collapse {
@@ -378,6 +383,10 @@
                 }
 
                 .dealers {
+                    height: 70px;
+                    position: absolute;
+                    right: 100px;
+                    top: 0;
                     ul {
                         li {
                             a {
@@ -420,16 +429,15 @@
     }
 
     .navbar-brand {
-        margin-left: 40px;
-        /*padding: 0;*/
-        margin-right: 20px;
+        margin-left: 1vw;
+        margin-right: 0.5vw;
         display: inline-block;
         height: 100%;
-        width: 84px;
+        min-width: 84px;
         background-image: url(../../img/logo-toyota-sm.png);
         background-repeat: no-repeat;
         background-position: center center;
-        -webkit-background-size: 60%;
-        background-size: 60%;
+        -webkit-background-size: 70%;
+        background-size: 70%;
     }
 </style>

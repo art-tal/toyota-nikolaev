@@ -6,8 +6,8 @@
         </div>
 
         <div class="row">
-            <div class="all_model col-9 row">
-                    <div class="col-3 model" v-for="(model, key) in models" :key="key">
+            <div class="all_model col-lg-9 col-md-8 col-sm-12 row">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 model" v-for="(model, key) in models" :key="key">
                         <div
                                 class="nav-link active text-left"
                                 @click="goSelectModel(model)">
@@ -19,40 +19,43 @@
                 </div>
             </div>
 
-            <div class="col-3 buyers_tools text-left">
-                <h2>Инструменты покупателя</h2>
-                <ol>
-                    <li class="servies">
-                        <a href="#">
-                            <i class="fas fa-oil-can"></i>
-                            <span>Специальные сервисные компании</span>
-                        </a>
-                    </li>
-                    <li class="dilers">
-                        <a href="#">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Официальные дилеры</span>
-                        </a>
-                    </li>
-                    <li class="contact">
-                        <a href="#">
-                            <i class="fas fa-phone"></i>
-                            <span>Связаться с нами</span>
-                        </a>
-                    </li>
-                    <li class="test_drive">
-                        <a href="#">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Заказать тест-драйв</span>
-                        </a>
-                    </li>
-                    <li class="download">
-                        <a href="#">
-                            <i class="far fa-file-alt"></i>
-                            <span>Загрузить брошуры</span>
-                        </a>
-                    </li>
-                </ol>
+            <div class="col-lg-3 col-md-4 col-sm-12 buyers_tools text-left">
+                <div class="tools">
+                    <h2 class="font-weight-bold">Инструменты покупателя</h2>
+                    <ol>
+                        <li class="servies">
+                            <a href="#">
+                                <i class="fas fa-oil-can"></i>
+                                <span>Специальные сервисные компании</span>
+                            </a>
+                        </li>
+                        <li class="dilers">
+                            <a href="#">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Официальные дилеры</span>
+                            </a>
+                        </li>
+                        <li class="contact">
+                            <a href="#">
+                                <i class="fas fa-phone"></i>
+                                <span>Связаться с нами</span>
+                            </a>
+                        </li>
+                        <li class="test_drive">
+                            <a href="#">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Заказать тест-драйв</span>
+                            </a>
+                        </li>
+                        <li class="download">
+                            <a href="#">
+                                <i class="far fa-file-alt"></i>
+                                <span>Загрузить брошуры</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+
             </div>
         </div>
     </section>
@@ -124,6 +127,7 @@
         }
 
         .row {
+            margin: 0;
             padding: 0 44px 0 74px;
             .all_model {
                 padding: 15px;
@@ -137,7 +141,7 @@
                         border-bottom: 1px solid #D7D7D7;
                         text-decoration: none;
                         img {
-                            width: 90%;
+                            width: 100%;
                         }
                         h2 {
                             font-size: 1.3rem;
@@ -157,37 +161,125 @@
                 }
             }
             .buyers_tools {
-                font-size: 1.5rem;
-                color: $font_color;
-                padding: 25px;
-                h2 {
+                padding: 0;
+                width: 100%;
+                box-sizing: border-box;
+                .tools{
                     font-size: 1.5rem;
-                }
-                ol {
-                    padding: 0;
-                    li {
-                        border: 1px solid #f0f0f0;
-                        background-color: #fff;
-                        list-style-type: none;
-                        a {
-                            display: block;
-                            color: $font_color;
-                            text-decoration: none;
-                            padding: 18px 26px 22px;
-                            i {
-                                margin-right: 20px;
+                    color: $font_color;
+                    padding: 25px 0 25px 25px;
+
+                    h2 {
+                        font-size: 1.5rem;
+                        margin: 10px;
+                    }
+                    ol {
+                        padding: 0;
+                        li {
+                            border: 1px solid #f0f0f0;
+                            background-color: #fff;
+                            list-style-type: none;
+                            a {
+                                display: block;
+                                color: $font_color;
+                                text-decoration: none;
+                                padding: 18px 26px 22px;
+                                i {
+                                    margin-right: 20px;
+                                    color: #a8aaac;
+                                }
                             }
-                        }
-                        &:hover {
-                            a i {
-                                color: #E50000;
+                            &:hover {
+                                a i {
+                                    color: #E50000;
+                                }
                             }
-                        }
                         }
                     }
+                }
+
                 }
             }
 
     }
+
+
+    /*@media (min-width: 1200px) and (max-width: 1439.9px) {*/
+
+    /*}*/
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+        section.container-fluid {
+            padding: 0;
+            .car_type {
+                padding: 6px 0px 6px;
+            }
+
+            .row {
+                padding: 0 22px;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        section.container-fluid {
+            padding: 0;
+            .car_type {
+                padding: 6px 0px 6px;
+            }
+            .row {
+                padding: 0 22px;
+                .buyers_tools {
+                    .tools{
+                        font-size: 1.5rem;
+                        color: $font_color;
+                        padding: 25px 0 25px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    @media (min-width: 576px) and  (max-width: 767.9px) {
+        section.container-fluid {
+            padding: 0;
+            .car_type {
+                padding: 6px 0px 6px;
+            }
+            .row {
+                padding: 0 15px;
+                .buyers_tools {
+                    .tools{
+                        font-size: 1.5rem;
+                        color: $font_color;
+                        padding: 25px 0 25px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.9px){
+        section.container-fluid {
+            padding: 0;
+            .car_type {
+                padding: 6px 0px 6px;
+            }
+            .row {
+                padding: 0 15px;
+                .buyers_tools {
+                    .tools{
+                        font-size: 1.5rem;
+                        color: $font_color;
+                        padding: 25px 0 25px;
+                    }
+
+                }
+            }
+        }
+    }
+
 
 </style>
