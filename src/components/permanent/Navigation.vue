@@ -2,7 +2,7 @@
     <header class="container-fluid">
         <div class="row">
 
-            <nav class=" col-7 navbar navbar-expand-lg navbar-light">
+            <nav class=" col-xl-7 col-lg-8 col-md-8 col-6 navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="#"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -99,7 +99,7 @@
 
 
 
-            <div class="dealers col-5">
+            <div class="dealers col-xl-5 col-lg-4 col-md-4 col-6">
                 <ul class="navbar-nav mr-auto text-right">
                     <li class="nav-item active ">
                         <router-link
@@ -245,6 +245,159 @@
 
         }
     }
+
+
+    @media (min-width: 1200px) and (max-width: 1399.9px) {
+        header {
+            .row {
+                .dealers {
+                    ul {
+                        li {
+                            a {
+                                i {
+                                    margin-right: 5px;
+                                }
+                                span {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+        header {
+            .row {
+                nav.navbar {
+                    .collapse {
+                        ul {
+                            li {
+                                .nav-link {
+                                    padding: 0 10px;
+                                }
+
+                            }
+                        }
+                    }
+
+
+                }
+
+                .dealers {
+                    ul {
+                        li {
+                            a {
+                                i {
+                                    margin-right: 5px;
+                                }
+                                span {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        header {
+            .row {
+                nav.navbar {
+                    .collapse {
+                        ul {
+                            position: absolute;
+                            width: 100%;
+                            height: 50px;
+                            display: block;
+                            li {
+                                position: relative;
+                                z-index: 5;
+                                background-color: #fff;
+                                width: 100%;
+                                .nav-link {
+                                    &.active {
+                                        background-color: #E50000;
+                                        color: #fff;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .dealers {
+                    ul {
+                        li {
+                            a {
+                                i {
+                                    margin-right: 5px;
+                                }
+                                span {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        header {
+            .row {
+                nav.navbar {
+                    .collapse {
+                        ul {
+                            height: 50px;
+                            display: block;
+                            li {
+                                position: relative;
+                                z-index: 5;
+                                background-color: #fff;
+                                width: 100%;
+                                .nav-link {
+                                    &.active {
+                                        background-color: #E50000;
+                                        color: #fff;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .dealers {
+                    ul {
+                        li {
+                            a {
+                                i {
+                                    margin-right: 5px;
+                                }
+                                span {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+
+
 
 </style>
 <style scoped>
