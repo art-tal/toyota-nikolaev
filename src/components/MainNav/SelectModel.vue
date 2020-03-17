@@ -56,7 +56,7 @@
             </div>
 
             <div class="carView row">
-                <div class="carDescription col-xl-10 col-md-10 col-12 row">
+                <div class="carDescription col-xl-10 col-lg-11 col-12 row">
                     <ul class="description col-xl-3 col-12 text-left">
                         <li v-for="(desc, index) in model.description"
                             :key="index"
@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="carColors col-xl-2 col-md-2 col-12">
+                <div class="carColors col-xl-2 col-lg-1 col-12">
                     <colors-panel
                             :mod_id="equipment.mod_id"
                     ></colors-panel>
@@ -310,6 +310,7 @@
             .carView {
                 margin: 0 20px 0 74px;
                 padding-right: 0;
+                justify-content: space-between;
                 .carDescription {
                     .description {
                         list-style-type: none;
@@ -336,6 +337,7 @@
 
                 .carColors{
                     align-self: flex-end;
+                    margin-bottom: 15px;
                 }
             }
         }
@@ -385,25 +387,21 @@
                     padding: 50px 30px 10px 40px;
                 }
                 .compare {
-                    margin: 0px 30px 0 40px;
+                    margin: 0px 10px 0 40px;
                 }
                 .carView {
-                    margin: 0 30px 0 40px;
+                    margin: 0 0px 0 40px;
                     .carDescription {
                         .description {
                             line-height: 2.5rem;
                         }
                         .carPhoto {
                             margin: auto;
-                            img {
-                                width: 100%;
-                                bottom: -58px;
-                            }
                         }
                     }
 
                     .carColors{
-                        align-self: flex-end;
+                        align-self: flex-start;
                     }
                 }
             }
@@ -445,6 +443,7 @@
                 }
                 .carView {
                     margin: 0 20px;
+                    position: relative;
                     .carDescription {
                         .description {
                             line-height: 3rem;
@@ -459,6 +458,10 @@
                     }
 
                     .carColors{
+                        height: 100px;
+                        position: absolute;
+                        bottom: 50px;
+                        z-index: 999;
                         align-self: flex-end;
                     }
                 }

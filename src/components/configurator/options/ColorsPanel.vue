@@ -109,7 +109,7 @@
 
     .carColors.container {
         padding: 0;
-        margin: 0;
+        margin: 20px 0;
         div#navbarNav.row.navbar-collapse {
             ul.sampleOfColor {
                 list-style-type: none;
@@ -154,13 +154,53 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
+        .carColors.container {
+            padding: 0;
+            margin: 0;
+            div#navbarNav.row.navbar-collapse {
+                ul.sampleOfColor {
+                    float: right;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    li.sample {
+                        padding: 5px;
+                        position: relative;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            border: 2px solid #cccccc;
+                            &:hover,
+                            &.active {
+                                box-shadow: 0 0 5px 2px #eeeeee;
+                                transform: scale(1.1);
+                                transition: all 500ms;
+                            }
+                        }
+                        .check {
+                            color: red;
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50%;
+                            border: 1px solid #cccccc;
+                            background-color: #fff;
+                            position: absolute;
+                            top: 5px;
+                            left: 5px;
+                        }
 
+                    }
+                }
+            }
+        }
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
         .carColors.container {
             div#navbarNav.row.navbar-collapse {
                 ul.sampleOfColor {
+                    /*flex-direction: column;*/
                     justify-content: flex-start;
                     li.sample {
                         padding: 5px;
