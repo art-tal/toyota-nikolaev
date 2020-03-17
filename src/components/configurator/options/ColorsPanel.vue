@@ -1,8 +1,8 @@
 <template>
     <div class="carColors container navbar navbar-expand-lg">
-        <div class="col row collapse navbar-collapse" id="navbarNav">
+        <div class="row collapse navbar-collapse" id="navbarNav">
 
-                        <ul class="sampleOfColor col-8 navbar-nav text-left">
+                        <ul class="sampleOfColor navbar-nav">
                             <li v-for="(color, key) in colors"
                                 :key="key"
                                 class="nav-item sample"
@@ -102,17 +102,22 @@
 <style lang="scss" scoped>
     @import '../../../styles/variables';
 
-    .carColors {
-        /*background-color: #fff;*/
-        padding: 5px;
-        /*filter: brightness(50%);*/
-        div.row {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .carColors.container {
+        padding: 0;
+        margin: 0;
+        div#navbarNav.row.navbar-collapse {
             ul.sampleOfColor {
                 list-style-type: none;
                 padding: 0;
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
                 li.sample {
-                    /*display: inline-block;*/
                     padding: 5px;
                     position: relative;
                     img {
@@ -142,6 +147,56 @@
                 }
             }
         }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        .carColors.container {
+            div#navbarNav.row.navbar-collapse {
+                ul.sampleOfColor {
+                    justify-content: flex-start;
+                    li.sample {
+                        padding: 5px;
+                        position: relative;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            border: 2px solid #cccccc;
+                            &:hover,
+                            &.active {
+                                box-shadow: 0 0 5px 2px #eeeeee;
+                                transform: scale(1.1);
+                                transition: all 500ms;
+                            }
+                        }
+                        .check {
+                            color: red;
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50%;
+                            border: 1px solid #cccccc;
+                            background-color: #fff;
+                            position: absolute;
+                            top: 5px;
+                            left: 5px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.9px) {
+
     }
 
 </style>

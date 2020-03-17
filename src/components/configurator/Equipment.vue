@@ -2,18 +2,24 @@
     <div class="allEquipment container-fluid w-100">
 
         <div class="carousel row" :style="{'color': fontColor}">
-            <div class="equip col-3"
+            <div class="equip col-xl-3 col-lg-4 col-md-6 col-12"
                  v-for="equipment in equipments"
                  :key="equipment.model_name_pivot"
                  @click="activeted(equipment)"
             >
 <!--                :style="{'border-top': '4px solid' + color}"-->
                 <img :src="photo" :alt="equipment.model_name_pivot">
-                <h4>
+                <h4 :style="{'color': fontColor}">
                     <span><strong>{{equipment.model_name_pivot}} </strong></span>
 <!--                    <span>{{car.equipment.nameEquipment}} - </span>-->
 <!--                    <span>{{car.bodyType}}</span>-->
                 </h4>
+                <ul class="equip_desc">
+                    <li v-for="(desc, key) in equipment.description"
+                        :key="key"
+                        :style="{'color': fontColor}"
+                    >{{desc}}</li>
+                </ul>
 <!--                <div class="body">-->
 <!--                    <a href="#">-->
 <!--                        <i class="fas fa-exchange-alt"></i>-->
@@ -60,6 +66,7 @@
             this.getEquipment();
             this.equipment = this.equipments[0];
             this.$store.state.equipment = this.equipment;
+            this.getFontColor();
             // eventEmitter.$emit('selectedEquipment', this.equipment);
         },
 
@@ -76,6 +83,15 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                     .then((response) => {
                         this.equipments = response.data;
+                        ///////////////////////////
+                        this.equipments.forEach( (eq) => {
+                            eq.description = [
+                                "Светодиодные дневные ходовые огни",
+                                "Круиз-контроль",
+                                "6 громкоговорителей",
+                                "Двухзонный климат-контроль"
+                            ];} );
+                        //////////////////////////////
                         // console.log(this.equipments);
                     })
                     .catch((error) => {
@@ -91,19 +107,26 @@
                 eventEmitter.$emit('selectedEquipment');
             },
 
-            getFontColor: function (color) {
-                switch(color.rgb.toLowerCase()){
-                    case '#000000'.toLowerCase():
-                    case '#182B66'.toLowerCase():
-                    case '#5C5653'.toLowerCase():
-                    case '#740310'.toLowerCase():
-                    case '#ff0000'.toLowerCase():
-                        return this.fontColor = '#FFFFFF';
-                    case '#FFFFFF'.toLowerCase():
-                    case '#EDE7E1'.toLowerCase():
-                    case '#F2F2F0'.toLowerCase():
-                        return this.fontColor = '#202020';
+            getFontColor: function () {
+                console.log(this.color.rgb);
+                try{
+
+                    switch(this.color.rgb.toLowerCase()){
+                        case '#000000'.toLowerCase():
+                        case '#182B66'.toLowerCase():
+                        case '#5C5653'.toLowerCase():
+                        case '#740310'.toLowerCase():
+                        case '#ff0000'.toLowerCase():
+                            return this.fontColor = '#FFFFFF';
+                        case '#FFFFFF'.toLowerCase():
+                        case '#EDE7E1'.toLowerCase():
+                        case '#F2F2F0'.toLowerCase():
+                            return this.fontColor = '#202020';
+                    }
+                } catch (e) {
+                    console.log( "Шрифты пролетели" );
                 }
+
             }
         }
     }
@@ -114,10 +137,9 @@
 
     .allEquipment {
         width: 100%;
-        position: relative;
-        /*background-color: #D1D6D8;*/
-        filter: brightness(80%);
         margin: 0;
+        position: relative;
+        background-color: rgba(0,0,0,0.3);
         .carousel {
             position: static;
             width: 85%;
@@ -128,24 +150,30 @@
             align-items: stretch;
             .equip {
                 box-sizing: border-box;
-                width: 20%;
-                height: 200px;
-                /*border-top: 5px solid #D1D6D8;*/
                 padding: 30px 40px;
-                box-sizing: border-box;
+                img {
+                    width: 100%;
+                }
+                .equip_desc {
+                    display: none;
+                }
                 &.active,
                 &:hover{
                     overflow: hidden;
                     align-self: stretch;
-                    background-color: #cccccc;
+                    background-color: rgba(0,0,0,0.25);
                     border-top: 5px solid black;
-                    transform: scale(1.1);
-                    transition: all 500ms;
-                }
-                   h4 {
-                        font-size: 18px;
-                        margin-bottom: 15px;
+                    color: #000;
+                    img, h4 {
+                        transform: scale(1.1);
+                        transition: all 700ms;
+
                     }
+                }
+                h4 {
+                    font-size: 18px;
+                    margin-bottom: 15px;
+                }
                     a {
                         color: $font_color;
                         font-size: 18px;
@@ -173,6 +201,119 @@
         }
 
 
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        .allEquipment {
+            .carousel {
+                width: 100%;
+                padding: 5px;
+                .equip {
+                    padding: 10px 15px;
+                    .equip_desc {
+                        margin: 0;
+                        padding: 0;
+                        /*list-style-type: none;*/
+                        list-style-position: inside;
+                        display: block !important;
+                        li {
+                            text-align: left;
+                            font-size: 1.4rem;
+                            line-height: 1.5;
+                        }
+                    }
+                    h4 {
+                        font-size: 18px;
+                        margin-bottom: 15px;
+                    }
+                    .equip_desc {
+                        display: none;
+                    }
+                    a {
+                        color: $font_color;
+                        font-size: 18px;
+                        span{
+                            display: inline-block;
+                            margin-left: 10px;
+                        }
+                    }
+
+                }
+            }
+            /*.carousel-control-prev {*/
+            /*    width: 7.5%;*/
+            /*    height: 100%;*/
+            /*    left: 0;*/
+            /*    text-align: right;*/
+            /*    justify-content: center;*/
+            /*}*/
+            /*.carousel-control-next {*/
+            /*    width: 7.5%;*/
+            /*    height: 100%;*/
+            /*    right: 0;*/
+            /*}*/
+
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        .allEquipment {
+            .carousel {
+                width: 100%;
+                padding: 5px;
+                .equip {
+                    padding: 10px 15px;
+                    .equip_desc {
+                        margin: 0;
+                        padding: 0;
+                        list-style-position: inside;
+                        display: block !important;
+                        li {
+                            text-align: left;
+                            font-size: 1.8rem;
+                            line-height: 1.5;
+                        }
+                    }
+                    h4 {
+                        font-size: 2.2rem;
+                        margin-bottom: 15px;
+                    }
+                    .equip_desc {
+                        display: none;
+                    }
+                    a {
+                        color: $font_color;
+                        font-size: 18px;
+                        span{
+                            display: inline-block;
+                            margin-left: 10px;
+                        }
+                    }
+
+                }
+            }
+            /*.carousel-control-prev {*/
+            /*    width: 7.5%;*/
+            /*    height: 100%;*/
+            /*    left: 0;*/
+            /*    text-align: right;*/
+            /*    justify-content: center;*/
+            /*}*/
+            /*.carousel-control-next {*/
+            /*    width: 7.5%;*/
+            /*    height: 100%;*/
+            /*    right: 0;*/
+            /*}*/
+
+        }
+    }
 
 
 </style>

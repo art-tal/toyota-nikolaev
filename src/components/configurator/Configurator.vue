@@ -80,6 +80,11 @@
 <style lang="scss" scoped>
     @import '../../styles/variables';
 
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
     .configurator {
         width: 100%;
         /*height: 56px;*/
@@ -132,6 +137,22 @@
                 font-size: 1.5rem;
             }
         }
+
+    }
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+
+    }
+
+    @media (max-width: 767.9px) {
 
     }
 </style>

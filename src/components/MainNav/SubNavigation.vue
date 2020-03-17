@@ -1,6 +1,6 @@
 <template>
     <menu>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand navbar-dark">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@
     menu {
         box-sizing: border-box;
         width: 100%;
-        nav.navbar.navbar-expand-lg {
+        nav.navbar {
             padding: 0px 150px;
             font-size: 1.3rem;
             background-color: #000;
@@ -80,7 +80,6 @@
                     border-left: 1px solid #ffffff;
                     padding: 0 20px;
                     text-align: right;
-                    text-align: right;
                     a {
                         color: rgba(255,255,255,0.5);
                         &:hover {
@@ -93,5 +92,37 @@
         }
 
     }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        menu {
+            nav.navbar {
+                padding: 0px;
+
+            }
+
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        menu {
+            nav.navbar {
+                padding: 0;
+                .collapse {
+                    ul {
+                        li.nav-item {
+                            padding: 0 10px;
+                        }
+                    }
+                    .config {
+                        padding: 0 5px;
+
+                    }
+                }
+            }
+
+        }
+    }
+
+    /*@media (min-width: 768px) and (max-width: 991.9px)*/
 
 </style>

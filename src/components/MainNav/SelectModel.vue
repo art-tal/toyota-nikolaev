@@ -8,7 +8,7 @@
         <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">
 
             <header class="row">
-                <h1 class="model col-10 text-left">
+                <h1 class="model col-xl-10 col-lg-9 col-md-6 col-12 text-left">
                     <span class="carModel font-weight-bold">
                         {{computedEquipment.model_name_pivot}}</span>
 <!--                    <span class="carEquipment">-->
@@ -16,7 +16,7 @@
 <!--                    <small class="bodyType">{{car.bodyType}}</small>-->
                 </h1>
 
-                <div class="col-2">
+                <div class="col-xl-2 col-lg-3 col-md-6 col-12">
                     <button class="openChoice btn row"
                             name="selectEquipment"
                             id="selectEquipment"
@@ -56,22 +56,22 @@
             </div>
 
             <div class="carView row">
-                <div class="carDescription col-9 row">
-                    <ul class="description col-3 text-left">
-<!--                        <li v-for="(desc, index) in car.description"-->
-<!--                            :key="index"-->
-<!--                            :style="{'color': getFontColor(car.carColor.rgb )+ '!important'}"-->
-<!--                        >-->
-<!--                            {{desc}}</li>-->
+                <div class="carDescription col-xl-10 col-md-10 col-12 row">
+                    <ul class="description col-xl-3 col-12 text-left">
+                        <li v-for="(desc, index) in model.description"
+                            :key="index"
+                            :style="{'color': fontColored + '!important'}"
+                        >
+                            {{desc}}</li>
                     </ul>
 
-                    <div class="carPhoto col-9">
+                    <div class="carPhoto col-xl-9 col-12">
 <!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.model_name_pivot">-->
                         <img :src="photo" :alt="computedEquipment.model_name_pivot">
                     </div>
                 </div>
 
-                <div class="carColors col">
+                <div class="carColors col-xl-2 col-md-2 col-12">
                     <colors-panel
                             :mod_id="equipment.mod_id"
                     ></colors-panel>
@@ -81,23 +81,23 @@
             </div>
         </div>
 
-<!--        <div class="specifications row justify-content-center">-->
-<!--            <div class="fuelConsumption col-2">-->
-<!--                <p>Расход топлива</p>-->
-<!--                <span class="h1">{{car.fuelConsumption}}</span>-->
-<!--                <span class="font-weight-bold"> л/100 км</span>-->
-<!--            </div>-->
-<!--            <div class="maxSpeed col-2">-->
-<!--                <p>Максимальная мощность</p>-->
-<!--                <span class="h1">{{car.maxPower}}</span>-->
-<!--                <span class="font-weight-bold"> л.с.</span>-->
-<!--            </div>-->
-<!--            <div class="maxPower col-2">-->
-<!--                <p>Максимальная скорость</p>-->
-<!--                <span class="h1">{{car.maxSpeed}}</span>-->
-<!--                <span class="font-weight-bold"> км/ч</span>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="specifications row justify-content-center">
+            <div class="fuelConsumption col-md-2 col-4">
+                <p>Расход топлива</p>
+                <span class="h1">{{model.fuelConsumption}}</span>
+                <span class="font-weight-bold"> л/100 км</span>
+            </div>
+            <div class="maxSpeed col-md-2 col-4">
+                <p>Максимальная мощность</p>
+                <span class="h1">{{model.maxPower}}</span>
+                <span class="font-weight-bold"> л.с.</span>
+            </div>
+            <div class="maxPower col-md-2 col-4">
+                <p>Максимальная скорость</p>
+                <span class="h1">{{model.maxSpeed}}</span>
+                <span class="font-weight-bold"> км/ч</span>
+            </div>
+        </div>
 
         <div class="requestService row justify-content-center">
             <div class="col-6 text-right">
@@ -176,6 +176,17 @@
         created() {
             this.model = this.$store.state.model;
             this.id = this.$store.state.model.id;
+///////////////////////////////////////////////////////
+            this.model.description = [
+                "Светодиодные дневные ходовые огни",
+                "Круиз-контроль",
+                "6 громкоговорителей",
+                "Двухзонный климат-контроль"
+            ];
+                this.model.maxSpeed = 210;
+                this.model.maxPower = 181;
+                this.model.fuelConsumption = 8.3;
+//////////////////////////////////////////////////////
             // this.equipment = this.$store.state.equipment;
             // this.getCar();
             // this.getColorModel();
@@ -265,7 +276,6 @@
 
     .selectModel {
         .container-fluid {
-            /*background-color: #EDE7E1;*/
             header {
                 padding: 50px 44px 20px 74px;
                 button.openChoice.btn {
@@ -297,13 +307,13 @@
                     }
                 }
             }
-
             .carView {
-                margin: 0 44px 0 74px;
+                margin: 0 20px 0 74px;
+                padding-right: 0;
                 .carDescription {
                     .description {
                         list-style-type: none;
-                        font-size: 16px;
+                        font-size: 1.6rem;
                         color: $font_color;
                         text-align: left;
                         margin-top: 30px;
@@ -314,8 +324,10 @@
                     }
                     .carPhoto {
                         position: relative;
+                        margin: auto;
                         img {
-                            width: 80%;
+                            /*width: 800px;*/
+                            width: 100%;
                             position: relative;
                             bottom: -58px;
                         }
@@ -350,6 +362,199 @@
                 }
             }
 
+        }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+        .selectModel {
+            .container-fluid {
+                header {
+                    padding: 50px 30px 20px 40px;
+                }
+                .carView {
+                    margin: 0 30px 0 40px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+        .selectModel {
+            .container-fluid {
+                header {
+                    padding: 50px 30px 10px 40px;
+                }
+                .compare {
+                    margin: 0px 30px 0 40px;
+                }
+                .carView {
+                    margin: 0 30px 0 40px;
+                    .carDescription {
+                        .description {
+                            line-height: 2.5rem;
+                        }
+                        .carPhoto {
+                            margin: auto;
+                            img {
+                                width: 100%;
+                                bottom: -58px;
+                            }
+                        }
+                    }
+
+                    .carColors{
+                        align-self: flex-end;
+                    }
+                }
+            }
+
+            .specifications.row {
+                margin-top: 25px;
+                p {
+                    font-size: 1.6rem;
+                }
+                .h1 {
+                    font-size: 4rem;
+                }
+                .h1 + span {
+                    font-size: 1.6rem;
+                }
+            }
+            .requestService.row {
+                margin: 60px auto 100px;
+                div {
+                    padding: 0 10px;
+                    button {
+                        @include button;
+                        min-width: 250px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        .selectModel {
+            .container-fluid {
+                header {
+                    padding: 50px 20px 10px 20px;
+                }
+                .compare {
+                    margin: 0px 20px;
+                }
+                .carView {
+                    margin: 0 20px;
+                    .carDescription {
+                        .description {
+                            line-height: 3rem;
+                        }
+                        .carPhoto {
+                            margin: auto;
+                            img {
+                                width: 100%;
+                                bottom: -50px;
+                            }
+                        }
+                    }
+
+                    .carColors{
+                        align-self: flex-end;
+                    }
+                }
+            }
+
+            .specifications.row {
+                margin-top: 25px;
+                p {
+                    font-size: 1.6rem;
+                }
+                .h1 {
+                    font-size: 4rem;
+                }
+                .h1 + span {
+                    font-size: 1.6rem;
+                }
+            }
+            .requestService.row {
+                margin: 60px auto 100px;
+                div {
+                    padding: 0 10px;
+                    button {
+                        @include button;
+                        min-width: 250px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        .selectModel {
+            .container-fluid {
+                header {
+                    padding: 50px 20px 10px;
+                    flex-direction: column-reverse;
+                    h1 {
+                        font-size: 3rem;
+                    }
+                    button.openChoice.btn {
+                        margin-bottom: 15px;
+                        width: 100%;
+                        text-align: center;
+                        i {
+                            position: static;
+                        }
+                    }
+                }
+                .compare {
+                    margin: 0 20px;
+                }
+                .carView {
+                    margin: 0 20px;
+                    .carDescription {
+                        .description {
+                            font-size: 2rem;
+                            line-height: 3rem;
+                        }
+                        .carPhoto {
+                            margin: 0;
+                            padding: 0;
+                            img {
+                                width: 100%;
+                                bottom: -8vw;
+                            }
+                        }
+                    }
+
+                    .carColors{
+                        align-self: flex-end;
+                    }
+                }
+            }
+
+            .specifications.row {
+                .col-4 {
+                    align-self: flex-end;
+                    p {
+                        font-size: 1.6rem;
+                    }
+                }
+
+            }
+            .requestService.row {
+                margin: 60px auto 100px;
+                div {
+                    padding: 0 10px;
+                    button, .nav-link {
+                        min-width: 100%;
+                        width: 100%;
+                        padding: 10px 5px;
+                    }
+                }
+
+            }
         }
     }
 
