@@ -42,13 +42,10 @@
         },
 
         created() {
-            this.mod_id = this.$store.state.equipment.mod_id;
+            // this.mod_id = this.$store.state.equipment.mod_id;
+            this.mod_id = localStorage.mod_id;
             this.getColors();
                 // eventEmitter.$emit('selectedColor', this.colors[0]);
-        },
-
-        computed: {
-
         },
 
         watch: {
@@ -71,6 +68,7 @@
                   this.colors.forEach( (c) => { c.selected = false;} );
                   this.selectedColor = this.colors[1];
                   this.selectedColor.selected = true;
+                  localStorage.color = JSON.stringify( this.selectedColor );
                   this.$store.state.color = this.selectedColor;
                       // console.log(this.selectedColor);
                   // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
@@ -91,6 +89,7 @@
                 this.$store.state.color = color;
                 this.colors.forEach( (c) => { c.selected = false;} )
                 this.colors[key].selected = true;
+                localStorage.color = JSON.stringify( color );
                 console.log(key);
             },
 

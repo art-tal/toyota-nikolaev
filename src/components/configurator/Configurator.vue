@@ -71,6 +71,13 @@
     export default {
         name: "Configurator",
 
+        data() {
+            return {
+                id_mod: this.$route.params.id_params.id_mod,
+                id_equip: this.$route.params.id_params.id_equip,
+            }
+        },
+
         components:{
             SubNavigation,
         }

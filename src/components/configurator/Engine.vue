@@ -100,180 +100,214 @@
 </template>
 
 <script>
+    import axios from "axios";
+    // import jQuery from "jquery";
+    //
+    // let $ = jQuery;
+
     export default {
         name: "SelectedEngine",
 
         data() {
             return {
-                equipments: [
-                    {
-                        model:"Camry",
-                        modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: {
-                            nameEquipment: "Comfort",
-                            standart: [
-                                'Світлодіодні денні ходові вогні',
-                                'Круїз-контроль',
-                                '6 гучномовців',
-                                'Двозонний клімат-контроль'
-                            ]
-                        },
-                        bodyType: "Седан бизнес-класса",
-                        carColor: "#EDE7E1",
-                        wheels: "",
-                        description: [
-                            "Светодиодные дневные ходовые огни",
-                            "Круиз-контроль",
-                            "6 громкоговорителей",
-                            "Двухзонный климат-контроль"
-                        ],
-                        maxSpeed: 210,
-                        maxPower: 181,
-                        fuelConsumption: 8.3,
-                        photo:
-                            "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
-                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png",
-                        engine: {
-                            nameOfEngine: 'Dual VVT-i',
-                            valueOfEngine: '2,5 л',
-                            typeOfEngine: 'Бензиновый',
-                            maxPower: '181 к. с.',
-                            info: ['Комбінований цикл: 8,3 л/100 км',
-                                'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
-                        },
-                        transmision: "6-ступ. автомат. (Передній привод)"
+                // equipments: [
+                //     {
+                //         model:"Camry",
+                //         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
+                //         equipment: {
+                //             nameEquipment: "Comfort",
+                //             standart: [
+                //                 'Світлодіодні денні ходові вогні',
+                //                 'Круїз-контроль',
+                //                 '6 гучномовців',
+                //                 'Двозонний клімат-контроль'
+                //             ]
+                //         },
+                //         bodyType: "Седан бизнес-класса",
+                //         carColor: "#EDE7E1",
+                //         wheels: "",
+                //         description: [
+                //             "Светодиодные дневные ходовые огни",
+                //             "Круиз-контроль",
+                //             "6 громкоговорителей",
+                //             "Двухзонный климат-контроль"
+                //         ],
+                //         maxSpeed: 210,
+                //         maxPower: 181,
+                //         fuelConsumption: 8.3,
+                //         photo:
+                //             "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
+                //         bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png",
+                //         engine: {
+                //             nameOfEngine: 'Dual VVT-i',
+                //             valueOfEngine: '2,5 л',
+                //             typeOfEngine: 'Бензиновый',
+                //             maxPower: '181 к. с.',
+                //             info: ['Комбінований цикл: 8,3 л/100 км',
+                //                 'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
+                //         },
+                //         transmision: "6-ступ. автомат. (Передній привод)"
+                //
+                //     },
+                //     {
+                //         model:"Camry",
+                //         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
+                //         equipment: {
+                //             nameEquipment: "Elegance",
+                //             standart: [
+                //                 '17-дюймові легкосплавні колісні диски з десятьма спицями',
+                //                 'Центральний підлокітник, оздоблений комбінованою шкірою',
+                //                 'Оббивка карт дверей з комбінованої шкіри',
+                //                 'Оббивка сидінь з комбінованої шкіри з перфорацією'
+                //             ]
+                //         },
+                //         bodyType: "Седан бизнес-класса",
+                //         carColor: "#EDE7E1",
+                //         wheels: "",
+                //         description: [
+                //             "Светодиодные дневные ходовые огни",
+                //             "Круиз-контроль",
+                //             "6 громкоговорителей",
+                //             "Двухзонный климат-контроль"
+                //         ],
+                //         maxSpeed: 210,
+                //         maxPower: 181,
+                //         fuelConsumption: 8.3,
+                //         photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
+                //         bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png"
+                //     },
+                //     {
+                //         model:"Camry",
+                //         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
+                //         equipment: {
+                //             nameEquipment: "Prestige",
+                //             standart: [
+                //                 'Транспондерна система відкривання дверей та пуску двигуна',
+                //                 'LDA - cистема сповіщення про з\'їзд зі смуги руху',
+                //                 'Система розпізнання та інформування водія про дорожні знаки',
+                //                 'ACC - круїз-контроль з функцією підтримки безпечної дистанції до автомобіля, що їде попереду'
+                //             ]
+                //         },
+                //         bodyType: "Седан бизнес-класса",
+                //         carColor: "#EDE7E1",
+                //         wheels: "",
+                //         description: [
+                //             "Светодиодные дневные ходовые огни",
+                //             "Круиз-контроль",
+                //             "6 громкоговорителей",
+                //             "Двухзонный климат-контроль"
+                //         ],
+                //         maxSpeed: 210,
+                //         maxPower: 181,
+                //         fuelConsumption: 8.3,
+                //         photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
+                //         bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png",
+                //         engine: {
+                //             nameOfEngine: 'Dual VVT-i',
+                //             valueOfEngine: '2,5 л',
+                //             typeOfEngine: 'Бензиновый',
+                //             maxPower: '181 к. с.',
+                //             info: ['Комбінований цикл: 8,3 л/100 км',
+                //             'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
+                //         },
+                //         transmision: "6-ступ. автомат. (Передній привод)"
+                //     },
+                //     {
+                //         model:"Camry",
+                //         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
+                //         equipment: {
+                //             nameEquipment: "Premium",
+                //             standart: [
+                //                 '18-дюймові легкосплавні колісні диски з двадцятьма спицями',
+                //                 'Іформаційно-розважальна система Toyota з навігаційною системою GPS',
+                //                 'Сенсорний екран з діагоналлю 20,3 см (8 дюймів) на передній панелі',
+                //                 'Звуковідтворювальна система фірми JBL з підсилювачем та низкочастотним гучномовцем'
+                //             ]
+                //         },
+                //         bodyType: "Седан бизнес-класса",
+                //         carColor: "#EDE7E1",
+                //         wheels: "",
+                //         description: [
+                //             "Светодиодные дневные ходовые огни",
+                //             "Круиз-контроль",
+                //             "6 громкоговорителей",
+                //             "Двухзонный климат-контроль"
+                //         ],
+                //         maxSpeed: 210,
+                //         maxPower: 181,
+                //         fuelConsumption: 8.3,
+                //         photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
+                //         bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png"
+                //     },
+                //     {
+                //         model:"Camry",
+                //         modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
+                //         equipment: {
+                //             nameEquipment: "Premium Hybrid",
+                //             standart: [
+                //                 'Тоноване скло у вікнах задніх дверей',
+                //                 'Перемикач режимів їзди на центральній консолі',
+                //                 'Сенсори паркування передні (4 шт.) з функцією автоматичного гальмування',
+                //                 'Сенсори паркування задні (4 шт.) з функцією автоматичного гальмування'
+                //             ]
+                //         },
+                //         bodyType: "Седан бизнес-класса",
+                //         carColor: "#EDE7E1",
+                //         wheels: "",
+                //         description: [
+                //             "Светодиодные дневные ходовые огни",
+                //             "Круиз-контроль",
+                //             "6 громкоговорителей",
+                //             "Двухзонный климат-контроль"
+                //         ],
+                //         maxSpeed: 210,
+                //         maxPower: 181,
+                //         fuelConsumption: 8.3,
+                //         photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
+                //         bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png"
+                //     },
+                // ],
 
-                    },
-                    {
-                        model:"Camry",
-                        modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: {
-                            nameEquipment: "Elegance",
-                            standart: [
-                                '17-дюймові легкосплавні колісні диски з десятьма спицями',
-                                'Центральний підлокітник, оздоблений комбінованою шкірою',
-                                'Оббивка карт дверей з комбінованої шкіри',
-                                'Оббивка сидінь з комбінованої шкіри з перфорацією'
-                            ]
-                        },
-                        bodyType: "Седан бизнес-класса",
-                        carColor: "#EDE7E1",
-                        wheels: "",
-                        description: [
-                            "Светодиодные дневные ходовые огни",
-                            "Круиз-контроль",
-                            "6 громкоговорителей",
-                            "Двухзонный климат-контроль"
-                        ],
-                        maxSpeed: 210,
-                        maxPower: 181,
-                        fuelConsumption: 8.3,
-                        photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
-                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png"
-                    },
-                    {
-                        model:"Camry",
-                        modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: {
-                            nameEquipment: "Prestige",
-                            standart: [
-                                'Транспондерна система відкривання дверей та пуску двигуна',
-                                'LDA - cистема сповіщення про з\'їзд зі смуги руху',
-                                'Система розпізнання та інформування водія про дорожні знаки',
-                                'ACC - круїз-контроль з функцією підтримки безпечної дистанції до автомобіля, що їде попереду'
-                            ]
-                        },
-                        bodyType: "Седан бизнес-класса",
-                        carColor: "#EDE7E1",
-                        wheels: "",
-                        description: [
-                            "Светодиодные дневные ходовые огни",
-                            "Круиз-контроль",
-                            "6 громкоговорителей",
-                            "Двухзонный климат-контроль"
-                        ],
-                        maxSpeed: 210,
-                        maxPower: 181,
-                        fuelConsumption: 8.3,
-                        photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
-                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png",
-                        engine: {
-                            nameOfEngine: 'Dual VVT-i',
-                            valueOfEngine: '2,5 л',
-                            typeOfEngine: 'Бензиновый',
-                            maxPower: '181 к. с.',
-                            info: ['Комбінований цикл: 8,3 л/100 км',
-                            'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
-                        },
-                        transmision: "6-ступ. автомат. (Передній привод)"
-                    },
-                    {
-                        model:"Camry",
-                        modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: {
-                            nameEquipment: "Premium",
-                            standart: [
-                                '18-дюймові легкосплавні колісні диски з двадцятьма спицями',
-                                'Іформаційно-розважальна система Toyota з навігаційною системою GPS',
-                                'Сенсорний екран з діагоналлю 20,3 см (8 дюймів) на передній панелі',
-                                'Звуковідтворювальна система фірми JBL з підсилювачем та низкочастотним гучномовцем'
-                            ]
-                        },
-                        bodyType: "Седан бизнес-класса",
-                        carColor: "#EDE7E1",
-                        wheels: "",
-                        description: [
-                            "Светодиодные дневные ходовые огни",
-                            "Круиз-контроль",
-                            "6 громкоговорителей",
-                            "Двухзонный климат-контроль"
-                        ],
-                        maxSpeed: 210,
-                        maxPower: 181,
-                        fuelConsumption: 8.3,
-                        photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
-                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png"
-                    },
-                    {
-                        model:"Camry",
-                        modelCode: "e460cecd-1792-4c02-8749-96bc28a572ae",
-                        equipment: {
-                            nameEquipment: "Premium Hybrid",
-                            standart: [
-                                'Тоноване скло у вікнах задніх дверей',
-                                'Перемикач режимів їзди на центральній консолі',
-                                'Сенсори паркування передні (4 шт.) з функцією автоматичного гальмування',
-                                'Сенсори паркування задні (4 шт.) з функцією автоматичного гальмування'
-                            ]
-                        },
-                        bodyType: "Седан бизнес-класса",
-                        carColor: "#EDE7E1",
-                        wheels: "",
-                        description: [
-                            "Светодиодные дневные ходовые огни",
-                            "Круиз-контроль",
-                            "6 громкоговорителей",
-                            "Двухзонный климат-контроль"
-                        ],
-                        maxSpeed: 210,
-                        maxPower: 181,
-                        fuelConsumption: 8.3,
-                        photo: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/width/500/height/192/padding/0,0,0,40/image-quality/70/day-exterior-4_1f7.png",
-                        bigPhoto: "https://t1-resize.toyota-europe.com/ccis/zip/ua/product-token/e460cecd-1792-4c02-8749-96bc28a572ae/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/image-quality/70/day-exterior-4_4x1.png"
-                    },
-                ],
-
+                id_mod: 0,
+                id_equip: 0,
+                model: {},//this.$store.state.model//$.cookie('cookie_model')
+                equipment: {}, //this.$store.state.equipment//$.cookie('cookie_equip')
                 car: {},
             }
         },
 
         created() {
+
+            console.log(this.model.id),
+            console.log(this.equipment.id),
+            this.getEquipment();
             this.car = this.equipments[0];
             this.selectedColor = this.colors[2]
         },
 
         methods:{
 
+            getEquipment() {
+                // console.log(this.id);
+                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
+                    .then((response) => {
+                        this.equipments = response.data;
+                        ///////////////////////////
+                        this.equipments.forEach( (eq) => {
+                            eq.description = [
+                                "Светодиодные дневные ходовые огни",
+                                "Круиз-контроль",
+                                "6 громкоговорителей",
+                                "Двухзонный климат-контроль"
+                            ];} );
+                        //////////////////////////////
+                        console.log(this.equipments);
+                    })
+                    .catch((error) => {
+                        console.log("Ошибка, не возможно загрузить доступные модификации");
+                        console.log(error);
+                    });
+            },
     }
     }
 </script>

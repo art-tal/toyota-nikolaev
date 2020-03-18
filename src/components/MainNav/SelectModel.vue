@@ -22,7 +22,6 @@
                             id="selectEquipment"
                             :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}"
                             @click="choice()"
-
                     >
                         <span v-if="!showEquipment">
                             Все комплектации</span>
@@ -124,11 +123,10 @@
 
 <script>
     import axios from 'axios';
-    import Equipment from "@/components/configurator/Equipment";
     import {eventEmitter} from "@/main";
+    import Equipment from "@/components/configurator/Equipment";
     import ColorsPanel from "@/components/configurator/options/ColorsPanel";
     import SubNavigation from "@/components/MainNav/SubNavigation";
-
 
     export default {
         name: "SelectModel",
@@ -141,8 +139,8 @@
 
         data() {
             return {
-                model: {},
                 id: 0,
+                model: {},
                 // id: this.$route.params.id,
                 showEquipment: false,
                 selectedColor: {},
@@ -155,27 +153,12 @@
             }
         },
 
-        computed: {
-            photo() {
-                return this.$store.getters.modelImage;
-            },
-
-            computedEquipment() {
-                return this.$store.getters.equip;
-            },
-
-            computedColor() {
-                return this.$store.getters.colored;
-            },
-
-            fontColored() {
-                return this.getFontColor();
-            },
-        },
-
         created() {
-            this.model = this.$store.state.model;
-            this.id = this.$store.state.model.id;
+            // this.id = this.$route.params.id;
+            this.id = localStorage.id;
+            // this.$store.state.model.id = this.id;
+            // this.getModel();
+            this.model = JSON.parse( localStorage.model );
 ///////////////////////////////////////////////////////
             this.model.description = [
                 "Светодиодные дневные ходовые огни",
@@ -186,29 +169,58 @@
                 this.model.maxSpeed = 210;
                 this.model.maxPower = 181;
                 this.model.fuelConsumption = 8.3;
+            console.log(this.model);
 //////////////////////////////////////////////////////
+//             this.$store.state.model = this.model;
             // this.equipment = this.$store.state.equipment;
-            // this.getCar();
             // this.getColorModel();
             this.getEquipment();
             eventEmitter.$on('selectedEquipment', () => {
                 this.showEquipment = !this.showEquipment;
-                console.log(this.showEquipment);
+                // console.log(this.showEquipment);
             });
-            this.color = this.$store.state.color;
-
+            // this.color = this.$store.state.color;
+            this.color = JSON.parse( localStorage.color );
             // eventEmitter.$on('selectedColor', (color) => {
             //     this.carColor = color;
             // });
         },
 
+        // beforeUpdate() {
+        //     this.color = JSON.parse( localStorage.color );
+        //     console.log(this.color.rgb);
+        // },
+
+        computed: {
+            photo() {
+                // return this.$store.getters.modelImage;
+                return 'http://lara.toyota.nikolaev.ua/storage/' + this.model.image
+            },
+
+            computedEquipment() {
+                return this.$store.getters.equip;
+                // return JSON.parse( localStorage.equipment );
+            },
+
+            computedColor() {
+                return this.$store.getters.colored;
+                // return JSON.parse( localStorage.color );
+            },
+
+            fontColored() {
+                return this.getFontColor();
+            },
+        },
+
         watch: {
             equipment() {
-                return this.$store.state.equipment;
+                // return this.$store.state.equipment;
+                return localStorage.equipment;
             },
 
             modelColor() {
-                this.modelColor = this.$store.getters.colored;
+                this.modelColor = JSON.parse( localStorage.color );
+                // this.modelColor = this.$store.getters.colored;
                 this.getFontColor();
                 return this.modelColor;
             },
@@ -225,13 +237,28 @@
                 console.log(this.showEquipment);
             },
 
+            // getModel() {
+            //     axios({
+            //         method: 'get',
+            //         url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
+            //     }).then( (response) => {
+            //         console.log(response.data);
+            //         this.model = response.data[this.id-1];
+            //         this.$store.state.model = this.model;
+            //     } )
+            //         .catch( (error) => {
+            //             console.log("Ошибка, не возможно загрузить доступные модели");
+            //             console.log(error);
+            //         })
+            // },
+
             getEquipment() {
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                 .then( (response) => {
                     this.equipments = response.data;
-                    // this.equipment = this.equipments[0];
-                    this.$store.state.equipment = this.equipments[0];
-                    console.log(this.$store.state.equipment);
+                    this.equipment = this.equipments[0];
+                    this.$store.state.equipment = this.equipment;
+                    localStorage.equipment = JSON.stringify( this.equipments[0] );
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модификации");
@@ -240,7 +267,7 @@
             },
 
             getFontColor: function () {
-                console.log(this.computedColor.rgb);
+                // console.log(this.computedColor.rgb);
                 try{
                 switch(this.computedColor.rgb.toLowerCase()){
                     case '#000000'.toLowerCase():
@@ -258,7 +285,11 @@
                     console.log( "Шрифты пролетели" );
                 }
 
-            }
+            },
+
+            // goToConfigurator(id_mod, id_equip) {
+            //     // this.$router.push({name: "Configurator", params: {id_mod: id_mod, id_equip: id_equip}});
+            // },
 
         }
 

@@ -74,7 +74,7 @@
 
         created() {
             this.getModel();
-            this.$store.state.car
+            // this.$store.state.car
         },
 
         methods: {
@@ -96,8 +96,10 @@
 
             goSelectModel(model) {
                 this.$store.state.model = model;
-                this.$router.push({name: "selectModel"});
-                // this.$router.push({name: "selectModel", params: {id: model.id}});
+                // this.$router.push({name: "selectModel"});
+                localStorage.id = model.id;
+                localStorage.model = JSON.stringify(model);
+                this.$router.push({name: "selectModel", params: {id: model.id}});
             }
         },
 

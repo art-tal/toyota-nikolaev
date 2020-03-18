@@ -35,9 +35,9 @@
 <script>
     import axios from "axios";
     import {eventEmitter} from '@/main'
-    // import jqery from "jquery";
-    //
-    // let $ = jqery;
+    // import jQery from "jquery";
+
+    // let $ = jQery;
 
     export default {
         name: "Equipment",
@@ -61,11 +61,16 @@
         },
 
         created() {
-            this.id = this.$store.state.model.id;
-            this.color = this.$store.state.color;
+            // console.log(this.$store.state.model.id);
+            this.id = localStorage.id;
+            // this.id = this.$store.state.model.id;
+            // this.color = this.$store.state.color;
+            this.color = localStorage.color;
+            console.log(this.color);
             this.getEquipment();
             this.equipment = this.equipments[0];
             this.$store.state.equipment = this.equipment;
+            localStorage.equipment = JSON.stringify( this.equipment );
             this.getFontColor();
             // eventEmitter.$emit('selectedEquipment', this.equipment);
         },
@@ -79,7 +84,7 @@
         methods: {
 
             getEquipment() {
-                console.log(this.id);
+                // console.log(this.id);
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                     .then((response) => {
                         this.equipments = response.data;
@@ -92,7 +97,7 @@
                                 "Двухзонный климат-контроль"
                             ];} );
                         //////////////////////////////
-                        // console.log(this.equipments);
+                        console.log(this.equipments);
                     })
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
@@ -102,13 +107,15 @@
 
             activeted(equipment) {
                 this.$store.state.equipment = equipment;
+                localStorage.mod_id = equipment.mod_id;
+                localStorage.equipment = JSON.stringify(equipment);
                 // console.log(equip);
                 // this.$emit('selectedEquipment', equip);
                 eventEmitter.$emit('selectedEquipment');
             },
 
             getFontColor: function () {
-                console.log(this.color.rgb);
+                // console.log(this.color.rgb);
                 try{
 
                     switch(this.color.rgb.toLowerCase()){

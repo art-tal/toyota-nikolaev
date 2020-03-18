@@ -30,23 +30,64 @@ export default new VueRouter({
         },
 
         {
-            // path: '/select_model/:id',
-            path: '/select_model',
+            path: '/select_model/:id',
+            // path: '/select_model',
             name: 'selectModel',
             component: SelectModel,
             children: [
                 {
-                    path: '/select_model/equipment',
+                    path: '/select_model/:id/equipment',
+                    // path: '/select_model/equipment',
                     name: 'Equipment',
                     component: Equipment,
                 },
-                // {
-                //     path: 'colors',
-                //     name: 'Colors',
-                //     component: Colors,
-                // },
 
 
+            ]
+        },
+
+        {
+            path: '/configurator',
+            // path: '/configurator/:id_params',
+            name: 'Configurator',
+            component: Configurator,
+            children: [
+                {
+                    path: '/configurator/selected_engine',
+                    // path: '/configurator/:id_params/selected_engine',
+                    component: Engine
+                },
+                {
+                    path: '/configurator/color_and_option',
+                    // path: '/configurator/:id_params/color_and_option',
+                    name: "color_and_option",
+                    component: ColorAndOption,
+                    children: [
+                        // {
+                        //     path: 'colors',
+                        //     name: 'colors',
+                        //     component: Colors,
+                        // },
+                        {
+                            path: 'wheels',
+                            name: 'wheels',
+                            component: Wheels,
+                        },
+                        {
+                            path: 'interior',
+                            name: 'interior',
+                            component: Interior
+                        }
+                    ]
+                },
+                {
+                    path: 'result',
+                    component: Result
+                },
+                {
+                    path: 'edit_equipment',
+                    component: EditEquipment
+                }
             ]
         },
 
@@ -85,53 +126,6 @@ export default new VueRouter({
             name: "MobilityForEveryone",
             component: MobilityForEveryone,
         },
-
-
-
-
-
-
-        {
-            path: '/configurator',
-            name: 'Configurator',
-            component: Configurator,
-            children: [
-                {
-                    path: 'selected_engine',
-                    component: Engine
-                },
-                {
-                    path: 'color_and_option',
-                    name: "color_and_option",
-                    component: ColorAndOption,
-                    children: [
-                        // {
-                        //     path: 'colors',
-                        //     name: 'colors',
-                        //     component: Colors,
-                        // },
-                        {
-                            path: 'wheels',
-                            name: 'wheels',
-                            component: Wheels,
-                        },
-                        {
-                            path: 'interior',
-                            name: 'interior',
-                            component: Interior
-                        }
-                    ]
-                },
-                {
-                    path: 'result',
-                    component: Result
-                },
-                {
-                    path: 'edit_equipment',
-                    component: EditEquipment
-                }
-            ]
-        }
     ],
 
     mode: 'history'
