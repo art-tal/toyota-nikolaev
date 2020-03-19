@@ -1,6 +1,6 @@
 <template>
     <menu>
-        <nav class="navbar navbar-expand navbar-dark">
+        <nav class="sub_navigation navbar navbar-expand navbar-dark">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -8,33 +8,83 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Общий обзор <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Особенности и характеристики</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Цены</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Надежность и гарантия</a>
-                    </li>
-
-
-                </ul>
-
-                <div class="config">
                     <router-link
-                            class="nav-link ml-2 mr-2"
-                            tag="a"
+                            class="nav-item ml-2 mr-2"
+                            tag="li"
+                            exact
+                            active-class="active"
+                            to="/select_model/:id"
+                    >
+<!--                        <span>Сконфигурировать</span>-->
+                        <a class="nav-link">Общий обзор <span class="sr-only">(current)</span></a>
+                    </router-link>
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">Общий обзор <span class="sr-only">(current)</span></a>-->
+<!--                    </li>-->
+                    <router-link
+                            class="nav-item ml-2 mr-2"
+                            tag="li"
+                            exact
+                            active-class="active"
+                            to="/"
+                    >
+<!--                        <span>Сконфигурировать</span>-->
+                        <a class="nav-link" href="#">Особенности и характеристики</a>
+                    </router-link>
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">Особенности и характеристики</a>-->
+<!--                    </li>-->
+                    <router-link
+                            class="nav-item ml-2 mr-2"
+                            tag="li"
+                            exact
+                            active-class="active"
+                            to="/"
+                    >
+<!--                        <span>Сконфигурировать</span>-->
+                        <a class="nav-link" href="#">Цены</a>
+                    </router-link>
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">Цены</a>-->
+<!--                    </li>-->
+                    <router-link
+                            class="nav-item ml-2 mr-2"
+                            tag="li"
+                            exact
+                            active-class="active"
+                            to="/"
+                    >
+<!--                        <span>Сконфигурировать</span>-->
+                        <a class="nav-link" href="#">Надежность и гарантия</a>
+                    </router-link>
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">Надежность и гарантия</a>-->
+<!--                    </li>-->
+                    <router-link
+                            class="config nav-item ml-2 mr-2"
+                            tag="li"
                             exact
                             active-class="active"
                             to="/configurator/selected_engine"
                     >
-                        <span>Сконфигурировать</span>
+<!--                        <span>Сконфигурировать</span>-->
+                        <a class="nav-link" href="#">Сконфигурировать</a>
                     </router-link>
-                </div>
+
+
+                </ul>
+
+<!--                <div class="config">-->
+<!--                    <router-link-->
+<!--                            class="nav-link ml-2 mr-2"-->
+<!--                            tag="a"-->
+<!--                            exact-->
+<!--                            active-class="active"-->
+<!--                            to="/configurator/selected_engine"-->
+<!--                    >-->
+<!--                        <span>Сконфигурировать</span>-->
+<!--                    </router-link>-->
+<!--                </div>-->
             </div>
         </nav>
     </menu>
@@ -55,7 +105,6 @@
         nav.navbar {
             padding: 0px 150px;
             font-size: 1.3rem;
-            background-color: #000;
             .collapse {
                 ul {
                     flex-grow: 1;
@@ -75,19 +124,23 @@
                             vertical-align: middle;
                         }
                     }
-                }
-                .config {
-                    border-left: 1px solid #ffffff;
-                    padding: 0 20px;
-                    text-align: right;
-                    a {
-                        color: rgba(255,255,255,0.5);
-                        &:hover {
-                            text-decoration: none;
-                            color: rgba(255,255,255,0.8);
+
+                    li.config.nav-item {
+                        padding: 0 20px;
+                        flex-grow: 1;
+                        text-align: right;
+                        a.nav-link {
+                            width: 200px;
+                            /*border-left: 1px solid #ffffff;*/
+                            color: rgba(255,255,255,0.5);
+                            &:hover {
+                                text-decoration: none;
+                                color: rgba(255,255,255,0.8);
+                            }
                         }
                     }
                 }
+
             }
         }
 
@@ -125,4 +178,10 @@
 
     /*@media (min-width: 768px) and (max-width: 991.9px)*/
 
+</style>
+
+<style>
+    .sub_navigation {
+        background-color: #000;
+    }
 </style>

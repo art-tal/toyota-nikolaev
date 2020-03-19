@@ -5,7 +5,7 @@ import Engine from "@/components/configurator/Engine";
 import ColorAndOption from "@/components/configurator/ColorAndOption";
 import Result from "@/components/configurator/Result";
 import EditEquipment from "@/components/configurator/EditEquipment";
-// import Colors from "@/components/configurator/options/Сolors";
+import Colors from "@/components/configurator/options/Colors";
 import Wheels from "@/components/configurator/options/Wheels";
 import Interior from "@/components/configurator/options/Interior";
 import Lineup from "@/components/MainNav/Lineup";
@@ -53,7 +53,14 @@ export default new VueRouter({
             component: Configurator,
             children: [
                 {
+                    path: '/configurator/equipment',
+                    // path: '/select_model/equipment',
+                    name: 'Equipment',
+                    component: Equipment,
+                },
+                {
                     path: '/configurator/selected_engine',
+                    name: 'selected_engine',
                     // path: '/configurator/:id_params/selected_engine',
                     component: Engine
                 },
@@ -63,11 +70,11 @@ export default new VueRouter({
                     name: "color_and_option",
                     component: ColorAndOption,
                     children: [
-                        // {
-                        //     path: 'colors',
-                        //     name: 'colors',
-                        //     component: Colors,
-                        // },
+                        {
+                            path: '/configurator/color_and_option/colors',
+                            name: 'colors',
+                            component: Colors,
+                        },
                         {
                             path: 'wheels',
                             name: 'wheels',

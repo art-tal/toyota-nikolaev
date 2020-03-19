@@ -48,6 +48,8 @@
                 // eventEmitter.$emit('selectedColor', this.colors[0]);
         },
 
+
+
         watch: {
             mod_id() {
                 this.getColors();
@@ -66,8 +68,8 @@
               .then( (response) => {
                   this.colors = response.data;
                   this.colors.forEach( (c) => { c.selected = false;} );
+                  this.colors[1].selected = true;
                   this.selectedColor = this.colors[1];
-                  this.selectedColor.selected = true;
                   localStorage.color = JSON.stringify( this.selectedColor );
                   this.$store.state.color = this.selectedColor;
                       // console.log(this.selectedColor);
@@ -79,16 +81,14 @@
               } )
           },
 
-            // getColorImege(image) {
-            //     return this.$store.commit('colorImage', image);
-            // },
+
 
 
             setColor(color, key) {
                 // eventEmitter.$emit('selectedColor', color);
-                this.$store.state.color = color;
-                this.colors.forEach( (c) => { c.selected = false;} )
+                this.colors.forEach( (c) => { c.selected = false} )
                 this.colors[key].selected = true;
+                this.$store.state.color = color;
                 localStorage.color = JSON.stringify( color );
                 console.log(key);
             },

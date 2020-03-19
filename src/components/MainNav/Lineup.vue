@@ -96,6 +96,7 @@
 
             goSelectModel(model) {
                 this.$store.state.model = model;
+                console.log(model);
                 // this.$router.push({name: "selectModel"});
                 localStorage.id = model.id;
                 localStorage.model = JSON.stringify(model);

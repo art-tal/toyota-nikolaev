@@ -2,21 +2,21 @@
             <section>
                 <article class="standardEquipment container">
                     <div class="row">
-                        <header class="col-md-3 col-sm-12">
+                        <header class="col-lg-3 col-md-12 coil-12">
                             <div class="row text-left">
-                                <div class="col-md-12 col-sm-9">
-                                    <h2 class="carModel font-weight-bold">{{car.model}}</h2>
-                                    <h3 class="carEquipment font-weight-bold">{{car.equipment.nameEquipment}}
-                                        <span class="bodyType font-weight-normal">{{car.bodyType}}</span>
+                                <div class="col-lg-12 col-md-9 col-12">
+                                    <h2 class="carModel font-weight-bold">{{model.name}}</h2>
+                                    <h3 class="carEquipment font-weight-bold">{{equipment.mod_name}}
+<!--                                        <span class="bodyType font-weight-normal">{{car.bodyType}}</span>-->
                                     </h3>
                                 </div>
-                                <div class="col-md-12 col-sm-3">
+                                <div class="col-lg-12 col-md-3 col-12">
                                     <router-link
                                             class="nav-link ml-2 mr-2 editEquipment"
                                             tag="a"
                                             exact
                                             active-class="active"
-                                            to="/select_model"
+                                            to="/configurator/equipment"
                                     >
                                         <i class="fas fa-sync-alt"></i>
                                         <span>Изменить комплектацию</span>
@@ -29,14 +29,14 @@
                             </div>
 
                         </header>
-                        <div class="photo col-md-5 col-sm-6">
-                            <img :src="car.bigPhoto">
+                        <div class="photo col-lg-5 col-md-7 col-12">
+                            <img :src="photo">
                         </div>
-                        <div class="standard col-md-4 col-sm-6 text-left">
+                        <div class="standard col-lg-4 col-md-5 col-12 text-left">
 
                             <h5 class="font-weight-bold">Стандартное оборудование</h5>
                             <ul>
-                                <li v-for="(equip, key) in car.equipment.standart"
+                                <li v-for="(equip, key) in equipment.standart"
                                     :key="key"
                                 >{{equip}}</li>
                             </ul>
@@ -53,36 +53,36 @@
                 <article class="engine">
                     <div class="container">
                         <header class="row text-left">
-                            <div class="col-md-8 col-sm-7">
+                            <div class="col-md-6 col-12">
                                 <h2 class="">Двигатель</h2>
                             </div>
                         </header>
                         <div class="row">
-                            <div class="engine_data col-sm-6">
+                            <div class="engine_data col-md-6 col-12">
                                 <div class="row text-left">
                                     <header class="col-9">
                                         <h2 class="font-weight-bold">
-                                            <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">{{car.engine.valueOfEngine}} {{car.engine.nameOfEngine}} ({{car.engine.maxPower}})</a>
+                                            <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">{{equipment.engine.valueOfEngine}} {{equipment.engine.nameOfEngine}} ({{equipment.engine.maxPower}})</a>
                                         </h2>
-                                        <h3 class="">{{car.transmision}}</h3>
+                                        <h3 class="">{{equipment.transmision}}</h3>
                                     </header>
                                     <div class="engine_img col-3 text-right">
                                         <img src="https://webcarconfig.toyota-europe.com/toyota/svg/engine.svg" width="90" alt="" class="">
-                                        <div class="font-weight-bold font-italic text-uppercase">{{car.engine.typeOfEngine}}</div>
+                                        <div class="font-weight-bold font-italic text-uppercase">{{equipment.engine.typeOfEngine}}</div>
                                     </div>
                                 </div>
                                     <ul class="options text-left">
-                                        <li v-for="(i, key) in car.engine.info"
+                                        <li v-for="(i, key) in equipment.engine.info"
                                         :key="key">{{i}}</li>
 <!--                                        <li>Комбінований цикл: 8,3 л/100 км</li>-->
 <!--                                        <li>Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км</li>-->
                                     </ul>
                                     <footer class="row">
-                                        <a href="#" class="more_info col-5">
+                                        <a href="#" class="more_info col-lg-5 col-12">
                                             <i class="far fa-file"></i>
                                             <span>Больше информации</span>
                                         </a>
-                                        <a href="#" class="btn btn-outline-danger col-4 text-center">
+                                        <a href="#" class="btn btn-outline-danger col-lg-4 col-12 text-center">
                                             <span class="align-middle">Продолжить</span>
                                             <i class="fas fa-angle-right"></i>
                                         </a>
@@ -100,7 +100,7 @@
 </template>
 
 <script>
-    import axios from "axios";
+    // import axios from "axios";
     // import jQuery from "jquery";
     //
     // let $ = jQuery;
@@ -268,46 +268,71 @@
                 //     },
                 // ],
 
-                id_mod: 0,
-                id_equip: 0,
-                model: {},//this.$store.state.model//$.cookie('cookie_model')
-                equipment: {}, //this.$store.state.equipment//$.cookie('cookie_equip')
+                id_mod: localStorage.id,
+                id_equip: localStorage.mod_id,
+                model: {},//JSON.parse( localStorage.model ),//this.$store.state.model//$.cookie('cookie_model')
+                equipment: {},//JSON.parse( localStorage.equipment ), //this.$store.state.equipment//$.cookie('cookie_equip')
                 car: {},
             }
         },
 
         created() {
+            this.model = JSON.parse( localStorage.model );
+            this.equipment = JSON.parse( localStorage.equipment );
+            console.log(this.model);
+            console.log(this.equipment);
+            ///////////////////////////////////////////////////////////////////
+            this.equipment.standart = [
+                            'Світлодіодні денні ходові вогні',
+                            'Круїз-контроль',
+                            '6 гучномовців',
+                            'Двозонний клімат-контроль'
+                        ];
+            this.equipment.engine = {
+                            nameOfEngine: 'Dual VVT-i',
+                            valueOfEngine: '2,5 л',
+                            typeOfEngine: 'Бензиновый',
+                            maxPower: '181 к. с.',
+                            info: ['Комбінований цикл: 8,3 л/100 км',
+                                'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
+                        };
+            this.equipment.transmision = "6-ступ. автомат. (Передній привод)";
+            ////////////////////////////////////////////////////////////////////
+            // this.getEquipment();
+            // this.car = this.equipments[0];
+            // this.selectedColor = this.colors[2];
+        },
 
-            console.log(this.model.id),
-            console.log(this.equipment.id),
-            this.getEquipment();
-            this.car = this.equipments[0];
-            this.selectedColor = this.colors[2]
+        computed: {
+            photo() {
+                // return this.$store.getters.modelImage;
+                return 'http://lara.toyota.nikolaev.ua/storage/' + this.model.image
+            },
         },
 
         methods:{
 
-            getEquipment() {
-                // console.log(this.id);
-                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
-                    .then((response) => {
-                        this.equipments = response.data;
-                        ///////////////////////////
-                        this.equipments.forEach( (eq) => {
-                            eq.description = [
-                                "Светодиодные дневные ходовые огни",
-                                "Круиз-контроль",
-                                "6 громкоговорителей",
-                                "Двухзонный климат-контроль"
-                            ];} );
-                        //////////////////////////////
-                        console.log(this.equipments);
-                    })
-                    .catch((error) => {
-                        console.log("Ошибка, не возможно загрузить доступные модификации");
-                        console.log(error);
-                    });
-            },
+            // getEquipment() {
+            //     // console.log(this.id);
+            //     axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
+            //         .then((response) => {
+            //             this.equipments = response.data;
+            //             ///////////////////////////
+            //             this.equipments.forEach( (eq) => {
+            //                 eq.description = [
+            //                     "Светодиодные дневные ходовые огни",
+            //                     "Круиз-контроль",
+            //                     "6 громкоговорителей",
+            //                     "Двухзонный климат-контроль"
+            //                 ];} );
+            //             //////////////////////////////
+            //             console.log(this.equipments);
+            //         })
+            //         .catch((error) => {
+            //             console.log("Ошибка, не возможно загрузить доступные модификации");
+            //             console.log(error);
+            //         });
+            // },
     }
     }
 </script>
@@ -410,14 +435,15 @@
                             }
 
                         }
+
                         ul.options {
-                            padding-left: 20px;
-                            font-size: 1.5rem;
-                            color: #595D60;
-                            li {
-                                margin-bottom: 10px;
-                            }
-                        }
+                             padding-left: 20px;
+                             font-size: 1.5rem;
+                             color: #595D60;
+                             li {
+                                 margin-bottom: 10px;
+                             }
+                         }
 
                         footer.row {
                             font-size: 1.5rem;
@@ -446,6 +472,87 @@
                 }
             }
 
+        }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        section {
+            .engine {
+                .container {
+
+                    .row {
+                        .engine_data {
+                            .row {
+
+                                .engine_img {
+                                    div {
+                                        position: relative;
+                                        right: 15px;
+                                        margin-left: 0;
+                                    }
+                                }
+
+                            }
+
+                            footer.row {
+                                margin: 15px 0 0;
+                                width: 100%;
+                                flex-direction: column-reverse;
+                                a.more_info {
+                                    margin: 15px auto;
+                                }
+                                a.btn {
+                                    width: 100%;
+                                    padding: 10px 15px 10px 15px;
+
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        section {
+            .engine {
+                min-width: 500px;
+                padding: 2.4rem 2rem;
+                .container {
+                    min-width: 100%;
+                    margin: 0;
+
+                    .row {
+                        margin: 0;
+                        .engine_data {
+                            footer.row {
+                                margin-top: 20px;
+                                flex-direction: column-reverse;
+                                a.more_info {
+                                    margin-top: 20px;
+                                }
+                                a.btn {
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+            }
         }
     }
 

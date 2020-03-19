@@ -10,10 +10,10 @@
             <header class="row">
                 <h1 class="model col-xl-10 col-lg-9 col-md-6 col-12 text-left">
                     <span class="carModel font-weight-bold">
-                        {{computedEquipment.model_name_pivot}}</span>
-<!--                    <span class="carEquipment">-->
-<!--                        {{car.model_name_pivot}} - </span>-->
-<!--                    <small class="bodyType">{{car.bodyType}}</small>-->
+                        {{model.name}}</span>
+                    <span class="carEquipment">
+                        {{computedEquipment.mod_name}}</span>
+<!--                    <small class="bodyType"> - {{car.bodyType}}</small>-->
                 </h1>
 
                 <div class="col-xl-2 col-lg-3 col-md-6 col-12">

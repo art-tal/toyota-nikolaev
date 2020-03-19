@@ -66,7 +66,7 @@
             // this.id = this.$store.state.model.id;
             // this.color = this.$store.state.color;
             this.color = localStorage.color;
-            console.log(this.color);
+            // console.log(this.color);
             this.getEquipment();
             this.equipment = this.equipments[0];
             this.$store.state.equipment = this.equipment;

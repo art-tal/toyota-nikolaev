@@ -2,10 +2,10 @@
     <section class="configurator">
         <sub-navigation></sub-navigation>
 
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand navbar-light">
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
+                <div class="navbar-nav">
 
                     <router-link
                             class="nav-link ml-2 mr-2"
@@ -41,7 +41,7 @@
                         <span>Итог</span>
 <!--                        <span class="sr-only">(current)</span>-->
                     </router-link>
-                </ul>
+                </div>
             </div>
         </nav>
 
@@ -73,9 +73,14 @@
 
         data() {
             return {
-                id_mod: this.$route.params.id_params.id_mod,
-                id_equip: this.$route.params.id_params.id_equip,
+                id_mod: localStorage.id,//this.$route.params.id_params.id_mod,
+                id_equip: localStorage.mod_id//this.$route.params.id_params.id_equip,
             }
+        },
+
+        created() {
+            this.$router.push({name: "selected_engine"});
+
         },
 
         components:{
@@ -101,33 +106,37 @@
             padding: 0;
         }
         nav {
-                color: $font_color;
-                div.collapse {
-                    align-content: center;
-                    a {
-                        color: $font_color;
-                        font-size: 15px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            z-index: 999;
+            color: $font_color;
+            div.collapse {
+                align-content: center;
+                a {
+                    color: $font_color;
+                    font-size: 15px;
+                    b {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        background-color: #F0F0F0;
+                        display: inline-block;
+                        margin-right: 10px;
+                        padding-top: 4px;
+                    }
+                    &.active {
+                        font-weight: bold;
                         b {
-                            width: 30px;
-                            height: 30px;
-                            border-radius: 50%;
-                            background-color: #F0F0F0;
-                            display: inline-block;
-                            margin-right: 10px;
-                            padding-top: 4px;
-                        }
-                        &.active {
-                            font-weight: bold;
-                            b {
-                                background-color: #E50000;
-                                color: #fff;
-                                font-weight: 300;
-                            }
+                            background-color: #E50000;
+                            color: #fff;
+                            font-weight: 300;
                         }
                     }
                 }
-
             }
+        }
 
         .attention.container {
             padding: 24px 0 64px;
@@ -160,6 +169,63 @@
     }
 
     @media (max-width: 767.9px) {
+        .configurator {
+            nav {
+                color: $font_color;
+                div.collapse {
+                    .navbar-nav {
+                        width: 50%;
+                        justify-content: space-between;
+                        a {
+                            span {
+                                display: none;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+</style>
+
+<style lang="scss">
+    @import '../../styles/variables';
+
+    .sub_navigation.navbar.navbar-expand.navbar-dark {
+        background-color: #fff;
+        .collapse.navbar-collapse {
+            ul.navbar-nav {
+                li.nav-item {
+                    border: none;
+                    a.nav-link {
+                        color: #202020;
+                    }
+                    &.active {
+                        border: none;
+                        font-weight: bold;
+                        a.nav-link {
+                            color: #E50000;
+                        }
+                    }
+                }
+            }
+            .config {
+                a.nav-link {
+                    /*border-left: 1px solid #202020;*/
+                    color: #202020;
+                }
+                &.active {
+                    border: none;
+                    font-weight: bold;
+                    a.nav-link {
+                        color: #E50000;
+                    }
+
+                }
+            }
+        }
 
     }
 </style>
