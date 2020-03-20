@@ -102,42 +102,42 @@
     @import '../../../styles/variables';
 
     .carColors.container {
-        background-color: #fff;
-        padding: 30px;
-        div.row {
-            .colorName {
-                font-size: 1.5rem;
+         background-color: #fff;
+         padding: 30px;
+         div.row {
+             .colorName {
+                 font-size: 1.5rem;
 
-            }
-            ul.sampleOfColor {
-                list-style-type: none;
-                padding: 0;
-                li.sample {
-                    display: inline-block;
-                    padding: 10px;
-                    position: relative;
-                    cursor: pointer;
-                    img {
-                        width: 50px;
-                        height: 50px;
-                        border-radius: 50%;
-                        border: 2px solid #cccccc;
-                    }
-                    .check {
-                        color: red;
-                        width: 15px;
-                        height: 15px;
-                        border-radius: 50%;
-                        border: 1px solid #cccccc;
-                        background-color: #fff;
-                        position: absolute;
-                        top: 10px;
-                        left: 10px;
-                    }
+             }
+             ul.sampleOfColor {
+                 list-style-type: none;
+                 padding: 0;
+                 li.sample {
+                     display: inline-block;
+                     padding: 10px;
+                     position: relative;
+                     cursor: pointer;
+                     img {
+                         width: 50px;
+                         height: 50px;
+                         border-radius: 50%;
+                         border: 2px solid #cccccc;
+                     }
+                     .check {
+                         color: red;
+                         width: 15px;
+                         height: 15px;
+                         border-radius: 50%;
+                         border: 1px solid #cccccc;
+                         background-color: #fff;
+                         position: absolute;
+                         top: 10px;
+                         left: 10px;
+                     }
 
-                }
-            }
-        }
-    }
+                 }
+             }
+         }
+     }
 
 </style>

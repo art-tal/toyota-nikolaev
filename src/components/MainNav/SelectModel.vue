@@ -1,8 +1,6 @@
 <template>
-    <section class="selectModel"
-             @selectedEquipment="selectedModel($event)"
-    >
-
+    <section class="selectModel">
+<!--        @selectedEquipment="selectedModel($event)"-->
         <sub-navigation></sub-navigation>
 
         <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">

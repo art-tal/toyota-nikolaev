@@ -58,35 +58,50 @@
                             </div>
                         </header>
                         <div class="row">
-                            <div class="engine_data col-md-6 col-12">
-                                <div class="row text-left">
-                                    <header class="col-9">
-                                        <h2 class="font-weight-bold">
-                                            <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">{{equipment.engine.valueOfEngine}} {{equipment.engine.nameOfEngine}} ({{equipment.engine.maxPower}})</a>
-                                        </h2>
-                                        <h3 class="">{{equipment.transmision}}</h3>
-                                    </header>
-                                    <div class="engine_img col-3 text-right">
-                                        <img src="https://webcarconfig.toyota-europe.com/toyota/svg/engine.svg" width="90" alt="" class="">
-                                        <div class="font-weight-bold font-italic text-uppercase">{{equipment.engine.typeOfEngine}}</div>
+                            <div class="engine_data col-md-6 col-12"
+                                 v-for="(trans, key) in transmissions"
+                                 :key="key"
+                            >
+                                <div class="wrap ">
+                                    <div class="row text-left">
+                                        <header class="col-9">
+                                            <h2 class="font-weight-bold">
+                                                <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">
+                                                    {{trans.eng_name}}
+                                                    <!--                                                {{equipment.engine.nameOfEngine}}-->
+                                                    <!--                                                ({{equipment.engine.maxPower}})-->
+                                                </a>
+                                                <!--                                            <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">{{equipment.engine.valueOfEngine}} {{equipment.engine.nameOfEngine}} ({{equipment.engine.maxPower}})</a>-->
+                                            </h2>
+                                            <h3 class="">{{trans.gear_name}}</h3>
+                                            <!--                                        <h3 class="">{{equipment.transmision}}</h3>-->
+                                        </header>
+                                        <div class="engine_img col-3 text-right">
+                                            <img src="https://webcarconfig.toyota-europe.com/toyota/svg/engine.svg" width="90" alt="" class="">
+                                            <div class="font-weight-bold font-italic text-uppercase">{{equipment.engine.typeOfEngine}}</div>
+                                        </div>
                                     </div>
-                                </div>
                                     <ul class="options text-left">
-                                        <li v-for="(i, key) in equipment.engine.info"
-                                        :key="key">{{i}}</li>
-<!--                                        <li>Комбінований цикл: 8,3 л/100 км</li>-->
-<!--                                        <li>Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км</li>-->
+                                        <!--                                        <li v-for="(i, key) in equipment.engine.info"-->
+                                        <li v-for="(i, key) in trans.eng_description"
+                                            :key="key">{{i}}</li>
+                                        <!--                                        <li>Комбінований цикл: 8,3 л/100 км</li>-->
+                                        <!--                                        <li>Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км</li>-->
                                     </ul>
                                     <footer class="row">
                                         <a href="#" class="more_info col-lg-5 col-12">
                                             <i class="far fa-file"></i>
                                             <span>Больше информации</span>
                                         </a>
-                                        <a href="#" class="btn btn-outline-danger col-lg-4 col-12 text-center">
-                                            <span class="align-middle">Продолжить</span>
-                                            <i class="fas fa-angle-right"></i>
-                                        </a>
+                                        <button @click="applyTransmission(trans)"
+                                                class="btn btn-outline-danger col-lg-5 col-12 text-center">
+                                            <span class="align-middle">Применить</span>
+<!--                                            <span class="align-middle">Продолжить</span>-->
+<!--                                            <i class="fas fa-angle-right"></i>-->
+                                        </button>
                                     </footer>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -100,9 +115,9 @@
 </template>
 
 <script>
-    // import axios from "axios";
+    import axios from "axios";
     // import jQuery from "jquery";
-    //
+
     // let $ = jQuery;
 
     export default {
@@ -272,15 +287,17 @@
                 id_equip: localStorage.mod_id,
                 model: {},//JSON.parse( localStorage.model ),//this.$store.state.model//$.cookie('cookie_model')
                 equipment: {},//JSON.parse( localStorage.equipment ), //this.$store.state.equipment//$.cookie('cookie_equip')
-                car: {},
+                transmission: {},
+                transmissions: [],
             }
         },
 
         created() {
             this.model = JSON.parse( localStorage.model );
             this.equipment = JSON.parse( localStorage.equipment );
-            console.log(this.model);
-            console.log(this.equipment);
+            // console.log(this.model);
+            // console.log(this.equipment);
+            this.getEngine();
             ///////////////////////////////////////////////////////////////////
             this.equipment.standart = [
                             'Світлодіодні денні ходові вогні',
@@ -312,6 +329,30 @@
 
         methods:{
 
+            getEngine() {
+                axios.get(
+                    'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear?id=15',//
+                    // {"id": 15},
+                )
+                .then( (response) => {
+                    this.transmissions = response.data;
+                    console.log(this.transmissions);
+                    this.transmission = this.transmissions[0];
+                    localStorage.transmission = JSON.stringify( this.transmission);
+                    console.log(this.transmission);
+                } )
+                .catch( (error) => {
+                    console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
+                    console.log(error);
+                } );
+            },
+
+            applyTransmission(trans) {
+                this.transmission = trans;
+                localStorage.transmission = JSON.stringify( this.transmission);
+                // this.$router.push({name: 'color_and_option'});
+            }
+
             // getEquipment() {
             //     // console.log(this.id);
             //     axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
@@ -333,7 +374,7 @@
             //             console.log(error);
             //         });
             // },
-    }
+    },
     }
 </script>
 
@@ -408,66 +449,70 @@
                 }
 
                 .row {
-                    .engine_data {
-                        background-color: #fff;
-                        padding: 30px;
-                        .row {
-                            padding-bottom: 2.4rem;
-                            header {
-                                h2 {
-                                    font-size: 1.7rem;
-                                    a {
-                                        color: $font_color;
+                    div.engine_data.col-md-6.col-12 {
+                        .wrap {
+                            background-color: #fff;
+                            margin: 0 5px 10px !important;
+                            padding: 30px;
+                            .row {
+                                padding-bottom: 2.4rem;
+                                header {
+                                    h2 {
+                                        font-size: 1.7rem;
+                                        a {
+                                            color: $font_color;
+                                        }
+                                    }
+                                    h3 {
+                                        font-size: 1.6rem;
+                                        color: #595D60;
                                     }
                                 }
-                                h3 {
-                                    font-size: 1.6rem;
-                                    color: #595D60;
+                                .engine_img {
+                                    margin-top: -10px;
+                                    div {
+                                        font-size: 1.2rem;
+                                        margin-left: 5px;
+                                        margin-top: -5px;
+                                    }
                                 }
-                            }
-                            .engine_img {
-                                margin-top: -10px;
-                                div {
-                                    font-size: 1.2rem;
-                                    margin-left: 5px;
-                                    margin-top: -5px;
-                                }
+
                             }
 
-                        }
-
-                        ul.options {
-                             padding-left: 20px;
-                             font-size: 1.5rem;
-                             color: #595D60;
-                             li {
-                                 margin-bottom: 10px;
-                             }
-                         }
-
-                        footer.row {
-                            font-size: 1.5rem;
-                            justify-content: space-between;
-                            align-items: center;
-                            padding-bottom: 0;
-                            a.more_info {
-                                color: $font_color;
-                                i {
-                                    margin-right: 5px;
-                                }
-                            }
-                            a.btn {
-                                width: 165px;
-                                height: 46px;
-                                padding: 10px 30px 10px 30px;
-                                border-radius: 23px;
+                            ul.options {
+                                padding-left: 20px;
                                 font-size: 1.5rem;
-                                i {
-                                    margin-left: 10px;
+                                color: #595D60;
+                                li {
+                                    margin-bottom: 10px;
                                 }
                             }
 
+                            footer.row {
+                                font-size: 1.5rem;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding-bottom: 0;
+                                a.more_info {
+                                    color: $font_color;
+                                    i {
+                                        margin-right: 5px;
+                                    }
+                                }
+                                button.btn {
+                                    width: 100%;
+                                    height: 46px;
+                                    padding: 10px 30px 10px 30px;
+                                    border-radius: 23px;
+                                    font-size: 1.5rem;
+                                    i {
+                                        margin-left: 10px;
+                                    }
+                                }
+
+                            }
                         }
+
                     }
                 }
             }
@@ -489,33 +534,39 @@
                 .container {
 
                     .row {
-                        .engine_data {
-                            .row {
-
-                                .engine_img {
-                                    div {
-                                        position: relative;
-                                        right: 15px;
-                                        margin-left: 0;
+                        div.engine_data.col-md-6.col-12 {
+                            padding: 0;
+                            .wrap {
+                                padding: 15px;
+                                margin: 0 10px !important;
+                                .row {
+                                    .engine_img.col-3 {
+                                        padding: 0;
+                                        div {
+                                            position: relative;
+                                            right: 15px;
+                                            margin-left: 0;
+                                        }
                                     }
+
                                 }
 
-                            }
-
-                            footer.row {
-                                margin: 15px 0 0;
-                                width: 100%;
-                                flex-direction: column-reverse;
-                                a.more_info {
-                                    margin: 15px auto;
-                                }
-                                a.btn {
+                                footer.row {
+                                    margin: 15px 0 0;
                                     width: 100%;
-                                    padding: 10px 15px 10px 15px;
+                                    flex-direction: column-reverse;
+                                    a.more_info {
+                                        margin: 15px auto;
+                                    }
+                                    button.btn {
+                                        width: 100% !important;
+                                        padding: 10px 15px 10px 15px;
+
+                                    }
 
                                 }
-
                             }
+
                         }
                     }
                 }
@@ -524,7 +575,7 @@
         }
     }
 
-    @media (max-width: 767.9px) {
+    @media (min-width: 576px) and (max-width: 767.9px) {
         section {
             .engine {
                 min-width: 500px;
@@ -542,12 +593,47 @@
                                 a.more_info {
                                     margin-top: 20px;
                                 }
-                                a.btn {
+                                button.btn {
                                     width: 100%;
                                     box-sizing: border-box;
                                 }
 
                             }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        section {
+            .engine {
+                min-width: 500px;
+                padding: 2.4rem 2rem;
+                .container {
+                    min-width: 100%;
+                    margin: 0;
+
+                    .row {
+                        margin: 0;
+                        .engine_data {
+                            .wrap {
+                                footer.row {
+                                    margin-top: 20px;
+                                    flex-direction: column-reverse;
+                                    a.more_info {
+                                        margin-top: 20px;
+                                    }
+                                    a.btn {
+                                        width: 100% !important;
+                                        box-sizing: border-box;
+                                    }
+
+                                }
+                            }
+
                         }
                     }
                 }
