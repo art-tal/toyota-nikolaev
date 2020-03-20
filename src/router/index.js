@@ -16,6 +16,7 @@ import SouvenirProducts from "@/components/MainNav/SouvenirProducts";
 import WhyToyota from "@/components/MainNav/WhyToyota";
 import ToyotaInNikolaev from "@/components/MainNav/ToyotaInNikolaev";
 import MobilityForEveryone from "@/components/MainNav/MobilityForEveryone";
+import MostPopular from "@/components/configurator/options/MostPopular";
 
 
 export default new VueRouter({
@@ -76,14 +77,19 @@ export default new VueRouter({
                             component: Colors,
                         },
                         {
-                            path: 'wheels',
+                            path: '/configurator/color_and_option/wheels',
                             name: 'wheels',
                             component: Wheels,
                         },
                         {
-                            path: 'interior',
+                            path: '/configurator/color_and_option/interior',
                             name: 'interior',
                             component: Interior
+                        },
+                        {
+                            path: '/configurator/color_and_option/most_popular',
+                            name: "most_popular",
+                            component: MostPopular,
                         }
                     ]
                 },

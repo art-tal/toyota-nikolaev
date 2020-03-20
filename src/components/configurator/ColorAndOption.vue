@@ -28,7 +28,7 @@
 <!--                @selectedColor="setCarColor(color)"-->
             </div>
 
-            <footer class="options">
+            <div class="options">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                         <ul class="navbar-nav justify-content-center">
@@ -67,8 +67,10 @@
                     </div>
                 </nav>
                 <router-view></router-view>
-            </footer>
+            </div>
         </article>
+
+        <most-popular></most-popular>
 
 
     </section>
@@ -76,9 +78,14 @@
 </template>
 
 <script>
+    import MostPopular from "@/components/configurator/options/MostPopular";
     // import axios from 'axios'
     export default {
         name: "ColorAndOption",
+
+        components: {
+            MostPopular,
+        },
 
         data() {
             return {
@@ -368,7 +375,7 @@
             }
         }
 
-        footer.options {
+        div.options {
             nav {
                 ul {
                         a {
