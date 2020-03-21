@@ -16,7 +16,8 @@ import SouvenirProducts from "@/components/MainNav/SouvenirProducts";
 import WhyToyota from "@/components/MainNav/WhyToyota";
 import ToyotaInNikolaev from "@/components/MainNav/ToyotaInNikolaev";
 import MobilityForEveryone from "@/components/MainNav/MobilityForEveryone";
-import MostPopular from "@/components/configurator/options/MostPopular";
+import Accessories from "@/components/configurator/options/Accessories";
+import Price from "@/components/configurator/options/Price";
 
 
 export default new VueRouter({
@@ -55,19 +56,16 @@ export default new VueRouter({
             children: [
                 {
                     path: '/configurator/equipment',
-                    // path: '/select_model/equipment',
                     name: 'Equipment',
                     component: Equipment,
                 },
                 {
                     path: '/configurator/selected_engine',
                     name: 'selected_engine',
-                    // path: '/configurator/:id_params/selected_engine',
                     component: Engine
                 },
                 {
                     path: '/configurator/color_and_option',
-                    // path: '/configurator/:id_params/color_and_option',
                     name: "color_and_option",
                     component: ColorAndOption,
                     children: [
@@ -87,14 +85,19 @@ export default new VueRouter({
                             component: Interior
                         },
                         {
-                            path: '/configurator/color_and_option/most_popular',
-                            name: "most_popular",
-                            component: MostPopular,
+                            path: '/configurator/color_and_option/accessories',
+                            name: "accessories",
+                            component: Accessories,
+                        },
+                        {
+                            path: '/configurator/color_and_option/price',
+                            name: "price",
+                            component: Price,
                         }
                     ]
                 },
                 {
-                    path: 'result',
+                    path: '/configurator/result',
                     component: Result
                 },
                 {

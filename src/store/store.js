@@ -15,6 +15,8 @@ export default new Vuex.Store ({
         maxSpeed: 0,
         fuelConsumption: 0,
         maxPower: 0,
+        interior: {},
+        selectedAccessories: [],
         // modelImage: "",
     },
 

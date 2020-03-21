@@ -2,12 +2,12 @@
     <div class="interior container">
         <div class="row">
             <div class="materialName col-4 font-weight-bold text-left">
-                {{interior.materialName}}
+                {{interior.material_name}} ({{interior.material_code}})
             </div>
 
             <ul class="sampleOfInterior col-8 text-left">
                 <li class="sample" v-for="(inter, key) in interiors" :key="key">
-                    <img :src="inter.image" :alt="inter.materialName">
+                    <img :src="inter.image" :alt="inter.material_name">
 
                     <div class="check text-center" v-if="interior.selected">
                         <i class="fas fa-check"></i>
@@ -46,12 +46,13 @@
                 )
                 .catch( () => {
                     this.interior = {
-                        materialName: "Чорна тканина (FA20)",
+                        material_name: "Чорная ткань",
+                        material_code: "FA20",
                         image: '//t1-carassets.toyota-europe.com/25e31065-9cdc-4699-bf7d-e92d3d22bd0b.PNG',
                         selected: true,
                     };
                     this.interiors.push(this.interior);
-                    localStorage.interior = this.interior;
+                    localStorage.interior = JSON.stringify( this.interior );
                     console.log(this.interior);
                 } );
             }

@@ -57,12 +57,9 @@ export default {
 }
 
     #app {
-        font-family: toyotadisplay_bd,Arial,Helvetica,sans-serif;;
+        font-family: toyotadisplay_bd,Arial,Helvetica,sans-serif;
     }
 
-   /*header h1 {*/
-   /*     display: inline-block;*/
-   /* }*/
-
+   h1 {font-family: toyotadisplay_bd,Arial,Helvetica,sans-serif;}
 
 </style>
