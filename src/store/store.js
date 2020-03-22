@@ -33,11 +33,32 @@ export default new Vuex.Store ({
             return state.color;
         },
 
+        accessories(state) {
+            return state.selectedAccessories;
+        },
+
     },
 
-    mutations: {},
+    mutations: {
+        addAccessories(state, payload) {
+            state.selectedAccessories.push(payload);
+            localStorage.selectedAccessories = JSON.stringify(state.selectedAccessories);
+        },
 
-    actions: {},
+        delAccessories(state, payload) {
+            let index = state.selectedAccessories.findIndex( arr => arr.type === payload.type && arr.id === payload.id);
+            state.selectedAccessories.splice(index, 1);
+            // console.log(state.selectedAccessories);
+            localStorage.selectedAccessories = JSON.stringify(state.selectedAccessories);
+        },
+
+
+
+    },
+
+    actions: {
+
+    },
 
 
 })

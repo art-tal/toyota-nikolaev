@@ -79,7 +79,7 @@
         },
 
         created() {
-            this.$router.push({name: "selected_engine"});
+            // this.$router.push({name: "selected_engine"});
 
         },
 

@@ -19,8 +19,9 @@
             </header>
 
             <div class="body view row text-center"
-                 @mousemove.left.self.exact="rotatePhoto($event)"
+
             >
+<!--                @mousemove.left.self.exact="rotatePhoto($event)"-->
                 <img :src="photo"
                      :alt="model.name"
 
@@ -114,7 +115,7 @@
             this.model = JSON.parse( localStorage.model );
             this.equipment = JSON.parse( localStorage.equipment );
             this.color = JSON.parse( localStorage.color );
-            this.wheels = JSON.parse( localStorage.wheels );
+            this.wheels = JSON.parse( localStorage.wheel );
 
         },
 

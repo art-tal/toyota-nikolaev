@@ -157,7 +157,7 @@
             // this.$store.state.model.id = this.id;
             // this.getModel();
             this.model = JSON.parse( localStorage.model );
-///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////ЗАГЛУШКА
             this.model.description = [
                 "Светодиодные дневные ходовые огни",
                 "Круиз-контроль",

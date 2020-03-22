@@ -35,20 +35,20 @@
                 <tr></tr>
             </table>
 
-            <div class="accessories font-weight-bold" v-if="selectedAccessories.length != 0">
+            <div class="accessories font-weight-bold" v-if="getSelectedAccessories.length != 0">
                 <div class="header row">
-                    <b class="col-6">Аксессуары ({{selectedAccessories.length}})</b>
+                    <b class="col-6">Аксессуары ({{getSelectedAccessories.length}})</b>
                     <span class="col-6 text-right">{{priceAccessories}}&#8372;</span>
                 </div>
                 <div class="accessory row"
-                     v-for="(accessory, key) in selectedAccessories"
+                     v-for="(accessory, key) in getSelectedAccessories"
                      :key="key"
                 >
                     <div class="col-7">{{accessory.name}}</div>
-                    <div class="col-4">{{accessory.cost}}</div>
-                    <div class="col-1" @click="deleteAccessory(key)">
-                        <i class="fas fa-times"></i>
-                    </div>
+                    <div class="col-4 text-right">{{accessory.cost}}</div>
+<!--                    <div class="col-1" @click="deleteAccessory(accessory)">-->
+<!--                        <i class="fas fa-times"></i>-->
+<!--                    </div>-->
                 </div>
             </div>
 
@@ -78,6 +78,8 @@
 </template>
 
 <script>
+    // import {eventEmitter} from "@/main";
+
     export default {
         name: "Price",
 
@@ -108,29 +110,27 @@
         },
 
         computed: {
+
+            getSelectedAccessories() {
+                return this.$store.getters.accessories;
+            },
+
             priceAccessories() {
                 let prAcc = 0;
-                this.selectedAccessories.map( (acc) => {
+                this.selectedAccessories.forEach( (acc) => {
                     prAcc += parseFloat(acc.cost);
                 } );
                 return prAcc;
             },
         },
 
-        watch:{
-            selectedAccessories() {
-                return this.selectedAccessories;
-            },
 
-        },
 
         methods: {
-            deleteAccessory(key) {
-                this.selectedAccessories.splice(key, 1);
-                console.log(this.selectedAccessories);
-                localStorage.selectedAccessories = JSON.stringify(this.selectedAccessories);
-                this.$store.state.selectedAccessories = this.selectedAccessories;
-            },
+            // deleteAccessory(accessory) {
+            //     eventEmitter.$emit('delAcc', accessory);
+            //
+            // },
         },
     }
 </script>
@@ -198,15 +198,16 @@
                     padding: 12px 0 10px;
                     color: #6c7073;
                     font-weight: normal;
-                    div:nth-child(2) {
-                        padding: 0 5px;
-                    }
-                    div:last-child {
-                        padding: 0;
-                        i:hover{
-                            color: #000;
-                        }
-                    }
+                    justify-content: space-between;
+                    /*div:nth-child(2) {*/
+                    /*    padding: 0 10px;*/
+                    /*}*/
+                    /*div:last-child {*/
+                    /*    padding: 0;*/
+                    /*    i:hover{*/
+                    /*        color: #000;*/
+                    /*    }*/
+                    /*}*/
                 }
             }
 

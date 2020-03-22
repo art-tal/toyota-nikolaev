@@ -22,8 +22,6 @@
                         <div class="check">
                             <input type="checkbox"
                                    :id="'accesM' + accessory.id"
-                                   :value="accessory"
-                                   v-model="selectedAccessories"
                             >
                             <label :for="'accesM_' + accessory.id"
                                    @click="addToSelected(accessory)"
@@ -111,6 +109,8 @@
 <script>
     // import axios from "axios";
 
+    // import {eventEmitter} from "@/main";
+
     export default {
         name: "Accessories",
 
@@ -135,12 +135,14 @@
             this.getAccessoriesForModel();
             this.getAccessoriesForExterior();
             this.getAccessoriesForInterior();
+            // eventEmitter.$on('delAcc', accessory => { this.addToSelected(accessory); })
         },
 
-        // watch() {
-        //     console.log(this.selectedAccessories);
-        //     return this.selectedAccessories;
-        // },
+        computed: {
+            getSelectedAccessories() {
+                return this.$store.getters.accessories;
+            },
+        },
 
         methods: {
             getAccessoriesForModel() {
@@ -205,8 +207,9 @@
                         checked: false
                     },
                 ];
+                this.accessoriesForModel.forEach( (acc) => {acc.type = "for_model"} );
                 /////////////////////////////////////
-
+                this.accessoriesCheck(this.accessoriesForModel);
             },
 
             getAccessoriesForInterior() {
@@ -222,25 +225,25 @@
                 this.accessoriesForInterior = [
                     {
                         id: 1,
-                        name: "Накладки порогов с илюминацией",
-                        image: "//t1-carassets.toyota-europe.com/66a2b9c9-30ad-4af0-8ea3-e32d4f7cc896.JPG",
-                        cost: "10 727,05",
+                        name: "Универсальний держатель для планшета",
+                        image: "//t1-carassets.toyota-europe.com/4e6580ff-e064-4937-a456-99cb936cbea0.JPG",
+                        cost: "2543,28",
                         checked: false
                     },
                     {
 
                         id: 2,
-                        name: "Секретные гайки",
-                        image: "//t1-carassets.toyota-europe.com/9b31bc45-2228-40dc-9f60-1490680a9b77.JPG",
-                        cost: "1025,30",
+                        name: "Накладки порогов з илюминацией",
+                        image: "//t1-carassets.toyota-europe.com/66a2b9c9-30ad-4af0-8ea3-e32d4f7cc896.JPG",
+                        cost: "10727,05",
                         checked: false
                     },
                     {
 
                         id: 3,
-                        name: "Резиновые коврики салона, чорные",
-                        image: "//t1-carassets.toyota-europe.com/0821eb1c-a388-4b47-9d82-d89f599e71d8.JPG",
-                        cost: "3759,23",
+                        name: "Пепельница - маленький бокс",
+                        image: "//t1-carassets.toyota-europe.com/468f660b-84c0-48cb-a8f6-8dc8bd5a48f8.JPG",
+                        cost: "553,01",
                         checked: false
                     },
                     {
@@ -254,21 +257,23 @@
                     {
 
                         id: 5,
-                        name: "Дефлектор капота",
-                        image: "//t1-carassets.toyota-europe.com/170c381a-da3e-4428-acc1-d25a2c73d652.PNG",
-                        cost: "2901,92",
+                        name: "Органайзер",
+                        image: "//t1-carassets.toyota-europe.com/75a95b2b-a0ee-4936-b473-f9f5e2bb4a7a.JPG",
+                        cost: "1847,93",
                         checked: false
                     },
                     {
 
                         id: 6,
-                        name: "Дефлектор окон с хромовой окантовкой",
-                        image: "//t1-carassets.toyota-europe.com/f3ad94a4-393c-4643-9e28-4da573a1f54f.PNG",
-                        cost: "6771,14",
+                        name: "Резиновые коврикисалона, чорные",
+                        image: "//t1-carassets.toyota-europe.com/0821eb1c-a388-4b47-9d82-d89f599e71d8.JPG",
+                        cost: "3759,23",
                         checked: false
                     },
-                ]
+                ];
+                this.accessoriesForInterior.forEach( (acc) => {acc.type = "for_interior"} );
                 /////////////////////////////////////
+                this.accessoriesCheck(this.accessoriesForInterior);
             },
 
             getAccessoriesForExterior() {
@@ -284,38 +289,30 @@
                 this.accessoriesForExterior = [
                     {
                         id: 1,
-                        name: "Накладки порогов с илюминацией",
-                        image: "//t1-carassets.toyota-europe.com/66a2b9c9-30ad-4af0-8ea3-e32d4f7cc896.JPG",
-                        cost: "10 727,05",
+                        name: "Чехол для шин",
+                        image: "//t1-carassets.toyota-europe.com/9fbb5166-d006-41c0-9a8f-2539a1b6453d.JPG",
+                        cost: "1314,06",
                         checked: false
                     },
                     {
 
                         id: 2,
-                        name: "Секретные гайки",
-                        image: "//t1-carassets.toyota-europe.com/9b31bc45-2228-40dc-9f60-1490680a9b77.JPG",
-                        cost: "1025,30",
+                        name: "Брызговики",
+                        image: "//t1-carassets.toyota-europe.com/3ecc1883-c7e6-4b77-8834-44817958a08e.PNG",
+                        cost: "2212,01",
                         checked: false
                     },
                     {
 
                         id: 3,
-                        name: "Резиновые коврики салона, чорные",
-                        image: "//t1-carassets.toyota-europe.com/0821eb1c-a388-4b47-9d82-d89f599e71d8.JPG",
-                        cost: "3759,23",
+                        name: "Дефлектор окон с хромовой окантовкой",
+                        image: "//t1-carassets.toyota-europe.com/f3ad94a4-393c-4643-9e28-4da573a1f54f.PNG",
+                        cost: "6771,14",
                         checked: false
                     },
                     {
 
                         id: 4,
-                        name: "Вертикальная сетка крепления груза",
-                        image: "//t1-carassets.toyota-europe.com/520d8111-e01f-4ae4-9a02-ffe021a5a1cb.JPG",
-                        cost: "1244,71",
-                        checked: false
-                    },
-                    {
-
-                        id: 5,
                         name: "Дефлектор капота",
                         image: "//t1-carassets.toyota-europe.com/170c381a-da3e-4428-acc1-d25a2c73d652.PNG",
                         cost: "2901,92",
@@ -323,22 +320,72 @@
                     },
                     {
 
-                        id: 6,
-                        name: "Дефлектор окон с хромовой окантовкой",
-                        image: "//t1-carassets.toyota-europe.com/f3ad94a4-393c-4643-9e28-4da573a1f54f.PNG",
-                        cost: "6771,14",
+                        id: 5,
+                        name: "Средство для защиты легкосплавных дисков Toyota ProTect",
+                        image: "//t1-carassets.toyota-europe.com/2f52dcc1-cf50-43c4-aa35-3b111ac809a1.jpg",
+                        cost: "7289,20",
                         checked: false
                     },
-                ]
+                    {
+
+                        id: 6,
+                        name: "Средство для длительной защиты кузова Toyota ProTect",
+                        image: "//t1-carassets.toyota-europe.com/ddaee2dc-f31f-4840-911a-4a2df3f891c4.jpg",
+                        cost: "4010,18",
+                        checked: false
+                    },
+                ];
+                this.accessoriesForExterior.forEach( (acc) => {acc.type = "for_exterior"} );
                 /////////////////////////////////////
+                this.accessoriesCheck(this.accessoriesForExterior);
             },
 
             addToSelected(accessory) {
-                accessory.checked = true
-                this.selectedAccessories.push(accessory);
+                accessory.checked = !accessory.checked;
+
+                switch (accessory.type) {
+                    case 'for_model':
+                        this.addOrDel(accessory, this.accessoriesForModel);
+                        break;
+                    case 'for_exterior':
+                        this.addOrDel(accessory, this.accessoriesForExterior);
+                        break;
+                    case 'for_interior':
+                        this.addOrDel(accessory, this.accessoriesForInterior);
+                        break;
+                }
+
                 console.log(this.selectedAccessories);
+            },
+
+            addOrDel(accessory, array){
+                let index = array.findIndex( arr => arr.id === accessory.id);
+                array[index].selected = !array[index].selected;
+                if (array[index].selected) {
+                    // this.selectedAccessories.push(array[index]);
+                    this.$store.commit('addAccessories', array[index]);
+                } else {
+                    // let ind = this.selectedAccessories.findIndex( selAcc => selAcc.type === accessory.type && selAcc.id === accessory.id );
+                    // this.selectedAccessories.splice(ind, 1);
+                    this.$store.commit('delAccessories', accessory);
+                }
                 localStorage.selectedAccessories = JSON.stringify( this.selectedAccessories);
                 this.$store.state.selectedAccessories = this.selectedAccessories;
+            },
+
+            accessoriesCheck(array) {
+                this.selectedAccessories = JSON.parse(localStorage.selectedAccessories);
+                this.selectedAccessories.forEach( selAcc => {
+                    if (selAcc.type === array[0].type) {
+                        let index = array.findIndex( arr => arr.id === selAcc.id );
+                        array[index].checked = true;
+                        // console.log(array[index]);
+                    }
+                } );
+                console.log(array);
+
+                this.$store.state.selectedAccessories = JSON.parse( localStorage.selectedAccessories );
+
             },
         },
     }
