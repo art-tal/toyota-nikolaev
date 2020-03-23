@@ -9,31 +9,31 @@
                 {{model.name}}
 <!--                {{model.bodyType}}-->
                 {{equipment.mod_name}}
-                {{transmission.eng_name}}
-                {{transmission.gear_name}}
+                {{getTransmission.eng_name}}
+                {{getTransmission.gear_name}}
 <!--                <span v-if="transmission.drive">(Передний привод)</span>-->
-                <span v-if="transmission.wd">(Полный привод)</span>
+                <span v-if="getTransmission.wd">(Полный привод)</span>
             </h3>
 
-            <table>
-                <tr>
-                    <td class="font-weight-bold">Цена</td>
-                    <td>{{price_auto}}&#8372;</td>
-                </tr>
-                <tr>
-                    <td>{{color.color_name}} ({{color.color_code}})</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>{{interior.material_name}} ({{interior.material_code}})</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>{{wheels.wheel_name}}, 4шт.</td>
-                    <td>{{price_wheels}}&#8372;</td>
-                </tr>
-                <tr></tr>
-            </table>
+            <div class="option">
+                <div class="base_price row">
+                    <div class="font-weight-bold col-6">Цена</div>
+                    <div class="col-6 text-right">{{price_auto}}&#8372;</div>
+                </div>
+                <div class="color row">
+                    <div class="col-12 text-left">{{getColor.color_name}} ({{getColor.color_code}})</div>
+
+                </div>
+                <div class="interior row">
+                    <div class="col-12 text-left">{{getInterior.material_name}} ({{getInterior.material_code}})</div>
+
+                </div>
+                <div class="wheels row">
+                    <div class="col-6 text-left">{{getWheels.wheel_name}}, 4шт.</div>
+                    <div class="col-5 text-right">{{price_wheels}}&#8372;</div>
+                </div>
+
+            </div>
 
             <div class="accessories font-weight-bold" v-if="getSelectedAccessories.length != 0">
                 <div class="header row">
@@ -46,9 +46,9 @@
                 >
                     <div class="col-7">{{accessory.name}}</div>
                     <div class="col-4 text-right">{{accessory.cost}}</div>
-<!--                    <div class="col-1" @click="deleteAccessory(accessory)">-->
-<!--                        <i class="fas fa-times"></i>-->
-<!--                    </div>-->
+                    <div class="col-1" @click="deleteAccessory(accessory)">
+                        <i class="fas fa-times"></i>
+                    </div>
                 </div>
             </div>
 
@@ -78,7 +78,7 @@
 </template>
 
 <script>
-    // import {eventEmitter} from "@/main";
+    import {eventEmitter} from "@/main";
 
     export default {
         name: "Price",
@@ -95,21 +95,42 @@
 
                 price_auto: "734556,00",
                 price: "766655,23",
-                price_wheels: "32099,23",
+                price_wheels: "32099,23",//ЗАГЛУШКА
             }
         },
 
         created() {
-            this.model =JSON.parse( localStorage.model);
-            this.equipment =JSON.parse( localStorage.equipment);
-            this.transmission =JSON.parse( localStorage.transmission);
-            this.color =JSON.parse( localStorage.color);
-            this.interior =JSON.parse( localStorage.interior);
-            this.wheels =JSON.parse( localStorage.wheel);
+            this.model = JSON.parse( localStorage.model);
+            this.equipment = JSON.parse( localStorage.equipment);
+            this.$store.state.engineAndGear = JSON.parse( localStorage.transmission);
+            // this.transmission = JSON.parse( localStorage.transmission);
+            this.$store.state.color = JSON.parse( localStorage.color);
+            // this.color = JSON.parse( localStorage.color);
+            this.$store.state.interior = JSON.parse( localStorage.interior);
+            // this.interior = JSON.parse( localStorage.interior);
+            this.$store.state.wheels = JSON.parse( localStorage.wheel);
+            // this.wheels = JSON.parse( localStorage.wheel);
             this.selectedAccessories = JSON.parse( localStorage.selectedAccessories);
         },
 
         computed: {
+
+            getTransmission() {
+                return this.$store.getters.getEngineAndGear;
+            },
+
+            getColor() {
+                return this.$store.getters.colored;
+            },
+
+            getWheels() {
+                return this.$store.getters.getWheels;
+            },
+
+
+            getInterior() {
+                return this.$store.getters.getInterior;
+            },
 
             getSelectedAccessories() {
                 return this.$store.getters.accessories;
@@ -117,7 +138,7 @@
 
             priceAccessories() {
                 let prAcc = 0;
-                this.selectedAccessories.forEach( (acc) => {
+                this.$store.getters.accessories.forEach( (acc) => {
                     prAcc += parseFloat(acc.cost);
                 } );
                 return prAcc;
@@ -127,10 +148,11 @@
 
 
         methods: {
-            // deleteAccessory(accessory) {
-            //     eventEmitter.$emit('delAcc', accessory);
-            //
-            // },
+            deleteAccessory(accessory) {
+                this.$store.commit('delAccessories', accessory);
+                eventEmitter.$emit('checkAcc');
+
+            },
         },
     }
 </script>
@@ -140,7 +162,7 @@
 
     article.container {
         position: sticky;
-        bottom: 0;
+        top: 60px;
         header {
             width: 50%;
             background-color: #f0f0f0;
@@ -165,24 +187,26 @@
                 color: #020202;
                 padding-bottom: 12px;
             }
-            table {
+            .option {
                 font-size: 1.3rem;
-                tr {
+                width: 100%;
+                .row {
                     border-bottom: 1px solid #ddd;
                     color: #6c7073;
-                    &:first-child {
-                        color: #020202;
+                    margin: 0;
+                    justify-content: space-between;
+                }
+                .base_price.row {
+                    color: #020202;
                     }
-                    td:first-child {
-                        width: 70%;
+                    div:first-child {
                         padding: 12px 15px 10px 0;
                     }
-                    td:last-child {
-                        width: 30%;
+                    div:last-child {
                         text-align: right;
                         padding: 12px 0 10px 5px;
                     }
-                }
+
             }
 
 
@@ -199,15 +223,15 @@
                     color: #6c7073;
                     font-weight: normal;
                     justify-content: space-between;
-                    /*div:nth-child(2) {*/
-                    /*    padding: 0 10px;*/
-                    /*}*/
-                    /*div:last-child {*/
-                    /*    padding: 0;*/
-                    /*    i:hover{*/
-                    /*        color: #000;*/
-                    /*    }*/
-                    /*}*/
+                    div:nth-child(2) {
+                        padding: 0 10px;
+                    }
+                    div:last-child {
+                        padding: 0;
+                        i:hover{
+                            color: #000;
+                        }
+                    }
                 }
             }
 

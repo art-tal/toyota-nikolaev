@@ -109,7 +109,7 @@
 <script>
     // import axios from "axios";
 
-    // import {eventEmitter} from "@/main";
+    import {eventEmitter} from "@/main";
 
     export default {
         name: "Accessories",
@@ -135,7 +135,8 @@
             this.getAccessoriesForModel();
             this.getAccessoriesForExterior();
             this.getAccessoriesForInterior();
-            // eventEmitter.$on('delAcc', accessory => { this.addToSelected(accessory); })
+            this.accessoriesCheck()
+            eventEmitter.$on('checkAcc', () => { this.accessoriesCheck(); });
         },
 
         computed: {
@@ -209,7 +210,7 @@
                 ];
                 this.accessoriesForModel.forEach( (acc) => {acc.type = "for_model"} );
                 /////////////////////////////////////
-                this.accessoriesCheck(this.accessoriesForModel);
+                // this.accessoriesCheck(this.accessoriesForModel);
             },
 
             getAccessoriesForInterior() {
@@ -273,7 +274,7 @@
                 ];
                 this.accessoriesForInterior.forEach( (acc) => {acc.type = "for_interior"} );
                 /////////////////////////////////////
-                this.accessoriesCheck(this.accessoriesForInterior);
+                // this.accessoriesCheck(this.accessoriesForInterior);
             },
 
             getAccessoriesForExterior() {
@@ -337,7 +338,7 @@
                 ];
                 this.accessoriesForExterior.forEach( (acc) => {acc.type = "for_exterior"} );
                 /////////////////////////////////////
-                this.accessoriesCheck(this.accessoriesForExterior);
+                // this.accessoriesCheck(this.accessoriesForExterior);
             },
 
             addToSelected(accessory) {
@@ -369,24 +370,46 @@
                     // this.selectedAccessories.splice(ind, 1);
                     this.$store.commit('delAccessories', accessory);
                 }
+                // this.$store.state.selectedAccessories = this.selectedAccessories;
                 localStorage.selectedAccessories = JSON.stringify( this.selectedAccessories);
-                this.$store.state.selectedAccessories = this.selectedAccessories;
             },
 
-            accessoriesCheck(array) {
-                this.selectedAccessories = JSON.parse(localStorage.selectedAccessories);
-                this.selectedAccessories.forEach( selAcc => {
-                    if (selAcc.type === array[0].type) {
-                        let index = array.findIndex( arr => arr.id === selAcc.id );
-                        array[index].checked = true;
-                        // console.log(array[index]);
+            accessoriesCheck() {
+                this.accessoriesForModel.forEach( afm => {afm.checked = false} );
+                this.accessoriesForExterior.forEach( afe => {afe.checked = false} );
+                this.accessoriesForInterior.forEach( afi => {afi.checked = false} );
+                this.$store.getters.accessories.forEach( sA => {
+                    switch (sA.type) {
+                        case 'for_model':
+                            this.checkedAcc(sA, this.accessoriesForModel);
+                            break;
+                        case 'for_exterior':
+                            this.checkedAcc(sA, this.accessoriesForExterior);
+                            break;
+                        case 'for_interior':
+                            this.checkedAcc(sA, this.accessoriesForInterior);
+                            break;
                     }
                 } );
-                console.log(array);
-
-                this.$store.state.selectedAccessories = JSON.parse( localStorage.selectedAccessories );
-
+                // this.selectedAccessories = JSON.parse(localStorage.selectedAccessories);
+                // this.selectedAccessories.forEach( selAcc => {
+                //     if (selAcc.type === array[0].type) {
+                //         let index = array.findIndex( arr => arr.id === selAcc.id );
+                //         array[index].checked = true;
+                //         // console.log(array[index]);
+                //     }
+                // } ); // console.log(array);
+                //
+                // this.$store.state.selectedAccessories = JSON.parse( localStorage.selectedAccessories );
             },
+
+            checkedAcc(sA, accessories) {
+                accessories.forEach( acc => {
+                    if (acc.id === sA.id) {acc.checked = !acc.checked}
+                } )
+            },
+
+
         },
     }
 </script>

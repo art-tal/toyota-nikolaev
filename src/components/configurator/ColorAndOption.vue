@@ -244,9 +244,26 @@
         padding-top: 40px;
         position: relative;
         .pr {
-            position: sticky;
+            position: relative;
             bottom: 0;
         }
+
+    }
+
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+
+    }
+
+    @media (max-width: 767.9px) {
 
     }
 

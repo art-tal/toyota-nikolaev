@@ -2,7 +2,7 @@
     <div class="allEquipment container-fluid w-100">
 
         <div class="carousel row" :style="{'color': fontColor}">
-            <div class="equip col-xl-3 col-lg-4 col-md-6 col-12"
+            <div
                  v-for="equipment in equipments"
                  :key="equipment.model_name_pivot"
                  @click="activeted(equipment)"

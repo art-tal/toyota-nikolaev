@@ -2,14 +2,17 @@
     <div class="interior container">
         <div class="row">
             <div class="materialName col-4 font-weight-bold text-left">
-                {{interior.material_name}} ({{interior.material_code}})
+                {{selectedInterior.material_name}} ({{selectedInterior.material_code}})
             </div>
 
             <ul class="sampleOfInterior col-8 text-left">
-                <li class="sample" v-for="(inter, key) in interiors" :key="key">
+                <li class="sample" v-for="(inter, key) in interiors"
+                    :key="key"
+                    @click="setInterior(inter, key)"
+                >
                     <img :src="inter.image" :alt="inter.material_name">
 
-                    <div class="check text-center" v-if="interior.selected">
+                    <div class="check text-center" v-if="inter.checked">
                         <i class="fas fa-check"></i>
                     </div>
                 </li>
@@ -20,6 +23,7 @@
 
 <script>
     import axios from "axios"
+    // import {eventEmitter} from "@/main";
     export default {
         name: "Interior",
 
@@ -27,17 +31,17 @@
             return {
                 mod_id: null,
                 interiors: [],
-                interior: {},
+                selectedInterior: {},
             }
         },
 
         created() {
             this.mod_id = localStorage.mod_id;
-            this.getInterior();
+            this.getInteriors();
         },
 
         methods: {
-            getInterior() { //ЗАГЛУШКА
+            getInteriors() { //ЗАГЛУШКА
                 axios.get(
                     'http://lara.toyota.nikolaev.ua/ajax/mod_'
                 )
@@ -45,17 +49,32 @@
 
                 )
                 .catch( () => {
-                    this.interior = {
+                    this.interiors = [
+                        {
                         material_name: "Чорная ткань",
                         material_code: "FA20",
                         image: '//t1-carassets.toyota-europe.com/25e31065-9cdc-4699-bf7d-e92d3d22bd0b.PNG',
-                        selected: true,
-                    };
-                    this.interiors.push(this.interior);
-                    localStorage.interior = JSON.stringify( this.interior );
+                        checked: true,
+                    }
+                    ];
+                    this.selectedInterior = this.interiors[0];
+                    localStorage.interior = JSON.stringify( this.selectedInterior );
+                    this.$store.state.interior = this.selectedInterior;
                     console.log(this.interior);
                 } );
-            }
+            },
+
+            setInterior(interior, key) {
+                this.interiorChecker(key);
+                this.selectedInterior = interior;
+                this.$store.state.interior = interior;
+                localStorage.interior = JSON.stringify( this.selectedInterior );
+            },
+
+            interiorChecker(key) {
+                this.interiors.forEach( (i) => {i.checked = false} );
+                this.interiors[key].checked = true;
+            },
         },
     }
 </script>

@@ -86,6 +86,7 @@
                 // this.colors.forEach( (c) => {c.selected = false} );
                 // this.colors[key].selected = true;
                 this.selectedColor = color;
+                this.$store.state.color = color;
                 localStorage.color = JSON.stringify( this.selectedColor );
                 eventEmitter.$emit('selectedColor', color.rgb);
             },

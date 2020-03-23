@@ -29,13 +29,27 @@ export default new Vuex.Store ({
             return state.equipment;
         },
 
+        getEngineAndGear(state) {
+            return state.engineAndGear;
+        },
+
         colored(state) {
             return state.color;
+        },
+
+        getWheels(state) {
+            return state.wheels;
+        },
+
+
+        getInterior(state) {
+            return state.interior;
         },
 
         accessories(state) {
             return state.selectedAccessories;
         },
+
 
     },
 
