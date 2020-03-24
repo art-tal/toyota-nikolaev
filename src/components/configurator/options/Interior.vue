@@ -1,11 +1,11 @@
 <template>
     <div class="interior container">
         <div class="row">
-            <div class="materialName col-4 font-weight-bold text-left">
+            <div class="materialName col-md-4 col-12 font-weight-bold text-left">
                 {{selectedInterior.material_name}} ({{selectedInterior.material_code}})
             </div>
 
-            <ul class="sampleOfInterior col-8 text-left">
+            <ul class="sampleOfInterior col-md-8 col-12 text-left">
                 <li class="sample" v-for="(inter, key) in interiors"
                     :key="key"
                     @click="setInterior(inter, key)"

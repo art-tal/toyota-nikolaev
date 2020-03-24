@@ -5,7 +5,7 @@
       <router-view></router-view>
 
 
-      <equipments></equipments>
+<!--      <equipments></equipments>-->
 
       <app-footer></app-footer>
   </div>
@@ -14,7 +14,7 @@
 <script>
     import Navigation from "@/components/permanent/Navigation";
     import Footer from "@/components/permanent/Footer";
-    import Equipments from "@/components/configurator/Equipments--"
+    // import Equipments from "@/components/configurator/Equipments--"
     // import axios from "axios";
 // import SelectModel from '@/components/SelectModel';
 // import Configurator from "@/components/Configurator";
@@ -25,7 +25,7 @@ export default {
   name: 'App',
   components: {
       Navigation,
-      Equipments,
+      // Equipments,
       appFooter: Footer,
       // AllModell,
     // Engine,

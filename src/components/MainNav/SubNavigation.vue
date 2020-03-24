@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <router-link
-                            class="nav-item ml-2 mr-2"
+                            class="nav-item"
                             tag="li"
                             exact
                             active-class="active"
@@ -22,7 +22,7 @@
 <!--                        <a class="nav-link" href="#">Общий обзор <span class="sr-only">(current)</span></a>-->
 <!--                    </li>-->
                     <router-link
-                            class="nav-item ml-2 mr-2"
+                            class="nav-item"
                             tag="li"
                             exact
                             active-class="active"
@@ -35,7 +35,7 @@
 <!--                        <a class="nav-link" href="#">Особенности и характеристики</a>-->
 <!--                    </li>-->
                     <router-link
-                            class="nav-item ml-2 mr-2"
+                            class="nav-item"
                             tag="li"
                             exact
                             active-class="active"
@@ -48,7 +48,7 @@
 <!--                        <a class="nav-link" href="#">Цены</a>-->
 <!--                    </li>-->
                     <router-link
-                            class="nav-item ml-2 mr-2"
+                            class="nav-item"
                             tag="li"
                             exact
                             active-class="active"
@@ -61,7 +61,7 @@
 <!--                        <a class="nav-link" href="#">Надежность и гарантия</a>-->
 <!--                    </li>-->
                     <router-link
-                            class="config nav-item ml-2 mr-2"
+                            class="config nav-item"
                             tag="li"
                             exact
                             active-class="active"
@@ -156,7 +156,7 @@
         }
     }
 
-    @media (max-width: 767.9px) {
+    @media (min-width: 575.9px) and (max-width: 767.9px) {
         menu {
             nav.navbar {
                 padding: 0;
@@ -176,6 +176,27 @@
         }
     }
 
+    @media (max-width: 576px) {
+        menu {
+            nav.navbar {
+                padding: 0;
+                font-size: 2.4vw;
+                .collapse {
+                    ul {
+                        li.nav-item {
+                            padding: 0 5px;
+                        }
+
+                    }
+                    .config.nav-item {
+                        padding: 0 5px;
+
+                    }
+                }
+            }
+
+        }
+    }
     /*@media (min-width: 768px) and (max-width: 991.9px)*/
 
 </style>

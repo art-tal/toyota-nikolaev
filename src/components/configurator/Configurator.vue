@@ -186,6 +186,9 @@
                 }
 
             }
+            .attention.container {
+                padding: 24px 30px 64px;
+            }
         }
     }
 </style>

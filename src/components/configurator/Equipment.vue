@@ -30,19 +30,18 @@
         </div>
 
     </div>
+
+
 </template>
 
 <script>
     import axios from "axios";
     import {eventEmitter} from '@/main'
-    // import jQery from "jquery";
 
-    // let $ = jQery;
 
     export default {
         name: "Equipment",
 
-        // props: ['id', 'photo', 'color'],
 
         data() {
             return {
@@ -55,24 +54,26 @@
         },
 
         computed: {
+            getModelId() {
+                return this.$route.params.id;
+            },
+
             photo() {
                 return this.$store.getters.modelImage;
             },
         },
 
         created() {
-            // console.log(this.$store.state.model.id);
-            this.id = localStorage.id;
-            // this.id = this.$store.state.model.id;
-            // this.color = this.$store.state.color;
-            this.color = localStorage.color;
-            // console.log(this.color);
+            this.$store.state.model = JSON.parse( localStorage.model );
+            this.id = this.getModelId;
+            this.color = this.$store.getters.colored;
             this.getEquipment();
             this.equipment = this.equipments[0];
             this.$store.state.equipment = this.equipment;
             localStorage.equipment = JSON.stringify( this.equipment );
             this.getFontColor();
-            // eventEmitter.$emit('selectedEquipment', this.equipment);
+
+            // eventEmitter.$on('select', () => {this.activeted()})
         },
 
         watch: {
@@ -84,11 +85,10 @@
         methods: {
 
             getEquipment() {
-                // console.log(this.id);
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                     .then((response) => {
                         this.equipments = response.data;
-                        ///////////////////////////
+                        ///////////////////////////ЗАГЛУШКА
                         this.equipments.forEach( (eq) => {
                             eq.description = [
                                 "Светодиодные дневные ходовые огни",
@@ -106,18 +106,15 @@
             },
 
             activeted(equipment) {
+                console.log('catch');
                 this.$store.state.equipment = equipment;
                 localStorage.mod_id = equipment.mod_id;
                 localStorage.equipment = JSON.stringify(equipment);
-                // console.log(equip);
-                // this.$emit('selectedEquipment', equip);
                 eventEmitter.$emit('selectedEquipment');
             },
 
             getFontColor: function () {
-                // console.log(this.color.rgb);
                 try{
-
                     switch(this.color.rgb.toLowerCase()){
                         case '#000000'.toLowerCase():
                         case '#182B66'.toLowerCase():
@@ -151,7 +148,7 @@
             position: static;
             width: 85%;
             margin: auto;
-            /*display: flex;*/
+            display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: stretch;
@@ -192,20 +189,12 @@
 
                 }
             }
-            /*.carousel-control-prev {*/
-            /*    width: 7.5%;*/
-            /*    height: 100%;*/
-            /*    left: 0;*/
-            /*    text-align: right;*/
-            /*    justify-content: center;*/
-            /*}*/
-            /*.carousel-control-next {*/
-            /*    width: 7.5%;*/
-            /*    height: 100%;*/
-            /*    right: 0;*/
-            /*}*/
+
 
         }
+
+
+
 
 
 

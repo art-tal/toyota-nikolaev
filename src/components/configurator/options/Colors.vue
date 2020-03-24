@@ -2,13 +2,13 @@
     <div class="carColors container">
 
         <div class="row">
-            <div class="colorName col-4 font-weight-bold text-left">
+            <div class="colorName col-md-4 col-12 font-weight-bold text-left">
                 {{selectedColor.color_name}}
                 <span v-if="selectedColor.metallic">Металик</span>
                 <span v-if="selectedColor.pearl">Перламутр</span>
                 ({{selectedColor.color_code}})
             </div>
-            <ul class="sampleOfColor col-8 text-left">
+            <ul class="sampleOfColor col-md-8 col-12 text-left">
                 <li v-for="(color, key) in colors"
                     :key="key"
                     class="sample"
@@ -140,5 +140,60 @@
              }
          }
      }
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        .carColors.container {
+            background-color: #fff;
+            padding: 30px;
+            div.row {
+                /*flex-direction: column-reverse;*/
+                flex-wrap: nowrap;
+                .colorName {
+                    font-size: 1.5rem;
+
+                }
+                ul.sampleOfColor {
+                    list-style-type: none;
+                    padding: 0;
+                    li.sample {
+                        display: inline-block;
+                        padding: 10px;
+                        position: relative;
+                        cursor: pointer;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            border: 2px solid #cccccc;
+                        }
+                        .check {
+                            color: red;
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50%;
+                            border: 1px solid #cccccc;
+                            background-color: #fff;
+                            position: absolute;
+                            top: 10px;
+                            left: 10px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.9px) {
+
+    }
 
 </style>

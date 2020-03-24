@@ -505,4 +505,53 @@
         }
     }
 
+
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+
+    }
+
+    @media (min-width: 576px) and  (max-width: 767.9px) {
+        section.accessories.container {
+            h3 {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        section.accessories.container {
+            h3 {
+                width: 100%;
+            }
+        }
+
+        .accessory {
+            .card {
+                .check {
+                    top: 15px;
+                    right: 15px;
+                    label {
+                        width: 30px;
+                        height: 30px;
+                        i {
+                            font-size: 2.25rem;
+                            padding-left: 2px;
+                            padding-top: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 </style>

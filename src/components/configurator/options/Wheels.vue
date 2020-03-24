@@ -2,10 +2,10 @@
 
     <div class="wheels container">
         <div class="row">
-            <div class="wheelsName col-4 font-weight-bold text-left">
+            <div class="wheelsName col-md-4 col-12 font-weight-bold text-left">
                 {{selectedWheel.description}}
             </div>
-            <ul class="sampleOfWheel col-8 text-left">
+            <ul class="sampleOfWheel col-md-8 col-12 text-left">
                 <p></p>
                 <li v-for="(wheel, key) in wheels"
                     :key="key"
@@ -121,7 +121,7 @@
                     display: inline-block;
                     padding: 15px;
                     position: relative;
-                    padding: 15px;
+                    cursor: pointer;
                     img {
                         width: 50px;
                         height: 50px;
@@ -142,6 +142,22 @@
                 }
             }
         }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1439.9px) {
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+
+    }
+
+    @media (max-width: 767.9px) {
+
     }
 
 </style>

@@ -21,6 +21,14 @@ export default new Vuex.Store ({
     },
 
     getters: {
+        getModelId(state) {
+            return state.model.id;
+        },
+
+        getModel(state) {
+            return state.model;
+        },
+
         modelImage(state) {
             return 'http://lara.toyota.nikolaev.ua/storage/' + state.model.image;
         },

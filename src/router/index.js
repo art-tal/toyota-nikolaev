@@ -18,7 +18,7 @@ import ToyotaInNikolaev from "@/components/MainNav/ToyotaInNikolaev";
 import MobilityForEveryone from "@/components/MainNav/MobilityForEveryone";
 import Accessories from "@/components/configurator/options/Accessories";
 import Price from "@/components/configurator/options/Price";
-
+import ToResult from "@/components/configurator/options/ToResult";
 
 export default new VueRouter({
     routes: [
@@ -93,6 +93,11 @@ export default new VueRouter({
                             path: '/configurator/color_and_option/price',
                             name: "price",
                             component: Price,
+                        },
+                        {
+                            path: '/configurator/color_and_option/to_result',
+                            name: 'to_result',
+                            component: ToResult,
                         }
                     ]
                 },
