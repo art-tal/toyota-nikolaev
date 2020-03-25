@@ -112,6 +112,7 @@
             background-color: #fff;
             z-index: 999;
             color: $font_color;
+            border-bottom: 1px solid #F0F0F0;
             div.collapse {
                 align-content: center;
                 a {
@@ -198,6 +199,7 @@
 
     .sub_navigation.navbar.navbar-expand.navbar-dark {
         background-color: #fff;
+        border-bottom: 1px solid #F0F0F0;
         .collapse.navbar-collapse {
             ul.navbar-nav {
                 li.nav-item {

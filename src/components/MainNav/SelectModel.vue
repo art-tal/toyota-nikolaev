@@ -390,6 +390,9 @@
                 button {
                     @include button;
                     min-width: 250px;
+                    &.btn-danger {
+                        background-color: #E50000;
+                    }
                 }
             }
 

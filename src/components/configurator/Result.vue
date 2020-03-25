@@ -12,7 +12,7 @@
                         </h3>
                     </div>
                     <div class="wrap_button col-2 text-right">
-                        <button class="btn btn-danger" @click="open = true">Просмотреть</button>
+                        <button class="btn btn-danger" @click="openBlock()">Просмотреть</button>
                     </div>
 
                 </header>
@@ -96,11 +96,11 @@
 
             </article>
 
-            <aside class="col-lg-4 col-12" v-if="open">
+            <aside class="col-lg-4 col-12" v-if="showAside">
                 <div class="header text-left">
                     <h2 class="font-weight-bold">{{price}}&#8372;</h2>
                     <p>Цена</p>
-                    <i class="fas fa-times" @click="open = false"></i>
+                    <i class="fas fa-times" @click="openBlock()"></i>
                 </div>
                 <article class="text-left">
                     <header>
@@ -115,14 +115,10 @@
                                 </a>
                             </li>
                             <li>
-                                <router-link
-                                        exact
-                                        tag="a"
-                                        to="/"
-                                >
+                                <a href.prevent="#" @click.prevent="openConsult()">
                                     <i class="far fa-life-ring"></i>
                                     <span>Онлайн консультация</span>
-                                </router-link>
+                                </a>
                             </li>
                             <li>
                                 <a href.prevent="#" target="_blank">
@@ -157,6 +153,8 @@
                     </div>
                 </article>
             </aside>
+
+            <consult v-if="showConsultation"></consult>
         </div>
 
 
@@ -164,14 +162,23 @@
 </template>
 
 <script>
+    import Consult from "@/components/configurator/Сonsult"
+    import {eventEmitter} from "@/main";
+
     export default {
         name: "Result",
+
+        components: {
+            Consult,
+        },
 
         data() {
             return {
                 price: 803190.00,
                 code: 'Hki_8NwNz',
-                open: true,
+                openAside: true,
+                openConsultation: false,
+                windowWidth: null,
                 // model: null,
                 // equipment: null,
                 // transmission: null,
@@ -190,6 +197,9 @@
             this.$store.state.wheels = JSON.parse( localStorage.wheel );
             this.$store.state.interior = JSON.parse( localStorage.interior );
             this.$store.state.selectedAccessories = JSON.parse( localStorage.selectedAccessories );
+            window.addEventListener('resize', this.changeResize);
+            this.changeResize();
+            eventEmitter.$on('close', () => ( this.openConsult() ) );
         },
 
         computed: {
@@ -225,32 +235,36 @@
                 return this.$store.getters.accessories;
             },
 
+            getWinWidth() {
+                return this.windowWidth;
+            },
+
             showAside() {
-                if (window.innerWidth >= 992) { return true; }
-                return this.open;
+                return this.openAside;
             },
-            //
-            // winWidth() {
-            //     return window.innerWidth;
-            // }
 
+            showConsultation() {
+                return this.openConsultation;
+            },
 
         },
 
-        watch: {
-            open() {
-                if (window.innerWidth >= 992) { return this.open = true; }
-                return this.open;
-            },
-        },
 
         methods: {
-            openBlock() {
-                // if (window.innerWidth >= 992) { return this.open = true; }
-                this.open = !this.open;
-                console.log(this.open);
-                console.log(window.innerWidth);
+            changeResize() {
+                this.windowWidth = window.innerWidth;
+                if (this.getWinWidth >= 992) { this.openAside = true; }
+                else { this.openAside = false; }
             },
+
+            openBlock() {
+                if (this.getWinWidth >= 992) { return this.openAside = true; }
+                this.openAside = !this.openAside;
+            },
+
+            openConsult() {
+                this.openConsultation = !this.openConsultation;
+            }
         },
     }
 </script>

@@ -19,6 +19,10 @@ import MobilityForEveryone from "@/components/MainNav/MobilityForEveryone";
 import Accessories from "@/components/configurator/options/Accessories";
 import Price from "@/components/configurator/options/Price";
 import ToResult from "@/components/configurator/options/ToResult";
+import Consult from "@/components/configurator/Сonsult"
+import Step1 from "@/components/configurator/consultSteps/Step1";
+import Step3 from "@/components/configurator/consultSteps/Step3";
+import Step2 from "@/components/configurator/consultSteps/Step2";
 
 export default new VueRouter({
     routes: [
@@ -103,14 +107,43 @@ export default new VueRouter({
                 },
                 {
                     path: '/configurator/result',
-                    component: Result
+                    name: 'result',
+                    component: Result,
+                    children: [
+                        {
+                            path: "/configurator/consultation",
+                            name: 'consultation',
+                            component: Consult,
+                            children: [
+                                {
+                                    path: "/configurator/consultation/step_1",
+                                    name: "step_1",
+                                    component: Step1,
+                                },
+                                {
+                                    path: "/configurator/consultation/step_2",
+                                    name: "step_2",
+                                    component: Step2,
+                                },
+                                {
+                                    path: "/configurator/consultation/step_3",
+                                    name: "step_3",
+                                    component: Step3,
+                                },
+                            ]
+                        },
+                    ]
                 },
                 {
                     path: 'edit_equipment',
                     component: EditEquipment
-                }
+                },
+
+
+
             ]
         },
+
 
         {
             path: '/to_buyers',

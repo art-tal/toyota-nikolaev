@@ -132,7 +132,7 @@
             this.equipment = JSON.parse( localStorage.equipment );
             this.color = JSON.parse( localStorage.color );
             this.wheels = JSON.parse( localStorage.wheel );
-
+            // this.$router.push('colors');
         },
 
 
