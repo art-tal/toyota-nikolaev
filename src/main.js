@@ -6,7 +6,7 @@ import router from './router/index'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from "./store/store"
-import VueCarousel from 'vue-carousel';
+// import VueCarousel from 'vue-carousel';
 
 
 
@@ -19,7 +19,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
-Vue.use(VueCarousel);
+// Vue.use(VueCarousel);
 
 Vue.config.productionTip = false
 

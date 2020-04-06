@@ -208,7 +208,7 @@
                         checked: false
                     },
                 ];
-                this.accessoriesForModel.forEach( (acc) => {acc.type = "for_model"} );
+                this.accessoriesForModel.forEach( (acc) => { this.$set(acc, "type", "for_model") } );
                 /////////////////////////////////////
                 // this.accessoriesCheck(this.accessoriesForModel);
             },
@@ -272,7 +272,7 @@
                         checked: false
                     },
                 ];
-                this.accessoriesForInterior.forEach( (acc) => {acc.type = "for_interior"} );
+                this.accessoriesForInterior.forEach( (acc) => { this.$set(acc, "type", "for_interior") } );
                 /////////////////////////////////////
                 // this.accessoriesCheck(this.accessoriesForInterior);
             },
@@ -336,7 +336,7 @@
                         checked: false
                     },
                 ];
-                this.accessoriesForExterior.forEach( (acc) => {acc.type = "for_exterior"} );
+                this.accessoriesForExterior.forEach( (acc) => { this.$set(acc, "type", "for_exterior") } );
                 /////////////////////////////////////
                 // this.accessoriesCheck(this.accessoriesForExterior);
             },
@@ -375,9 +375,9 @@
             },
 
             accessoriesCheck() {
-                this.accessoriesForModel.forEach( afm => {afm.checked = false} );
-                this.accessoriesForExterior.forEach( afe => {afe.checked = false} );
-                this.accessoriesForInterior.forEach( afi => {afi.checked = false} );
+                this.accessoriesForModel.forEach( afm => { this.$set(afm, "checked", false) } );
+                this.accessoriesForExterior.forEach( afe => { this.$set(afe, "checked", false) } );
+                this.accessoriesForInterior.forEach( afi => { this.$set(afi, "checked", false) } );
                 this.$store.getters.accessories.forEach( sA => {
                     switch (sA.type) {
                         case 'for_model':

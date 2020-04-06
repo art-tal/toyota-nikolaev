@@ -1,12 +1,12 @@
 <template>
     <div class="carColors container navbar navbar-expand-lg">
-        <div class="row collapse navbar-collapse" id="navbarNav">
+        <div class="row navbar-colors" id="navbarNav">
 
                         <ul class="sampleOfColor navbar-nav">
-                            <li v-for="(color, key) in colors"
-                                :key="key"
+                            <li v-for="(color, index) in colors"
+                                :key="index"
                                 class="nav-item sample"
-                                @click="setColor(color, key)"
+                                @click="setColor(color, index)"
                             >
 
                                     <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
@@ -75,9 +75,9 @@
               )
               .then( (response) => {
                   this.colors = response.data;
-                  this.colors.forEach( (c) => { c.selected = false;} );
-                  this.colors[1].selected = true;
-                  this.selectedColor = this.colors[1];
+                  this.colors.forEach( (c) => { this.$set(c, "selected", false); } );
+                  this.colors[0].selected = true;
+                  this.selectedColor = this.colors[0];
                   localStorage.color = JSON.stringify( this.selectedColor );
                   this.$store.state.color = this.selectedColor;
                       // console.log(this.selectedColor);
@@ -89,12 +89,12 @@
               } )
           },
 
-            setColor(color, key) {
+            setColor(color, index) {
                 // eventEmitter.$emit('selectedColor', color);
                 color.selected = true;
                 this.colors.forEach( (c) => { c.selected = false} );
                 // console.log(this.colors);
-                this.colors[key].selected = true;
+                this.colors[index].selected = true;
                 this.$store.state.color = color;
                 localStorage.color = JSON.stringify( color );
                 // console.log(key);
@@ -116,7 +116,7 @@
     .carColors.container {
         padding: 0;
         margin: 20px 0;
-        div#navbarNav.row.navbar-collapse {
+        div#navbarNav.row.navbar-colors {
             ul.sampleOfColor {
                 list-style-type: none;
                 padding: 0;
@@ -131,12 +131,6 @@
                         height: 50px;
                         border-radius: 50%;
                         border: 2px solid #cccccc;
-                        &:hover,
-                        &.active {
-                            box-shadow: 0 0 5px 2px #eeeeee;
-                            transform: scale(1.1);
-                            transition: all 500ms;
-                        }
                     }
                     .check {
                         color: red;
@@ -148,6 +142,14 @@
                         position: absolute;
                         top: 5px;
                         left: 5px;
+                    }
+                    &:hover,
+                    &.active {
+                        img {
+                            box-shadow: 0 0 5px 2px #eeeeee;
+                            transform: scale(1.1);
+                            transition: all 500ms;
+                        }
                     }
 
                 }
@@ -163,7 +165,7 @@
         .carColors.container {
             padding: 0;
             margin: 0;
-            div#navbarNav.row.navbar-collapse {
+            div#navbarNav.row.navbar-colors {
                 ul.sampleOfColor {
                     float: right;
                     flex-direction: column;
@@ -204,36 +206,23 @@
 
     @media (min-width: 768px) and (max-width: 991.9px) {
         .carColors.container {
-            div#navbarNav.row.navbar-collapse {
+            margin-right: 0;
+            /*text-align: left;*/
+            /*text-align: left;*/
+            div#navbarNav.row.navbar-colors {
+                width: 100%;
                 ul.sampleOfColor {
-                    /*flex-direction: column;*/
-                    justify-content: flex-start;
+                    flex-direction: row;
+                    width: auto;
+                    margin: auto;
+                    justify-content: center;
+                    flex-wrap: nowrap;
                     li.sample {
-                        padding: 5px;
-                        position: relative;
-                        img {
-                            width: 50px;
-                            height: 50px;
-                            border-radius: 50%;
-                            border: 2px solid #cccccc;
-                            &:hover,
-                            &.active {
-                                box-shadow: 0 0 5px 2px #eeeeee;
-                                transform: scale(1.1);
-                                transition: all 500ms;
-                            }
-                        }
-                        .check {
-                            color: red;
-                            width: 15px;
-                            height: 15px;
-                            border-radius: 50%;
-                            border: 1px solid #cccccc;
-                            background-color: #fff;
-                            position: absolute;
-                            top: 5px;
-                            left: 5px;
-                        }
+                        /*width: auto;*/
+                        /*display: inline-block;*/
+                        /*padding: 5px;*/
+                        /*position: relative;*/
+
 
                     }
                 }
@@ -242,7 +231,29 @@
     }
 
     @media (max-width: 767.9px) {
+        .carColors.container {
+            margin-right: 0;
+            /*text-align: left;*/
+            /*text-align: left;*/
+            div#navbarNav.row.navbar-colors {
+                width: 100%;
+                ul.sampleOfColor {
+                    flex-direction: row;
+                    width: auto;
+                    margin: auto;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    li.sample {
+                        /*width: auto;*/
+                        /*display: inline-block;*/
+                        /*padding: 5px;*/
+                        /*position: relative;*/
 
+
+                    }
+                }
+            }
+        }
     }
 
 </style>

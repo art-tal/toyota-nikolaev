@@ -33,6 +33,7 @@
 
             </header>
 
+
             <equipment v-if="showEquipment"></equipment>
 
 <!--            <equipment v-if="showEquipment"-->
@@ -173,10 +174,9 @@
             // this.equipment = this.$store.state.equipment;
             // this.getColorModel();
             this.getEquipment();
-            eventEmitter.$on('selectedEquipment', () => {
-                this.showEquipment = !this.showEquipment;
-                // console.log(this.showEquipment);
-            });
+            eventEmitter.$on('selectedEquipment', //this.choice
+                () => {this.showEquipment = !this.showEquipment;}
+                );
             // this.color = this.$store.state.color;
             this.color = JSON.parse( localStorage.color );
             // eventEmitter.$on('selectedColor', (color) => {
@@ -184,10 +184,6 @@
             // });
         },
 
-        // beforeUpdate() {
-        //     this.color = JSON.parse( localStorage.color );
-        //     console.log(this.color.rgb);
-        // },
 
         computed: {
             photo() {
@@ -231,8 +227,10 @@
         methods: {
 
             choice() {
-                this.showEquipment = !(this.showEquipment);
-                console.log(this.showEquipment);
+                if (!this.showEquipment) {
+                    this.showEquipment = !this.showEquipment;
+                    console.log(this.showEquipment);
+                }
             },
 
             // getModel() {
@@ -340,7 +338,9 @@
                 margin: 0 20px 0 74px;
                 padding-right: 0;
                 justify-content: space-between;
+                position: relative;
                 .carDescription {
+                    position: relative;
                     .description {
                         list-style-type: none;
                         font-size: 1.6rem;
@@ -372,7 +372,9 @@
         }
 
         .specifications.row {
+            width: 100%;
             margin-top: 25px;
+            padding: 0;
                 p {
                     font-size: 1.6rem;
                 }
@@ -409,6 +411,10 @@
                     margin: 0 30px 0 40px;
                 }
             }
+            .specifications.row {
+                width: 100%;
+                padding: 0;
+            }
         }
     }
 
@@ -419,10 +425,10 @@
                     padding: 50px 30px 10px 40px;
                 }
                 .compare {
-                    margin: 0px 10px 0 40px;
+                    margin: 0 10px 0 40px;
                 }
                 .carView {
-                    margin: 0 0px 0 40px;
+                    margin: 0 0 0 40px;
                     .carDescription {
                         .description {
                             line-height: 2.5rem;
@@ -490,17 +496,20 @@
                     }
 
                     .carColors{
-                        height: 100px;
                         position: absolute;
-                        bottom: 50px;
-                        z-index: 999;
-                        align-self: flex-end;
+                        bottom: -60px;
+                        /*position: absolute;*/
+                        /*top: 0;*/
+                        /*right: 0;*/
+                        /*!*z-index: 999;*!*/
+                        /*text-align: right;*/
+                        /*align-self: flex-end;*/
                     }
                 }
             }
 
             .specifications.row {
-                margin-top: 25px;
+                margin-top: 100px;
                 p {
                     font-size: 1.6rem;
                 }
@@ -528,6 +537,7 @@
     @media (max-width: 767.9px) {
         .selectModel {
             .container-fluid {
+                padding-bottom: 150px;
                 header {
                     padding: 50px 20px 10px;
                     flex-direction: column-reverse;
@@ -558,18 +568,23 @@
                             padding: 0;
                             img {
                                 width: 100%;
-                                bottom: -8vw;
+                                position: absolute;
+                                bottom: -200px;
+                                left: 0;
                             }
                         }
                     }
 
                     .carColors{
-                        align-self: flex-end;
+                        width: 100%;
+                        position: absolute;
+                        bottom: -140px;
                     }
                 }
             }
 
             .specifications.row {
+                margin-top: 130px;
                 .col-4 {
                     align-self: flex-end;
                     p {

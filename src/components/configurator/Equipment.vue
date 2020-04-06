@@ -2,16 +2,16 @@
     <div class="allEquipment container-fluid w-100">
 
         <div class="carousel row" :style="{'color': fontColor}">
-            <div
-                 v-for="equipment in equipments"
-                 :key="equipment.model_name_pivot"
+            <div  class="equip"
+                 v-for="(equipment, key) in equipments"
+                 :key="key"
                  @click="activeted(equipment)"
             >
 <!--                :style="{'border-top': '4px solid' + color}"-->
-                <img :src="photo" :alt="equipment.model_name_pivot">
+                <img :src="photo" :alt="equipment.mod_name">
                 <h4 :style="{'color': fontColor}">
-                    <span><strong>{{equipment.model_name_pivot}} </strong></span>
-<!--                    <span>{{car.equipment.nameEquipment}} - </span>-->
+                    <span><strong>{{model}} </strong></span>
+                    <span><strong>{{equipment.mod_name}} </strong></span>
 <!--                    <span>{{car.bodyType}}</span>-->
                 </h4>
                 <ul class="equip_desc">
@@ -54,6 +54,10 @@
         },
 
         computed: {
+            model() {
+                return this.$store.getters.getModel.name;
+            },
+
             getModelId() {
                 return this.$route.params.id;
             },
@@ -144,7 +148,7 @@
         margin: 0;
         position: relative;
         background-color: rgba(0,0,0,0.3);
-        .carousel {
+        .carousel.row {
             position: static;
             width: 85%;
             margin: auto;
@@ -158,8 +162,19 @@
                 img {
                     width: 100%;
                 }
+
                 .equip_desc {
-                    display: none;
+                    /*display: none;*/
+                    margin: 0;
+                    padding: 0;
+                    /*list-style-type: none;*/
+                    list-style-position: inside;
+                    display: block !important;
+                    li {
+                        text-align: left;
+                        font-size: 1.4rem;
+                        line-height: 1.5;
+                    }
                 }
                 &.active,
                 &:hover{
