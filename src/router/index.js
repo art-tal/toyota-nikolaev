@@ -23,9 +23,16 @@ import Consult from "@/components/configurator/Сonsult"
 import Step1 from "@/components/configurator/consultSteps/Step1";
 import Step3 from "@/components/configurator/consultSteps/Step3";
 import Step2 from "@/components/configurator/consultSteps/Step2";
+import Home from "@/components/Home";
 
 export default new VueRouter({
     routes: [
+        {
+            path: "/",
+            name: "home",
+            component: Home,
+        },
+
         {
             path: '/lineup',
             name: 'Lineup',
@@ -171,7 +178,7 @@ export default new VueRouter({
 
         {
             path: "/toyota_in_nikolaev",
-            name: "ToyotaInNikolaev",
+            name: "toyota_in_nikolaev",
             component: ToyotaInNikolaev,
         },
 

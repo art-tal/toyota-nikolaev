@@ -18,6 +18,14 @@ export default new Vuex.Store ({
         interior: {},
         selectedAccessories: [],
         // modelImage: "",
+
+        consultation: {
+            model: {},
+            engineType: "",
+
+        }
+        // consultModel: {},
+        // consultEngine: {},
     },
 
     getters: {
@@ -49,7 +57,6 @@ export default new Vuex.Store ({
             return state.wheels;
         },
 
-
         getInterior(state) {
             return state.interior;
         },
@@ -57,6 +64,18 @@ export default new Vuex.Store ({
         accessories(state) {
             return state.selectedAccessories;
         },
+
+        getConsultation(state) {
+            return state.consultation;
+        },
+
+        // getConsultModel(state) {
+        //     return state.consultModel;
+        // },
+        //
+        // getConsultEngine(state) {
+        //     return state.consultEngine;
+        // }
 
 
     },

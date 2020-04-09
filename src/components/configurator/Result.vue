@@ -154,7 +154,10 @@
                 </article>
             </aside>
 
-            <consult v-if="showConsultation"></consult>
+<!--            <div class="consult"  v-if="showConsultation">-->
+                <consult v-if="showConsultation"></consult>
+<!--            </div>-->
+
         </div>
 
 
@@ -426,6 +429,7 @@
                                     font-size: 1.5rem;
                                     color: $font_color;
                                     padding: 12px 0;
+                                    cursor: pointer;
                                     i {
                                         margin-right: 15px;
                                     }
@@ -486,6 +490,16 @@
                         }
                     }
                 }
+            }
+
+            .consult {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 999;
             }
         }
     }

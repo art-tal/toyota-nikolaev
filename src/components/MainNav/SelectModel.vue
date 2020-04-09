@@ -175,7 +175,10 @@
             // this.getColorModel();
             this.getEquipment();
             eventEmitter.$on('selectedEquipment', //this.choice
-                () => {this.showEquipment = !this.showEquipment;}
+                () => {
+                this.showEquipment = false;
+                // this.showEquipment = !this.showEquipment;
+            }
                 );
             // this.color = this.$store.state.color;
             this.color = JSON.parse( localStorage.color );
@@ -228,7 +231,8 @@
 
             choice() {
                 if (!this.showEquipment) {
-                    this.showEquipment = !this.showEquipment;
+                    // this.showEquipment = !this.showEquipment;
+                    this.showEquipment = true;
                     console.log(this.showEquipment);
                 }
             },

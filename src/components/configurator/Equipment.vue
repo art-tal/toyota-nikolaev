@@ -59,7 +59,10 @@
             },
 
             getModelId() {
-                return this.$route.params.id;
+                if (this.$store.getters.getModelId) {
+                    return this.$store.getters.getModelId;
+                } else {
+                return this.$route.params.id;}
             },
 
             photo() {
@@ -110,7 +113,7 @@
             },
 
             activeted(equipment) {
-                console.log('catch');
+                // console.log('catch');
                 this.$store.state.equipment = equipment;
                 localStorage.mod_id = equipment.mod_id;
                 localStorage.equipment = JSON.stringify(equipment);

@@ -3,7 +3,18 @@
         <div class="row">
 
             <nav class="col-xl-7 col-lg-8 col-md-12 navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="#"></a>
+                <router-link
+                        class="navbar-brand"
+                        tag="a"
+                        exact
+                        active-class="active"
+                        to="/"
+                >
+
+                    <span class="sr-only">(current)</span>
+                </router-link>
+
+<!--                    <a class="navbar-brand" href="#"></a>-->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import App from './App.vue'
 import VueRouter from 'vue-router'
-import router from './router/index'
+import Vuelidate from 'vuelidate'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from "./store/store"
+import router from './router/index'
+import App from './App.vue'
 // import VueCarousel from 'vue-carousel';
 
 
@@ -19,7 +20,8 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
-// Vue.use(VueCarousel);
+Vue.use(Vuelidate);
+
 
 Vue.config.productionTip = false
 
