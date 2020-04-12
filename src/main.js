@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Vuelidate from 'vuelidate'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueMeta from 'vue-meta'
 import store from "./store/store"
 import router from './router/index'
 import App from './App.vue'
@@ -21,6 +22,9 @@ Vue.use(IconsPlugin);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(Vuelidate);
+Vue.use(VueMeta, {
+  refreshOnceOnNavigation: true
+})
 
 
 Vue.config.productionTip = false

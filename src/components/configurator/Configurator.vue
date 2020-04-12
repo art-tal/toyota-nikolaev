@@ -74,13 +74,32 @@
         data() {
             return {
                 id_mod: localStorage.id,//this.$route.params.id_params.id_mod,
-                id_equip: localStorage.mod_id//this.$route.params.id_params.id_equip,
+                id_equip: localStorage.mod_id,//this.$route.params.id_params.id_equip,
+                modelTitle: "",
+            }
+        },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | ${this.modelTitle}, конфигуратор автомобилей`,
+                meta: [
+                    // {
+                    //     vmid: "description",
+                    //     name: "description",
+                    //     content: `Добро пожаловать на Toyota Николаев. Узнайте больше о наших новых автомобилях, а также предложения по всем вашим любимым моделям. Обратитесь к нам для получения дополнительной информации.`
+                    // },
+                    // {
+                    //     vmid: "keywords",
+                    //     name: "keywords",
+                    //     content: `Toyota Nikolaev, Toyota, модельный ряд toyota, домашняя страница, акции, новости, модели, автомобиль, новый автомобиль, мой автомобиль, безопасные автомобили, экологически автомобили, безопасный автомобиль, идеальный автомобиль, семейный автомобиль, городской автомобиль, внедорожник, кроссовер, хэтчбек, модельный ряд toyota, домашняя страница, акции, новости, модели`
+                    // },
+                ],
             }
         },
 
         created() {
             // this.$router.push({name: "selected_engine"});
-
+            this.modelTitle = JSON.parse(localStorage.model).name;
         },
 
         components:{

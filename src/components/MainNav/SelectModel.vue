@@ -135,7 +135,6 @@
             ColorsPanel,
             SubNavigation
         },
-
         data() {
             return {
                 id: 0,
@@ -147,10 +146,33 @@
                 equipment: {},
                 modelColor: "#fff",
 
+                modelTitle: "",
+                equipmentTitle: "",
+
                 fontColor: "#202020",
 
             }
         },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектация ${this.equipmentTitle} | Общая информация`,
+                meta: [
+                    // {
+                    //     vmid: "description",
+                    //     name: "description",
+                    //     content: `Добро пожаловать на Toyota Николаев. Узнайте больше о наших новых автомобилях, а также предложения по всем вашим любимым моделям. Обратитесь к нам для получения дополнительной информации.`
+                    // },
+                    // {
+                    //     vmid: "keywords",
+                    //     name: "keywords",
+                    //     content: `Toyota Nikolaev, Toyota, модельный ряд toyota, домашняя страница, акции, новости, модели, автомобиль, новый автомобиль, мой автомобиль, безопасные автомобили, экологически автомобили, безопасный автомобиль, идеальный автомобиль, семейный автомобиль, городской автомобиль, внедорожник, кроссовер, хэтчбек, модельный ряд toyota, домашняя страница, акции, новости, модели`
+                    // },
+                ],
+            }
+        },
+
+
 
         created() {
             // this.id = this.$route.params.id;
@@ -158,6 +180,7 @@
             // this.$store.state.model.id = this.id;
             // this.getModel();
             this.model = JSON.parse( localStorage.model );
+            this.modelTitle = this.model.name;
 ///////////////////////////////////////////////////////ЗАГЛУШКА
             this.model.description = [
                 "Светодиодные дневные ходовые огни",
@@ -177,6 +200,7 @@
             eventEmitter.$on('selectedEquipment', //this.choice
                 () => {
                 this.showEquipment = false;
+                    this.changeTitle();
                 // this.showEquipment = !this.showEquipment;
             }
                 );
@@ -186,6 +210,8 @@
             //     this.carColor = color;
             // });
         },
+
+
 
 
         computed: {
@@ -207,12 +233,20 @@
             fontColored() {
                 return this.getFontColor();
             },
+
+            // modelTitle() {
+            //     return this.model.name;
+            // },
+            //
+            // equipmentTitle() {
+            //     return this.computedEquipment.mod_name;
+            // }
         },
 
         watch: {
             equipment() {
                 // return this.$store.state.equipment;
-                return localStorage.equipment;
+                return JSON.parse(localStorage.equipment);
             },
 
             modelColor() {
@@ -225,6 +259,10 @@
             showEquipment() {
                 return this.showEquipment;
             },
+
+            equipmentTitle() {
+                return  this.equipmentTitle;
+            },
         },
 
         methods: {
@@ -235,6 +273,11 @@
                     this.showEquipment = true;
                     console.log(this.showEquipment);
                 }
+            },
+
+            changeTitle() {
+                this.equipmentTitle = this.computedEquipment.mod_name;
+                console.log(this.equipmentTitle);
             },
 
             // getModel() {
@@ -258,6 +301,7 @@
                     this.equipments = response.data;
                     this.equipment = this.equipments[0];
                     this.$store.state.equipment = this.equipment;
+                    this.equipmentTitle = this.equipment.mod_name;
                     localStorage.equipment = JSON.stringify( this.equipments[0] );
                 } )
                 .catch( (error) => {

@@ -1,60 +1,65 @@
 <template>
     <article class="step_2 container">
         <div class="row">
-            <form name="consultation" class="col-7 row justify-content-between text-left">
-                <div class="field form-group col-6">
+            <form name="consultation" class="col-xl-7 col-12 row justify-content-between text-left" @submit.prevent="onSubmit()">
+                <div class="field form-group col-md-6 col-12">
                     <label for="first_name"> Имя <span>*</span></label><br>
                     <input class="form-control"
+                           placeholder="Имя"
                            :class="{'is-invalid' : $v.firstName.$error}"
                            id="first_name"
                            type="text"
                            v-model="firstName"
                            @blur="$v.firstName.$touch()">
                     <div class="invalid-feedback"  v-if="!$v.firstName.required">Это поле является обязательным для заполнения.</div>
-                    <div class="invalid-feedback"  v-if="!$v.firstName.alpha">Для ввода допускается только буквы.</div>
+                    <div class="invalid-feedback"  v-if="!$v.firstName.alfaValidate">Для ввода допускается только буквы.</div>
                 </div>
 
-                <div class="field form-group col-6">
+                <div class="field form-group col-md-6 col-12">
                     <label for="lastName">Фамилия <span>*</span></label><br>
                     <input class="form-control"
+                           placeholder="Фамилия"
                            :class="{'is-invalid' : $v.lastName.$error}"
                            id="lastName"
                            type="text"
                            v-model="lastName"
                            @blur="$v.lastName.$touch()">
                     <div class="invalid-feedback"  v-if="!$v.lastName.required">Это поле является обязательным для заполнения.</div>
-                    <div class="invalid-feedback"  v-if="!$v.lastName.alpha">Для ввода допускается только буквы.</div>
+                    <div class="invalid-feedback"  v-if="!$v.lastName.alfaValidate">Для ввода допускается только буквы.</div>
                 </div>
 
-                <div class="field form-group col-3">
+                <div class="field form-group col-xl-3 col-md-6 col-12">
                     <label for="city">Город <span>*</span></label><br>
                     <input class="form-control"
+                           placeholder="Город"
                            :class="{'is-invalid' : $v.city.$error}"
                            id="city"
                            type="text"
                            v-model="city"
                            @blur="$v.city.$touch()">
                     <div class="invalid-feedback"  v-if="!$v.city.required">Это поле является обязательным для заполнения.</div>
-                    <div class="invalid-feedback"  v-if="!$v.city.alpha">Для ввода допускается только буквы.</div>
+                    <div class="invalid-feedback"  v-if="!$v.city.alfaValidate">Для ввода допускается только буквы.</div>
                 </div>
 
-                <div class="field form-group col-9">
+                <div class="field form-group col-xl-9 col-md-6 col-12">
                     <label for="phone">Контактный номер телефона: <span>*</span></label><br>
                     <input class="form-control"
+                           placeholder="+38 ___ __ __ ___ "
                            :class="{'is-invalid' : $v.phone.$error}"
                            id="phone"
                            type="tel"
                            v-model="phone"
                            @blur="$v.phone.$touch()">
                     <div class="invalid-feedback"  v-if="!$v.phone.required">Это поле является обязательным для заполнения.</div>
-                    <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength">Неверный формат номера.</div>
-                    <div class="invalid-feedback"  v-if="!$v.phone.numeric">Для ввода допускается только цифры.</div>
+                    <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength || !$v.phone.phone">Неверный формат номера.</div>
+<!--                    <div class="invalid-feedback"  v-if="!$v.phone.phone">Для ввода допускается только цифры.</div>-->
 
                 </div>
 
                 <div class="field form-group col-12">
                     <label for="email">Електронный адрес <span>*</span></label><br>
                     <input class="form-control"
+                           placeholder="user@user.com"
                            :class="{'is-invalid' : $v.eMail.$error}"
                            id="email" type="email"
                            v-model="eMail"
@@ -66,6 +71,7 @@
                 <div class="field form-group col-12">
                     <label for="user_msg">Текст сообщения <br/>(до 1 тыс.печатных знаков)</label><br>
                     <textarea class="form-control"
+                              placeholder="Текст"
                               name="userMsg"
                               id="user_msg"
                               v-model="userMsg"
@@ -74,7 +80,7 @@
 
                 <h4 class="col-12">Когда вы хотели бы получить онлайн консультацию?</h4>
 
-                <div class="field form-group col-6">
+                <div class="field form-group col-md-6 col-12">
                     <label for="date">Дата</label><br>
                     <input class="form-control"
                            id="date"
@@ -82,7 +88,7 @@
                            v-model="date">
                 </div>
 
-                <div class="field form-group col-6">
+                <div class="field form-group col-md-6 col-12">
                     <label for="time">Время</label><br>
                     <input class="form-control"
                            id="time"
@@ -145,7 +151,7 @@
                 <div class="field form-group col-12">
                     <button type="submit"
                             class="btn btn-danger"
-                            :disabled="true"
+                            :disabled="$v.$invalid"
                     >Принять</button>
                 </div>
 
@@ -161,15 +167,15 @@
 
 
 
-            <div class="change col-5">
+            <div class="change col-xl-5 col-12">
                 <div class="image">
-                    <img :src="getPhoto" :alt="consultation.model.name">
+                    <img :src="getPhoto" :alt="getConsultation.model.name">
                 </div>
                 <div class="info row text-left">
                     <div class="col-2 p-0"><i class="fas fa-car"></i></div>
                     <div class="col-8 p-0">
                         <h5 class="font-weight-bold">Выберите модель и двигатель</h5>
-                        <p>{{consultation.model.name}}, {{consultation.engineType}}</p>
+                        <p>{{getConsultation.model.name}}, {{getConsultation.engineType}}</p>
                     </div>
                     <div class="col-2 p-0">
                         <router-link
@@ -187,7 +193,8 @@
 </template>
 
 <script>
-    import { required, email, minLength, maxLength, numeric, alpha } from 'vuelidate/lib/validators'
+    import axios from "axios"
+    import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 
     export default {
         name: "Step2",
@@ -206,7 +213,7 @@
                 time: "",
                 agree: false,
 
-                // showInfo: false,
+                // consultation: {},
                 expandBlock: true,
             }
         },
@@ -216,12 +223,12 @@
                 return this.$store.getters.getModel();
             },
 
-            consultation() {
+            getConsultation() {
                 return this.$store.getters.getConsultation;
             },
 
             getPhoto() {
-                return 'http://lara.toyota.nikolaev.ua/storage/' + this.consultation.model.image;
+                return 'http://lara.toyota.nikolaev.ua/storage/' + this.getConsultation.model.image;
             },
 
 
@@ -231,23 +238,36 @@
 
             firstName: {
                 required,
-                alpha,
+                alfaValidate(str) {
+                    const regexp = /[A-ZА-Я]{1}[-'a-zа-я]+/;
+                    return regexp.test(str);
+                }
             },
 
             lastName: {
                 required,
-                alpha,
+                alfaValidate(str) {
+                    const regexp = /[A-ZА-Я]{1}[-'a-zа-я]+/;
+                    return regexp.test(str);
+                }
             },
 
             city: {
                 required,
+                alfaValidate(str) {
+                    const regexp = /[A-ZА-Я]{1}[-'a-zа-я]+/;
+                    return regexp.test(str);
+                }
             },
 
             phone: {
                 required,
                 minLength: minLength(12),
-                maxLength: maxLength(12),
-                numeric,
+                maxLength: maxLength(17),
+                phone(str) {
+                    const regexp = /\+38[- ]?[0-9]{3}[- ]?[0-9]{2}[- ]?[0-9]{2}[- ]?[0-9]{3}/;
+                    return regexp.test(str);
+                },
             },
 
             eMail: {
@@ -274,7 +294,38 @@
         methods: {
             expand() {
                 this.expandBlock = !this.expandBlock;
-            }
+            },
+
+            onSubmit() {
+                const consultation = {
+                    model: this.model,
+                    engineType: this.getConsultation.engineType,
+                    firstName: this.firstName,
+                    lastName: this.lastName,
+                    city: this.city,
+                    phone: this.phone,
+                    eMail: this.eMail,
+                    userMsg: this.userMsg,
+                    date: this.date,
+                    time: this.time,
+                    agree: this.agree,
+                }
+
+                axios.post(
+                    'http://lara.toyota.nikolaev.ua/ajax/--',
+                    consultation,
+                )
+                .then( (response) => {
+                    console.log("Данные переданы успешно!")
+                    console.log(response)
+                } )
+                .catch( (error) => {
+                    console.log(" Ошибка передачи данных");
+                    console.log(error);
+                } )
+            },
+
+
         },
 
         components: {
@@ -320,6 +371,10 @@
                         width: 100%;
                         height: 150px;
                         border-radius: 5px;
+                    }
+
+                    .invalid-feedback {
+                        font-size: 1.3rem;
                     }
 
                     .info {
@@ -402,6 +457,7 @@
             }
 
             .change {
+                margin-bottom: 40px;
                 .image {
                     width: 100%;
                     padding: 15px;
@@ -436,4 +492,101 @@
         }
     }
 
+    @media (min-width: 768px) and (max-width: 1199.9px) {
+        article.step_2.container {
+            position: absolute;
+            top: 180px;
+            height: 70vh;
+            box-sizing: border-box;
+            .row {
+                form[name="consultation"] {
+                    margin: 0;
+                }
+
+                .change {
+                    order: -1;
+                    padding: 0 30px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        article.step_2.container {
+            position: static;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+            .row {
+                margin: 0;
+                form[name="consultation"] {
+                    margin: 0;
+                    .field {
+                        margin-bottom: 20px;
+                        padding: 0 15px;
+
+                        input {
+                            padding: 15px 20px;
+                            height: auto;
+                        }
+                        textarea {
+                            @include inputForm;
+                            width: 100%;
+                            height: 150px;
+                            border-radius: 5px;
+                        }
+
+                        .row {
+                            float: right;
+                            button.btn.btn-link {
+                                @include button_link;
+                                /*<!--font-size: 1.3rem;-->*/
+                                /*<!--color: $font_color;-->*/
+                                /*<!--text-decoration: underline;-->*/
+                            }
+                        }
+                        button {
+                            @include button;
+                            width: auto;
+                            padding-left: 30px;
+                            padding-right: 30px;
+                            &[disable="true"] {
+                                background-color: #ccc;
+                            }
+                        }
+                    }
+                }
+
+                .change {
+                    order: -1;
+                    margin-bottom: 40px;
+                    padding: 0 30px;
+
+
+                    .info.row {
+                        @include inputForm;
+                        padding: 30px;
+                        margin: 0;
+                        div {
+                            i {
+                                font-size: 3rem;
+                                color: #7a7a7a;
+                            }
+                            h5 {
+                                font-size: 1.4rem;
+                                margin-bottom: 15px;
+                            }
+                            p {
+                                font-size: 1.4rem;
+                            }
+                            button {
+                                @include button_link;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>

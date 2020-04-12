@@ -232,7 +232,6 @@
 
     @media ( min-width: 576px ) and ( max-width: 991.9px ) {
         article.step_1 {
-            min-width: 420px;
             .body.row {
                 flex-direction: column-reverse;
                 form {
@@ -318,7 +317,7 @@
 
     @media ( max-width: 575.9px ) {
         article.step_1 {
-            min-width: 420px;
+            min-width: 350px;
             .body.row {
                 flex-direction: column-reverse;
                 form {
@@ -348,7 +347,7 @@
                         padding: 0;
                         li {
                             width: 100%;
-                            margin: 0 20px;
+                            margin: 0 10px;
                             border-bottom: 4px solid #fff;
                             box-sizing: border-box;
                             label {
@@ -395,6 +394,8 @@
             footer {
                 button {
                     @include button;
+                    width: 100%;
+                    margin-top: 20px;
                     background-color: #E50000;
                     font-size: 1.7rem;
                 }

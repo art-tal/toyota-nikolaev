@@ -154,7 +154,6 @@
 
     @media ( min-width: 576px ) and (max-width: 767.9px) {
         section.consultation{
-            min-width: 470px;
             height: 100%;
             .container {
                 position: absolute;
@@ -173,7 +172,8 @@
 
     @media ( max-width: 575.9px ) {
         section.consultation{
-            min-width: 470px;
+            width: 100%;
+            min-width: 400px;
             height: 100%;
             .container {
                 position: absolute;
@@ -198,6 +198,12 @@
                         }
                     }
 
+                }
+
+                header {
+                    h1 {
+                        font-size: 3rem;
+                    }
                 }
 
             }
