@@ -30,27 +30,85 @@ export default new VueRouter({
         {
             path: "/",
             name: "home",
-            component: Home,
+            // component: Home,
+            components: {
+                pages: Home
+            },
         },
 
         {
             path: '/lineup',
             name: 'Lineup',
-            component: Lineup,
-            children: [
+            // component: Lineup,
+            components: {
+                lineup: Lineup,
+            }
+        },
 
-            ]
+        {
+            path: '/to_buyers',
+            name: "ToBuyers",
+            // component: ToBuyers,
+            components: {
+                subNav: ToBuyers
+            }
+        },
+
+        {
+            path: "/to_the_owners",
+            name: "ToTheOwners",
+            // component: ToTheOwners,
+            components: {
+                subNav: ToTheOwners
+            }
+        },
+
+        {
+            path: "/souvenir_products",
+            name: "SouvenirProducts",
+            // component: SouvenirProducts,
+            components: {
+                subNav: SouvenirProducts
+            }
+        },
+
+        {
+            path: "/why_toyota",
+            name: "WhyToyota",
+            // component: WhyToyota,
+            components: {
+                subNav: WhyToyota
+            }
+        },
+
+        {
+            path: "/toyota_in_nikolaev",
+            name: "toyota_in_nikolaev",
+            // component: ToyotaInNikolaev,
+            components: {
+                subNav: ToyotaInNikolaev
+            }
+        },
+
+        {
+            path: "/mobility_for_everyone",
+            name: "MobilityForEveryone",
+            // component: MobilityForEveryone,
+            components: {
+                subNav: MobilityForEveryone
+            }
         },
 
         {
             path: '/select_model/:id',
-            // path: '/select_model',
             name: 'selectModel',
-            component: SelectModel,
+            // component: SelectModel,
+            components: {
+                pages: SelectModel
+            },
             children: [
                 {
                     path: '/select_model/:id/equipment',
-                    // path: '/select_model/equipment',
                     name: 'Equipment',
                     component: Equipment,
                 },
@@ -63,7 +121,10 @@ export default new VueRouter({
             path: '/configurator',
             // path: '/configurator/:id_params',
             name: 'Configurator',
-            component: Configurator,
+            // component: Configurator,
+            components: {
+                pages: Configurator
+            },
             children: [
                 {
                     path: '/configurator/equipment',
@@ -152,41 +213,6 @@ export default new VueRouter({
         },
 
 
-        {
-            path: '/to_buyers',
-            name: "ToBuyers",
-            component: ToBuyers,
-        },
-
-        {
-            path: "/to_the_owners",
-            name: "ToTheOwners",
-            component: ToTheOwners,
-        },
-
-        {
-            path: "/souvenir_products",
-            name: "SouvenirProducts",
-            component: SouvenirProducts,
-        },
-
-        {
-            path: "/why_toyota",
-            name: "WhyToyota",
-            component: WhyToyota,
-        },
-
-        {
-            path: "/toyota_in_nikolaev",
-            name: "toyota_in_nikolaev",
-            component: ToyotaInNikolaev,
-        },
-
-        {
-            path: "/mobility_for_everyone",
-            name: "MobilityForEveryone",
-            component: MobilityForEveryone,
-        },
     ],
 
     mode: 'history'

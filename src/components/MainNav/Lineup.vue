@@ -7,14 +7,26 @@
 
         <div class="row">
             <div class="all_model col-lg-9 col-md-8 col-sm-12 row">
-                    <div class="col-xl-3 col-lg-4 col-sm-6 model" v-for="(model, key) in models" :key="key">
-                        <div
+                    <div class="col-xl-3 col-lg-4 col-sm-6 model" v-for="(model, key) in models" :key="key" @click.prevent="goSelectModel(model)">
+                        <router-link
+
+                                exact
+                                tag="div"
+                                active-class="active"
+                                :to="{name: 'selectModel', params: {id: model.id } }"
                                 class="nav-link active text-left"
-                                @click="goSelectModel(model)">
+                        >
                             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
                             <h2>{{model.name}}</h2>
                             <h3 v-if="model.hybrid">+ Гибрид</h3>
-                        </div>
+                        </router-link>
+<!--                        <div-->
+<!--                                class="nav-link active text-left"-->
+<!--                                @click="goSelectModel(model)">-->
+<!--                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">-->
+<!--                            <h2>{{model.name}}</h2>-->
+<!--                            <h3 v-if="model.hybrid">+ Гибрид</h3>-->
+<!--                        </div>-->
 
                 </div>
             </div>
@@ -114,6 +126,10 @@
 
     section.container-fluid {
         background-color: #F0F0F0;
+        /*position: absolute;*/
+        /*top: 0;*/
+        left: -15px;
+        /*width: 100vw;*/
         .car_type {
             padding: 6px 40px 6px 73px;
             background-color: #f0f0f0;

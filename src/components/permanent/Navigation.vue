@@ -24,12 +24,22 @@
                             <li class="nav-item active">
                                 <router-link
                                         class="nav-link"
+                                        id="navbarDropdown"
+                                        role="button"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
                                         tag="a"
                                         exact
                                         active-class="active"
                                         to="/lineup"
                                 >
                                     <span>Модельный ряд</span>
+
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <router-view name="lineup" class="dropdown-item"></router-view>
+                                    </div>
+
                                     <span class="sr-only">(current)</span>
                                 </router-link>
 
@@ -109,7 +119,6 @@
                 </nav>
 
 
-
             <div class="dealers col-xl-5 col-lg-4 col-md-1">
                 <ul class="navbar-nav mr-auto text-right">
                     <li class="nav-item active ">
@@ -163,6 +172,8 @@
                 </ul>
             </div>
 
+<!--            <router-view name="subNav"></router-view>-->
+
         </div>
 
 
@@ -210,6 +221,13 @@
                                 &:hover {
                                     background-color: #E50000;
                                     color: #fff;
+                                }
+                                .dropdown-menu {
+                                    position: absolute;
+                                    top: 70px;
+                                    left: -15px;
+                                    width: 100vw;
+                                    padding: 0;
                                 }
                             }
 
