@@ -202,8 +202,8 @@
             this.$store.state.selectedAccessories = JSON.parse( localStorage.selectedAccessories );
             window.addEventListener('resize', this.changeResize);
             this.changeResize();
-            eventEmitter.$on('close', () => ( this.openConsult() ) );
-        },
+            eventEmitter.$on('close', this.openConsult );
+        },//() => { this.openConsult() }
 
         computed: {
             getModel() {
@@ -267,6 +267,7 @@
 
             openConsult() {
                 this.openConsultation = !this.openConsultation;
+                console.log(this.openConsultation);
             }
         },
     }

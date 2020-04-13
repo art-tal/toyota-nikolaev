@@ -74,6 +74,7 @@
 
         methods: {
             closeConsult() {
+                console.log("click");
                 eventEmitter.$emit('close');
             },
         },

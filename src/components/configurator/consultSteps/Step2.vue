@@ -309,7 +309,7 @@
                     date: this.date,
                     time: this.time,
                     agree: this.agree,
-                }
+                };
 
                 axios.post(
                     'http://lara.toyota.nikolaev.ua/ajax/--',

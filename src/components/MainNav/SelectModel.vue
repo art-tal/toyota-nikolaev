@@ -1,5 +1,5 @@
 <template>
-    <section class="selectModel">
+    <main class="selectModel">
 <!--        @selectedEquipment="selectedModel($event)"-->
         <sub-navigation></sub-navigation>
 
@@ -117,7 +117,7 @@
         </div>
 
 
-    </section>
+    </main>
 </template>
 
 <script>
@@ -175,8 +175,8 @@
 
 
         created() {
-            this.id = this.$route.params.id;
-            // this.id = localStorage.id;
+            // this.id = this.$route.params.id;
+            this.id = localStorage.id;
             // this.$store.state.model.id = this.id;
             // this.getModel();
             this.model = JSON.parse( localStorage.model );
@@ -192,8 +192,6 @@
                 this.model.maxPower = 181;
                 this.model.fuelConsumption = 8.3;
             console.log(this.model);
-            console.log(this.id);
-
 //////////////////////////////////////////////////////
 //             this.$store.state.model = this.model;
             // this.equipment = this.$store.state.equipment;
@@ -246,10 +244,6 @@
         },
 
         watch: {
-            // $route(toR) {
-            //     this.id = toR.params['id'];
-            // },
-
             equipment() {
                 // return this.$store.state.equipment;
                 return JSON.parse(localStorage.equipment);

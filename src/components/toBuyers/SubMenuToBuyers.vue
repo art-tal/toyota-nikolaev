@@ -1,5 +1,120 @@
 <template>
-    
+    <div class="sub_toBuyers container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <router-link
+                        exact
+                        tag="a"
+                        class="nav-link"
+                        active-class="active"
+                        to="/insurance"
+                >Toyota Страхование</router-link>
+            </div>
+
+            <div class="col-3">
+                <router-link
+                        exact
+                        tag="a"
+                        class="nav-link"
+                        active-class="active"
+                        to="/credit"
+                >Toyota Кредит</router-link>
+            </div>
+
+            <div class="col-3">
+                <router-link
+                        exact
+                        tag="a"
+                        class="nav-link"
+                        active-class="active"
+                        to="/corporate_sales"
+                >Корпоративные продажи</router-link>
+
+                <ul>
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to="/business_car"
+                        >Пользователям служебных автомобилей</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to="/business_owner"
+                        >Собственникам бизнеса</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to="/corporate_clients"
+                        >Корпоротивным клиентам</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to="/special_solutions"
+                        >Специальные финансовые решения</router-link>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="col-3">
+                <div class="tools">
+                    <h2 class="font-weight-bold">Инструменты покупателя</h2>
+                    <ol>
+                        <li class="servies">
+                            <a href="#">
+                                <i class="fas fa-car"></i>
+                                <span>Конфигуратор</span>
+                            </a>
+                        </li>
+                        <li class="dilers">
+                            <a href="#">
+                                <i class="far fa-file-alt"></i>
+                                <span>Загрузить брошуры</span>
+                            </a>
+                        </li>
+                        <li class="contact">
+                            <a href="#">
+                                <i class="fas fa-car"></i>
+                                <span>Гибридные иновации</span>
+                            </a>
+                        </li>
+                        <li class="test_drive">
+                            <a href="#">
+                                <i class="fas fa-tag"></i>
+                                <span>Сувенирная продукция</span>
+                            </a>
+                        </li>
+                        <li class="download">
+                            <a href="#">
+                                <i class="fas fa-phone"></i>
+                                <span>Связаться с нами</span>
+                            </a>
+                        </li>
+                        <li class="download">
+                            <a href="#">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Официальные дилеры</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -8,6 +123,74 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import '../../styles/variables';
+
+    .sub_toBuyers.container-fluid {
+        width: 100%;
+        margin-top: 16px;
+        margin-bottom: 60px;
+        .row {
+            width: 100%;
+            padding: 0 50px;
+            div {
+                a.nav-link {
+                    font-size: 1.6rem;
+                    color: $font_color;
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 100%;
+                    padding: 16px 0;
+                    border-bottom: 1px solid rgba(0,0,0,0.1);
+                    margin-bottom: 20px;
+                }
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        margin-bottom: 10px;
+                        a {
+                            color: #6c7073;
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+            div.tools {
+                font-size: 1.6rem;
+                color: $font_color;
+                padding: 0 15px;
+
+                h2 {
+                    font-size: 1.5rem;
+                    padding: 16px 0;
+                }
+                ol {
+                    padding: 0;
+                    li {
+                        border: 1px solid #f0f0f0;
+                        background-color: #fff;
+                        list-style-type: none;
+                        a {
+                            display: block;
+                            color: $font_color;
+                            text-decoration: none;
+                            padding: 18px 26px 22px;
+                            i {
+                                margin-right: 20px;
+                                color: #a8aaac;
+                            }
+                        }
+                        &:hover {
+                            a i {
+                                color: #E50000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 </style>

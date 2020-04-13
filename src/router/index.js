@@ -10,7 +10,7 @@ import Wheels from "@/components/configurator/options/Wheels";
 import Interior from "@/components/configurator/options/Interior";
 import Lineup from "@/components/MainNav/Lineup";
 import Equipment from "@/components/configurator/Equipment";
-import ToBuyers from "@/components/MainNav/ToBuyers";
+// import ToBuyers from "@/components/MainNav/ToBuyers";
 import ToTheOwners from "@/components/MainNav/ToTheOwners";
 import SouvenirProducts from "@/components/MainNav/SouvenirProducts";
 import WhyToyota from "@/components/MainNav/WhyToyota";
@@ -21,91 +21,28 @@ import Price from "@/components/configurator/options/Price";
 import ToResult from "@/components/configurator/options/ToResult";
 import Consult from "@/components/configurator/Сonsult"
 import Step1 from "@/components/configurator/consultSteps/Step1";
-import Step3 from "@/components/configurator/consultSteps/Step3";
 import Step2 from "@/components/configurator/consultSteps/Step2";
 import Home from "@/components/Home";
+import Insurance from "@/components/toBuyers/Insurance";
 
 export default new VueRouter({
     routes: [
         {
             path: "/",
             name: "home",
-            // component: Home,
-            components: {
-                pages: Home
-            },
+            component: Home,
         },
 
         {
             path: '/lineup',
             name: 'Lineup',
-            // component: Lineup,
-            components: {
-                lineup: Lineup,
-            }
-        },
-
-        {
-            path: '/to_buyers',
-            name: "ToBuyers",
-            // component: ToBuyers,
-            components: {
-                subNav: ToBuyers
-            }
-        },
-
-        {
-            path: "/to_the_owners",
-            name: "ToTheOwners",
-            // component: ToTheOwners,
-            components: {
-                subNav: ToTheOwners
-            }
-        },
-
-        {
-            path: "/souvenir_products",
-            name: "SouvenirProducts",
-            // component: SouvenirProducts,
-            components: {
-                subNav: SouvenirProducts
-            }
-        },
-
-        {
-            path: "/why_toyota",
-            name: "WhyToyota",
-            // component: WhyToyota,
-            components: {
-                subNav: WhyToyota
-            }
-        },
-
-        {
-            path: "/toyota_in_nikolaev",
-            name: "toyota_in_nikolaev",
-            // component: ToyotaInNikolaev,
-            components: {
-                subNav: ToyotaInNikolaev
-            }
-        },
-
-        {
-            path: "/mobility_for_everyone",
-            name: "MobilityForEveryone",
-            // component: MobilityForEveryone,
-            components: {
-                subNav: MobilityForEveryone
-            }
+            component: Lineup,
         },
 
         {
             path: '/select_model/:id',
             name: 'selectModel',
-            // component: SelectModel,
-            components: {
-                pages: SelectModel
-            },
+            component: SelectModel,
             children: [
                 {
                     path: '/select_model/:id/equipment',
@@ -121,10 +58,7 @@ export default new VueRouter({
             path: '/configurator',
             // path: '/configurator/:id_params',
             name: 'Configurator',
-            // component: Configurator,
-            components: {
-                pages: Configurator
-            },
+            component: Configurator,
             children: [
                 {
                     path: '/configurator/equipment',
@@ -178,28 +112,23 @@ export default new VueRouter({
                     name: 'result',
                     component: Result,
                     children: [
-                        {
-                            path: "/configurator/consultation",
-                            name: 'consultation',
-                            component: Consult,
-                            children: [
-                                {
-                                    path: "/configurator/consultation/step_1",
-                                    name: "step_1",
-                                    component: Step1,
-                                },
-                                {
-                                    path: "/configurator/consultation/step_2",
-                                    name: "step_2",
-                                    component: Step2,
-                                },
-                                {
-                                    path: "/configurator/consultation/step_3",
-                                    name: "step_3",
-                                    component: Step3,
-                                },
-                            ]
-                        },
+                        // {
+                        //     path: "/configurator/consultation",
+                        //     name: 'consultation',
+                        //     component: Consult,
+                        //     children: [
+                        //         {
+                        //             path: "/configurator/consultation/step_1",
+                        //             name: "step_1",
+                        //             component: Step1,
+                        //         },
+                        //         {
+                        //             path: "/configurator/consultation/step_2",
+                        //             name: "step_2",
+                        //             component: Step2,
+                        //         },
+                        //     ]
+                        // },
                     ]
                 },
                 {
@@ -212,7 +141,66 @@ export default new VueRouter({
             ]
         },
 
+        {
+            path: "/consultation",
+            name: 'consultation',
+            component: Consult,
+            children: [
+                {
+                    path: "/configurator/consultation/step_1",
+                    name: "step_1",
+                    component: Step1,
+                },
+                {
+                    path: "/configurator/consultation/step_2",
+                    name: "step_2",
+                    component: Step2,
+                },
+            ]
+        },
 
+
+        // {
+        //     path: '/to_buyers',
+        //     name: "ToBuyers",
+        //     component: ToBuyers,
+        // },
+
+        {
+            path: "/insurance",
+            name: "insurance",
+            component: Insurance
+        },
+
+        {
+            path: "/to_the_owners",
+            name: "ToTheOwners",
+            component: ToTheOwners,
+        },
+
+        {
+            path: "/souvenir_products",
+            name: "SouvenirProducts",
+            component: SouvenirProducts,
+        },
+
+        {
+            path: "/why_toyota",
+            name: "WhyToyota",
+            component: WhyToyota,
+        },
+
+        {
+            path: "/toyota_in_nikolaev",
+            name: "toyota_in_nikolaev",
+            component: ToyotaInNikolaev,
+        },
+
+        {
+            path: "/mobility_for_everyone",
+            name: "MobilityForEveryone",
+            component: MobilityForEveryone,
+        },
     ],
 
     mode: 'history'

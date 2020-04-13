@@ -1,5 +1,5 @@
 <template>
-    <section class="configurator">
+    <main class="configurator">
         <sub-navigation></sub-navigation>
 
         <nav class="navbar navbar-expand navbar-light">
@@ -62,7 +62,7 @@
             </ul>
         </article>
 
-    </section>
+    </main>
 </template>
 
 <script>

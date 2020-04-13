@@ -24,36 +24,42 @@
                             <li class="nav-item active">
                                 <router-link
                                         class="nav-link"
-                                        id="navbarDropdown"
-                                        role="button"
-                                        data-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
                                         tag="a"
                                         exact
                                         active-class="active"
                                         to="/lineup"
                                 >
                                     <span>Модельный ряд</span>
-
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <router-view name="lineup" class="dropdown-item"></router-view>
-                                    </div>
-
                                     <span class="sr-only">(current)</span>
                                 </router-link>
 
                             </li>
-                            <li class="nav-item">
-                                <router-link
-                                        class="nav-link"
-                                        tag="a"
-                                        exact
-                                        active-class="active"
-                                        to="/to_buyers"
-                                >
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                   href="#" id="navbarDropdown"
+                                   role="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+
+<!--                                <router-link-->
+<!--                                        class="nav-link"-->
+<!--                                        tag="a"-->
+<!--                                        exact-->
+<!--                                        active-class="active"-->
+<!--                                        to="/to_buyers"-->
+<!--                                >-->
                                     <span>Покупателям</span>
-                                </router-link>
+<!--                                </router-link>-->
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <sub-menu-to-buyers></sub-menu-to-buyers>
+<!--                                    <a class="dropdown-item" href="#">Action</a>-->
+<!--                                    <a class="dropdown-item" href="#">Another action</a>-->
+<!--                                    <div class="dropdown-divider"></div>-->
+<!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
+                                </div>
+
                             </li>
                             <li class="nav-item">
                                 <router-link
@@ -119,6 +125,7 @@
                 </nav>
 
 
+
             <div class="dealers col-xl-5 col-lg-4 col-md-1">
                 <ul class="navbar-nav mr-auto text-right">
                     <li class="nav-item active ">
@@ -172,8 +179,6 @@
                 </ul>
             </div>
 
-<!--            <router-view name="subNav"></router-view>-->
-
         </div>
 
 
@@ -181,8 +186,14 @@
 </template>
 
 <script>
+    import SubMenuToBuyers from "@/components/toBuyers/SubMenuToBuyers";
+
     export default {
-        name: "Navigation"
+        name: "Navigation",
+
+        components: {
+            SubMenuToBuyers,
+        },
     }
 </script>
 
@@ -205,10 +216,11 @@
                     height: 100%;
                     ul {
                         height: 100%;
-                        li {
+                        li.nav-item {
                             height: 100%;
                             box-sizing: border-box;
                             display: table;
+                            position: static;
                             .nav-link {
                                 display: table-cell;
                                 vertical-align: middle;
@@ -222,13 +234,12 @@
                                     background-color: #E50000;
                                     color: #fff;
                                 }
-                                .dropdown-menu {
-                                    position: absolute;
-                                    top: 70px;
-                                    left: -15px;
-                                    width: 100vw;
-                                    padding: 0;
-                                }
+                            }
+                            .dropdown-menu {
+                                width: 100vw;
+                                left: 0;
+                                margin: 0 -15px;
+                                background-color: #f0f0f0;
                             }
 
                         }

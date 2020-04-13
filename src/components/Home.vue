@@ -1,5 +1,5 @@
 <template>
-    <section class="container-fluid">
+    <main class="container-fluid">
         <div class="row">
             <div class="col-lg-4 col-md-8 col-12 welcome text-left">
                 <h2>Добро пожаловать<br/><strong>что вас интересует?</strong></h2>
@@ -60,7 +60,7 @@
                     </article>
             </div>
         </div>
-    </section>
+    </main>
 </template>
 
 <script>
@@ -108,7 +108,7 @@
         padding: 0;
     }
 
-    section.container-fluid {
+    main.container-fluid {
         padding: 0;
         .row {
             width: 100%;
@@ -205,7 +205,7 @@
     }
 
     @media ( min-width: 992px ) and ( max-width: 1199.9px ) {
-        section.container-fluid {
+        main.container-fluid {
             .row {
                 .welcome {
                     h2 {
@@ -219,7 +219,7 @@
     }
 
     @media ( min-width: 768px ) and ( max-width: 991.9px ) {
-        section.container-fluid {
+        main.container-fluid {
 
             .row {
                 .links {
@@ -233,7 +233,7 @@
     }
 
     @media ( min-width: 576px ) and ( max-width: 767.9px ) {
-        section.container-fluid {
+        main.container-fluid {
             padding: 0;
             .row {
                 width: 100%;
@@ -264,7 +264,7 @@
     }
 
     @media ( max-width: 575.9px ) {
-        section.container-fluid {
+        main.container-fluid {
             min-width: 470px;
             padding: 0;
             .row {
