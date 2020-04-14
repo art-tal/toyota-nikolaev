@@ -19,6 +19,8 @@ export default new Vuex.Store ({
         selectedAccessories: [],
         // modelImage: "",
 
+        openConsultation: false,
+
         consultation: {
             model: {},
             engineType: "",
@@ -69,13 +71,12 @@ export default new Vuex.Store ({
             return state.consultation;
         },
 
-        // getConsultModel(state) {
-        //     return state.consultModel;
-        // },
-        //
-        // getConsultEngine(state) {
-        //     return state.consultEngine;
-        // }
+        getOpenConsultation(state) {
+            console.log(state.openConsultation);
+            return state.openConsultation;
+        },
+
+
 
 
     },

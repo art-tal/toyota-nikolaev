@@ -2,7 +2,7 @@
     <header class="container-fluid">
         <div class="row">
 
-            <nav class="col-xl-7 col-lg-8 col-md-12 navbar navbar-expand-lg navbar-light">
+            <nav class="col-xl-7 col-lg-12 navbar navbar-expand-xl navbar-light">
                 <router-link
                         class="navbar-brand"
                         tag="a"
@@ -15,23 +15,41 @@
                 </router-link>
 
 <!--                    <a class="navbar-brand" href="#"></a>-->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <router-link
-                                        class="nav-link"
-                                        tag="a"
-                                        exact
-                                        active-class="active"
-                                        to="/lineup"
-                                >
+                            <li class="nav-item active dropdown">
+<!--                                <router-link-->
+<!--                                        class="nav-link"-->
+<!--                                        tag="a"-->
+<!--                                        exact-->
+<!--                                        active-class="active"-->
+<!--                                        to="/lineup"-->
+<!--                                >-->
+<!--                                    <span>Модельный ряд</span>-->
+<!--                                    <span class="sr-only">(current)</span>-->
+<!--                                </router-link>-->
+                                <a class="nav-link dropdown-toggle"
+                                   href="#"
+                                   role="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
                                     <span>Модельный ряд</span>
-                                    <span class="sr-only">(current)</span>
-                                </router-link>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <lineup></lineup>
+                                </div>
 
                             </li>
                             <li class="nav-item dropdown">
@@ -41,16 +59,7 @@
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-
-<!--                                <router-link-->
-<!--                                        class="nav-link"-->
-<!--                                        tag="a"-->
-<!--                                        exact-->
-<!--                                        active-class="active"-->
-<!--                                        to="/to_buyers"-->
-<!--                                >-->
                                     <span>Покупателям</span>
-<!--                                </router-link>-->
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <sub-menu-to-buyers></sub-menu-to-buyers>
@@ -130,7 +139,7 @@
                 <ul class="navbar-nav mr-auto text-right">
                     <li class="nav-item active ">
                         <router-link
-                                class="nav-link active"
+                                class="nav-link"
                                 tag="a"
                                 exact
                                 active-class="active"
@@ -187,12 +196,14 @@
 
 <script>
     import SubMenuToBuyers from "@/components/toBuyers/SubMenuToBuyers";
+    import Lineup from "@/components/MainNav/Lineup";
 
     export default {
         name: "Navigation",
 
         components: {
             SubMenuToBuyers,
+            Lineup
         },
     }
 </script>
@@ -212,7 +223,7 @@
             nav.navbar {
                 padding: 0;
                 height: 100%;
-                .collapse {
+                .collapse.navbar-collapse {
                     height: 100%;
                     ul {
                         height: 100%;
@@ -245,8 +256,6 @@
                         }
                     }
                 }
-
-
             }
 
             .dealers {
@@ -290,6 +299,7 @@
     @media (min-width: 1200px) and (max-width: 1439.9px) {
         header {
             .row {
+
                 .dealers {
                     ul {
                         li {
@@ -314,20 +324,74 @@
             .row {
                 nav.navbar {
                     .collapse {
+                        height: auto;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        z-index: 1000;
                         ul {
+                            position: absolute;
+                            width: 100%;
+                            height: auto;
+                            display: block;
                             li {
+                                position: relative;
+                                z-index: 5;
+                                background-color: #f0f0f0;
+                                width: 100%;
+                                border: 1px solid #cccccc;
                                 .nav-link {
-                                    padding: 0 10px;
+                                    &.active {
+                                        background-color: #E50000;
+                                        border: 1px solid #000000;
+                                        color: #fff;
+                                    }
+                                }
+
+                                .dropdown-menu {
+                                    position: absolute;
+                                    left: 15px !important;
+                                    max-width: 100%;
                                 }
 
                             }
                         }
                     }
-
-
                 }
+                /*nav.navbar {*/
+                /*    .collapse {*/
+                /*        ul {*/
+                /*            li {*/
+                /*                .nav-link {*/
+                /*                    padding: 0 10px;*/
+                /*                }*/
 
+                /*            }*/
+                /*        }*/
+                /*    }*/
+
+
+                /*}*/
+
+                /*.dealers {*/
+                /*    ul {*/
+                /*        li {*/
+                /*            a {*/
+                /*                i {*/
+                /*                    margin-right: 5px;*/
+                /*                }*/
+                /*                span {*/
+                /*                    display: none;*/
+                /*                }*/
+                /*            }*/
+                /*        }*/
+                /*    }*/
+                /*}*/
                 .dealers {
+                    height: 70px;
+                    position: absolute;
+                    right: 100px;
+                    top: 0;
                     ul {
                         li {
                             a {
@@ -341,7 +405,6 @@
                         }
                     }
                 }
-
             }
         }
     }
@@ -350,7 +413,16 @@
         header {
             .row {
                 nav.navbar {
+                    button.navbar-toggler {
+
+                    }
                     .collapse {
+                        height: auto;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        z-index: 1000;
+                        border: 1px solid #cccccc;
                         ul {
                             position: absolute;
                             width: 100%;
@@ -359,13 +431,21 @@
                             li {
                                 position: relative;
                                 z-index: 5;
-                                background-color: #fff;
+                                background-color: #f0f0f0;
                                 width: 100%;
+                                border-bottom: 1px solid #cccccc;
                                 .nav-link {
                                     &.active {
                                         background-color: #E50000;
                                         color: #fff;
                                     }
+                                }
+
+                                .dropdown-menu {
+                                    position: absolute;
+                                    top: 68px;
+                                    left: 15px !important;
+                                    max-width: 100%;
                                 }
 
                             }
@@ -402,14 +482,23 @@
             .row {
                 nav.navbar {
                     .collapse {
+                        height: auto;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        z-index: 1000;
+                        border: 1px solid #cccccc;
                         ul {
+                            position: absolute;
+                            width: 100%;
                             height: 50px;
                             display: block;
                             li {
                                 position: relative;
                                 z-index: 5;
-                                background-color: #fff;
+                                background-color: #f0f0f0;
                                 width: 100%;
+                                border-bottom: 1px solid #cccccc;
                                 .nav-link {
                                     &.active {
                                         background-color: #E50000;
@@ -417,9 +506,36 @@
                                     }
                                 }
 
+                                .dropdown-menu {
+                                    min-width: 320px;
+                                    position: absolute;
+                                    left: 15px !important;
+                                    max-width: 100%;
+                                }
+
                             }
                         }
                     }
+                /*}*/
+                    /*.collapse {*/
+                    /*    ul {*/
+                    /*        height: 50px;*/
+                    /*        display: block;*/
+                    /*        li {*/
+                    /*            position: relative;*/
+                    /*            z-index: 5;*/
+                    /*            background-color: #fff;*/
+                    /*            width: 100%;*/
+                    /*            .nav-link {*/
+                    /*                &.active {*/
+                    /*                    background-color: #E50000;*/
+                    /*                    color: #fff;*/
+                    /*                }*/
+                    /*            }*/
+
+                    /*        }*/
+                    /*    }*/
+                    /*}*/
                 }
 
                 .dealers {

@@ -57,7 +57,7 @@
 </template>
 
 <script>
-    import {eventEmitter} from "@/main";
+    // import {eventEmitter} from "@/main";
 
     export default {
         name: "Сonsultation",
@@ -74,8 +74,10 @@
 
         methods: {
             closeConsult() {
+                // eventEmitter.$emit('close');
+                this.$store.state.openConsultation = !this.$store.state.openConsultation;
                 console.log("click");
-                eventEmitter.$emit('close');
+                console.log(this.$store.state.openConsultation);
             },
         },
     }

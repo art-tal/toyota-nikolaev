@@ -166,7 +166,7 @@
 
 <script>
     import Consult from "@/components/configurator/Сonsult"
-    import {eventEmitter} from "@/main";
+    // import {eventEmitter} from "@/main";
 
     export default {
         name: "Result",
@@ -182,13 +182,6 @@
                 openAside: true,
                 openConsultation: false,
                 windowWidth: null,
-                // model: null,
-                // equipment: null,
-                // transmission: null,
-                // color: null,
-                // wheels: null,
-                // interior: null,
-                // selectedAccessories: null,
             }
         },
 
@@ -202,8 +195,8 @@
             this.$store.state.selectedAccessories = JSON.parse( localStorage.selectedAccessories );
             window.addEventListener('resize', this.changeResize);
             this.changeResize();
-            eventEmitter.$on('close', this.openConsult );
-        },//() => { this.openConsult() }
+            // eventEmitter.$on('close', () => { this.openConsult() } );
+        },
 
         computed: {
             getModel() {
@@ -247,10 +240,12 @@
             },
 
             showConsultation() {
-                return this.openConsultation;
+                return this.$store.getters.getOpenConsultation;
             },
 
         },
+
+
 
 
         methods: {
@@ -266,8 +261,9 @@
             },
 
             openConsult() {
-                this.openConsultation = !this.openConsultation;
-                console.log(this.openConsultation);
+                // this.openConsultation = !this.openConsultation;
+                this.$store.state.openConsultation = !this.$store.state.openConsultation;
+                // console.log(this.$store.state.openConsultation );
             }
         },
     }

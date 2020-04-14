@@ -112,23 +112,23 @@ export default new VueRouter({
                     name: 'result',
                     component: Result,
                     children: [
-                        // {
-                        //     path: "/configurator/consultation",
-                        //     name: 'consultation',
-                        //     component: Consult,
-                        //     children: [
-                        //         {
-                        //             path: "/configurator/consultation/step_1",
-                        //             name: "step_1",
-                        //             component: Step1,
-                        //         },
-                        //         {
-                        //             path: "/configurator/consultation/step_2",
-                        //             name: "step_2",
-                        //             component: Step2,
-                        //         },
-                        //     ]
-                        // },
+                        {
+                            path: "/configurator/consultation",
+                            name: 'consultation',
+                            component: Consult,
+                            children: [
+                                {
+                                    path: "/configurator/consultation/step_1",
+                                    name: "step_1",
+                                    component: Step1,
+                                },
+                                {
+                                    path: "/configurator/consultation/step_2",
+                                    name: "step_2",
+                                    component: Step2,
+                                },
+                            ]
+                        },
                     ]
                 },
                 {
@@ -147,12 +147,12 @@ export default new VueRouter({
             component: Consult,
             children: [
                 {
-                    path: "/configurator/consultation/step_1",
+                    path: "/consultation/step_1",
                     name: "step_1",
                     component: Step1,
                 },
                 {
-                    path: "/configurator/consultation/step_2",
+                    path: "/consultation/step_2",
                     name: "step_2",
                     component: Step2,
                 },

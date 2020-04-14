@@ -1,7 +1,7 @@
 <template>
     <div class="sub_toBuyers container-fluid">
         <div class="row">
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-6 col-12">
                 <router-link
                         exact
                         tag="a"
@@ -11,7 +11,7 @@
                 >Toyota Страхование</router-link>
             </div>
 
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-6 col-12">
                 <router-link
                         exact
                         tag="a"
@@ -21,7 +21,7 @@
                 >Toyota Кредит</router-link>
             </div>
 
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-6 col-12">
                 <router-link
                         exact
                         tag="a"
@@ -70,7 +70,7 @@
 
             </div>
 
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-6 col-12">
                 <div class="tools">
                     <h2 class="font-weight-bold">Инструменты покупателя</h2>
                     <ol>
@@ -188,6 +188,17 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1199.9px) {
+        .sub_toBuyers.container-fluid {
+            .row {
+
+                div.tools {
+                    padding: 0;
                 }
             }
         }

@@ -137,6 +137,8 @@
         },
         data() {
             return {
+                renderComponent: 0,
+
                 id: 0,
                 model: {},
                 // id: this.$route.params.id,
@@ -175,6 +177,7 @@
 
 
         created() {
+            this.renderComponent = 0;
             // this.id = this.$route.params.id;
             this.id = localStorage.id;
             // this.$store.state.model.id = this.id;
@@ -213,7 +216,6 @@
 
 
 
-
         computed: {
             photo() {
                 // return this.$store.getters.modelImage;
@@ -234,16 +236,24 @@
                 return this.getFontColor();
             },
 
-            // modelTitle() {
-            //     return this.model.name;
-            // },
-            //
-            // equipmentTitle() {
-            //     return this.computedEquipment.mod_name;
-            // }
+            checkId() {
+                this.$forceUpdate();
+                return this.$route.params['id'];
+            }
+
+
+
+
         },
 
         watch: {
+            $route(toR, fromR) {
+                location.reload();///костыль, так делать нельзя но по другому не получается
+                fromR;
+                // this.$forceUpdate();
+                this.id = toR.params['id'];
+            },
+
             equipment() {
                 // return this.$store.state.equipment;
                 return JSON.parse(localStorage.equipment);
