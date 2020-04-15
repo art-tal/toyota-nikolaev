@@ -232,12 +232,16 @@
                             box-sizing: border-box;
                             display: table;
                             position: static;
-                            .nav-link {
+                            box-sizing: border-box;
+                            a.nav-link {
                                 display: table-cell;
                                 vertical-align: middle;
                                 height: 100%;
                                 color: $font_color;
                                 padding: 0 20px;
+                                &.dropdown-toggle::after {
+                                    content: none;
+                                }
                                 &.active {
                                     border-top: 5px solid #E50000;
                                 }
@@ -334,24 +338,35 @@
                             width: 100%;
                             height: auto;
                             display: block;
-                            li {
+                            li.nav-item {
                                 position: relative;
                                 z-index: 5;
                                 background-color: #f0f0f0;
                                 width: 100%;
+                                height: auto;
                                 border: 1px solid #cccccc;
-                                .nav-link {
+                                a.nav-link {
+                                    display: block !important;
+                                    width: 100% !important;
+                                    height: auto !important;
+                                    padding: 24px 0 !important;
                                     &.active {
                                         background-color: #E50000;
-                                        border: 1px solid #000000;
                                         color: #fff;
                                     }
                                 }
 
                                 .dropdown-menu {
-                                    position: absolute;
-                                    left: 15px !important;
+                                    /*position: absolute;*/
+                                    width: 100% !important;
+                                    position: static;
+                                    margin: 0 !important;
+                                    /*border: none;*/
+                                    /*top: 68px;*/
+                                    /*left: 15px !important;*/
                                     max-width: 100%;
+                                    border: 1px solid #cccccc;
+                                    border-top: none;
                                 }
 
                             }
