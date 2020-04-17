@@ -10,7 +10,6 @@ import Wheels from "../components/configurator/options/Wheels";
 import Interior from "../components/configurator/options/Interior";
 import Lineup from "../components/MainNav/Lineup";
 import Equipment from "../components/configurator/Equipment";
-// import ToBuyers from "../components/MainNav/ToBuyers";
 import ToTheOwners from "../components/MainNav/ToTheOwners";
 import SouvenirProducts from "../components/MainNav/SouvenirProducts";
 import WhyToyota from "../components/MainNav/WhyToyota";
