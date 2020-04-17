@@ -20,7 +20,7 @@
                                     exact
                                     to="/corporate_sales/business_car"
                             >
-                                Пользователям служебных автомобилей
+                                Користувачам службових автомобілів
                             </router-link>
                         </li>
 
@@ -31,7 +31,7 @@
                                     tag="a"
                                     exact
                                     to="/corporate_sales/business_owner"
-                            >Собственникам бизнеса</router-link>
+                            >Власникам бізнесу</router-link>
                         </li>
 
                         <li class="nav-item">
@@ -41,7 +41,7 @@
                                     tag="a"
                                     exact
                                     to="Corporate_clients"
-                            >Корпоротивным клиентам</router-link>
+                            >Корпоративним клієнтам</router-link>
                         </li>
 
                         <li class="nav-item">
@@ -51,7 +51,7 @@
                                     tag="a"
                                     exact
                                     to="Special_solutions"
-                            >Специальные финансовые решения</router-link>
+                            >Спеціальні фінансові рішення</router-link>
                         </li>
 
                     </ul>
@@ -62,8 +62,8 @@
         </header>
         
         <div class="body container">
-            <p>Добро пожаловать в Toyota BusinessPlus. Это Ваш бизнес-партнер, приближает Ваш успех и превосходит ожидания. Понимая Ваши персональные бизнес-потребности, мы подберем для Вас нужный автомобиль, предоставим советы и обеспечим любую необходимую поддержку.</p>
-            <h2>Что Вас интересует?</h2>
+            <p>Ласкаво просимо до Toyota BusinessPlus. Це Ваш бізнес-партнер, що наближає Ваш успіх та перевершує очікування. Розуміючи Ваші персональні бізнес-потреби, ми підберемо для Вас потрібний автомобіль, надамо поради та забезпечимо будь-яку необхідну підтримку.</p>
+            <h2>Що Вас цікавить?</h2>
             <section class="row">
                 <router-link
                         tag="article"
@@ -73,8 +73,8 @@
                         to="/corporate_sales/"
                 >
                     <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/company-car2_tcm-3046-663260.jpg" alt="business_car">
-                    <strong>Пользователям служебных автомобилей</strong>
-                    <p>Узнайте больше про надежный модельный ряд Toyota и уникальную поддержку, которую мы обезпечиваем</p>
+                    <strong>Користувачам службових автомобілів</strong>
+                    <p>Дізнайтеся більше про надійний модельний ряд Toyota та унікальну підтримку, яку ми забезпечуємо.</p>
                 </router-link>
 
                 <router-link
@@ -85,8 +85,8 @@
                         to="/corporate_sales/"
                 >
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Business-Sales_tcm-3046-663262.jpg" alt="business_owner">
-                    <strong>Бизнес для бизнеса</strong>
-                    <p>Узнайте о причинах работать с Toyota BusinessPlus</p>
+                    <strong>Бізнес для бізнесу</strong>
+                    <p>Дізнайтеся про причини працювати з Toyota BusinessPlus</p>
                 </router-link>
 
                 <router-link
@@ -97,8 +97,8 @@
                         to="/corporate_sales/"
                 >
                     <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Euro-Sales_tcm-3046-663264.jpg" alt="corporate_clients">
-                    <strong>Корпоративные продажи</strong>
-                    <p>Свяжитесь с нашей сетью, чтобы узнать больше о продуктовой линейке Toyota и перечене услуг.</p>
+                    <strong>Корпоративні продажі</strong>
+                    <p>Зв'яжіться з нашою мережею, аби дізнатися більше про продуктову лінійку Toyota та перелік послуг.</p>
                 </router-link>
 
                 <router-link
@@ -109,40 +109,40 @@
                         to="/corporate_sales/"
                 >
                     <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/555x249_Thumb_Tailored_financial_solution_tcm-3046-663266.jpg" alt="special_solutions">
-                    <strong>Специальные финансовые решения</strong>
-                    <p>Воспользуйтесь возможностью приобрести автомобиль Toyota по программе «Тойота Кредит» и застраховать его по программе «Тойота Страхование»!</p>
+                    <strong>Спеціальні фінансові рішення</strong>
+                    <p>Скористайтеся можливістю придбати автомобіль Toyota за програмою «Тойота Кредит» та застрахувати його за програмою «Тойота Страхування»!</p>
                 </router-link>
 
             </section>
 
             <section>
                 <header>
-                    <h1>Toyota BusinessPlus - это больше преимуществ для Вашего бизнеса</h1>
+                    <h1>Toyota BusinessPlus - це більше переваг для Вашого бізнесу</h1>
                 </header>
                 <div class="links row">
                     <div class="col-6">
-                        <a href="#">Статус</a>
+                        <a href.prevent="#">Статус</a>
                     </div>
                     <div class="col-6">
-                        <a href="#">Качество</a>
+                        <a href.prevent="#">Якість</a>
                     </div>
                     <div class="col-6">
-                        <a href="#">Надежность</a>
+                        <a href.prevent="#">Надійність</a>
                     </div>
                     <div class="col-6">
-                        <a href="#">Долговечность</a>
+                        <a href.prevent="#">Довговічність</a>
                     </div>
                     <div class="col-6">
-                        <a href="#">Гибридные технологии</a>
+                        <a href.prevent="#">Гібридні техології</a>
                     </div>
                     <div class="col-6">
-                        <a href="#">Соотношение цена/качество</a>
+                        <a href.prevent="#">Співвідношення ціна/якість</a>
                     </div>
                     <div class="col-6">
-                        <a href="#">Широкий модельный ряд</a>
+                        <a href.prevent="#">Широкий модельний ряд</a>
                     </div>
                     <div class="col-6">
-                        <a href="#">Большая сервисная сеть</a>
+                        <a href.prevent="#">Велика сервісна мережа</a>
                     </div>
                 </div>
             </section>
@@ -152,7 +152,7 @@
 
         <section class="lineup container-fluid text-left">
             <header>
-                <h1>Широкий модельный ряд. Розвитая дилерская сеть</h1>
+                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>
             </header>
             <footer>
 <!--                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>-->
@@ -163,7 +163,7 @@
                         active-class="active"
                         to=""
                 >
-                    Открой для себя Toyota Hybrid
+                    Відкрий для себе Toyota Hybrid
                 </router-link>
             </footer>
         </section>

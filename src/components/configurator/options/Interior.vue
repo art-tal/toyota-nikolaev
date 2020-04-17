@@ -51,7 +51,7 @@
                 .catch( () => {
                     this.interiors = [
                         {
-                        material_name: "Чорная ткань",
+                        material_name: "Чорная тканина",
                         material_code: "FA20",
                         image: '//t1-carassets.toyota-europe.com/25e31065-9cdc-4699-bf7d-e92d3d22bd0b.PNG',
                         checked: true,

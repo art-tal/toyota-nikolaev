@@ -3,8 +3,8 @@
 
         <article class="forModel">
             <header>
-                <h1 class="font-weight-bolder">Наиболее популярные</h1>
-                <p>Откройте для себя наши наиболее популярные аксессуары для {{model.name}}</p>
+                <h1 class="font-weight-bolder">Найпопулярніші</h1>
+                <p>Відкрийте для себе наші найпопулярніші аксесуари для Camry {{model.name}}</p>
             </header>
             <div class="body row">
                 <div class="accessory col-md-4 col-sm-6 col-12 mb-4"
@@ -35,13 +35,13 @@
             </div>
         </article>
 
-        <h2>Все аксессуары</h2>
-        <h3>Просмотрите и добавте дополнительные аксессуары к вашему автомобилю</h3>
+        <h2>Всі аксесуари</h2>
+        <h3>Перегляньте та додайте додаткові аксесуари до вашого автомобіля</h3>
 
         <article class="forExterior">
             <header class="row">
-                <h1 class="col-4 font-weight-bold">Эктерьер</h1>
-                <p class="col-4 text-right">{{accessoriesForExterior.length}} аксессуаров</p>
+                <h1 class="col-4 font-weight-bold">Екстер’єр</h1>
+                <p class="col-4 text-right">{{accessoriesForExterior.length}} аксесуарів</p>
             </header>
             <div class="body row">
                 <div class="accessory col-md-4 col-sm-6 col-12 mb-4"
@@ -72,8 +72,8 @@
 
         <article class="forInterior">
             <header class="row">
-                <h1 class="col-4 font-weight-bold">Интерьер</h1>
-                <p class="col-4 text-right">{{accessoriesForInterior.length}} аксессуаров</p>
+                <h1 class="col-4 font-weight-bold">Інтер’єр</h1>
+                <p class="col-4 text-right">{{accessoriesForInterior.length}} аксесуарів</p>
             </header>
             <div class="body row">
                 <div class="accessory col-md-4 col-sm-6 col-12 mb-4"

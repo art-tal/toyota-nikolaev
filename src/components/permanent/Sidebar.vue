@@ -9,7 +9,7 @@
                 >
                     <i class="fas fa-oil-can"></i>
                     <div>
-                        <span>Специальные сервисные компании</span>
+                        <span>Спеціальні сервисні компаніі</span>
                     </div>
 
                 </router-link>
@@ -22,7 +22,7 @@
                 >
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                        <span>Официальные дилеры</span>
+                        <span>Офіційні ділери</span>
                     </div>
 
                 </router-link>
@@ -35,7 +35,7 @@
                 >
                     <i class="fas fa-phone"></i>
                     <div>
-                        <span>Связаться с нами</span>
+                        <span>Зв'язатися с нами</span>
                     </div>
 
                 </router-link>
@@ -48,7 +48,7 @@
                 >
                     <i class="fas fa-car"></i>
                     <div>
-                        <span>Заказать онлайн консультацию</span>
+                        <span>Замовити онлайн консультацію</span>
                     </div>
 
                 </router-link>
@@ -61,7 +61,7 @@
                 >
                     <i class="far fa-file-alt"></i>
                     <div>
-                        <span>Загрузить брошуры</span>
+                        <span>Завантажити брошури</span>
                     </div>
 
                 </router-link>

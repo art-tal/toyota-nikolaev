@@ -14,7 +14,7 @@
                                     to="/configurator/consultation/step_1"
                             >
                                 <b class="font-weight-bold align-middle">1</b>
-                                <span>Шаг 1</span>
+                                <span>Крок 1</span>
                             </router-link>
 
                             <router-link
@@ -25,7 +25,7 @@
                                     to="/configurator/consultation/step_2"
                             >
                                 <b class="font-weight-bold align-middle">2</b>
-                                <span>Шаг 2</span>
+                                <span>Крок 2</span>
                                 <!--                        <span class="sr-only">(current)</span>-->
                             </router-link>
 
@@ -47,7 +47,7 @@
             </menu>
 
             <header class="text-left">
-                <h1>Заказать онлайн консультацию</h1>
+                <h1>Замовити онлайн консультацію</h1>
             </header>
 
             <router-view></router-view>

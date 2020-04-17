@@ -17,8 +17,8 @@
                         <div class="col-6 text-right expand"
                              @click="setAllScreen()"
                         >
-                            <span v-if="getAllScreen">Закрыть</span>
-                            <span v-else>На весь экран</span>
+                            <span v-if="getAllScreen">Закрыти</span>
+                            <span v-else>На весь екран</span>
                             <i class="fas fa-compress-alt" v-if="getAllScreen"></i>
                             <i class="fas fa-expand-alt" v-else></i>
                         </div>
@@ -51,7 +51,7 @@
                                     active-class="active"
                                     to="/configurator/color_and_option/colors"
                             >
-                                <span>Цвет</span>
+                                <span>Колір</span>
                             </router-link>
 
                             <router-link
@@ -71,7 +71,7 @@
                                     active-class="active"
                                     to="/configurator/color_and_option/interior"
                             >
-                                <span>Интерьер</span>
+                                <span>Інтер'єр</span>
                             </router-link>
 
                     </ul>

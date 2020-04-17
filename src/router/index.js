@@ -18,7 +18,7 @@ import MobilityForEveryone from "../components/MainNav/MobilityForEveryone";
 import Accessories from "../components/configurator/options/Accessories";
 import Price from "../components/configurator/options/Price";
 import ToResult from "../components/configurator/options/ToResult";
-import Consult from "../components/configurator/Сonsult"
+import Consult from "../components/configurator/Сonsult";
 import Step1 from "../components/configurator/consultSteps/Step1";
 import Step2 from "../components/configurator/consultSteps/Step2";
 import Home from "../components/Home";

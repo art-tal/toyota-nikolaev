@@ -16,7 +16,7 @@
                             to="/select_model/:id"
                     >
 <!--                        <span>Сконфигурировать</span>-->
-                        <a class="nav-link">Общий обзор <span class="sr-only">(current)</span></a>
+                        <a class="nav-link">Загальний огляд <span class="sr-only">(current)</span></a>
                     </router-link>
 <!--                    <li class="nav-item">-->
 <!--                        <a class="nav-link" href="#">Общий обзор <span class="sr-only">(current)</span></a>-->
@@ -29,7 +29,7 @@
                             to="/"
                     >
 <!--                        <span>Сконфигурировать</span>-->
-                        <a class="nav-link" href="#">Особенности и характеристики</a>
+                        <a class="nav-link" href="#">Особливості та характеристики </a>
                     </router-link>
 <!--                    <li class="nav-item">-->
 <!--                        <a class="nav-link" href="#">Особенности и характеристики</a>-->
@@ -42,7 +42,7 @@
                             to="/"
                     >
 <!--                        <span>Сконфигурировать</span>-->
-                        <a class="nav-link" href="#">Цены</a>
+                        <a class="nav-link" href="#">Ціни</a>
                     </router-link>
 <!--                    <li class="nav-item">-->
 <!--                        <a class="nav-link" href="#">Цены</a>-->
@@ -55,7 +55,7 @@
                             to="/"
                     >
 <!--                        <span>Сконфигурировать</span>-->
-                        <a class="nav-link" href="#">Надежность и гарантия</a>
+                        <a class="nav-link" href="#">Надійність та гарантія</a>
                     </router-link>
 <!--                    <li class="nav-item">-->
 <!--                        <a class="nav-link" href="#">Надежность и гарантия</a>-->
@@ -68,7 +68,7 @@
                             to="/configurator/selected_engine"
                     >
 <!--                        <span>Сконфигурировать</span>-->
-                        <a class="nav-link" href="#">Сконфигурировать</a>
+                        <a class="nav-link" href="#">Сконфігурувати</a>
                     </router-link>
 
 

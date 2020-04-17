@@ -4,7 +4,7 @@
         <div class="body row">
             <form name="step_1" class="col-lg-7 col-12 text-left">
                 <h3>
-                    Выберите дату и желаемую модель Toyota, что бы получить онлайн консультацию
+                    Виберіть бажану модель Toyota, щоб отримати онлайн консультацію
                 </h3>
 <!--                -->
                 <select name="model" v-model="consultModel" @change="changeModel()">
@@ -16,13 +16,13 @@
                     </option>
                 </select>
 
-                <h4>Автомобиль с каким двигателем вас интересует?</h4>
+                <h4>Автомобіль з яким двигуном вас цікавить?</h4>
                 <div class="engine_type d-flex justify-content-between">
                     <li class="hybrid text-center">
                         <input id="hybrid" type="radio" v-model="consultEngine" value="Гибридный (бензин)">
                         <label for="hybrid">
                             <i class="fas fa-leaf"></i>
-                            <span>Гибирный (бензин)</span>
+                            <span>Гібирний (бензин)</span>
                             <i class="fas fa-check"></i>
                         </label>
                     </li>
@@ -30,7 +30,7 @@
                         <input id="petrol" type="radio" v-model="consultEngine" value="Бензиновый">
                         <label for="petrol">
                             <i class="fas fa-gas-pump"></i>
-                            <span>Бензиновый</span>
+                            <span>Бензиновий</span>
                             <i class="fas fa-check"></i>
                         </label>
                     </li>
@@ -38,7 +38,7 @@
                         <input id="whatever" type="radio" v-model="consultEngine" value="Не имеет значения">
                         <label for="whatever">
                             <i class="fas fa-random"></i>
-                            <span>Не имеет значения </span>
+                            <span>Без різниці</span>
                             <i class="fas fa-check"></i>
                         </label>
                     </li>
@@ -57,7 +57,7 @@
                     exact
                     to="/configurator/consultation/step_2"
             >
-                Продолжить
+                Продовжити
             </router-link>
         </footer>
     </article>

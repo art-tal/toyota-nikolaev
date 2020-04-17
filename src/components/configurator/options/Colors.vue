@@ -4,7 +4,7 @@
         <div class="row">
             <div class="colorName col-md-4 col-12 font-weight-bold text-left">
                 {{selectedColor.color_name}}
-                <span v-if="selectedColor.metallic">Металик</span>
+                <span v-if="selectedColor.metallic">Металік</span>
                 <span v-if="selectedColor.pearl">Перламутр</span>
                 ({{selectedColor.color_code}})
             </div>

@@ -2,26 +2,26 @@
     <main class="container-fluid">
         <div class="row">
             <div class="col-lg-4 col-md-8 col-12 welcome text-left">
-                <h2>Добро пожаловать<br/><strong>что вас интересует?</strong></h2>
+                <h2>Ласкаво просимо<br/><strong>що вас цікавить?</strong></h2>
 
                 <div class="button_block row">
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-                        <button class="btn btn-light">Новые автомобили</button>
+                        <button class="btn btn-light">Нові автомобілі</button>
                     </div>
 
 <!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-                        <button class="btn btn-light">Корпоративные продажи</button>
+                        <button class="btn btn-light">Корпоративні продажі</button>
                     </div>
 
 <!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-                        <button class="btn btn-light">Автомобили с пробегом</button>
+                        <button class="btn btn-light">Автомобілі з пробігом</button>
                     </div>
 
 <!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-                        <button class="btn btn-light">Новости Toyota</button>
+                        <button class="btn btn-light">Новини Toyota</button>
                     </div>
 
                 </div>
@@ -31,8 +31,8 @@
 
                 <article class="col-12 block_link new_car" @click="goToConsult()">
                     <header>
-                        <span class="text-uppercase">Заказать онлайн косультацию</span>
-                        <h1>О приобретении новых автомобилей</h1>
+                        <span class="text-uppercase">ЗАМОВИТИ ОНЛАЙН КОНСУЛЬТАЦІЮ</span>
+                        <h1>Щодо придбання нових автомобілів</h1>
                     </header>
                     <span class="btn-go text-center">
                         <i class="fas fa-chevron-right"></i>
@@ -41,8 +41,8 @@
 
                     <article class="col-md-6 col-12 block_link service" @click="goToService()">
                         <header>
-                            <span>Связаться с официальным диллером</span>
-                            <h1 class="text-uppercase">Сервисные станции Toyota работатют</h1>
+                            <span>ЗВ’ЯЗАТИСЯ З ОФІЦІЙНИМ ДИЛЕРОМ </span>
+                            <h1 class="text-uppercase">СЕРВІСНІ СТАНЦІЇ TOYOTA ПРАЦЮЮТЬ</h1>
                         </header>
                         <span class="btn-go text-center">
                             <i class="fas fa-chevron-right"></i>
@@ -51,8 +51,8 @@
 
                     <article class="col-md-6 col-12 block_link hybrid" @click="goToHybrid">
                         <header>
-                            <span>Твоя следующая Toyota</span>
-                            <h1>Самозарядные бензиново-электрические гибриды Toyota</h1>
+                            <span>Твоя наступна Toyota </span>
+                            <h1>Самозарядні бензиново-електричні гібриди Toyota</h1>
                         </header>
                         <span class="btn-go text-center">
                             <i class="fas fa-chevron-right"></i>
@@ -68,47 +68,47 @@
         name: "Home",
 
         metaInfo: {
-            title: "Toyota Nikolaev| Новые автомобили, гибридные автомобили",
+            title: "Toyota Nikolaev| Нові автомобілі, вживані автомобілі, гібридні автомобілі | Toyota Миколаїв",
             meta: [
                 {
                     vmid: "title",
                     property: "og:title",
-                    content: `Toyota Nikolaev| Новые автомобили, гибридные автомобили`
+                    content: `Toyota Nikolaev| Нові автомобілі, вживані автомобілі, гібридні автомобілі | Toyota Миколаїв`
                 },
                 {
                     vmid: "description",
                     name: "description",
-                    content: `Добро пожаловать на Toyota Николаев. Узнайте больше о наших новых автомобилях, а также предложения по всем вашим любимым моделям. Обратитесь к нам для получения дополнительной информации.`
+                    content: `Ласкаво просимо до Toyota Миколаїв. Дізнайтеся більше про наші нові та вживані автомобілі, а також пропозиції щодо всіх ваших улюблених моделей. Зверніться до нас для отримання додаткової інформації.`
                 },
                 {
                     vmid: "description",
                     property: "og:description",
-                    content: `Добро пожаловать на Toyota Николаев. Узнайте больше о наших новых автомобилях, а также предложения по всем вашим любимым моделям. Обратитесь к нам для получения дополнительной информации.`
+                    content: `Ласкаво просимо до Toyota Миколаїв. Дізнайтеся більше про наші нові та вживані автомобілі, а також пропозиції щодо всіх ваших улюблених моделей. Зверніться до нас для отримання додаткової інформації.`
                 },
                 {
                     vmid: "keywords",
                     name: "keywords",
-                    content: `Toyota Nikolaev, Toyota, модельный ряд toyota, домашняя страница, акции, новости, модели, автомобиль, новый автомобиль, мой автомобиль, безопасные автомобили, экологически автомобили, безопасный автомобиль, идеальный автомобиль, семейный автомобиль, городской автомобиль, внедорожник, кроссовер, хэтчбек, модельный ряд toyota, домашняя страница, акции, новости, модели`
+                    content: `toyota Mykolaiv, toyota, модельний ряд toyota, домашня сторінка, акції, новини, моделі, автомобіль, новий автомобіль, мій автомобіль, безпечні автомобілі, екологічно автомобілі, безпечний автомобіль, ідеальний автомобіль, сімейний автомобіль, міський автомобіль, позашляховик, кросовер, хетчбек`
                 },
                 {
                     vmid: "keywords",
                     property: "og:keywords",
-                    content: `Toyota Nikolaev, Toyota, модельный ряд toyota, домашняя страница, акции, новости, модели, автомобиль, новый автомобиль, мой автомобиль, безопасные автомобили, экологически автомобили, безопасный автомобиль, идеальный автомобиль, семейный автомобиль, городской автомобиль, внедорожник, кроссовер, хэтчбек, модельный ряд toyota, домашняя страница, акции, новости, модели`
+                    content: `toyota Mykolaiv, toyota, модельний ряд toyota, домашня сторінка, акції, новини, моделі, автомобіль, новий автомобіль, мій автомобіль, безпечні автомобілі, екологічно автомобілі, безпечний автомобіль, ідеальний автомобіль, сімейний автомобіль, міський автомобіль, позашляховик, кросовер, хетчбек`
                 },
             ],
         },
 
         methods: {
             goToConsult() {
-                this.$router.push({name: 'toyota_in_nikolaev'})
+                this.$router.push({name: 'toyota_in_nikolaev'});
             },
 
             goToService() {
-                this.$router.push({name: 'toyota_in_nikolaev'})
+                this.$router.push({name: 'toyota_in_nikolaev'});
             },
 
             goToHybrid() {
-                this.$router.push({name: 'toyota_in_nikolaev'})
+                this.$router.push({name: 'toyota_in_nikolaev'});
             },
         },
 

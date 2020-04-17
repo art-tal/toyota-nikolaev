@@ -2,7 +2,7 @@
     <article class="container">
         <header>
             <h1>{{price}}&#8372;</h1>
-            <p>Цена</p>
+            <p>Ціна</p>
         </header>
         <div class="body">
             <h3>
@@ -12,12 +12,12 @@
                 {{getTransmission.eng_name}}
                 {{getTransmission.gear_name}}
 <!--                <span v-if="transmission.drive">(Передний привод)</span>-->
-                <span v-if="getTransmission.wd">(Полный привод)</span>
+                <span v-if="getTransmission.wd">(Повний привод)</span>
             </h3>
 
             <div class="option">
                 <div class="base_price row">
-                    <div class="font-weight-bold col-6">Цена</div>
+                    <div class="font-weight-bold col-6">Ціна</div>
                     <div class="col-6 text-right">{{price_auto}}&#8372;</div>
                 </div>
                 <div class="color row">
@@ -37,7 +37,7 @@
 
             <div class="accessories font-weight-bold" v-if="getSelectedAccessories.length != 0">
                 <div class="header row">
-                    <b class="col-6">Аксессуары ({{getSelectedAccessories.length}})</b>
+                    <b class="col-6">Аксесуари ({{getSelectedAccessories.length}})</b>
                     <span class="col-6 text-right">{{priceAccessories}}&#8372;</span>
                 </div>
                 <div class="accessory row"
@@ -55,12 +55,12 @@
 
 
             <div class="result row">
-                <span class="col-7">Вместе</span>
+                <span class="col-7">Загалом</span>
                 <span class="pr col-5 font-weight-bold">{{price}}&#8372;</span>
             </div>
 
             <p>
-                Размещенная на данном сайте информация о характеристиках продукции, (ориентировочных) цен и других условий ее продажи, а также условий предоставления любых услуг не является предложением заключить договор (офертой). Такая информация может не быть окончательным и подлежит уточнению у соответствующего дилерского центра Toyota.
+                Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою). Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.
             </p>
 
             <router-link
@@ -68,7 +68,7 @@
                     to="/configurator/result"
                     exact
                     class="btn btn-danger"
-            >Перейти к итогам</router-link>
+            >Перейти до підсумків</router-link>
 
             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image"
                  :alt="model.name">

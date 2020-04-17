@@ -8,7 +8,7 @@
                         class="nav-link"
                         active-class="active"
                         to="/insurance"
-                >Toyota Страхование</router-link>
+                >Тойота Страхування</router-link>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12">
@@ -28,7 +28,7 @@
                         class="nav-link"
                         active-class="active"
                         to="/corporate_sales"
-                >Корпоративные продажи</router-link>
+                >Корпоративні продажі</router-link>
 
                 <ul>
                     <li>
@@ -37,7 +37,7 @@
                                 exact
                                 active-class="active"
                                 to="/corporate_sales/business_car"
-                        >Пользователям служебных автомобилей</router-link>
+                        >Користувачам службових автомобілів</router-link>
                     </li>
 
                     <li>
@@ -46,7 +46,7 @@
                                 exact
                                 active-class="active"
                                 to="/corporate_sales/business_owner"
-                        >Собственникам бизнеса</router-link>
+                        >Власникам бізнесу</router-link>
                     </li>
 
                     <li>
@@ -55,7 +55,7 @@
                                 exact
                                 active-class="active"
                                 to="/corporate_sales/corporate_clients"
-                        >Корпоротивным клиентам</router-link>
+                        >Корпоративним клієнтам</router-link>
                     </li>
 
                     <li>
@@ -64,7 +64,7 @@
                                 exact
                                 active-class="active"
                                 to="/corporate_sales/special_solutions"
-                        >Специальные финансовые решения</router-link>
+                        >Спеціальні фінансові рішення</router-link>
                     </li>
                 </ul>
 
@@ -72,42 +72,42 @@
 
             <div class="col-xl-3 col-lg-6 col-12">
                 <div class="tools">
-                    <h2 class="font-weight-bold">Инструменты покупателя</h2>
+                    <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
                         <li class="servies">
                             <a href="#">
                                 <i class="fas fa-car"></i>
-                                <span>Конфигуратор</span>
+                                <span>Конфігуратор</span>
                             </a>
                         </li>
                         <li class="dilers">
                             <a href="#">
                                 <i class="far fa-file-alt"></i>
-                                <span>Загрузить брошуры</span>
+                                <span>Завантажити брошури</span>
                             </a>
                         </li>
                         <li class="contact">
                             <a href="#">
                                 <i class="fas fa-car"></i>
-                                <span>Гибридные иновации</span>
+                                <span>Гібридні іновації</span>
                             </a>
                         </li>
                         <li class="test_drive">
                             <a href="#">
                                 <i class="fas fa-tag"></i>
-                                <span>Сувенирная продукция</span>
+                                <span>Сувенирна продукція</span>
                             </a>
                         </li>
                         <li class="download">
                             <a href="#">
                                 <i class="fas fa-phone"></i>
-                                <span>Связаться с нами</span>
+                                <span>Зв’язатись з нами</span>
                             </a>
                         </li>
                         <li class="download">
                             <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Официальные дилеры</span>
+                                <span>Офіційні дилери</span>
                             </a>
                         </li>
                     </ol>

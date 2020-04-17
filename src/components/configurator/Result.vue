@@ -12,7 +12,7 @@
                         </h3>
                     </div>
                     <div class="wrap_button col-2 text-right">
-                        <button class="btn btn-danger" @click="openBlock()">Просмотреть</button>
+                        <button class="btn btn-danger" @click="openBlock()">Переглянути</button>
                     </div>
 
                 </header>
@@ -32,7 +32,7 @@
                                         active-class="active"
                                         to="/configurator/selected_engine"
                                 >
-                                    <span>Изменить комплектацию</span>
+                                    <span>Змінити комплектацію</span>
                                     <i class="fas fa-sync-alt"></i>
                                 </router-link>
                             </p>
@@ -42,8 +42,8 @@
                                 {{getModel.name}}, {{getModel.bodyType}} {{getEquipment.mod_name}}<br>
                                 {{getTransmission.eng_name}}<br>
                                 {{getTransmission.gear_name}}
-                                <span v-if="getTransmission.drive">(Передний привод)</span>
-                                <span v-if="getTransmission.wd">(Полный привод)</span>
+                                <span v-if="getTransmission.drive">(Передній привод)</span>
+                                <span v-if="getTransmission.wd">(Повний привод)</span>
                             </h4>
                             <div class="col-5 text-right">{{price}}&#8372;</div>
                         </div>
@@ -51,7 +51,7 @@
 
                     <section class="information">
                         <header class="row">
-                            <h1 class="col-sm-7 col-5 text-left">Цвет и оснастка</h1>
+                            <h1 class="col-sm-7 col-5 text-left">Колір та оснащення</h1>
                             <p class="col-sm-5 col-7 text-right">
                                 <router-link
                                         class="nav-link ml-2 mr-2 editEquipment"
@@ -60,13 +60,13 @@
                                         active-class="active"
                                         to="/configurator/selected_engine"
                                 >
-                                    <span>Изменить настройки</span>
+                                    <span>Змінити налаштування</span>
                                     <i class="fas fa-tasks"></i>
                                 </router-link>
                             </p>
                         </header>
                         <p class="info row font-weight-bold">
-                            Цвета и колеса
+                            Кольори та колеса
                         </p>
                         <p class="info row">
                             {{getColor.color_name}} ({{getTransmission.color_code}})
@@ -75,7 +75,7 @@
                             {{getWheels.description}}
                         </p>
                         <p class="info row font-weight-bold">
-                            Отделка интерьера
+                            Оздоблення інтер'єру
                         </p>
                         <p class="info row">
                             {{getInterior.material_name}} ({{getInterior.material_code}})
@@ -84,7 +84,7 @@
 
                     <section class="result_price">
                         <header class="row text-left">
-                            <h1 class="col-12">Итоговая цена</h1>
+                            <h1 class="col-12">Підсумкова ціна</h1>
                         </header>
                         <div class="row">
                             <p class="font-weight-bold text-right">{{price}}&#8372;</p>
@@ -99,7 +99,7 @@
             <aside class="col-lg-4 col-12" v-if="showAside">
                 <div class="header text-left">
                     <h2 class="font-weight-bold">{{price}}&#8372;</h2>
-                    <p>Цена</p>
+                    <p>Ціна</p>
                     <i class="fas fa-times" @click="openBlock()"></i>
                 </div>
                 <article class="text-left">
@@ -111,41 +111,41 @@
                             <li>
                                 <a href.prevent="#" target="_blank">
                                     <i class="far fa-file-alt"></i>
-                                    <span>Загрузить PDF</span>
+                                    <span>Завантажити PDF</span>
                                 </a>
                             </li>
                             <li>
                                 <a href.prevent="#" @click.prevent="openConsult()">
                                     <i class="far fa-life-ring"></i>
-                                    <span>Онлайн консультация</span>
+                                    <span>Онлайн консультація</span>
                                 </a>
                             </li>
                             <li>
                                 <a href.prevent="#" target="_blank">
                                     <i class="fas fa-print"></i>
-                                    <span>Печатать</span>
+                                    <span>Надрукувати</span>
                                 </a>
                             </li>
                         </ul>
                         
                         <div class="result_prise row">
-                            <p class="col-7">Сумма</p>
+                            <p class="col-7">Загалом</p>
                             <h4 class="col-5 font-weight-bold text-right">{{price}}&#8372;</h4>
                         </div>
 
                         <p class="attention">
-                            Размещенная на данном сайте информация о характеристиках продукции, (ориентировочных) ценах и других условиях ее продажи, а также условий предоставления любых услуг не является предложением заключить договор (офертой). Такая информация может не быть окончательным и подлежит уточнению у соответствующего дилерского центра Toyota.
+                            Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою). Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.
                         </p>
 
                         <div class="save row">
                             <p class="col-8">Ваш Toyota-код <i class="fas fa-info-circle"></i></p>
                             <h4 class="col-4 font-weight-bold text-right">{{code}}</h4>
-                            <button class="btn btn-danger">Сохранить в личном кабинете</button>
+                            <button class="btn btn-danger">Зберегти у своєму обліковому записі</button>
                         </div>
 
                         <footer>
                             <p>
-                                Внешний вид автомобилей и их составляющих может отличаться от изображенных на сайте. За более подробной информацией обращайтесь к официальным дилерам Toyota в Николаеве.
+                                Зовнішній вигляд автомобілів та їх складових може відрізнятися від зображених на сайті. За більш детальною інформацією звертайтеся до офіційних дилерів Toyota в Україні.
                             </p>
                         </footer>
 

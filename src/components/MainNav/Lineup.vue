@@ -1,8 +1,8 @@
 <template>
     <section class="container-fluid">
         <div class="row car_type">
-            <a href="#" class="new_car">Новые автомтобили</a>
-            <a href="#" class="old_car">Автомобили с пробегом</a>
+            <a href="#" class="new_car">Нові автомтобілі</a>
+            <a href="#" class="old_car">Автомобілі с пробігом</a>
         </div>
 
         <div class="row">
@@ -13,7 +13,7 @@
                                 @click="goSelectModel(model)">
                             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
                             <h2>{{model.name}}</h2>
-                            <h3 v-if="model.hybrid">+ Гибрид</h3>
+                            <h3 v-if="model.hybrid">+ Гібрид</h3>
                         </div>
 
                 </div>
@@ -21,36 +21,36 @@
 
             <div class="col-lg-3 col-md-4 col-sm-12 buyers_tools text-left">
                 <div class="tools">
-                    <h2 class="font-weight-bold">Инструменты покупателя</h2>
+                    <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
                         <li class="servies">
                             <a href="#">
                                 <i class="fas fa-oil-can"></i>
-                                <span>Специальные сервисные компании</span>
+                                <span>Спеціальні сервісні кампанії</span>
                             </a>
                         </li>
                         <li class="dilers">
                             <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Официальные дилеры</span>
+                                <span>Офіційні дилери</span>
                             </a>
                         </li>
                         <li class="contact">
                             <a href="#">
                                 <i class="fas fa-phone"></i>
-                                <span>Связаться с нами</span>
+                                <span>Зв’язатись з нами</span>
                             </a>
                         </li>
                         <li class="test_drive">
                             <a href="#">
                                 <i class="far fa-calendar-alt"></i>
-                                <span>Заказать тест-драйв</span>
+                                <span>Замовити онлайн консультацію</span>
                             </a>
                         </li>
                         <li class="download">
                             <a href="#">
                                 <i class="far fa-file-alt"></i>
-                                <span>Загрузить брошуры</span>
+                                <span>Завантажити брошури</span>
                             </a>
                         </li>
                     </ol>

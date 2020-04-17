@@ -19,7 +19,7 @@
                                             to="/configurator/equipment"
                                     >
                                         <i class="fas fa-sync-alt"></i>
-                                        <span>Изменить комплектацию</span>
+                                        <span>Змінити комплектацію</span>
                                         <!--                        <span class="sr-only">(current)</span>-->
                                     </router-link>
 
@@ -54,7 +54,7 @@
                     <div class="container">
                         <header class="row text-left">
                             <div class="col-md-6 col-12">
-                                <h2 class="">Двигатель</h2>
+                                <h2 class="">Двигун</h2>
                             </div>
                         </header>
                         <div class="row">
@@ -78,8 +78,8 @@
                                         </header>
                                         <div class="engine_img col-3 text-right">
                                             <img src="https://webcarconfig.toyota-europe.com/toyota/svg/engine.svg" width="90" alt="" class="">
-                                            <div class="font-weight-bold font-italic text-uppercase" v-if="equipment.mod_name.includes('Hybrid')" style="color: #00A0F0">Гибридный (бензин)</div>
-                                            <div class="font-weight-bold font-italic text-uppercase" v-else>Бензиновый</div>
+                                            <div class="font-weight-bold font-italic text-uppercase" v-if="equipment.mod_name.includes('Hybrid')" style="color: #00A0F0">Гібридний (бензин)</div>
+                                            <div class="font-weight-bold font-italic text-uppercase" v-else>Бензиновий</div>
 <!--                                            <div class="font-weight-bold font-italic text-uppercase">{{equipment.engine.typeOfEngine}}</div>-->
                                         </div>
                                     </div>
@@ -93,11 +93,11 @@
                                     <footer class="row">
                                         <a href="#" class="more_info col-lg-5 col-12">
                                             <i class="far fa-file"></i>
-                                            <span>Больше информации</span>
+                                            <span>Більше інформації</span>
                                         </a>
                                         <button @click="applyTransmission(trans)"
                                                 class="btn btn-outline-danger col-lg-5 col-12 text-center">
-                                            <span class="align-middle">Применить</span>
+                                            <span class="align-middle">Прийняти</span>
 <!--                                            <span class="align-middle">Продолжить</span>-->
 <!--                                            <i class="fas fa-angle-right"></i>-->
                                         </button>
@@ -310,7 +310,7 @@
             this.equipment.engine = {
                             nameOfEngine: 'Dual VVT-i',
                             valueOfEngine: '2,5 л',
-                            typeOfEngine: 'Бензиновый',
+                            typeOfEngine: 'Бензиновий',
                             maxPower: '181 к. с.',
                             info: ['Комбінований цикл: 8,3 л/100 км',
                                 'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],

@@ -39,12 +39,12 @@
 <!--                                    <span class="sr-only">(current)</span>-->
 <!--                                </router-link>-->
                                 <a class="nav-link dropdown-toggle"
-                                   href="#"
+                                   href.prevent="#"
                                    role="button"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <span>Модельный ряд</span>
+                                    <span>Автомобілі</span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -59,7 +59,7 @@
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <span>Покупателям</span>
+                                    <span>Покупцям</span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <sub-menu-to-buyers></sub-menu-to-buyers>
@@ -70,17 +70,17 @@
                                 </div>
 
                             </li>
-                            <li class="nav-item">
-                                <router-link
-                                        class="nav-link"
-                                        tag="a"
-                                        exact
-                                        active-class="active"
-                                        to="/to_the_owners"
-                                >
-                                    <span>Владельцам</span>
-                                </router-link>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <router-link-->
+<!--                                        class="nav-link"-->
+<!--                                        tag="a"-->
+<!--                                        exact-->
+<!--                                        active-class="active"-->
+<!--                                        to="/to_the_owners"-->
+<!--                                >-->
+<!--                                    <span>Владельцам</span>-->
+<!--                                </router-link>-->
+<!--                            </li>-->
                             <li class="nav-item">
                                 <router-link
                                         class="nav-link"
@@ -89,7 +89,7 @@
                                         active-class="active"
                                         to="/souvenir_products"
                                 >
-                                    <span>Сувенирная продукция</span>
+                                    <span>Сувенірна продукція</span>
                                 </router-link>
                             </li>
                             <li class="nav-item">
@@ -100,7 +100,7 @@
                                         active-class="active"
                                         to="/why_toyota"
                                 >
-                                    <span>Почему Toyota?</span>
+                                    <span>Чому Toyota?</span>
                                 </router-link>
                             </li>
                             <li class="nav-item">
@@ -111,20 +111,20 @@
                                         active-class="active"
                                         to="/toyota_in_nikolaev"
                                 >
-                                    <span>Toyota в Николаеве</span>
+                                    <span>Toyota в Миколаєві</span>
                                 </router-link>
                             </li>
-                            <li class="nav-item">
-                                <router-link
-                                        class="nav-link"
-                                        tag="a"
-                                        exact
-                                        active-class="active"
-                                        to="/mobility_for_everyone"
-                                >
-                                    <span>Мобильность для всех</span>
-                                </router-link>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <router-link-->
+<!--                                        class="nav-link"-->
+<!--                                        tag="a"-->
+<!--                                        exact-->
+<!--                                        active-class="active"-->
+<!--                                        to="/mobility_for_everyone"-->
+<!--                                >-->
+<!--                                    <span>Мобильность для всех</span>-->
+<!--                                </router-link>-->
+<!--                            </li>-->
                         </ul>
 <!--                        <form class="form-inline my-2 my-lg-0">-->
 <!--                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
@@ -146,7 +146,7 @@
                                 to="/"
                         >
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Официальные диллеры</span>
+                            <span>Офіційні ділери</span>
                             <span class="sr-only">(current)</span>
                         </router-link>
 
@@ -160,7 +160,7 @@
                                 to=""
                         >
                             <i class="fas fa-search"></i>
-                            <span>Поиск на сайте Toyota.ua</span>
+                            <span>Пошукна сайті Toyota.nikolaev.ua</span>
                         </router-link>
                     </li>
                     <li class="nav-item dropdown">
@@ -175,13 +175,13 @@
                             <span>Моя Toyota</span>
                         </router-link>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <button class="btn btn-dark">Войти</button>
-                            <a class="dropdown-item" href="#">Мои конфигурации</a>
-                            <a class="dropdown-item" href="#">Мои диллеры</a>
-                            <a class="dropdown-item" href="#">Личный кабинет</a>
-                            <a class="dropdown-item" href="#">Мои автомобили</a>
-                            <a class="dropdown-item" href="#">Пособие пользователя</a>
-                            <a class="dropdown-item" href="#">Планировщик путешествий</a>
+                            <button class="btn btn-dark">Увійти</button>
+                            <a class="dropdown-item" href="#">Мої конфігурації</a>
+                            <a class="dropdown-item" href="#">Мої дилери</a>
+                            <a class="dropdown-item" href="#">Особистий кабінет</a>
+                            <a class="dropdown-item" href="#">Мої автомобілі</a>
+                            <a class="dropdown-item" href="#">Посібники користувача</a>
+                            <a class="dropdown-item" href="#">Планувальник подорожей</a>
                         </div>
                     </li>
 
@@ -283,6 +283,7 @@
                             color: $font_color;
                             i {
                                 margin-right: 5px;
+                                color: $font_color;
                             }
                         }
                         &:hover {

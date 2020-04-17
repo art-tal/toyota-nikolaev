@@ -22,8 +22,8 @@
                             @click="choice()"
                     >
                         <span v-if="!showEquipment">
-                            Все комплектации</span>
-                        <span v-else>Скрыть</span>
+                            Всі комплектації</span>
+                        <span v-else>Сховати</span>
                         <i class="fas fa-chevron-down"
                            v-if="!showEquipment"></i>
                         <i class="fas fa-chevron-up"
@@ -49,7 +49,7 @@
                 <a href="#" class="text-decoration-none" :style="{'color': fontColored + '!important'}">
 
                     <i class="fas fa-exchange-alt"></i>
-                    <span>Сравнить</span>
+                    <span>Порівняти</span>
                 </a>
             </div>
 
@@ -81,25 +81,25 @@
 
         <div class="specifications row justify-content-center">
             <div class="fuelConsumption col-md-2 col-4">
-                <p>Расход топлива</p>
+                <p>Споживання пального</p>
                 <span class="h1">{{model.fuelConsumption}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
             <div class="maxSpeed col-md-2 col-4">
-                <p>Максимальная мощность</p>
+                <p>Максимальна потужність</p>
                 <span class="h1">{{model.maxPower}}</span>
-                <span class="font-weight-bold"> л.с.</span>
+                <span class="font-weight-bold"> к.с.</span>
             </div>
             <div class="maxPower col-md-2 col-4">
-                <p>Максимальная скорость</p>
+                <p>Максимальна швидкість</p>
                 <span class="h1">{{model.maxSpeed}}</span>
-                <span class="font-weight-bold"> км/ч</span>
+                <span class="font-weight-bold"> км/г</span>
             </div>
         </div>
 
         <div class="requestService row justify-content-center">
             <div class="col-6 text-right">
-                <button class="col-6 btn btn-danger">Заказать тест-драйв</button>
+                <button class="col-6 btn btn-danger">Замовити тест-драйв</button>
 
             </div>
             <div class="col-6 text-left">
@@ -110,7 +110,7 @@
                         active-class="active"
                         to="/configurator/selected_engine"
                 >
-                    <span>Сконфигурировать</span>
+                    <span>Сконфігурувати</span>
                 </router-link>
             </div>
 
@@ -158,12 +158,12 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектация ${this.equipmentTitle} | Общая информация`,
+                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектация ${this.equipmentTitle} | Общая информация`
+                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`
                     },
                     // {
                     //     vmid: "description",
@@ -201,10 +201,10 @@
             this.modelTitle = this.model.name;
 ///////////////////////////////////////////////////////ЗАГЛУШКА
             this.model.description = [
-                "Светодиодные дневные ходовые огни",
-                "Круиз-контроль",
-                "6 громкоговорителей",
-                "Двухзонный климат-контроль"
+                "Світлодіодні денні ходові вогні",
+                "Круїз-контроль",
+                "6 гучномовців",
+                "Двозонний клімат-контроль"
             ];
                 this.model.maxSpeed = 210;
                 this.model.maxPower = 181;

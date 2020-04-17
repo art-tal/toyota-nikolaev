@@ -4,16 +4,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12 legal_links">
-                        <a href="#" class="contact">Связаться с нами</a>
-                        <a href="#" class="legalInformation">Юридическая информация</a>
-                        <a href="#" class="privacySetting">Настройки приватности</a>
+                        <a href="#" class="contact">Зв’язатись з нами</a>
+                        <a href="#" class="legalInformation">Юридична інформація</a>
+                        <a href="#" class="privacySetting">Налаштування приватності</a>
                 </div>
 
                 <div class="map col-md-6 col-12 text-right">
-                    <a href="#app" class="up">Верх</a>
+                    <a href="#app" class="up">Нагору</a>
                     <div class="mapSite">
                         <a href="#">
-                            <span>Карта сайта</span>
+                            <span>Карта сайту</span>
                             <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="mapSiteDown">
@@ -25,8 +25,8 @@
             </div>
             <div class="row">
             <div class="col-md-6 col-12 text-left law">
-                <p>© 2020 ПИИ «Тойота-Украина». Все права сохраняются за правообладателем. <br>
-                    Размещенная на данном сайте информация о характеристиках продукции, (ориентировочных) цен и других условий ее продажи, а также условий предоставления любых услуг не является предложением заключить договор (офертой). Такая информация может не быть окончательным и подлежит уточнению у соответствующего дилерского центра Toyota.
+                <p>© 2020 ПІІ «Тойота-Україна». Усі права зберігаються за правовласником. <br>
+                    Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою). Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.
                 </p>
             </div>
             <div class="col-6 social">
@@ -48,20 +48,20 @@
                 <div class="row text-left">
                     <article class="col-md-3 col-12">
                         <header>
-                            <h1>График роботы</h1>
+                            <h1>Графік роботи</h1>
                         </header>
                         <hr class="bg-danger w-25 mx-0">
                         <ul>
                             <li>Пн-Пт: 09:00 - 18:00</li>
                             <li>Сб: 10:00 - 17:00</li>
-                            <li>Вс: выходной день</li>
-                            <li>Узнать больше можно, написав на электронный адресс <a href="mailto:info@toyota.nikolaev.ua">Toyota информация</a></li>
+                            <li>Нд: вихідний день</li>
+                            <li>Дізнатися більше можна, написавши на скриньку <a href="mailto:info@toyota.nikolaev.ua">Toyota інформація</a></li>
                         </ul>
                     </article>
 
                     <article class="col-md-3 col-12">
                         <header>
-                            <h1>Продажа авто</h1>
+                            <h1>Продаж авто</h1>
                         </header>
 
                         <hr class="bg-danger w-25 mx-0">
@@ -76,7 +76,7 @@
 
                     <article class="col-md-3 col-12">
                         <header>
-                            <h1>Сервис</h1>
+                            <h1>Сервіс</h1>
                         </header>
                         <hr class="bg-danger w-25 mx-0">
                         <ul>
@@ -88,16 +88,16 @@
 
                     <article class="col-md-3 col-12">
                         <header>
-                            <h1>Адрес</h1>
+                            <h1>Адреса</h1>
                         </header>
                         <hr class="bg-danger w-25 mx-0">
                         <ul>
-                            <li>Украина, г.Николаев 54028,</li>
-                            <li>Херсонское шоссе, 109</li>
+                            <li>Україна, Миколаїв 54028,</li>
+                            <li>Херсонське шосе, 109</li>
                             <li>
                                 <a href="">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>Открыть карту</span>
+                                    <span>Відкрити карту</span>
                                 </a>
                             </li>
                         </ul>
@@ -106,7 +106,7 @@
             </div>
 
 
-            <div class="row w-100 py-4 mx-0 justify-content-center bg-light">© 2019 Тойота Центр Николаев «КиТ-Т» — официальний дилер Тойота в Украине</div>
+            <div class="row w-100 py-4 mx-0 justify-content-center bg-light">© 2019 Тойота Центр Миколаїв «КиТ-Т» — офіційний дилер Тойота в Україні</div>
         </div>
 
     </footer>
