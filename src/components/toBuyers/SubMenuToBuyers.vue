@@ -36,7 +36,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to="/business_car"
+                                to="/corporate_sales/business_car"
                         >Пользователям служебных автомобилей</router-link>
                     </li>
 
@@ -45,7 +45,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to="/business_owner"
+                                to="/corporate_sales/business_owner"
                         >Собственникам бизнеса</router-link>
                     </li>
 
@@ -54,7 +54,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to="/corporate_clients"
+                                to="/corporate_sales/corporate_clients"
                         >Корпоротивным клиентам</router-link>
                     </li>
 
@@ -63,7 +63,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to="/special_solutions"
+                                to="/corporate_sales/special_solutions"
                         >Специальные финансовые решения</router-link>
                     </li>
                 </ul>

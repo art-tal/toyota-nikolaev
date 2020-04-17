@@ -165,4 +165,10 @@
         }
     }
 
+    @media (max-width: 991.9px) {
+        aside {
+            display: none;
+        }
+    }
+
 </style>

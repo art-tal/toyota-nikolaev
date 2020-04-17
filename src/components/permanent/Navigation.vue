@@ -212,9 +212,14 @@
     @import '../../styles/variables';
 
     header {
+        position: sticky;
+        z-index: 1000;
+        top: 0;
+        left: 0;
         height: 70px;
         font-size: 1.4rem;
         color: $font_color;
+        background-color: #fff;
         border-bottom: 1px solid #f0f0f0;
         .row {
             padding: 0;

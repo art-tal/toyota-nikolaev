@@ -24,6 +24,12 @@ import Step1 from "@/components/configurator/consultSteps/Step1";
 import Step2 from "@/components/configurator/consultSteps/Step2";
 import Home from "@/components/Home";
 import Insurance from "@/components/toBuyers/Insurance";
+import Credit from "@/components/toBuyers/Credit";
+import Corporate_sales from "@/components/toBuyers/Corporate_sales";
+import Business_car from "@/components/toBuyers/Business_car";
+import Business_owner from "@/components/toBuyers/Business_owner";
+import Corporate_clients from "@/components/toBuyers/Corporate_clients";
+import Special_solutions from "@/components/toBuyers/Special_solutions";
 
 export default new VueRouter({
     routes: [
@@ -170,6 +176,40 @@ export default new VueRouter({
             path: "/insurance",
             name: "insurance",
             component: Insurance
+        },
+
+        {
+            path: "/credit",
+            name: "credit",
+            component: Credit,
+        },
+
+        {
+            path: "/corporate_sales",
+            name: "corporate_sales",
+            component: Corporate_sales,
+            child: [
+                {
+                    path: "/corporate_sales/business_car",
+                    name: "business_car",
+                    component: Business_car,
+                },
+                {
+                    path: "/corporate_sales/business_owner",
+                    name: "business_owner",
+                    component: Business_owner,
+                },
+                {
+                    path: "/corporate_sales/corporate_clients",
+                    name: "corporate_clients",
+                    component: Corporate_clients,
+                },
+                {
+                    path: "/corporate_sales/special_solutions",
+                    name: "special_solutions",
+                    component: Special_solutions,
+                },
+            ],
         },
 
         {
