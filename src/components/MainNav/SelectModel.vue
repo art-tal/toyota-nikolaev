@@ -122,10 +122,10 @@
 
 <script>
     import axios from 'axios';
-    import {eventEmitter} from "@/main";
-    import Equipment from "@/components/configurator/Equipment";
-    import ColorsPanel from "@/components/configurator/options/ColorsPanel";
-    import SubNavigation from "@/components/MainNav/SubNavigation";
+    import {eventEmitter} from "../../main";
+    import Equipment from "../configurator/Equipment";
+    import ColorsPanel from "../configurator/options/ColorsPanel";
+    import SubNavigation from "../MainNav/SubNavigation";
 
     export default {
         name: "SelectModel",

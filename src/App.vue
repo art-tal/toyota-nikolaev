@@ -12,14 +12,8 @@
 </template>
 
 <script>
-    import Navigation from "@/components/permanent/Navigation";
-    import Footer from "@/components/permanent/Footer";
-    // import Equipments from "@/components/configurator/Equipments--"
-    // import axios from "axios";
-// import SelectModel from '@/components/SelectModel';
-// import Configurator from "@/components/Configurator";
-// import Engine from '@/component/Engine';
-// import AllModell from "./components/AllModell";
+    import Navigation from "./components/permanent/Navigation";
+    import Footer from "./components/permanent/Footer";
 
 export default {
   name: 'App',

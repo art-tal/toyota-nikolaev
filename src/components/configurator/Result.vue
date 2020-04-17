@@ -165,7 +165,7 @@
 </template>
 
 <script>
-    import Consult from "@/components/configurator/Сonsult"
+    import Consult from "../configurator/Сonsult"
     // import {eventEmitter} from "@/main";
 
     export default {

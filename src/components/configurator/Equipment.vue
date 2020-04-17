@@ -36,7 +36,7 @@
 
 <script>
     import axios from "axios";
-    import {eventEmitter} from '@/main'
+    import {eventEmitter} from '../../main'
 
 
     export default {

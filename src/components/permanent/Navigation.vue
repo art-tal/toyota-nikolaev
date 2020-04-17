@@ -195,8 +195,8 @@
 </template>
 
 <script>
-    import SubMenuToBuyers from "@/components/toBuyers/SubMenuToBuyers";
-    import Lineup from "@/components/MainNav/Lineup";
+    import SubMenuToBuyers from "../toBuyers/SubMenuToBuyers";
+    import Lineup from "../MainNav/Lineup";
 
     export default {
         name: "Navigation",
@@ -213,7 +213,7 @@
 
     header {
         position: sticky;
-        z-index: 1000;
+        z-index: 999;
         top: 0;
         left: 0;
         height: 70px;

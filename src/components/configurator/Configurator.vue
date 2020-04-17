@@ -66,7 +66,7 @@
 </template>
 
 <script>
-    import SubNavigation from "@/components/MainNav/SubNavigation";
+    import SubNavigation from "../MainNav/SubNavigation";
 
     export default {
         name: "Configurator",
@@ -144,7 +144,7 @@
             top: 0;
             left: 0;
             background-color: #fff;
-            z-index: 999;
+            z-index: 998;
             color: $font_color;
             border-bottom: 1px solid #F0F0F0;
             div.collapse {

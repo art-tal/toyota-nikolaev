@@ -101,9 +101,9 @@
 </template>
 
 <script>
-    import Accessories from "@/components/configurator/options/Accessories";
-    import Price from "@/components/configurator/options/Price";
-    import ToResult from "@/components/configurator/options/ToResult";
+    import Accessories from "../configurator/options/Accessories";
+    import Price from "../configurator/options/Price";
+    import ToResult from "../configurator/options/ToResult";
 
     export default {
         name: "ColorAndOption",
