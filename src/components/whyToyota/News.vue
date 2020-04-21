@@ -1,81 +1,5 @@
 <template>
-    <main class="container-fluid">
-        <menu>
-            <nav class="navbar navbar-expand-lg navbar-light">
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to=""
-                            >
-                                Статті / Новини / Події
-                            </router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to=""
-                            >Олімпійське партнерство</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to=""
-                            >TOYOTA GAZOO Racing</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to=""
-                            >Toyota на чемпіонаті світу з ралі</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to=""
-                            >Історія спорткарів Toyota</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to=""
-                            >Toyoda AA</router-link>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-        </menu>
+    <div class="container-fluid">
         <header>
             <h1>СВІТ «TOYOTA»</h1>
         </header>
@@ -362,49 +286,55 @@
 
             <div class="body">
                 <div class="categories d-flex w-auto">
-                    <div class="events form-group checkbox">
-                        <input class="form-control"
-                               id="events" type="checkbox"
-                               value="events"
-                               v-model="events"
-                               checked
-                        >
-                        <label for="events">
-                            <span class="check"><i class="fas fa-check"></i></span>
-                            Новини в світі
-                        </label>
-                    </div>
                     <div class="news form-group checkbox">
                         <input class="form-control"
                                id="news" type="checkbox"
-                               value="news"
+                               value="8"
                                v-model="news"
                                checked
                         >
                         <label for="news">
                             <span class="check"><i class="fas fa-check"></i></span>
-                            Новини в Україні</label>
+                            Новини
+                        </label>
                     </div>
-                    <div class="stories form-group checkbox">
+                    <div class="newcomers form-group checkbox">
                         <input class="form-control"
-                               id="stories" type="checkbox"
-                               value="stories"
-                               v-model="stories"
+                               id="newcomers" type="checkbox"
+                               value="9"
+                               v-model="newcomers"
                                checked
                         >
-                        <label for="stories">
+                        <label for="newcomers">
                             <span class="check"><i class="fas fa-check"></i></span>
-                            Статті
+                            Новинки</label>
+                    </div>
+                    <div class="stocks form-group checkbox">
+                        <input class="form-control"
+                               id="stocks" type="checkbox"
+                               value="10"
+                               v-model="stocks"
+                               checked
+                        >
+                        <label for="stocks">
+                            <span class="check"><i class="fas fa-check"></i></span>
+                            Акції
                         </label>
                     </div>
                 </div>
 
                 <div class="row">
 
-                    <article class="col-6 text-left" v-for="(article, key) in filtered" :key="key">
+                    <article class="col-6 text-left"
+                             v-for="(article, key) in filtered"
+                             :key="key"
+                             @click="openArticle(article.id)"
+                    >
                         <div class="img" :style="'background-image: url(http://lara.toyota.nikolaev.ua/storage/' + article.image + ')'"></div>
 <!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + article.image" alt="post">-->
-                        <div class="category">{{article.category_id}}</div>
+                        <div class="category" v-if="article.category_id === 8" style="border-color: forestgreen; color: forestgreen">Новини</div>
+                        <div class="category" v-else-if="article.category_id === 9" style="border-color: #E50000; color: #E50000">Новинки</div>
+                        <div class="category" v-else-if="article.category_id === 10" style="border-color: blueviolet; color: blueviolet">Акції</div>
                         <h3>{{article.title}}</h3>
                         <p>{{article.excerpt}}</p>
                     </article>
@@ -412,7 +342,7 @@
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 </template>
 
 <script>
@@ -428,9 +358,9 @@
                 themes: [],
                 search: "",
 
-                events: "events",
+                newcomers: "newcomers",
                 news: "news",
-                stories: "stories",
+                stocks: "stocks",
 
                 newsAll: [],
                 newsFiltered: [],
@@ -500,6 +430,10 @@
                     console.log(error);
                 } )
             },
+
+            openArticle(id) {
+                this.$router.push( {name: "article", params: {id: id} } );
+            },
         },
     }
 </script>
@@ -507,32 +441,9 @@
 <style lang="scss" scoped>
     @import '../../styles/variables';
 
-    main.container-fluid {
+    .container-fluid {
         padding: 0;
-        menu {
-            width: 100%;
-            /*padding-left:30px;*/
-            position: sticky;
-            top: 0;
-            z-index: 998;
-            left: 0;
-            background-color: #fff;
-            border-bottom: 1px solid #f0f0f0;
-            padding: 5px 10px 5px 50px;
-            margin: 0;
-            nav.navbar {
-                background-color: #fff;
-                font-size: 1.5rem;
 
-                .collapse.navbar-collapse {
-                    ul.navbar-nav {
-                        li.nav-item {
-                            padding: 0 15px;
-                        }
-                    }
-                }
-            }
-        }
         header {
             height: 56vh;
             background-image: url("//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg");
@@ -641,6 +552,7 @@
             }
             .body {
                 .categories {
+                    margin-bottom: 30px;
                     .checkbox {
                         padding: 8px;
                         margin-right: 15px;
@@ -673,21 +585,21 @@
                                 }
                             }
                         }
-                        &.events {
+                        &.news {
                             border-color: forestgreen;
                             color: forestgreen;
                             label span.check {
                                 border-color: lightgreen;
                             }
                         }
-                        &.news {
+                        &.newcomers {
                             border-color: #E50000;
                             color: #E50000;
                             label span.check {
                                 border-color: lightcoral;
                             }
                         }
-                        &.stories {
+                        &.stocks {
                             border-color: blueviolet;
                             color: blueviolet;
                             label span.check {
@@ -707,10 +619,17 @@
                             -webkit-background-size: cover;
                             background-size: cover;
                         }
+                        .category {
+                            border: 2px solid;
+                            border-radius: 5px;
+                            padding: 5px;
+                            font-size: 1.6rem;
+                        }
                         h3 {
                             font-size: 1.7rem;
                             color: $font_color;
                             margin-top: 24px;
+                            font-weight: bold;
                         }
                         p {
                             font-size: 1.6rem;

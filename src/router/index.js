@@ -32,6 +32,8 @@ import Special_solutions from "../components/toBuyers/Special_solutions";
 import General from "../components/toBuyers/General";
 import SignUpForService from "../components/service/SignUpForService";
 import News from "../components/whyToyota/News";
+import Article from "../components/whyToyota/Article";
+import WorldOfToyota from "../components/whyToyota/WorldOfToyota";
 
 export default new VueRouter({
     routes: [
@@ -226,10 +228,25 @@ export default new VueRouter({
             component: SignUpForService,
         },
 
+
+
         {
-            path: "/news",
-            name: "news",
-            component: News,
+            path: "/world_of_toyota",
+            name: "world_of_toyota",
+            component: WorldOfToyota,
+            children: [
+                {
+                    path: "/world_of_toyota/news",
+                    name: "news",
+                    component: News,
+                },
+
+                {
+                    path: "/world_of_toyota/article/:id",
+                    name: "article",
+                    component: Article,
+                },
+            ],
         },
 
 
