@@ -18,7 +18,7 @@ import MobilityForEveryone from "../components/MainNav/MobilityForEveryone";
 import Accessories from "../components/configurator/options/Accessories";
 import Price from "../components/configurator/options/Price";
 import ToResult from "../components/configurator/options/ToResult";
-import Consult from "../components/configurator/Сonsult";
+import Consult from "../components/configurator/Consult";
 import Step1 from "../components/configurator/consultSteps/Step1";
 import Step2 from "../components/configurator/consultSteps/Step2";
 import Home from "../components/Home";
@@ -29,6 +29,9 @@ import Business_car from "../components/toBuyers/Business_car";
 import Business_owner from "../components/toBuyers/Business_owner";
 import Corporate_clients from "../components/toBuyers/Corporate_clients";
 import Special_solutions from "../components/toBuyers/Special_solutions";
+import General from "../components/toBuyers/General";
+import SignUpForService from "../components/service/SignUpForService";
+import News from "../components/whyToyota/News";
 
 export default new VueRouter({
     routes: [
@@ -187,7 +190,12 @@ export default new VueRouter({
             path: "/corporate_sales",
             name: "corporate_sales",
             component: Corporate_sales,
-            child: [
+            children: [
+                {
+                    path: "/corporate_sales/general",
+                    name: "general",
+                    component: General,
+                },
                 {
                     path: "/corporate_sales/business_car",
                     name: "business_car",
@@ -210,6 +218,23 @@ export default new VueRouter({
                 },
             ],
         },
+
+
+        {
+            path: "/service",
+            name: "service",
+            component: SignUpForService,
+        },
+
+        {
+            path: "/news",
+            name: "news",
+            component: News,
+        },
+
+
+
+        ////////////////////Заглушки//////////////////////////
 
         {
             path: "/to_the_owners",

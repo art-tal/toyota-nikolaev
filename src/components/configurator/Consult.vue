@@ -58,6 +58,7 @@
 
 <script>
     // import {eventEmitter} from "@/main";
+    // import {eventEmitter} from "./../../app";//          for Laravel
 
     export default {
         name: "Сonsultation",

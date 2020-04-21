@@ -39,7 +39,12 @@
                     </span>
                 </article>
 
-                    <article class="col-md-6 col-12 block_link service" @click="goToService()">
+                <router-link
+                        tag="article"
+                        exact
+                        class="col-md-6 col-12 block_link service"
+                        to="/service"
+                >
                         <header>
                             <span>ЗВ’ЯЗАТИСЯ З ОФІЦІЙНИМ ДИЛЕРОМ </span>
                             <h1 class="text-uppercase">СЕРВІСНІ СТАНЦІЇ TOYOTA ПРАЦЮЮТЬ</h1>
@@ -47,7 +52,17 @@
                         <span class="btn-go text-center">
                             <i class="fas fa-chevron-right"></i>
                         </span>
-                    </article>
+                </router-link>
+<!--                <article class="col-md-6 col-12 block_link service" @click="goToService()">-->
+<!--                    <header>-->
+<!--                        <span>ЗВ’ЯЗАТИСЯ З ОФІЦІЙНИМ ДИЛЕРОМ </span>-->
+<!--                        <h1 class="text-uppercase">СЕРВІСНІ СТАНЦІЇ TOYOTA ПРАЦЮЮТЬ</h1>-->
+<!--                    </header>-->
+<!--                    <span class="btn-go text-center">-->
+<!--                            <i class="fas fa-chevron-right"></i>-->
+<!--                        </span>-->
+<!--                </article>-->
+
 
                     <article class="col-md-6 col-12 block_link hybrid" @click="goToHybrid">
                         <header>
@@ -104,7 +119,7 @@
             },
 
             goToService() {
-                this.$router.push({name: 'toyota_in_nikolaev'});
+                this.$router.push({name: 'service'});
             },
 
             goToHybrid() {

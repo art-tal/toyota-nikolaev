@@ -46,6 +46,7 @@ export default {
 
 <style>
 #app {
+    width: 100%;
     min-width: 350px;
     min-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;

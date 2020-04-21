@@ -28,16 +28,6 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active dropdown">
-<!--                                <router-link-->
-<!--                                        class="nav-link"-->
-<!--                                        tag="a"-->
-<!--                                        exact-->
-<!--                                        active-class="active"-->
-<!--                                        to="/lineup"-->
-<!--                                >-->
-<!--                                    <span>Модельный ряд</span>-->
-<!--                                    <span class="sr-only">(current)</span>-->
-<!--                                </router-link>-->
                                 <a class="nav-link dropdown-toggle"
                                    href.prevent="#"
                                    role="button"
@@ -52,9 +42,10 @@
                                 </div>
 
                             </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle"
-                                   href="#" id="navbarDropdown"
+                                   href.prevent="#"
                                    role="button"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
@@ -63,52 +54,56 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <sub-menu-to-buyers></sub-menu-to-buyers>
-<!--                                    <a class="dropdown-item" href="#">Action</a>-->
-<!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-<!--                                    <div class="dropdown-divider"></div>-->
-<!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
                                 </div>
-
                             </li>
-<!--                            <li class="nav-item">-->
-<!--                                <router-link-->
-<!--                                        class="nav-link"-->
-<!--                                        tag="a"-->
-<!--                                        exact-->
-<!--                                        active-class="active"-->
-<!--                                        to="/to_the_owners"-->
-<!--                                >-->
-<!--                                    <span>Владельцам</span>-->
-<!--                                </router-link>-->
-<!--                            </li>-->
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                   href.prevent=""
+                                   role="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <span>Сервіс</span>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <sub-menu-service></sub-menu-service>
+                                </div>
+                            </li>
+
                             <li class="nav-item">
                                 <router-link
                                         class="nav-link"
                                         tag="a"
                                         exact
-                                        active-class="active"
                                         to="/souvenir_products"
                                 >
                                     <span>Сувенірна продукція</span>
                                 </router-link>
                             </li>
-                            <li class="nav-item">
-                                <router-link
-                                        class="nav-link"
-                                        tag="a"
-                                        exact
-                                        active-class="active"
-                                        to="/why_toyota"
-                                >
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                   href.prevent=""
+                                   role="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
                                     <span>Чому Toyota?</span>
-                                </router-link>
+                                </a>
+
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <sub-menu-why-toyota></sub-menu-why-toyota>
+                                </div>
                             </li>
+
                             <li class="nav-item">
                                 <router-link
                                         class="nav-link"
                                         tag="a"
                                         exact
-                                        active-class="active"
                                         to="/toyota_in_nikolaev"
                                 >
                                     <span>Toyota в Миколаєві</span>
@@ -195,15 +190,25 @@
 </template>
 
 <script>
-    import SubMenuToBuyers from "../toBuyers/SubMenuToBuyers";
     import Lineup from "../MainNav/Lineup";
+    import SubMenuToBuyers from "../toBuyers/SubMenuToBuyers";
+    import SubMenuService from "../service/SubMenuService";
+    import SubMenuWhyToyota from "../whyToyota/SubMenuWhyToyota";
+
+
+    // import Lineup from "./../../components/MainNav/Lineup";//                               for Laravel
+    // import SubMenuToBuyers from "./../../components/toBuyers/SubMenuToBuyers";//            for Laravel
+    // import SubMenuService from "./../../components/service/SubMenuService";//               for Laravel
+    // import SubMenuWhyToyota from "./../../components/whyToyota/SubMenuWhyToyota";//         for Laravel
 
     export default {
         name: "Navigation",
 
         components: {
+            Lineup,
             SubMenuToBuyers,
-            Lineup
+            SubMenuService,
+            SubMenuWhyToyota
         },
     }
 </script>
@@ -212,7 +217,9 @@
     @import '../../styles/variables';
 
     header {
-        position: sticky;
+        position: relative;
+        /*position: sticky;*/
+        box-sizing: border-box;
         z-index: 999;
         top: 0;
         left: 0;
@@ -237,7 +244,6 @@
                             box-sizing: border-box;
                             display: table;
                             position: static;
-                            box-sizing: border-box;
                             a.nav-link {
                                 display: table-cell;
                                 vertical-align: middle;
@@ -256,10 +262,12 @@
                                 }
                             }
                             .dropdown-menu {
+                                box-sizing: border-box;
                                 width: 100vw;
-                                left: 0;
+                                /*left: 0;*/
                                 margin: 0 -15px;
                                 background-color: #f0f0f0;
+                                /*overflow-y: scroll !important;*/
                             }
 
                         }
@@ -363,14 +371,10 @@
                                 }
 
                                 .dropdown-menu {
-                                    /*position: absolute;*/
-                                    width: 100% !important;
                                     position: static;
-                                    margin: 0 !important;
-                                    /*border: none;*/
-                                    /*top: 68px;*/
-                                    /*left: 15px !important;*/
+                                    width: 100% !important;
                                     max-width: 100%;
+                                    margin: 0 !important;
                                     border: 1px solid #cccccc;
                                     border-top: none;
                                 }
@@ -379,35 +383,7 @@
                         }
                     }
                 }
-                /*nav.navbar {*/
-                /*    .collapse {*/
-                /*        ul {*/
-                /*            li {*/
-                /*                .nav-link {*/
-                /*                    padding: 0 10px;*/
-                /*                }*/
 
-                /*            }*/
-                /*        }*/
-                /*    }*/
-
-
-                /*}*/
-
-                /*.dealers {*/
-                /*    ul {*/
-                /*        li {*/
-                /*            a {*/
-                /*                i {*/
-                /*                    margin-right: 5px;*/
-                /*                }*/
-                /*                span {*/
-                /*                    display: none;*/
-                /*                }*/
-                /*            }*/
-                /*        }*/
-                /*    }*/
-                /*}*/
                 .dealers {
                     height: 70px;
                     position: absolute;
@@ -454,8 +430,13 @@
                                 z-index: 5;
                                 background-color: #f0f0f0;
                                 width: 100%;
+                                height: auto;
                                 border-bottom: 1px solid #cccccc;
                                 .nav-link {
+                                    display: block !important;
+                                    width: 100% !important;
+                                    height: auto !important;
+                                    padding: 24px 0 !important;
                                     &.active {
                                         background-color: #E50000;
                                         color: #fff;
@@ -463,10 +444,10 @@
                                 }
 
                                 .dropdown-menu {
-                                    position: absolute;
-                                    top: 68px;
-                                    left: 15px !important;
+                                    position: static;
+                                    width: 100% !important;
                                     max-width: 100%;
+                                    margin: 0 !important;
                                 }
 
                             }
@@ -499,9 +480,11 @@
 
     @media (max-width: 767.9px) {
         header {
-            min-width: 350px;
             .row {
                 nav.navbar {
+                    button.navbar-toggler {
+
+                    }
                     .collapse {
                         height: auto;
                         width: 100%;
@@ -519,8 +502,13 @@
                                 z-index: 5;
                                 background-color: #f0f0f0;
                                 width: 100%;
+                                height: auto;
                                 border-bottom: 1px solid #cccccc;
                                 .nav-link {
+                                    display: block !important;
+                                    width: 100% !important;
+                                    height: auto !important;
+                                    padding: 24px 0 !important;
                                     &.active {
                                         background-color: #E50000;
                                         color: #fff;
@@ -528,35 +516,15 @@
                                 }
 
                                 .dropdown-menu {
-                                    min-width: 320px;
-                                    position: absolute;
-                                    left: 15px !important;
+                                    position: static;
+                                    width: 100% !important;
                                     max-width: 100%;
+                                    margin: 0 !important;
                                 }
 
                             }
                         }
                     }
-                /*}*/
-                    /*.collapse {*/
-                    /*    ul {*/
-                    /*        height: 50px;*/
-                    /*        display: block;*/
-                    /*        li {*/
-                    /*            position: relative;*/
-                    /*            z-index: 5;*/
-                    /*            background-color: #fff;*/
-                    /*            width: 100%;*/
-                    /*            .nav-link {*/
-                    /*                &.active {*/
-                    /*                    background-color: #E50000;*/
-                    /*                    color: #fff;*/
-                    /*                }*/
-                    /*            }*/
-
-                    /*        }*/
-                    /*    }*/
-                    /*}*/
                 }
 
                 .dealers {

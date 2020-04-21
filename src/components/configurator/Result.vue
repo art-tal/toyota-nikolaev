@@ -165,8 +165,8 @@
 </template>
 
 <script>
-    import Consult from "../configurator/Сonsult"
-    // import {eventEmitter} from "@/main";
+    import Consult from "./Consult"
+    // import {eventEmitter} from "../../app";//            for Laravel
 
     export default {
         name: "Result",

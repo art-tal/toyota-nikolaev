@@ -122,7 +122,7 @@
     @import '../../styles/variables';
 
     footer {
-        min-width: 470px;
+        min-width: 350px;
         margin-top: 68px;
         .container {
             .row {

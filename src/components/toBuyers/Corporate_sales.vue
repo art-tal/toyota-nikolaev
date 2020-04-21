@@ -1,5 +1,7 @@
 <template>
     <main>
+        <sidebar></sidebar>
+
         <menu>
             <nav class="navbar navbar-expand-lg navbar-light">
 
@@ -58,122 +60,135 @@
                 </div>
             </nav>
         </menu>
-        <header class="container-fluid">
-        </header>
-        
-        <div class="body container">
-            <p>Ласкаво просимо до Toyota BusinessPlus. Це Ваш бізнес-партнер, що наближає Ваш успіх та перевершує очікування. Розуміючи Ваші персональні бізнес-потреби, ми підберемо для Вас потрібний автомобіль, надамо поради та забезпечимо будь-яку необхідну підтримку.</p>
-            <h2>Що Вас цікавить?</h2>
-            <section class="row">
-                <router-link
-                        tag="article"
-                        class="col-6"
-                        active-class="active"
-                        exact
-                        to="/corporate_sales/"
-                >
-                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/company-car2_tcm-3046-663260.jpg" alt="business_car">
-                    <strong>Користувачам службових автомобілів</strong>
-                    <p>Дізнайтеся більше про надійний модельний ряд Toyota та унікальну підтримку, яку ми забезпечуємо.</p>
-                </router-link>
 
-                <router-link
-                        tag="article"
-                        class="col-6"
-                        active-class="active"
-                        exact
-                        to="/corporate_sales/"
-                >
-                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Business-Sales_tcm-3046-663262.jpg" alt="business_owner">
-                    <strong>Бізнес для бізнесу</strong>
-                    <p>Дізнайтеся про причини працювати з Toyota BusinessPlus</p>
-                </router-link>
+        <router-view></router-view>
+<!--        <header class="container-fluid">-->
+<!--        </header>-->
+<!--        -->
+<!--        <div class="body container">-->
+<!--            <p>Ласкаво просимо до Toyota BusinessPlus. Це Ваш бізнес-партнер, що наближає Ваш успіх та перевершує очікування. Розуміючи Ваші персональні бізнес-потреби, ми підберемо для Вас потрібний автомобіль, надамо поради та забезпечимо будь-яку необхідну підтримку.</p>-->
+<!--            <h2>Що Вас цікавить?</h2>-->
+<!--            <section class="row">-->
+<!--                <router-link-->
+<!--                        tag="article"-->
+<!--                        class="col-6"-->
+<!--                        active-class="active"-->
+<!--                        exact-->
+<!--                        to="/corporate_sales/"-->
+<!--                >-->
+<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/company-car2_tcm-3046-663260.jpg" alt="business_car">-->
+<!--                    <strong>Користувачам службових автомобілів</strong>-->
+<!--                    <p>Дізнайтеся більше про надійний модельний ряд Toyota та унікальну підтримку, яку ми забезпечуємо.</p>-->
+<!--                </router-link>-->
 
-                <router-link
-                        tag="article"
-                        class="col-6"
-                        active-class="active"
-                        exact
-                        to="/corporate_sales/"
-                >
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Euro-Sales_tcm-3046-663264.jpg" alt="corporate_clients">
-                    <strong>Корпоративні продажі</strong>
-                    <p>Зв'яжіться з нашою мережею, аби дізнатися більше про продуктову лінійку Toyota та перелік послуг.</p>
-                </router-link>
+<!--                <router-link-->
+<!--                        tag="article"-->
+<!--                        class="col-6"-->
+<!--                        active-class="active"-->
+<!--                        exact-->
+<!--                        to="/corporate_sales/"-->
+<!--                >-->
+<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Business-Sales_tcm-3046-663262.jpg" alt="business_owner">-->
+<!--                    <strong>Бізнес для бізнесу</strong>-->
+<!--                    <p>Дізнайтеся про причини працювати з Toyota BusinessPlus</p>-->
+<!--                </router-link>-->
 
-                <router-link
-                        tag="article"
-                        class="col-6"
-                        active-class="active"
-                        exact
-                        to="/corporate_sales/"
-                >
-                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/555x249_Thumb_Tailored_financial_solution_tcm-3046-663266.jpg" alt="special_solutions">
-                    <strong>Спеціальні фінансові рішення</strong>
-                    <p>Скористайтеся можливістю придбати автомобіль Toyota за програмою «Тойота Кредит» та застрахувати його за програмою «Тойота Страхування»!</p>
-                </router-link>
+<!--                <router-link-->
+<!--                        tag="article"-->
+<!--                        class="col-6"-->
+<!--                        active-class="active"-->
+<!--                        exact-->
+<!--                        to="/corporate_sales/"-->
+<!--                >-->
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Euro-Sales_tcm-3046-663264.jpg" alt="corporate_clients">-->
+<!--                    <strong>Корпоративні продажі</strong>-->
+<!--                    <p>Зв'яжіться з нашою мережею, аби дізнатися більше про продуктову лінійку Toyota та перелік послуг.</p>-->
+<!--                </router-link>-->
 
-            </section>
+<!--                <router-link-->
+<!--                        tag="article"-->
+<!--                        class="col-6"-->
+<!--                        active-class="active"-->
+<!--                        exact-->
+<!--                        to="/corporate_sales/"-->
+<!--                >-->
+<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/555x249_Thumb_Tailored_financial_solution_tcm-3046-663266.jpg" alt="special_solutions">-->
+<!--                    <strong>Спеціальні фінансові рішення</strong>-->
+<!--                    <p>Скористайтеся можливістю придбати автомобіль Toyota за програмою «Тойота Кредит» та застрахувати його за програмою «Тойота Страхування»!</p>-->
+<!--                </router-link>-->
 
-            <section>
-                <header>
-                    <h1>Toyota BusinessPlus - це більше переваг для Вашого бізнесу</h1>
-                </header>
-                <div class="links row">
-                    <div class="col-6">
-                        <a href.prevent="#">Статус</a>
-                    </div>
-                    <div class="col-6">
-                        <a href.prevent="#">Якість</a>
-                    </div>
-                    <div class="col-6">
-                        <a href.prevent="#">Надійність</a>
-                    </div>
-                    <div class="col-6">
-                        <a href.prevent="#">Довговічність</a>
-                    </div>
-                    <div class="col-6">
-                        <a href.prevent="#">Гібридні техології</a>
-                    </div>
-                    <div class="col-6">
-                        <a href.prevent="#">Співвідношення ціна/якість</a>
-                    </div>
-                    <div class="col-6">
-                        <a href.prevent="#">Широкий модельний ряд</a>
-                    </div>
-                    <div class="col-6">
-                        <a href.prevent="#">Велика сервісна мережа</a>
-                    </div>
-                </div>
-            </section>
+<!--            </section>-->
+
+<!--            <section>-->
+<!--                <header>-->
+<!--                    <h1>Toyota BusinessPlus - це більше переваг для Вашого бізнесу</h1>-->
+<!--                </header>-->
+<!--                <div class="links row">-->
+<!--                    <div class="col-6">-->
+<!--                        <a href.prevent="#">Статус</a>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <a href.prevent="#">Якість</a>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <a href.prevent="#">Надійність</a>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <a href.prevent="#">Довговічність</a>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <a href.prevent="#">Гібридні техології</a>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <a href.prevent="#">Співвідношення ціна/якість</a>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <a href.prevent="#">Широкий модельний ряд</a>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <a href.prevent="#">Велика сервісна мережа</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
 
 
-        </div>
+<!--        </div>-->
 
-        <section class="lineup container-fluid text-left">
-            <header>
-                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>
-            </header>
-            <footer>
-<!--                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>-->
-                <router-link
-                        tag="button"
-                        exact
-                        class="btn btn-light"
-                        active-class="active"
-                        to=""
-                >
-                    Відкрий для себе Toyota Hybrid
-                </router-link>
-            </footer>
-        </section>
+<!--        <section class="lineup container-fluid text-left">-->
+<!--            <header>-->
+<!--                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>-->
+<!--            </header>-->
+<!--            <footer>-->
+<!--&lt;!&ndash;                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>&ndash;&gt;-->
+<!--                <router-link-->
+<!--                        tag="button"-->
+<!--                        exact-->
+<!--                        class="btn btn-light"-->
+<!--                        active-class="active"-->
+<!--                        to=""-->
+<!--                >-->
+<!--                    Відкрий для себе Toyota Hybrid-->
+<!--                </router-link>-->
+<!--            </footer>-->
+<!--        </section>-->
 
     </main>
 </template>
 
 <script>
+    import Sidebar from "@/components/permanent/Sidebar";
+    // import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
+
     export default {
-        name: "Corporate_sales"
+        name: "Corporate_sales",
+
+        components: {
+            Sidebar,
+        },
+
+        created() {
+            this.$router.push({name: "general"});
+        },
     }
 </script>
 
@@ -185,8 +200,8 @@
             width: 100%;
             padding-left: 100px;
             position: sticky;
-            top: 70px;
-            z-index: 999;
+            top: 0px;
+            z-index: 998;
             left: 0;
             background-color: #fff;
             nav.navbar {
@@ -201,7 +216,7 @@
                 }
             }
         }
-        header.container-fluid {
+        /*header.container-fluid {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -305,7 +320,7 @@
                     }
                 }
             }
-        }
+        }*/
     }
 
 </style>

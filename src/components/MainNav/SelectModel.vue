@@ -127,6 +127,11 @@
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "../MainNav/SubNavigation";
 
+    // import {eventEmitter} from "./../../app";//                                     for Laravel
+    // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
+    // import ColorsPanel from "./../configurator/options/ColorsPanel";//              for Laravel
+    // import SubNavigation from "./../../components/MainNav/SubNavigation";//         for Laravel
+
     export default {
         name: "SelectModel",
 

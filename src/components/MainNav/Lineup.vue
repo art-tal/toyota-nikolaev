@@ -83,7 +83,7 @@
                     method: 'get',
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
-                    // console.log(response.data);
+                    console.log(response.data);
                     this.models = response.data;
                     // return response.data;
                 } )
