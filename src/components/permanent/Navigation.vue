@@ -100,14 +100,18 @@
                             </li>
 
                             <li class="nav-item">
-                                <router-link
-                                        class="nav-link"
-                                        tag="a"
-                                        exact
-                                        to="/toyota_in_nikolaev"
-                                >
+                                <a class="nav-link dropdown-toggle"
+                                   href.prevent=""
+                                   role="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
                                     <span>Toyota в Миколаєві</span>
-                                </router-link>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <sub-menu-nikolaev></sub-menu-nikolaev>
+                                </div>
                             </li>
 <!--                            <li class="nav-item">-->
 <!--                                <router-link-->
@@ -194,6 +198,7 @@
     import SubMenuToBuyers from "../toBuyers/SubMenuToBuyers";
     import SubMenuService from "../service/SubMenuService";
     import SubMenuWhyToyota from "../whyToyota/SubMenuWhyToyota";
+    import SubMenuNikolaev from "@/components/ToyotaInNikolaev/SubMenuNikolaev";
 
 
     // import Lineup from "./../../components/MainNav/Lineup";//                               for Laravel
@@ -208,7 +213,8 @@
             Lineup,
             SubMenuToBuyers,
             SubMenuService,
-            SubMenuWhyToyota
+            SubMenuWhyToyota,
+            SubMenuNikolaev,
         },
     }
 </script>

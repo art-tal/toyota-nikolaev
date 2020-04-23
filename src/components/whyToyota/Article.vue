@@ -18,7 +18,41 @@
         data() {
             return {
                 id: 0,
-                article: {}
+                article: {},
+
+            }
+        },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | ${this.title}`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | ${this.title}`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `${this.excerpt}`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `${this.excerpt}`
+                    },
+                    // {
+                    //     vmid: "keywords",
+                    //     name: "keywords",
+                    //     content: `toyota, тест-драйв, тест драйв, тестдрайв, тайота, купить, дилер, `
+                    // },
+                    // {
+                    //     vmid: "keywords",
+                    //     property: "og:keywords",
+                    //     content: `toyota, тест-драйв, тест драйв, тестдрайв, тайота, купить, дилер, `
+                    // },
+                ],
             }
         },
 
@@ -31,6 +65,14 @@
         computed: {
             photo() {
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.article.image;
+            },
+
+            title() {
+                return this.article.title;
+            },
+
+            excerpt() {
+                return this.article.excerpt;
             },
         },
 
@@ -84,6 +126,26 @@
                     font-weight: bold;
                 }
                 p {
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199.9px) {
+        article.container-fluid {
+            header {
+                max-height: 60vw;
+            }
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        article.container-fluid {
+            header {
+                height: 56vw;
+                h1 {
+                    font-size: 3.5rem;
+                    padding-top: 50px;
                 }
             }
         }

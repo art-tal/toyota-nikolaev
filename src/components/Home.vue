@@ -115,7 +115,7 @@
 
         methods: {
             goToConsult() {
-                this.$router.push({name: 'toyota_in_nikolaev'});
+                this.$router.push({name: 'consultation'});
             },
 
             goToService() {

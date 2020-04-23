@@ -10,7 +10,7 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav text-lg-center text-left">
 
                             <li class="nav-item">
                                 <router-link
@@ -94,6 +94,39 @@
             Sidebar,
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Новини, статті, звіти про події | Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Новини, статті, звіти про події | Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Відкрийте для себе світ Тойоти, дізнайтесь всі останні новини та події, майбутні презентації  автомобілів, а також оновлення про TOYOTA GAZOO Racing.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Відкрийте для себе світ Тойоти, дізнайтесь всі останні новини та події, майбутні презентації  автомобілів, а також оновлення про TOYOTA GAZOO Racing.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota, Дізнайтеся про те, що відбувається у світі «Тойоти»: новини, статті, огляди в пресі тощо.`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota, Дізнайтеся про те, що відбувається у світі «Тойоти»: новини, статті, огляди в пресі тощо.`
+                    },
+                ],
+            }
+        },
+
         created() {
             this.$router.push({name: "news"});
         },
@@ -124,6 +157,32 @@
                     ul.navbar-nav {
                         li.nav-item {
                             padding: 0 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 991.9px) {
+        main.container-fluid {
+            menu {
+                background-color: #f0f0f0;
+                padding: 0;
+                nav.navbar {
+                    padding: 0;
+                    background-color: #f0f0f0;
+                    button.navbar-toggler {
+                        margin: 15px;
+                    }
+                    .collapse.navbar-collapse {
+                        ul.navbar-nav {
+                            width: 100%;
+                            li.nav-item {
+                                padding: 15px 25px;
+                                box-sizing: border-box;
+                                border-bottom: 1px solid #cccccc;
+                            }
                         }
                     }
                 }

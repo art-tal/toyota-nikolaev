@@ -140,7 +140,7 @@
                         <div class="save row">
                             <p class="col-8">Ваш Toyota-код <i class="fas fa-info-circle"></i></p>
                             <h4 class="col-4 font-weight-bold text-right">{{code}}</h4>
-                            <button class="btn btn-danger">Зберегти у своєму обліковому записі</button>
+                            <button class="btn btn-danger">Зберегти</button>
                         </div>
 
                         <footer>
@@ -154,9 +154,13 @@
                 </article>
             </aside>
 
+
+
 <!--            <div class="consult"  v-if="showConsultation">-->
-                <consult v-if="showConsultation"></consult>
+<!--                <consult v-if="showConsultation"></consult>-->
+<!--                <consult></consult>-->
 <!--            </div>-->
+
 
         </div>
 
@@ -165,14 +169,14 @@
 </template>
 
 <script>
-    import Consult from "./Consult"
+    // import Consult from "./Consult"
     // import {eventEmitter} from "../../app";//            for Laravel
 
     export default {
         name: "Result",
 
         components: {
-            Consult,
+            // Consult,
         },
 
         data() {
@@ -261,9 +265,8 @@
             },
 
             openConsult() {
-                // this.openConsultation = !this.openConsultation;
-                this.$store.state.openConsultation = !this.$store.state.openConsultation;
-                // console.log(this.$store.state.openConsultation );
+                // this.$store.state.openConsultation = !this.$store.state.openConsultation;
+                this.$router.push({name: "consultation"})
             }
         },
     }

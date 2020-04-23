@@ -326,6 +326,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Toyota Кредит - фінансування купівлі автомобілів Toyota`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Toyota Кредит - фінансування купівлі автомобілів Toyota`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `В офіційній дилерскій мережі ПІІ «Тойота-Україна» діє єдина програма фінансування купівлі автомобілів марки Toyota під назвою «Тойота Кредит».`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `В офіційній дилерскій мережі ПІІ «Тойота-Україна» діє єдина програма фінансування купівлі автомобілів марки Toyota під назвою «Тойота Кредит».`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota,кредит,купити,тойота україна,королла,ауріс,камрі,ленд крузер,кредит,гривня,тойота кредит,індекс банк, ставки,тойота-україна,строк,кредитування,проценти,axa,аха,страхування,тойота, credit agricole, креди агріколь, креди агріколь банк, кредит агриколь,toyota, yaris,auris, corolla, camry,avensis, rav4, prado, land cruiser, highlander, hilux`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota,кредит,купити,тойота україна,королла,ауріс,камрі,ленд крузер,кредит,гривня,тойота кредит,індекс банк, ставки,тойота-україна,строк,кредитування,проценти,axa,аха,страхування,тойота, credit agricole, креди агріколь, креди агріколь банк, кредит агриколь,toyota, yaris,auris, corolla, camry,avensis, rav4, prado, land cruiser, highlander, hilux`
+                    },
+                ],
+            }
+        },
+
         components: {
             Sidebar
         },

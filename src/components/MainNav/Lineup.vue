@@ -42,10 +42,18 @@
                             </a>
                         </li>
                         <li class="test_drive">
-                            <a href="#">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    to="/consultation"
+                            >
                                 <i class="far fa-calendar-alt"></i>
                                 <span>Замовити онлайн консультацію</span>
-                            </a>
+                            </router-link>
+<!--                            <a href="#">-->
+<!--                                <i class="far fa-calendar-alt"></i>-->
+<!--                                <span>Замовити онлайн консультацію</span>-->
+<!--                            </a>-->
                         </li>
                         <li class="download">
                             <a href="#">

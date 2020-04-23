@@ -118,7 +118,7 @@
                     <div class="field form-group col-md-6 col-12">
                         <label for="phone">Телефон <span>*</span></label>
                         <input id="phone"
-                               placeholder="+38 ___ __ __ ___ "
+                               placeholder="+38 (___) __-__-___"
                                :class="{'is-invalid' : $v.phone.$error}"
                                type="tel"
                                v-model="phone"
@@ -126,7 +126,8 @@
                         >
 
                         <div class="invalid-feedback"  v-if="!$v.phone.required">Це поле є обов'язковим для заповненя.</div>
-                        <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength || !$v.phone.phone">Невірний формат номеру.</div>
+                        <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength">Невірний формат номеру.</div>
+<!--                        <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength || !$v.phone.phone">Невірний формат номеру.</div>-->
                     </div>
 
                 <div class="field form-group col-md-6 col-12">
@@ -290,6 +291,7 @@
 
 <script>
     import axios from "axios"
+    import Inputmask from "inputmask";
     import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 
     export default {
@@ -321,6 +323,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Запис на сервісне обслуговування | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Запис на сервісне обслуговування | Toyota Україна`,
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `За допомогою форми запису на сервісне обслуговування, ви можете надіслати заявку до офіційного сервісного центру Тойота. Оберіть бажану послугу та залиште свої данні.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `За допомогою форми запису на сервісне обслуговування, ви можете надіслати заявку до офіційного сервісного центру Тойота. Оберіть бажану послугу та залиште свої данні.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, тойота, тойота україна, перевірити, сервіс, сервісна станція, обслуговування, переваги, проверить, сервис, сервисная станция, обслуживание, преимущества, отзывные кампании, техогляд, техосмотр `
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, тойота, тойота україна, перевірити, сервіс, сервісна станція, обслуговування, переваги, проверить, сервис, сервисная станция, обслуживание, преимущества, отзывные кампании, техогляд, техосмотр `
+                    },
+                ],
+            }
+        },
+
         validations: {
           model: {
               required,
@@ -334,11 +369,11 @@
           phone: {
               required,
               minLength: minLength(12),
-              maxLength: maxLength(17),
-              phone(str) {
-                  const regexp = /\+38[- ]?[0-9]{3}[- ]?[0-9]{2}[- ]?[0-9]{2}[- ]?[0-9]{3}/;
-                  return regexp.test(str);
-              },
+              maxLength: maxLength(19),
+              // phone(str) {
+              //     const regexp = /\+38[- ]?[0-9]{3}[- ]?[0-9]{2}[- ]?[0-9]{2}[- ]?[0-9]{3}/;
+              //     return regexp.test(str);
+              // },
           },
           firstName: {
               required,
@@ -386,6 +421,11 @@
 
         created() {
             this.getModel();
+        },
+
+        mounted () {
+            let im = new Inputmask("+38 (999) 99-99-999");
+            im.mask(document.getElementById('phone'));
         },
 
         watch: {
@@ -515,7 +555,7 @@
                             }
                         }
                         input {
-                            @include inputForm
+                            @include inputForm;
                         }
                         select {
                             @include inputForm;

@@ -1,5 +1,5 @@
 <template>
-    <div class="sub_toBuyers container-fluid">
+    <div class="sub_nikolaev container-fluid">
         <div class="row">
             <div class="col-xl-3 col-lg-6 col-12">
                 <router-link
@@ -7,8 +7,28 @@
                         tag="a"
                         class="nav-link"
                         active-class="active"
-                        to="/insurance"
-                >Тойота Страхування</router-link>
+                        to=""
+                >Клієнтська служба</router-link>
+
+                <ul>
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to=""
+                        >Про службу</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to=""
+                        >Премія Toyota Ichiban</router-link>
+                    </li>
+                </ul>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12">
@@ -17,8 +37,37 @@
                         tag="a"
                         class="nav-link"
                         active-class="active"
-                        to="/credit"
-                >Toyota Кредит</router-link>
+                        to=""
+                >ПІІ «Тойота-Миколаїв»</router-link>
+
+                <ul>
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to=""
+                        >Корпоративна відповідальність</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to="/cars_available"
+                        >Авто в наявносі</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to=""
+                        >Зв’язатись з нами</router-link>
+                    </li>
+                </ul>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12">
@@ -28,7 +77,7 @@
                         class="nav-link"
                         active-class="active"
                         to="/corporate_sales/general"
-                >Корпоративні продажі</router-link>
+                >Робота в Toyota</router-link>
 
                 <ul>
                     <li>
@@ -37,7 +86,7 @@
                                 exact
                                 active-class="active"
                                 to="/corporate_sales/business_car"
-                        >Користувачам службових автомобілів</router-link>
+                        >Кар'єра «Тойота-Україна»</router-link>
                     </li>
 
                     <li>
@@ -46,25 +95,7 @@
                                 exact
                                 active-class="active"
                                 to="/corporate_sales/business_owner"
-                        >Власникам бізнесу</router-link>
-                    </li>
-
-                    <li>
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/corporate_sales/corporate_clients"
-                        >Корпоративним клієнтам</router-link>
-                    </li>
-
-                    <li>
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/corporate_sales/special_solutions"
-                        >Спеціальні фінансові рішення</router-link>
+                        >Кар’єрні можливості</router-link>
                     </li>
                 </ul>
 
@@ -74,40 +105,38 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
+                        <li class="download">
+                            <a href="#">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Офіційні дилери</span>
+                            </a>
+                        </li>
+
+                        <li class="dilers">
+                            <a href="#">
+                                <i class="fas fa-car-side"></i>
+                                <span>Автомобілі з пробігом</span>
+                            </a>
+                        </li>
+
                         <li class="servies">
                             <a href="#">
                                 <i class="fas fa-car"></i>
-                                <span>Конфігуратор</span>
+                                <span>Замовити тест-драйв</span>
                             </a>
                         </li>
-                        <li class="dilers">
-                            <a href="#">
-                                <i class="far fa-file-alt"></i>
-                                <span>Завантажити брошури</span>
-                            </a>
-                        </li>
-                        <li class="contact">
-                            <a href="#">
-                                <i class="fas fa-car"></i>
-                                <span>Гібридні іновації</span>
-                            </a>
-                        </li>
-                        <li class="test_drive">
-                            <a href="#">
-                                <i class="fas fa-tag"></i>
-                                <span>Сувенирна продукція</span>
-                            </a>
-                        </li>
+
                         <li class="download">
                             <a href="#">
                                 <i class="fas fa-phone"></i>
                                 <span>Зв’язатись з нами</span>
                             </a>
                         </li>
-                        <li class="download">
+
+                        <li class="contact">
                             <a href="#">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Офіційні дилери</span>
+                                <i class="fas fa-key"></i>
+                                <span>Гібридні іновації</span>
                             </a>
                         </li>
                     </ol>
@@ -119,14 +148,14 @@
 
 <script>
     export default {
-        name: "SubMenuToBuyers"
+        name: "SubMenuNikolaev"
     }
 </script>
 
 <style lang="scss" scoped>
     @import '../../styles/variables';
 
-    .sub_toBuyers.container-fluid {
+    .sub_nikolaev.container-fluid {
         width: 100%;
         margin-top: 16px;
         margin-bottom: 60px;
@@ -194,7 +223,7 @@
     }
 
     @media (max-width: 1199.9px) {
-        .sub_toBuyers.container-fluid {
+        .sub_nikolaev.container-fluid {
             .row {
 
                 div.tools {

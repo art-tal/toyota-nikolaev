@@ -44,14 +44,15 @@
                 <div class="field form-group col-xl-9 col-md-6 col-12">
                     <label for="phone">Контактний номер телефону: <span>*</span></label><br>
                     <input class="form-control"
-                           placeholder="+38 ___ __ __ ___ "
+                           placeholder="+38 (___) __-__-___"
                            :class="{'is-invalid' : $v.phone.$error}"
                            id="phone"
                            type="tel"
                            v-model="phone"
                            @blur="$v.phone.$touch()">
                     <div class="invalid-feedback"  v-if="!$v.phone.required">Це поле є обов'язковим для заповненя.</div>
-                    <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength || !$v.phone.phone">Невірний формат номеру.</div>
+                    <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength">Невірний формат номеру.</div>
+<!--                    <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength || !$v.phone.phone">Невірний формат номеру.</div>-->
 <!--                    <div class="invalid-feedback"  v-if="!$v.phone.phone">Для ввода допускается только цифры.</div>-->
 
                 </div>
@@ -91,11 +92,89 @@
 
                 <div class="field form-group col-md-6 col-12">
                     <label for="time">Час</label><br>
-                    <input class="form-control"
-                           id="time"
-                           type="time"
-                           v-model="time">
+<!--                    <input class="form-control"-->
+<!--                           id="time"-->
+<!--                           type="time"-->
+<!--                           v-model="time">-->
+                    <select name="time" id="time" v-model="time">
+                        <option selected="selected" disabled="disabled" value="">Вибрати</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                    </select>
                 </div>
+
+
+
+                <div class="field form-group col-md-6 col-12">
+                    <label for="connection">Як з вами зручніше зв'язатись? <span>*</span></label>
+                    <select id="connection"
+                            :class="{'is-invalid' : $v.connection.$error}"
+                            v-model="connection"
+                            @blur="$v.connection.$touch()"
+                    >
+                        <option selected="selected" disabled="disabled" value="">Вибрати</option>
+                        <option value="По телефону" selected="selected">По телефону</option>
+                        <option value="По email">По email</option>
+                        <option value="По viber">По viber</option>
+                        <option value="По telegram">По telegram</option>
+                    </select>
+
+                    <div class="invalid-feedback" v-if="!$v.connection.required">Це поле є обов'язковим для заповненя.</div>
+                </div>
+
+                <div class="field call_time form-group col-md-6 col-12">
+                    <label for="call_time_start">Зручний час для дзвінка: <span></span></label>
+                    <div class="wrap d-flex justify-content-between align-items-center">
+                        <select id="call_time_start"
+                                v-model="call_time_start"
+                        >
+                            <option selected="selected" disabled="disabled" value="">Вибрати</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                        </select>
+
+                        <span class="mx-4"> - </span>
+
+                        <select id="call_time_end"
+                                v-model="call_time_end"
+                        >
+                            <option selected="selected" disabled="disabled" value="">Вибрати</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                        </select>
+                    </div>
+
+
+
+                </div>
+
+
+
+
 
                 <div class="field col-12">
                     <div class="info" :class="{ 'expand_info' : expandBlock }">
@@ -199,7 +278,7 @@
                                 tag="button"
                                 class="btn btn-link"
                                 exact
-                                to="/configurator/consultation/step_1"
+                                to="/consultation/step_1"
                         >Змінити</router-link>
                     </div>
                 </div>
@@ -211,6 +290,7 @@
 
 <script>
     // import axios from "axios"
+    import Inputmask from "inputmask";
     import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 
     export default {
@@ -229,6 +309,11 @@
                 date: "",
                 time: "",
                 agree: false,
+
+
+                call_time_start: "",
+                call_time_end: "",
+                connection: "",
 
                 // consultation: {},
                 expandBlock: true,
@@ -280,16 +365,26 @@
             phone: {
                 required,
                 minLength: minLength(12),
-                maxLength: maxLength(17),
-                phone(str) {
-                    const regexp = /\+38[- ]?[0-9]{3}[- ]?[0-9]{2}[- ]?[0-9]{2}[- ]?[0-9]{3}/;
-                    return regexp.test(str);
-                },
+                maxLength: maxLength(19),
+                // phone(str) {
+                //     const regexp = /\+38[ ]?[(]?[0-9]{3}[)]?[ ]?[0-9]{2}[-]?[0-9]{2}[-]?[0-9]{3}/;
+                //     return regexp.test(str);
+                // },
             },
 
             eMail: {
                 required,
                 email,
+            },
+
+            connection: {
+                required,
+            },
+
+            agree: {
+                consent(answer) {
+                    return answer;
+                }
             },
 
             userMsg: {},
@@ -304,9 +399,12 @@
 
         },
 
-        mounted: function () {
-
+        mounted () {
+            let im = new Inputmask("+38 (999) 99-99-999");
+            im.mask(document.getElementById('phone'));
         },
+
+
 
         methods: {
             expand() {
@@ -326,6 +424,8 @@
                     date: this.date,
                     time: this.time,
                     agree: this.agree,
+                    connection: this.connection,
+                    call_time: `від ${this.call_time_start} до ${this.call_time_end}`,
                 };
                 console.log(consultation);
                 // eventEmitter.$emit('close');
@@ -367,8 +467,8 @@
     }
 
     article.step_2.container {
-        height: 70vh;
-        overflow: auto;
+        /*height: 70vh;*/
+        /*overflow: auto;*/
         padding: 36px 20px;
         .row {
             form[name="consultation"] {
@@ -385,6 +485,10 @@
                         }
                     }
                     input {
+                        @include inputForm;
+                        height: 35px;
+                    }
+                    select {
                         @include inputForm;
                     }
                     textarea {

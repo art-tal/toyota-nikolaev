@@ -5,6 +5,7 @@ import Vuelidate from 'vuelidate'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueMeta from 'vue-meta'
+import Inputmask from "inputmask"
 import store from "./store/store"
 import router from './router/index'
 import App from './App.vue'
@@ -17,6 +18,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export const eventEmitter = new Vue();
 
+// let inputmask = require('inputmask');
+
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueRouter);
@@ -24,10 +27,11 @@ Vue.use(VueAxios, axios);
 Vue.use(Vuelidate);
 Vue.use(VueMeta, {
   refreshOnceOnNavigation: true
-})
+});
+Vue.use(Inputmask);
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
 

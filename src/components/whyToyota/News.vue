@@ -7,267 +7,267 @@
         <section class="body container">
             <header>
                 <h1>Новини, статті, звіти про події, огляди в пресі</h1>
-                <div class="row search_news">
-                    <div class="selected_theme col-6">
-                        <p class="drop_menu text-left d-flex justify-content-between align-items-center" @click="openDropMenu()">
-                            <span>Виберіть тему</span>
-                            <i class="fas fa-chevron-up text-right" v-if="dropDown"></i>
-                            <i class="fas fa-chevron-down text-right" v-else></i>
-                        </p>
+                <div class="row search_news justify-content-center">
+<!--                    <div class="selected_theme col-lg-6 col-12 mb-3">-->
+<!--                        <p class="drop_menu text-left d-flex justify-content-between align-items-center" @click="openDropMenu()">-->
+<!--                            <span>Виберіть тему</span>-->
+<!--                            <i class="fas fa-chevron-up text-right" v-if="dropDown"></i>-->
+<!--                            <i class="fas fa-chevron-down text-right" v-else></i>-->
+<!--                        </p>-->
 
-                        <form class="down-menu row" aria-labelledby="navbarDropdown" v-if="dropDown">
+<!--                        <form class="down-menu row" aria-labelledby="navbarDropdown" v-if="dropDown">-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="olympics" type="checkbox"
-                                       value="olympics"
-                                       v-model="themes"
-                                >
-                                <label for="olympics">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Olympics
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="olympics" type="checkbox"-->
+<!--                                       value="olympics"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="olympics">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Olympics-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="toyotaowner" type="checkbox"
-                                       value="Toyotaowner"
-                                       v-model="themes"
-                                >
-                                <label for="toyotaowner">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Toyotaowner
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="toyotaowner" type="checkbox"-->
+<!--                                       value="Toyotaowner"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="toyotaowner">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Toyotaowner-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="carOfYear" type="checkbox"
-                                       value="coty"
-                                       v-model="themes"
-                                >
-                                <label for="carOfYear">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Авто року
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="carOfYear" type="checkbox"-->
+<!--                                       value="coty"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="carOfYear">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Авто року-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="motorshows" type="checkbox"
-                                       value="motorshows"
-                                       v-model="themes"
-                                >
-                                <label for="motorshows">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Автомобільні виставки
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="motorshows" type="checkbox"-->
+<!--                                       value="motorshows"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="motorshows">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Автомобільні виставки-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="heritage" type="checkbox"
-                                       value="heritage"
-                                       v-model="themes"
-                                >
-                                <label for="heritage">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Віхи історії
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="heritage" type="checkbox"-->
+<!--                                       value="heritage"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="heritage">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Віхи історії-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="hybrid" type="checkbox"
-                                       value="hybrid"
-                                       v-model="themes"
-                                >
-                                <label for="hybrid">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Гібриди
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="hybrid" type="checkbox"-->
+<!--                                       value="hybrid"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="hybrid">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Гібриди-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="dream_car" type="checkbox"
-                                       value="dream-car-art-contest"
-                                       v-model="themes"
-                                >
-                                <label for="dream_car">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Конкурс «Автомобіль твоєї мрії»
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="dream_car" type="checkbox"-->
+<!--                                       value="dream-car-art-contest"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="dream_car">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Конкурс «Автомобіль твоєї мрії»-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="skills_contest" type="checkbox"
-                                       value="skills-contest"
-                                       v-model="themes"
-                                >
-                                <label for="skills_contest">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Конкурси майстерності
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="skills_contest" type="checkbox"-->
+<!--                                       value="skills-contest"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="skills_contest">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Конкурси майстерності-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="enviroment" type="checkbox"
-                                       value="Enviroment"
-                                       v-model="themes"
-                                >
-                                <label for="enviroment">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Навколишнє середовище
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="enviroment" type="checkbox"-->
+<!--                                       value="Enviroment"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="enviroment">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Навколишнє середовище-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="dealers_news" type="checkbox"
-                                       value="dealers-news"
-                                       v-model="themes"
-                                >
-                                <label for="dealers_news">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Новини дилерів
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="dealers_news" type="checkbox"-->
+<!--                                       value="dealers-news"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="dealers_news">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Новини дилерів-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="new_arrivals" type="checkbox"
-                                       value="new-arrivals"
-                                       v-model="themes"
-                                >
-                                <label for="new_arrivals">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Новинки у салонах
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="new_arrivals" type="checkbox"-->
+<!--                                       value="new-arrivals"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="new_arrivals">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Новинки у салонах-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="sales_results" type="checkbox"
-                                       value="sales-results"
-                                       v-model="themes"
-                                >
-                                <label for="sales_results">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Обсяги збуту
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="sales_results" type="checkbox"-->
+<!--                                       value="sales-results"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="sales_results">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Обсяги збуту-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="accessories_original" type="checkbox"
-                                       value="Оригінальні запчастини"
-                                       v-model="themes"
-                                >
-                                <label for="accessories_original">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Оригінальні аксесуари
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="accessories_original" type="checkbox"-->
+<!--                                       value="Оригінальні запчастини"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="accessories_original">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Оригінальні аксесуари-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="original_spare_parts" type="checkbox"
-                                       value="Оригінальні запчастини"
-                                       v-model="themes"
-                                >
-                                <label for="original_spare_parts">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Оригінальні запчастини
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="original_spare_parts" type="checkbox"-->
+<!--                                       value="Оригінальні запчастини"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="original_spare_parts">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Оригінальні запчастини-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="original_spare_parts_accessories" type="checkbox"
-                                       value="true"
-                                       v-model="themes"
-                                >
-                                <label for="original_spare_parts_accessories">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Оригінальні запчастини та аксесуари
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="original_spare_parts_accessories" type="checkbox"-->
+<!--                                       value="true"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="original_spare_parts_accessories">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Оригінальні запчастини та аксесуари-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="ichiban_award" type="checkbox"
-                                       value="ichiban-award"
-                                       v-model="themes"
-                                >
-                                <label for="ichiban_award">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Премія «Ichiban»
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="ichiban_award" type="checkbox"-->
+<!--                                       value="ichiban-award"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="ichiban_award">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Премія «Ichiban»-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="service" type="checkbox"
-                                       value="maintenance-offers"
-                                       v-model="themes"
-                                >
-                                <label for="service">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Сервіс
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="service" type="checkbox"-->
+<!--                                       value="maintenance-offers"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="service">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Сервіс-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="social_projects" type="checkbox"
-                                       value="social-projects"
-                                       v-model="themes"
-                                >
-                                <label for="social_projects">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Соціальні проекти
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="social_projects" type="checkbox"-->
+<!--                                       value="social-projects"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="social_projects">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Соціальні проекти-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="special_offers" type="checkbox"
-                                       value="special-offers"
-                                       v-model="themes"
-                                >
-                                <label for="special_offers">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Спеціальні пропозиції
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="special_offers" type="checkbox"-->
+<!--                                       value="special-offers"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="special_offers">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Спеціальні пропозиції-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="form-group checkbox col-6 text-left">
-                                <input class="form-control"
-                                       id="sports_events" type="checkbox"
-                                       value="sports-events"
-                                       v-model="themes"
-                                >
-                                <label for="sports_events">
-                                    <span class="check"><i class="fas fa-check"></i></span>
-                                    Спортивні заходи
-                                </label>
-                            </div>
+<!--                            <div class="form-group checkbox col-6 text-left">-->
+<!--                                <input class="form-control"-->
+<!--                                       id="sports_events" type="checkbox"-->
+<!--                                       value="sports-events"-->
+<!--                                       v-model="themes"-->
+<!--                                >-->
+<!--                                <label for="sports_events">-->
+<!--                                    <span class="check"><i class="fas fa-check"></i></span>-->
+<!--                                    Спортивні заходи-->
+<!--                                </label>-->
+<!--                            </div>-->
 
 
-                            <div class="form-group reset col-12 text-left">
-                                <input class="form-control btn btn-light"
-                                       id="reset" type="reset"
-                                       value="Скинути вибір"
-                                >
+<!--                            <div class="form-group reset col-12 text-left">-->
+<!--                                <input class="form-control btn btn-light"-->
+<!--                                       id="reset" type="reset"-->
+<!--                                       value="Скинути вибір"-->
+<!--                                >-->
 
-                            </div>
-                        </form>
-                    </div>
-                    <div class="search col-6">
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                    </div>-->
+                    <div class="search col-lg-6 col-12 mb-3">
                         <form class="form-inline my-2 my-lg-0 d-flex">
                             <input class="form-control mr-sm-2"
                                    type="search" placeholder="Search"
@@ -285,7 +285,7 @@
             </header>
 
             <div class="body">
-                <div class="categories d-flex w-auto">
+                <div class="categories d-flex w-auto justify-content-center">
                     <div class="news form-group checkbox">
                         <input class="form-control"
                                id="news" type="checkbox"
@@ -325,7 +325,7 @@
 
                 <div class="row">
 
-                    <article class="col-6 text-left"
+                    <article class="col-md-6 col-12 text-left"
                              v-for="(article, key) in filtered"
                              :key="key"
                              @click="openArticle(article.id)"
@@ -642,4 +642,111 @@
         }
 
     }
+
+    @media (max-width: 767.9px) {
+        .container-fluid {
+
+            section.body.container {
+                header {
+                    margin-bottom: 0;
+                    h1 {
+                        font-size: 3rem;
+                    }
+
+
+                }
+                .body {
+                    .categories {
+                        margin-bottom: 30px;
+                        .checkbox {
+                            padding: 8px;
+                            margin-right: 15px;
+                            border-radius: 5px;
+                            border: 2px  solid;
+                            label {
+                                font-size: 1.6rem;
+                                margin: 0;
+                                span.check {
+                                    vertical-align: top;
+                                    display: inline-block;
+                                    margin-right: 15px;
+                                    width: 20px;
+                                    height: 20px;
+                                    border: 2px solid #e0e0e0;
+                                    border-radius: 3px;
+                                    i.fa-check {
+                                        display: none;
+                                        position: relative;
+                                        bottom: 3px;
+                                        font-size: 1.6rem;
+                                    }
+                                }
+                            }
+                            input[type="checkbox"] {
+                                display: none;
+                                &:checked + label {
+                                    span i.fa-check {
+                                        display: inline-block;
+                                    }
+                                }
+                            }
+                            &.news {
+                                border-color: forestgreen;
+                                color: forestgreen;
+                                label span.check {
+                                    border-color: lightgreen;
+                                }
+                            }
+                            &.newcomers {
+                                border-color: #E50000;
+                                color: #E50000;
+                                label span.check {
+                                    border-color: lightcoral;
+                                }
+                            }
+                            &.stocks {
+                                border-color: blueviolet;
+                                color: blueviolet;
+                                label span.check {
+                                    border-color: violet;
+                                }
+                            }
+                        }
+                    }
+                    .row {
+                        article {
+                            margin-bottom: 20px;
+                            .img {
+                                width: 100%;
+                                height: 300px;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                -webkit-background-size: cover;
+                                background-size: cover;
+                            }
+                            .category {
+                                border: 2px solid;
+                                border-radius: 5px;
+                                padding: 5px;
+                                font-size: 1.6rem;
+                            }
+                            h3 {
+                                font-size: 1.7rem;
+                                color: $font_color;
+                                margin-top: 24px;
+                                font-weight: bold;
+                            }
+                            p {
+                                font-size: 1.6rem;
+                                color: #6c7073;
+                                padding: 10px 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
 </style>

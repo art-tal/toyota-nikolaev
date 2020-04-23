@@ -99,7 +99,15 @@
 
         <div class="requestService row justify-content-center">
             <div class="col-6 text-right">
-                <button class="col-6 btn btn-danger">Замовити тест-драйв</button>
+<!--                <button class="col-6 btn btn-danger">Замовити тест-драйв</button>-->
+                <router-link
+                        tag="button"
+                        class="col-6 btn btn-danger"
+                        exact
+                        to="/consultation"
+                >
+                    Замовити тест-драйв
+                </router-link>
 
             </div>
             <div class="col-6 text-left">

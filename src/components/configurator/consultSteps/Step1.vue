@@ -55,7 +55,7 @@
                     tag="button"
                     class="bnt btn-danger"
                     exact
-                    to="/configurator/consultation/step_2"
+                    to="/consultation/step_2"
             >
                 Продовжити
             </router-link>
@@ -80,7 +80,6 @@
 
         created() {
             this.getModels();
-            this.consultModel = this.$store.getters.getModel;
             this.findOutEngine();
         },
 
@@ -117,11 +116,21 @@
                     console.log(response.data);
                     this.models = response.data;
                     // return response.data;
+
+                    this.getConsultPosition();
                 } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные модели");
                         console.log(error);
                     })
+            },
+
+            getConsultPosition() {
+                if (this.$store.state.model.name) {
+                    this.consultModel = this.$store.getters.getModel;
+                } else {
+                    this.consultModel = this.models[0];
+                }
             },
 
             changeModel() {
@@ -131,11 +140,18 @@
             },
 
             findOutEngine() {
-                if ( this.$store.getters.equip.mod_name.includes('Hybrid') ) {
-                    this.consultEngine = "Гибридный (бензин)";
+                if (this.$store.state.equipment.mod_name) {
+                    console.log(this.$store.state.equipment);
+                    if ( this.$store.getters.equip.mod_name.includes('Hybrid') ) {
+                        this.consultEngine = "Гибридный (бензин)";
+                    } else {
+                        this.consultEngine = "Бензиновый";
+                    }
                 } else {
-                    this.consultEngine = "Бензиновый";
+                    this.consultEngine = "Не имеет значения";
                 }
+
+
             },
         },
 

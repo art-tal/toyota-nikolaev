@@ -1,6 +1,8 @@
 <template>
     <section>
         <header class="container-fluid">
+            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg"
+                 alt="lineup">
         </header>
 
         <div class="body container">
@@ -9,10 +11,10 @@
             <section class="row">
                 <router-link
                         tag="article"
-                        class="col-6"
+                        class="col-md-6 col-12"
                         active-class="active"
                         exact
-                        to="/corporate_sales/"
+                        to="/corporate_sales/business_car"
                 >
                     <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/company-car2_tcm-3046-663260.jpg" alt="business_car">
                     <strong>Користувачам службових автомобілів</strong>
@@ -21,7 +23,7 @@
 
                 <router-link
                         tag="article"
-                        class="col-6"
+                        class="col-md-6 col-12"
                         active-class="active"
                         exact
                         to="/corporate_sales/"
@@ -33,7 +35,7 @@
 
                 <router-link
                         tag="article"
-                        class="col-6"
+                        class="col-md-6 col-12"
                         active-class="active"
                         exact
                         to="/corporate_sales/"
@@ -45,7 +47,7 @@
 
                 <router-link
                         tag="article"
-                        class="col-6"
+                        class="col-md-6 col-12"
                         active-class="active"
                         exact
                         to="/corporate_sales/"
@@ -62,28 +64,28 @@
                     <h1>Toyota BusinessPlus - це більше переваг для Вашого бізнесу</h1>
                 </header>
                 <div class="links row">
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <a href.prevent="#">Статус</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <a href.prevent="#">Якість</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <a href.prevent="#">Надійність</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <a href.prevent="#">Довговічність</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <a href.prevent="#">Гібридні техології</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <a href.prevent="#">Співвідношення ціна/якість</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <a href.prevent="#">Широкий модельний ряд</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <a href.prevent="#">Велика сервісна мережа</a>
                     </div>
                 </div>
@@ -92,23 +94,23 @@
 
         </div>
 
-        <section class="lineup container-fluid text-left">
-            <header>
-                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>
-            </header>
-            <footer>
-                <!--                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>-->
-                <router-link
-                        tag="button"
-                        exact
-                        class="btn btn-light"
-                        active-class="active"
-                        to=""
-                >
-                    Відкрий для себе Toyota Hybrid
-                </router-link>
-            </footer>
-        </section>
+<!--        <section class="lineup container-fluid text-left">-->
+<!--            <header class="container">-->
+<!--                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>-->
+<!--            </header>-->
+<!--            <footer class="container">-->
+<!--                &lt;!&ndash;                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>&ndash;&gt;-->
+<!--                <router-link-->
+<!--                        tag="button"-->
+<!--                        exact-->
+<!--                        class="btn btn-light"-->
+<!--                        active-class="active"-->
+<!--                        to=""-->
+<!--                >-->
+<!--                    Відкрий для себе Toyota Hybrid-->
+<!--                </router-link>-->
+<!--            </footer>-->
+<!--        </section>-->
     </section>
 </template>
 
@@ -126,12 +128,17 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 80vh;
-            background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            height: auto;
+            /*height: 80vh;*/
+            /*background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg');*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
         .body.container {
             p {
@@ -196,37 +203,65 @@
 
 
         }
-        section.lineup.container-fluid {
-            height: 56vh;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/rav4-hybrid-1600x450_tcm-3046-707555.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
-            header {
-                width: 1170px;
-                margin: auto;
-                h1 {
-                    padding-top: 150px;
-                    padding-bottom: 100px;
-                    font-size: 4.5rem;
-                    color: #ffffff;
-                    font-weight: bolder;
+
+    }
+
+    @media (max-width: 991.9px) {
+        section {
+            .body.container {
+                p {
+                    margin: 30px 0;
+                    font-size: 1.8rem;
                 }
-            }
-            footer {
-                width: 1170px;
-                margin: auto;
-                button.btn {
-                    @include button;
-                    background-color: #f0f0f0;
-                    &:hover {
-                        background-color: #E50000;
-                        color: #ffffff;
+                h2 {
+                    font-size: 3.5rem;
+                    font-weight: bolder;
+                    margin: 30px 0;
+                }
+                section {
+                    header {
+                        h1 {
+                            font-size: 3.5rem;
+                            margin-bottom: 30px;
+                        }
                     }
                 }
             }
+
         }
     }
+
+    @media (max-width: 575.9px) {
+        section {
+            .body.container {
+                section {
+                    header {
+                        h1 {
+                            font-size: 3.0rem;
+                            margin-bottom: 30px;
+                        }
+                    }
+                    .links.row {
+                        div {
+                            a {
+                                font-size: 2rem;
+                                padding: 10px 0;
+                            }
+                        }
+
+                    }
+
+                }
+
+
+            }
+
+
+        }
+
+
+
+    }
+
 
 </style>

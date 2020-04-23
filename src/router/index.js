@@ -34,6 +34,8 @@ import SignUpForService from "../components/service/SignUpForService";
 import News from "../components/whyToyota/News";
 import Article from "../components/whyToyota/Article";
 import WorldOfToyota from "../components/whyToyota/WorldOfToyota";
+import SubMenuNikolaev from "@/components/ToyotaInNikolaev/SubMenuNikolaev";
+import CarsAvailable from "@/components/ToyotaInNikolaev/CarsAvailable";
 
 export default new VueRouter({
     routes: [
@@ -122,23 +124,23 @@ export default new VueRouter({
                     name: 'result',
                     component: Result,
                     children: [
-                        {
-                            path: "/configurator/consultation",
-                            name: 'consultation',
-                            component: Consult,
-                            children: [
-                                {
-                                    path: "/configurator/consultation/step_1",
-                                    name: "step_1",
-                                    component: Step1,
-                                },
-                                {
-                                    path: "/configurator/consultation/step_2",
-                                    name: "step_2",
-                                    component: Step2,
-                                },
-                            ]
-                        },
+                        // {
+                        //     path: "/configurator/consultation",
+                        //     name: 'consultation',
+                        //     component: Consult,
+                        //     children: [
+                        //         {
+                        //             path: "/configurator/consultation/step_1",
+                        //             name: "step_1",
+                        //             component: Step1,
+                        //         },
+                        //         {
+                        //             path: "/configurator/consultation/step_2",
+                        //             name: "step_2",
+                        //             component: Step2,
+                        //         },
+                        //     ]
+                        // },
                     ]
                 },
                 {
@@ -248,6 +250,20 @@ export default new VueRouter({
                 },
             ],
         },
+
+        {
+            path: "/sub_menu_mykolaiv",
+            name: "sub_menu_mykolaiv",
+            component: SubMenuNikolaev,
+        },
+
+        {
+            path: "/cars_available",
+            name: "cars_available",
+            component: CarsAvailable,
+        },
+
+
 
 
 
