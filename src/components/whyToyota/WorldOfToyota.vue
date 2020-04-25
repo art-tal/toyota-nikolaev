@@ -85,7 +85,7 @@
 </template>
 
 <script>
-    import Sidebar from "@/components/permanent/Sidebar";
+    import Sidebar from "../permanent/Sidebar";
 
     export default {
         name: "WorldOfToyota",

@@ -72,16 +72,16 @@
                                 </div>
                             </li>
 
-                            <li class="nav-item">
-                                <router-link
-                                        class="nav-link"
-                                        tag="a"
-                                        exact
-                                        to="/souvenir_products"
-                                >
-                                    <span>Сувенірна продукція</span>
-                                </router-link>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <router-link-->
+<!--                                        class="nav-link"-->
+<!--                                        tag="a"-->
+<!--                                        exact-->
+<!--                                        to="/souvenir_products"-->
+<!--                                >-->
+<!--                                    <span>Сувенірна продукція</span>-->
+<!--                                </router-link>-->
+<!--                            </li>-->
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle"
@@ -198,13 +198,14 @@
     import SubMenuToBuyers from "../toBuyers/SubMenuToBuyers";
     import SubMenuService from "../service/SubMenuService";
     import SubMenuWhyToyota from "../whyToyota/SubMenuWhyToyota";
-    import SubMenuNikolaev from "@/components/ToyotaInNikolaev/SubMenuNikolaev";
+    import SubMenuNikolaev from "../ToyotaInNikolaev/SubMenuNikolaev";
 
 
-    // import Lineup from "./../../components/MainNav/Lineup";//                               for Laravel
-    // import SubMenuToBuyers from "./../../components/toBuyers/SubMenuToBuyers";//            for Laravel
-    // import SubMenuService from "./../../components/service/SubMenuService";//               for Laravel
-    // import SubMenuWhyToyota from "./../../components/whyToyota/SubMenuWhyToyota";//         for Laravel
+    // import Lineup from "./../../components/MainNav/Lineup";//                                       for Laravel
+    // import SubMenuToBuyers from "./../../components/toBuyers/SubMenuToBuyers";//                      for Laravel
+    // import SubMenuService from "./../../components/service/SubMenuService";//                          for Laravel
+    // import SubMenuWhyToyota from "./../../components/whyToyota/SubMenuWhyToyota";//                     for Laravel
+    // import SubMenuNikolaev from "./../../components/ToyotaInNikolaev/SubMenuNikolaev";//         for Laravel
 
     export default {
         name: "Navigation",

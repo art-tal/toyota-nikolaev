@@ -42,13 +42,19 @@
 
         </div>
 
-
+        <fragnet-lineup></fragnet-lineup>
     </section>
 </template>
 
 <script>
+    import FragnetLineup from "../toBuyers/FragnetLineup";
+
     export default {
-        name: "Business_car"
+        name: "Business_car",
+
+        components: {
+            FragnetLineup,
+        }
     }
 </script>
 

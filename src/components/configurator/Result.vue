@@ -45,7 +45,7 @@
                                 <span v-if="getTransmission.drive">(Передній привод)</span>
                                 <span v-if="getTransmission.wd">(Повний привод)</span>
                             </h4>
-                            <div class="col-5 text-right">{{price}}&#8372;</div>
+                            <div class="col-5 text-right">{{price | formattedPrice}}&#8372;</div>
                         </div>
                     </section>
 
@@ -87,7 +87,7 @@
                             <h1 class="col-12">Підсумкова ціна</h1>
                         </header>
                         <div class="row">
-                            <p class="font-weight-bold text-right">{{price}}&#8372;</p>
+                            <p class="font-weight-bold text-right">{{price | formattedPrice}}&#8372;</p>
                         </div>
 
                     </section>
@@ -98,7 +98,7 @@
 
             <aside class="col-lg-4 col-12" v-if="showAside">
                 <div class="header text-left">
-                    <h2 class="font-weight-bold">{{price}}&#8372;</h2>
+                    <h2 class="font-weight-bold">{{price | formattedPrice}}&#8372;</h2>
                     <p>Ціна</p>
                     <i class="fas fa-times" @click="openBlock()"></i>
                 </div>
@@ -130,7 +130,7 @@
                         
                         <div class="result_prise row">
                             <p class="col-7">Загалом</p>
-                            <h4 class="col-5 font-weight-bold text-right">{{price}}&#8372;</h4>
+                            <h4 class="col-5 font-weight-bold text-right">{{price | formattedPrice}}&#8372;</h4>
                         </div>
 
                         <p class="attention">
@@ -169,8 +169,9 @@
 </template>
 
 <script>
+    import formattedPrice from "../../filters/price_format";
     // import Consult from "./Consult"
-    // import {eventEmitter} from "../../app";//            for Laravel
+    // import {eventEmitter} from "../../app";//           for Laravel
 
     export default {
         name: "Result",
@@ -187,6 +188,10 @@
                 openConsultation: false,
                 windowWidth: null,
             }
+        },
+
+        filters: {
+            formattedPrice
         },
 
         created() {

@@ -19,28 +19,11 @@ export default {
   name: 'App',
   components: {
       Navigation,
-      // Equipments,
       appFooter: Footer,
-      // AllModell,
-    // Engine,
-    // SelectModel,
-    // Configurator
+
   },
 
-  // created() {
-  //     axios({
-  //         method: 'get',
-  //         url:"http://lara.toyota.nikolaev.ua/storage/lara.toyota.nikolaev.ua/ajax/id_mod",
-  //         data: {id_mod: 1}
-  //     })
-  //         .then( (response) => {
-  //             console.log(response.data);
-  //         } )
-  //         .catch( (error) => {
-  //             console.log("Ошибка, не возможно загрузить доступные модификации");
-  //             console.log(error);
-  //         } );
-  // },
+
 }
 </script>
 

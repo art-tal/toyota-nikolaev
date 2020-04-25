@@ -63,34 +63,34 @@
 
         <router-view></router-view>
 
-        <section class="lineup container-fluid text-left">
-            <header class="container">
-                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>
-            </header>
-            <footer class="container">
-                <!--                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>-->
-                <router-link
-                        tag="button"
-                        exact
-                        class="btn btn-light"
-                        active-class="active"
-                        to=""
-                >
-                    Відкрий для себе Toyota Hybrid
-                </router-link>
-            </footer>
-        </section>
+<!--        <section class="lineup container-fluid text-left">-->
+<!--            <header class="container">-->
+<!--                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>-->
+<!--            </header>-->
+<!--            <footer class="container">-->
+<!--                &lt;!&ndash;                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>&ndash;&gt;-->
+<!--                <router-link-->
+<!--                        tag="button"-->
+<!--                        exact-->
+<!--                        class="btn btn-light"-->
+<!--                        active-class="active"-->
+<!--                        to=""-->
+<!--                >-->
+<!--                    Відкрий для себе Toyota Hybrid-->
+<!--                </router-link>-->
+<!--            </footer>-->
+<!--        </section>-->
+<!--        <fragnet-lineup></fragnet-lineup>-->
     </main>
 </template>
 
 <script>
     import Sidebar from "@/components/permanent/Sidebar";
+    // import FragnetLineup from "@/components/toBuyers/FragnetLineup";
     // import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
 
     export default {
         name: "Corporate_sales",
-
-
 
         metaInfo() {
             return {
@@ -126,6 +126,7 @@
         },
 
         components: {
+            // FragnetLineup,
             Sidebar,
         },
 
@@ -143,7 +144,7 @@
             width: 100%;
             padding-left: 100px;
             position: sticky;
-            top: 0px;
+            top: 0;
             z-index: 998;
             left: 0;
             background-color: #fff;
@@ -162,7 +163,7 @@
             }
         }
 
-        section.lineup.container-fluid {
+        /*section.lineup.container-fluid {
             height: 56vh;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/rav4-hybrid-1600x450_tcm-3046-707555.jpg);
             background-repeat: no-repeat;
@@ -170,8 +171,6 @@
             -webkit-background-size: cover;
             background-size: cover;
             header {
-                /*width: 1170px;*/
-                /*margin: auto;*/
                 h1 {
                     padding-top: 150px;
                     padding-bottom: 100px;
@@ -181,8 +180,6 @@
                 }
             }
             footer {
-                /*width: 1170px;*/
-                /*margin: auto;*/
                 button.btn {
                     @include button;
                     background-color: #f0f0f0;
@@ -192,7 +189,7 @@
                     }
                 }
             }
-        }
+        }*/
     }
 
 

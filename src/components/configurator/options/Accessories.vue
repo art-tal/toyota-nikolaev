@@ -15,7 +15,7 @@
                         <img  :src="accessory.image" class="card-img-top" :alt="accessory.name">
                         <div class="card-body">
                             <h5 class="card-title font-weight-bold">{{accessory.name}}</h5>
-                            <p class="card-text">{{accessory.cost}}&#8372;</p>
+                            <p class="card-text">{{accessory.cost | formattedPrice}}&#8372;</p>
                         </div>
 
 
@@ -52,7 +52,7 @@
                         <img  :src="accessory.image" class="card-img-top" :alt="accessory.name">
                         <div class="card-body">
                             <h5 class="card-title">{{accessory.name}}</h5>
-                            <p class="card-text">{{accessory.cost}}&#8372;</p>
+                            <p class="card-text">{{accessory.cost | formattedPrice}}&#8372;</p>
                         </div>
 
 
@@ -84,7 +84,7 @@
                         <img  :src="accessory.image" class="card-img-top" :alt="accessory.name">
                         <div class="card-body">
                             <h5 class="card-title">{{accessory.name}}</h5>
-                            <p class="card-text">{{accessory.cost}}&#8372;</p>
+                            <p class="card-text">{{accessory.cost | formattedPrice}}&#8372;</p>
                         </div>
 
 
@@ -109,6 +109,7 @@
 <script>
     // import axios from "axios";
 
+    import formattedPrice from "../../../filters/price_format";
     import {eventEmitter} from "@/main";
     // import {eventEmitter} from "./../../../app";//for Laravel
 
@@ -127,6 +128,10 @@
 
                 selectedAccessories: [],
             }
+        },
+
+        filters: {
+            formattedPrice
         },
 
         created() {

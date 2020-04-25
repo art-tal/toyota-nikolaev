@@ -364,27 +364,6 @@
 
                 newsAll: [],
                 newsFiltered: [],
-
-
-                // olympics: "",
-                // toyotaowner: "",
-                // carOfYear: "",
-                // motorshows: "",
-                // heritage: "",
-                // hybrid: "",
-                // dream_car: "",
-                // skills_contest: "",
-                // enviroment: "",
-                // dealers_news: "",
-                // new_arrivals: "",
-                // sales_results: "",
-                // accessories_original: "",
-                // original_spare_parts: "",
-                // original_spare_parts_accessories: "",
-                // ichiban_award: "",
-                // social_projects: "",
-                // special_offers: "",
-                // sports_events: "",
             }
         },
 

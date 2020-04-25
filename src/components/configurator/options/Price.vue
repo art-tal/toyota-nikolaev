@@ -1,7 +1,7 @@
 <template>
     <article class="container">
         <header>
-            <h1>{{price}}&#8372;</h1>
+            <h1>{{price | formattedPrice}}&#8372;</h1>
             <p>Ціна</p>
         </header>
         <div class="body">
@@ -18,7 +18,7 @@
             <div class="option">
                 <div class="base_price row">
                     <div class="font-weight-bold col-6">Ціна</div>
-                    <div class="col-6 text-right">{{price_auto}}&#8372;</div>
+                    <div class="col-6 text-right">{{price_auto | formattedPrice}}&#8372;</div>
                 </div>
                 <div class="color row">
                     <div class="col-12 text-left">{{getColor.color_name}} ({{getColor.color_code}})</div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="wheels row">
                     <div class="col-6 text-left">{{getWheels.wheel_name}}, 4шт.</div>
-                    <div class="col-5 text-right">{{price_wheels}}&#8372;</div>
+                    <div class="col-5 text-right">{{price_wheels | formattedPrice}}&#8372;</div>
                 </div>
 
             </div>
@@ -38,7 +38,7 @@
             <div class="accessories font-weight-bold" v-if="getSelectedAccessories.length != 0">
                 <div class="header row">
                     <b class="col-6">Аксесуари ({{getSelectedAccessories.length}})</b>
-                    <span class="col-6 text-right">{{priceAccessories}}&#8372;</span>
+                    <span class="col-6 text-right">{{priceAccessories | formattedPrice}}&#8372;</span>
                 </div>
                 <div class="accessory row"
                      v-for="(accessory, key) in getSelectedAccessories"
@@ -56,7 +56,7 @@
 
             <div class="result row">
                 <span class="col-7">Загалом</span>
-                <span class="pr col-5 font-weight-bold">{{price}}&#8372;</span>
+                <span class="pr col-5 font-weight-bold">{{price | formattedPrice}}&#8372;</span>
             </div>
 
             <p>
@@ -78,6 +78,7 @@
 </template>
 
 <script>
+    import formattedPrice from "../../../filters/price_format";
     import {eventEmitter} from "@/main";
     // import {eventEmitter} from "./../../../app";//      for Laravel
 
@@ -98,6 +99,10 @@
                 price: "766655,23",
                 price_wheels: "32099,23",//ЗАГЛУШКА
             }
+        },
+
+        filters: {
+            formattedPrice
         },
 
         created() {

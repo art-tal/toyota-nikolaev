@@ -111,12 +111,19 @@
 <!--                </router-link>-->
 <!--            </footer>-->
 <!--        </section>-->
+        <fragnet-lineup></fragnet-lineup>
     </section>
 </template>
 
 <script>
+    import FragnetLineup from "../toBuyers/FragnetLineup";
+
     export default {
-        name: "General"
+        name: "General",
+
+        components: {
+            FragnetLineup,
+        }
     }
 </script>
 

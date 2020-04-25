@@ -24,7 +24,7 @@
 
 
 <!--            SWIPPER-->
-            <div class="col-md-6 col-12">
+            <div class="carousel col-md-6 col-12">
                 <div class="thumb-example">
                     <!-- swiper1 -->
                     <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
@@ -40,13 +40,12 @@
                         <swiper-slide  v-for="(img, key) in images" :key="key"
                                        :style="'background-image: url(http://lara.toyota.nikolaev.ua/storage/' + img + ')' "
                         ></swiper-slide>
-
                     </swiper>
                 </div>
             </div>
             <!--            SWIPPER-->
 
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12 text-left">
                 <ul class="text-left">
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Рік випуску</span>
@@ -110,18 +109,76 @@
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Ціна</span>
-                        <span>{{car.price}} &#8372;</span>
+                        <span>{{car.price | formattedPrice}} &#8372;</span>
                     </li>
                 </ul>
+
+                <button class="btn btn-light">
+                    <i class="far fa-file"></i>
+                    <span>Завантажити PDF</span>
+                </button>
+
+                <article class="diler">
+                    <header>
+                        <h1>Тойота Центр Миколаїв «КиТ-Т»</h1>
+                    </header>
+                    <p>Україна, Миколаїв 54028,<br/>
+                        Херсонське шосе, 109<br/>
+                        (0512) 71-00-00<br/>
+                        (096) 168-11-11<br/>
+                        (050) 692-11-11
+                    </p>
+                    <footer>
+                        <button class="btn btn-danger">Надіслати заявку</button>
+                    </footer>
+                </article>
             </div>
         </section>
+
+        <div class="advantages row">
+            <div class="col-4">
+                <img src="../../img/icon-grant.png" alt="support">
+                <span>Постгарантійна підтримка</span>
+            </div>
+
+            <div class="col-4">
+                <img src="../../img/icon-buy.png" alt="buy">
+                <span>Прозора історія</span>
+            </div>
+
+            <div class="col-4">
+                <img src="../../img/icon-speed.png" alt="speed">
+                <span>Перевірений пробіг</span>
+            </div>
+
+            <div class="col-4">
+                <img src="../../img/icon-service.png" alt="service">
+                <span>Технічна перевірка</span>
+            </div>
+
+            <div class="col-4">
+                <img src="../../img/icon-keys.png" alt="keys">
+                <span>Сів та поїхав</span>
+            </div>
+
+            <div class="col-4">
+                <img src="../../img/icon-credit.png" alt="credit">
+                <span>Кредит та страхування</span>
+            </div>
+
+            <div class="col-4">
+                <img src="../../img/icon-helpInRoad.png" alt="help in road">
+                <span>Допомога на дорозі</span>
+            </div>
+        </div>
     </main>
 </template>
 
 <script>
     import axios from "axios"
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
+    // import formattedPrice from "../../filters/price_format";
+    import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+    import 'swiper/css/swiper.css';
 
     export default {
         name: "Car",
@@ -134,7 +191,8 @@
                 images: [],
                 x: "???????",
 
-
+                modelTitle: "",
+                modificationTitle: "",
 
                 swiperOptionTop: {
                     loop: true,
@@ -160,6 +218,10 @@
         components: {
             Swiper,
             SwiperSlide
+        },
+
+        filters: {
+            // formattedPrice,
         },
 
         created() {
@@ -193,6 +255,8 @@
                         this.images = JSON.parse( this.car.image );
                         this.image = this.images[0];
                         console.log(this.images);
+                        this.modelTitle = this.car.model;
+                        this.modificationTitle = this.car.modification;
                     } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить имеющиеся автомобили");
@@ -200,9 +264,9 @@
                     })
             },
 
-            changeImg(img) {
-                this.image = img
-            },
+            // changeImg(img) {
+            //     this.image = img
+            // },
 
             // getModification(id) {
             //     axios.get(
@@ -268,6 +332,39 @@
             //         } )
             // },
         },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Toyota ${this.modelTitle} ${this.modificationTitle} в автосалоні Toyota Nikolaev. Офіційний дилер Тойота у Миколаєві; Автомобілі, що є в наявності в автосалоні; Продаж моделей Toyota із гарантією 3 роки; Продаж моделей Toyota у кредит або лізинг;`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev |  Toyota ${this.modelTitle} ${this.modificationTitle} в автосалоні Toyota Nikolaev. Офіційний дилер Тойота у Миколаєві; Автомобілі, що є в наявності в автосалоні; Продаж моделей Toyota із гарантією 3 роки; Продаж моделей Toyota у кредит або лізинг;`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Ласкаво просимо до Toyota Миколаїв. Ви маєте змогу ближче ознайомитись із автомобілем Toyota ${this.modelTitle} ${this.modificationTitle}, що є наявності в автосалоні, а також пропозиції щодо всіх ваших улюблених моделей. Зверніться до нас для отримання додаткової інформації.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Ласкаво просимо до Toyota Миколаїв. Ви маєте змогу ближче ознайомитись із автомобілем Toyota ${this.modelTitle} ${this.modificationTitle}, що є наявності в автосалоні, а також пропозиції щодо всіх ваших улюблених моделей. Зверніться до нас для отримання додаткової інформації.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota, Toyota ${this.modelTitle} ${this.modificationTitle}, авто в наявності, авто в автосалоні, оглянути автомобілі в автосалоні, модели, автомобиль, новый автомобиль, мой автомобиль, безопасные автомобили, экологически автомобили, безопасный автомобиль, идеальный автомобиль, семейный автомобиль, городской автомобиль, внедорожник, кроссовер, хэтчбек, модельный ряд toyota, домашняя страница, акции, новости, модели`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota, Toyota ${this.modelTitle} ${this.modificationTitle}, авто в наявності, авто в автосалоні, оглянути автомобілі в автосалоні, модели, автомобиль, новый автомобиль, мой автомобиль, безопасные автомобили, экологически автомобили, безопасный автомобиль, идеальный автомобиль, семейный автомобиль, городской автомобиль, внедорожник, кроссовер, хэтчбек, модельный ряд toyota, домашняя страница, акции, новости, модели`
+                    },
+                ],
+            }
+        },
     }
 </script>
 
@@ -295,20 +392,33 @@
         }
 
         section.row {
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 50px;
+            position: relative;
             div {
-                img {
+                /*img {
                     width: 100%;
                     height: auto;
                 }
+
                 .collection_img {
                     .item_img {
                         padding: 15px;
                     }
 
+                }*/
+
+                &.carousel {
+                    .thumb-example {
+                        position: sticky;
+                        top: 0;
+                        bottom: 0;
+                    }
                 }
 
                 ul {
                     list-style-type: none;
+                    margin-bottom: 30px;
                     li {
                         font-size: 1.8rem;
                         color: #6c7073;
@@ -323,9 +433,75 @@
                         }
                     }
                 }
+
+                button.btn.btn-light {
+                    @include button;
+                    width: auto;
+                    padding: 10px 30px;
+                    background-color: #f0f0f0;
+                    margin-left: 40px;
+                    i {
+                        display: inline-block;
+                        margin-right: 15px;
+                    }
+                }
+            }
+
+            article {
+                margin-left: 40px;
+                margin-top: 40px;
+                border-top: 1px solid #f0f0f0;
+                header {
+                    h1 {
+                        font-size: 2.2rem;
+                        color: $font_color;
+                        margin: 25px 0;
+                    }
+                }
+                p {
+                    font-size: 1.6rem;
+                    line-height: 1.75;
+                }
+                footer {
+                    margin-top: 25px;
+                    button.btn.btn-danger {
+                        @include button;
+                        background-color: #E50000;
+                        width: auto;
+                        padding: 10px 30px;
+                    }
+                }
+            }
+        }
+
+        .advantages.row {
+            padding: 40px 0;
+            border-bottom: 1px solid #f0f0f0;
+            div {
+                padding: 20px;
+                img {
+                    width: 64px;
+                    height: 64px;
+                }
+                span {
+                    display: block;
+                    font-size: 2.2rem;
+                    color: #1E2A32;
+                    margin-top: 10px;
+                }
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
 
     .thumb-example {
         height: 480px;

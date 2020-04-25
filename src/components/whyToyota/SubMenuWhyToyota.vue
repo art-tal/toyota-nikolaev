@@ -246,10 +246,6 @@
                         </li>
 
                         <li class="contact">
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-euro-sign"></i>-->
-<!--                                <span>Тойота Кредит</span>-->
-<!--                            </a>-->
                             <router-link
                                     tag="a"
                                     exact
