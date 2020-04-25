@@ -131,13 +131,7 @@
         }
     }
 
-    @media (min-width: 768px) and (max-width: 1199.9px) {
-        article.container-fluid {
-            header {
-                max-height: 60vw;
-            }
-        }
-    }
+
 
     @media (max-width: 767.9px) {
         article.container-fluid {

@@ -41,14 +41,6 @@
                 >ПІІ «Тойота-Миколаїв»</router-link>
 
                 <ul>
-                    <li>
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to=""
-                        >Корпоративна відповідальність</router-link>
-                    </li>
 
                     <li>
                         <router-link
@@ -57,6 +49,15 @@
                                 active-class="active"
                                 to="/cars_available"
                         >Авто в наявносі</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to=""
+                        >Корпоративна відповідальність</router-link>
                     </li>
 
                     <li>

@@ -10,11 +10,11 @@ import Wheels from "../components/configurator/options/Wheels";
 import Interior from "../components/configurator/options/Interior";
 import Lineup from "../components/MainNav/Lineup";
 import Equipment from "../components/configurator/Equipment";
-import ToTheOwners from "../components/MainNav/ToTheOwners";
+// import ToTheOwners from "../components/MainNav/ToTheOwners";
 import SouvenirProducts from "../components/MainNav/SouvenirProducts";
-import WhyToyota from "../components/MainNav/WhyToyota";
-import ToyotaInNikolaev from "../components/MainNav/ToyotaInNikolaev";
-import MobilityForEveryone from "../components/MainNav/MobilityForEveryone";
+// import WhyToyota from "../components/MainNav/WhyToyota";
+// import ToyotaInNikolaev from "../components/MainNav/ToyotaInNikolaev";
+// import MobilityForEveryone from "../components/MainNav/MobilityForEveryone";
 import Accessories from "../components/configurator/options/Accessories";
 import Price from "../components/configurator/options/Price";
 import ToResult from "../components/configurator/options/ToResult";
@@ -34,8 +34,9 @@ import SignUpForService from "../components/service/SignUpForService";
 import News from "../components/whyToyota/News";
 import Article from "../components/whyToyota/Article";
 import WorldOfToyota from "../components/whyToyota/WorldOfToyota";
-import SubMenuNikolaev from "@/components/ToyotaInNikolaev/SubMenuNikolaev";
-import CarsAvailable from "@/components/ToyotaInNikolaev/CarsAvailable";
+import SubMenuNikolaev from "../components/ToyotaInNikolaev/SubMenuNikolaev";
+import CarsAvailable from "../components/ToyotaInNikolaev/CarsAvailable";
+import Car from "../components/ToyotaInNikolaev/Car";
 
 export default new VueRouter({
     routes: [
@@ -263,17 +264,25 @@ export default new VueRouter({
             component: CarsAvailable,
         },
 
+        {
+            path: "/car/:id",
+            name: "car",
+            component: Car,
+        },
+
+
+
 
 
 
 
         ////////////////////Заглушки//////////////////////////
 
-        {
-            path: "/to_the_owners",
-            name: "ToTheOwners",
-            component: ToTheOwners,
-        },
+        // {
+        //     path: "/to_the_owners",
+        //     name: "ToTheOwners",
+        //     component: ToTheOwners,
+        // },
 
         {
             path: "/souvenir_products",
@@ -281,23 +290,23 @@ export default new VueRouter({
             component: SouvenirProducts,
         },
 
-        {
-            path: "/why_toyota",
-            name: "WhyToyota",
-            component: WhyToyota,
-        },
+        // {
+        //     path: "/why_toyota",
+        //     name: "WhyToyota",
+        //     component: WhyToyota,
+        // },
 
-        {
-            path: "/toyota_in_nikolaev",
-            name: "toyota_in_nikolaev",
-            component: ToyotaInNikolaev,
-        },
+        // {
+        //     path: "/toyota_in_nikolaev",
+        //     name: "toyota_in_nikolaev",
+        //     component: ToyotaInNikolaev,
+        // },
 
-        {
-            path: "/mobility_for_everyone",
-            name: "MobilityForEveryone",
-            component: MobilityForEveryone,
-        },
+        // {
+        //     path: "/mobility_for_everyone",
+        //     name: "MobilityForEveryone",
+        //     component: MobilityForEveryone,
+        // },
     ],
 
     mode: 'history'

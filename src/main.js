@@ -6,6 +6,8 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueMeta from 'vue-meta'
 import Inputmask from "inputmask"
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 import store from "./store/store"
 import router from './router/index'
 import App from './App.vue'
@@ -29,6 +31,7 @@ Vue.use(VueMeta, {
   refreshOnceOnNavigation: true
 });
 Vue.use(Inputmask);
+Vue.use(VueAwesomeSwiper, );
 
 
 Vue.config.productionTip = false;
