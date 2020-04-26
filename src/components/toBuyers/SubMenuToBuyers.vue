@@ -58,14 +58,14 @@
                         >Корпоративним клієнтам</router-link>
                     </li>
 
-                    <li>
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/corporate_sales/special_solutions"
-                        >Спеціальні фінансові рішення</router-link>
-                    </li>
+<!--                    <li>-->
+<!--                        <router-link-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                active-class="active"-->
+<!--                                to="/corporate_sales/special_solutions"-->
+<!--                        >Спеціальні фінансові рішення</router-link>-->
+<!--                    </li>-->
                 </ul>
 
             </div>
@@ -92,12 +92,12 @@
                                 <span>Гібридні іновації</span>
                             </a>
                         </li>
-                        <li class="test_drive">
-                            <a href="#">
-                                <i class="fas fa-tag"></i>
-                                <span>Сувенирна продукція</span>
-                            </a>
-                        </li>
+<!--                        <li class="test_drive">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-tag"></i>-->
+<!--                                <span>Сувенирна продукція</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                         <li class="download">
                             <a href="#">
                                 <i class="fas fa-phone"></i>

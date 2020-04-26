@@ -107,7 +107,6 @@
 
 <style lang="scss" scoped>
     @import '../../styles/variables';
-    /*@import './base.scss';*/
 
     main.container-fluid {
         padding: 0;
@@ -161,8 +160,6 @@
 
     }
 
-
-
     .swiper {
         height: 300px;
         width: 100%;
@@ -176,5 +173,182 @@
             background-color: white;
         }
     }
+
+
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+        main.container-fluid {
+            header {
+                height: 80vh;
+                max-height: 60vw;
+                h1 {
+                    font-size: 5rem;
+                }
+            }
+
+            .body.container {
+                h2 {
+                    font-size: 4.0rem;
+                }
+            }
+        }
+
+        .swiper {
+            height: 40vw;
+            .swiper-slide {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        main.container-fluid {
+            header {
+                height: 56vw;
+                min-height: 180px;
+                max-height: 480px;
+                padding-top: 30px;
+                h1 {
+                    font-size: 4.5rem;
+                }
+            }
+
+            .body.container {
+                padding: 50px 0;
+                color: $font_color;
+                p {
+                    font-size: 2.0rem;
+                    margin-bottom: 50px;
+                }
+                h2 {
+                    font-size: 4.0rem;
+                }
+                .carousel {
+                    margin-bottom: 50px;
+                }
+            }
+
+        }
+
+        .swiper {
+            height: 30vw;
+            width: 100%;
+
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-weight: bold;
+                background-color: white;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        main.container-fluid {
+            header {
+                height: 40vh;
+                min-height: 180px;
+                padding-top: 20px;
+                h1 {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .body.container {
+                padding: 30px 0;
+                p {
+                    font-size: 1.8rem;
+                    margin-bottom: 30px;
+                }
+                h2 {
+                    font-size: 3.0rem;
+                    margin-bottom: 20px;
+                }
+                .carousel {
+                    margin-bottom: 20px;
+                }
+
+                article.row {
+                    div {
+                        h3 {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .swiper {
+            height: 30vw;
+
+            .swiper-slide {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        main.container-fluid {
+            header {
+                height: 30vh;
+                min-height: 180px;
+                max-height: 380px;
+                padding-top: 15px;
+                h1 {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .body.container {
+                padding: 30px 15px;
+                p {
+                    font-size: 1.6rem;
+                    margin-bottom: 20px;
+                }
+                h2 {
+                    font-size: 2.5rem;
+                    margin-bottom: 20px;
+                }
+                .carousel {
+                    margin-bottom: 20px;
+                }
+
+                article.row {
+                    div {
+                        h3 {
+                            font-size: 1.8rem;
+                            margin-bottom: 10px;
+                        }
+                        p {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .swiper {
+            height: 30vw;
+            width: 100%;
+
+            .swiper-slide {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
 
 </style>

@@ -8,7 +8,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to=""
+                            to="/maintenance"
                     >Технічне обслуговування</router-link>
 
                     <ul>
@@ -17,7 +17,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to=""
+                                    to="/maintenance/principles"
                             >Принципи</router-link>
                         </li>
 
@@ -26,7 +26,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to=""
+                                    to="/maintenance/guarantee"
                             >Гарантія якості сервісу</router-link>
                         </li>
 
@@ -35,7 +35,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to=""
+                                    to="/maintenance/lubricants"
                             >Оригінальні мастильні матеріали</router-link>
                         </li>
 
@@ -44,7 +44,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/maintenance/special_company"
                             >Спеціальні фінансові рішення</router-link>
                         </li>
                     </ul>
@@ -259,12 +259,12 @@
                                 <span>Гібридні іновації</span>
                             </a>
                         </li>
-                        <li class="test_drive">
-                            <a href="#">
-                                <i class="fas fa-tag"></i>
-                                <span>Сувенирна продукція</span>
-                            </a>
-                        </li>
+<!--                        <li class="test_drive">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-tag"></i>-->
+<!--                                <span>Сувенирна продукція</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                         <li class="download">
                             <a href="#">
                                 <i class="fas fa-phone"></i>

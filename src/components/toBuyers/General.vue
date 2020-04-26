@@ -11,7 +11,7 @@
             <section class="row">
                 <router-link
                         tag="article"
-                        class="col-md-6 col-12"
+                        class="col-lg-4 col-12"
                         active-class="active"
                         exact
                         to="/corporate_sales/business_car"
@@ -23,10 +23,10 @@
 
                 <router-link
                         tag="article"
-                        class="col-md-6 col-12"
+                        class="col-lg-4 col-12"
                         active-class="active"
                         exact
-                        to="/corporate_sales/"
+                        to="/corporate_sales/business_owner"
                 >
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Business-Sales_tcm-3046-663262.jpg" alt="business_owner">
                     <strong>Бізнес для бізнесу</strong>
@@ -35,27 +35,27 @@
 
                 <router-link
                         tag="article"
-                        class="col-md-6 col-12"
+                        class="col-lg-4 col-12"
                         active-class="active"
                         exact
-                        to="/corporate_sales/"
+                        to="/corporate_sales/corporate_clients"
                 >
                     <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Euro-Sales_tcm-3046-663264.jpg" alt="corporate_clients">
                     <strong>Корпоративні продажі</strong>
                     <p>Зв'яжіться з нашою мережею, аби дізнатися більше про продуктову лінійку Toyota та перелік послуг.</p>
                 </router-link>
 
-                <router-link
-                        tag="article"
-                        class="col-md-6 col-12"
-                        active-class="active"
-                        exact
-                        to="/corporate_sales/"
-                >
-                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/555x249_Thumb_Tailored_financial_solution_tcm-3046-663266.jpg" alt="special_solutions">
-                    <strong>Спеціальні фінансові рішення</strong>
-                    <p>Скористайтеся можливістю придбати автомобіль Toyota за програмою «Тойота Кредит» та застрахувати його за програмою «Тойота Страхування»!</p>
-                </router-link>
+<!--                <router-link-->
+<!--                        tag="article"-->
+<!--                        class="col-md-6 col-12"-->
+<!--                        active-class="active"-->
+<!--                        exact-->
+<!--                        to="/corporate_sales/special_solutions"-->
+<!--                >-->
+<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/555x249_Thumb_Tailored_financial_solution_tcm-3046-663266.jpg" alt="special_solutions">-->
+<!--                    <strong>Спеціальні фінансові рішення</strong>-->
+<!--                    <p>Скористайтеся можливістю придбати автомобіль Toyota за програмою «Тойота Кредит» та застрахувати його за програмою «Тойота Страхування»!</p>-->
+<!--                </router-link>-->
 
             </section>
 

@@ -28,7 +28,7 @@ import Corporate_sales from "../components/toBuyers/Corporate_sales";
 import Business_car from "../components/toBuyers/Business_car";
 import Business_owner from "../components/toBuyers/Business_owner";
 import Corporate_clients from "../components/toBuyers/Corporate_clients";
-import Special_solutions from "../components/toBuyers/Special_solutions";
+// import Special_solutions from "../components/toBuyers/Special_solutions";
 import General from "../components/toBuyers/General";
 import SignUpForService from "../components/service/SignUpForService";
 import News from "../components/whyToyota/News";
@@ -37,6 +37,13 @@ import WorldOfToyota from "../components/whyToyota/WorldOfToyota";
 import SubMenuNikolaev from "../components/ToyotaInNikolaev/SubMenuNikolaev";
 import CarsAvailable from "../components/ToyotaInNikolaev/CarsAvailable";
 import Car from "../components/ToyotaInNikolaev/Car";
+import Maintenance from "@/components/service/Maintenance";
+import Principles from "@/components/service/Principles";
+import MaintenanceGeneral from "@/components/service/MaintenanceGeneral";
+import Guarantee from "@/components/service/Guarantee";
+import Lubricants from "@/components/service/Lubricants";
+import Calc from "@/components/service/Calc";
+import SpecialCompany from "@/components/service/SpecialCompany";
 
 export default new VueRouter({
     routes: [
@@ -216,11 +223,11 @@ export default new VueRouter({
                     name: "corporate_clients",
                     component: Corporate_clients,
                 },
-                {
-                    path: "/corporate_sales/special_solutions",
-                    name: "special_solutions",
-                    component: Special_solutions,
-                },
+                // {
+                //     path: "/corporate_sales/special_solutions",
+                //     name: "special_solutions",
+                //     component: Special_solutions,
+                // },
             ],
         },
 
@@ -230,6 +237,46 @@ export default new VueRouter({
             name: "service",
             component: SignUpForService,
         },
+
+        {
+            path: "/maintenance",
+            name: "maintenance",
+            component: Maintenance,
+            children: [
+                {
+                    path: "/maintenance/maintenance_general",
+                    name: "maintenance_general",
+                    component: MaintenanceGeneral,
+                },
+                {
+                    path: "/maintenance/principles",
+                    name: "principles",
+                    component: Principles,
+                },
+                {
+                    path: "/maintenance/guarantee",
+                    name: "guarantee",
+                    component: Guarantee,
+                },
+                {
+                    path: "/maintenance/lubricants",
+                    name: "lubricants",
+                    component: Lubricants,
+                },
+                {
+                    path: "/maintenance/calc",
+                    name: "calc",
+                    component: Calc,
+                },
+                {
+                    path: "/maintenance/special_company",
+                    name: "special_company",
+                    component: SpecialCompany,
+                },
+            ],
+        },
+
+
 
 
 

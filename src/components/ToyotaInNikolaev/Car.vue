@@ -24,7 +24,7 @@
 
 
 <!--            SWIPPER-->
-            <div class="carousel col-md-6 col-12">
+            <div class="carousel col-lg-6 col-12">
                 <div class="thumb-example">
                     <!-- swiper1 -->
                     <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
@@ -45,71 +45,71 @@
             </div>
             <!--            SWIPPER-->
 
-            <div class="col-md-6 col-12 text-left">
+            <div class="col-lg-6 col-12 text-left">
                 <ul class="text-left">
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Рік випуску</span>
-                        <span>{{car.year}}</span>
+                        <span class="text-left">{{car.year}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Тип палива</span>
-                        <span>{{car.fuel_type}}</span>
+                        <span class="text-left">{{car.fuel_type}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Об'єм двигуна</span>
-                        <span>{{x}}</span>
+                        <span class="text-left">{{x}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Потужність</span>
-                        <span>{{car.horspower}} к.с.</span>
+                        <span class="text-left">{{car.horspower}} к.с.</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Тип приводу</span>
-                        <span>{{x}}</span>
+                        <span class="text-left">{{x}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Колір кузова</span>
-                        <span>{{car.color}}</span>
+                        <span class="text-left">{{car.color}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Інтер'єр</span>
-                        <span>{{x}}</span>
+                        <span class="text-left">{{x}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Салон</span>
-                        <span>{{x}}</span>
+                        <span class="text-left">{{x}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Комплектація</span>
-                        <span>{{car.modification}}</span>
+                        <span class="text-left">{{car.modification}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Тип кузова</span>
-                        <span>{{x}}</span>
+                        <span class="text-left">{{x}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Коробка передач</span>
-                        <span>{{car.gearbox}}</span>
+                        <span class="text-left">{{car.gearbox}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Кількість місць</span>
-                        <span>{{x}}</span>
+                        <span class="text-left">{{x}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Ціна</span>
-                        <span>{{car.price | formattedPrice}} &#8372;</span>
+                        <span class="text-left">{{car.price | formattedPrice}} &#8372;</span>
                     </li>
                 </ul>
 
@@ -136,37 +136,37 @@
         </section>
 
         <div class="advantages row">
-            <div class="col-4">
+            <div class="col-sm-4 col-6">
                 <img src="../../img/icon-grant.png" alt="support">
                 <span>Постгарантійна підтримка</span>
             </div>
 
-            <div class="col-4">
+            <div class="col-sm-4 col-6">
                 <img src="../../img/icon-buy.png" alt="buy">
                 <span>Прозора історія</span>
             </div>
 
-            <div class="col-4">
+            <div class="col-sm-4 col-6">
                 <img src="../../img/icon-speed.png" alt="speed">
                 <span>Перевірений пробіг</span>
             </div>
 
-            <div class="col-4">
+            <div class="col-sm-4 col-6">
                 <img src="../../img/icon-service.png" alt="service">
                 <span>Технічна перевірка</span>
             </div>
 
-            <div class="col-4">
+            <div class="col-sm-4 col-6">
                 <img src="../../img/icon-keys.png" alt="keys">
                 <span>Сів та поїхав</span>
             </div>
 
-            <div class="col-4">
+            <div class="col-sm-4 col-6">
                 <img src="../../img/icon-credit.png" alt="credit">
                 <span>Кредит та страхування</span>
             </div>
 
-            <div class="col-4">
+            <div class="col-sm-4 col-6">
                 <img src="../../img/icon-helpInRoad.png" alt="help in road">
                 <span>Допомога на дорозі</span>
             </div>
@@ -494,15 +494,6 @@
     }
 
 
-
-
-
-
-
-
-
-
-
     .thumb-example {
         height: 480px;
         background-color: black;
@@ -529,6 +520,181 @@
         }
         &.gallery-thumbs .swiper-slide-active {
             opacity: 1;
+        }
+    }
+
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        main.container {
+            padding: 0;
+
+            header {
+                h1 {
+                    font-size: 4.0rem;
+                    margin: 30px 0;
+                }
+            }
+
+            section.row {
+                padding-bottom: 30px;
+                div {
+                    &.carousel {
+                        .thumb-example {
+                            position: static;
+                        }
+                    }
+
+                    ul {
+                        padding: 0;
+                        margin-top: 40px;
+                    }
+
+                    button.btn.btn-light {
+                        @include button;
+                        margin-left: 0;
+
+                    }
+                }
+
+                article {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        main.container {
+            header {
+                h1 {
+                    font-size: 4rem;
+                    margin: 30px 0;
+                }
+            }
+
+            section.row {
+                padding-bottom: 30px;
+                div {
+                    &.carousel {
+                        .thumb-example {
+                            position: static;
+                        }
+                    }
+
+                    ul {
+                        margin-top: 30px;
+                        padding: 0;
+                    }
+
+                    button.btn.btn-light {
+                        @include button;
+                        width: 100%;
+                        margin-left: 0;
+                    }
+                }
+
+                article {
+                    margin-left: 0;
+                    margin-top: 40px;
+
+
+                    footer {
+
+                        button.btn.btn-danger {
+                            width: 100%;
+                            padding: 10px 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        main.container {
+            header {
+                h1 {
+                    font-size: 3.5rem;
+                    margin: 30px 0;
+                }
+            }
+
+            section.row {
+                padding: 0 0 30px;
+                margin: 0;
+                div {
+                    padding: 0;
+                    &.carousel {
+                        padding: 0;
+                        .thumb-example {
+                            position: static;
+                        }
+                    }
+
+                    ul {
+                        padding: 0 15px;
+                        margin-top: 30px;
+                        li {
+                            font-size: 1.6rem;
+                            &:last-child {
+                                font-size: 2.0rem;
+                            }
+                        }
+                    }
+
+                    button.btn.btn-light {
+                        width: calc(100% - 30px);
+                        margin: 0 15px;
+                    }
+                }
+
+                article {
+                    margin-left: 0;
+                    margin-top: 40px;
+                    padding: 0 15px;
+                    header {
+                        h1 {
+                            font-size: 2.0rem;
+                            color: $font_color;
+                            margin: 20px 0;
+                        }
+                    }
+
+                    footer {
+                        button.btn.btn-danger {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .advantages.row {
+                width: 100%;
+                padding: 15px 0;
+                margin: 0;
+                div {
+                    padding: 15px;
+                    span {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+
+
+        .thumb-example {
+            height: 120vw;
+        }
+        .swiper {
+            &.gallery-top {
+                height: 70%;
+            }
+            &.gallery-thumbs {
+                height: 30%;
+            }
+            &.gallery-thumbs .swiper-slide {
+                width: 50%;
+            }
         }
     }
 
