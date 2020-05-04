@@ -87,7 +87,6 @@
             getCars() {
                 axios.get(
                     "http://lara.toyota.nikolaev.ua/ajax/available_cars"
-                    // "http://lara.toyota.nikolaev.ua/ajax/all_model"
                 )
                     .then( (response) => {
                         console.log(response.data);

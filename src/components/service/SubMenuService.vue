@@ -39,14 +39,14 @@
                             >Оригінальні мастильні матеріали</router-link>
                         </li>
 
-                        <li>
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/maintenance/special_company"
-                            >Спеціальні фінансові рішення</router-link>
-                        </li>
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/maintenance/calc"-->
+<!--                            >Калькулятор вартості технічного обслуговування</router-link>-->
+<!--                        </li>-->
                     </ul>
                 </div>
 
@@ -56,17 +56,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to=""
-                    >Спеціальні сервісні кампанії</router-link>
-                </div>
-
-                <div class="col-xl-4 col-md-6 col-12">
-                    <router-link
-                            exact
-                            tag="a"
-                            class="nav-link"
-                            active-class="active"
-                            to="/corporate_sales"
+                            to="/original_accessories/accessories_general"
                     >Оригінальні аксесуари</router-link>
 
                     <ul>
@@ -75,25 +65,25 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_car"
+                                    to="/original_accessories/entertainment_system"
                             >Модульна розважальна система</router-link>
                         </li>
 
-                        <li>
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/corporate_sales/business_owner"
-                            >Toyota ProTect</router-link>
-                        </li>
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/original_accessories/toyota_pro_tech"-->
+<!--                            >Toyota ProTect</router-link>-->
+<!--                        </li>-->
 
                         <li>
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/corporate_clients"
+                                    to="/original_accessories/toyota_touch2"
                             >Cистема Toyota Touch 2</router-link>
                         </li>
 
@@ -102,12 +92,60 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/original_accessories/baby_car_seats"
                             >Дитячі автомобільні крісла</router-link>
                         </li>
                     </ul>
-
                 </div>
+
+<!--                <div class="col-xl-4 col-md-6 col-12">-->
+<!--                    <router-link-->
+<!--                            exact-->
+<!--                            tag="a"-->
+<!--                            class="nav-link"-->
+<!--                            active-class="active"-->
+<!--                            to="/corporate_sales"-->
+<!--                    >Оригінальні аксесуари</router-link>-->
+
+<!--                    <ul>-->
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/corporate_sales/business_car"-->
+<!--                            >Модульна розважальна система</router-link>-->
+<!--                        </li>-->
+
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/corporate_sales/business_owner"-->
+<!--                            >Toyota ProTect</router-link>-->
+<!--                        </li>-->
+
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/corporate_sales/corporate_clients"-->
+<!--                            >Cистема Toyota Touch 2</router-link>-->
+<!--                        </li>-->
+
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/corporate_sales/special_solutions"-->
+<!--                            >Дитячі автомобільні крісла</router-link>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+
+<!--                </div>-->
 
                 <div class="col-xl-4 col-md-6 col-12">
                     <router-link
@@ -115,7 +153,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/corporate_sales"
+                            to="/original_spare_parts/original_spare_parts_general"
                     >Оригінальні запчастини</router-link>
 
                     <ul>
@@ -124,7 +162,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_car"
+                                    to="/original_spare_parts/choose_original"
                             >Обирай оригінальне!</router-link>
                         </li>
 
@@ -133,7 +171,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_owner"
+                                    to="/original_spare_parts/air_filters_of_salon"
                             >Повітряні фільтри салону</router-link>
                         </li>
 
@@ -142,7 +180,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/corporate_clients"
+                                    to="/original_spare_parts/rechargeable_batteries"
                             >Акумуляторні батареї</router-link>
                         </li>
 
@@ -151,7 +189,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/original_spare_parts/original_lamps"
                             >Оригінальні лампи</router-link>
                         </li>
 
@@ -160,7 +198,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/original_spare_parts/wiper_blades"
                             >Щітки склоочисника</router-link>
                         </li>
 
@@ -169,7 +207,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/original_spare_parts/toyota_ad_blue_liquid"
                             >Рідина Toyota AdBlue™</router-link>
                         </li>
 
@@ -178,7 +216,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/original_spare_parts/brake_discs_and_pads"
                             >Гальмівні диски та колодки</router-link>
                         </li>
 
@@ -187,7 +225,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/original_spare_parts/original_windshields"
                             >Оригінальні лобові стекла</router-link>
                         </li>
 
@@ -196,7 +234,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/original_spare_parts/fuel_system_cleaner"
                             >Очисник паливної системи</router-link>
                         </li>
                     </ul>
@@ -204,13 +242,15 @@
                 </div>
 
                 <div class="col-xl-4 col-md-6 col-12">
-                    <router-link
-                            exact
-                            tag="a"
-                            class="nav-link"
-                            active-class="active"
-                            to="/corporate_sales"
-                    >Допомога в дорозі</router-link>
+                    <a href.prevent="" class="nav-link">Допомога в дорозі</a>
+
+<!--                    <router-link-->
+<!--                            exact-->
+<!--                            tag="a"-->
+<!--                            class="nav-link"-->
+<!--                            active-class="active"-->
+<!--                            to="/corporate_sales"-->
+<!--                    >Допомога в дорозі</router-link>-->
 
                     <ul>
                         <li>
@@ -218,7 +258,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_car"
+                                    to="/toyota_assistance"
                             >Toyota Assistance</router-link>
                         </li>
 
@@ -227,7 +267,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_owner"
+                                    to="/toyota_assistance_plus"
                             >Toyota Assistance Plus</router-link>
                         </li>
                     </ul>

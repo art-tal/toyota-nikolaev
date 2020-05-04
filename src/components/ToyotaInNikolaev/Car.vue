@@ -53,13 +53,18 @@
                     </li>
 
                     <li class="d-flex justify-content-between">
+                        <span class="flex-grow-1">Країна походження</span>
+                        <span class="text-left">{{car.country}}</span>
+                    </li>
+
+                    <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Тип палива</span>
                         <span class="text-left">{{car.fuel_type}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Об'єм двигуна</span>
-                        <span class="text-left">{{x}}</span>
+                        <span class="text-left">{{car.volume}} л.</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
@@ -69,7 +74,7 @@
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Тип приводу</span>
-                        <span class="text-left">{{x}}</span>
+                        <span class="text-left">{{car.drive_type}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
@@ -79,13 +84,13 @@
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Інтер'єр</span>
-                        <span class="text-left">{{x}}</span>
+                        <span class="text-left">{{car.interior_name}} ({{car.interior_code}})</span>
                     </li>
 
-                    <li class="d-flex justify-content-between">
-                        <span class="flex-grow-1">Салон</span>
-                        <span class="text-left">{{x}}</span>
-                    </li>
+<!--                    <li class="d-flex justify-content-between">-->
+<!--                        <span class="flex-grow-1">Салон</span>-->
+<!--                        <span class="text-left">{{x}}</span>-->
+<!--                    </li>-->
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Комплектація</span>
@@ -94,7 +99,7 @@
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Тип кузова</span>
-                        <span class="text-left">{{x}}</span>
+                        <span class="text-left">{{car.body_type}}</span>
                     </li>
 
                     <li class="d-flex justify-content-between">
@@ -102,14 +107,14 @@
                         <span class="text-left">{{car.gearbox}}</span>
                     </li>
 
-                    <li class="d-flex justify-content-between">
-                        <span class="flex-grow-1">Кількість місць</span>
-                        <span class="text-left">{{x}}</span>
-                    </li>
+<!--                    <li class="d-flex justify-content-between">-->
+<!--                        <span class="flex-grow-1">Кількість місць</span>-->
+<!--                        <span class="text-left">{{x}}</span>-->
+<!--                    </li>-->
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Ціна</span>
-                        <span class="text-left">{{car.price | formattedPrice}} &#8372;</span>
+                        <span class="text-left">{{car.price}} &#8372;</span>
                     </li>
                 </ul>
 
@@ -220,9 +225,9 @@
             SwiperSlide
         },
 
-        filters: {
-            // formattedPrice,
-        },
+        // filters: {
+        //     // formattedPrice,
+        // },
 
         created() {
             this.id = this.$route.params['id'];

@@ -37,13 +37,32 @@ import WorldOfToyota from "../components/whyToyota/WorldOfToyota";
 import SubMenuNikolaev from "../components/ToyotaInNikolaev/SubMenuNikolaev";
 import CarsAvailable from "../components/ToyotaInNikolaev/CarsAvailable";
 import Car from "../components/ToyotaInNikolaev/Car";
-import Maintenance from "@/components/service/Maintenance";
-import Principles from "@/components/service/Principles";
-import MaintenanceGeneral from "@/components/service/MaintenanceGeneral";
-import Guarantee from "@/components/service/Guarantee";
-import Lubricants from "@/components/service/Lubricants";
-import Calc from "@/components/service/Calc";
-import SpecialCompany from "@/components/service/SpecialCompany";
+import Maintenance from "../components/service/maintenance/Maintenance";
+import Principles from "../components/service/maintenance/Principles";
+import MaintenanceGeneral from "../components/service/maintenance/MaintenanceGeneral";
+import Guarantee from "../components/service/maintenance/Guarantee";
+import Lubricants from "../components/service/maintenance/Lubricants";
+import Calc from "../components/service/maintenance/Calc";
+import SpecialCompany from "../components/service/maintenance/SpecialCompany";
+import OriginalAccessories from "../components/service/originalAccessories/OriginalAccessories";
+import AccessoriesGeneral from "../components/service/originalAccessories/AccessoriesGeneral";
+import EntertainmentSystem from "../components/service/originalAccessories/EntertainmentSystem";
+import ToyotaProTect from "../components/service/originalAccessories/ToyotaProTect";
+import ToyotaTouch2 from "../components/service/originalAccessories/ToyotaTouch2";
+import BabyCarSeats from "../components/service/originalAccessories/BabyCarSeats";
+import OriginalSpareParts from "../components/service/OriginalSpareParts/OriginalSpareParts";
+import OriginalSparePartsGeneral from "../components/service/OriginalSpareParts/OriginalSparePartsGeneral";
+import ChooseOriginal from "../components/service/OriginalSpareParts/ChooseOriginal";
+import AirFiltersOfSalon from "../components/service/OriginalSpareParts/AirFiltersOfSalon";
+import RechargeableBatteries from "../components/service/OriginalSpareParts/RechargeableBatteries";
+import OriginalLamps from "../components/service/OriginalSpareParts/OriginalLamps";
+import WiperBlades from "../components/service/OriginalSpareParts/WiperBlades";
+import ToyotaAdBlueLiquid from "../components/service/OriginalSpareParts/ToyotaAdBlueLiquid";
+import BrakeDiscsAndPads from "../components/service/OriginalSpareParts/BrakeDiscsAndPads";
+import OriginalWindshields from "../components/service/OriginalSpareParts/OriginalWindshields";
+import FuelSystemCleaner from "../components/service/OriginalSpareParts/FuelSystemCleaner";
+import ToyotaAssistance from "../components/service/RoadsideAssistance/ToyotaAssistance";
+import ToyotaAssistancePlus from "../components/service/RoadsideAssistance/ToyotaAssistancePlus";
 
 export default new VueRouter({
     routes: [
@@ -275,6 +294,111 @@ export default new VueRouter({
                 },
             ],
         },
+
+        {
+            path: "/original_accessories",
+            name: "original_accessories",
+            component: OriginalAccessories,
+            children: [
+                {
+                    path: "/original_accessories/accessories_general",
+                    name: "accessories_general",
+                    component: AccessoriesGeneral,
+                },
+                {
+                    path: "/original_accessories/entertainment_system",
+                    name: "entertainment_system",
+                    component: EntertainmentSystem,
+                },
+                {
+                    path: "/original_accessories/toyota_pro_tech",
+                    name: "toyota_pro_tech",
+                    component: ToyotaProTect,
+                },
+                {
+                    path: "/original_accessories/toyota_touch2",
+                    name: "toyota_touch2",
+                    component: ToyotaTouch2,
+                },
+                {
+                    path: "/original_accessories/baby_car_seats",
+                    name: "baby_car_seats",
+                    component: BabyCarSeats,
+                }
+            ],
+        },
+
+        {
+            path: "/original_spare_parts",
+            name: "original_spare_parts",
+            component: OriginalSpareParts,
+            children: [
+                {
+                    path: "/original_spare_parts/original_spare_parts_general",
+                    name: "original_spare_parts_general",
+                    component: OriginalSparePartsGeneral,
+                },
+                {
+                    path: "/original_spare_parts/choose_original",
+                    name: "choose_original",
+                    component: ChooseOriginal,
+                },
+                {
+                    path: "/original_spare_parts/air_filters_of_salon",
+                    name: "air_filters_of_salon",
+                    component: AirFiltersOfSalon,
+                },
+                {
+                    path: "/original_spare_parts/rechargeable_batteries",
+                    name: "rechargeable_batteries",
+                    component: RechargeableBatteries,
+                },
+                {
+                    path: "/original_spare_parts/original_lamps",
+                    name: "original_lamps",
+                    component: OriginalLamps,
+                },
+                {
+                    path: "/original_spare_parts/wiper_blades",
+                    name: "wiper_blades",
+                    component: WiperBlades,
+                },
+                {
+                    path: "/original_spare_parts/toyota_ad_blue_liquid",
+                    name: "toyota_ad_blue_liquid",
+                    component: ToyotaAdBlueLiquid,
+                },
+                {
+                    path: "/original_spare_parts/brake_discs_and_pads",
+                    name: "brake_discs_and_pads",
+                    component: BrakeDiscsAndPads,
+                },
+                {
+                    path: "/original_spare_parts/original_windshields",
+                    name: "original_windshields",
+                    component: OriginalWindshields,
+                },
+                {
+                    path: "/original_spare_parts/fuel_system_cleaner",
+                    name: "fuel_system_cleaner",
+                    component: FuelSystemCleaner,
+                }
+            ],
+        },
+
+        {
+            path: "/toyota_assistance",
+            name: "toyota_assistance",
+            component: ToyotaAssistance,
+        },
+
+        {
+            path: "/toyota_assistance_plus",
+            name: "toyota_assistance_plus",
+            component: ToyotaAssistancePlus,
+        },
+
+
 
 
 

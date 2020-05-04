@@ -54,7 +54,40 @@
 
         components: {
             FragnetLineup,
-        }
+        },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Користувачам службових автомобілів`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Користувачам службових автомобілів`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Вибір автомобіля для службових цілей стає значно простішим з програмою Toyota BusinessPlus. Наші співробітники завжди готові прийти Вам на допомогу.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Вибір автомобіля для службових цілей стає значно простішим з програмою Toyota BusinessPlus. Наші співробітники завжди готові прийти Вам на допомогу.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota, BusinessPlus, автопарк, службовий автомобіль, бізнес, автопарк, продажі, модельний ряд, фінансування, продукти, послуги, гібрид, Toyota BusinessPlus`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota, BusinessPlus, автопарк, службовий автомобіль, бізнес, автопарк, продажі, модельний ряд, фінансування, продукти, послуги, гібрид, Toyota BusinessPlus`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

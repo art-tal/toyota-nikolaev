@@ -24,8 +24,9 @@ export default new Vuex.Store ({
         consultation: {
             model: {},
             engineType: "",
+        },
 
-        }
+        totalCost: 0,
         // consultModel: {},
         // consultEngine: {},
     },
@@ -76,7 +77,10 @@ export default new Vuex.Store ({
             return state.openConsultation;
         },
 
-
+        getTotalCost(state) {
+            console.log(state.openConsultation);
+            return state.totalCost;
+        },
 
 
     },
@@ -93,6 +97,12 @@ export default new Vuex.Store ({
             // console.log(state.selectedAccessories);
             localStorage.selectedAccessories = JSON.stringify(state.selectedAccessories);
         },
+
+        recordTotalCost(state, payload) {
+            state.totalCost = payload;
+        },
+
+
 
 
 

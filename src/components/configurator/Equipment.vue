@@ -14,6 +14,9 @@
                     <span><strong>{{equipment.mod_name}} </strong></span>
 <!--                    <span>{{car.bodyType}}</span>-->
                 </h4>
+                <h4 :style="{'color': fontColor}" class="text-left">
+                    <strong>{{equipment.price | formattedPrice}} &#8372;</strong>
+                </h4>
                 <ul class="equip_desc">
                     <li v-for="(desc, key) in equipment.description"
                         :key="key"
@@ -36,6 +39,7 @@
 
 <script>
     import axios from "axios";
+    import formattedPrice from "../../filters/price_format";
     import {eventEmitter} from '../../main'
     // import {eventEmitter} from './../../app' //         for Laravel
 
@@ -52,6 +56,10 @@
                 equipment: {},
                 fontColor: "#202020",
             }
+        },
+
+        filters: {
+            formattedPrice,
         },
 
         computed: {

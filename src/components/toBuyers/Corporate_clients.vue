@@ -163,7 +163,40 @@
 
 <script>
     export default {
-        name: "Corporate_clients"
+        name: "Corporate_clients",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Корпоративні продажі | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Корпоративні продажі | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Якщо ваші обов&#39;язки включають  управління потребами великого автопарку та водіїв, тоді вам потрібен партнер, що надасть послуги найвищого рівня.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Якщо ваші обов&#39;язки включають  управління потребами великого автопарку та водіїв, тоді вам потрібен партнер, що надасть послуги найвищого рівня.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota, BusinessPlus, автопарк, службовий автомобіль, бізнес, автопарк, продажі, модельний ряд, фінансування, продукти, послуги, гібрид,служебный автомобиль, бизнес, автопарк, продажи, модельный ряд, финансирование, продукты, услуги, гибрид, Toyota BusinessPlus`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota, BusinessPlus, автопарк, службовий автомобіль, бізнес, автопарк, продажі, модельний ряд, фінансування, продукти, послуги, гібрид,служебный автомобиль, бизнес, автопарк, продажи, модельный ряд, финансирование, продукты, услуги, гибрид, Toyota BusinessPlus`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

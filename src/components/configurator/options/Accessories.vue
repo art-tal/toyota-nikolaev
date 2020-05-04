@@ -170,7 +170,7 @@
                         id: 1,
                         name: "Накладки порогов с илюминацией",
                         image: "//t1-carassets.toyota-europe.com/66a2b9c9-30ad-4af0-8ea3-e32d4f7cc896.JPG",
-                        cost: "10 727,05",
+                        cost: "10727,05",
                         checked: false
                     },
                     {

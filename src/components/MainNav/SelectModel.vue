@@ -11,7 +11,7 @@
                         {{model.name}}</span>
                     <span class="carEquipment">
                         {{computedEquipment.mod_name}}</span>
-<!--                    <small class="bodyType"> - {{car.bodyType}}</small>-->
+                    <small class="bodyType"> - {{computedEquipment.body_type}}</small>
                 </h1>
 
                 <div class="col-xl-2 col-lg-3 col-md-6 col-12">
@@ -79,23 +79,42 @@
             </div>
         </div>
 
-        <div class="specifications row justify-content-center">
-            <div class="fuelConsumption col-md-2 col-4">
+        <div class="specifications row justify-content-center align-items-end">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center">
+                <p>Від</p>
+                <span class="h2 d-block font-weight-bolder">
+                    {{computedEquipment.price | formattedPrice}}&#8372;
+                </span>
+
+            </div>
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6">
                 <p>Споживання пального</p>
                 <span class="h1">{{model.fuelConsumption}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
-            <div class="maxSpeed col-md-2 col-4">
+            <div class="maxSpeed col-xl-2 col-md-3 col-6">
                 <p>Максимальна потужність</p>
                 <span class="h1">{{model.maxPower}}</span>
                 <span class="font-weight-bold"> к.с.</span>
             </div>
-            <div class="maxPower col-md-2 col-4">
+            <div class="maxPower col-xl-2 col-md-3 col-6">
                 <p>Максимальна швидкість</p>
                 <span class="h1">{{model.maxSpeed}}</span>
                 <span class="font-weight-bold"> км/г</span>
             </div>
         </div>
+
+        <div class="show_info container text-left" @click="showInfo = !showInfo">Інформація щодо цін</div>
+
+        <div class="info container text-left" v-if="showInfo">
+            <p>
+                Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою).</p>
+            <p>
+                Вказані рекомендовані ціни на відповідні автомобілі у базових комплектаціях, без врахування вартості додаткових опцій та/або послуг та спеціальних акцій і пропозицій, які можуть діяти на момент придбання автомобіля. Ціни на інші комплектації вказані у відповідних розділах. Ціни є актуальними для наявних на складах Товариства автомобілів, щодо яких здійснене митне оформлення. Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.
+            </p>
+        </div>
+
+
 
         <div class="requestService row justify-content-center">
             <div class="col-6 text-right">
@@ -134,6 +153,7 @@
     import Equipment from "../configurator/Equipment";
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "../MainNav/SubNavigation";
+    import formattedPrice from "../../filters/price_format";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
     // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
@@ -156,6 +176,7 @@
                 model: {},
                 // id: this.$route.params.id,
                 showEquipment: false,
+                showInfo: false,
                 selectedColor: {},
                 equipments: [],
                 equipment: {},
@@ -167,6 +188,10 @@
                 fontColor: "#202020",
 
             }
+        },
+
+        filters: {
+            formattedPrice,
         },
 
         metaInfo() {
@@ -459,8 +484,14 @@
 
         .specifications.row {
             width: 100%;
-            margin-top: 25px;
-            padding: 0;
+            margin: 75px 0;
+            padding: 0 15px;
+            .price {
+                .h2 {
+                    font-size: 3.5rem;
+                    margin: 0;
+                }
+            }
                 p {
                     font-size: 1.6rem;
                 }
@@ -471,6 +502,27 @@
                     font-size: 1.6rem;
                 }
         }
+
+        .show_info {
+            margin-top: 30px;
+            padding-left: 60px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #6c7073;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .info {
+            margin: 30px auto;
+            font-size: 1.5rem;
+            color: #6c7073;
+            p {
+                margin-bottom: 15px;
+            }
+        }
+
         .requestService.row {
             margin: 60px auto 100px;
             div {
@@ -531,7 +583,7 @@
             }
 
             .specifications.row {
-                margin-top: 25px;
+                /*margin-top: 75px;*/
                 p {
                     font-size: 1.6rem;
                 }
@@ -542,6 +594,12 @@
                     font-size: 1.6rem;
                 }
             }
+
+            .show_info {
+                margin-top: 0;
+                padding-left: 15px;
+            }
+
             .requestService.row {
                 margin: 60px auto 100px;
                 div {
@@ -606,6 +664,12 @@
                     font-size: 1.6rem;
                 }
             }
+
+            .show_info {
+                margin-top: 0;
+                padding-left: 15px;
+            }
+
             .requestService.row {
                 margin: 60px auto 100px;
                 div {
@@ -670,8 +734,20 @@
             }
 
             .specifications.row {
-                margin-top: 130px;
-                .col-4 {
+                margin-top: 150px;
+                margin-bottom: 0;
+                .price {
+                    text-align: center;
+                    p {
+                        font-size: 1.6rem;
+                    }
+                    .h2 {
+                        font-size: 4rem;
+                        margin: 0;
+                    }
+                }
+                .col-6 {
+                    margin-bottom: 50px;
                     align-self: flex-end;
                     p {
                         font-size: 1.6rem;
@@ -679,6 +755,12 @@
                 }
 
             }
+
+            .show_info {
+                margin-top: 0;
+                padding-left: 15px;
+            }
+
             .requestService.row {
                 margin: 60px auto 100px;
                 div {

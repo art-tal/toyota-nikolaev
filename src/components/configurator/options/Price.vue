@@ -1,7 +1,7 @@
 <template>
     <article class="container">
         <header>
-            <h1>{{price | formattedPrice}}&#8372;</h1>
+            <h1>{{equipment.price | formattedPrice}}&#8372;</h1>
             <p>Ціна</p>
         </header>
         <div class="body">
@@ -18,14 +18,14 @@
             <div class="option">
                 <div class="base_price row">
                     <div class="font-weight-bold col-6">Ціна</div>
-                    <div class="col-6 text-right">{{price_auto | formattedPrice}}&#8372;</div>
+                    <div class="col-6 text-right">{{equipment.price | formattedPrice}}&#8372;</div>
                 </div>
                 <div class="color row">
                     <div class="col-12 text-left">{{getColor.color_name}} ({{getColor.color_code}})</div>
 
                 </div>
                 <div class="interior row">
-                    <div class="col-12 text-left">{{getInterior.material_name}} ({{getInterior.material_code}})</div>
+                    <div class="col-12 text-left">{{getInterior.interior_name}} ({{getInterior.interior_code}})</div>
 
                 </div>
                 <div class="wheels row">
@@ -56,7 +56,7 @@
 
             <div class="result row">
                 <span class="col-7">Загалом</span>
-                <span class="pr col-5 font-weight-bold">{{price | formattedPrice}}&#8372;</span>
+                <span class="pr col-5 font-weight-bold">{{getTotalCost | formattedPrice}}&#8372;</span>
             </div>
 
             <p>
@@ -95,14 +95,16 @@
                 wheels: null,
                 selectedAccessories: null,
 
-                price_auto: "734556,00",
-                price: "766655,23",
+                // price_auto: "734556,00",
+                price: 0,
                 price_wheels: "32099,23",//ЗАГЛУШКА
+                prAcc: 0,
+                totalCost: 0,
             }
         },
 
         filters: {
-            formattedPrice
+            formattedPrice,
         },
 
         created() {
@@ -149,6 +151,14 @@
                 } );
                 return prAcc;
             },
+
+            getTotalCost() {
+                let totalCost = parseFloat(this.equipment.price) + parseFloat(this.price_wheels) + parseFloat(this.priceAccessories);
+                localStorage.totalCost = totalCost;
+                this.$store.commit('recordTotalCost', totalCost);
+                return totalCost;
+            }
+
         },
 
 
@@ -157,8 +167,9 @@
             deleteAccessory(accessory) {
                 this.$store.commit('delAccessories', accessory);
                 eventEmitter.$emit('checkAcc');
-
             },
+
+
         },
     }
 </script>

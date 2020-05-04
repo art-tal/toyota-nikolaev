@@ -49,8 +49,8 @@
 </template>
 
 <script>
-    import Sidebar from "../permanent/Sidebar";
-    // import Sidebar from "./../../components/permanent/Sidebar"; //               for Laravel
+    // import Sidebar from "../permanent/Sidebar";
+    import Sidebar from "./../../components/permanent/Sidebar"; //               for Laravel
 
     export default {
         name: "Insurance",

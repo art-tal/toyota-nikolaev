@@ -85,9 +85,9 @@
 </template>
 
 <script>
-    import Sidebar from "@/components/permanent/Sidebar";
+    // import Sidebar from "@/components/permanent/Sidebar";
     // import FragnetLineup from "@/components/toBuyers/FragnetLineup";
-    // import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
+    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
 
     export default {
         name: "Corporate_sales",

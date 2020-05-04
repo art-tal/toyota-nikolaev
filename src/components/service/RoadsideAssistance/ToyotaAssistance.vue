@@ -1,0 +1,239 @@
+<template>
+    <main class="container-fluid">
+        <sidebar></sidebar>
+
+        <header>
+            <h1 class="text-center">"Toyota Assistance"
+                <h2 class="text-center">Ви користуєтесь автомобілем, а «Тойота» піклується про нього</h2>
+            </h1>
+        </header>
+
+        <section class="container">
+            <header>
+                <h1 class="text-center">В офіційній дилерській мережі ПІІ «Тойота-Україна» діє унікальна програма допомоги в дорозі під назвою "Toyota Assistancе"</h1>
+            </header>
+
+            <div class="body text-left">
+                <p>Купуючи офіційний автомобіль Toyota, його власник автоматично отримує професійну підтримку та допомогу в дорозі не тільки у технічних питаннях, але й у нестандартних ситуаціях. Послуга Toyota Assistance діє протягом трьох років з дня першої реєстрації автомобіля без обмеження пробігу.</p>
+                <p>Звертаємо вашу увагу на те, що програма "Toyota Assistancе" унікальна у своєму класі і що в межах цієї програми надається безпрецедентно повний спектр послуг із підтримки автомобіля в дорозі.</p>
+                <p>Програма допомоги в дорозі "Toyota Assistance" впроваджена в офіційній дилерській мережі ПІІ «Тойота-Україна» 2005 року та передбачає цілодобову інформаційну підтримку та професійну допомогу в дорозі. "Toyota Assistance" унікальна тому, що включає в себе чимало безкоштовних для клієнтів послуг та діє в 35 країнах Європи.</p>
+                <p><strong>Телефон Toyota Assistance</strong> - <a href="tel:+380444942298">+38044-494-22-98</a>  24 години на добу, 365 днів на рік</p>
+            </div>
+
+            <footer class="text-left">
+                <h4 class="d-flex justify-content-between">
+                    <strong class="text-left flex-grow-1">Файли для завантаження</strong>
+                    <i class="fas fa-download"></i>
+                </h4>
+
+                <ul>
+                    <li>
+                        <i class="far fa-file-alt"></i>
+                        <a href="https://www.toyota.ua/download/cms/uaua/toyota-assistance-2019_tcm-3046-165300.pdf" >Брошура про програму Toyota Assistance (pdf)</a>
+                    </li>
+                </ul>
+            </footer>
+        </section>
+
+    </main>
+</template>
+
+<script>
+    import Sidebar from "@/components/permanent/Sidebar";
+
+    export default {
+        name: "Toyota Assistance",
+
+        components: {
+            Sidebar
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+    @import '../../../styles/variables';
+
+    main.container-fluid {
+        padding: 0;
+        margin: 0;
+
+        header {
+            width: 100%;
+            height: 80vh;
+            padding-top: 30px;
+            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Toyota-Assistance_tcm-3046-1600899.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-background-size: cover;
+            background-size: cover;
+            color: $font_color;
+
+            h1 {
+                width: 100%;
+                padding: 15px;
+                margin: 0 auto;
+                font-size: 5.2rem;
+                font-weight: bolder;
+                text-align: left;
+
+                h2 {
+                    font-size: 3.4rem;
+                    text-align: left;
+                    padding-top: 16px;
+                }
+            }
+        }
+
+        section.container {
+            color: $font_color;
+            header {
+                margin: 68px auto;
+                background: none;
+                height: auto;
+                padding-top: 0;
+                h1 {
+                    width: 100%;
+                    font-size: 3.4rem;
+                    font-weight: normal;
+                }
+            }
+
+            p {
+                font-size: 1.5rem;
+                color: #595D60;
+                margin-bottom: 40px;
+                a {
+                    text-decoration: underline;
+                    color: $font_color;
+                    cursor: pointer;
+                    &:hover {
+                        color: #E50000;
+                    }
+                }
+            }
+
+            footer {
+                margin: 68px 0;
+                font-size: 1.5rem;
+                color: #595D60;
+                h4 {
+                    border-bottom: 1px solid #f0f0f0;
+                    padding-bottom: 20px;
+                    i {
+                        color: #E50000;
+                    }
+                }
+
+                ul {
+                    padding-left: 20px;
+                    margin-top: 15px;
+                    li {
+                        margin-bottom: 10px;
+                        i {
+                            display: inline-block;
+                            margin-right: 10px;
+                        }
+                        a {
+                            color: $font_color;
+                            &:hover {
+                                text-decoration: underline;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+        main.container-fluid {
+            header {
+                max-height: 60vw;
+                h1 {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        main.container-fluid {
+            header {
+                height: 56vh;
+                min-height: 180px;
+                max-height: 480px;
+                padding-top: 15px;
+                h1 {
+                    width: 100%;
+                    font-size: 4rem;
+                    h2 {
+                        font-size: 3rem;
+                        padding-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        main.container-fluid {
+            header {
+                min-height: 180px;
+                height: 56vw;
+                padding-top: 15px;
+                h1 {
+                    width: 100%;
+                    font-size: 3.5rem;
+                    h2 {
+                        font-size: 2.5rem;
+                        padding-top: 5px;
+                    }
+                }
+            }
+
+            section.container {
+                header {
+                    margin: 30px auto;
+                    h1 {
+                        width: 100%;
+                        font-size: 3rem;
+                    }
+                }
+            }
+
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        main.container-fluid {
+            header {
+                height: auto;
+                min-height: 180px;
+                padding-top: 10px;
+                h1 {
+                    padding: 10px 15px;
+                    font-size: 2.5rem;
+                    h2 {
+                        font-size: 1.8rem;
+                        padding-top: 5px;
+                    }
+                }
+            }
+
+            section.container {
+                header {
+                    margin: 30px auto;
+                    h1 {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+</style>

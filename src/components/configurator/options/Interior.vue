@@ -2,7 +2,7 @@
     <div class="interior container">
         <div class="row">
             <div class="materialName col-md-4 col-12 font-weight-bold text-left">
-                {{selectedInterior.material_name}} ({{selectedInterior.material_code}})
+                {{selectedInterior.interior_name}} ({{selectedInterior.interior_code}})
             </div>
 
             <ul class="sampleOfInterior col-md-8 col-12 text-left">
@@ -10,7 +10,7 @@
                     :key="key"
                     @click="setInterior(inter, key)"
                 >
-                    <img :src="inter.image" :alt="inter.material_name">
+                    <img :src="'http://lara.toyota.nikolaev.ua/storage/' + inter.interior_image" alt="img">
 
                     <div class="check text-center" v-if="inter.checked">
                         <i class="fas fa-check"></i>
@@ -42,31 +42,42 @@
             this.getInteriors();
         },
 
+        mounted() {
+            // this.setInterior(this.interiors[0], 0);
+        },
+
         methods: {
             getInteriors() { //ЗАГЛУШКА
                 axios.get(
-                    'http://lara.toyota.nikolaev.ua/ajax/mod_'
+                    'http://lara.toyota.nikolaev.ua/ajax/mod_interior',
+                {params: {id: this.mod_id}}
                 )
-                .then(
-
-                )
-                .catch( () => {
-                    this.interiors = [
-                        {
-                        material_name: "Чорная тканина",
-                        material_code: "FA20",
-                        image: '//t1-carassets.toyota-europe.com/25e31065-9cdc-4699-bf7d-e92d3d22bd0b.PNG',
-                        checked: true,
-                    }
-                    ];
-                    this.selectedInterior = this.interiors[0];
-                    localStorage.interior = JSON.stringify( this.selectedInterior );
-                    this.$store.state.interior = this.selectedInterior;
-                    console.log(this.interior);
+                .then( (response) => {
+                    this.interiors = response.data;
+                    // this.interiors.forEach( interior => {this.$set(interior, "checked", false)} );
+                    // this.interiors[0].checked = true;
+                    this.setInterior(this.interiors[0], 0);
+                    console.log(this.interiors);
+                } )
+                .catch( (error) => {
+                    // this.interiors = [
+                    //     {
+                    //         interior_name: "Чорная тканина",
+                    //         interior_code: "FA20",
+                    //         interior_image: '//t1-carassets.toyota-europe.com/25e31065-9cdc-4699-bf7d-e92d3d22bd0b.PNG',
+                    //     checked: true,
+                    // }
+                    // ];
+                    // this.selectedInterior = this.interiors[0];
+                    // localStorage.interior = JSON.stringify( this.selectedInterior );
+                    // this.$store.state.interior = this.selectedInterior;
+                    console.log("Ошибка загрузки интерьера");
+                    console.log(error);
                 } );
             },
 
             setInterior(interior, key) {
+                // this.interiors.forEach( interior => {this.$set(interior, "checked", false)} );
                 this.interiorChecker(key);
                 this.selectedInterior = interior;
                 this.$store.state.interior = interior;

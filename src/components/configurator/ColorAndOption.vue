@@ -11,7 +11,7 @@
                         <div class="col-lg-6 col-12 text-left">
                             <h2 class="carModel font-weight-bold">{{model.name}}</h2>
                             <h3 class="carEquipment font-weight-bold">{{equipment.mod_name}}
-                                <!--                            <span class="bodyType"> - {{car.bodyType}}</span>-->
+                                <span class="bodyType"> - {{equipment.body_type}}</span>
                             </h3>
                         </div>
                         <div class="col-6 text-right expand"
@@ -101,13 +101,13 @@
 </template>
 
 <script>
-    import Accessories from "../configurator/options/Accessories";
-    import Price from "../configurator/options/Price";
-    import ToResult from "../configurator/options/ToResult";
+    // import Accessories from "../configurator/options/Accessories";
+    // import Price from "../configurator/options/Price";
+    // import ToResult from "../configurator/options/ToResult";
 
-    // import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
-    // import Price from "./../../components/configurator/options/Price";//                 for Laravel
-    // import ToResult from "./../../components/configurator/options/ToResult";//           for Laravel
+    import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
+    import Price from "./../../components/configurator/options/Price";//                 for Laravel
+    import ToResult from "./../../components/configurator/options/ToResult";//           for Laravel
 
     export default {
         name: "ColorAndOption",

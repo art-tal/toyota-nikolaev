@@ -8,7 +8,7 @@
                     <div class="wrap col-10">
                         <h2 class="carModel font-weight-bold">{{getModel.name}}</h2>
                         <h3 class="carEquipment font-weight-bold">{{getEquipment.mod_name}}
-                            <!--                            <span class="bodyType"> - {{car.bodyType}}</span>-->
+                        <span class="bodyType"> - {{getEquipment.body_type}}</span>
                         </h3>
                     </div>
                     <div class="wrap_button col-2 text-right">
@@ -39,7 +39,7 @@
                         </header>
                         <div class="info row">
                             <h4 class="col-7 text-left">
-                                {{getModel.name}}, {{getModel.bodyType}} {{getEquipment.mod_name}}<br>
+                                {{getModel.name}}, {{getEquipment.body_type}} {{getEquipment.mod_name}}<br>
                                 {{getTransmission.eng_name}}<br>
                                 {{getTransmission.gear_name}}
                                 <span v-if="getTransmission.drive">(Передній привод)</span>
@@ -69,7 +69,7 @@
                             Кольори та колеса
                         </p>
                         <p class="info row">
-                            {{getColor.color_name}} ({{getTransmission.color_code}})
+                            {{getColor.color_name}} ({{getColor.color_code}})
                         </p>
                         <p class="info row text-left">
                             {{getWheels.description}}
@@ -78,7 +78,7 @@
                             Оздоблення інтер'єру
                         </p>
                         <p class="info row">
-                            {{getInterior.material_name}} ({{getInterior.material_code}})
+                            {{getInterior.interior_name}} ({{getInterior.interior_code}})
                         </p>
                     </section>
 
@@ -87,7 +87,7 @@
                             <h1 class="col-12">Підсумкова ціна</h1>
                         </header>
                         <div class="row">
-                            <p class="font-weight-bold text-right">{{price | formattedPrice}}&#8372;</p>
+                            <p class="font-weight-bold text-right">{{getTotalCost | formattedPrice}}&#8372;</p>
                         </div>
 
                     </section>
@@ -98,7 +98,7 @@
 
             <aside class="col-lg-4 col-12" v-if="showAside">
                 <div class="header text-left">
-                    <h2 class="font-weight-bold">{{price | formattedPrice}}&#8372;</h2>
+                    <h2 class="font-weight-bold">{{getTotalCost | formattedPrice}}&#8372;</h2>
                     <p>Ціна</p>
                     <i class="fas fa-times" @click="openBlock()"></i>
                 </div>
@@ -130,7 +130,7 @@
                         
                         <div class="result_prise row">
                             <p class="col-7">Загалом</p>
-                            <h4 class="col-5 font-weight-bold text-right">{{price | formattedPrice}}&#8372;</h4>
+                            <h4 class="col-5 font-weight-bold text-right">{{getTotalCost | formattedPrice}}&#8372;</h4>
                         </div>
 
                         <p class="attention">
@@ -250,6 +250,15 @@
 
             showConsultation() {
                 return this.$store.getters.getOpenConsultation;
+            },
+
+            getTotalCost() {
+                // return this.$store.getters.getTotalCost;
+                if(this.$store.getters.getTotalCost) {
+                    return this.$store.getters.getTotalCost;
+                } else {
+                    return localStorage.totalCost;
+                }
             },
 
         },

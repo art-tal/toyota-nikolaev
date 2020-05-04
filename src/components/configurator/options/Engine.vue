@@ -78,9 +78,9 @@
                                         </header>
                                         <div class="engine_img col-3 text-right">
                                             <img src="https://webcarconfig.toyota-europe.com/toyota/svg/engine.svg" width="90" alt="" class="">
-                                            <div class="font-weight-bold font-italic text-uppercase" v-if="equipment.mod_name.includes('Hybrid')" style="color: #00A0F0">Гібридний (бензин)</div>
-                                            <div class="font-weight-bold font-italic text-uppercase" v-else>Бензиновий</div>
-<!--                                            <div class="font-weight-bold font-italic text-uppercase">{{equipment.engine.typeOfEngine}}</div>-->
+<!--                                            <div class="font-weight-bold font-italic text-uppercase" v-if="equipment.mod_name.includes('Hybrid')" style="color: #00A0F0">Гібридний (бензин)</div>-->
+<!--                                            <div class="font-weight-bold font-italic text-uppercase" v-else>Бензиновий</div>-->
+                                            <div class="font-weight-bold font-italic text-uppercase text-center">{{trans.fuel_type}}</div>
                                         </div>
                                     </div>
                                     <ul class="options text-left">
