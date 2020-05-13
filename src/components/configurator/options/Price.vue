@@ -1,7 +1,7 @@
 <template>
     <article class="container">
         <header>
-            <h1>{{equipment.price | formattedPrice}}&#8372;</h1>
+            <h1>{{equipment.gross_price | formattedPrice}}&#8372;</h1>
             <p>Ціна</p>
         </header>
         <div class="body">
@@ -18,14 +18,14 @@
             <div class="option">
                 <div class="base_price row">
                     <div class="font-weight-bold col-6">Ціна</div>
-                    <div class="col-6 text-right">{{equipment.price | formattedPrice}}&#8372;</div>
+                    <div class="col-6 text-right">{{equipment.gross_price | formattedPrice}}&#8372;</div>
                 </div>
                 <div class="color row">
-                    <div class="col-12 text-left">{{getColor.color_name}} ({{getColor.color_code}})</div>
+                    <div class="col-12 text-left">{{getColor.color_name}}</div>
 
                 </div>
                 <div class="interior row">
-                    <div class="col-12 text-left">{{getInterior.interior_name}} ({{getInterior.interior_code}})</div>
+                    <div class="col-12 text-left">{{getInterior.interior_name}}</div>
 
                 </div>
                 <div class="wheels row">
@@ -153,7 +153,7 @@
             },
 
             getTotalCost() {
-                let totalCost = parseFloat(this.equipment.price) + parseFloat(this.price_wheels) + parseFloat(this.priceAccessories);
+                let totalCost = parseFloat(this.equipment.gross_price) + parseFloat(this.price_wheels) + parseFloat(this.priceAccessories);
                 localStorage.totalCost = totalCost;
                 this.$store.commit('recordTotalCost', totalCost);
                 return totalCost;

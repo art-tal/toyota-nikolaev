@@ -26,15 +26,30 @@
 
                 </header>
 
-                <div class="body view row text-center"
+                <div class="body view container row text-center">
 
-                >
-                    <!--                @mousemove.left.self.exact="rotatePhoto($event)"-->
+                    <swiper class="swiper" :options="swiperOption" v-if="showInterior">
+                        <swiper-slide v-for="(img, key) in interiorPhoto"
+                                      :key="key"
+                                      :style="'background-image: url(' + img + ')'"
+                        >
+                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + img" :alt="'photo ' + key">
+
+                        </swiper-slide>
+
+
+                        <div class="swiper-pagination" slot="pagination"></div>
+                        <div class="swiper-button-prev" slot="button-prev"></div>
+                        <div class="swiper-button-next" slot="button-next"></div>
+                    </swiper>
+
                     <img :src="photo"
-                         :alt="model.name"
-
+                         :alt="model.name" v-else
+                         @mousedown.prevent="click3DDown($event)"
+                         @mousemove="rotatePhoto($event)"
+                         @mouseup="click3DUP()"
                     >
-                    <!--                @selectedColor="setCarColor(color)"-->
+
                 </div>
             </div>
 
@@ -54,15 +69,15 @@
                                 <span>Колір</span>
                             </router-link>
 
-                            <router-link
-                                    class="nav-link"
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/configurator/color_and_option/wheels"
-                            >
-                                <span>Колеса</span>
-                            </router-link>
+<!--                            <router-link-->
+<!--                                    class="nav-link"-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/configurator/color_and_option/wheels"-->
+<!--                            >-->
+<!--                                <span>Колеса</span>-->
+<!--                            </router-link>-->
 
                             <router-link
                                     class="nav-link ml-2 mr-2"
@@ -104,6 +119,8 @@
     // import Accessories from "../configurator/options/Accessories";
     // import Price from "../configurator/options/Price";
     // import ToResult from "../configurator/options/ToResult";
+    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
 
     import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
     import Price from "./../../components/configurator/options/Price";//                 for Laravel
@@ -116,6 +133,8 @@
             Accessories,
             Price,
             ToResult,
+            Swiper,
+            SwiperSlide
         },
 
         data() {
@@ -126,8 +145,26 @@
                 wheels: {},
                 corner: 3,
 
+                mouseX: 0,
+                is3DClick: false,
+
                 allScreen: false,
                 classForScreen: "",
+
+
+                swiperOption: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
+                }
             }
         },
 
@@ -146,9 +183,25 @@
         },
 
         computed: {
+            showInterior() {
+                return this.$store.getters.getShowInterior;
+            },
+
+            interiorPhoto() {
+                if(this.$store.getters.getInterior.interior_car) {
+                    return JSON.parse( this.$store.getters.getInterior.interior_car);
+                } else {
+                    return JSON.parse( JSON.parse(localStorage.interior).interior_car);
+                }
+            },
+
             photo() {
-                let photo = "https://images.toyota-europe.com/ua/product-token/40352faf-5a20-4c39-bfb1-3fb388944877/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/options/16163/width/1160/height/446/scale-mode/1/padding/10/background-colour/F0F0F0/image-quality/75/day-exterior-3_8W7_FA20.jpg"
-                return photo;
+                    if (this.$store.getters.colored.code) {
+                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.$store.getters.colored.color_code}/image-${this.corner}.jpg`;
+                    } else {
+                        // return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).code;
+                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${JSON.parse(localStorage.color).color_code}/image-${this.corner}.jpg`;
+                    }
             },
 
             getAllScreen() {
@@ -162,42 +215,31 @@
                 this.allScreen = !this.allScreen;
             },
 
+            click3DDown(event) {
+                this.is3DClick = true;
+                // this.mouseX = event.pageX;
+                console.log(event);
+            },
 
-            // rotatePhoto(event) {
-                // this.corner++;
-                // if (this.corner > 0 && this.corner < 35) {
-                //     console.log(event);
-                    // if($event.pageX)
-                // }
-            // },
+            click3DUP() {
+                this.is3DClick = false;
+            },
+
+            rotatePhoto(event) {
+                if (!this.is3DClick) {return}
+                if (this.mouseX < event.pageX) {
+                    this.corner++;
+                } else { this.corner--;}
+
+                if (this.corner == 36) {
+                    this.corner = 0;
+                } else if (this.corner == -1) {
+                    this.corner = 35;
+                }
+                this.mouseX = event.pageX;
+            },
 
 
-
-
-
-            // setCarColor(color) {
-            //     this.car.color = color;
-            //     this.car.photo.bigPhoto = this.getCarPhoto();
-            // },
-
-            // getCarPhoto() {
-            //     axios({
-            //         method: 'get',
-            //         url: 'http://localhost:8080/toyota-nikolaev/src/ajax/routeCar.php',
-            //         data: {color: this.car.color.colorCode,
-            //                 model: this.car.modelCode,
-            //                 corner: this.corner,
-            //                 wheels: this.car.wheelsCode
-            //         }
-            //     })
-            //     .then((response) => {return response.data})
-            //     .catch((error) => {
-            //         console.log("Невозможно отобразить фотографию");
-            //         console.log(error);
-            //         return this.car.photo.bigPhoto;
-            //
-            //     })
-            // },
 
         }
     }
@@ -245,10 +287,51 @@
             }
 
             .body {
+                margin: auto;
                 img {
-                    width: 60%;
+                    width: 80%;
                     margin: auto;
                 }
+
+                .swiper {
+                    /*height: 300px;*/
+                    height: auto;
+                    width: 100%;
+
+                    .swiper-slide {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        font-weight: bold;
+                        /*font-size: $font-size-huge * 2;
+                        background-color: $white;*/
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+
+
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        color: #F0F0F0;
+                    }
+                }
+
+                .swiper-container.swiper.swiper-container-initialized.swiper-container-horizontal {
+                    .swiper-wrapper {
+                        .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+                            .swiper-pagination-bullet {
+                                width: 50px !important;
+                                border-radius: 0 !important;
+                            }
+                        }
+                    }
+                }
+
+
+
             }
 
             &.all_screen {
@@ -286,7 +369,7 @@
                 }
                 .body.row {
                     width: 100vw;
-                    margin: 0;
+                    margin: auto;
                     padding: 0;
                     img {
                         width: 100%;

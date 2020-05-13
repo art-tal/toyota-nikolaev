@@ -1,5 +1,17 @@
 import VueRouter from "vue-router";
-import SelectModel from "../components/MainNav/SelectModel";
+import Home from "../components/Home";
+import Lineup from "../components/cars/Lineup";
+
+import DownloadBrochures from "../components/sharedLinks/DownloadBrochures";
+import FAQ from "../components/sharedLinks/FAQ";
+import FormCallBack from "../components/sharedLinks/FormCallBack";
+
+
+import NewCars from "../components/cars/NewCars";
+import Model from "../components/cars/Model";
+import SelectModel from "../components/cars/SelectModel";
+
+import Equipment from "../components/configurator/Equipment";
 import Configurator from "../components/configurator/Configurator";
 import Engine from "../components/configurator/options/Engine";
 import ColorAndOption from "../components/configurator/ColorAndOption";
@@ -8,35 +20,34 @@ import EditEquipment from "../components/configurator/EditEquipment";
 import Colors from "../components/configurator/options/Colors";
 import Wheels from "../components/configurator/options/Wheels";
 import Interior from "../components/configurator/options/Interior";
-import Lineup from "../components/MainNav/Lineup";
-import Equipment from "../components/configurator/Equipment";
-// import ToTheOwners from "../components/MainNav/ToTheOwners";
-import SouvenirProducts from "../components/MainNav/SouvenirProducts";
-// import WhyToyota from "../components/MainNav/WhyToyota";
-// import ToyotaInNikolaev from "../components/MainNav/ToyotaInNikolaev";
-// import MobilityForEveryone from "../components/MainNav/MobilityForEveryone";
-import Accessories from "../components/configurator/options/Accessories";
-import Price from "../components/configurator/options/Price";
 import ToResult from "../components/configurator/options/ToResult";
+import Price from "../components/configurator/options/Price";
+import Accessories from "../components/configurator/options/Accessories";
 import Consult from "../components/configurator/Consult";
 import Step1 from "../components/configurator/consultSteps/Step1";
 import Step2 from "../components/configurator/consultSteps/Step2";
-import Home from "../components/Home";
+
+
+// import SouvenirProducts from "../components/cars/SouvenirProducts";
 import Insurance from "../components/toBuyers/Insurance";
 import Credit from "../components/toBuyers/Credit";
 import Corporate_sales from "../components/toBuyers/Corporate_sales";
 import Business_car from "../components/toBuyers/Business_car";
 import Business_owner from "../components/toBuyers/Business_owner";
 import Corporate_clients from "../components/toBuyers/Corporate_clients";
-// import Special_solutions from "../components/toBuyers/Special_solutions";
 import General from "../components/toBuyers/General";
+
 import SignUpForService from "../components/service/SignUpForService";
-import News from "../components/whyToyota/News";
-import Article from "../components/whyToyota/Article";
-import WorldOfToyota from "../components/whyToyota/WorldOfToyota";
+
+import News from "../components/whyToyota/worldOfToyota/News";
+import Article from "../components/whyToyota/worldOfToyota/Article";
+import WorldOfToyota from "../components/whyToyota/worldOfToyota/WorldOfToyota";
+
 import SubMenuNikolaev from "../components/ToyotaInNikolaev/SubMenuNikolaev";
+import ToyotaMykolaiv from "../components/ToyotaInNikolaev/ToyotaMykolaiv";
 import CarsAvailable from "../components/ToyotaInNikolaev/CarsAvailable";
 import Car from "../components/ToyotaInNikolaev/Car";
+
 import Maintenance from "../components/service/maintenance/Maintenance";
 import Principles from "../components/service/maintenance/Principles";
 import MaintenanceGeneral from "../components/service/maintenance/MaintenanceGeneral";
@@ -44,12 +55,14 @@ import Guarantee from "../components/service/maintenance/Guarantee";
 import Lubricants from "../components/service/maintenance/Lubricants";
 import Calc from "../components/service/maintenance/Calc";
 import SpecialCompany from "../components/service/maintenance/SpecialCompany";
+
 import OriginalAccessories from "../components/service/originalAccessories/OriginalAccessories";
 import AccessoriesGeneral from "../components/service/originalAccessories/AccessoriesGeneral";
 import EntertainmentSystem from "../components/service/originalAccessories/EntertainmentSystem";
 import ToyotaProTect from "../components/service/originalAccessories/ToyotaProTect";
 import ToyotaTouch2 from "../components/service/originalAccessories/ToyotaTouch2";
 import BabyCarSeats from "../components/service/originalAccessories/BabyCarSeats";
+
 import OriginalSpareParts from "../components/service/OriginalSpareParts/OriginalSpareParts";
 import OriginalSparePartsGeneral from "../components/service/OriginalSpareParts/OriginalSparePartsGeneral";
 import ChooseOriginal from "../components/service/OriginalSpareParts/ChooseOriginal";
@@ -61,8 +74,20 @@ import ToyotaAdBlueLiquid from "../components/service/OriginalSpareParts/ToyotaA
 import BrakeDiscsAndPads from "../components/service/OriginalSpareParts/BrakeDiscsAndPads";
 import OriginalWindshields from "../components/service/OriginalSpareParts/OriginalWindshields";
 import FuelSystemCleaner from "../components/service/OriginalSpareParts/FuelSystemCleaner";
+
 import ToyotaAssistance from "../components/service/RoadsideAssistance/ToyotaAssistance";
 import ToyotaAssistancePlus from "../components/service/RoadsideAssistance/ToyotaAssistancePlus";
+
+import OlympicPartnership from "../components/whyToyota/worldOfToyota/OlympicPartnership";
+import ToyotaGazooRacing from "../components/whyToyota/worldOfToyota/ToyotaGazooRacing";
+import ToyotaAtRally from "../components/whyToyota/worldOfToyota/ToyotaAtRally";
+import HistoryOfToyotaSportsCars from "../components/whyToyota/worldOfToyota/HistoryOfToyotaSportsCars";
+import ToyodaAA from "../components/whyToyota/worldOfToyota/ToyodaAA";
+import VypadkyShahrajstva from "../components/sharedLinks/VypadkyShahrajstva";
+// import TheLookingAround from "@/components/cars/TheLookingAround";
+import EnginesAndCharacteristics from "../components/cars/EnginesAndCharacteristics";
+import Prices from "../components/cars/Prices";
+import ReliabilityAndGuarantee from "../components/cars/ReliabilityAndGuarantee";
 
 export default new VueRouter({
     routes: [
@@ -79,19 +104,78 @@ export default new VueRouter({
         },
 
         {
+            path: '/new_cars',
+            name: 'new_cars',
+            component: NewCars,
+        },
+
+        {
+            path: '/model',
+            name: 'model',
+            component: Model,
+        },
+
+        {
+            path: '/download_brochures',
+            name: 'download_brochures',
+            component: DownloadBrochures,
+        },
+
+        {
+            path: '/faq',
+            name: 'faq',
+            component: FAQ,
+        },
+
+        {
+            path: '/form_call_back',
+            name: 'form_call_back',
+            component: FormCallBack,
+        },
+
+        {
+            path: '/vypadky_shahrajstva',
+            name: 'vypadky_shahrajstva',
+            component: VypadkyShahrajstva,
+        },
+
+
+
+
+
+        {
             path: '/select_model/:id',
             name: 'selectModel',
             component: SelectModel,
             children: [
+
                 {
                     path: '/select_model/:id/equipment',
                     name: 'Equipment',
                     component: Equipment,
                 },
 
-
             ]
         },
+
+        {
+            path: '/engines_and_characteristics/:id',
+            name: 'engines_and_characteristics',
+            component: EnginesAndCharacteristics,
+        },
+
+        {
+            path: '/prices/:id',
+            name: 'prices',
+            component: Prices,
+        },
+
+        {
+            path: '/reliability_and_guarantee/:id',
+            name: 'reliability_and_guarantee',
+            component: ReliabilityAndGuarantee,
+        },
+
 
         {
             path: '/configurator',
@@ -199,11 +283,7 @@ export default new VueRouter({
         },
 
 
-        // {
-        //     path: '/to_buyers',
-        //     name: "ToBuyers",
-        //     component: ToBuyers,
-        // },
+
 
         {
             path: "/insurance",
@@ -399,11 +479,6 @@ export default new VueRouter({
         },
 
 
-
-
-
-
-
         {
             path: "/world_of_toyota",
             name: "world_of_toyota",
@@ -420,6 +495,36 @@ export default new VueRouter({
                     name: "article",
                     component: Article,
                 },
+
+                {
+                    path: "/world_of_toyota/olympic_partnership",
+                    name: "olympic_partnership",
+                    component: OlympicPartnership,
+                },
+
+                {
+                    path: "/world_of_toyota/toyota_gazoo_racing",
+                    name: "toyota_gazoo_racing",
+                    component: ToyotaGazooRacing,
+                },
+
+                {
+                    path: "/world_of_toyota/toyota_at_rally",
+                    name: "toyota_at_rally",
+                    component: ToyotaAtRally,
+                },
+
+                {
+                    path: "/world_of_toyota/history_of_toyota_sports_cars",
+                    name: "history_of_toyota_sports_cars",
+                    component: HistoryOfToyotaSportsCars,
+                },
+
+                {
+                    path: "/world_of_toyota/toyoda_aa",
+                    name: "toyoda_aa",
+                    component: ToyodaAA,
+                },
             ],
         },
 
@@ -427,6 +532,12 @@ export default new VueRouter({
             path: "/sub_menu_mykolaiv",
             name: "sub_menu_mykolaiv",
             component: SubMenuNikolaev,
+        },
+
+        {
+            path: "/toyota_mykolaiv",
+            name: "toyota_mykolaiv",
+            component: ToyotaMykolaiv,
         },
 
         {
@@ -449,35 +560,14 @@ export default new VueRouter({
 
         ////////////////////Заглушки//////////////////////////
 
-        // {
-        //     path: "/to_the_owners",
-        //     name: "ToTheOwners",
-        //     component: ToTheOwners,
-        // },
-
-        {
-            path: "/souvenir_products",
-            name: "SouvenirProducts",
-            component: SouvenirProducts,
-        },
 
         // {
-        //     path: "/why_toyota",
-        //     name: "WhyToyota",
-        //     component: WhyToyota,
+        //     path: "/souvenir_products",
+        //     name: "SouvenirProducts",
+        //     component: SouvenirProducts,
         // },
 
-        // {
-        //     path: "/toyota_in_nikolaev",
-        //     name: "toyota_in_nikolaev",
-        //     component: ToyotaInNikolaev,
-        // },
 
-        // {
-        //     path: "/mobility_for_everyone",
-        //     name: "MobilityForEveryone",
-        //     component: MobilityForEveryone,
-        // },
     ],
 
     mode: 'history'

@@ -47,12 +47,22 @@
 
 
             <div class="video">
-                <video width="100%"
-                       src="../../../img/brake_discs_and_pads_toyota.mp4"
-                       controls="controls"
-                       type="video/mp4"
-                       poster="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Brakes-video_tcm-3046-702187.jpg">
-                </video>
+<!--                <video width="100%"-->
+<!--                       src="../../../video/brake_discs_and_pads_toyota.mp4"-->
+<!--                       controls="controls"-->
+<!--                       type="video/mp4"-->
+<!--                       poster="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Brakes-video_tcm-3046-702187.jpg">-->
+<!--                </video>-->
+
+                <div class="img_button" @click="openVideo()">
+                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Brakes-video_tcm-3046-702187.jpg" alt="Гальмівні диски та колодки Toyota  Зупиняють надійно та безпечно">
+                </div>
+
+                <div class="open-video" v-if="showVideo">
+                    <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KIUNGfE-v_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
         </div>
 
         </div>
@@ -62,7 +72,20 @@
 
 <script>
     export default {
-        name: "BrakeDiscsAndPads"
+        name: "BrakeDiscsAndPads",
+
+        data() {
+            return {
+                showVideo: false,
+            }
+        },
+
+        methods: {
+            openVideo() {
+                this.showVideo = !this.showVideo;
+                console.log(this.showVideo);
+            },
+        }
     }
 </script>
 
@@ -139,6 +162,40 @@
                     }
                 }
             }
+
+            .video {
+                margin: 20px 0;
+                padding: 0;
+                .img_button {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .open-video {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 999;
+                    .close {
+                        width: 100%;
+                        padding: 10px 20px;
+                        background-color: #000000;
+                        color: #f0f0f0;
+                        font-size: 2rem;
+                        opacity: 1;
+                    }
+                    iframe {
+                        width: 100%;
+                        height: calc(100% - 40px);
+                    }
+                }
+
+            }
+
         }
 
 

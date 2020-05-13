@@ -418,7 +418,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../../styles/variables';
+    @import '../../../styles/variables';
 
     .container-fluid {
         padding: 0;

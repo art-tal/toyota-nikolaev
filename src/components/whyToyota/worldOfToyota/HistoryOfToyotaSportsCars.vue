@@ -1,10 +1,10 @@
 <template>
-    <section>Why toyota</section>
+    <section></section>
 </template>
 
 <script>
     export default {
-        name: "WhyToyota"
+        name: "HistoryOfToyotaSportsCars"
     }
 </script>
 

@@ -135,7 +135,7 @@
                     </article>
 
                     <article class="row">
-                        <div class="img col-md-6 col-12 order-2">
+                        <div class="img col-md-6 col-12 order-md-0 order-2 ">
                             <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3_tcm-3046-1546163.jpg"
                                  alt="BABY-SAFE PLUS">
                         </div>
@@ -179,7 +179,7 @@
                     </article>
 
                     <article class="row">
-                        <div class="img col-md-6 col-12 order-2">
+                        <div class="img col-md-6 col-12 order-md-0 order-2">
                             <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/5_tcm-3046-1544886.jpg"
                                  alt="KIDFIX XP">
                         </div>

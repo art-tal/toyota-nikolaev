@@ -66,7 +66,7 @@
 </template>
 
 <script>
-    import SubNavigation from "../MainNav/SubNavigation";
+    import SubNavigation from "../cars/SubNavigation";
 
     export default {
         name: "Configurator",

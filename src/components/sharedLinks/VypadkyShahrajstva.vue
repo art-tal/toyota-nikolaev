@@ -1,10 +1,10 @@
 <template>
-    <section>to buyers</section>
+    <main></main>
 </template>
 
 <script>
     export default {
-        name: "ToBuyers"
+        name: "VypadkyShahrajstva"
     }
 </script>
 

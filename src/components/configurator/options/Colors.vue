@@ -3,10 +3,10 @@
 
         <div class="row">
             <div class="colorName col-md-4 col-12 font-weight-bold text-left">
-                {{selectedColor.color_name}}
+                {{selectedColor.color_name}}<br>
                 <span v-if="selectedColor.metallic">Металік</span>
                 <span v-if="selectedColor.pearl">Перламутр</span>
-                ({{selectedColor.color_code}})
+<!--                ({{selectedColor.color_code}})-->
             </div>
             <ul class="sampleOfColor col-md-8 col-12 text-left">
                 <li v-for="(color, key) in colors"
@@ -62,8 +62,8 @@
                 console.log(this.mod_id);
                 axios.get(
                     // `lara.toyota.nikolaev.ua/ajax/mod_color`,
-                    `http://lara.toyota.nikolaev.ua/ajax/mod_color?id=33`,//${this.mod_id}
-                    // {id: 33},//this.mod_id
+                    `http://lara.toyota.nikolaev.ua/ajax/mod_color`,//?id=33`,//${this.mod_id}
+                    {params: {id: this.id_equip}},//
                 )
                     .then( (response) => {
                         this.colors = response.data;

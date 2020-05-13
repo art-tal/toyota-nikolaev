@@ -1,10 +1,12 @@
 <template>
-    <section>Toyota in Nikolaev</section>
+    <section>
+
+    </section>
 </template>
 
 <script>
     export default {
-        name: "ToyotaInNikolaev"
+        name: "ToyodaAA"
     }
 </script>
 

@@ -11,7 +11,17 @@
 
 <!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-                        <button class="btn btn-light">Корпоративні продажі</button>
+<!--                        <button class="btn btn-light">Корпоративні продажі</button>-->
+                        <router-link
+                                tag="button"
+                                class="btn btn-light"
+                                exact
+                                active-class="active"
+                                to="/corporate_sales/general"
+                        >
+<!--                            <i class="fas fa-phone"></i>-->
+                            <span>Корпоративні продажі</span>
+                        </router-link>
                     </div>
 
 <!--                    <br/>-->
@@ -21,7 +31,17 @@
 
 <!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-                        <button class="btn btn-light">Новини Toyota</button>
+<!--                        <button class="btn btn-light">Новини Toyota</button>-->
+                        <router-link
+                                tag="button"
+                                class="btn btn-light"
+                                exact
+                                active-class="active"
+                                to="/world_of_toyota"
+                        >
+                            <!--                            <i class="fas fa-phone"></i>-->
+                            <span>Новини Toyota</span>
+                        </router-link>
                     </div>
 
                 </div>

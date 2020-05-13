@@ -81,17 +81,26 @@
                             </a>
                         </li>
                         <li class="dilers">
-                            <a href="#">
+<!--                            <a href="#">-->
+<!--                                <i class="far fa-file-alt"></i>-->
+<!--                                <span>Завантажити брошури</span>-->
+<!--                            </a>-->
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/download_brochures"
+                            >
                                 <i class="far fa-file-alt"></i>
                                 <span>Завантажити брошури</span>
-                            </a>
+                            </router-link>
                         </li>
-                        <li class="contact">
-                            <a href="#">
-                                <i class="fas fa-car"></i>
-                                <span>Гібридні іновації</span>
-                            </a>
-                        </li>
+<!--                        <li class="contact">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-car"></i>-->
+<!--                                <span>Гібридні іновації</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
 <!--                        <li class="test_drive">-->
 <!--                            <a href="#">-->
 <!--                                <i class="fas fa-tag"></i>-->
@@ -99,17 +108,26 @@
 <!--                            </a>-->
 <!--                        </li>-->
                         <li class="download">
-                            <a href="#">
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-phone"></i>-->
+<!--                                <span>Часті запитання</span>-->
+<!--                            </a>-->
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/faq"
+                            >
                                 <i class="fas fa-phone"></i>
-                                <span>Зв’язатись з нами</span>
-                            </a>
+                                <span>Часті запитання</span>
+                            </router-link>
                         </li>
-                        <li class="download">
-                            <a href="#">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Офіційні дилери</span>
-                            </a>
-                        </li>
+<!--                        <li class="download">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-map-marker-alt"></i>-->
+<!--                                <span>Офіційні дилери</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                     </ol>
                 </div>
             </div>

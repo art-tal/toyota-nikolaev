@@ -1,10 +1,10 @@
 <template>
-    <section>mobility for everyone</section>
+    <section></section>
 </template>
 
 <script>
     export default {
-        name: "MobilityForEveryone"
+        name: "ToyotaAtRally"
     }
 </script>
 

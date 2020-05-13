@@ -98,55 +98,6 @@
                     </ul>
                 </div>
 
-<!--                <div class="col-xl-4 col-md-6 col-12">-->
-<!--                    <router-link-->
-<!--                            exact-->
-<!--                            tag="a"-->
-<!--                            class="nav-link"-->
-<!--                            active-class="active"-->
-<!--                            to="/corporate_sales"-->
-<!--                    >Оригінальні аксесуари</router-link>-->
-
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            <router-link-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/corporate_sales/business_car"-->
-<!--                            >Модульна розважальна система</router-link>-->
-<!--                        </li>-->
-
-<!--                        <li>-->
-<!--                            <router-link-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/corporate_sales/business_owner"-->
-<!--                            >Toyota ProTect</router-link>-->
-<!--                        </li>-->
-
-<!--                        <li>-->
-<!--                            <router-link-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/corporate_sales/corporate_clients"-->
-<!--                            >Cистема Toyota Touch 2</router-link>-->
-<!--                        </li>-->
-
-<!--                        <li>-->
-<!--                            <router-link-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/corporate_sales/special_solutions"-->
-<!--                            >Дитячі автомобільні крісла</router-link>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-
-<!--                </div>-->
-
                 <div class="col-xl-4 col-md-6 col-12">
                     <router-link
                             exact
@@ -244,14 +195,6 @@
                 <div class="col-xl-4 col-md-6 col-12">
                     <a href.prevent="" class="nav-link">Допомога в дорозі</a>
 
-<!--                    <router-link-->
-<!--                            exact-->
-<!--                            tag="a"-->
-<!--                            class="nav-link"-->
-<!--                            active-class="active"-->
-<!--                            to="/corporate_sales"-->
-<!--                    >Допомога в дорозі</router-link>-->
-
                     <ul>
                         <li>
                             <router-link
@@ -288,17 +231,22 @@
                             </a>
                         </li>
                         <li class="dilers">
-                            <a href="#">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/download_brochures"
+                            >
                                 <i class="far fa-file-alt"></i>
                                 <span>Завантажити брошури</span>
-                            </a>
+                            </router-link>
                         </li>
-                        <li class="contact">
-                            <a href="#">
-                                <i class="fas fa-car"></i>
-                                <span>Гібридні іновації</span>
-                            </a>
-                        </li>
+<!--                        <li class="contact">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-car"></i>-->
+<!--                                <span>Гібридні іновації</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
 <!--                        <li class="test_drive">-->
 <!--                            <a href="#">-->
 <!--                                <i class="fas fa-tag"></i>-->
@@ -306,17 +254,22 @@
 <!--                            </a>-->
 <!--                        </li>-->
                         <li class="download">
-                            <a href="#">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/faq"
+                            >
                                 <i class="fas fa-phone"></i>
-                                <span>Зв’язатись з нами</span>
-                            </a>
+                                <span>Часті запитання</span>
+                            </router-link>
                         </li>
-                        <li class="download">
-                            <a href="#">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Офіційні дилери</span>
-                            </a>
-                        </li>
+<!--                        <li class="download">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-map-marker-alt"></i>-->
+<!--                                <span>Офіційні дилери</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                     </ol>
                 </div>
             </div>

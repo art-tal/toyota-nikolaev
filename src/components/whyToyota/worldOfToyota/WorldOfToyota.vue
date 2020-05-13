@@ -18,7 +18,7 @@
                                         active-class="active"
                                         tag="a"
                                         exact
-                                        to=""
+                                        to="/world_of_toyota/news"
                                 >
                                     Статті / Новини / Події
                                 </router-link>
@@ -30,7 +30,7 @@
                                         active-class="active"
                                         tag="a"
                                         exact
-                                        to=""
+                                        to="/world_of_toyota/olympic_partnership"
                                 >Олімпійське партнерство</router-link>
                             </li>
 
@@ -40,7 +40,7 @@
                                         active-class="active"
                                         tag="a"
                                         exact
-                                        to=""
+                                        to="/world_of_toyota/toyota_gazoo_racing"
                                 >TOYOTA GAZOO Racing</router-link>
                             </li>
 
@@ -50,7 +50,7 @@
                                         active-class="active"
                                         tag="a"
                                         exact
-                                        to=""
+                                        to="/world_of_toyota/toyota_at_rally"
                                 >Toyota на чемпіонаті світу з ралі</router-link>
                             </li>
 
@@ -60,7 +60,7 @@
                                         active-class="active"
                                         tag="a"
                                         exact
-                                        to=""
+                                        to="/world_of_toyota/history_of_toyota_sports_cars"
                                 >Історія спорткарів Toyota</router-link>
                             </li>
 
@@ -70,7 +70,7 @@
                                         active-class="active"
                                         tag="a"
                                         exact
-                                        to=""
+                                        to="/world_of_toyota/toyoda_aa"
                                 >Toyoda AA</router-link>
                             </li>
 
@@ -85,7 +85,7 @@
 </template>
 
 <script>
-    import Sidebar from "../permanent/Sidebar";
+    import Sidebar from "../../permanent/Sidebar";
 
     export default {
         name: "WorldOfToyota",
@@ -128,13 +128,13 @@
         },
 
         created() {
-            this.$router.push({name: "news"});
+            // this.$router.push({name: "news"});
         },
     }
 </script>
 
 <style lang="scss" scoped>
-    @import '../../styles/variables';
+    @import '../../../styles/variables';
 
     main.container-fluid {
         padding: 0;

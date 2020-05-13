@@ -13,7 +13,7 @@
                             tag="li"
                             exact
                             active-class="active"
-                            to="/select_model/:id"
+                            :to="'/select_model/' + this.getID"
                     >
 <!--                        <span>Сконфигурировать</span>-->
                         <a class="nav-link">Загальний огляд <span class="sr-only">(current)</span></a>
@@ -26,10 +26,10 @@
                             tag="li"
                             exact
                             active-class="active"
-                            to="/"
+                            :to="'/engines_and_characteristics/' + this.getID"
                     >
 <!--                        <span>Сконфигурировать</span>-->
-                        <a class="nav-link" href="#">Особливості та характеристики </a>
+                        <a class="nav-link" href="#">Двигуни та характеристики</a>
                     </router-link>
 <!--                    <li class="nav-item">-->
 <!--                        <a class="nav-link" href="#">Особенности и характеристики</a>-->
@@ -39,7 +39,7 @@
                             tag="li"
                             exact
                             active-class="active"
-                            to="/"
+                            :to="'/prices/' + this.getID"
                     >
 <!--                        <span>Сконфигурировать</span>-->
                         <a class="nav-link" href="#">Ціни</a>
@@ -52,7 +52,7 @@
                             tag="li"
                             exact
                             active-class="active"
-                            to="/"
+                            :to="'/reliability_and_guarantee/' + this.getID"
                     >
 <!--                        <span>Сконфигурировать</span>-->
                         <a class="nav-link" href="#">Надійність та гарантія</a>
@@ -92,7 +92,30 @@
 
 <script>
     export default {
-        name: "SubNavigation"
+        name: "SubNavigation",
+
+        data() {
+            return {
+                id: 0,
+            }
+        },
+
+        created() {
+            this.id = this.$route.params.id;
+            console.log(this.id);
+        },
+
+        computed: {
+            getID() {
+                if(this.$route.params.id) {
+                    return this.$route.params.id;
+                } else if( this.$store.getters.getModelId) {
+                    return this.$store.getters.getModelId;
+                } else {
+                    return localStorage.id;
+                }
+            },
+        },
     }
 </script>
 
@@ -103,7 +126,7 @@
         box-sizing: border-box;
         width: 100%;
         nav.navbar {
-            padding: 0px 150px;
+            padding: 0 150px;
             font-size: 1.3rem;
             .collapse {
                 ul {

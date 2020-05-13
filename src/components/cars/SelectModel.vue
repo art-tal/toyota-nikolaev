@@ -1,8 +1,10 @@
 <template>
     <main class="selectModel">
-<!--        @selectedEquipment="selectedModel($event)"-->
         <sub-navigation></sub-navigation>
 
+<!--        <router-link :id="this.$route.params.id"></router-link>-->
+
+<!--        <div class="container-fluid">-->
         <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">
 
             <header class="row">
@@ -36,31 +38,24 @@
 
             <equipment v-if="showEquipment"></equipment>
 
-<!--            <equipment v-if="showEquipment"-->
-<!--                       :id="id"-->
-<!--                       :photo="'http://lara.toyota.nikolaev.ua/storage/' + model.image"-->
-<!--                       :color="modelColor"-->
-<!--            ></equipment>-->
 
+<!--            <div class="compare text-left" v-if="!showEquipment">-->
+<!--                <a href="#" class="text-decoration-none" :style="{'color': fontColored + '!important'}">-->
 
-
-
-            <div class="compare text-left" v-if="!showEquipment">
-                <a href="#" class="text-decoration-none" :style="{'color': fontColored + '!important'}">
-
-                    <i class="fas fa-exchange-alt"></i>
-                    <span>Порівняти</span>
-                </a>
-            </div>
+<!--                    <i class="fas fa-exchange-alt"></i>-->
+<!--                    <span>Порівняти</span>-->
+<!--                </a>-->
+<!--            </div>-->
 
             <div class="carView row">
                 <div class="carDescription col-xl-10 col-lg-11 col-12 row">
                     <ul class="description col-xl-3 col-12 text-left">
-                        <li v-for="(desc, index) in model.description"
+                        <li v-for="(desc, index) in descriptionList"
                             :key="index"
                             :style="{'color': fontColored + '!important'}"
                         >
                             {{desc}}</li>
+<!--                        <li :style="{'color': fontColored + '!important'}">{{equipment.description}}</li>-->
                     </ul>
 
                     <div class="carPhoto col-xl-9 col-12">
@@ -83,13 +78,14 @@
             <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center">
                 <p>Від</p>
                 <span class="h2 d-block font-weight-bolder">
-                    {{computedEquipment.price | formattedPrice}}&#8372;
+                    {{computedEquipment.gross_price | formattedPrice}}&#8372;
                 </span>
 
             </div>
+
             <div class="fuelConsumption col-xl-2 col-md-3 col-6">
                 <p>Споживання пального</p>
-                <span class="h1">{{model.fuelConsumption}}</span>
+                <span class="h1">{{equipment.fuel}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
             <div class="maxSpeed col-xl-2 col-md-3 col-6">
@@ -123,7 +119,7 @@
                         tag="button"
                         class="col-6 btn btn-danger"
                         exact
-                        to="/consultation"
+                        to="/consultation/step_1"
                 >
                     Замовити тест-драйв
                 </router-link>
@@ -144,6 +140,100 @@
         </div>
 
 
+
+        <div class="video container-fluid p-0 m-0"
+             v-if="modelVideo.link"
+        >
+
+            <div class="player" v-if="showVideo">
+                <video
+                       width="100%"
+                       height="auto"
+                       :src="modelVideo.link"
+                       controls="controls"
+                       autoplay
+                       type="video/mp4"
+                       :poster="modelVideo.poster">
+                </video>
+                <i class="fas fa-times" @click="openVideo()" v-if="showVideo"></i>
+            </div>
+
+
+            <div class="poster" v-else :style="'background-image: url(' + modelVideo.poster + ')'">
+                <img class="w-100" :src="modelVideo.poster" :alt="model.name">
+                <div class="info text-left">
+                    <h2>{{modelVideo.header}}</h2>
+                    <p>{{modelVideo.info}}</p>
+                </div>
+
+                <button class="btn btn-play" @click="openVideo()">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+
+
+
+<!--            src="http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video.mp4_tcm-3046-1622631.mp4"-->
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+<!--        <section class="container-fluid gallery">-->
+<!--            <header>-->
+<!--                <h1>Галерея</h1>-->
+<!--            </header>-->
+
+<!--            <div class="body">-->
+<!--                -->
+<!--            </div>-->
+<!--        </section>-->
+
+        <section class="links container d-flex justify-content-between">
+            <div class="link">
+                <i class="fas fa-calculator"></i>
+                <h3>Програма «Тойота Кредит»</h3>
+                <router-link
+                        tag="button"
+                        class="btn btn-light"
+                        exact
+                        to="/credit"
+                >Детальніше</router-link>
+            </div>
+
+            <div class="link">
+                <i class="far fa-file-alt"></i>
+                <h3>Брошура по моделі</h3>
+                <router-link
+                        tag="button"
+                        class="btn btn-light"
+                        exact
+                        to="/download_brochures"
+                >Завантажити брошуру</router-link>
+            </div>
+
+            <div class="link">
+                <i class="far fa-calendar-alt"></i>
+                <h3>Замовити онлайн-консультацію</h3>
+                <router-link
+                        tag="button"
+                        class="btn btn-light"
+                        exact
+                        to="/consultation/step_1"
+                >Замовити онлайн-консультацію</router-link>
+            </div>
+        </section>
+
+
     </main>
 </template>
 
@@ -152,13 +242,13 @@
     import {eventEmitter} from "../../main";
     import Equipment from "../configurator/Equipment";
     import ColorsPanel from "../configurator/options/ColorsPanel";
-    import SubNavigation from "../MainNav/SubNavigation";
+    import SubNavigation from "./../cars/SubNavigation";
     import formattedPrice from "../../filters/price_format";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
     // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
     // import ColorsPanel from "./../configurator/options/ColorsPanel";//              for Laravel
-    // import SubNavigation from "./../../components/MainNav/SubNavigation";//         for Laravel
+    // import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
 
     export default {
         name: "SelectModel",
@@ -168,6 +258,7 @@
             ColorsPanel,
             SubNavigation
         },
+
         data() {
             return {
                 renderComponent: 0,
@@ -182,8 +273,17 @@
                 equipment: {},
                 modelColor: "#fff",
 
+                showVideo: false,
+
                 modelTitle: "",
                 equipmentTitle: "",
+
+                modelVideo: {
+                    poster: '',
+                    link: "",
+                    header: "",
+                    info: "",
+                },
 
                 fontColor: "#202020",
 
@@ -227,23 +327,21 @@
             }
         },
 
-
-
         created() {
+            // this.$router.push({name:"/select_model/:id/looking_around/:id"});
+
             this.renderComponent = 0;
-            // this.id = this.$route.params.id;
-            this.id = localStorage.id;
-            // this.$store.state.model.id = this.id;
-            // this.getModel();
-            this.model = JSON.parse( localStorage.model );
-            this.modelTitle = this.model.name;
+            this.id = this.$route.params.id;
+            this.getModel();
+            // this.model = JSON.parse( localStorage.model );
+            // this.modelTitle = this.model.name;
 ///////////////////////////////////////////////////////ЗАГЛУШКА
-            this.model.description = [
-                "Світлодіодні денні ходові вогні",
-                "Круїз-контроль",
-                "6 гучномовців",
-                "Двозонний клімат-контроль"
-            ];
+//             this.model.description = [
+//                 "Світлодіодні денні ходові вогні",
+//                 "Круїз-контроль",
+//                 "6 гучномовців",
+//                 "Двозонний клімат-контроль"
+//             ];
                 this.model.maxSpeed = 210;
                 this.model.maxPower = 181;
                 this.model.fuelConsumption = 8.3;
@@ -265,14 +363,17 @@
             // eventEmitter.$on('selectedColor', (color) => {
             //     this.carColor = color;
             // });
+            // this.getVideo();
         },
-
 
 
         computed: {
             photo() {
-                // return this.$store.getters.modelImage;
-                return 'http://lara.toyota.nikolaev.ua/storage/' + this.model.image
+                if (this.$store.getters.colored.preview) {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                } else {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                }
             },
 
             computedEquipment() {
@@ -292,7 +393,21 @@
             checkId() {
                 this.$forceUpdate();
                 return this.$route.params['id'];
-            }
+            },
+
+            getID() {
+                if(this.$route.params.id) {
+                    return this.$route.params.id;
+                } else if( this.$store.getters.getModelId) {
+                    return this.$store.getters.getModelId;
+                } else {
+                    return localStorage.id;
+                }
+            },
+
+            descriptionList() {
+                return this.equipment.description.split('\n');
+            },
 
 
 
@@ -330,6 +445,32 @@
 
         methods: {
 
+            getModel() {
+                    axios.get(
+                        "http://lara.toyota.nikolaev.ua/ajax/all_model",
+                        {params: {id: this.getID}},
+                    ).then( (response) => {
+                        this.model = response.data[0];
+///////////////////////////////////////////////////////ЗАГЛУШКА
+//                         this.model.description = [
+//                             "Світлодіодні денні ходові вогні",
+//                             "Круїз-контроль",
+//                             "6 гучномовців",
+//                             "Двозонний клімат-контроль"
+//                         ];
+                        this.model.maxSpeed = 210;
+                        this.model.maxPower = 181;
+                        this.model.fuelConsumption = 8.3;
+                        this.getVideo();
+//////////////////////////////////////////////////////
+                        console.log(this.model);
+                    } )
+                        .catch( (error) => {
+                            console.log("Ошибка, не возможно загрузить доступные модели");
+                            console.log(error);
+                        })
+            },
+
             choice() {
                 if (!this.showEquipment) {
                     // this.showEquipment = !this.showEquipment;
@@ -342,21 +483,6 @@
                 this.equipmentTitle = this.computedEquipment.mod_name;
                 console.log(this.equipmentTitle);
             },
-
-            // getModel() {
-            //     axios({
-            //         method: 'get',
-            //         url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
-            //     }).then( (response) => {
-            //         console.log(response.data);
-            //         this.model = response.data[this.id-1];
-            //         this.$store.state.model = this.model;
-            //     } )
-            //         .catch( (error) => {
-            //             console.log("Ошибка, не возможно загрузить доступные модели");
-            //             console.log(error);
-            //         })
-            // },
 
             getEquipment() {
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
@@ -373,19 +499,33 @@
                 } );
             },
 
-            getFontColor: function () {
+            getFontColor() {
                 // console.log(this.computedColor.rgb);
                 try{
                 switch(this.computedColor.rgb.toLowerCase()){
                     case '#000000'.toLowerCase():
+                    case '#030303'.toLowerCase():
                     case '#182B66'.toLowerCase():
+                    case '#1d50aa'.toLowerCase():
                     case '#5C5653'.toLowerCase():
+                    case '#60101e'.toLowerCase():
                     case '#740310'.toLowerCase():
+                    case '#7a766f'.toLowerCase():
+                    case '#7c7a7a'.toLowerCase():
+                    case '#7d8489'.toLowerCase():
+                    case '#817e6e'.toLowerCase():
+                    case '#8c0414'.toLowerCase():
+                    case '#97a4ac'.toLowerCase():
+                    case '#aeabac'.toLowerCase():
+                    case '#b4ae9c'.toLowerCase():
                     case '#ff0000'.toLowerCase():
                         return this.fontColor = '#FFFFFF';
-                    case '#FFFFFF'.toLowerCase():
+                    case '#727270'.toLowerCase():
+                    case '#d7dcd9'.toLowerCase():
                     case '#EDE7E1'.toLowerCase():
-                    case '#F2F2F0'.toLowerCase():
+                    case '#f2f2f0'.toLowerCase():
+                    case '#fafafa'.toLowerCase():
+                    case '#FFFFFF'.toLowerCase():
                         return this.fontColor = '#202020';
                 }
             } catch (e) {
@@ -394,13 +534,91 @@
 
             },
 
+            getVideo() {
+                console.log(this.model.name.toLowerCase());
+                try {
+                    switch(this.model.name.toLowerCase()) {
+
+                        case 'yaris':
+                            this.modelVideo.poster = "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video-poster_tcm-3046-1618618.jpg";
+                            this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video.mp4_tcm-3046-1622631.mp4";
+                            this.modelVideo.header = "Створений для міського життя";
+                            this.modelVideo.info = "Завдяки низці інтелектуальних функцій ви отримаєте ще більше задоволення від Yaris.";
+                            break;
+
+                        case 'corolla':
+                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg";
+                            this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-movie_tcm-3046-1681827.mp4";
+                            this.modelVideo.header = "Новий рівень керування гібридом";
+                            this.modelVideo.info = "Седан Corolla вперше представлено у гібридній варіації. Автомобіль напрочуд швидкий та спритний завдяки застосуванню інноваційного самозарядного гібридного двигуна. Інженери запровадили абсолютно новий підхід до дизайну та проєктування. Завдяки цьому найбільш продавана модель у світі відтепер має нові характеристики: витончений екстер’єр, повністю оновлений інтер’єр, низку удосконалених технологій та, що найважливіше, поліпшені функції безпеки. Седан Corolla повертається – відтепер він ще кращий.\n";
+                            break;
+
+                        case 'camry':
+                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-camry-2019-video-poster_tcm-3046-1592534.jpg";
+                            this.modelVideo.link = "http://t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-camry-2019-video.mp4_tcm-3046-1690156.mp4";
+                            this.modelVideo.header = "Нова Toyota Camry";
+                            this.modelVideo.info = "Нова Camry Hybrid являє собою ідеальну комбінацію. Модель поєднує всі переваги елегантного седана та гібрида Toyota. Автомобіль гарантує чудову динаміку руху, що виводить гібрид на наступний рівень.";
+                            break;
+
+                        case 'c-hr':
+                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-c-hr-2019-video-poster_tcm-3046-1775577.jpg";
+                            this.modelVideo.link = "http://t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-c-hr-2019-video_tcm-3046-1777521.mp4";
+                            this.modelVideo.header = "Залиште звичне позаду";
+                            this.modelVideo.info = "Вийдіть за рамки у світі, сповненому звичного.Порушуйте умовності та довіряйте неординарності. Toyota C-HR – емоційний, елегантний, прогресивний міський кросовер – діамант модельного ряду Toyota.";
+                            break;
+
+                        case 'rav4':
+                            this.modelVideo.poster = "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-2019-video-poster-v2_tcm-3046-1528190.jpg";
+                            this.modelVideo.link = "http://t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-2019-video_tcm-3046-1688758.mp4";
+                            this.modelVideo.header = "Жодних компромісів";
+                            this.modelVideo.info = "RAV4 створено бути керованим, а дизайн розроблений, щоб виділитися. Завдяки самозарядному та потужному гібридному приводу, ви насолоджуєтеся всіма перевагами електродвигуна, без незручностей. Просторий та зручний інтер’єр, надає відчуття комфорту під час подорожей по місту.";
+                            break;
+
+                        case 'highlander':
+                            this.modelVideo.poster = "";
+                            this.modelVideo.link = "";
+                            this.modelVideo.header = "";
+                            this.modelVideo.info = "";
+                            break;
+
+                        case 'land cruiser prado':
+                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-2019-video-poster_tcm-3046-1694671.jpg";
+                            this.modelVideo.link = "http://t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-2019-video.mp4_tcm-3046-1703639.mp4";
+                            this.modelVideo.header = "Функції, на які можна покластися";
+                            this.modelVideo.info = "Окрім легендарних характеристик, Land Cruiser підтримує низку унікальних функцій.";
+                            break;
+
+                        case 'land cruiser 200':
+                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-v8-2019-video-poster_tcm-3046-1705028.jpg";
+                            this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-v8-2019-movie.mp4_tcm-3046-1705078.mp4";
+                            this.modelVideo.header = "Функції, на які можна розраховувати";
+                            this.modelVideo.info = "Новий Land Cruiser 200 підтримує безліч передових функцій та поєднує потужність і практичність.";
+                            break;
+
+                        case 'hilux':
+                            this.modelVideo.poster = "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-video-poster_tcm-3046-1703624.jpg";
+                            this.modelVideo.link = "http://t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-movie-full.mp4_tcm-3046-1703620.mp4";
+                            this.modelVideo.header = "Впорається з будь-яким випробуванням";
+                            this.modelVideo.info = "У Hilux поєднуються міцність і потужність пікапа та інноваційні технології. Це новий досвід водіння.";
+                            break;
+                    }
+                } catch (e) {
+                    console.log("Видео пролетело");
+                }
+
+            },
+
+            openVideo() {
+                this.showVideo = !this.showVideo;
+            },
+
+
+
             // goToConfigurator(id_mod, id_equip) {
             //     // this.$router.push({name: "Configurator", params: {id_mod: id_mod, id_equip: id_equip}});
             // },
 
         }
-
-
     }
 </script>
 
@@ -488,7 +706,7 @@
             padding: 0 15px;
             .price {
                 .h2 {
-                    font-size: 3.5rem;
+                    font-size: 3.2rem;
                     margin: 0;
                 }
             }
@@ -536,6 +754,80 @@
                 }
             }
 
+        }
+
+        .video.container-fluid {
+            position: relative;
+            width: 100%;
+            height: auto;
+            /*height: 600px;*/
+
+            .poster {
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+                .info {
+                    position: absolute;
+                    top: 200px;
+                    left: 120px;
+                    width: 40%;
+                    color: #ffffff;
+                    h2 {
+                        font-size: 4.4rem;
+                        font-weight: bold;
+                    }
+                    p {
+                        padding: 40px 0;
+                        font-size: 2.4rem;
+                    }
+                }
+
+                button.btn.btn-play {
+                    display: block;
+                    position: absolute;
+                    top: calc(50% - 48px);
+                    left: calc(50% - 48px);
+                    width: 96px;
+                    height: 96px;
+                    border-radius: 50%;
+                    background-color: #000000;
+                    color: #ffffff;
+                    font-size: 3rem;
+                    padding-left: 10px;
+                    box-shadow: 0 0 8px 8px rgba(255,255,255, 0.2);
+                }
+            }
+
+            .player {
+                i.fas.fa-times {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    color: #ffffff;
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        .links.container {
+            margin: 68px auto;
+            .link {
+                i {
+                    font-size: 8rem;
+                    color: #E50000;
+                }
+                h3 {
+                    font-size: 2.2rem;
+                    color: $font_color;
+                    font-weight: bold;
+                    margin: 30px 0;
+                }
+                button.btn.btn-light {
+                    @include button;
+                    background-color: #f0f0f0;
+                }
+            }
         }
     }
 

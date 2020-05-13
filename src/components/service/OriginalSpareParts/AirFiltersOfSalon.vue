@@ -26,15 +26,35 @@
 
             <h5>Підтримуйте свою Toyota у формі, справною і свіжою завдяки повітряним фільтрам салону Toyota та насолоджуйтеся очищеним досвідом водіння.</h5>
 
+
+
+
+
+
+
             <div class="video">
-                <video width="100%"
-                       src="../../../img/air_filters_of_salon_toyota.mp4"
-                       controls="controls"
-                       type="video/mp4"
-                       poster="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-674169.jpg">
-                </video>
-                <!--                <iframe width="100%" height="350" src="https://www.youtube.com/embed/MbJHw_WQRmk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--                <video width="100%"-->
+<!--                       src="../../../video/air_filters_of_salon_toyota.mp4"-->
+<!--                       controls="controls"-->
+<!--                       type="video/mp4"-->
+<!--                       poster="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-674169.jpg">-->
+<!--                </video>-->
+                
+                <div class="img_button" @click="openVideo()">
+                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-674169.jpg" alt="Підтримуйте свою Toyota у формі, справною і свіжою завдяки повітряним фільтрам салону Toyota">
+                </div>
+
+                <div class="open-video" v-if="showVideo">
+                    <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
+
+                    <iframe width="100%" height="50%" src="https://www.youtube.com/embed/Skn0N-g7Arw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
+
+
+
+
+
 
             <article class="recommended">
                 <header>
@@ -68,13 +88,20 @@
         data() {
             return {
                 showMemo: false,
+
+                showVideo: false,
             }
         },
 
         methods: {
             show() {
                 this.showMemo = !this.showMemo;
-            }
+            },
+
+            openVideo() {
+                this.showVideo = !this.showVideo;
+                console.log(this.showVideo);
+            },
         }
     }
 </script>
@@ -154,10 +181,34 @@
             .video {
                 margin: 20px 0;
                 padding: 0;
-                video {
-                    margin: 0;
-                    padding: 0;
+                .img_button {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
                 }
+                .open-video {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 999;
+                    .close {
+                        width: 100%;
+                        padding: 10px 20px;
+                        background-color: #000000;
+                        color: #f0f0f0;
+                        font-size: 2rem;
+                        opacity: 1;
+                    }
+                    iframe {
+                        width: 100%;
+                        height: calc(100% - 40px);
+                    }
+                }
+
             }
 
             article.recommended {

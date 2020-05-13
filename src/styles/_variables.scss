@@ -54,3 +54,90 @@ $border: 1px solid #f0f0f0;
       }
     }
 }
+
+@mixin header-xl {
+
+    width: 100%;
+    height: 80vh;
+    padding-top: 30px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: $font_color;
+
+    h1 {
+      width: 100%;
+      padding: 15px;
+      margin: 0 auto;
+      font-size: 5.2rem;
+      font-weight: bolder;
+      text-align: left;
+
+      h2 {
+        font-size: 3.4rem;
+        text-align: left;
+        padding-top: 16px;
+      }
+    }
+
+}
+
+@mixin header-lg {
+
+    max-height: 60vw;
+    h1 {
+      width: 100%;
+    }
+
+}
+
+@mixin header-md {
+
+    height: 56vh;
+    min-height: 180px;
+    max-height: 480px;
+    padding-top: 15px;
+    h1 {
+      width: 100%;
+      font-size: 4rem;
+      h2 {
+        font-size: 3rem;
+        padding-top: 10px;
+      }
+    }
+
+}
+
+@mixin header-sm {
+
+    min-height: 180px;
+    height: 56vw;
+    padding-top: 15px;
+    h1 {
+      width: 100%;
+      font-size: 3.5rem;
+      h2 {
+        font-size: 2.5rem;
+        padding-top: 5px;
+      }
+    }
+
+}
+
+@mixin header-xs {
+
+    height: auto;
+    min-height: 180px;
+    padding-top: 10px;
+    h1 {
+      padding: 10px 15px;
+      font-size: 2.5rem;
+      h2 {
+        font-size: 1.8rem;
+        padding-top: 5px;
+      }
+    }
+
+}

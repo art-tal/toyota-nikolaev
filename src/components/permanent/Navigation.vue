@@ -194,14 +194,14 @@
 </template>
 
 <script>
-    // import Lineup from "../MainNav/Lineup";
+    // import Lineup from "../cars/Lineup";
     // import SubMenuToBuyers from "../toBuyers/SubMenuToBuyers";
     // import SubMenuService from "../service/SubMenuService";
     // import SubMenuWhyToyota from "../whyToyota/SubMenuWhyToyota";
     // import SubMenuNikolaev from "../ToyotaInNikolaev/SubMenuNikolaev";
 
 
-    import Lineup from "./../../components/MainNav/Lineup";//                                       for Laravel
+    import Lineup from "../cars/Lineup";//                                       for Laravel
     import SubMenuToBuyers from "./../../components/toBuyers/SubMenuToBuyers";//                      for Laravel
     import SubMenuService from "./../../components/service/SubMenuService";//                          for Laravel
     import SubMenuWhyToyota from "./../../components/whyToyota/SubMenuWhyToyota";//                     for Laravel
@@ -266,6 +266,7 @@
                                 &:hover {
                                     background-color: #E50000;
                                     color: #fff;
+                                    cursor: pointer;
                                 }
                             }
                             .dropdown-menu {

@@ -41,9 +41,9 @@
                                 >{{equip}}</li>
                             </ul>
 
-                            <button type="button" class="btn btn-grey btn-small">
-                                <span>Показать стандартное оборудование</span>
-                            </button>
+<!--                            <button type="button" class="btn btn-grey btn-small">-->
+<!--                                <span>Показать стандартное оборудование</span>-->
+<!--                            </button>-->
                         </div>
                     </div>
                 </article>
@@ -67,13 +67,18 @@
                                         <header class="col-9">
                                             <h2 class="font-weight-bold">
                                                 <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">
+                                                    {{trans.volume}} мл
+                                                    {{trans.fuel_type}}
                                                     {{trans.eng_name}}
-                                                    <!--                                                {{equipment.engine.nameOfEngine}}-->
-                                                    <!--                                                ({{equipment.engine.maxPower}})-->
+                                                    ({{trans.horspower}} к.с.)
                                                 </a>
                                                 <!--                                            <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">{{equipment.engine.valueOfEngine}} {{equipment.engine.nameOfEngine}} ({{equipment.engine.maxPower}})</a>-->
                                             </h2>
-                                            <h3 class="">{{trans.gear_name}}</h3>
+                                            <h3 class="">
+                                                {{trans.gear_name}}
+                                                {{trans.drive_type}}
+
+                                            </h3>
                                             <!--                                        <h3 class="">{{equipment.transmision}}</h3>-->
                                         </header>
                                         <div class="engine_img col-3 text-right">
@@ -145,31 +150,39 @@
             // console.log(this.equipment);
             this.getEngine();
             ///////////////////////////////////////////////////////////////////
-            this.equipment.standart = [
-                            'Світлодіодні денні ходові вогні',
-                            'Круїз-контроль',
-                            '6 гучномовців',
-                            'Двозонний клімат-контроль'
-                        ];
-            this.equipment.engine = {
-                            nameOfEngine: 'Dual VVT-i',
-                            valueOfEngine: '2,5 л',
-                            typeOfEngine: 'Бензиновий',
-                            maxPower: '181 к. с.',
-                            info: ['Комбінований цикл: 8,3 л/100 км',
-                                'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
-                        };
-            this.equipment.transmision = "6-ступ. автомат. (Передній привод)";
+            // this.equipment.standart = [
+            //                 'Світлодіодні денні ходові вогні',
+            //                 'Круїз-контроль',
+            //                 '6 гучномовців',
+            //                 'Двозонний клімат-контроль'
+            //             ];
+            // this.equipment.engine = {
+            //                 nameOfEngine: 'Dual VVT-i',
+            //                 valueOfEngine: '2,5 л',
+            //                 typeOfEngine: 'Бензиновий',
+            //                 maxPower: '181 к. с.',
+            //                 info: ['Комбінований цикл: 8,3 л/100 км',
+            //                     'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
+            //             };
+            // this.equipment.transmision = "6-ступ. автомат. (Передній привод)";
             ////////////////////////////////////////////////////////////////////
             // this.getEquipment();
             // this.car = this.equipments[0];
             // this.selectedColor = this.colors[2];
         },
 
+
+
         computed: {
             photo() {
                 // return this.$store.getters.modelImage;
-                return 'http://lara.toyota.nikolaev.ua/storage/' + this.model.image
+                // return 'http://lara.toyota.nikolaev.ua/storage/' + this.model.image
+                if (this.$store.getters.colored.preview) {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                } else {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                }
+
             },
         },
 
@@ -177,8 +190,8 @@
 
             getEngine() {
                 axios.get(
-                    'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear?id=15',//
-                    // {"id": 15},
+                    'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',//?id=15',//
+                    {params: {"id": this.id_equip}},
                 )
                 .then( (response) => {
                     this.transmissions = response.data;
@@ -456,12 +469,12 @@
     @media (max-width: 575.9px) {
         section {
             .engine {
-                min-width: 500px;
-                padding: 2.4rem 2rem;
+                min-width: 350px;
+                padding: 1.5rem;
                 .container {
                     min-width: 100%;
                     margin: 0;
-
+                    padding: 0;
                     .row {
                         margin: 0;
                         .engine_data {

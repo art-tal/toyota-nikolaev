@@ -3,13 +3,14 @@
         <div class="row">
             <div class="col-xl-9 col-lg-8 col-12 row">
                 <div class="col-xl-4 col-md-6 col-12">
-                    <router-link
-                            exact
-                            tag="a"
-                            class="nav-link"
-                            active-class="active"
-                            to="/world_of_toyota"
-                    >Світ «Тойоти»</router-link>
+                    <a href="" class="nav-link" @click.prevent="">Світ «Тойоти»</a>
+<!--                    <router-link-->
+<!--                            exact-->
+<!--                            tag="a"-->
+<!--                            class="nav-link"-->
+<!--                            active-class="active"-->
+<!--                            to="/world_of_toyota"-->
+<!--                    >Світ «Тойоти»</router-link>-->
 
                     <ul>
                         <li>
@@ -17,7 +18,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/news"
+                                    to="/world_of_toyota/news"
                             >Статті / Новини / Події</router-link>
                         </li>
 
@@ -26,7 +27,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to=""
+                                    to="/world_of_toyota/olympic_partnership"
                             >Олімпійське партнерство</router-link>
                         </li>
 
@@ -35,7 +36,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to=""
+                                    to="/world_of_toyota/toyota_gazoo_racing"
                             >TOYOTA GAZOO Racing</router-link>
                         </li>
 
@@ -44,7 +45,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/world_of_toyota/toyota_at_rally"
                             >Toyota на чемпіонаті світу з ралі</router-link>
                         </li>
 
@@ -53,7 +54,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/world_of_toyota/history_of_toyota_sports_cars"
                             >Історія спорткарів Toyota</router-link>
                         </li>
 
@@ -62,11 +63,15 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/world_of_toyota/toyoda_aa"
                             >Toyoda AA</router-link>
                         </li>
                     </ul>
                 </div>
+
+
+
+
 
                 <div class="col-xl-4 col-md-6 col-12">
                     <router-link
@@ -231,18 +236,23 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-                        <li class="download">
-                            <a href="#">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Офіційні дилери</span>
-                            </a>
-                        </li>
+<!--                        <li class="download">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-map-marker-alt"></i>-->
+<!--                                <span>Офіційні дилери</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
 
                         <li class="dilers">
-                            <a href="#">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/download_brochures"
+                            >
                                 <i class="far fa-file-alt"></i>
                                 <span>Завантажити брошури</span>
-                            </a>
+                            </router-link>
                         </li>
 
                         <li class="contact">
@@ -257,10 +267,15 @@
                         </li>
 
                         <li class="download">
-                            <a href="#">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/faq"
+                            >
                                 <i class="fas fa-phone"></i>
-                                <span>Спеціальні сервісні кампанії</span>
-                            </a>
+                                <span>Часті запитання</span>
+                            </router-link>
                         </li>
                     </ol>
                 </div>

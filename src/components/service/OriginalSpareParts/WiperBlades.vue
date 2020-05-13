@@ -129,12 +129,22 @@
 
 
             <div class="video">
-                <video width="100%"
-                       src="../../../img/wiper_blades.mp4"
-                       controls="controls"
-                       type="video/mp4"
-                       poster="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-688589.jpg">
-                </video>
+<!--                <video width="100%"-->
+<!--                       src="../../../video/wiper_blades.mp4"-->
+<!--                       controls="controls"-->
+<!--                       type="video/mp4"-->
+<!--                       poster="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-688589.jpg">-->
+<!--                </video>-->
+
+                <div class="img_button" @click="openVideo()">
+                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-688589.jpg" alt="Заміна щіток склоочисників">
+                </div>
+
+                <div class="open-video" v-if="showVideo">
+                    <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
+
+<!--                    <iframe width="100%" height="50%" src="https://www.youtube.com/embed/Skn0N-g7Arw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                </div>
         </div>
 
         </div>
@@ -144,7 +154,20 @@
 
 <script>
     export default {
-        name: "WiperBlades"
+        name: "WiperBlades",
+
+        data() {
+            return {
+                showVideo: false,
+            }
+        },
+
+        methods: {
+            openVideo() {
+                this.showVideo = !this.showVideo;
+                console.log(this.showVideo);
+            },
+        }
     }
 </script>
 
@@ -244,6 +267,38 @@
 
             }
 
+            .video {
+                margin: 20px 0;
+                padding: 0;
+                .img_button {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .open-video {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: 999;
+                    height: 100vh;
+                    background-color: #fff;
+                    .close {
+                        width: 100%;
+                        padding: 10px 20px;
+                        background-color: #000000;
+                        color: #f0f0f0;
+                        font-size: 2rem;
+                        opacity: 1;
+                    }
+                    iframe {
+                        width: 100%;
+                        height: calc(100% - 40px);
+                    }
+                }
+            }
         }
     }
 

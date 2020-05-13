@@ -213,7 +213,12 @@
             },
 
             photo() {
-                return this.$store.getters.modelImage;
+                // return this.$store.getters.modelImage;
+                if (this.$store.getters.colored.preview) {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                } else {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                }
             },
 
             getEquipment() {

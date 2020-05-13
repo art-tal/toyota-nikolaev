@@ -2,7 +2,8 @@
     <div class="interior container">
         <div class="row">
             <div class="materialName col-md-4 col-12 font-weight-bold text-left">
-                {{selectedInterior.interior_name}} ({{selectedInterior.interior_code}})
+                {{selectedInterior.interior_name}}
+<!--                ({{selectedInterior.interior_code}})-->
             </div>
 
             <ul class="sampleOfInterior col-md-8 col-12 text-left">
@@ -43,7 +44,13 @@
         },
 
         mounted() {
-            // this.setInterior(this.interiors[0], 0);
+            this.$store.state.showInterior = true;
+            console.log('showInterior = ' + this.$store.state.showInterior);
+            console.log( JSON.parse( JSON.parse(localStorage.interior).interior_car) );
+        },
+        beforeDestroy() {
+            this.$store.state.showInterior = false;
+            console.log('showInterior = ' + this.$store.state.showInterior);
         },
 
         methods: {

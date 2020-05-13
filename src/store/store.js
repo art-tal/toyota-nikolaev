@@ -17,6 +17,7 @@ export default new Vuex.Store ({
         maxPower: 0,
         interior: {},
         selectedAccessories: [],
+        showInterior: false,
         // modelImage: "",
 
         openConsultation: false,
@@ -62,6 +63,10 @@ export default new Vuex.Store ({
 
         getInterior(state) {
             return state.interior;
+        },
+
+        getShowInterior(state) {
+            return state.showInterior;
         },
 
         accessories(state) {

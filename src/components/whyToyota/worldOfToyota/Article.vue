@@ -96,7 +96,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../../styles/variables';
+    @import '../../../styles/variables';
 
     article.container-fluid {
         padding: 0;

@@ -89,7 +89,12 @@
             },
 
             getPhoto() {
-                return 'http://lara.toyota.nikolaev.ua/storage/' + this.consultModel.image
+                // return 'http://lara.toyota.nikolaev.ua/storage/' + this.consultModel.image;
+                if (this.$store.getters.colored.preview) {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                } else {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                }
             },
         },
 

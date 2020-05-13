@@ -1,20 +1,45 @@
 <template>
     <section class="container-fluid">
         <div class="row car_type">
-            <a href="#" class="new_car">Нові автомтобілі</a>
+<!--            <a href="#" class="new_car">Нові автомтобілі</a>-->
+            <router-link
+                    tag="a"
+                    exact
+                    active-class="active"
+                    to="/new_cars"
+            >Нові автомобілі</router-link>
+
+            <router-link
+                    tag="a"
+                    exact
+                    active-class="active"
+                    to="/cars_available"
+            >Авто в наявності</router-link>
+
             <a href="#" class="old_car">Автомобілі с пробігом</a>
         </div>
 
         <div class="row">
             <div class="all_model col-lg-9 col-md-8 col-sm-12 row">
-                    <div class="col-xl-3 col-lg-4 col-sm-6 model" v-for="(model, key) in models" :key="key">
-                        <div
-                                class="nav-link active text-left"
-                                @click="goSelectModel(model)">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 model"
+                         v-for="(model, key) in models" :key="key"
+                         @click="goSelectModel(model)"
+                    >
+                        <div class="promo" v-if="model.stock">Акція</div>
+                        <div class="nav-link active text-left">
                             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
-                            <h2>{{model.name}}</h2>
-                            <h3 v-if="model.hybrid">+ Гібрид</h3>
+                            <h2>{{model.name}}</h2> <h3 v-if="model.hybrid">+ Гібрид</h3>
                         </div>
+                            <div class="price_available">
+                                <p>*Від {{model.price_available}}&#8372;</p>
+                                <b>(для авто у наявності)</b>
+                            </div>
+
+                            <div class="price_order">
+                                <p>*Від {{model.price_order}}&#8372;</p>
+                                <b>(авто під замовлення)</b>
+                            </div>
+
 
                 </div>
             </div>
@@ -23,23 +48,28 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-                        <li class="servies">
-                            <a href="#">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Спеціальні сервісні кампанії</span>
-                            </a>
-                        </li>
-                        <li class="dilers">
-                            <a href="#">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Офіційні дилери</span>
-                            </a>
-                        </li>
+<!--                        <li class="servies">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-oil-can"></i>-->
+<!--                                <span>Спеціальні сервісні кампанії</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="dilers">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-map-marker-alt"></i>-->
+<!--                                <span>Офіційні дилери</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                         <li class="contact">
-                            <a href="#">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    to="/faq"
+                            >
                                 <i class="fas fa-phone"></i>
-                                <span>Зв’язатись з нами</span>
-                            </a>
+                                <span>Часті запитання</span>
+                            </router-link>
+<!--                            <f-a-q v-if="showFAQ"></f-a-q>-->
                         </li>
                         <li class="test_drive">
                             <router-link
@@ -56,10 +86,19 @@
 <!--                            </a>-->
                         </li>
                         <li class="download">
-                            <a href="#">
+<!--                            <a href="#">-->
+<!--                                <i class="far fa-file-alt"></i>-->
+<!--                                <span>Завантажити брошури</span>-->
+<!--                            </a>-->
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/download_brochures"
+                            >
                                 <i class="far fa-file-alt"></i>
                                 <span>Завантажити брошури</span>
-                            </a>
+                            </router-link>
                         </li>
                     </ol>
                 </div>
@@ -71,12 +110,21 @@
 
 <script>
     import axios from 'axios';
+    // import FAQ from "../cars/FAQ";
 
     export default {
         name: "AllModell",
+
+        components: {
+            // FAQ,
+        },
+
+
         data() {
             return {
                 models: [],
+
+                showFAQ: false,
             }
         },
 
@@ -91,7 +139,7 @@
                     method: 'get',
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.models = response.data;
                     // return response.data;
                 } )
@@ -109,7 +157,11 @@
                 localStorage.id = model.id;
                 localStorage.model = JSON.stringify(model);
                 this.$router.push({name: "selectModel", params: {id: model.id}});
-            }
+            },
+
+            faq() {
+                this.showFAQ = !this.showFAQ;
+            },
         },
 
 
@@ -147,6 +199,7 @@
                     padding: 20px;
                     margin-bottom: 28px;
                     align-self: flex-start;
+                    position: relative;
                     div {
                         display: block;
                         border-bottom: 1px solid #D7D7D7;
@@ -155,18 +208,47 @@
                             width: 100%;
                         }
                         h2 {
+                            display: inline-block;
                             font-size: 1.3rem;
                             margin-top: 15px;
+                            padding-right: 15px;
                             color: $font_color;
                         }
                         h3 {
-                            font-size: 1.2rem;
+                            display: inline-block;
+                            font-size: 1.3rem;
                             text-transform: uppercase;
                             color: #00A0F0;
+                            font-weight: bold;
+                            font-style: italic;
                         }
-                        &:hover {
-                            border-bottom: 1px solid #E50000;
+
+                        p {
+                            color: #6c7073;
+                            font-size: 1.4rem;
+                            margin: 5px 0 0;
                         }
+
+                        b {
+                            color: #6c7073;
+                            font-size: 1.2rem;
+                        }
+
+                        &.promo {
+                            position: absolute;
+                            top: 20px;
+                            left: 20px;
+                            color: #E50000;
+                            text-transform: uppercase;
+                            font-size: 1.4rem;
+                            font-weight: bold;
+                            border: none;
+                            font-style: italic;
+                        }
+                    }
+
+                    &:hover {
+                        border-bottom: 1px solid #E50000;
                     }
 
                 }

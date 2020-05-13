@@ -70,9 +70,8 @@
             getColors() {
               // console.log(this.mod_id);
               axios.get(
-                  // `lara.toyota.nikolaev.ua/ajax/mod_color`,
-                  `http://lara.toyota.nikolaev.ua/ajax/mod_color?id=33`,//${this.mod_id}
-                  // {id: 33},//this.mod_id
+                  `http://lara.toyota.nikolaev.ua/ajax/mod_color`,
+                  {params: {id: this.mod_id} },//
               )
               .then( (response) => {
                   this.colors = response.data;
@@ -81,7 +80,7 @@
                   this.selectedColor = this.colors[0];
                   localStorage.color = JSON.stringify( this.selectedColor );
                   this.$store.state.color = this.selectedColor;
-                      // console.log(this.selectedColor);
+                      console.log(this.selectedColor);
                   // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
               } )
               .catch( (error) => {

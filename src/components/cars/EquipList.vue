@@ -1,50 +1,57 @@
 <template>
     <div class="allEquipment container-fluid w-100">
 
-        <div class="carousel row" :style="{'color': fontColor}">
-            <div  class="equip w-25"
-                 v-for="(equipment, key) in equipments"
-                 :key="key"
-                 @click="activeted(equipment)"
-            >
-<!--                :style="{'border-top': '4px solid' + color}"-->
-                <img :src="photo" :alt="equipment.mod_name">
-                <h4 :style="{'color': fontColor}">
-                    <span><strong>{{model}} </strong></span>
-                    <span><strong>{{equipment.mod_name}} </strong></span>
-<!--                    <span>{{car.bodyType}}</span>-->
-                </h4>
-                <h4 :style="{'color': fontColor}" class="text-left">
-                    <strong>{{equipment.gross_price | formattedPrice}} &#8372;</strong>
-                </h4>
-                <ul class="equip_desc">
-                    <li v-for="(desc, key) in descriptionList(equipment)"
-                        :key="key"
-                        :style="{'color': fontColor}"
-                    >{{desc}}</li>
-<!--                    <li>{{equipment.description}}</li>-->
-                </ul>
-            </div>
+        <div class=" container carousel" :style="{'color': fontColor}">
+
+            <swiper class="swiper" ref="swiper" :options="swiperOption">
+                <swiper-slide v-for="(equipment, key) in equipments" :key="key">
+                    <div  class="equip"
+                    >
+                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.mod_name">
+
+                        <h4 :style="{'color': fontColor}" class="text-left">
+                            <span><strong>{{model.name}} </strong></span>
+                            <span><strong> {{equipment.mod_name}} </strong></span>
+                            <span>{{equipment.body_type}}</span>
+                        </h4>
+
+                        <h4 :style="{'color': fontColor}" class="text-left">
+                            <strong>Від {{equipment.price | formattedPrice}} &#8372;</strong>
+                        </h4>
+                    </div>
+                </swiper-slide>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
+
         </div>
 
     </div>
-
-
 </template>
 
 <script>
     import axios from "axios";
     import formattedPrice from "../../filters/price_format";
-    import {eventEmitter} from '../../main'
+    // import {eventEmitter} from '../../main'
     // import {eventEmitter} from './../../app' //         for Laravel
+
+    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
+
 
 
     export default {
-        name: "Equipment",
+        name: "EquipList",
 
         props: [
-            'id'
+            'id',
+            'model',
         ],
+
+        components: {
+            Swiper,
+            SwiperSlide
+        },
 
 
         data() {
@@ -54,6 +61,25 @@
                 equipments: [],
                 equipment: {},
                 fontColor: "#202020",
+
+                swiperOption: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                    direction: 'horizontal',
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    },
+                    on: {
+                        resize: () => {
+                            this.$refs.swiper.$swiper.changeDirection(
+                                window.innerWidth <= 960
+                                    ? 'vertical'
+                                    : 'horizontal'
+                            )
+                        }
+                    }
+                }
             }
         },
 
@@ -62,113 +88,103 @@
         },
 
         created() {
-            this.$store.state.model = JSON.parse( localStorage.model );
+            // this.$store.state.model = JSON.parse( localStorage.model );
             // this.id = this.getModelId;//первоначальный вариант
-            this.color = this.$store.getters.colored;
+            // this.color = this.$store.getters.colored;
+
             this.getEquipment();
             this.equipment = this.equipments[0];
-            this.$store.state.equipment = this.equipment;
-            localStorage.equipment = JSON.stringify( this.equipment );
-            this.getFontColor();
+            // this.$store.state.equipment = this.equipment;
+            // localStorage.equipment = JSON.stringify( this.equipment );
+            // this.getFontColor();
 
             // eventEmitter.$on('select', () => {this.activeted()})
         },
 
         computed: {
-            model() {
-                return this.$store.getters.getModel.name;
-            },
+            // model() {
+            //     return this.$store.getters.getModel.name;
+            // },
 
-            getModelId() {
-                if (this.id) {return this.id}//новое
-                else if (this.$store.getters.getModelId) {
-                    return this.$store.getters.getModelId;
-                } else {
-                    return this.$route.params.id;}
-            },
+            // getModelId() {
+            //     if (this.id) {return this.id}//новое
+            //     else if (this.$store.getters.getModelId) {
+            //         return this.$store.getters.getModelId;
+            //     } else {
+            //         return this.$route.params.id;}
+            // },
 
             photo() {
-                // return this.$store.getters.modelImage;
-                return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                return 'http://lara.toyota.nikolaev.ua/storage/' + this.model.image;
             },
         },
 
-        watch: {
-            color() {
-                return this.color;
-            },
-        },
+        // watch: {
+        //     color() {
+        //         return this.color;
+        //     },
+        // },
 
         methods: {
 
             getEquipment() {
-                // axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
-                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.getModelId}`)
+                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod`,//?id=${this.id}`),
+                    {params: {id: this.id}}
+                )
+                // axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.getModelId}`)
                     .then((response) => {
                         this.equipments = response.data;
-                        ///////////////////////////ЗАГЛУШКА
-                        // this.equipments.forEach( (eq) => {
-                        //     eq.description = [
-                        //         "Світлодіодні денні ходові вогні",
-                        //         "Круїз-контроль",
-                        //         "6 гучномовців",
-                        //         "Двозонний клімат-контроль"
-                        //     ];} );
-                        //////////////////////////////
                         console.log(this.equipments);
                     })
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
                         console.log(error);
-                    });
+                    })
             },
 
-            activeted(equipment) {
-                // console.log('catch');
-                this.$store.state.equipment = equipment;
-                localStorage.mod_id = equipment.mod_id;
-                localStorage.equipment = JSON.stringify(equipment);
-                eventEmitter.$emit('selectedEquipment');
-            },
+            // activeted(equipment) {
+            //     // console.log('catch');
+            //     this.$store.state.equipment = equipment;
+            //     localStorage.mod_id = equipment.mod_id;
+            //     localStorage.equipment = JSON.stringify(equipment);
+            //     eventEmitter.$emit('selectedEquipment');
+            // },
 
-            getFontColor: function () {
-                try{
-                    switch(this.color.rgb.toLowerCase()){
-                        case '#000000'.toLowerCase():
-                        case '#182B66'.toLowerCase():
-                        case '#5C5653'.toLowerCase():
-                        case '#740310'.toLowerCase():
-                        case '#ff0000'.toLowerCase():
-                            return this.fontColor = '#FFFFFF';
-                        case '#FFFFFF'.toLowerCase():
-                        case '#EDE7E1'.toLowerCase():
-                        case '#F2F2F0'.toLowerCase():
-                            return this.fontColor = '#202020';
-                    }
-                } catch (e) {
-                    console.log( "Шрифты пролетели" );
-                }
-
-            },
-
-            descriptionList(equipment) {
-                return equipment.description.split('\n');
-            },
+            // getFontColor: function () {
+            //     try{
+            //         switch(this.color.rgb.toLowerCase()){
+            //             case '#000000'.toLowerCase():
+            //             case '#182B66'.toLowerCase():
+            //             case '#5C5653'.toLowerCase():
+            //             case '#740310'.toLowerCase():
+            //             case '#ff0000'.toLowerCase():
+            //                 return this.fontColor = '#FFFFFF';
+            //             case '#FFFFFF'.toLowerCase():
+            //             case '#EDE7E1'.toLowerCase():
+            //             case '#F2F2F0'.toLowerCase():
+            //                 return this.fontColor = '#202020';
+            //         }
+            //     } catch (e) {
+            //         // console.log( "Шрифты пролетели" );
+            //     }
+            //
+            // }
         }
     }
 </script>
 
 <style lang="scss" scoped>
     @import '../../styles/variables';
+    /*@import './base.scss';*/
 
     .allEquipment {
         width: 100%;
         margin: 0;
         position: relative;
-        background-color: rgba(0,0,0,0.3);
-        .carousel.row {
+        background-color: rgba(0,0,0,0.1);
+        .carousel.container {
             position: static;
-            width: 85%;
+            /*width: 85%;*/
             margin: auto;
             display: flex;
             flex-wrap: wrap;
@@ -176,7 +192,7 @@
             align-items: stretch;
             .equip {
                 box-sizing: border-box;
-                padding: 30px 40px;
+                padding: 20px;
                 img {
                     width: 100%;
                 }
@@ -208,23 +224,55 @@
                     }
                 }
                 h4 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                    padding: 0 15px;
+                }
+                a {
+                    color: $font_color;
                     font-size: 18px;
-                    margin-bottom: 15px;
-                }
-                    a {
-                        color: $font_color;
-                        font-size: 18px;
-                        span{
-                            display: inline-block;
-                            margin-left: 10px;
-                        }
+                    span{
+                        display: inline-block;
+                        margin-left: 10px;
                     }
-
                 }
+
             }
-
-
         }
+
+
+    }
+
+    .swiper {
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+        &.gallery-top {
+            height: 80%;
+            width: 100%;
+        }
+        &.gallery-thumbs {
+            height: 20%;
+            box-sizing: border-box;
+            padding: 0;
+        }
+        &.gallery-thumbs .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
+        &.gallery-thumbs .swiper-slide-active {
+            opacity: 1;
+        }
+        .swiper-button-prev {
+            left: 0;
+        }
+        .swiper-button-next {
+            right: 0;
+        }
+    }
+
 
 
 

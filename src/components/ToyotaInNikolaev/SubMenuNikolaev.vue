@@ -37,8 +37,8 @@
                         tag="a"
                         class="nav-link"
                         active-class="active"
-                        to=""
-                >ПІІ «Тойота-Миколаїв»</router-link>
+                        to="/toyota_mykolaiv"
+                >Тойота Центр Миколаїв «КіТ-Т»</router-link>
 
                 <ul>
 
@@ -67,6 +67,16 @@
                                 active-class="active"
                                 to=""
                         >Зв’язатись з нами</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                exact
+                                tag="a"
+                                class="nav-link"
+                                active-class="active"
+                                to=""
+                        >ПІІ «Тойота-Миколаїв»</router-link>
                     </li>
                 </ul>
             </div>
@@ -106,40 +116,53 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-                        <li class="download">
-                            <a href="#">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Офіційні дилери</span>
-                            </a>
-                        </li>
+<!--                        <li class="download">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-map-marker-alt"></i>-->
+<!--                                <span>Офіційні дилери</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
 
-                        <li class="dilers">
-                            <a href="#">
-                                <i class="fas fa-car-side"></i>
-                                <span>Автомобілі з пробігом</span>
-                            </a>
-                        </li>
+<!--                        <li class="dilers">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-car-side"></i>-->
+<!--                                <span>Автомобілі з пробігом</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
 
                         <li class="servies">
-                            <a href="#">
-                                <i class="fas fa-car"></i>
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-car"></i>-->
+<!--                                <span>Замовити тест-драйв</span>-->
+<!--                            </a>-->
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    to="/consultation"
+                            >
+                                <i class="far fa-calendar-alt"></i>
                                 <span>Замовити тест-драйв</span>
-                            </a>
+                            </router-link>
                         </li>
 
                         <li class="download">
-                            <a href="#">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/faq"
+                            >
                                 <i class="fas fa-phone"></i>
-                                <span>Зв’язатись з нами</span>
-                            </a>
+                                <span>Часті запитання</span>
+                            </router-link>
                         </li>
 
-                        <li class="contact">
-                            <a href="#">
-                                <i class="fas fa-key"></i>
-                                <span>Гібридні іновації</span>
-                            </a>
-                        </li>
+<!--                        <li class="contact">-->
+<!--                            <a href="#">-->
+<!--                                <i class="fas fa-key"></i>-->
+<!--                                <span>Гібридні іновації</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                     </ol>
                 </div>
             </div>
