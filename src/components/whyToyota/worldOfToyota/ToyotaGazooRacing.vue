@@ -11,15 +11,14 @@
             <h3 class="text-center">На гоночних треках або ділянках ралі по всьому світу є ціла низка автомобільних перегонів, які викликають в автолюбителів радісне хвилювання гримучою сумішшю скаженої швидкості, пронизливого виску гальм та неабиякої хоробрості гонщиків. Багата історія автоспорту Toyota налічує сім десятирічь, і сьогодні ми об'єднали всі наші міжнародні заходи під однією назвою: TOYOTA GAZOO Racing.</h3>
 
             <div class="video">
-                <!--                <video width="100%"-->
-                <!--                       src="../../../video/air_filters_of_salon_toyota.mp4"-->
-                <!--                       controls="controls"-->
-                <!--                       type="video/mp4"-->
-                <!--                       poster="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-674169.jpg">-->
-                <!--                </video>-->
+
 
                 <div class="img_button" @click="openVideo()">
-                    <img src="https://img.youtube.com/vi/AmvjLpmK844/sddefault.jpg" alt="/">
+<!--                    <img src="https://img.youtube.com/vi/AmvjLpmK844/sddefault.jpg" alt="/">-->
+
+                    <button class="btn btn-play">
+                        <i class="fas fa-play"></i>
+                    </button>
                 </div>
 
                 <div class="open-video" v-if="showVideo">
@@ -109,8 +108,12 @@
 
             <div class="video">
 
-                <div class="img_button" @click="openVideo()">
-                    <img class="w-100" src="https://img.youtube.com/vi/cpE3U_wSoPA/sddefault.jpg" alt="/">
+                <div class="img_button second" @click="openVideo()">
+<!--                    <img class="w-100" src="https://img.youtube.com/vi/cpE3U_wSoPA/sddefault.jpg" alt="/">-->
+
+                    <button class="btn btn-play">
+                        <i class="fas fa-play"></i>
+                    </button>
                 </div>
 
                 <div class="open-video" v-if="showVideo">
@@ -318,11 +321,37 @@
             .video {
                 margin: 68px 0;
                 padding: 0;
+                height: 600px;
                 .img_button {
+                    position: relative;
                     width: 100%;
+                    height: 100%;
+                    background-image: url(https://img.youtube.com/vi/AmvjLpmK844/sddefault.jpg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    &.second {
+                        background-image: url(https://img.youtube.com/vi/cpE3U_wSoPA/sddefault.jpg);
+                    }
                     img {
                         width: 100%;
                         height: auto;
+                    }
+
+                    button.btn.btn-play {
+                        display: block;
+                        position: absolute;
+                        top: calc(50% - 48px);
+                        left: calc(50% - 48px);
+                        width: 96px;
+                        height: 96px;
+                        border-radius: 50%;
+                        background-color: rgba(0,0,0,0.7);
+                        color: #ffffff;
+                        font-size: 3rem;
+                        padding-left: 10px;
+                        box-shadow: 0 0 8px 8px rgba(255,255,255, 0.2);
                     }
                 }
                 .open-video {
@@ -431,6 +460,7 @@
                 }
                 .video {
                     margin: 30px 0;
+                    height: 56vw;
                     .img_button {
                     }
                 }
@@ -475,6 +505,7 @@
                 .video {
                     width: 100%;
                     margin: 30px 0;
+                    height: 56vw;
                     .img_button {
                         width: 100%;
                         img {
@@ -532,6 +563,7 @@
                     width: 100%;
                     padding: 0;
                     margin: 30px 0;
+                    height: 56vw;
                     .img_button {
                         width: 100%;
                         img {
@@ -564,6 +596,7 @@
             }
 
             .parallax_block {
+                width: 100%;
                 height: auto;
                 h2 {
                     color: #ffffff;

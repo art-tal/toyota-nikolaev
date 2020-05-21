@@ -42,6 +42,13 @@ import SignUpForService from "../components/service/SignUpForService";
 import News from "../components/whyToyota/worldOfToyota/News";
 import Article from "../components/whyToyota/worldOfToyota/Article";
 import WorldOfToyota from "../components/whyToyota/worldOfToyota/WorldOfToyota";
+import Toyota2000GT from "../components/whyToyota/worldOfToyota/sportCars/Toyota2000GT";
+import ToyotaCelica from "../components/whyToyota/worldOfToyota/sportCars/ToyotaCelica";
+import ToyotaSupra from "../components/whyToyota/worldOfToyota/sportCars/ToyotaSupra";
+import ToyotaCorolla from "../components/whyToyota/worldOfToyota/sportCars/ToyotaCorolla";
+import ToyotaMR2 from "../components/whyToyota/worldOfToyota/sportCars/ToyotaMR2";
+import ToyotaGT86 from "../components/whyToyota/worldOfToyota/sportCars/ToyotaGT86";
+import IdeasForFuture from "../components/whyToyota/worldOfToyota/sportCars/IdeasForFuture";
 
 import SubMenuNikolaev from "../components/ToyotaInNikolaev/SubMenuNikolaev";
 import ToyotaMykolaiv from "../components/ToyotaInNikolaev/ToyotaMykolaiv";
@@ -81,13 +88,21 @@ import ToyotaAssistancePlus from "../components/service/RoadsideAssistance/Toyot
 import OlympicPartnership from "../components/whyToyota/worldOfToyota/OlympicPartnership";
 import ToyotaGazooRacing from "../components/whyToyota/worldOfToyota/ToyotaGazooRacing";
 import ToyotaAtRally from "../components/whyToyota/worldOfToyota/ToyotaAtRally";
-import HistoryOfToyotaSportsCars from "../components/whyToyota/worldOfToyota/HistoryOfToyotaSportsCars";
+import HistoryOfToyotaSportsCars from "../components/whyToyota/worldOfToyota/sportCars/HistoryOfToyotaSportsCars";
 import ToyodaAA from "../components/whyToyota/worldOfToyota/ToyodaAA";
 import VypadkyShahrajstva from "../components/sharedLinks/VypadkyShahrajstva";
 // import TheLookingAround from "@/components/cars/TheLookingAround";
 import EnginesAndCharacteristics from "../components/cars/EnginesAndCharacteristics";
 import Prices from "../components/cars/Prices";
 import ReliabilityAndGuarantee from "../components/cars/ReliabilityAndGuarantee";
+import WarrantyService from "@/components/whyToyota/guarantee/WarrantyService";
+import QualityGuarantee from "@/components/whyToyota/guarantee/QualityGuarantee";
+import ClientsCharter from "@/components/whyToyota/guarantee/ClientsCharter";
+import HybridInnovations from "@/components/whyToyota/hybridInnovations/HybridInnovations";
+import HybridDrive from "@/components/whyToyota/hybridInnovations/HybridDrive";
+
+
+
 
 export default new VueRouter({
     routes: [
@@ -234,29 +249,11 @@ export default new VueRouter({
                     path: '/configurator/result',
                     name: 'result',
                     component: Result,
-                    children: [
-                        // {
-                        //     path: "/configurator/consultation",
-                        //     name: 'consultation',
-                        //     component: Consult,
-                        //     children: [
-                        //         {
-                        //             path: "/configurator/consultation/step_1",
-                        //             name: "step_1",
-                        //             component: Step1,
-                        //         },
-                        //         {
-                        //             path: "/configurator/consultation/step_2",
-                        //             name: "step_2",
-                        //             component: Step2,
-                        //         },
-                        //     ]
-                        // },
-                    ]
                 },
                 {
-                    path: 'edit_equipment',
-                    component: EditEquipment
+                    path: '/configurator/edit_equipment/:id',
+                    name: 'edit_equipment',
+                    component: EditEquipment,
                 },
 
 
@@ -521,12 +518,88 @@ export default new VueRouter({
                 },
 
                 {
+                    path: "/world_of_toyota/toyota_2000_gt",
+                    name: "toyota_2000_gt",
+                    component: Toyota2000GT,
+                },
+
+                {
+                    path: "/world_of_toyota/toyota_celica",
+                    name: "toyota_celica",
+                    component: ToyotaCelica,
+                },
+
+                {
+                    path: "/world_of_toyota/toyota_supra",
+                    name: "toyota_supra",
+                    component: ToyotaSupra,
+                },
+
+                {
+                    path: "/world_of_toyota/toyota_corolla",
+                    name: "toyota_corolla",
+                    component: ToyotaCorolla,
+                },
+
+                {
+                    path: "/world_of_toyota/toyota_mr2",
+                    name: "toyota_mr2",
+                    component: ToyotaMR2,
+                },
+
+                {
+                    path: "/world_of_toyota/toyota_gt86",
+                    name: "toyota_gt86",
+                    component: ToyotaGT86,
+                },
+
+                {
+                    path: "/world_of_toyota/IdeasForFuture",
+                    name: "IdeasForFuture",
+                    component: IdeasForFuture,
+                },
+
+
+
+                {
                     path: "/world_of_toyota/toyoda_aa",
                     name: "toyoda_aa",
                     component: ToyodaAA,
                 },
             ],
         },
+
+
+
+        {
+            path: "/warranty_service",
+            name: "warranty_service",
+            component: WarrantyService,
+        },
+        {
+            path: "/quality_guarantee",
+            name: "quality_guarantee",
+            component: QualityGuarantee,
+        },
+        {
+            path: "/clients_charter",
+            name: "clients_charter",
+            component: ClientsCharter,
+        },
+
+        {
+            path: "/hybrid_innovations",
+            name: "hybrid_innovations",
+            component: HybridInnovations,
+        },
+        {
+            path: "/hybrid_drive",
+            name: "hybrid_drive",
+            component: HybridDrive,
+        },
+
+
+
 
         {
             path: "/sub_menu_mykolaiv",

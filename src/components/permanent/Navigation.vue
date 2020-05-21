@@ -136,20 +136,20 @@
 
             <div class="dealers col-xl-5 col-lg-4 col-md-1">
                 <ul class="navbar-nav mr-auto text-right">
-                    <li class="nav-item active ">
-                        <router-link
-                                class="nav-link"
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/"
-                        >
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Офіційні ділери</span>
-                            <span class="sr-only">(current)</span>
-                        </router-link>
+<!--                    <li class="nav-item active ">-->
+<!--                        <router-link-->
+<!--                                class="nav-link"-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                active-class="active"-->
+<!--                                to="/"-->
+<!--                        >-->
+<!--                            <i class="fas fa-map-marker-alt"></i>-->
+<!--                            <span>Офіційні ділери</span>-->
+<!--                            <span class="sr-only">(current)</span>-->
+<!--                        </router-link>-->
 
-                    </li>
+<!--                    </li>-->
                     <li class="nav-item">
                         <router-link
                                 class="nav-link"

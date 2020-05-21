@@ -68,7 +68,7 @@
 
         methods: {
             getColors() {
-              // console.log(this.mod_id);
+              console.log(this.mod_id);
               axios.get(
                   `http://lara.toyota.nikolaev.ua/ajax/mod_color`,
                   {params: {id: this.mod_id} },//

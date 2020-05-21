@@ -64,6 +64,7 @@
                     </div>
                 </div>
 
+
                 <div class="carColors col-xl-2 col-lg-1 col-12">
                     <colors-panel
                             :mod_id="equipment.mod_id"
@@ -111,7 +112,6 @@
         </div>
 
 
-
         <div class="requestService row justify-content-center">
             <div class="col-6 text-right">
 <!--                <button class="col-6 btn btn-danger">Замовити тест-драйв</button>-->
@@ -133,12 +133,11 @@
                         active-class="active"
                         to="/configurator/selected_engine"
                 >
-                    <span>Сконфігурувати</span>
+                    <span>Сконфігурувати {{model.name}}</span>
                 </router-link>
             </div>
 
         </div>
-
 
 
         <div class="video container-fluid p-0 m-0"
@@ -171,21 +170,6 @@
                 </button>
             </div>
 
-
-
-<!--            src="http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video.mp4_tcm-3046-1622631.mp4"-->
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
         
 <!--        <section class="container-fluid gallery">-->
@@ -198,7 +182,7 @@
 <!--            </div>-->
 <!--        </section>-->
 
-        <section class="links container d-flex justify-content-between">
+        <section class="links container d-md-flex justify-content-between">
             <div class="link">
                 <i class="fas fa-calculator"></i>
                 <h3>Програма «Тойота Кредит»</h3>
@@ -653,7 +637,7 @@
                 }
             }
             .compare {
-                margin: 0px 44px 0 74px;
+                margin: 0 44px 0 74px;
                 a {
                     color: $font_color;
                     font-size: 20px;
@@ -671,6 +655,7 @@
                 .carDescription {
                     position: relative;
                     .description {
+                        z-index: 100;
                         list-style-type: none;
                         font-size: 1.6rem;
                         color: $font_color;
@@ -903,6 +888,14 @@
                 }
 
             }
+
+            .video.container-fluid {
+                .poster {
+                    .info {
+                        display: none;
+                    }
+                }
+            }
         }
     }
 
@@ -972,6 +965,28 @@
                     }
                 }
 
+            }
+
+            .video.container-fluid {
+                .poster {
+                    .info {
+                        display: none;
+                    }
+                }
+            }
+
+            .links.container {
+                .link {
+                    i {
+                        font-size: 6rem;
+                    }
+                    h3 {
+                        font-size: 2.0rem;
+                    }
+                    button.btn.btn-light {
+                        width: auto;
+                    }
+                }
             }
         }
     }
@@ -1064,6 +1079,35 @@
                     }
                 }
 
+            }
+
+            .video.container-fluid {
+                .poster {
+                    .info {
+                        display: none;
+                    }
+                }
+            }
+
+            .links.container {
+                margin: 30px auto;
+                .link {
+                    margin: 40px 0;
+                    i {
+                        font-size: 6rem;
+                        color: #E50000;
+                    }
+                    h3 {
+                        font-size: 2.2rem;
+                        color: $font_color;
+                        font-weight: bold;
+                        margin: 30px 0;
+                    }
+                    button.btn.btn-light {
+                        @include button;
+                        background-color: #f0f0f0;
+                    }
+                }
             }
         }
     }

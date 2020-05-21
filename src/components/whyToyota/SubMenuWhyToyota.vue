@@ -79,7 +79,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to=""
+                            to="/quality_guarantee"
                     >Гарантія якості</router-link>
 
                     <ul>
@@ -88,7 +88,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_car"
+                                    to="/warranty_service"
                             >Гарантійнe обслуговування</router-link>
                         </li>
 
@@ -97,7 +97,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_owner"
+                                    to="/toyota_assistance"
                             >Toyota Assistance</router-link>
                         </li>
 
@@ -106,8 +106,17 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_owner"
+                                    to="/toyota_assistance_plus"
                             >Toyota Assistance Plus</router-link>
+                        </li>
+
+                        <li>
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/clients_charter"
+                            >Хартія Клієнтів</router-link>
                         </li>
                     </ul>
                 </div>
@@ -118,7 +127,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/corporate_sales"
+                            to="/hybrid_innovations"
                     >Гібридні інновації</router-link>
 
                     <ul>
@@ -154,7 +163,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/hybrid_drive"
                             >Hybrid Drive</router-link>
                         </li>
                     </ul>

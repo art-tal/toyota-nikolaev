@@ -4,6 +4,7 @@
         <sub-navigation></sub-navigation>
 
 
+
         <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">
 
             <header class="row">
@@ -39,23 +40,15 @@
             <equipment v-if="showEquipment"></equipment>
 
 
-            <!--            <div class="compare text-left" v-if="!showEquipment">-->
-            <!--                <a href="#" class="text-decoration-none" :style="{'color': fontColored + '!important'}">-->
-
-            <!--                    <i class="fas fa-exchange-alt"></i>-->
-            <!--                    <span>Порівняти</span>-->
-            <!--                </a>-->
-            <!--            </div>-->
-
             <div class="carView row">
                 <div class="carDescription col-xl-10 col-lg-11 col-12 row">
                     <ul class="description col-xl-3 col-12 text-left">
-<!--                        <li v-for="(desc, index) in equipment.description"-->
-<!--                            :key="index"-->
-<!--                            :style="{'color': fontColored + '!important'}"-->
-<!--                        >-->
-<!--                            {{desc}}</li>-->
-                        <li>{{equipment.description}}</li>
+                        <li v-for="(desc, index) in descriptionList()"
+                            :key="index"
+                            :style="{'color': fontColored + '!important'}"
+                        >
+                            {{desc}}</li>
+<!--                        <li>{{equipment.description}}</li>-->
                     </ul>
 
                     <div class="carPhoto col-xl-9 col-12">
@@ -82,97 +75,81 @@
                 </span>
 
             </div>
+
             <div class="fuelConsumption col-xl-2 col-md-3 col-6">
                 <p>Споживання пального</p>
                 <span class="h1">{{model.fuelConsumption}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
+
             <div class="maxSpeed col-xl-2 col-md-3 col-6">
                 <p>Кількість місць</p>
                 <span class="h1">{{model.seats}}</span>
                 <span class="font-weight-bold"> шт.</span>
             </div>
-            <div class="maxPower col-xl-2 col-md-3 col-6">
-                <a>Подивитись всі характеристики</a>
+
+            <div class="all_specifications col-xl-2 col-md-3 col-6">
+                <a href="" @click.prevent="">Подивитись всі характеристики</a>
             </div>
         </div>
 
-        <article>
-            <header>
-                <h2>Виберіть двигун</h2>
+        <article class="engines">
+            <header class="container">
+                <h2 class="text-left">Виберіть двигун</h2>
             </header>
 
             <div class="body container">
 
-
-                <div class="accordion" id="accordion">
-
+                <div id="accordion">
                     <div class="card">
-                        <div class="card-header p-0">
-                            <!--                        id="headingOne"-->
-                            <h5 class="m-0">
-                                <button class="btn btn-link w-100 text-left pl-4 py-4 text-dark" style="font-size: 1.6rem" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <strong>{{transmission.eng_name}} ({{transmission.horspower}}к.с.)</strong> {{transmission.fuel_type}}
+                        <div class="card-header text-left" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong>{{transmission.eng_name}} ({{transmission.horspower}} к.с.)</strong> {{transmission.fuel_type}}
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
-
                                 <div class="row transmissions">
-                                    <div class="col-3"
-                                         v-for="(trans, key) in transmissions"
-                                         :key="key"
-                                    >
-                                        <div class="wrap" @click="this.transmission = trans">
-                                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + trans.image" :alt="trans.eng_name">
+                                    <div class="col-xl-4 col-md-6 trans text-left active" v-for="(trans, key) in transmissions" :key="key">
+                                        <div class="field">
+                                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + trans.eng_image" :alt="trans.eng_name">
+                                        </div>
 
-                                            <div class="field">
-                                                <h3>
-                                                    <strong>{{transmission.eng_name}} ({{transmission.maxPower}})</strong> {{transmission.fuel_type}}
-                                                </h3>
-                                            </div>
+                                        <div class="field">
+                                            <h3>
+                                                {{transmission.eng_name}} ({{transmission.horspower}} к.с.) <span>{{transmission.fuel_type}}</span>
+                                            </h3>
+                                        </div>
+                                        
+<!--                                        <div class="field">-->
+<!--                                            <h5>За ціною</h5>-->
+<!--                                            <h3><strong>{{trans.gross_price | formattedPrice}} &#8372;</strong></h3>-->
+<!--                                        </div>-->
+                                        <div class="field">
+                                            <h5>Коробка передач</h5>
+                                            <h3>{{trans.gear_name}}</h3>
+                                        </div>
 
-                                            <div class="field">
-                                                <h5>За ціною</h5>
-                                                <h3>
-                                                    <strong>{{transmission.price | formattedPrice}} &#8372;</strong>
-                                                </h3>
-                                            </div>
+                                        <div class="field">
+                                            <h5>Привод</h5>
+                                            <h3>{{trans.drive_type}}</h3>
+                                        </div>
 
-                                            <div class="field">
-                                                <h5>Коробка передач</h5>
-                                                <h3>
-                                                    <strong>{{trans.gear_name}}</strong>
-                                                </h3>
-                                            </div>
+<!--                                        <div class="field">-->
+<!--                                            <h5>Спож. пального</h5>-->
+<!--                                            <h3>{{trans.fuelConsumption}}</h3>-->
+<!--                                        </div>-->
 
-                                            <div class="field">
-                                                <h5>Привод</h5>
-                                                <h3>
-                                                    <strong>{{trans.drive}}</strong>
-                                                </h3>
-                                            </div>
+                                        <div class="field">
+                                            <h5>Макс. потужність</h5>
+                                            <h3>{{trans.horspower}} к.с.</h3>
+                                        </div>
 
-                                            <div class="field">
-                                                <h5>Спож. пального</h5>
-                                                <h3>
-                                                    <strong>{{trans.fuelConsumption}}</strong>
-                                                </h3>
-                                            </div>
-
-                                            <div class="field">
-                                                <h5>Макс. потужність</h5>
-                                                <h3>
-                                                    <strong>{{trans.maxPOwer}}</strong>
-                                                </h3>
-                                            </div>
-
-                                            <div class="field">
-                                                <button class="btn btn-light">Подивитись всі характеристики</button>
-                                            </div>
-
+                                        <div class="field text-center">
+                                            <button class="btn btn-light">Подивитись всі характеристики</button>
                                         </div>
                                     </div>
                                 </div>
@@ -181,11 +158,12 @@
                         </div>
                     </div>
 
-
                 </div>
+
+
+
             </div>
         </article>
-
 
         <div class="requestService row justify-content-center">
             <div class="col-6 text-right">
@@ -208,11 +186,63 @@
                         active-class="active"
                         to="/configurator/selected_engine"
                 >
-                    <span>Сконфігурувати</span>
+                    <span>Сконфігурувати {{model.name}}</span>
                 </router-link>
             </div>
 
         </div>
+        
+        <section class="accessories">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12 order-lg-0 order-2 text-left">
+                        <h2>Аксесуари</h2>
+                        <p>Відкрийте для себе асортимент аксесуарів, розроблених спеціально для вашої Corolla City та створіть свою наступну Toyota у декілька простих кроків.</p>
+                        <button class="btn btn-light" @click="goToEquipment()">Cтворіть свою {{model.name}}</button>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <img :src="photo" :alt="model.name">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="links container  d-md-flex justify-content-between">
+            <div class="link">
+                <i class="fas fa-calculator"></i>
+                <h3>Програма «Тойота Кредит»</h3>
+                <router-link
+                        tag="button"
+                        class="btn btn-light"
+                        exact
+                        to="/credit"
+                >Детальніше</router-link>
+            </div>
+
+            <div class="link">
+                <i class="far fa-file-alt"></i>
+                <h3>Брошура по моделі</h3>
+                <router-link
+                        tag="button"
+                        class="btn btn-light"
+                        exact
+                        to="/download_brochures"
+                >Завантажити брошуру</router-link>
+            </div>
+
+            <div class="link">
+                <i class="far fa-calendar-alt"></i>
+                <h3>Замовити онлайн-консультацію</h3>
+                <router-link
+                        tag="button"
+                        class="btn btn-light"
+                        exact
+                        to="/consultation/step_1"
+                >Замовити онлайн-консультацію</router-link>
+            </div>
+        </section>
 
 
     </main>
@@ -247,8 +277,8 @@
                 id: 0,
                 id_equip: localStorage.mod_id,
                 model: {},
-                // id: this.$route.params.id,
                 showEquipment: false,
+
                 selectedColor: {},
                 equipments: [],
                 equipment: {},
@@ -340,10 +370,11 @@
             // eventEmitter.$on('selectedColor', (color) => {
             //     this.carColor = color;
             // });
+            this.getEngine();
         },
 
         mounted() {
-            this.getEngine();
+            // this.getEngine();
         },
 
         computed: {
@@ -372,7 +403,11 @@
             checkId() {
                 this.$forceUpdate();
                 return this.$route.params['id'];
-            }
+            },
+
+            // descriptionList() {
+            //     return this.equipment.description.split('\n');
+            // },
 
 
 
@@ -503,6 +538,14 @@
 
             },
 
+            goToEquipment() {
+                this.$router.push({name: 'edit_equipment', params: {id: this.model.id}});
+            },
+
+            descriptionList() {
+                return this.equipment.description.split('\n');
+            },
+
             // goToConfigurator(id_mod, id_equip) {
             //     // this.$router.push({name: "Configurator", params: {id_mod: id_mod, id_equip: id_equip}});
             // },
@@ -517,6 +560,7 @@
     * {
         margin: 0;
         padding: 0;
+        color: $font_color;
     }
 
     .selectModel {
@@ -563,6 +607,7 @@
                 .carDescription {
                     position: relative;
                     .description {
+                        z-index: 100;
                         list-style-type: none;
                         font-size: 1.6rem;
                         color: $font_color;
@@ -611,6 +656,94 @@
             .h1 + span {
                 font-size: 1.6rem;
             }
+            a {
+                color: #6c7073;
+                text-decoration: underline;
+                font-size: 1.4rem;
+                align-self: start;
+            }
+        }
+
+        article.engines {
+            header {
+                h2 {
+                    margin: 20px auto;
+                    font-size: 1.6rem;
+                    color: #6c7073;
+                }
+            }
+
+            .body.container {
+                #accordion {
+                    .card {
+                        .card-header {
+                            width: 100%;
+                            h5 {
+                                button {
+                                    width: 100%;
+                                    font-size: 2.2rem;
+                                    color: $font_color;
+                                }
+                            }
+                        }
+
+                        .collapse.show {
+                            .card-body {
+                                padding: 0;
+                                color: $font_color;
+                                background-color: #f0f0f0;
+                                .row.transmissions {
+                                    margin: 0;
+                                    .trans {
+                                        background-color: #f0f0f0;
+                                        border-top: 3px solid #f0f0f0;
+                                        padding: 32px;
+                                        &.active {
+                                            background-color: #fff;
+                                            border-top: 3px solid #E50000;
+                                            .field {
+                                                button.btn.btn-light {
+                                                    background-color: #E50000;
+                                                    color: #ffffff;
+                                                }
+                                            }
+                                        }
+                                        .field {
+                                            margin-top: 24px;
+                                            img {
+                                                padding: 0;
+                                                width: 100%;
+                                            }
+
+                                            h3 {
+                                                font-size: 1.8rem;
+                                                font-weight: bold;
+                                                span {
+                                                    font-weight: normal;
+                                                }
+                                            }
+
+                                            h5 {
+                                                font-size: 1.4rem;
+                                                font-weight: 100;
+                                                margin-bottom: 5px;
+                                                color: #595D60;
+                                            }
+
+                                            button.btn.btn-light {
+                                                @include button;
+                                                color: $font-color;
+                                                background-color: #fff;
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .show_info {
@@ -647,6 +780,55 @@
             }
 
         }
+
+        section.accessories {
+            padding: 68px 0;
+            background-color: #fafafa;
+            .container {
+                .row {
+                    color: $font_color;
+                    div {
+                        h2 {
+                            font-size: 4.4rem;
+                        }
+                        p {
+                            margin: 30px 0;
+                            font-size: 2.2rem;
+                        }
+                        button {
+                            @include button;
+                            background-color: #f0f0f0;
+                        }
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .links.container {
+            margin: 68px auto;
+            .link {
+                i {
+                    font-size: 8rem;
+                    color: #E50000;
+                }
+                h3 {
+                    font-size: 2.2rem;
+                    color: $font_color;
+                    font-weight: bold;
+                    margin: 30px 0;
+                }
+                button.btn.btn-light {
+                    @include button;
+                    background-color: #f0f0f0;
+                }
+            }
+        }
+        
+        
     }
 
     @media (min-width: 1200px) and (max-width: 1439.9px) {
@@ -791,6 +973,27 @@
                 }
 
             }
+
+            .links.container {
+                .link {
+                    padding: 10px;
+                    i {
+                        font-size: 6rem;
+                    }
+                    h3 {
+                        font-size: 2.2rem;
+                        color: $font_color;
+                        font-weight: bold;
+                        margin: 30px 0;
+                    }
+                    button.btn.btn-light {
+                        @include button;
+                        width: 100%;
+                        margin: 0;
+                        background-color: #f0f0f0;
+                    }
+                }
+            }
         }
     }
 
@@ -882,6 +1085,20 @@
                     }
                 }
 
+            }
+
+            section.accessories {
+                padding: 30px 0;
+            }
+
+            .links.container {
+                margin: 30px auto;
+                .link {
+                    margin-bottom: 50px;
+                    i {
+                        font-size: 6rem;
+                    }
+                }
             }
         }
     }

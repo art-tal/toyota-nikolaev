@@ -2,7 +2,7 @@
     <div class="allEquipment container-fluid w-100">
 
         <div class="carousel row" :style="{'color': fontColor}">
-            <div  class="equip w-25"
+            <div  class="equip col-lg-4 col-md-6 col-12"
                  v-for="(equipment, key) in equipments"
                  :key="key"
                  @click="activeted(equipment)"
@@ -293,9 +293,10 @@
     }
 
     @media (max-width: 767.9px) {
-        .allEquipment {
+        .allEquipment.container-fluid {
+            padding-bottom: 20px !important;
             .carousel {
-                width: 100%;
+                width: 90%;
                 padding: 5px;
                 .equip {
                     padding: 10px 15px;

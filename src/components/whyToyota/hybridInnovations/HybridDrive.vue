@@ -1,10 +1,10 @@
 <template>
-    <section></section>
+    <main></main>
 </template>
 
 <script>
     export default {
-        name: "HistoryOfToyotaSportsCars"
+        name: "HybridDrive"
     }
 </script>
 

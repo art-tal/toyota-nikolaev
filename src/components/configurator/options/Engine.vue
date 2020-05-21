@@ -11,17 +11,14 @@
                                     </h3>
                                 </div>
                                 <div class="col-lg-12 col-md-3 col-12">
-                                    <router-link
+                                    <a
                                             class="nav-link ml-2 mr-2 editEquipment"
-                                            tag="a"
-                                            exact
-                                            active-class="active"
-                                            to="/configurator/equipment"
+                                            @click="goToEquipment()"
                                     >
                                         <i class="fas fa-sync-alt"></i>
                                         <span>Змінити комплектацію</span>
                                         <!--                        <span class="sr-only">(current)</span>-->
-                                    </router-link>
+                                    </a>
 
 <!--                                    <a href="#" class="">-->
 <!--                                    </a>-->
@@ -210,7 +207,13 @@
                 this.transmission = trans;
                 localStorage.transmission = JSON.stringify( this.transmission);
                 // this.$router.push({name: 'color_and_option'});
-            }
+            },
+
+            goToEquipment() {
+                this.$router.push({name: 'edit_equipment', params: {id: this.model.id}});
+            },
+
+
 
             // getEquipment() {
             //     // console.log(this.id);
@@ -259,8 +262,12 @@
                     .editEquipment {
                         font-size: 1.5rem;
                         color: $font_color;
+                        cursor: pointer;
                         i {
                             margin-right: 10px;
+                        }
+                        &:hover {
+                            text-decoration: underline;
                         }
                     }
                 }
