@@ -67,13 +67,20 @@
                 )
                     .then( (response) => {
                         this.colors = response.data;
-                        this.colorChecker(1);
-                        // this.colors.forEach( (c) => {c.selected = false} );
-                        // this.colors[1].selected = true;
-                        this.selectedColor = this.colors[1];
-                        console.log(this.selectedColor);
-                        localStorage.color = JSON.stringify( this.selectedColor );
-                        eventEmitter.$emit('selectedColor', this.selectedColor);
+                        if (localStorage.color) {
+                            this.selectedColor = JSON.parse( localStorage.color );
+                            this.$store.state.color = JSON.parse( localStorage.color );
+                            let index = this.colors.findIndex( col => col.color_code.toLowerCase() === this.selectedColor.color_code.toLowerCase() );
+                            this.colors[index].selected = true;
+                        } else {
+                            this.colors[0].selected = true;
+                            this.selectedColor = this.colors[0];
+                            localStorage.color = JSON.stringify( this.selectedColor );
+                            this.$store.state.color = this.selectedColor;
+                            console.log(this.selectedColor);
+                        }
+
+
                     } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные цвета");
@@ -84,8 +91,6 @@
 
             setColor(color, key) {
                 this.colorChecker(key);
-                // this.colors.forEach( (c) => {c.selected = false} );
-                // this.colors[key].selected = true;
                 this.selectedColor = color;
                 this.$store.state.color = color;
                 localStorage.color = JSON.stringify( this.selectedColor );

@@ -48,9 +48,9 @@
 <!--            </div>-->
 
             <div class="carView row">
-                <div class="carDescription col-xl-10 col-lg-11 col-12 row">
+                <div class="carDescription col-xl-10 col-lg-9* col-12 row">
                     <ul class="description col-xl-3 col-12 text-left">
-                        <li v-for="(desc, index) in descriptionList"
+                        <li v-for="(desc, index) in descriptionList()"
                             :key="index"
                             :style="{'color': fontColored + '!important'}"
                         >
@@ -65,7 +65,7 @@
                 </div>
 
 
-                <div class="carColors col-xl-2 col-lg-1 col-12">
+                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">
                     <colors-panel
                             :mod_id="equipment.mod_id"
                     ></colors-panel>
@@ -101,15 +101,15 @@
             </div>
         </div>
 
-        <div class="show_info container text-left" @click="showInfo = !showInfo">Інформація щодо цін</div>
+<!--        <div class="show_info container text-left" @click="showInfo = !showInfo">Інформація щодо цін</div>-->
 
-        <div class="info container text-left" v-if="showInfo">
-            <p>
-                Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою).</p>
-            <p>
-                Вказані рекомендовані ціни на відповідні автомобілі у базових комплектаціях, без врахування вартості додаткових опцій та/або послуг та спеціальних акцій і пропозицій, які можуть діяти на момент придбання автомобіля. Ціни на інші комплектації вказані у відповідних розділах. Ціни є актуальними для наявних на складах Товариства автомобілів, щодо яких здійснене митне оформлення. Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.
-            </p>
-        </div>
+<!--        <div class="info container text-left" v-if="showInfo">-->
+<!--            <p>-->
+<!--                Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою).</p>-->
+<!--            <p>-->
+<!--                Вказані рекомендовані ціни на відповідні автомобілі у базових комплектаціях, без врахування вартості додаткових опцій та/або послуг та спеціальних акцій і пропозицій, які можуть діяти на момент придбання автомобіля. Ціни на інші комплектації вказані у відповідних розділах. Ціни є актуальними для наявних на складах Товариства автомобілів, щодо яких здійснене митне оформлення. Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.-->
+<!--            </p>-->
+<!--        </div>-->
 
 
         <div class="requestService row justify-content-center">
@@ -312,30 +312,24 @@
         },
 
         created() {
-            // this.$router.push({name:"/select_model/:id/looking_around/:id"});
-
             this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
-            // this.model = JSON.parse( localStorage.model );
-            // this.modelTitle = this.model.name;
+
 ///////////////////////////////////////////////////////ЗАГЛУШКА
-//             this.model.description = [
-//                 "Світлодіодні денні ходові вогні",
-//                 "Круїз-контроль",
-//                 "6 гучномовців",
-//                 "Двозонний клімат-контроль"
-//             ];
                 this.model.maxSpeed = 210;
                 this.model.maxPower = 181;
-                this.model.fuelConsumption = 8.3;
             console.log(this.model);
 //////////////////////////////////////////////////////
-//             this.$store.state.model = this.model;
-            // this.equipment = this.$store.state.equipment;
-            // this.getColorModel();
             this.getEquipment();
-            eventEmitter.$on('selectedEquipment', //this.choice
+
+                // if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
+                //     console.log("да");
+                //     localStorage.color = "";
+                //     this.$store.state.color = null;
+
+            // }
+            eventEmitter.$on('selectedEquipment',
                 () => {
                 this.showEquipment = false;
                     this.changeTitle();
@@ -361,13 +355,22 @@
             },
 
             computedEquipment() {
-                return this.$store.getters.equip;
+                // return this.$store.getters.equip;
+                if (this.$store.getters.equip.id) {
+                    console.log("not empty");
+                    return this.$store.getters.equip;
+                } else {
+                    return JSON.parse(localStorage.equipment);
+                }
                 // return JSON.parse( localStorage.equipment );
             },
 
             computedColor() {
-                return this.$store.getters.colored;
-                // return JSON.parse( localStorage.color );
+                if (this.$store.getters.colored.color_code) {
+                    return this.$store.getters.colored;
+                } else {
+                    return JSON.parse( localStorage.color );
+                }
             },
 
             fontColored() {
@@ -389,9 +392,15 @@
                 }
             },
 
-            descriptionList() {
-                return this.equipment.description.split('\n');
-            },
+            // descriptionList() {
+            //     try {
+            //         return this.equipment.description.split('\n');
+            //     }
+            //     catch (e) {
+            //         console.log("selectModel split");
+            //     }
+            //
+            // },
 
 
 
@@ -472,15 +481,35 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                 .then( (response) => {
                     this.equipments = response.data;
-                    this.equipment = this.equipments[0];
-                    this.$store.state.equipment = this.equipment;
+                        this.equipment = this.equipments[0];
+                        this.$store.state.equipment = this.equipment;
+                        localStorage.equipment = JSON.stringify( this.equipments[0] );
+                        localStorage.mod_id = this.equipment.mod_id;
+                    if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
+                        console.log("да");
+                        localStorage.color = "";
+                        this.$store.state.color = null;
+                    }
+
                     this.equipmentTitle = this.equipment.mod_name;
-                    localStorage.equipment = JSON.stringify( this.equipments[0] );
+                    console.log(this.equipment);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модификации");
                     console.log(error);
                 } );
+            },
+
+            descriptionList() {
+                try {
+                    console.log('desc');
+                    let desc = this.equipment.description.split('\n');
+                    return desc;
+                }
+                catch (e) {
+                    console.log("selectModel split");
+                }
+
             },
 
             getFontColor() {
@@ -679,8 +708,11 @@
                 }
 
                 .carColors{
+                    position: relative;
+                    z-index: 10;
                     align-self: flex-end;
                     margin-bottom: 15px;
+
                 }
             }
         }
@@ -855,6 +887,9 @@
 
                     .carColors{
                         align-self: flex-start;
+                        position: absolute;
+                        top: 0;
+                        right: 20px;
                     }
                 }
             }
@@ -906,7 +941,7 @@
                     padding: 50px 20px 10px 20px;
                 }
                 .compare {
-                    margin: 0px 20px;
+                    margin: 0 20px;
                 }
                 .carView {
                     margin: 0 20px;
@@ -925,8 +960,11 @@
                     }
 
                     .carColors{
+                        /*width: 60%;*/
+                        /*margin: auto;*/
                         position: absolute;
                         bottom: -60px;
+                        text-align: center;
                         /*position: absolute;*/
                         /*top: 0;*/
                         /*right: 0;*/
@@ -950,10 +988,10 @@
                 }
             }
 
-            .show_info {
-                margin-top: 0;
-                padding-left: 15px;
-            }
+            /*.show_info {*/
+            /*    margin-top: 0;*/
+            /*    padding-left: 15px;*/
+            /*}*/
 
             .requestService.row {
                 margin: 60px auto 100px;
@@ -991,10 +1029,12 @@
         }
     }
 
-    @media (max-width: 767.9px) {
+    @media (min-width: 576px) and (max-width: 767.9px) {
         .selectModel {
             .container-fluid {
                 padding-bottom: 150px;
+                height: 75vw;
+                position: relative;
                 header {
                     padding: 50px 20px 10px;
                     flex-direction: column-reverse;
@@ -1015,18 +1055,149 @@
                 }
                 .carView {
                     margin: 0 20px;
+                    position: static;
                     .carDescription {
+                        position: static;
                         .description {
-                            font-size: 2rem;
-                            line-height: 3rem;
+                            margin: 0;
+                            font-size: 1.5rem;
+                            line-height: 2rem;
                         }
                         .carPhoto {
                             margin: 0;
                             padding: 0;
+                            position: static;
                             img {
                                 width: 100%;
                                 position: absolute;
-                                bottom: -200px;
+                                bottom: -12vw;
+                                left: 0;
+                            }
+                        }
+                    }
+
+                    .carColors{
+                        width: auto;
+                        position: absolute;
+                        bottom: -85px;
+                    }
+                }
+            }
+
+            .specifications.row {
+                margin-top: 150px;
+                margin-bottom: 0;
+                .price {
+                    text-align: center;
+                    p {
+                        font-size: 1.6rem;
+                    }
+                    .h2 {
+                        font-size: 4rem;
+                        margin: 0;
+                    }
+                }
+                .col-6 {
+                    margin-bottom: 50px;
+                    align-self: flex-end;
+                    p {
+                        font-size: 1.6rem;
+                    }
+                }
+
+            }
+
+            .show_info {
+                margin-top: 0;
+                padding-left: 15px;
+            }
+
+            .requestService.row {
+                margin: 60px auto 100px;
+                div {
+                    padding: 0 10px;
+                    button, .nav-link {
+                        min-width: 100%;
+                        width: 100%;
+                        padding: 10px 5px;
+                    }
+                }
+
+            }
+
+            .video.container-fluid {
+                .poster {
+                    .info {
+                        display: none;
+                    }
+                }
+            }
+
+            .links.container {
+                margin: 30px auto;
+                .link {
+                    margin: 40px 0;
+                    i {
+                        font-size: 6rem;
+                        color: #E50000;
+                    }
+                    h3 {
+                        font-size: 2.2rem;
+                        color: $font_color;
+                        font-weight: bold;
+                        margin: 30px 0;
+                    }
+                    button.btn.btn-light {
+                        @include button;
+                        background-color: #f0f0f0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        .selectModel {
+            .container-fluid {
+                padding-bottom: 150px;
+                height: auto;
+                position: relative;
+                header {
+                    padding: 50px 20px 10px;
+                    flex-direction: column-reverse;
+                    h1 {
+                        font-size: 2.5rem;
+                    }
+                    button.openChoice.btn {
+                        margin-bottom: 15px;
+                        width: 100%;
+                        text-align: center;
+                        i {
+                            position: static;
+                        }
+                    }
+                }
+                /*.compare {*/
+                /*    margin: 0 20px;*/
+                /*}*/
+                .carView {
+                    margin: 0 20px;
+                    position: static;
+                    .carDescription {
+                        position: static;
+                        .description {
+                            margin: 0;
+                            font-size: 1.5rem;
+                            line-height: 2rem;
+                        }
+                        .carPhoto {
+                            margin: 0;
+                            padding: 0;
+                            position: static;
+                            img {
+                                width: 100%;
+                                position: absolute;
+                                bottom: -12vw;
                                 left: 0;
                             }
                         }
@@ -1035,7 +1206,8 @@
                     .carColors{
                         width: 100%;
                         position: absolute;
-                        bottom: -140px;
+                        bottom: -75px;
+                        left: 0;
                     }
                 }
             }

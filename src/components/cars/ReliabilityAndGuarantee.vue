@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="carColors col-xl-2 col-lg-1 col-12">
+                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">
                     <colors-panel
                             :mod_id="equipment.mod_id"
                     ></colors-panel>
@@ -391,29 +391,10 @@
         },
 
         created() {
-            // this.$router.push({name:"/select_model/:id/looking_around/:id"});
-
             this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
-            // this.model = JSON.parse( localStorage.model );
-            // this.modelTitle = this.model.name;
-///////////////////////////////////////////////////////ЗАГЛУШКА
-//             this.model.description = [
-//                 "Світлодіодні денні ходові вогні",
-//                 "Круїз-контроль",
-//                 "6 гучномовців",
-//                 "Двозонний клімат-контроль"
-//             ];
-            this.model.maxSpeed = 210;
-            this.model.maxPower = 181;
-            this.model.fuelConsumption = 8.3;
-            console.log(this.model);
-//////////////////////////////////////////////////////
-//             this.$store.state.model = this.model;
-            // this.equipment = this.$store.state.equipment;
-            // this.getColorModel();
-            this.getEquipment();
+            // this.getEquipment();
             eventEmitter.$on('selectedEquipment', //this.choice
                 () => {
                     this.showEquipment = false;
@@ -426,8 +407,15 @@
             // eventEmitter.$on('selectedColor', (color) => {
             //     this.carColor = color;
             // });
+            // this.getEngine();
+        },
+
+        mounted() {
+            this.getEquipment();
+            console.log('get Engine');
             this.getEngine();
         },
+
 
         computed: {
             photo() {
@@ -439,13 +427,20 @@
             },
 
             computedEquipment() {
-                return this.$store.getters.equip;
-                // return JSON.parse( localStorage.equipment );
+                if (this.$store.getters.equip.id) {
+                    console.log("not empty");
+                    return this.$store.getters.equip;
+                } else {
+                    return JSON.parse(localStorage.equipment);
+                }
             },
 
             computedColor() {
-                return this.$store.getters.colored;
-                // return JSON.parse( localStorage.color );
+                if (this.$store.getters.colored.color_code) {
+                    return this.$store.getters.colored;
+                } else {
+                    return JSON.parse( localStorage.color );
+                }
             },
 
             fontColored() {
@@ -504,15 +499,7 @@
                 ).then( (response) => {
                     this.model = response.data[0];
 ///////////////////////////////////////////////////////ЗАГЛУШКА
-//                     this.model.description = [
-//                         "Світлодіодні денні ходові вогні",
-//                         "Круїз-контроль",
-//                         "6 гучномовців",
-//                         "Двозонний клімат-контроль"
-//                     ];
                     this.model.maxSpeed = 210;
-                    this.model.maxPower = 181;
-                    this.model.fuelConsumption = 8.3;
 //////////////////////////////////////////////////////
                     console.log(this.model);
                 } )
@@ -532,7 +519,13 @@
                         console.log(this.transmissions);
                         this.transmission = this.transmissions[0];
                         localStorage.transmission = JSON.stringify( this.transmission);
-                        console.log(this.transmission);
+                        console.log(this.id_equip, this.transmission);
+                        if (!this.transmission) {
+                            this.transmission = {
+                                eng_name: "none",
+                                // id: null,
+                            }
+                        }
                     } )
                     .catch( (error) => {
                         console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
@@ -557,10 +550,20 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                     .then( (response) => {
                         this.equipments = response.data;
-                        this.equipment = this.equipments[0];
-                        this.$store.state.equipment = this.equipment;
+
+                        if (localStorage.equipment) {
+                            this.equipment = JSON.parse( localStorage.equipment );
+                            if ( this.equipment.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase()) ) {
+                                console.log("да");
+                                this.equipment = JSON.parse( localStorage.equipment );
+                                this.$store.state.equipment = this.equipment;
+                            }
+                        } else {
+                            this.equipment = this.equipments[0];
+                            this.$store.state.equipment = this.equipment;
+                            localStorage.equipment = JSON.stringify( this.equipments[0] );
+                        }
                         this.equipmentTitle = this.equipment.mod_name;
-                        localStorage.equipment = JSON.stringify( this.equipments[0] );
                         console.log(this.equipment);
                     } )
                     .catch( (error) => {
@@ -569,19 +572,33 @@
                     } );
             },
 
-            getFontColor: function () {
+            getFontColor() {
                 // console.log(this.computedColor.rgb);
                 try{
                     switch(this.computedColor.rgb.toLowerCase()){
                         case '#000000'.toLowerCase():
+                        case '#030303'.toLowerCase():
                         case '#182B66'.toLowerCase():
+                        case '#1d50aa'.toLowerCase():
                         case '#5C5653'.toLowerCase():
+                        case '#60101e'.toLowerCase():
                         case '#740310'.toLowerCase():
+                        case '#7a766f'.toLowerCase():
+                        case '#7c7a7a'.toLowerCase():
+                        case '#7d8489'.toLowerCase():
+                        case '#817e6e'.toLowerCase():
+                        case '#8c0414'.toLowerCase():
+                        case '#97a4ac'.toLowerCase():
+                        case '#aeabac'.toLowerCase():
+                        case '#b4ae9c'.toLowerCase():
                         case '#ff0000'.toLowerCase():
                             return this.fontColor = '#FFFFFF';
-                        case '#FFFFFF'.toLowerCase():
+                        case '#727270'.toLowerCase():
+                        case '#d7dcd9'.toLowerCase():
                         case '#EDE7E1'.toLowerCase():
-                        case '#F2F2F0'.toLowerCase():
+                        case '#f2f2f0'.toLowerCase():
+                        case '#fafafa'.toLowerCase():
+                        case '#FFFFFF'.toLowerCase():
                             return this.fontColor = '#202020';
                     }
                 } catch (e) {
@@ -687,6 +704,8 @@
                 }
 
                 .carColors{
+                    position: relative;
+                    z-index: 10;
                     align-self: flex-end;
                     margin-bottom: 15px;
                 }
@@ -1067,6 +1086,9 @@
 
                     .carColors{
                         align-self: flex-start;
+                        position: absolute;
+                        top: 0;
+                        right: 20px;
                     }
                 }
             }
@@ -1145,12 +1167,7 @@
                     .carColors{
                         position: absolute;
                         bottom: -60px;
-                        /*position: absolute;*/
-                        /*top: 0;*/
-                        /*right: 0;*/
-                        /*!*z-index: 999;*!*/
-                        /*text-align: right;*/
-                        /*align-self: flex-end;*/
+                        text-align: center;
                     }
                 }
             }
@@ -1295,9 +1312,9 @@
                     }
 
                     .carColors{
-                        width: 100%;
+                        width: auto;
                         position: absolute;
-                        bottom: -140px;
+                        bottom: -85px;
                     }
                 }
             }
