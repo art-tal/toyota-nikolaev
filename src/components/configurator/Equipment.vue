@@ -35,7 +35,7 @@
 <script>
     import axios from "axios";
     import formattedPrice from "../../filters/price_format";
-    import {eventEmitter} from '../../main'
+    // import {eventEmitter} from '../../main'
     // import {eventEmitter} from './../../app' //         for Laravel
 
 
@@ -124,11 +124,13 @@
             },
 
             activeted(equipment) {
-                // console.log('catch');
+                console.log('catch');
                 this.$store.state.equipment = equipment;
                 localStorage.mod_id = equipment.mod_id;
                 localStorage.equipment = JSON.stringify(equipment);
-                eventEmitter.$emit('selectedEquipment');
+                this.$store.state.showEquipment = false;
+                console.log(this.$store.state.showEquipment);
+                // eventEmitter.$emit('selectedEquipment');
             },
 
             getFontColor: function () {

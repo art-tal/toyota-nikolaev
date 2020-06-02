@@ -18,6 +18,7 @@ export default new Vuex.Store ({
         interior: {},
         selectedAccessories: [],
         showInterior: false,
+        showEquipment:false,
         // modelImage: "",
 
         openConsultation: false,
@@ -48,6 +49,10 @@ export default new Vuex.Store ({
 
         equip(state) {
             return state.equipment;
+        },
+
+        showEquip(state) {
+            return state.showEquipment;
         },
 
         getEngineAndGear(state) {

@@ -36,7 +36,10 @@
             </header>
 
 
-            <equipment v-if="showEquipment"></equipment>
+
+                <equipment v-if="showEquip"></equipment>
+
+
 
 
 <!--            <div class="compare text-left" v-if="!showEquipment">-->
@@ -223,7 +226,7 @@
 
 <script>
     import axios from 'axios';
-    import {eventEmitter} from "../../main";
+    // import {eventEmitter} from "../../main";
     import Equipment from "../configurator/Equipment";
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
@@ -248,7 +251,7 @@
 
                 id: 0,
                 model: {},
-                showEquipment: false,
+                // showEquipment: false,
                 showInfo: false,
                 selectedColor: {},
                 equipments: [],
@@ -320,12 +323,12 @@
             console.log(this.model);
 //////////////////////////////////////////////////////
             this.getEquipment();
-            eventEmitter.$on('selectedEquipment',
-                () => {
-                this.showEquipment = false;
-                    this.changeTitle();
-            }
-                );
+            // eventEmitter.$on('selectedEquipment',
+            //     () => {
+            //     this.showEquipment = false;
+            //         this.changeTitle();
+            // }
+            //     );
             try {
                 this.color = JSON.parse( localStorage.color );
             }
@@ -340,6 +343,10 @@
 
 
         computed: {
+            showEquip() {
+                return this.$store.getters.showEquip;
+            },
+
             photo() {
                 if (this.$store.getters.colored.preview) {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
@@ -436,9 +443,9 @@
                 return this.modelColor;
             },
 
-            showEquipment() {
-                return this.showEquipment;
-            },
+            // showEquipment() {
+            //     return this.$store.getters.showEquip;
+            // },
 
             equipmentTitle() {
                 return  this.equipmentTitle;
@@ -468,10 +475,13 @@
             },
 
             choice() {
-                if (!this.showEquipment) {
-                    this.showEquipment = true;
-                    console.log(this.showEquipment);
-                }
+                // if (!this.showEquipment) {
+                //     this.showEquipment = true;
+                //     console.log(this.showEquipment);
+
+                this.$store.state.showEquipment = !this.$store.state.showEquipment;
+                console.log( this.$store.getters.showEquip);
+
             },
 
             changeTitle() {
