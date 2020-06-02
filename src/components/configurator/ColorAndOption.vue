@@ -29,7 +29,7 @@
                 <div class="body view container row text-center">
 
                     <swiper class="swiper" :options="swiperOption" v-if="showInterior">
-                        <swiper-slide v-for="(img, key) in interiorPhoto"
+                        <swiper-slide v-for="(img, key) in interiorPhoto()"
                                       :key="key"
                                       :style="'background-image: url(' + img + ')'"
                         >
@@ -190,6 +190,7 @@
             this.equipment = JSON.parse( localStorage.equipment );
             this.color = JSON.parse( localStorage.color );
             // this.wheels = JSON.parse( localStorage.wheel );
+            // this.$router.push('colors');
         },
 
 
@@ -237,15 +238,18 @@
                 return this.$store.getters.getShowInterior;
             },
 
-            interiorPhoto() {
-                return this.getInterior.interior_car;
-
-                // if(this.$store.getters.getInterior.interior_car) {
-                //     return  this.$store.getters.getInterior.interior_car;
-                // } else {
-                //     return JSON.parse(localStorage.interior).interior_car;
-                // }
-            },
+            // interiorPhoto() {
+            //     return JSON.parse( this.getInterior.interior_car );
+            //     // let inter_car = this.getInterior.interior_car.split(",");
+            //     // console.log(inter_car);
+            //     // return inter_car;
+            //
+            //     // if(this.$store.getters.getInterior.interior_car) {
+            //     //     return  this.$store.getters.getInterior.interior_car;
+            //     // } else {
+            //     //     return JSON.parse(localStorage.interior).interior_car;
+            //     // }
+            // },
 
             photo() {
                     if (this.$store.getters.colored.code) {
@@ -304,6 +308,19 @@
             option() {
                 this.showOption = !this.showOption;
             },
+
+            interiorPhoto() {
+                    return JSON.parse( this.getInterior.interior_car );
+                //     // let inter_car = this.getInterior.interior_car.split(",");
+                //     // console.log(inter_car);
+                //     // return inter_car;
+                //
+                //     // if(this.$store.getters.getInterior.interior_car) {
+                //     //     return  this.$store.getters.getInterior.interior_car;
+                //     // } else {
+                //     //     return JSON.parse(localStorage.interior).interior_car;
+                //     // }
+                },
 
         }
     }
