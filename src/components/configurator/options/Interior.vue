@@ -46,7 +46,6 @@
         mounted() {
             this.$store.state.showInterior = true;
             console.log('showInterior = ' + this.$store.state.showInterior);
-            console.log( JSON.parse( JSON.parse(localStorage.interior).interior_car) );
         },
         beforeDestroy() {
             this.$store.state.showInterior = false;
@@ -54,33 +53,42 @@
         },
 
         methods: {
-            getInteriors() { //ЗАГЛУШКА
+            getInteriors() {
                 axios.get(
                     'http://lara.toyota.nikolaev.ua/ajax/mod_interior',
                 {params: {id: this.mod_id}}
                 )
                 .then( (response) => {
                     this.interiors = response.data;
-                    // this.interiors.forEach( interior => {this.$set(interior, "checked", false)} );
-                    // this.interiors[0].checked = true;
-                    this.setInterior(this.interiors[0], 0);
+                    this.checkInterior();
                     console.log(this.interiors);
                 } )
                 .catch( (error) => {
-                    // this.interiors = [
-                    //     {
-                    //         interior_name: "Чорная тканина",
-                    //         interior_code: "FA20",
-                    //         interior_image: '//t1-carassets.toyota-europe.com/25e31065-9cdc-4699-bf7d-e92d3d22bd0b.PNG',
-                    //     checked: true,
-                    // }
-                    // ];
-                    // this.selectedInterior = this.interiors[0];
-                    // localStorage.interior = JSON.stringify( this.selectedInterior );
-                    // this.$store.state.interior = this.selectedInterior;
                     console.log("Ошибка загрузки интерьера");
                     console.log(error);
                 } );
+            },
+
+            checkInterior() {
+                try {
+                    let interior = JSON.parse( localStorage.interior );
+                    this.interiors.forEach( (inter, index) => {
+                        if (inter.interior_id === interior.interior_id ) {
+                            console.log(index);
+                            this.setInterior(inter, index);
+                            console.log(this.selectedInterior, index);
+                            // return true;
+                        }
+                    } );
+                }
+                catch (e) {
+                    console.log("localStorage interior is empty");
+                    localStorage.interior = '';
+                }
+                if(!localStorage.interior) {
+                    this.setInterior(this.interiors[0], 0);
+                }
+
             },
 
             setInterior(interior, key) {

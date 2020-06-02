@@ -51,7 +51,7 @@
 
         <header class="container-fluid">
 
-            <div class="video">
+            <div class="video_header">
                 <video width="100%" src="https://hybrid.toyota.ua/wp-content/themes/toyota-landing/img/intro-video.mp4"
                 loop autoplay muted
                 >
@@ -109,75 +109,164 @@
             </section>
 
             <section class="row whats_wrong">
-                <div class="col-6">
-                    <h2>Що таке гiбрид?</h2>
 
-                    <div class="row">
-                        <div class="col-5">
-                            <img src="https://hybrid.toyota.ua/wp-content/uploads/2019/05/electricity.svg" alt="">
-                        </div>
-                        <div class="col-7">
-                            <h4>Не потребує електромережі</h4>
-                            <p>На відміну від повністю електричних автомобілів, гібрид завжди готовий до руху, адже батарея заряджається автоматично.</p>
-                        </div>
+                <div class="row what_is_hybrid">
+                    <div class="col-6">
+                        <h2>Що таке гiбрид?</h2>
                     </div>
 
-                    <div class="row">
-                        <div class="col-5">
-                            <img src="https://hybrid.toyota.ua/wp-content/uploads/2019/05/intuision.svg" alt="">
+                    <div class="col-6">
+                        <h3 class="text-left">Toyota – флагман гібридної технології, що реалізовує принцип спільного використання двигуна внутрішнього згоряння (ДВЗ) та високовольтної батареї.</h3>
+                    </div>
+                </div>
+
+
+
+                <div class="row advantages">
+                    <div class="col-6 px-5">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="https://hybrid.toyota.ua/wp-content/uploads/2019/05/electricity.svg" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h4>Не потребує електромережі</h4>
+                                <p>На відміну від повністю електричних автомобілів, гібрид завжди готовий до руху, адже батарея заряджається автоматично.</p>
+                            </div>
                         </div>
-                        <div class="col-7">
-                            <h4>Простота управління</h4>
-                            <p>Вмикається, коли є потреба: залежно від умов гібридна система автоматично керує електромотором чи бензиновим двигуном.
-                                Лінійне прискорення автомобіля завдяки гібридній безступеневій трансмісії з електронним керуванням.</p>
+
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="https://hybrid.toyota.ua/wp-content/uploads/2019/05/intuision.svg" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h4>Простота управління</h4>
+                                <p>Вмикається, коли є потреба: залежно від умов гібридна система автоматично керує електромотором чи бензиновим двигуном.
+                                    Лінійне прискорення автомобіля завдяки гібридній безступеневій трансмісії з електронним керуванням.</p>
+                            </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="https://hybrid.toyota.ua/wp-content/uploads/2019/05/dynamic.svg" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h4>Економічність у місті</h4>
+                                <p>Гібридні автомобілі дають змогу заощаджувати на пальному завдяки економічності, особливо в умовах інтенсивного руху містом, заторів.</p>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-5">
-                            <img src="https://hybrid.toyota.ua/wp-content/uploads/2019/05/dynamic.svg" alt="">
+
+                    <div class="col-6">
+
+                        <div class="video">
+
+                            <div class="img_button" @click="openVideo()">
+                                <img src="https://hybrid.toyota.ua/wp-content/themes/toyota-landing/img/zag_2.png" alt="describe-car">
+                                <button class="btn btn-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+
+                            <div class="open-video" v-if="showVideo">
+                                <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
+
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/KKvhRVhuCQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+
                         </div>
-                        <div class="col-7">
-                            <h4>Економічність у місті</h4>
-                            <p>Гібридні автомобілі дають змогу заощаджувати на пальному завдяки економічності, особливо в умовах інтенсивного руху містом, заторів.</p>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <section class="row how_it_works">
+                <div class="scheme col-7">
+                    <img src="https://hybrid.toyota.ua/wp-content/themes/toyota-landing/img/car-scheme.png" alt="car scheme">
+
+                    <div class="battery">
+                        <div class="block">
+                            <span class="down"></span>
+                            <span class="down"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
+                        <h6>Батарея</h6>
+                    </div>
+
+                    <div class="generator">
+                        <img src="../../../img/wheel.svg" alt="">
+                        <span class="transmission"></span>
+
+                        <h6>Електродвигун</h6>
+                    </div>
+
+                    <div class="electric">
+                        <span class="connector"></span>
+                        <span class="cable"></span>
+                    </div>
+
+                    <div class="engine">
+                        <h6>Бензиновий двигун</h6>
+                        <span class="eng"></span>
+                        <span class="eng"></span>
+                        <span class="eng"></span>
+                        <span class="eng"></span>
+                        <span class="eng"></span>
+                        <span class="piston"></span>
+                        <span class="piston"></span>
+                        <span class="piston"></span>
+                        <span class="piston"></span>
                     </div>
 
                 </div>
-                
-                
-                <div class="col-6">
-                    <h3>Toyota – флагман гібридної технології, що реалізовує принцип спільного використання двигуна внутрішнього згоряння (ДВЗ) та високовольтної батареї.</h3>
 
-                    <div class="video">
-                        <!--                <video width="100%"-->
-                        <!--                       src="../../../video/Original_filter.mp4"-->
-                        <!--                       controls="controls"-->
-                        <!--                       type="video/mp4"-->
-                        <!--                       poster="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/youtube-parts_tcm-3046-1399144.jpg">-->
-                        <!--                </video>-->
-
-                        <div class="img_button" @click="openVideo()">
-                            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/youtube-parts_tcm-3046-1399144.jpg" alt="Оригінальні чи підроблені запасні частини?">
-                        </div>
-
-                        <div class="open-video" v-if="showVideo">
-                            <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
-
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/MbJHw_WQRmk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-
-
-                    </div>
+                <div class="how col-5 text-left">
+                    <h2>Як працює гібридне авто?</h2>
+                    <h3 class="d-flex justify-content-between text-left">
+                        <span class="flex-grow-1">Пуск</span>
+                        <button><i class="fas fa-chevron-right"></i></button>
+                    </h3>
+                    <h4>Гібриди Toyota починають рух лише за рахунок електричного двигуна.</h4>
                 </div>
             </section>
+
+            <section class="road">
+
+                <div class="work-range-path js-move-mobile" style="transform: translateX(0px);">
+                    <svg id="car-path" viewBox="0 0 1008 30.6">
+                        <path stroke="#fff" stroke-width="5.07px" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M2.5,28.1c0,0,203,0,282.6,0S434.5,2.5,512.3,2.5s113.8,25,207.3,25s285.9,0,285.9,0"></path>
+                    </svg>
+                </div>
+
+            </section>
+
+            
         </div>
     </main>
 </template>
 
 <script>
     export default {
-        name: "HybridInnovations"
+        name: "HybridInnovations",
+
+
+        data() {
+            return {
+                showVideo: false,
+            }
+        },
+
+        methods: {
+            openVideo() {
+                this.showVideo = !this.showVideo;
+                console.log(this.showVideo);
+            },
+        }
     }
 </script>
 
@@ -197,7 +286,7 @@
             position: relative;
             padding: 0;
 
-            .video {
+            .video_header {
                 width: 100%;
                 }
 
@@ -269,6 +358,7 @@
         }
 
         .body.container-fluid {
+            color: #ffffff;
             section.row.twenty_years {
                 padding: 100px 0;
                 position: relative;
@@ -330,10 +420,282 @@
             }
 
             section.row.whats_wrong {
-                div {
-                    h2 {}
-                    .row {
+                padding: 170px 30px 170px 175px;
+                .row.what_is_hybrid {
+                    div {
+                        h2 {
+                            font-size: 4rem;
+                            margin-bottom: 160px;
+                        }
+                        h3 {
+                            font-size: 2.5rem;
+                        }
+                    }
+                }
 
+                .row.advantages {
+                    /*padding-left: 100px;*/
+                    div {
+                        .row {
+                            margin-bottom: 30px;
+                            text-align: left;
+                            div {
+                                img {
+                                    width: 100px;
+                                    height: 100px;
+                                    border-radius: 50%;
+                                }
+                                h4 {
+                                    font-size: 2.4rem;
+                                    margin-bottom: 10px;
+                                    font-weight: bold;
+                                }
+                                p {
+                                    font-size: 1.6rem;
+                                }
+                            }
+                        }
+
+                        .video {
+                            padding: 0;
+                            .img_button {
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+
+                                button.btn.btn-play {
+                                    display: block;
+                                    position: absolute;
+                                    top: calc(50% - 48px);
+                                    left: calc(50% - 48px);
+                                    width: 96px;
+                                    height: 96px;
+                                    border-radius: 50%;
+                                    background-color: #DB001F;
+                                    color: #ffffff;
+                                    font-size: 3rem;
+                                    padding-left: 10px;
+                                    box-shadow: 0 0 8px 8px rgba(255,255,255, 0.2);
+                                }
+                            }
+                            .open-video {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                z-index: 999;
+                                .close {
+                                    width: 100%;
+                                    padding: 10px 20px;
+                                    background-color: #000000;
+                                    color: #f0f0f0;
+                                    font-size: 2rem;
+                                    opacity: 1;
+                                }
+                                iframe {
+                                    width: 100%;
+                                    height: calc(100% - 40px);
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+            
+            section.row.how_it_works {
+                width: 1600px;
+                margin: auto;
+                div.scheme {
+                    position: relative;
+                    img {
+                        width: 100%;
+                    }
+                    .battery {
+                        position: absolute;
+                        bottom: -10px;
+                        left: 280px;
+                        text-align: center;
+                        .block {
+                            margin: 0 auto;
+                            width: 44px;
+                            height: 101px;
+                            border: 4px solid #02abfa;
+                            border-radius: 7px;
+                            span {
+                                margin: 3px;
+                                width: 30px;
+                                height: 15px;
+                                background-color: #ffffff;
+                                display: block;
+                            }
+                        }
+                        h6 {
+                            font-size: 1.6rem;
+                            color: #02abfa;
+                            font-style: italic;
+                            padding-top: 10px;
+                        }
+                    }
+                    
+                    .generator {
+                        position: absolute;
+                        bottom: -6px;
+                        left: 500px;
+                        img {
+                            width: 70px;
+                            height: 70px;
+                            position: relative;
+                            z-index: 100;
+                        }
+                        .transmission {
+                            display: inline-block;
+                            background-color: #02abfa;
+                            width: 169px;
+                            height: 20px;
+                            position: absolute;
+                            top: 25px;
+                            left: 86px;
+                            z-index: 0;
+                            border-radius: 0 10px 10px 0;
+                        }
+                        h6 {
+                            font-size: 1.6rem;
+                            color: #02abfa;
+                            font-style: italic;
+                            padding-top: 10px;
+                        }
+                    }
+
+                    .electric {
+                        position: absolute;
+                        bottom: 61px;
+                        left: 335px;
+                        .connector {
+                            position: absolute;
+                            top: -3px;
+                            left: -3px;
+                            display: block;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: #02abfa;
+                        }
+                        .cable {
+                            display: block;
+                            width: 220px;
+                            height: 2px;
+                            background-color: #02abfa;
+                        }
+                    }
+
+                    .engine {
+                        position: absolute;
+                        bottom: 150px;
+                        right: 233px;
+                        h6 {
+                            position: absolute;
+                            bottom: 75px;
+                            font-size: 1.6rem;
+                            color: #dabf3f;
+                            font-style: italic;
+                        }
+                        .eng {
+                            display: block;
+                            width: 8px;
+                            height: 21px;
+                            background-color: #dabf3f;
+                            position: absolute;
+                            bottom: 0;
+                            &:nth-child(2) {
+                                left: 20px;
+                            }
+                            &:nth-child(3) {
+                                left: 40px;
+                            }
+                            &:nth-child(4) {
+                                left: 60px;
+                            }
+                            &:nth-child(5) {
+                                left: 80px;
+                            }
+                        }
+
+                        span.piston {
+                            display: block;
+                            width: 14px;
+                            height: 64px;
+                            background-image: url(https://hybrid.toyota.ua/wp-content/themes/toyota-landing/img/piston.svg);
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            -webkit-background-size: 100% 100%;
+                            background-size: 100% 100%;
+                            position: absolute;
+                            /*&:nth-child(6) {*/
+                            /*    position: absolute;*/
+                            /*    bottom: 100px;*/
+                            /*    left: 20px;*/
+                            /*}*/
+                            &:nth-child(7) {
+                                position: absolute;
+                                bottom: -7px;
+                                left: 7px;
+                            }
+                            &:nth-child(8) {
+                                position: absolute;
+                                bottom: 7px;
+                                left: 27px;
+                            }
+                            &:nth-child(9) {
+                                position: absolute;
+                                bottom: 7px;
+                                left: 47px;
+                            }
+                            &:nth-child(10) {
+                                position: absolute;
+                                bottom: -7px;
+                                left: 67px;
+                            }
+                        }
+
+
+                    }
+
+                }
+
+                div.how {
+                    /*padding: 0 30px;*/
+                    /*box-sizing: border-box;*/
+                    h2 {
+                        font-size: 4rem;
+                        margin-bottom: 84px;
+                        font-weight: bold;
+                    }
+                    h3 {
+                        font-size: 3rem;
+                        color: #c8cfd2;
+                        font-weight: bold;
+                        button {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-color: #E50000;
+                            border: none;
+                            i {
+                                color: #ffffff;
+                            }
+
+                        }
+                    }
+
+                    h4 {
+                        font-size: 2.4rem;
+                        color: #c8cfd2;
                     }
                 }
             }

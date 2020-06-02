@@ -152,16 +152,34 @@
 
             goSelectModel(model) {
                 this.$store.state.model = model;
+                this.dumpingOfStorage();
+                this.$router.push({name: "selectModel", params: {id: model.id}});
                 console.log(model);
                 // this.$router.push({name: "selectModel"});
                 localStorage.id = model.id;
                 localStorage.model = JSON.stringify(model);
-                this.$router.push({name: "selectModel", params: {id: model.id}});
+                location.reload();
+                this.$store.mutations.mutationRender();
             },
 
             faq() {
                 this.showFAQ = !this.showFAQ;
             },
+
+            dumpingOfStorage() {
+                localStorage.mod_id = 0;
+                localStorage.equipment = "";
+                // localStorage.model = "";
+                localStorage.totalCost = 0;
+                // localStorage.id = 0;
+                localStorage.interior = "";
+                localStorage.wheel = "";
+                localStorage.color = "";
+                localStorage.transmission = "";
+                localStorage.consultModel = "";
+                localStorage.selectedAccessories = "";
+
+            }
         },
 
 

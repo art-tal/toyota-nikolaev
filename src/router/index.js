@@ -5,11 +5,15 @@ import Lineup from "../components/cars/Lineup";
 import DownloadBrochures from "../components/sharedLinks/DownloadBrochures";
 import FAQ from "../components/sharedLinks/FAQ";
 import FormCallBack from "../components/sharedLinks/FormCallBack";
+import VypadkyShahrajstva from "../components/sharedLinks/VypadkyShahrajstva";
 
 
 import NewCars from "../components/cars/NewCars";
 import Model from "../components/cars/Model";
 import SelectModel from "../components/cars/SelectModel";
+import EnginesAndCharacteristics from "../components/cars/EnginesAndCharacteristics";
+import Prices from "../components/cars/Prices";
+import ReliabilityAndGuarantee from "../components/cars/ReliabilityAndGuarantee";
 
 import Equipment from "../components/configurator/Equipment";
 import Configurator from "../components/configurator/Configurator";
@@ -51,9 +55,14 @@ import ToyotaGT86 from "../components/whyToyota/worldOfToyota/sportCars/ToyotaGT
 import IdeasForFuture from "../components/whyToyota/worldOfToyota/sportCars/IdeasForFuture";
 
 import SubMenuNikolaev from "../components/ToyotaInNikolaev/SubMenuNikolaev";
+import CustomerService from "../components/ToyotaInNikolaev/CustomerService";
 import ToyotaMykolaiv from "../components/ToyotaInNikolaev/ToyotaMykolaiv";
 import CarsAvailable from "../components/ToyotaInNikolaev/CarsAvailable";
 import Car from "../components/ToyotaInNikolaev/Car";
+import Workers from "../components/ToyotaInNikolaev/Workers";
+import About from "../components/ToyotaInNikolaev/About";
+import Where from "../components/ToyotaInNikolaev/Where";
+
 
 import Maintenance from "../components/service/maintenance/Maintenance";
 import Principles from "../components/service/maintenance/Principles";
@@ -90,17 +99,23 @@ import ToyotaGazooRacing from "../components/whyToyota/worldOfToyota/ToyotaGazoo
 import ToyotaAtRally from "../components/whyToyota/worldOfToyota/ToyotaAtRally";
 import HistoryOfToyotaSportsCars from "../components/whyToyota/worldOfToyota/sportCars/HistoryOfToyotaSportsCars";
 import ToyodaAA from "../components/whyToyota/worldOfToyota/ToyodaAA";
-import VypadkyShahrajstva from "../components/sharedLinks/VypadkyShahrajstva";
-// import TheLookingAround from "@/components/cars/TheLookingAround";
-import EnginesAndCharacteristics from "../components/cars/EnginesAndCharacteristics";
-import Prices from "../components/cars/Prices";
-import ReliabilityAndGuarantee from "../components/cars/ReliabilityAndGuarantee";
-import WarrantyService from "@/components/whyToyota/guarantee/WarrantyService";
-import QualityGuarantee from "@/components/whyToyota/guarantee/QualityGuarantee";
-import ClientsCharter from "@/components/whyToyota/guarantee/ClientsCharter";
-import HybridInnovations from "@/components/whyToyota/hybridInnovations/HybridInnovations";
-import HybridDrive from "@/components/whyToyota/hybridInnovations/HybridDrive";
+import WarrantyService from "../components/whyToyota/guarantee/WarrantyService";
+import QualityGuarantee from "../components/whyToyota/guarantee/QualityGuarantee";
+import ClientsCharter from "../components/whyToyota/guarantee/ClientsCharter";
+import HybridInnovations from "../components/whyToyota/hybridInnovations/HybridInnovations";
+import HybridDrive from "../components/whyToyota/hybridInnovations/HybridDrive";
+import ToyotaIchiban from "../components/ToyotaInNikolaev/ToyotaIchiban";
+import CorporateResponsibility from "@/components/ToyotaInNikolaev/CorporateResponsibility";
+import Ecology from "@/components/whyToyota/ecology/Ecology";
+import EnvironmentalMission from "@/components/whyToyota/ecology/EnvironmentalMission";
+import BetterAir from "@/components/whyToyota/ecology/BetterAir";
+import BestPlanet from "@/components/whyToyota/ecology/BestPlanet";
+import BetterLife from "@/components/whyToyota/ecology/BetterLife";
+import JustBetter from "@/components/whyToyota/ecology/JustBetter";
+import ISO from "@/components/whyToyota/ecology/ISO";
 
+
+// import TheLookingAround from "@/components/cars/TheLookingAround";
 
 
 
@@ -572,6 +587,50 @@ export default new VueRouter({
 
 
         {
+            path: "/ecology",
+            name: "ecology",
+            component: Ecology,
+        },
+        {
+            path: "/environmental_mission",
+            name: "environmental_mission",
+            component: EnvironmentalMission,
+        },
+        {
+            path: "/better_air",
+            name: "better_air",
+            component: BetterAir,
+        },
+        {
+            path: "/best_planet",
+            name: "best_planet",
+            component: BestPlanet,
+        },
+        {
+            path: "/better_life",
+            name: "better_life",
+            component: BetterLife,
+        },
+        {
+            path: "/just_better",
+            name: "just_better",
+            component: JustBetter,
+        },
+        {
+            path: "/iso",
+            name: "iso",
+            component: ISO,
+        },
+
+
+
+
+
+
+
+
+
+        {
             path: "/warranty_service",
             name: "warranty_service",
             component: WarrantyService,
@@ -614,6 +673,24 @@ export default new VueRouter({
         },
 
         {
+            path: "/customer_service",
+            name: "customer_service",
+            component: CustomerService,
+        },
+        {
+            path: "/toyota_ichiban",
+            name: "toyota_ichiban",
+            component: ToyotaIchiban,
+        },
+        {
+            path: "/corporate_responsibility",
+            name: "corporate_responsibility",
+            component: CorporateResponsibility,
+        },
+
+
+
+        {
             path: "/cars_available",
             name: "cars_available",
             component: CarsAvailable,
@@ -625,11 +702,23 @@ export default new VueRouter({
             component: Car,
         },
 
+        {
+            path: "/workers",
+            name: "workers",
+            component: Workers,
+        },
 
+        {
+            path: "/about",
+            name: "about",
+            component: About,
+        },
 
-
-
-
+        {
+            path: "/where",
+            name: "where",
+            component: Where,
+        },
 
         ////////////////////Заглушки//////////////////////////
 

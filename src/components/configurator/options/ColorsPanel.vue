@@ -4,13 +4,13 @@
 <!--        <swiper class="swiper" ref="swiper" :options="swiperOption">-->
         <swiper class="swiper" ref="swiper" :options="swiperOption">
             <swiper-slide
-                    v-for="(color, index) in colors"
-                    :key="index"
+                    v-for="(color, key) in colors"
+                    :key="key"
             >
 
                 <div
                     class="nav-item sample"
-                    @click="setColor(color, index)"
+                    @click="setColor(color, key)"
                 >
 
                     <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
@@ -77,8 +77,6 @@
 
         data() {
             return {
-                renderComponent: 0,
-
                 mod_id: 0,
                 colors: [],
                 selectedColor: {},
@@ -97,68 +95,40 @@
                     }
                 },
 
-
-                // swiperOption: {
-                //     slidesPerView: 2,
-                //     spaceBetween: 10,
-                //     direction: 'horizontal',
-                //     navigation: {
-                //         nextEl: '.swiper-button-next',
-                //         prevEl: '.swiper-button-prev'
-                //     },
-                //     on: {
-                //         resize: () => {
-                //             this.$refs.swiper.$swiper.changeDirection(
-                //                 window.innerWidth <= 960
-                //                     ? 'vertical'
-                //                     : 'horizontal'
-                //             )
-                //         }
-                //     }
-                // },
             }
         },
 
-        mounted() {
-            this.renderComponent = 0;
-            // this.mod_id = this.$store.state.equipment.mod_id;
+        created() {
             this.mod_id = localStorage.mod_id;
-            // setTimeout( () => {}, 20);
             this.getColors();
-
-                // eventEmitter.$emit('selectedColor', this.colors[0]);
+            // this.renderComponent = false;
         },
 
         computed: {
             get_mod_id() {
                 return this.mod_id;
-
             },
+
+            colored() {
+                return this.colors;
+            },
+
+            // renderComponentColors() {
+            //     return this.$store.getters.getRenderComponentColors;
+            // },
         },
 
         watch: {
-            $route(toR, fromR) {
-                location.reload();///костыль, так делать нельзя но по другому не получается
-                fromR;
-                // this.$forceUpdate();
-                this.id = toR.params['id'];
-            },
-
-            // mod_id() {
-            //     console.log(this.mod_id);
-            //     this.getColors();
-            //     return this.mod_id;
+            // $route() {
+            //     location.reload();///костыль, так делать нельзя но по другому не получается
+            //     // fromR;
+            //     // this.id = toR.params['id'];
             // },
 
-            colors() {
-                return this.colors;
-            },
         },
 
         methods: {
             getColors() {
-              console.log(this.mod_id);
-
               axios.get(
                   `http://lara.toyota.nikolaev.ua/ajax/mod_color`,
                   {params: {id: this.get_mod_id} },//
@@ -199,8 +169,6 @@
                 localStorage.color = JSON.stringify( color );
                 // console.log(key);
             },
-
-
         },
     }
 </script>

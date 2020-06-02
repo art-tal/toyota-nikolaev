@@ -16,7 +16,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to=""
+                                to="/customer_service"
                         >Про службу</router-link>
                     </li>
 
@@ -25,7 +25,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to=""
+                                to="/toyota_ichiban"
                         >Премія Toyota Ichiban</router-link>
                     </li>
                 </ul>
@@ -53,10 +53,28 @@
 
                     <li>
                         <router-link
+                                exact
+                                tag="a"
+                                active-class="active"
+                                to="/about"
+                        >Про нас</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to=""
+                                to="/workers"
+                        >Наші співробітники</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to="/corporate_responsibility"
                         >Корпоративна відповідальність</router-link>
                     </li>
 
@@ -65,50 +83,49 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to=""
+                                to="/faq"
                         >Зв’язатись з нами</router-link>
                     </li>
 
                     <li>
                         <router-link
-                                exact
                                 tag="a"
-                                class="nav-link"
+                                exact
                                 active-class="active"
-                                to=""
-                        >ПІІ «Тойота-Миколаїв»</router-link>
+                                to="/where"
+                        >Як нас знайти</router-link>
                     </li>
                 </ul>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12">
-                <router-link
-                        exact
-                        tag="a"
-                        class="nav-link"
-                        active-class="active"
-                        to="/corporate_sales/general"
-                >Робота в Toyota</router-link>
+            <div class="col-xl-3 col-lg-6 col-12 align-self-start">
+<!--                <router-link-->
+<!--                        exact-->
+<!--                        tag="a"-->
+<!--                        class="nav-link"-->
+<!--                        active-class="active"-->
+<!--                        to="/corporate_sales/general"-->
+<!--                >Робота в Toyota</router-link>-->
 
-                <ul>
-                    <li>
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/corporate_sales/business_car"
-                        >Кар'єра «Тойота-Україна»</router-link>
-                    </li>
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <router-link-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                active-class="active"-->
+<!--                                to="/corporate_sales/business_car"-->
+<!--                        >Кар'єра «Тойота-Україна»</router-link>-->
+<!--                    </li>-->
 
-                    <li>
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/corporate_sales/business_owner"
-                        >Кар’єрні можливості</router-link>
-                    </li>
-                </ul>
+<!--                    <li>-->
+<!--                        <router-link-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                active-class="active"-->
+<!--                                to="/corporate_sales/business_owner"-->
+<!--                        >Кар’єрні можливості</router-link>-->
+<!--                    </li>-->
+<!--                </ul>-->
 
             </div>
 

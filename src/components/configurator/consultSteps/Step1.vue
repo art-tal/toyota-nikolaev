@@ -18,24 +18,53 @@
 
                 <h4>Автомобіль з яким двигуном вас цікавить?</h4>
                 <div class="engine_type d-flex justify-content-between">
-                    <li class="hybrid text-center">
-                        <input id="hybrid" type="radio" v-model="consultEngine" value="Гибридный (бензин)">
+                    <li class="hybrid text-center" v-if="hybrid">
+                        <input id="hybrid" type="radio" v-model="consultEngine" value="Гібридний (бензин)">
                         <label for="hybrid">
                             <i class="fas fa-leaf"></i>
                             <span>Гібирний (бензин)</span>
                             <i class="fas fa-check"></i>
                         </label>
                     </li>
-                    <li class="petrol text-center">
-                        <input id="petrol" type="radio" v-model="consultEngine" value="Бензиновый">
+
+                    <li class="electric text-center" v-if="electric">
+                        <input id="electric" type="radio" v-model="consultEngine" value="Електричний">
+                        <label for="electric">
+                            <img src="../../../img/bolt.png" alt="photo">
+                            <span>Електричний</span>
+                            <i class="fas fa-check"></i>
+                        </label>
+                    </li>
+
+                    <li class="petrol text-center" v-if="petrol">
+                        <input id="petrol" type="radio" v-model="consultEngine" value="Бензиновий">
                         <label for="petrol">
                             <i class="fas fa-gas-pump"></i>
                             <span>Бензиновий</span>
                             <i class="fas fa-check"></i>
                         </label>
                     </li>
-                    <li class="whatever text-center">
-                        <input id="whatever" type="radio" v-model="consultEngine" value="Не имеет значения">
+
+                    <li class="disel text-center" v-if="diesel">
+                        <input id="disel" type="radio" v-model="consultEngine" value="Дизельний">
+                        <label for="disel">
+                            <img src="../../../img/iconfinder_engine_172463-.png" alt="disel"><br>
+                            <span>Дизельний</span>
+                            <i class="fas fa-check"></i>
+                        </label>
+                    </li>
+
+                    <li class="lpg text-center" v-if="lpg">
+                        <input id="lpg" type="radio" v-model="consultEngine" value="LPG">
+                        <label for="lpg">
+                            <img src="../../../img/lpg.png" alt="LPG" style="width: 40px;"><br>
+                            <span>LPG</span>
+                            <i class="fas fa-check"></i>
+                        </label>
+                    </li>
+
+                    <li class="whatever text-center" v-if="engines.length > 1">
+                        <input id="whatever" type="radio" v-model="consultEngine" value="Не має значення">
                         <label for="whatever">
                             <i class="fas fa-random"></i>
                             <span>Без різниці</span>
@@ -72,15 +101,32 @@
         data() {
             return {
                 models: null,
+                engines: [],
 
                 consultModel: {},
                 consultEngine: {},
+
+                equip: {},
+                color: "",
+                photo: "",
+
+
+                hybrid: false,
+                electric: false,
+                petrol: false,
+                diesel: false,
+                lpg: false,
             }
         },
 
         created() {
             this.getModels();
+            this.startPhoto();
+            // this.getEquipment();
             this.findOutEngine();
+            // this.getEngines();
+
+
         },
 
         computed: {
@@ -89,12 +135,9 @@
             },
 
             getPhoto() {
+                return 'http://lara.toyota.nikolaev.ua/storage/' + this.photo;
                 // return 'http://lara.toyota.nikolaev.ua/storage/' + this.consultModel.image;
-                if (this.$store.getters.colored.preview) {
-                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
-                } else {
-                    return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
-                }
+
             },
         },
 
@@ -120,14 +163,75 @@
                 }).then( (response) => {
                     console.log(response.data);
                     this.models = response.data;
-                    // return response.data;
-
                     this.getConsultPosition();
+                    this.getEquipment();
                 } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные модели");
                         console.log(error);
                     })
+            },
+
+            startPhoto() {
+                if (this.$store.getters.colored.preview) {
+                    this.photo = this.$store.getters.colored.preview;
+                } else {
+                    this.photo =  JSON.parse(localStorage.color).preview;
+                }
+            },
+
+            getEquipment() {
+                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.consultModel.id}`)
+                    .then( (response) => {
+                        let equipments = response.data;
+                        this.equip = equipments[0];
+                        console.log(this.consultModel.id);
+                        console.log(this.equip);
+
+                        this.getEngines();
+                        this.getColors();
+                    } )
+                    .catch( (error) => {
+                        console.log("Ошибка, не возможно загрузить доступные модификации");
+                        console.log(error);
+                    } );
+            },
+
+            getEngines() {
+                axios.get(
+                    'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
+                    {params: {"id": this.equip.mod_id}},
+                )
+                    .then( (response) => {
+                        this.engines = response.data;
+                        console.log(this.engines);
+                        this.findFuelType();
+                    } )
+                    .catch( (error) => {
+                        console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
+                        console.log(error);
+                    } );
+
+            },
+
+            getColors() {
+                axios.get(
+                    `http://lara.toyota.nikolaev.ua/ajax/mod_color`,
+                    {params: {id: this.equip.mod_id} },
+                )
+                    .then( (response) => {
+                        let colors = response.data;
+                        this.color = colors[0];
+                        this.photo = this.color.preview;
+                        console.log(this.color);
+                        // }
+
+                        // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
+                    } )
+                    .catch( (error) => {
+                        console.log("Ошибка, не возможно загрузить доступные цвета");
+                        console.log(error);
+                    } )
             },
 
             getConsultPosition() {
@@ -139,9 +243,15 @@
             },
 
             changeModel() {
+                this.petrol = false;
+                this.diesel = false;
+                this.electric = false;
+                this.hybrid = false;
+                this.lpg = false;
                 this.$store.state.consultModel = this.consultModel;
-                localStorage.consultModel = this.consultModel;
+                localStorage.consultModel = JSON.stringify( this.consultModel );
                 console.log(this.$store.state.consultModel);
+                this.getEquipment();
             },
 
             findOutEngine() {
@@ -156,6 +266,39 @@
                     this.consultEngine = "Не имеет значения";
                 }
 
+
+            },
+
+            findFuelType() {
+                this.engines.forEach( eng => {
+                    switch (eng.fuel_type.toLowerCase()) {
+                        case "Бензин".toLowerCase():
+                            this.petrol = true;
+                            console.log("Бензин", this.petrol);
+                            break;
+                        case "Дизел".toLowerCase():
+                            this.diesel = true;
+                            console.log("Дизел", this.diesel);
+                            break;
+                        case "Електро".toLowerCase():
+                            this.electric = true;
+                            console.log("Електро", this.electric);
+                            break;
+                        case "ГIбрид".toLowerCase():
+                            this.hybrid = true;
+                            console.log("ГIбрид", this.hybrid);
+                            break;
+                        case "LPG".toLowerCase():
+                            this.lpg = true;
+                            console.log("LPG", this.lpg);
+                            break;
+                    }
+                } );
+
+                if (this.consultModel.hybrid) {
+                    this.hybrid = true;
+                    console.log("ГIбрид", this.hybrid);
+                }
 
             },
         },
@@ -175,6 +318,7 @@
                 h3 {
                     font-size: 2.2rem;
                     margin: 40px 0;
+                    color: $font_color;
                 }
                 select {
                     width: 100%;
@@ -198,7 +342,7 @@
                     padding: 0;
                     li {
                         width: 100%;
-                        margin: 0 20px;
+                        margin: 0;
                         border-bottom: 4px solid #fff;
                         box-sizing: border-box;
                         label {
@@ -207,6 +351,11 @@
                             margin: 15px;
                             font-size: 1.8rem;
                             color: #202020;
+                            img {
+                                width: 64px;
+                                margin-bottom: 20px;
+                                /*height: 64px;*/
+                            }
                             span {
                                 font-size: 1.6rem;
                             }
@@ -238,6 +387,12 @@
                         }
                     }
 
+                }
+            }
+
+            div {
+                img {
+                    width: 100%;
                 }
             }
         }

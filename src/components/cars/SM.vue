@@ -2,9 +2,9 @@
     <main class="selectModel">
         <sub-navigation></sub-navigation>
 
-<!--        <router-link :id="this.$route.params.id"></router-link>-->
+        <!--        <router-link :id="this.$route.params.id"></router-link>-->
 
-<!--        <div class="container-fluid">-->
+        <!--        <div class="container-fluid">-->
         <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">
 
             <header class="row">
@@ -39,13 +39,13 @@
             <equipment v-if="showEquipment"></equipment>
 
 
-<!--            <div class="compare text-left" v-if="!showEquipment">-->
-<!--                <a href="#" class="text-decoration-none" :style="{'color': fontColored + '!important'}">-->
+            <!--            <div class="compare text-left" v-if="!showEquipment">-->
+            <!--                <a href="#" class="text-decoration-none" :style="{'color': fontColored + '!important'}">-->
 
-<!--                    <i class="fas fa-exchange-alt"></i>-->
-<!--                    <span>Порівняти</span>-->
-<!--                </a>-->
-<!--            </div>-->
+            <!--                    <i class="fas fa-exchange-alt"></i>-->
+            <!--                    <span>Порівняти</span>-->
+            <!--                </a>-->
+            <!--            </div>-->
 
             <div class="carView row">
                 <div class="carDescription col-xl-10 col-lg-9* col-12 row">
@@ -55,11 +55,11 @@
                             :style="{'color': fontColored + '!important'}"
                         >
                             {{desc}}</li>
-<!--                        <li :style="{'color': fontColored + '!important'}">{{equipment.description}}</li>-->
+                        <!--                        <li :style="{'color': fontColored + '!important'}">{{equipment.description}}</li>-->
                     </ul>
 
                     <div class="carPhoto col-xl-9 col-12">
-<!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.model_name_pivot">-->
+                        <!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.model_name_pivot">-->
                         <img :src="photo" :alt="computedEquipment.model_name_pivot">
                     </div>
                 </div>
@@ -101,20 +101,20 @@
             </div>
         </div>
 
-<!--        <div class="show_info container text-left" @click="showInfo = !showInfo">Інформація щодо цін</div>-->
+        <!--        <div class="show_info container text-left" @click="showInfo = !showInfo">Інформація щодо цін</div>-->
 
-<!--        <div class="info container text-left" v-if="showInfo">-->
-<!--            <p>-->
-<!--                Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою).</p>-->
-<!--            <p>-->
-<!--                Вказані рекомендовані ціни на відповідні автомобілі у базових комплектаціях, без врахування вартості додаткових опцій та/або послуг та спеціальних акцій і пропозицій, які можуть діяти на момент придбання автомобіля. Ціни на інші комплектації вказані у відповідних розділах. Ціни є актуальними для наявних на складах Товариства автомобілів, щодо яких здійснене митне оформлення. Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.-->
-<!--            </p>-->
-<!--        </div>-->
+        <!--        <div class="info container text-left" v-if="showInfo">-->
+        <!--            <p>-->
+        <!--                Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою).</p>-->
+        <!--            <p>-->
+        <!--                Вказані рекомендовані ціни на відповідні автомобілі у базових комплектаціях, без врахування вартості додаткових опцій та/або послуг та спеціальних акцій і пропозицій, які можуть діяти на момент придбання автомобіля. Ціни на інші комплектації вказані у відповідних розділах. Ціни є актуальними для наявних на складах Товариства автомобілів, щодо яких здійснене митне оформлення. Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.-->
+        <!--            </p>-->
+        <!--        </div>-->
 
 
         <div class="requestService row justify-content-center">
             <div class="col-6 text-right">
-<!--                <button class="col-6 btn btn-danger">Замовити тест-драйв</button>-->
+                <!--                <button class="col-6 btn btn-danger">Замовити тест-драйв</button>-->
                 <router-link
                         tag="button"
                         class="col-6 btn btn-danger"
@@ -146,13 +146,13 @@
 
             <div class="player" v-if="showVideo">
                 <video
-                       width="100%"
-                       height="auto"
-                       :src="modelVideo.link"
-                       controls="controls"
-                       autoplay
-                       type="video/mp4"
-                       :poster="modelVideo.poster">
+                        width="100%"
+                        height="auto"
+                        :src="modelVideo.link"
+                        controls="controls"
+                        autoplay
+                        type="video/mp4"
+                        :poster="modelVideo.poster">
                 </video>
                 <i class="fas fa-times" @click="openVideo()" v-if="showVideo"></i>
             </div>
@@ -171,16 +171,16 @@
             </div>
 
         </div>
-        
-<!--        <section class="container-fluid gallery">-->
-<!--            <header>-->
-<!--                <h1>Галерея</h1>-->
-<!--            </header>-->
 
-<!--            <div class="body">-->
-<!--                -->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        <section class="container-fluid gallery">-->
+        <!--            <header>-->
+        <!--                <h1>Галерея</h1>-->
+        <!--            </header>-->
+
+        <!--            <div class="body">-->
+        <!--                -->
+        <!--            </div>-->
+        <!--        </section>-->
 
         <section class="links container d-md-flex justify-content-between">
             <div class="link">
@@ -315,25 +315,24 @@
             this.getModel();
 
 ///////////////////////////////////////////////////////ЗАГЛУШКА
-                this.model.maxSpeed = 210;
-                this.model.maxPower = 181;
+            this.model.maxSpeed = 210;
+            this.model.maxPower = 181;
             console.log(this.model);
 //////////////////////////////////////////////////////
             this.getEquipment();
             eventEmitter.$on('selectedEquipment',
                 () => {
-                this.showEquipment = false;
+                    this.showEquipment = false;
                     this.changeTitle();
-            }
-                );
+                }
+            );
             try {
                 this.color = JSON.parse( localStorage.color );
             }
             catch (e) {
-                console.log("error color - 333");
-                return "";
+                console.log("error color");
             }
-            
+
         },
 
 
@@ -344,14 +343,7 @@
                 if (this.$store.getters.colored.preview) {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
                 } else {
-                    try {
-                        return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
-                    }
-                    catch (e) {
-                        console.log("error photo - 350");
-                        return "";
-                    }
-
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
                 }
             },
 
@@ -360,13 +352,7 @@
                     console.log("not empty");
                     return this.$store.getters.equip;
                 } else {
-                    try {
-                        return JSON.parse(localStorage.equipment);
-                    }
-                    catch (e) {
-                        console.log("error equipment - 366");
-                        return "";
-                    }
+                    return JSON.parse(localStorage.equipment);
                 }
             },
 
@@ -374,13 +360,7 @@
                 if (this.$store.getters.colored.color_code) {
                     return this.$store.getters.colored;
                 } else {
-                    try {
-                        return JSON.parse( localStorage.color );
-                    }
-                    catch (e) {
-                        console.log("error Computed color - 379");
-                        return "";
-                    }
+                    return JSON.parse( localStorage.color );
                 }
             },
 
@@ -414,23 +394,12 @@
             },
 
             equipment() {
-                try {
-                    return JSON.parse(localStorage.equipment);
-                }
-                catch (e) {
-                    console.log("error equipment Warch - 421");
-                    return "";
-                }
+                // return this.$store.state.equipment;
+                return JSON.parse(localStorage.equipment);
             },
 
             modelColor() {
-                try {
-                    this.modelColor = JSON.parse( localStorage.color );
-                }
-                catch (e) {
-                    console.log("error model color watch - 431");
-
-                }
+                this.modelColor = JSON.parse( localStorage.color );
                 // this.modelColor = this.$store.getters.colored;
                 this.getFontColor();
                 return this.modelColor;
@@ -448,23 +417,23 @@
         methods: {
 
             getModel() {
-                    axios.get(
-                        "http://lara.toyota.nikolaev.ua/ajax/all_model",
-                        {params: {id: this.getID}},
-                    ).then( (response) => {
-                        this.model = response.data[0];
+                axios.get(
+                    "http://lara.toyota.nikolaev.ua/ajax/all_model",
+                    {params: {id: this.getID}},
+                ).then( (response) => {
+                    this.model = response.data[0];
 ///////////////////////////////////////////////////////ЗАГЛУШКА
-                        this.model.maxSpeed = 210;
-                        this.model.maxPower = 181;
-                        this.model.fuelConsumption = 8.3;
-                        this.getVideo();
+                    this.model.maxSpeed = 210;
+                    this.model.maxPower = 181;
+                    this.model.fuelConsumption = 8.3;
+                    this.getVideo();
 //////////////////////////////////////////////////////
-                        console.log(this.model);
-                    } )
-                        .catch( (error) => {
-                            console.log("Ошибка, не возможно загрузить доступные модели");
-                            console.log(error);
-                        })
+                    console.log(this.model);
+                } )
+                    .catch( (error) => {
+                        console.log("Ошибка, не возможно загрузить доступные модели");
+                        console.log(error);
+                    })
             },
 
             choice() {
@@ -481,25 +450,25 @@
 
             getEquipment() {
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
-                .then( (response) => {
-                    this.equipments = response.data;
+                    .then( (response) => {
+                        this.equipments = response.data;
                         this.equipment = this.equipments[0];
                         this.$store.state.equipment = this.equipment;
                         localStorage.equipment = JSON.stringify( this.equipments[0] );
                         localStorage.mod_id = this.equipment.mod_id;
-                    if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
-                        console.log("да");
-                        localStorage.color = "";
-                        this.$store.state.color = null;
-                    }
+                        if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
+                            console.log("да");
+                            localStorage.color = "";
+                            this.$store.state.color = null;
+                        }
 
-                    this.equipmentTitle = this.equipment.mod_name;
-                    console.log(this.equipment);
-                } )
-                .catch( (error) => {
-                    console.log("Ошибка, не возможно загрузить доступные модификации");
-                    console.log(error);
-                } );
+                        this.equipmentTitle = this.equipment.mod_name;
+                        console.log(this.equipment);
+                    } )
+                    .catch( (error) => {
+                        console.log("Ошибка, не возможно загрузить доступные модификации");
+                        console.log(error);
+                    } );
             },
 
             descriptionList() {
@@ -517,33 +486,33 @@
             getFontColor() {
                 // console.log(this.computedColor.rgb);
                 try{
-                switch(this.computedColor.rgb.toLowerCase()){
-                    case '#000000'.toLowerCase():
-                    case '#030303'.toLowerCase():
-                    case '#182B66'.toLowerCase():
-                    case '#1d50aa'.toLowerCase():
-                    case '#5C5653'.toLowerCase():
-                    case '#60101e'.toLowerCase():
-                    case '#740310'.toLowerCase():
-                    case '#7a766f'.toLowerCase():
-                    case '#7c7a7a'.toLowerCase():
-                    case '#7d8489'.toLowerCase():
-                    case '#817e6e'.toLowerCase():
-                    case '#8c0414'.toLowerCase():
-                    case '#97a4ac'.toLowerCase():
-                    case '#aeabac'.toLowerCase():
-                    case '#b4ae9c'.toLowerCase():
-                    case '#ff0000'.toLowerCase():
-                        return this.fontColor = '#FFFFFF';
-                    case '#727270'.toLowerCase():
-                    case '#d7dcd9'.toLowerCase():
-                    case '#EDE7E1'.toLowerCase():
-                    case '#f2f2f0'.toLowerCase():
-                    case '#fafafa'.toLowerCase():
-                    case '#FFFFFF'.toLowerCase():
-                        return this.fontColor = '#202020';
-                }
-            } catch (e) {
+                    switch(this.computedColor.rgb.toLowerCase()){
+                        case '#000000'.toLowerCase():
+                        case '#030303'.toLowerCase():
+                        case '#182B66'.toLowerCase():
+                        case '#1d50aa'.toLowerCase():
+                        case '#5C5653'.toLowerCase():
+                        case '#60101e'.toLowerCase():
+                        case '#740310'.toLowerCase():
+                        case '#7a766f'.toLowerCase():
+                        case '#7c7a7a'.toLowerCase():
+                        case '#7d8489'.toLowerCase():
+                        case '#817e6e'.toLowerCase():
+                        case '#8c0414'.toLowerCase():
+                        case '#97a4ac'.toLowerCase():
+                        case '#aeabac'.toLowerCase():
+                        case '#b4ae9c'.toLowerCase():
+                        case '#ff0000'.toLowerCase():
+                            return this.fontColor = '#FFFFFF';
+                        case '#727270'.toLowerCase():
+                        case '#d7dcd9'.toLowerCase():
+                        case '#EDE7E1'.toLowerCase():
+                        case '#f2f2f0'.toLowerCase():
+                        case '#fafafa'.toLowerCase():
+                        case '#FFFFFF'.toLowerCase():
+                            return this.fontColor = '#202020';
+                    }
+                } catch (e) {
                     console.log( "Шрифты пролетели" );
                 }
 
@@ -726,15 +695,15 @@
                     margin: 0;
                 }
             }
-                p {
-                    font-size: 1.6rem;
-                }
-                .h1 {
-                    font-size: 4rem;
-                }
-                .h1 + span {
-                    font-size: 1.6rem;
-                }
+            p {
+                font-size: 1.6rem;
+            }
+            .h1 {
+                font-size: 4rem;
+            }
+            .h1 + span {
+                font-size: 1.6rem;
+            }
         }
 
         .show_info {

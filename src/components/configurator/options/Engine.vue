@@ -143,37 +143,13 @@
         created() {
             this.model = JSON.parse( localStorage.model );
             this.equipment = JSON.parse( localStorage.equipment );
-            // console.log(this.model);
-            // console.log(this.equipment);
             this.getEngine();
-            ///////////////////////////////////////////////////////////////////
-            // this.equipment.standart = [
-            //                 'Світлодіодні денні ходові вогні',
-            //                 'Круїз-контроль',
-            //                 '6 гучномовців',
-            //                 'Двозонний клімат-контроль'
-            //             ];
-            // this.equipment.engine = {
-            //                 nameOfEngine: 'Dual VVT-i',
-            //                 valueOfEngine: '2,5 л',
-            //                 typeOfEngine: 'Бензиновий',
-            //                 maxPower: '181 к. с.',
-            //                 info: ['Комбінований цикл: 8,3 л/100 км',
-            //                     'Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км'],
-            //             };
-            // this.equipment.transmision = "6-ступ. автомат. (Передній привод)";
-            ////////////////////////////////////////////////////////////////////
-            // this.getEquipment();
-            // this.car = this.equipments[0];
-            // this.selectedColor = this.colors[2];
         },
 
 
 
         computed: {
             photo() {
-                // return this.$store.getters.modelImage;
-                // return 'http://lara.toyota.nikolaev.ua/storage/' + this.model.image
                 if (this.$store.getters.colored.preview) {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
                 } else {
@@ -193,14 +169,35 @@
                 .then( (response) => {
                     this.transmissions = response.data;
                     console.log(this.transmissions);
-                    this.transmission = this.transmissions[0];
-                    localStorage.transmission = JSON.stringify( this.transmission);
-                    console.log(this.transmission);
+                    // this.transmission = this.transmissions[0];
+                    // localStorage.transmission = JSON.stringify( this.transmission);
+                    this.checkEngine();
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
                     console.log(error);
                 } );
+            },
+
+            checkEngine() {
+                try{
+                    let trans = JSON.parse(localStorage.transmission);
+                    this.transmissions.forEach( eng => {
+                        if( eng.eng_id === trans.eng_id ) {localStorage.transmission = JSON.stringify( this.transmission);
+                            this.$store.state.engineAndGear = JSON.parse( localStorage.transmission );
+                            this.transmission = JSON.parse( localStorage.transmission );
+                            console.log(this.transmission)
+                            return;
+                        }
+                    } );
+                }
+                catch (e) {
+                    console.log("localStorage transmission is empty");
+                }
+                this.transmission = this.transmissions[0];
+                localStorage.transmission = JSON.stringify( this.transmission );
+                this.$store.state.engineAndGear = this.transmission;
+                console.log(this.transmission)
             },
 
             applyTransmission(trans) {

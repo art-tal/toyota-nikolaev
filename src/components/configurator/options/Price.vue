@@ -28,10 +28,10 @@
                     <div class="col-12 text-left">{{getInterior.interior_name}}</div>
 
                 </div>
-                <div class="wheels row">
-                    <div class="col-6 text-left">{{getWheels.wheel_name}}, 4шт.</div>
-                    <div class="col-5 text-right">{{price_wheels | formattedPrice}}&#8372;</div>
-                </div>
+<!--                <div class="wheels row">-->
+<!--                    <div class="col-6 text-left">{{getWheels.wheel_name}}, 4шт.</div>-->
+<!--                    <div class="col-5 text-right">{{price_wheels | formattedPrice}}&#8372;</div>-->
+<!--                </div>-->
 
             </div>
 
@@ -97,7 +97,7 @@
 
                 // price_auto: "734556,00",
                 price: 0,
-                price_wheels: "32099,23",//ЗАГЛУШКА
+                // price_wheels: "32099,23",//ЗАГЛУШКА
                 prAcc: 0,
                 totalCost: 0,
             }
@@ -107,18 +107,51 @@
             formattedPrice,
         },
 
-        created() {
-            this.model = JSON.parse( localStorage.model);
-            this.equipment = JSON.parse( localStorage.equipment);
-            this.$store.state.engineAndGear = JSON.parse( localStorage.transmission);
-            // this.transmission = JSON.parse( localStorage.transmission);
-            this.$store.state.color = JSON.parse( localStorage.color);
-            // this.color = JSON.parse( localStorage.color);
-            this.$store.state.interior = JSON.parse( localStorage.interior);
-            // this.interior = JSON.parse( localStorage.interior);
-            this.$store.state.wheels = JSON.parse( localStorage.wheel);
-            // this.wheels = JSON.parse( localStorage.wheel);
-            this.selectedAccessories = JSON.parse( localStorage.selectedAccessories);
+        mounted() {
+            try {
+                this.model = JSON.parse( localStorage.model);
+        } catch (e) {
+                console.log("JSON.parse( localStorage.model)");
+            }
+
+            try {
+                this.equipment = JSON.parse( localStorage.equipment);
+        } catch (e) {
+                console.log("this.equipment = JSON.parse( localStorage.equipment);");
+            }
+
+            try {
+                this.$store.state.engineAndGear = JSON.parse( localStorage.transmission);
+        } catch (e) {
+                console.log("this.$store.state.engineAndGear = JSON.parse( localStorage.transmission);");
+            }
+
+            try {
+                this.$store.state.color = JSON.parse( localStorage.color);
+        } catch (e) {
+                console.log("this.$store.state.color = JSON.parse( localStorage.color);");
+            }
+
+            try {
+                this.$store.state.interior = JSON.parse( localStorage.interior);
+        } catch (e) {
+                console.log("this.$store.state.interior = JSON.parse( localStorage.interior);");
+            }
+
+            try {
+                this.$store.state.interior = JSON.parse( localStorage.interior);
+        } catch (e) {
+                console.log("this.$store.state.interior = JSON.parse( localStorage.interior);");
+            }
+
+            try {
+                this.selectedAccessories = JSON.parse( localStorage.selectedAccessories);
+        } catch (e) {
+                console.log("this.selectedAccessories = JSON.parse( localStorage.selectedAccessories);");
+            }
+
+            // this.$store.state.wheels = JSON.parse( localStorage.wheel);
+
         },
 
         computed: {
@@ -131,9 +164,9 @@
                 return this.$store.getters.colored;
             },
 
-            getWheels() {
-                return this.$store.getters.getWheels;
-            },
+            // getWheels() {
+            //     return this.$store.getters.getWheels;
+            // },
 
 
             getInterior() {
@@ -153,7 +186,7 @@
             },
 
             getTotalCost() {
-                let totalCost = parseFloat(this.equipment.gross_price) + parseFloat(this.price_wheels) + parseFloat(this.priceAccessories);
+                let totalCost = parseFloat(this.equipment.gross_price) + parseFloat(this.priceAccessories);
                 localStorage.totalCost = totalCost;
                 this.$store.commit('recordTotalCost', totalCost);
                 return totalCost;

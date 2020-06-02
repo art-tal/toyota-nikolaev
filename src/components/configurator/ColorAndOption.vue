@@ -17,7 +17,7 @@
                         <div class="col-6 text-right expand"
                              @click="setAllScreen()"
                         >
-                            <span v-if="getAllScreen">Закрыти</span>
+                            <span v-if="getAllScreen">Закрити</span>
                             <span v-else>На весь екран</span>
                             <i class="fas fa-compress-alt" v-if="getAllScreen"></i>
                             <i class="fas fa-expand-alt" v-else></i>
@@ -59,15 +59,19 @@
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                         <ul class="navbar-nav justify-content-center">
 
-                            <router-link
-                                    class="nav-link"
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/configurator/color_and_option/colors"
+                            <a class="nav-link" @click="option()"
                             >
                                 <span>Колір</span>
-                            </router-link>
+                            </a>
+<!--                            <router-link-->
+<!--                                    class="nav-link"-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/configurator/color_and_option/colors"-->
+<!--                            >-->
+<!--                                <span>Колір</span>-->
+<!--                            </router-link>-->
 
 <!--                            <router-link-->
 <!--                                    class="nav-link"-->
@@ -79,20 +83,26 @@
 <!--                                <span>Колеса</span>-->
 <!--                            </router-link>-->
 
-                            <router-link
-                                    class="nav-link ml-2 mr-2"
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/configurator/color_and_option/interior"
+<!--                            <router-link-->
+<!--                                    class="nav-link ml-2 mr-2"-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/configurator/color_and_option/interior"-->
+<!--                            >-->
+<!--                                <span>Інтер'єр</span>-->
+<!--                            </router-link>-->
+                            <a class="nav-link ml-2 mr-2" @click="option()"
                             >
                                 <span>Інтер'єр</span>
-                            </router-link>
+                            </a>
 
                     </ul>
                     </div>
                 </nav>
-                <router-view></router-view>
+<!--                <router-view></router-view>-->
+                <colors v-if="showOption"></colors>
+                <interior v-else></interior>
             </div>
         </section>
 
@@ -122,6 +132,9 @@
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
 
+    import Colors from "./../../components/configurator/options/Colors";
+    import Interior from "./../../components/configurator/options/Interior";
+
     import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
     import Price from "./../../components/configurator/options/Price";//                 for Laravel
     import ToResult from "./../../components/configurator/options/ToResult";//           for Laravel
@@ -133,6 +146,8 @@
             Accessories,
             Price,
             ToResult,
+            Colors,
+            Interior,
             Swiper,
             SwiperSlide
         },
@@ -150,6 +165,8 @@
 
                 allScreen: false,
                 classForScreen: "",
+
+                showOption: false,
 
 
                 swiperOption: {
@@ -172,41 +189,86 @@
             this.model = JSON.parse( localStorage.model );
             this.equipment = JSON.parse( localStorage.equipment );
             this.color = JSON.parse( localStorage.color );
-            this.wheels = JSON.parse( localStorage.wheel );
-            // this.$router.push('colors');
+            // this.wheels = JSON.parse( localStorage.wheel );
         },
 
 
 
         mounted() {
-            // this.$router.push({name: "colors"});
+            this.showOption = true;
         },
 
         computed: {
+            getEngine() {
+                if(this.$store.getters.getEngineAndGear.fuel_type) {
+                    return this.$store.getters.getEngineAndGear;
+                } else {
+                    return JSON.parse(localStorage.transmission);
+                }
+            },
+
+            getEngineType() {
+                if (this.getEngine.eng_name.toLowerCase().includes('hybrid')) {
+                    return 'hybrid'
+                }
+                switch (this.getEngine.fuel_type.toLowerCase()) {
+                    case ("бензин"):
+                        return 'petrol';
+                    case ("дизель"):
+                        return 'diesel';
+                    case ("lpg"):
+                        return 'lpg';
+                    case ("електро"):
+                        return 'electro';
+                }
+
+                return 'petrol';
+            },
+
+            getInterior() {
+                if(this.$store.getters.getInterior) {
+                    return this.$store.getters.getInterior;
+                } else {
+                    return JSON.parse(localStorage.interior);
+                }
+            },
+
             showInterior() {
                 return this.$store.getters.getShowInterior;
             },
 
             interiorPhoto() {
-                if(this.$store.getters.getInterior.interior_car) {
-                    return JSON.parse( this.$store.getters.getInterior.interior_car);
-                } else {
-                    return JSON.parse( JSON.parse(localStorage.interior).interior_car);
-                }
+                return this.getInterior.interior_car;
+
+                // if(this.$store.getters.getInterior.interior_car) {
+                //     return  this.$store.getters.getInterior.interior_car;
+                // } else {
+                //     return JSON.parse(localStorage.interior).interior_car;
+                // }
             },
 
             photo() {
                     if (this.$store.getters.colored.code) {
-                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.$store.getters.colored.color_code}/image-${this.corner}.jpg`;
+                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.getEngineType}/${this.$store.getters.colored.color_code}/${this.getInterior.interior_code}/image-${this.corner}.jpg`;
                     } else {
                         // return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).code;
-                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${JSON.parse(localStorage.color).color_code}/image-${this.corner}.jpg`;
+                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.getEngineType}/${JSON.parse(localStorage.color).color_code}/${this.getInterior.interior_code}/image-${this.corner}.jpg`;
                     }
             },
 
             getAllScreen() {
                 return this.allScreen ? "all_screen" : "";
             },
+        },
+
+        watch: {
+            getInterior() {
+                // if(this.$store.getters.getInterior) {
+                    return this.$store.getters.getInterior;
+                // } else {
+                //     return JSON.parse(localStorage.interior);
+                // }
+            }
         },
 
         methods: {
@@ -239,7 +301,9 @@
                 this.mouseX = event.pageX;
             },
 
-
+            option() {
+                this.showOption = !this.showOption;
+            },
 
         }
     }
@@ -390,6 +454,7 @@
                             font-size: 1.5rem;
                             &:hover {
                                 color: #428bca;
+                                cursor: pointer;
                             }
                             &.active {
                                 font-weight: bold;

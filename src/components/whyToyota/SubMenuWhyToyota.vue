@@ -176,7 +176,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/corporate_sales"
+                            to="/ecology"
                     >Турбота про навколишнє середовище</router-link>
 
                     <ul>
@@ -185,7 +185,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_car"
+                                    to="/environmental_mission"
                             >Екологічна місія для кращого майбутнього</router-link>
                         </li>
 
@@ -194,7 +194,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/business_owner"
+                                    to="/better_air"
                             >Краще повітря</router-link>
                         </li>
 
@@ -203,7 +203,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/corporate_clients"
+                                    to="/best_planet"
                             >Краща планета</router-link>
                         </li>
 
@@ -212,7 +212,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/better_life"
                             >Краще життя</router-link>
                         </li>
 
@@ -221,7 +221,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/just_better"
                             >Просто краще</router-link>
                         </li>
 
@@ -230,7 +230,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/corporate_sales/special_solutions"
+                                    to="/iso"
                             >ISO 14001</router-link>
                         </li>
 

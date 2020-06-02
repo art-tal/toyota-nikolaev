@@ -28,6 +28,7 @@ export default new Vuex.Store ({
         },
 
         totalCost: 0,
+
         // consultModel: {},
         // consultEngine: {},
     },
@@ -88,6 +89,7 @@ export default new Vuex.Store ({
         },
 
 
+
     },
 
     mutations: {
@@ -106,7 +108,6 @@ export default new Vuex.Store ({
         recordTotalCost(state, payload) {
             state.totalCost = payload;
         },
-
 
 
 

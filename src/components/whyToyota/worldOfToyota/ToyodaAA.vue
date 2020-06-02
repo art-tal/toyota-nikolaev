@@ -382,6 +382,7 @@
                     font-size: 4rem;
                     height: 5px;
                 }
+
             }
 
 
