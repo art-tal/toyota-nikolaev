@@ -122,41 +122,47 @@
                 </div>
 
                 <div class="col-xl-4 col-md-6 col-12">
-                    <router-link
-                            exact
-                            tag="a"
+                    <a
                             class="nav-link"
-                            active-class="active"
-                            to="/hybrid_innovations"
-                    >Гібридні інновації</router-link>
+                            href="https://hybrid.toyota.ua/"
+                            target="_blank"
+                    >Гібридні інновації</a>
+
+<!--                    <router-link-->
+<!--                            exact-->
+<!--                            tag="a"-->
+<!--                            class="nav-link"-->
+<!--                            active-class="active"-->
+<!--                            to="/hybrid_innovations"-->
+<!--                    >Гібридні інновації</router-link>-->
 
                     <ul>
-                        <li>
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/corporate_sales/business_car"
-                            >Що таке гібрид?</router-link>
-                        </li>
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/corporate_sales/business_car"-->
+<!--                            >Що таке гібрид?</router-link>-->
+<!--                        </li>-->
 
-                        <li>
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/corporate_sales/business_owner"
-                            >Переваги гібридних авто</router-link>
-                        </li>
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/corporate_sales/business_owner"-->
+<!--                            >Переваги гібридних авто</router-link>-->
+<!--                        </li>-->
 
-                        <li>
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/corporate_sales/corporate_clients"
-                            >Часті запитання</router-link>
-                        </li>
+<!--                        <li>-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/corporate_sales/corporate_clients"-->
+<!--                            >Часті запитання</router-link>-->
+<!--                        </li>-->
 
                         <li>
                             <router-link

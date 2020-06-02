@@ -5,7 +5,7 @@
             <div  class="equip col-lg-4 col-md-6 col-12"
                  v-for="(equipment, key) in equipments"
                  :key="key"
-                 @click="activeted(equipment)"
+                 @click="activated(equipment)"
             >
 <!--                :style="{'border-top': '4px solid' + color}"-->
                 <img :src="photo" :alt="equipment.mod_name">
@@ -35,7 +35,8 @@
 <script>
     import axios from "axios";
     import formattedPrice from "../../filters/price_format";
-    // import {eventEmitter} from '../../main'
+    import {eventEmitter} from '../../main'
+    import $ from "jquery";
     // import {eventEmitter} from './../../app' //         for Laravel
 
 
@@ -71,7 +72,7 @@
             localStorage.equipment = JSON.stringify( this.equipment );
             this.getFontColor();
 
-            // eventEmitter.$on('select', () => {this.activeted()})
+            eventEmitter.$on('select', () => {this.activeted()})
         },
 
         computed: {
@@ -106,15 +107,8 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.getModelId}`)
                     .then((response) => {
                         this.equipments = response.data;
-                        ///////////////////////////ЗАГЛУШКА
-                        // this.equipments.forEach( (eq) => {
-                        //     eq.description = [
-                        //         "Світлодіодні денні ходові вогні",
-                        //         "Круїз-контроль",
-                        //         "6 гучномовців",
-                        //         "Двозонний клімат-контроль"
-                        //     ];} );
-                        //////////////////////////////
+
+                        this.checkEquipment();
                         console.log(this.equipments);
                     })
                     .catch((error) => {
@@ -123,28 +117,72 @@
                     });
             },
 
-            activeted(equipment) {
+            checkEquipment() {
+                if(this.$store.getters.equip.mod_id) {
+                    this.equipments.forEach( equip => {
+                       if ( equip.mod_id === this.$store.getters.equip.mod_id ) {
+                           this.equipment = equip;
+                           localStorage.equipment = JSON.stringify(equip);
+                           return "";
+                       }
+                    });
+                } else if (localStorage.equipment) {
+                    this.equipments.forEach( equip => {
+                        if ( equip.mod_id === JSON.parse(localStorage.equipment).mod_id ) {
+                            this.equipment = equip;
+                            this.$store.state.equipment = equip;
+                            return "";
+                        }
+                    });
+                } else {
+                    // this.equipment = this.equipments[0];
+                    // this.$store.state.equipment = this.equipment;
+                    // localStorage.equipment = JSON.stringify(this.equipment);
+                    this.activated(this.equipments[0]);
+                }
+            },
+
+            activated(equipment) {
                 console.log('catch');
                 this.$store.state.equipment = equipment;
                 localStorage.mod_id = equipment.mod_id;
                 localStorage.equipment = JSON.stringify(equipment);
-                this.$store.state.showEquipment = false;
-                console.log(this.$store.state.showEquipment);
-                // eventEmitter.$emit('selectedEquipment');
+                // this.$store.state.showEquipment = false;
+                // console.log(this.$store.state.showEquipment);
+                eventEmitter.$emit('selectedEquipment');
+
+                $(".equip").on('click', function () {
+                    $(".trans").removeClass('active');
+                    $(this).addClass('active');
+                })
             },
 
             getFontColor: function () {
                 try{
                     switch(this.color.rgb.toLowerCase()){
                         case '#000000'.toLowerCase():
+                        case '#030303'.toLowerCase():
                         case '#182B66'.toLowerCase():
+                        case '#1d50aa'.toLowerCase():
                         case '#5C5653'.toLowerCase():
+                        case '#60101e'.toLowerCase():
                         case '#740310'.toLowerCase():
+                        case '#7a766f'.toLowerCase():
+                        case '#7c7a7a'.toLowerCase():
+                        case '#7d8489'.toLowerCase():
+                        case '#817e6e'.toLowerCase():
+                        case '#8c0414'.toLowerCase():
+                        case '#97a4ac'.toLowerCase():
+                        case '#aeabac'.toLowerCase():
+                        case '#b4ae9c'.toLowerCase():
                         case '#ff0000'.toLowerCase():
                             return this.fontColor = '#FFFFFF';
-                        case '#FFFFFF'.toLowerCase():
+                        case '#727270'.toLowerCase():
+                        case '#d7dcd9'.toLowerCase():
                         case '#EDE7E1'.toLowerCase():
-                        case '#F2F2F0'.toLowerCase():
+                        case '#f2f2f0'.toLowerCase():
+                        case '#fafafa'.toLowerCase():
+                        case '#FFFFFF'.toLowerCase():
                             return this.fontColor = '#202020';
                     }
                 } catch (e) {

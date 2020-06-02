@@ -5,7 +5,8 @@
 <!--        <router-link :id="this.$route.params.id"></router-link>-->
 
 <!--        <div class="container-fluid">-->
-        <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">
+<!--        <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">-->
+        <div class="container-fluid"  :style="{'background': getGradient( computedColor.rgb), 'color': fontColored + '!important'}">
 
             <header class="row">
                 <h1 class="model col-xl-10 col-lg-9 col-md-6 col-12 text-left">
@@ -37,7 +38,7 @@
 
 
 
-                <equipment v-if="showEquip"></equipment>
+                <equipment v-if="showEquipment" :id="id"></equipment>
 
 
 
@@ -89,7 +90,7 @@
 
             <div class="fuelConsumption col-xl-2 col-md-3 col-6">
                 <p>Споживання пального</p>
-                <span class="h1">{{equipment.fuel}}</span>
+                <span class="h1">{{computedEquipment.fuel}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
             <div class="maxSpeed col-xl-2 col-md-3 col-6">
@@ -226,7 +227,7 @@
 
 <script>
     import axios from 'axios';
-    // import {eventEmitter} from "../../main";
+    import {eventEmitter} from "../../main";
     import Equipment from "../configurator/Equipment";
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
@@ -248,10 +249,11 @@
 
         data() {
             return {
+                renderComponent: 0,
 
                 id: 0,
                 model: {},
-                // showEquipment: false,
+                showEquipment: true,
                 showInfo: false,
                 selectedColor: {},
                 equipments: [],
@@ -317,18 +319,16 @@
             this.id = this.$route.params.id;
             this.getModel();
 
-///////////////////////////////////////////////////////ЗАГЛУШКА
-                this.model.maxSpeed = 210;
-                this.model.maxPower = 181;
             console.log(this.model);
-//////////////////////////////////////////////////////
+
             this.getEquipment();
-            // eventEmitter.$on('selectedEquipment',
-            //     () => {
-            //     this.showEquipment = false;
-            //         this.changeTitle();
-            // }
-            //     );
+
+            eventEmitter.$on('selectedEquipment',
+                () => {
+                this.showEquipment = false;
+                this.changeTitle();
+            }
+                );
             try {
                 this.color = JSON.parse( localStorage.color );
             }
@@ -339,13 +339,13 @@
             
         },
 
+        mounted() {
+            this.showEquipment = false;
+        },
 
 
 
         computed: {
-            showEquip() {
-                return this.$store.getters.showEquip;
-            },
 
             photo() {
                 if (this.$store.getters.colored.preview) {
@@ -363,18 +363,22 @@
             },
 
             computedEquipment() {
-                if (this.$store.getters.equip.id) {
-                    console.log("not empty");
-                    return this.$store.getters.equip;
-                } else {
+                // if (this.$store.getters.equip.mod_id) {
+                //     console.log("not empty");
+                //     return this.$store.getters.equip;
+                // } else {
                     try {
                         return JSON.parse(localStorage.equipment);
                     }
                     catch (e) {
-                        console.log("error equipment - 366");
+                        console.log("error equipment - 382");
+                        if (this.$store.getters.equip.mod_id) {
+                            console.log("not empty");
+                            return this.$store.getters.equip;
+                        }
                         return "";
                     }
-                }
+                // }
             },
 
             computedColor() {
@@ -397,7 +401,7 @@
 
             checkId() {///////////////////////////////////////////////////
                 this.$forceUpdate();
-                return this.$route.params['id'];
+                return this.$route.params.id;
             },////////////////////////////////////////////////////////////
 
             getID() {
@@ -414,10 +418,10 @@
 
         watch: {
             $route(toR, fromR) {
-                location.reload();///костыль, так делать нельзя но по другому не получается
+                // location.reload();///костыль, так делать нельзя но по другому не получается
                 fromR;
-                // this.$forceUpdate();
-                this.id = toR.params['id'];
+                this.forceUpdate();
+                this.id = toR.params.id;
             },
 
             equipment() {
@@ -425,7 +429,7 @@
                     return JSON.parse(localStorage.equipment);
                 }
                 catch (e) {
-                    console.log("error equipment Warch - 421");
+                    console.log("error equipment Watch - 421");
                     return "";
                 }
             },
@@ -443,9 +447,10 @@
                 return this.modelColor;
             },
 
-            // showEquipment() {
-            //     return this.$store.getters.showEquip;
-            // },
+            showEquipment() {
+                console.log('watch', this.showEquipment);
+                return this.showEquipment;
+            },
 
             equipmentTitle() {
                 return  this.equipmentTitle;
@@ -461,9 +466,9 @@
                     ).then( (response) => {
                         this.model = response.data[0];
 ///////////////////////////////////////////////////////ЗАГЛУШКА
-                        this.model.maxSpeed = 210;
-                        this.model.maxPower = 181;
-                        this.model.fuelConsumption = 8.3;
+//                         this.model.maxSpeed = 210;
+//                         this.model.maxPower = 181;
+//                         this.model.fuelConsumption = 8.3;
                         this.getVideo();
 //////////////////////////////////////////////////////
                         console.log(this.model);
@@ -475,12 +480,8 @@
             },
 
             choice() {
-                // if (!this.showEquipment) {
-                //     this.showEquipment = true;
-                //     console.log(this.showEquipment);
-
-                this.$store.state.showEquipment = !this.$store.state.showEquipment;
-                console.log( this.$store.getters.showEquip);
+                this.showEquipment = !this.showEquipment;
+                console.log( this.showEquipment);
 
             },
 
@@ -514,7 +515,6 @@
 
             descriptionList() {
                 try {
-                    console.log('desc');
                     let desc = this.equipment.description.split('\n');
                     return desc;
                 }
@@ -557,6 +557,74 @@
                     console.log( "Шрифты пролетели" );
                 }
 
+            },
+
+            lightenDarkenColor(col, amt) {
+
+                let usePound = false;
+
+                if (col[0] == "#") {
+                    col = col.slice(1);
+                    usePound = true;
+                }
+
+                let num = parseInt(col,16);
+
+                let r = (num >> 16) + amt;
+
+                if (r > 255) r = 255;
+                else if  (r < 0) r = 0;
+
+                let b = ((num >> 8) & 0x00FF) + amt;
+
+                if (b > 255) b = 255;
+                else if  (b < 0) b = 0;
+
+                let g = (num & 0x0000FF) + amt;
+
+                if (g > 255) g = 255;
+                else if (g < 0) g = 0;
+
+                return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
+
+    },
+
+            getGradient(rgb){
+                try{
+                    switch(rgb.toLowerCase()){
+                        case '#000000'.toLowerCase():
+                        case '#030303'.toLowerCase():
+                            return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 70) +  ")";
+                        case '#182B66'.toLowerCase():
+                        case '#1d50aa'.toLowerCase():
+                        case '#5C5653'.toLowerCase():
+                        case '#60101e'.toLowerCase():
+                        case '#727270'.toLowerCase():
+                        case '#740310'.toLowerCase():
+                        case '#7a766f'.toLowerCase():
+                        case '#7c7a7a'.toLowerCase():
+                        case '#7d8489'.toLowerCase():
+                        case '#817e6e'.toLowerCase():
+                        case '#8c0414'.toLowerCase():
+                        case '#97a4ac'.toLowerCase():
+                        case '#aeabac'.toLowerCase():
+                        case '#b4ae9c'.toLowerCase():
+                        case '#c9021a'.toLowerCase():
+                        case '#ff0000'.toLowerCase():
+
+                            return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 50) +  ")";
+                        case '#d7dcd9'.toLowerCase():
+                        case '#EDE7E1'.toLowerCase():
+                        case '#f2f2f0'.toLowerCase():
+                        case '#fafafa'.toLowerCase():
+                        case '#FFFFFF'.toLowerCase():
+                            return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, -50) + ")";
+                            default:
+                                return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 20) +  ")";
+                    }
+                } catch (e) {
+                    console.log( "Градиетны пролетели" );
+                }
             },
 
             getVideo() {

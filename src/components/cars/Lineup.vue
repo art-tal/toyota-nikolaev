@@ -2,12 +2,12 @@
     <section class="container-fluid">
         <div class="row car_type">
 <!--            <a href="#" class="new_car">Нові автомтобілі</a>-->
-            <router-link
-                    tag="a"
-                    exact
-                    active-class="active"
-                    to="/new_cars"
-            >Нові автомобілі</router-link>
+<!--            <router-link-->
+<!--                    tag="a"-->
+<!--                    exact-->
+<!--                    active-class="active"-->
+<!--                    to="/new_cars"-->
+<!--            >Нові автомобілі</router-link>-->
 
             <router-link
                     tag="a"
@@ -16,7 +16,7 @@
                     to="/cars_available"
             >Авто в наявності</router-link>
 
-            <a href="#" class="old_car">Автомобілі с пробігом</a>
+<!--            <a href="#" class="old_car">Автомобілі с пробігом</a>-->
         </div>
 
         <div class="row">

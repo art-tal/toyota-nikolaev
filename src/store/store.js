@@ -84,12 +84,10 @@ export default new Vuex.Store ({
         },
 
         getOpenConsultation(state) {
-            console.log(state.openConsultation);
             return state.openConsultation;
         },
 
         getTotalCost(state) {
-            console.log(state.openConsultation);
             return state.totalCost;
         },
 

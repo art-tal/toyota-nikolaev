@@ -30,13 +30,13 @@
                 </p>
             </div>
             <div class="col-6 social">
-                <a href="#">
+                <a href="https://www.youtube.com/user/ToyotaUkraine" target="_blank">
                     <img src="../../img/icons8-youtube-squared.png" alt="icons8-youtube-squared.svg">
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/%D0%9E%D0%9E%D0%9E-%D0%9A%D0%B8%D0%A2-%D0%A2-%D0%A2%D0%BE%D0%B9%D0%BE%D1%82%D0%B0-%D0%A6%D0%B5%D0%BD%D1%82%D1%80-%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2-238457353204467/" target="_blank">
                     <img src="../../img/icons8-facebook-old.png" alt="icons8-facebook-old.svg">
                 </a>
-                <a href="#">
+                <a href="https://instagram.com/toyota.nikolaev" target="_blank">
                     <img src="../../img/icons8-instagram.png" alt="icons8-instagram.svg">
                 </a>
             </div>

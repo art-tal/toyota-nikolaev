@@ -29,7 +29,7 @@
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active dropdown">
                                 <a class="nav-link dropdown-toggle"
-                                   href.prevent="#"
+                                   @click.prevent="activated()"
                                    role="button"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
@@ -45,7 +45,7 @@
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle"
-                                   href.prevent="#"
+                                   @click.prevent="activated()"
                                    role="button"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
@@ -59,7 +59,7 @@
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle"
-                                   href.prevent=""
+                                   @click.prevent="activated()"
                                    role="button"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
@@ -72,20 +72,20 @@
                                 </div>
                             </li>
 
-<!--                            <li class="nav-item">-->
-<!--                                <router-link-->
-<!--                                        class="nav-link"-->
-<!--                                        tag="a"-->
-<!--                                        exact-->
-<!--                                        to="/souvenir_products"-->
-<!--                                >-->
-<!--                                    <span>Сувенірна продукція</span>-->
-<!--                                </router-link>-->
-<!--                            </li>-->
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        @click="activated()"
+                                        href="https://collection.toyota.ua/"
+                                        target="_blank"
+                                >
+                                    <span>Сувенірна продукція</span>
+                                </a>
+                            </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle"
-                                   href.prevent=""
+                                   @click.prevent="activated()"
                                    role="button"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
@@ -101,7 +101,7 @@
 
                             <li class="nav-item">
                                 <a class="nav-link dropdown-toggle"
-                                   href.prevent=""
+                                   @click.prevent="activated()"
                                    role="button"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
@@ -150,29 +150,37 @@
 <!--                        </router-link>-->
 
 <!--                    </li>-->
-                    <li class="nav-item">
-                        <router-link
-                                class="nav-link"
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to=""
-                        >
-                            <i class="fas fa-search"></i>
-                            <span>Пошукна сайті Toyota.nikolaev.ua</span>
-                        </router-link>
-                    </li>
+<!--                    <li class="nav-item">-->
+<!--                        <router-link-->
+<!--                                class="nav-link"-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                active-class="active"-->
+<!--                                to=""-->
+<!--                        >-->
+<!--                            <i class="fas fa-search"></i>-->
+<!--                            <span>Пошукна сайті Toyota.nikolaev.ua</span>-->
+<!--                        </router-link>-->
+<!--                    </li>-->
                     <li class="nav-item dropdown">
-                        <router-link
+                        <a
                                 class="nav-link"
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to=""
+                                href="https://www.toyota.ua/service-and-accessories/ssc.json"
+                                target="_blank"
                         >
                             <i class="far fa-user"></i>
                             <span>Моя Toyota</span>
-                        </router-link>
+                        </a>
+<!--                        <router-link-->
+<!--                                class="nav-link"-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                active-class="active"-->
+<!--                                to=""-->
+<!--                        >-->
+<!--                            <i class="far fa-user"></i>-->
+<!--                            <span>Моя Toyota</span>-->
+<!--                        </router-link>-->
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <button class="btn btn-dark">Увійти</button>
                             <a class="dropdown-item" href="#">Мої конфігурації</a>
@@ -200,6 +208,7 @@
     // import SubMenuWhyToyota from "../whyToyota/SubMenuWhyToyota";
     // import SubMenuNikolaev from "../ToyotaInNikolaev/SubMenuNikolaev";
 
+    import $ from "jquery"
 
     import Lineup from "../cars/Lineup";//                                       for Laravel
     import SubMenuToBuyers from "./../../components/toBuyers/SubMenuToBuyers";//                      for Laravel
@@ -216,6 +225,15 @@
             SubMenuService,
             SubMenuWhyToyota,
             SubMenuNikolaev,
+        },
+
+        methods: {
+            activated() {
+                $(".nav-link").on("click", function () {
+                    $(".nav-link").removeClass("active");
+                    $(this).addClass("active");
+                })
+            },
         },
     }
 </script>

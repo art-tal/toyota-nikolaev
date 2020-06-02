@@ -3,7 +3,8 @@
         <sub-navigation></sub-navigation>
 
 
-        <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">
+<!--        <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">-->
+        <div class="container-fluid"  :style="{'background': getGradient( computedColor.rgb), 'color': fontColored + '!important'}">
 
             <header class="row">
                 <h1 class="model col-xl-10 col-lg-9 col-md-6 col-12 text-left">
@@ -35,7 +36,7 @@
             </header>
 
 
-            <equipment v-if="showEquipment"></equipment>
+            <equipment v-if="showEquipment" :id="id"></equipment>
 
 
             <div class="carView row">
@@ -87,7 +88,7 @@
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
                                 <div class="row transmissions">
-                                    <div class="col-xl-4 col-md-6  trans text-left active" v-for="(trans, key) in transmissions" :key="key">
+                                    <div class="col-xl-4 col-md-6  trans text-left" v-for="(trans, key) in transmissions" :key="key" @click="activated(trans)">
                                         <div class="field">
                                             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + trans.eng_image" :alt="trans.eng_name">
                                         </div>
@@ -309,6 +310,7 @@
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
     import formattedPrice from "../../filters/price_format";
+    import $ from "jquery";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
     // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
@@ -391,55 +393,79 @@
         },
 
         created() {
-            this.renderComponent = 0;
+            // this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
-            // this.getEquipment();
             eventEmitter.$on('selectedEquipment', //this.choice
                 () => {
                     this.showEquipment = false;
                     this.changeTitle();
-                    // this.showEquipment = !this.showEquipment;
                 }
             );
-            // this.color = this.$store.state.color;
-            this.color = JSON.parse( localStorage.color );
-            // eventEmitter.$on('selectedColor', (color) => {
-            //     this.carColor = color;
-            // });
-            // this.getEngine();
+            try {
+                this.color = JSON.parse( localStorage.color );
+            }
+            catch (e) {
+                console.log("error color - 333");
+                return "";
+            }
         },
 
         mounted() {
             this.getEquipment();
             console.log('get Engine');
             this.getEngine();
+            this.showEquipment = false;
         },
 
 
         computed: {
+
             photo() {
                 if (this.$store.getters.colored.preview) {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
                 } else {
-                    return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                    try {
+                        return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                    }
+                    catch (e) {
+                        console.log("error photo - 350");
+                        return "";
+                    }
+
                 }
             },
 
             computedEquipment() {
-                if (this.$store.getters.equip.id) {
-                    console.log("not empty");
-                    return this.$store.getters.equip;
-                } else {
+                // if (this.$store.getters.equip.mod_id) {
+                //     console.log("not empty");
+                //     return this.$store.getters.equip;
+                // } else {
+                try {
                     return JSON.parse(localStorage.equipment);
                 }
+                catch (e) {
+                    console.log("error equipment - 382");
+                    if (this.$store.getters.equip.mod_id) {
+                        console.log("not empty");
+                        return this.$store.getters.equip;
+                    }
+                    return "";
+                }
+                // }
             },
 
             computedColor() {
                 if (this.$store.getters.colored.color_code) {
                     return this.$store.getters.colored;
                 } else {
-                    return JSON.parse( localStorage.color );
+                    try {
+                        return JSON.parse( localStorage.color );
+                    }
+                    catch (e) {
+                        console.log("error Computed color - 379");
+                        return "";
+                    }
                 }
             },
 
@@ -449,12 +475,18 @@
 
             checkId() {
                 this.$forceUpdate();
-                return this.$route.params['id'];
+                return this.$route.params.id;
             },
 
-            // descriptionList() {
-            //     return this.equipment.description.split('\n');
-            // },
+            getID() {
+                if(this.$route.params.id) {
+                    return this.$route.params.id;
+                } else if( this.$store.getters.getModelId) {
+                    return this.$store.getters.getModelId;
+                } else {
+                    return localStorage.id;
+                }
+            },
 
 
 
@@ -463,23 +495,35 @@
 
         watch: {
             $route(toR, fromR) {
-                location.reload();///костыль, так делать нельзя но по другому не получается
+                // location.reload();///костыль, так делать нельзя но по другому не получается
                 fromR;
-                // this.$forceUpdate();
-                this.id = toR.params['id'];
+                this.forceUpdate();
+                this.id = toR.params.id;
             },
 
             equipment() {
-                // return this.$store.state.equipment;
-                return JSON.parse(localStorage.equipment);
+                try {
+                    return JSON.parse(localStorage.equipment);
+                }
+                catch (e) {
+                    console.log("error equipment Watch - 421");
+                    return "";
+                }
             },
 
             modelColor() {
-                this.modelColor = JSON.parse( localStorage.color );
+                try {
+                    this.modelColor = JSON.parse( localStorage.color );
+                }
+                catch (e) {
+                    console.log("error model color watch - 431");
+
+                }
                 // this.modelColor = this.$store.getters.colored;
                 this.getFontColor();
                 return this.modelColor;
             },
+
 
             showEquipment() {
                 return this.showEquipment;
@@ -496,14 +540,11 @@
                 axios.get(
                     "http://lara.toyota.nikolaev.ua/ajax/all_model",
                     {params: {id: this.id}},
-                ).then( (response) => {
+                ).then((response) => {
                     this.model = response.data[0];
-///////////////////////////////////////////////////////ЗАГЛУШКА
-                    this.model.maxSpeed = 210;
-//////////////////////////////////////////////////////
                     console.log(this.model);
-                } )
-                    .catch( (error) => {
+                })
+                    .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модели");
                         console.log(error);
                     })
@@ -512,13 +553,13 @@
             getEngine() {
                 axios.get(
                     'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',//?id=15',//
-                    {params: {id: this.id_equip} },
+                    {params: {id: this.id_equip}},
                 )
-                    .then( (response) => {
+                    .then((response) => {
                         this.transmissions = response.data;
                         console.log(this.transmissions);
                         this.transmission = this.transmissions[0];
-                        localStorage.transmission = JSON.stringify( this.transmission);
+                        localStorage.transmission = JSON.stringify(this.transmission);
                         console.log(this.id_equip, this.transmission);
                         if (!this.transmission) {
                             this.transmission = {
@@ -526,19 +567,15 @@
                                 // id: null,
                             }
                         }
-                    } )
-                    .catch( (error) => {
+                    })
+                    .catch((error) => {
                         console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
                         console.log(error);
-                    } );
+                    });
             },
 
             choice() {
-                if (!this.showEquipment) {
-                    // this.showEquipment = !this.showEquipment;
-                    this.showEquipment = true;
-                    console.log(this.showEquipment);
-                }
+                this.showEquipment = !this.showEquipment;
             },
 
             changeTitle() {
@@ -548,34 +585,41 @@
 
             getEquipment() {
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
-                    .then( (response) => {
+                    .then((response) => {
                         this.equipments = response.data;
-
-                        if (localStorage.equipment) {
-                            this.equipment = JSON.parse( localStorage.equipment );
-                            if ( this.equipment.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase()) ) {
-                                console.log("да");
-                                this.equipment = JSON.parse( localStorage.equipment );
-                                this.$store.state.equipment = this.equipment;
-                            }
-                        } else {
-                            this.equipment = this.equipments[0];
-                            this.$store.state.equipment = this.equipment;
-                            localStorage.equipment = JSON.stringify( this.equipments[0] );
+                        this.equipment = this.equipments[0];
+                        this.$store.state.equipment = this.equipment;
+                        localStorage.equipment = JSON.stringify(this.equipments[0]);
+                        localStorage.mod_id = this.equipment.mod_id;
+                        if (!this.equipment.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
+                            console.log("да");
+                            localStorage.color = "";
+                            this.$store.state.color = null;
                         }
+
                         this.equipmentTitle = this.equipment.mod_name;
                         console.log(this.equipment);
-                    } )
-                    .catch( (error) => {
+                    })
+                    .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
                         console.log(error);
-                    } );
+                    });
+            },
+
+            descriptionList() {
+                try {
+                    let desc = this.equipment.description.split('\n');
+                    return desc;
+                } catch (e) {
+                    console.log("selectModel split");
+                }
+
             },
 
             getFontColor() {
                 // console.log(this.computedColor.rgb);
-                try{
-                    switch(this.computedColor.rgb.toLowerCase()){
+                try {
+                    switch (this.computedColor.rgb.toLowerCase()) {
                         case '#000000'.toLowerCase():
                         case '#030303'.toLowerCase():
                         case '#182B66'.toLowerCase():
@@ -602,28 +646,102 @@
                             return this.fontColor = '#202020';
                     }
                 } catch (e) {
-                    console.log( "Шрифты пролетели" );
+                    console.log("Шрифты пролетели");
                 }
 
+            },
+
+            lightenDarkenColor(col, amt) {
+
+                let usePound = false;
+
+                if (col[0] == "#") {
+                    col = col.slice(1);
+                    usePound = true;
+                }
+
+                let num = parseInt(col, 16);
+
+                let r = (num >> 16) + amt;
+
+                if (r > 255) r = 255;
+                else if (r < 0) r = 0;
+
+                let b = ((num >> 8) & 0x00FF) + amt;
+
+                if (b > 255) b = 255;
+                else if (b < 0) b = 0;
+
+                let g = (num & 0x0000FF) + amt;
+
+                if (g > 255) g = 255;
+                else if (g < 0) g = 0;
+
+                return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+
+            },
+
+            getGradient(rgb) {
+                try {
+                    switch (rgb.toLowerCase()) {
+                        case '#000000'.toLowerCase():
+                        case '#030303'.toLowerCase():
+                            return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 70) + ")";
+                        case '#182B66'.toLowerCase():
+                        case '#1d50aa'.toLowerCase():
+                        case '#5C5653'.toLowerCase():
+                        case '#60101e'.toLowerCase():
+                        case '#727270'.toLowerCase():
+                        case '#740310'.toLowerCase():
+                        case '#7a766f'.toLowerCase():
+                        case '#7c7a7a'.toLowerCase():
+                        case '#7d8489'.toLowerCase():
+                        case '#817e6e'.toLowerCase():
+                        case '#8c0414'.toLowerCase():
+                        case '#97a4ac'.toLowerCase():
+                        case '#aeabac'.toLowerCase():
+                        case '#b4ae9c'.toLowerCase():
+                        case '#c9021a'.toLowerCase():
+                        case '#ff0000'.toLowerCase():
+
+                            return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 50) + ")";
+                        case '#d7dcd9'.toLowerCase():
+                        case '#EDE7E1'.toLowerCase():
+                        case '#f2f2f0'.toLowerCase():
+                        case '#fafafa'.toLowerCase():
+                        case '#FFFFFF'.toLowerCase():
+                            return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, -50) + ")";
+                        default:
+                            return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 20) + ")";
+                    }
+                } catch (e) {
+                    console.log("Градиетны пролетели");
+                }
             },
 
             goToEquipment() {
                 this.$router.push({name: 'edit_equipment', params: {id: this.model.id}});
             },
 
-            descriptionList() {
-                return this.equipment.description.split('\n');
-            },
-
             showMoreInfo() {
                 this.showMore = !this.showMore;
             },
 
-            // goToConfigurator(id_mod, id_equip) {
-            //     // this.$router.push({name: "Configurator", params: {id_mod: id_mod, id_equip: id_equip}});
-            // },
+            forceRerender() {
+                this.renderComponent++;
+            },
 
-        }
+            activated(trans) {
+                this.$store.state.engineAndGear = trans;
+                localStorage.transmission = JSON.stringify(trans);
+
+                $(".trans").on('click', function () {
+                    $(".trans").removeClass('active');
+                    $(this).addClass('active');
+                })
+            },
+
+        },
     }
 </script>
 
@@ -773,7 +891,7 @@
                                         background-color: #f0f0f0;
                                         border-top: 3px solid #f0f0f0;
                                         padding: 32px;
-                                        &.active {
+                                        &.active, &:hover {
                                             background-color: #fff;
                                             border-top: 3px solid #E50000;
                                             .field {
