@@ -786,6 +786,8 @@
                 }
 
                 .carColors{
+                    width: 240px;
+                    position: absolute;
                     padding: 0;
                     bottom: 0;
                     right: 0;
@@ -937,6 +939,9 @@
                 }
                 .carView {
                     margin: 0 30px 0 40px;
+                    .carColors {
+                        right: -15px;
+                    }
                 }
             }
             .specifications.row {
@@ -967,10 +972,8 @@
                     }
 
                     .carColors{
-                        align-self: flex-start;
-                        position: absolute;
                         top: 0;
-                        right: 20px;
+                        right: 15px;
                     }
                 }
             }
@@ -1041,17 +1044,9 @@
                     }
 
                     .carColors{
-                        /*width: 60%;*/
-                        /*margin: auto;*/
-                        position: absolute;
                         bottom: -60px;
+                        right: calc(50% - 120px);
                         text-align: center;
-                        /*position: absolute;*/
-                        /*top: 0;*/
-                        /*right: 0;*/
-                        /*!*z-index: 999;*!*/
-                        /*text-align: right;*/
-                        /*align-self: flex-end;*/
                     }
                 }
             }
@@ -1146,21 +1141,20 @@
                         }
                         .carPhoto {
                             margin: 0;
-                            padding: 0;
+                            padding: 0 15px;
                             position: static;
                             img {
-                                width: 100%;
+                                width: calc(100% - 30px);
                                 position: absolute;
                                 bottom: -12vw;
-                                left: 0;
+                                left: 15px;
                             }
                         }
                     }
 
                     .carColors{
-                        width: auto;
-                        position: absolute;
                         bottom: -85px;
+                        right: calc(50% - 120px);
                     }
                 }
             }
@@ -1273,22 +1267,20 @@
                         }
                         .carPhoto {
                             margin: 0;
-                            padding: 0;
+                            padding: 0 15px;
                             position: static;
                             img {
-                                width: 100%;
+                                width: calc(100% - 30px);
                                 position: absolute;
                                 bottom: -12vw;
-                                left: 0;
+                                left: 15px;
                             }
                         }
                     }
 
                     .carColors{
-                        width: 100%;
-                        position: absolute;
                         bottom: -75px;
-                        left: 0;
+                        right: calc(50% - 120px);
                     }
                 }
             }

@@ -9,9 +9,8 @@
             </button>
 
             <div class="slide_wrapper">
-<!--                <div id="slides" class="slides d-flex justify-content-between">-->
-                <div id="slides" class="slides d-flex justify-content-between">
-                    <div class="slide"
+                <div id="slides" class="slides ">
+                    <div class="slide d-inline-block"
                          v-for="(color, key) in colors"
                          :key="key"
                     >
@@ -91,19 +90,18 @@
                 selectedColor: {},
                 x: 0,
                 slides: 0,
+
+                mousePress: false,
+                mouseX: 0,
+                xNow: 0,
             }
         },
 
         created() {
             this.mod_id = localStorage.mod_id;
             this.getColors();
-            // this.renderComponent = false;
-
         },
 
-        mounted() {
-            this.slides = $('#slides').width() / 3 * this.colors.length;
-        },
 
         computed: {
             get_mod_id() {
@@ -151,25 +149,33 @@
             },
 
             prevSlide() {
-                this.slides = $('#slides').width() / 3 * this.colors.length;
-                this.x = this.x - $('#slides').width();
-                console.log(this.x , this.slides);
+                this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
+                this.x = this.x - $('.slide_wrapper').width();
                 if ( this.x < 0 ) {
-                    // this.x = $('#slides').width() / 3 * Math.floor(this.colors.length / 3);
-                    this.x = this.slides - ( ($('#slides').width() / 3) * (this.colors.length % 3));
+                    if(this.colors.length % 3){
+                        this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.colors.length % 3));
+                        console.log(this.x);
+                    } else {
+                        this.x = this.slides - $('.slide_wrapper').width();
+                        console.log(this.x);
+                    }
+
                 }
                 $('#slides').css("transform", `translateX(-${this.x}px)`);
             },
 
             nextSlide() {
-                this.slides = $('#slides').width() / 3 * this.colors.length;
-                this.x = this.x + $('#slides').width();
+                this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
+                this.x = this.x + $('.slide_wrapper').width();
+                console.log($('.slide_wrapper').width());
                 console.log(this.x , this.slides);
-                if ( this.x > this.slides ) {
+                if ( this.x >= this.slides ) {
                     this.x = 0;
                 }
                 $('#slides').css("transform", `translateX(-${this.x}px)`);
             },
+
+
         },
     }
 </script>
@@ -190,14 +196,15 @@
         .carousel_wrapper {
             .slide_wrapper {
                 overflow: hidden;
+                width: 180px;
                 .slides {
-                    width: 180px;
+                    white-space: nowrap;
                     .slide {
                         position: relative;
-                        width: 33%;
-                        margin: 5%;
+                        margin: 10px;
                         .sample {
                             cursor: pointer;
+                            margin: auto;
                             img {
                                 width: 40px;
                                 height: 40px;
@@ -261,195 +268,193 @@
 
 
 
-    @media (min-width: 1200px) and (max-width: 1439.9px) {
-
-    }
-
-    @media (min-width: 992px) and (max-width: 1199.9px) {
-        .carColors {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            position: relative;
-            z-index: 100;
-            .sample {
-                        padding: 5px;
-                        position: relative;
-                        z-index: 101;
-                        img {
-                            width: 50px;
-                            height: 50px;
-                            border-radius: 50%;
-                            border: 2px solid #cccccc;
-                        }
 
 
-                    }
-            .swiper {
-                .swiper-button-prev {
-                    z-index: 110;
-                }
-                .swiper-button-next {
-                    z-index: 110;
-                }
-            }
-
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 991.9px) {
-        .carColors {
-            padding: 0;
-            margin: 20px 0;
-            width: 100% !important;
-
-            .sample {
-                cursor: pointer;
-                width: auto !important;
-                img {
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                    border: 2px solid #cccccc;
-                }
-                .check {
-                    color: red;
-                    width: 15px;
-                    height: 15px;
-                    border-radius: 50%;
-                    border: 1px solid #cccccc;
-                    background-color: #fff;
-                    position: absolute;
-                    top: 5px;
-                    left: 5px;
-                }
-                &:hover,
-                &.active {
-                    img {
-                        box-shadow: 0 0 5px 2px #eeeeee;
-                        transform: scale(1.1);
-                        transition: all 500ms;
-                    }
-                }
-            }
-        }
-        .swiper-container {
-            .swiper-wrapper {
-                width: auto !important;
-                justify-content: center;
-
-            }
-        }
-        .swiper {
-            .swiper-button-prev {
-                display: none;
-
-            }
-            .swiper-button-next {
-                display: none;
-
-            }
-        }
-
-    }
-
-    @media (min-width: 576px) and (max-width: 767.9px) {
-        .carColors {
-            margin-right: 0;
-            .sample {
-                img {
-                    width: 50px;
-                    height: 50px;
-                }
-            }
-                }
-
-        .swiper-container {
-            .swiper-wrapper {
-                justify-content: center;
-
-            }
-        }
-
-        .swiper {
-            .swiper-button-prev {
-                display: none;
-
-            }
-            .swiper-button-next {
-                display: none;
-
-            }
-        }
-
-    }
-
-    @media (max-width: 575.9px) {
-        .carColors {
-            margin-right: 0;
-            .sample {
-                img {
-                    width: 50px;
-                    height: 50px;
-                }
-            }
-        }
-
-        .swiper-container {
-            .swiper-wrapper {
-                justify-content: center;
-
-            }
-        }
-
-        .swiper {
-            height: 60px;
-            padding: 0 20px;
-            width: 100%;
-            /*padding: 0;*/
-            overflow: hidden;
-
-            .swiper-slide {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                font-weight: bold;
-
-                width: auto !important;
-                margin: 0 2px 0 2px;
-
-            }
+    /*@media (min-width: 992px) and (max-width: 1199.9px) {*/
+    /*    .carColors {*/
+    /*        padding: 0;*/
+    /*        margin: 0;*/
+    /*        width: 100%;*/
+    /*        position: relative;*/
+    /*        z-index: 100;*/
+    /*        .sample {*/
+    /*                    padding: 5px;*/
+    /*                    position: relative;*/
+    /*                    z-index: 101;*/
+    /*                    img {*/
+    /*                        width: 50px;*/
+    /*                        height: 50px;*/
+    /*                        border-radius: 50%;*/
+    /*                        border: 2px solid #cccccc;*/
+    /*                    }*/
 
 
-            .swiper-button-prev {
-                top: 15px;
-                left: 0;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                background-color: rgba(255,255,255, 0.5);
-                &::after {
-                    font-size: 20px;
-                    font-weight: bold;
-                }
+    /*                }*/
+    /*        .swiper {*/
+    /*            .swiper-button-prev {*/
+    /*                z-index: 110;*/
+    /*            }*/
+    /*            .swiper-button-next {*/
+    /*                z-index: 110;*/
+    /*            }*/
+    /*        }*/
 
-            }
-            .swiper-button-next {
-                top: 15px;
-                right: 0;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                background-color: rgba(255,255,255, 0.5);
-                &::after {
-                    font-size: 20px;
-                    font-weight: bold;
-                }
+    /*    }*/
+    /*}*/
 
-            }
-        }
-    }
+    /*@media (min-width: 768px) and (max-width: 991.9px) {*/
+    /*    .carColors {*/
+    /*        padding: 0;*/
+    /*        margin: 20px 0;*/
+    /*        width: 100% !important;*/
+
+    /*        .sample {*/
+    /*            cursor: pointer;*/
+    /*            width: auto !important;*/
+    /*            img {*/
+    /*                width: 50px;*/
+    /*                height: 50px;*/
+    /*                border-radius: 50%;*/
+    /*                border: 2px solid #cccccc;*/
+    /*            }*/
+    /*            .check {*/
+    /*                color: red;*/
+    /*                width: 15px;*/
+    /*                height: 15px;*/
+    /*                border-radius: 50%;*/
+    /*                border: 1px solid #cccccc;*/
+    /*                background-color: #fff;*/
+    /*                position: absolute;*/
+    /*                top: 5px;*/
+    /*                left: 5px;*/
+    /*            }*/
+    /*            &:hover,*/
+    /*            &.active {*/
+    /*                img {*/
+    /*                    box-shadow: 0 0 5px 2px #eeeeee;*/
+    /*                    transform: scale(1.1);*/
+    /*                    transition: all 500ms;*/
+    /*                }*/
+    /*            }*/
+    /*        }*/
+    /*    }*/
+    /*    .swiper-container {*/
+    /*        .swiper-wrapper {*/
+    /*            width: auto !important;*/
+    /*            justify-content: center;*/
+
+    /*        }*/
+    /*    }*/
+    /*    .swiper {*/
+    /*        .swiper-button-prev {*/
+    /*            display: none;*/
+
+    /*        }*/
+    /*        .swiper-button-next {*/
+    /*            display: none;*/
+
+    /*        }*/
+    /*    }*/
+
+    /*}*/
+
+    /*@media (min-width: 576px) and (max-width: 767.9px) {*/
+    /*    .carColors {*/
+    /*        margin-right: 0;*/
+    /*        .sample {*/
+    /*            img {*/
+    /*                width: 50px;*/
+    /*                height: 50px;*/
+    /*            }*/
+    /*        }*/
+    /*            }*/
+
+    /*    .swiper-container {*/
+    /*        .swiper-wrapper {*/
+    /*            justify-content: center;*/
+
+    /*        }*/
+    /*    }*/
+
+    /*    .swiper {*/
+    /*        .swiper-button-prev {*/
+    /*            display: none;*/
+
+    /*        }*/
+    /*        .swiper-button-next {*/
+    /*            display: none;*/
+
+    /*        }*/
+    /*    }*/
+
+    /*}*/
+
+    /*@media (max-width: 575.9px) {*/
+    /*    .carColors {*/
+    /*        margin-right: 0;*/
+    /*        .sample {*/
+    /*            img {*/
+    /*                width: 50px;*/
+    /*                height: 50px;*/
+    /*            }*/
+    /*        }*/
+    /*    }*/
+
+    /*    .swiper-container {*/
+    /*        .swiper-wrapper {*/
+    /*            justify-content: center;*/
+
+    /*        }*/
+    /*    }*/
+
+    /*    .swiper {*/
+    /*        height: 60px;*/
+    /*        padding: 0 20px;*/
+    /*        width: 100%;*/
+    /*        !*padding: 0;*!*/
+    /*        overflow: hidden;*/
+
+    /*        .swiper-slide {*/
+    /*            display: flex;*/
+    /*            justify-content: center;*/
+    /*            align-items: center;*/
+    /*            text-align: center;*/
+    /*            font-weight: bold;*/
+
+    /*            width: auto !important;*/
+    /*            margin: 0 2px 0 2px;*/
+
+    /*        }*/
+
+
+    /*        .swiper-button-prev {*/
+    /*            top: 15px;*/
+    /*            left: 0;*/
+    /*            width: 30px;*/
+    /*            height: 30px;*/
+    /*            border-radius: 50%;*/
+    /*            background-color: rgba(255,255,255, 0.5);*/
+    /*            &::after {*/
+    /*                font-size: 20px;*/
+    /*                font-weight: bold;*/
+    /*            }*/
+
+    /*        }*/
+    /*        .swiper-button-next {*/
+    /*            top: 15px;*/
+    /*            right: 0;*/
+    /*            width: 30px;*/
+    /*            height: 30px;*/
+    /*            border-radius: 50%;*/
+    /*            background-color: rgba(255,255,255, 0.5);*/
+    /*            &::after {*/
+    /*                font-size: 20px;*/
+    /*                font-weight: bold;*/
+    /*            }*/
+
+    /*        }*/
+    /*    }*/
+    /*}*/
 
 
 

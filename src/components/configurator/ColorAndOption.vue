@@ -106,17 +106,17 @@
             </div>
         </section>
 
-        <section class="price container">
-            <div class="row text-left">
-                <div class="col-lg-8 col-12">
-                    <accessories></accessories>
-                </div>
+<!--        <section class="price container">-->
+<!--            <div class="row text-left">-->
+<!--                <div class="col-lg-8 col-12">-->
+<!--                    <accessories></accessories>-->
+<!--                </div>-->
 
-                <div class="pr col-md-4 col-12">
-                    <price></price>
-                </div>
-            </div>
-        </section>
+<!--                <div class="pr col-md-4 col-12">-->
+<!--                    <price></price>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
 
         <to-result></to-result>
 
@@ -135,16 +135,16 @@
     import Colors from "./../../components/configurator/options/Colors";
     import Interior from "./../../components/configurator/options/Interior";
 
-    import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
-    import Price from "./../../components/configurator/options/Price";//                 for Laravel
+    // import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
+    // import Price from "./../../components/configurator/options/Price";//                 for Laravel
     import ToResult from "./../../components/configurator/options/ToResult";//           for Laravel
 
     export default {
         name: "ColorAndOption",
 
         components: {
-            Accessories,
-            Price,
+            // Accessories,
+            // Price,
             ToResult,
             Colors,
             Interior,

@@ -41,7 +41,7 @@
                             <h4 class="col-7 text-left">
                                 {{getModel.name}}, {{getEquipment.body_type}} {{getEquipment.mod_name}}<br>
                                 {{getTransmission.eng_name}}<br>
-                                {{getTransmission.gear_name}}
+                                {{getTransmission.gear_name}} {{getTransmission.drive_type}}
                                 <span v-if="getTransmission.drive">(Передній привод)</span>
                                 <span v-if="getTransmission.wd">(Повний привод)</span>
                             </h4>
@@ -69,7 +69,8 @@
                             Кольори та колеса
                         </p>
                         <p class="info row">
-                            {{getColor.color_name}} ({{getColor.color_code}})
+                            {{getColor.color_name}}
+<!--                            ({{getColor.color_code}})-->
                         </p>
                         <p class="info row text-left">
                             {{getWheels.description}}
@@ -78,7 +79,8 @@
                             Оздоблення інтер'єру
                         </p>
                         <p class="info row">
-                            {{getInterior.interior_name}} ({{getInterior.interior_code}})
+                            {{getInterior.interior_name}}
+<!--                            ({{getInterior.interior_code}})-->
                         </p>
                     </section>
 
