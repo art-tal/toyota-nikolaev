@@ -1,33 +1,45 @@
 <template>
     <div class="carColors">
 
-<!--        <swiper class="swiper" ref="swiper" :options="swiperOption">-->
-        <swiper class="swiper" ref="swiper" :options="swiperOption">
-            <swiper-slide
-                    v-for="(color, key) in colors"
-                    :key="key"
-            >
 
-                <div
-                    class="nav-item sample"
-                    @click="setColor(color, key)"
-                >
+        <div class="carousel_wrapper d-flex justify-content-between">
 
-                    <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
-                         :alt="color.color_name"
-                         :title="color.color_name + ')'"
+            <button id="button-prev" class="btn" @click="prevSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="slide_wrapper">
+<!--                <div id="slides" class="slides d-flex justify-content-between">-->
+                <div id="slides" class="slides d-flex justify-content-between">
+                    <div class="slide"
+                         v-for="(color, key) in colors"
+                         :key="key"
                     >
-                    <div class="check text-center" v-if="color.selected">
-                        <i class="fas fa-check"></i>
+
+                        <div
+                                class="nav-item sample"
+                                @click="setColor(color, key)"
+                        >
+
+                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
+                                 :alt="color.color_name"
+                                 :title="color.color_name + ')'"
+                            >
+                            <div class="check text-center" v-if="color.selected">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
 
-            </swiper-slide>
 
-
-            <div class="swiper-button-prev" slot="button-prev"></div>
-            <div class="swiper-button-next" slot="button-next"></div>
-        </swiper>
+<!--            <div class="swiper-button-prev" slot="button-prev"></div>-->
+            <button id="button-next" class="btn" @click="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
 
 
 
@@ -62,17 +74,14 @@
 
 <script>
     import axios from 'axios';
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
-    // import {eventEmitter} from "@/main";
-    // import {eventEmitter} from "@/app";//        for Laravel
+    import $ from "jquery";
+
 
     export default {
         name: "ColorsPanel",
 
         components: {
-            Swiper,
-            SwiperSlide
+
         },
 
         data() {
@@ -80,21 +89,8 @@
                 mod_id: 0,
                 colors: [],
                 selectedColor: {},
-
-                swiperOption: {
-                    slidesPerView: 3,
-                    // centeredSlides: true,
-                    spaceBetween: 15,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
-                },
-
+                x: 0,
+                slides: 0,
             }
         },
 
@@ -102,6 +98,11 @@
             this.mod_id = localStorage.mod_id;
             this.getColors();
             // this.renderComponent = false;
+
+        },
+
+        mounted() {
+            this.slides = $('#slides').width() / 3 * this.colors.length;
         },
 
         computed: {
@@ -112,19 +113,6 @@
             colored() {
                 return this.colors;
             },
-
-            // renderComponentColors() {
-            //     return this.$store.getters.getRenderComponentColors;
-            // },
-        },
-
-        watch: {
-            // $route() {
-            //     location.reload();///костыль, так делать нельзя но по другому не получается
-            //     // fromR;
-            //     // this.id = toR.params['id'];
-            // },
-
         },
 
         methods: {
@@ -137,20 +125,13 @@
                   this.colors = response.data;
                   this.colors.forEach( (c) => { this.$set(c, "selected", false); } );
 
-                  // if (localStorage.color) {
-                  //     this.selectedColor = JSON.parse( localStorage.color );
-                  //     let index = this.colors.findIndex( col => col.color_code.toLowerCase() === this.selectedColor.color_code.toLowerCase() );
-                  //     this.colors[index].selected = true;
-                  //     this.selectedColor = this.colors[index];
-                  //     localStorage.color = JSON.stringify( this.colors[index] );
-                  // } else {
                       this.colors[0].selected = true;
                       this.selectedColor = this.colors[0];
                       localStorage.color = JSON.stringify( this.selectedColor );
                       this.$store.state.color = this.selectedColor;
                       console.log(this.selectedColor);
                   // }
-
+                  this.slides = $('#slides').width() / 3 * this.colors.length;
                   // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
               } )
               .catch( (error) => {
@@ -160,7 +141,6 @@
           },
 
             setColor(color, index) {
-                // eventEmitter.$emit('selectedColor', color);
                 color.selected = true;
                 this.colors.forEach( (c) => { c.selected = false} );
                 console.log(this.colors);
@@ -168,6 +148,27 @@
                 this.$store.state.color = color;
                 localStorage.color = JSON.stringify( color );
                 // console.log(key);
+            },
+
+            prevSlide() {
+                this.slides = $('#slides').width() / 3 * this.colors.length;
+                this.x = this.x - $('#slides').width();
+                console.log(this.x , this.slides);
+                if ( this.x < 0 ) {
+                    // this.x = $('#slides').width() / 3 * Math.floor(this.colors.length / 3);
+                    this.x = this.slides - ( ($('#slides').width() / 3) * (this.colors.length % 3));
+                }
+                $('#slides').css("transform", `translateX(-${this.x}px)`);
+            },
+
+            nextSlide() {
+                this.slides = $('#slides').width() / 3 * this.colors.length;
+                this.x = this.x + $('#slides').width();
+                console.log(this.x , this.slides);
+                if ( this.x > this.slides ) {
+                    this.x = 0;
+                }
+                $('#slides').css("transform", `translateX(-${this.x}px)`);
             },
         },
     }
@@ -182,87 +183,79 @@
     }
 
     .carColors {
-        padding: 0;
+        padding: 0 20px;
         margin: 20px 0;
+        overflow: visible !important;
 
-        .sample {
-            cursor: pointer;
-            img {
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                            border: 2px solid #cccccc;
-                        }
-            .check {
-                            color: red;
-                            width: 15px;
-                            height: 15px;
-                            border-radius: 50%;
-                            border: 1px solid #cccccc;
-                            background-color: #fff;
-                            position: absolute;
-                            top: 5px;
-                            left: 5px;
-                        }
-            &:hover,
-            &.active {
+        .carousel_wrapper {
+            .slide_wrapper {
+                overflow: hidden;
+                .slides {
+                    width: 180px;
+                    .slide {
+                        position: relative;
+                        width: 33%;
+                        margin: 5%;
+                        .sample {
+                            cursor: pointer;
                             img {
-                                box-shadow: 0 0 5px 2px #eeeeee;
-                                transform: scale(1.1);
-                                transition: all 500ms;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                border: 2px solid #cccccc;
+                            }
+                            .check {
+                                color: red;
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 50%;
+                                border: 1px solid #cccccc;
+                                background-color: #fff;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            }
+                            &:hover,
+                            &.active {
+                                img {
+                                    box-shadow: 0 0 5px 2px #eeeeee;
+                                    transform: scale(1.1);
+                                    transition: all 500ms;
+                                }
                             }
                         }
-        }
-    }
+                    }
+                }
+                /*flex: 6;*/
 
-    .swiper {
-        height: 60px;
-        padding: 0 20px;
-        width: 100%;
-        /*padding: 0;*/
-        overflow: hidden;
-
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-weight: bold;
-
-            width: auto !important;
-            margin: 0 2px 0 2px;
-
-        }
-
-
-        .swiper-button-prev {
-            top: 15px;
-            left: 0;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(255,255,255, 0.5);
-            &::after {
-                font-size: 20px;
-                font-weight: bold;
             }
 
-        }
-        .swiper-button-next {
-            top: 15px;
-            right: 0;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(255,255,255, 0.5);
-            &::after {
-                font-size: 20px;
-                font-weight: bold;
+
+            button.btn {
+                align-self: center;
+                align-content: center;
+                /*flex: 1;*/
+                width: 30px !important;
+                height: 30px;
+                box-sizing: border-box;
+                display: inline-block;
+                border-radius: 50%;
+                background-color: rgba(255,255,255, 0.5);
+                font-size: 1.9rem;
+                color: #7a7a7a;
+                &#button-prev {
+                    padding: 1px 10px 1px 6px;
+                }
+                &#button-next {
+                    padding: 1px 7px 1px 9px;
+                }
             }
 
-        }
-    }
 
+        }
+
+
+    }
 
 
 

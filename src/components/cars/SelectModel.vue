@@ -69,7 +69,8 @@
                 </div>
 
 
-                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">
+<!--                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">-->
+                <div class="carColors position-absolute">
                     <colors-panel
                             :mod_id="equipment.mod_id"
                     ></colors-panel>
@@ -785,10 +786,13 @@
                 }
 
                 .carColors{
-                    position: relative;
+                    padding: 0;
+                    bottom: 0;
+                    right: 0;
                     z-index: 10;
-                    align-self: flex-end;
+                    /*align-self: flex-end;*/
                     margin-bottom: 15px;
+                    overflow: visible !important;
 
                 }
             }

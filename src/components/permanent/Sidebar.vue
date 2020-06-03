@@ -1,34 +1,34 @@
 <template>
     <aside>
         <ul>
-            <li>
-                <router-link to=""
-                             exact
-                             active-class="active"
-                             tag="a"
-                >
-                    <i class="fas fa-oil-can"></i>
-                    <div>
-                        <span>Спеціальні сервисні компаніі</span>
-                    </div>
+<!--            <li>-->
+<!--                <router-link to=""-->
+<!--                             exact-->
+<!--                             active-class="active"-->
+<!--                             tag="a"-->
+<!--                >-->
+<!--                    <i class="fas fa-oil-can"></i>-->
+<!--                    <div>-->
+<!--                        <span>Спеціальні сервисні компаніі</span>-->
+<!--                    </div>-->
 
-                </router-link>
-            </li>
-            <li>
-                <router-link to=""
-                             exact
-                             active-class="active"
-                             tag="a"
-                >
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <span>Офіційні ділери</span>
-                    </div>
+<!--                </router-link>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <router-link to=""-->
+<!--                             exact-->
+<!--                             active-class="active"-->
+<!--                             tag="a"-->
+<!--                >-->
+<!--                    <i class="fas fa-map-marker-alt"></i>-->
+<!--                    <div>-->
+<!--                        <span>Офіційні ділери</span>-->
+<!--                    </div>-->
 
-                </router-link>
-            </li>
+<!--                </router-link>-->
+<!--            </li>-->
             <li>
-                <router-link to=""
+                <router-link to="/faq"
                              exact
                              active-class="active"
                              tag="a"
@@ -54,7 +54,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to=""
+                <router-link to="/download_brochures"
                              exact
                              active-class="active"
                              tag="a"
@@ -67,17 +67,26 @@
                 </router-link>
             </li>
             <li>
-                <router-link to=""
-                             exact
-                             active-class="active"
-                             tag="a"
+                <a href="https://www.toyota.ua/service-and-accessories/ssc.json"
+                   target="_blank"
                 >
                     <i class="far fa-user"></i>
                     <div>
                         <span>Моя Toyota</span>
                     </div>
 
-                </router-link>
+                </a>
+<!--                <router-link to=""-->
+<!--                             exact-->
+<!--                             active-class="active"-->
+<!--                             tag="a"-->
+<!--                >-->
+<!--                    <i class="far fa-user"></i>-->
+<!--                    <div>-->
+<!--                        <span>Моя Toyota</span>-->
+<!--                    </div>-->
+
+<!--                </router-link>-->
             </li>
         </ul>
     </aside>

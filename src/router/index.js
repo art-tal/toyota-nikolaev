@@ -69,7 +69,7 @@ import Principles from "../components/service/maintenance/Principles";
 import MaintenanceGeneral from "../components/service/maintenance/MaintenanceGeneral";
 import Guarantee from "../components/service/maintenance/Guarantee";
 import Lubricants from "../components/service/maintenance/Lubricants";
-import Calc from "../components/service/maintenance/Calc";
+// import Calc from "../components/service/maintenance/Calc";
 import SpecialCompany from "../components/service/maintenance/SpecialCompany";
 
 import OriginalAccessories from "../components/service/originalAccessories/OriginalAccessories";
@@ -105,14 +105,14 @@ import ClientsCharter from "../components/whyToyota/guarantee/ClientsCharter";
 import HybridInnovations from "../components/whyToyota/hybridInnovations/HybridInnovations";
 import HybridDrive from "../components/whyToyota/hybridInnovations/HybridDrive";
 import ToyotaIchiban from "../components/ToyotaInNikolaev/ToyotaIchiban";
-import CorporateResponsibility from "@/components/ToyotaInNikolaev/CorporateResponsibility";
-import Ecology from "@/components/whyToyota/ecology/Ecology";
-import EnvironmentalMission from "@/components/whyToyota/ecology/EnvironmentalMission";
-import BetterAir from "@/components/whyToyota/ecology/BetterAir";
-import BestPlanet from "@/components/whyToyota/ecology/BestPlanet";
-import BetterLife from "@/components/whyToyota/ecology/BetterLife";
-import JustBetter from "@/components/whyToyota/ecology/JustBetter";
-import ISO from "@/components/whyToyota/ecology/ISO";
+import CorporateResponsibility from "../components/ToyotaInNikolaev/CorporateResponsibility";
+import Ecology from "../components/whyToyota/ecology/Ecology";
+import EnvironmentalMission from "../components/whyToyota/ecology/EnvironmentalMission";
+import BetterAir from "../components/whyToyota/ecology/BetterAir";
+import BestPlanet from "../components/whyToyota/ecology/BestPlanet";
+import BetterLife from "../components/whyToyota/ecology/BetterLife";
+import JustBetter from "../components/whyToyota/ecology/JustBetter";
+import ISO from "../components/whyToyota/ecology/ISO";
 
 
 // import TheLookingAround from "@/components/cars/TheLookingAround";
@@ -374,11 +374,11 @@ export default new VueRouter({
                     name: "lubricants",
                     component: Lubricants,
                 },
-                {
-                    path: "/maintenance/calc",
-                    name: "calc",
-                    component: Calc,
-                },
+                // {
+                //     path: "/maintenance/calc",
+                //     name: "calc",
+                //     component: Calc,
+                // },
                 {
                     path: "/maintenance/special_company",
                     name: "special_company",

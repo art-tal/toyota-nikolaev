@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import GuaranteeMenu from "@/components/whyToyota/guarantee/GuaranteeMenu";
+    import GuaranteeMenu from "./../../../components/whyToyota/guarantee/GuaranteeMenu";
 
     export default {
         name: "QualityGuarantee",
