@@ -238,14 +238,12 @@
     },
 
         created() {
-            this.windowTop = window.scrollY;
-            this.windowBottom = window.innerHeight + this.windowTop;
+
 
         },
 
         mounted() {
             $(window).on('scroll', () => {this.checkParallax();} );
-            // $(window).on('scroll', this.parallax());
         },
 
         methods: {
@@ -258,71 +256,38 @@
 
 
             checkParallax() {
-                this.windowBottom = window.innerHeight + this.windowTop;
-                let blocks = document.querySelectorAll('.parallax_block');
-                // console.log( blocks );
-
-                blocks.forEach( (block) => {
-                    if (block.getBoundingClientRect().top + window.scrollY < window.scrollY + window.innerHeight) {
-                        console.log( block.getBoundingClientRect().top + window.scrollY );
-                        this.parallax( block );
-                    }
-                });
-
-
-            },
-
-            // checkParallax() {
-            //     this.windowBottom = window.innerHeight + this.windowTop;
-            //     // let blocks = $('.parallax_block');
-            //     console.log($('.parallax_block') );
-            //
-            //     $.each( $('.parallax_block'), function() {
-            //         // console.log( $(this).offset().top );
-            //         if ( $(this).offset().top < window.scrollY + window.innerHeight ) {
-            //                     // console.log( $(this).offset().top);
-            //                     this.parallax( $(this) );
-            //                 }
-            //     });
-            // },
-
-            parallax(block) {
-                let blockTop = block.getBoundingClientRect().top + window.scrollY;
-                let blockEnd = blockTop + block.innerHeight;
-
-                let img = block.querySelector('.parallax_image');
-                let heightImg = img.innerHeight;
-                img.style.top = -heightImg + 'px';
-
-                this.scrollTop = window.scrollY;
                 this.windowTop = window.scrollY;
                 this.windowBottom = window.innerHeight + this.windowTop;
 
+                $(".parallax_block").each( (index, block) => {
 
-                if ( blockTop < this.windowBottom  &&  blockEnd > this.windowTop ) {
-                    img.style.top = -heightImg + this.scrollTop/2 + 'px';
+                    if( $(block).offset().top < this.windowBottom ) {
+                        this.parallax(block);
+                    }
+                } );
+            },
+
+
+
+            parallax(block) {
+                let blockTop = $(block).offset().top;
+                let blockEnd = $(block).offset().top + $(block).height();
+
+                let img = $(block).children(".parallax_image");
+                let heightImg = img.height();
+                img.css('top', -heightImg + "px");
+
+                this.windowTop = $(window).scrollTop();
+                this.windowBottom = window.innerHeight + this.windowTop;
+
+                console.log( $(block).children(".parallax_image").offset().top );
+                if ( blockTop < this.windowBottom && blockEnd > this.windowTop ) {
+                    $(block).children(".parallax_image").offset({top: this.windowTop, left: 0});
+                    console.log( $(block).children(".parallax_image").position().top );
                 }
 
             },
 
-            // parallax() {
-            //     let blockTop = $('.parallax_block').offset().top;
-            //     let blockEnd = blockTop + $('.parallax_block').height();
-            //
-            //     let img = $('.parallax_image');
-            //     let heightImg = img.height();
-            //     img.css('top', -heightImg + 'px');
-            //
-            //     this.scrollTop = window.scrollY;
-            //     this.windowTop = window.scrollY;
-            //     this.windowBottom = window.innerHeight + this.windowTop;
-            //
-            //     if ( blockTop < this.windowBottom  &&  blockEnd > this.windowTop ) {
-            //         // console.log(this.scrollTop);
-            //         $('.parallax_image').css('top', (-heightImg + this.scrollTop/2) + 'px')
-            //     }
-            //
-            // }
         }
     }
 </script>
