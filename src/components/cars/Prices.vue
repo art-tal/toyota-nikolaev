@@ -338,12 +338,12 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`,
+                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Ціни`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`
+                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Ціни`
                     },
                     // {
                     //     vmid: "description",
@@ -415,17 +415,11 @@
             },
 
             computedEquipment() {
-                // if (this.$store.getters.equip.mod_id) {
-                //     console.log("not empty");
-                //     return this.$store.getters.equip;
-                // } else {
                 try {
                     return JSON.parse(localStorage.equipment);
                 }
                 catch (e) {
-                    console.log("error equipment - 382");
                     if (this.$store.getters.equip.mod_id) {
-                        console.log("not empty");
                         return this.$store.getters.equip;
                     }
                     return "";
@@ -516,6 +510,8 @@
 ///////////////////////////////////////////////////////ЗАГЛУШКА
 //                     this.model.maxSpeed = 210;
 //////////////////////////////////////////////////////
+                    this.modelTitle = this.model.name;
+                    this.changeTitle();
                     console.log(this.model);
                 } )
                     .catch( (error) => {

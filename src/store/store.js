@@ -19,7 +19,6 @@ export default new Vuex.Store ({
         selectedAccessories: [],
         showInterior: false,
         showEquipment:false,
-        // modelImage: "",
 
         openConsultation: false,
 
@@ -29,9 +28,6 @@ export default new Vuex.Store ({
         },
 
         totalCost: 0,
-
-        // consultModel: {},
-        // consultEngine: {},
     },
 
     getters: {

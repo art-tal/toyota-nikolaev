@@ -28,7 +28,40 @@
 
 <script>
     export default {
-        name: "EntertainmentSystem"
+        name: "EntertainmentSystem",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev |Модульна Розважальна Система для пасажирів`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Модульна Розважальна Система для пасажирів`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Функціонал  модульної розважальної системи надає можливість переглядати фотографії, дивитись відеозаписи, слухати аудіозаписи чи музику або грати в ігри.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Функціонал  модульної розважальної системи надає можливість переглядати фотографії, дивитись відеозаписи, слухати аудіозаписи чи музику або грати в ігри.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, toyota, розважальна система, модуль, модульна розважальна система, задні пасажири, тойота, програвач, контент, екран, пульт, пасажири, купити`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, toyota, розважальна система, модуль, модульна розважальна система, задні пасажири, тойота, програвач, контент, екран, пульт, пасажири, купити`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

@@ -170,7 +170,15 @@
                 <div class="col-md-6 col-12">
                     <div class="row raffle">
                         <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/uvaga_tcm-3046-1418372.png" alt="Інформація про розіграші." class="d-block col-3">
-                        <h2 class="col-9">Інформація про розіграші. <span>Будь ласка ознайомтеся з інформацією щодо <router-link exact tag="a" to="">розіграшу авто</router-link>.</span></h2>
+                        <h2 class="col-9">Інформація про розіграші.
+                            <span>Будь ласка ознайомтеся з інформацією щодо
+                                <router-link
+                                        exact
+                                        tag="a"
+                                        to="/vypadky_shahrajstva"
+                                >розіграшу авто</router-link>.
+                            </span>
+                        </h2>
 
                     </div>
                 </div>
@@ -181,11 +189,12 @@
 </template>
 
 <script>
+    import axios from "axios"
     import Inputmask from "inputmask";
     import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 
     export default {
-        name: "FormCallBack",
+        name: "FormFeedBack",
 
         data() {
             return {
@@ -197,6 +206,39 @@
                 agree: false,
 
                 expandBlock: true,
+            }
+        },
+
+        metaInfo() {
+            return {
+                title:  "Toyota Nikolaev | Форма зворотнього зв`язку з Тойота Центр Миколаїв «КіТ-Т»",
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: "Toyota Nikolaev | Форма зворотнього зв`язку з Тойота Центр Миколаїв «КіТ-Т»"
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Залишились питання? Знайдіть відповідь на своє питання самостійно або зв&#39;яжіться з офіційним імпортером автомобілів в Toyota Україні ПІІ &quot;Тойота-Україна&quot;.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Залишились питання? Знайдіть відповідь на своє питання самостійно або зв&#39;яжіться з офіційним імпортером автомобілів в Toyota Україні ПІІ &quot;Тойота-Україна&quot;.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Напишіть нам,Зворотній зв&#39;язок ,toyota,  yaris, auris, auris touring sports, corolla, avensis, camry, rav4, highlander, land cruiser prado, land cruiser 200, hilux, ch-r, hybrid, тойта, яріс, ауріс, ауріс універсал, королла, корола, авенcіс, кармрі, рав4, хайлендер, ленд крузер, лендкрузер,  лендкрузер прадо, ленд крузер прадо`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Напишіть нам,Зворотній зв&#39;язок ,toyota,  yaris, auris, auris touring sports, corolla, avensis, camry, rav4, highlander, land cruiser prado, land cruiser 200, hilux, ch-r, hybrid, тойта, яріс, ауріс, ауріс універсал, королла, корола, авенcіс, кармрі, рав4, хайлендер, ленд крузер, лендкрузер,  лендкрузер прадо, ленд крузер прадо`
+                    },
+                ],
             }
         },
 
@@ -248,7 +290,7 @@
             },
 
             onSubmit() {
-                const consultation = {
+                const feedback = {
                     firstName: this.firstName,
                     lastName: this.lastName,
                     phone: this.phone,
@@ -256,21 +298,21 @@
                     userMsg: this.userMsg,
                     agree: this.agree,
                 };
-                console.log(consultation);
+                console.log(feedback);
                 // eventEmitter.$emit('close');
                 this.$store.state.openConsultation = !this.$store.state.openConsultation
-                // axios.post(
-                //     'http://lara.toyota.nikolaev.ua/ajax/--',
-                //     consultation,
-                // )
-                // .then( (response) => {
-                //     console.log("Данные переданы успешно!")
-                //     console.log(response)
-                // } )
-                // .catch( (error) => {
-                //     console.log(" Ошибка передачи данных");
-                //     console.log(error);
-                // } );
+                axios.post(
+                    'http://lara.toyota.nikolaev.ua/ajax/feedback',
+                    feedback,
+                )
+                .then( (response) => {
+                    console.log("Данные переданы успешно!")
+                    console.log(response)
+                } )
+                .catch( (error) => {
+                    console.log(" Ошибка передачи данных");
+                    console.log(error);
+                } );
 
 
             },

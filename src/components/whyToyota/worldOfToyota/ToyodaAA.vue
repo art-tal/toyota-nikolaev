@@ -229,6 +229,39 @@
             }
         },
 
+        metaInfo() {
+        return {
+            title:  `Toyota | З чого все почалося: Toyoda AA`,
+            meta: [
+                {
+                    vmid: "title",
+                    property: "og:title",
+                    content: `Toyota | З чого все почалося: Toyoda AA`
+                },
+                {
+                    vmid: "description",
+                    name: "description",
+                    content: `Відкрийте для себе автомобіль Toyoda АА, перший серійний легковий автомобіль корпорації Toyota, а разом із цим історію єдиного відомого довоєнного оригіналу, який на сьогодні існує у світі!`
+                },
+                {
+                    vmid: "description",
+                    property: "og:description",
+                    content: `Відкрийте для себе автомобіль Toyoda АА, перший серійний легковий автомобіль корпорації Toyota, а разом із цим історію єдиного відомого довоєнного оригіналу, який на сьогодні існує у світі!`
+                },
+                {
+                    vmid: "keywords",
+                    name: "keywords",
+                    content: `Toyota, toyoda, AA, спадщина, Лаувман, музей, двигун, Нідерланди, історія, перший, рідкісний, heritage, louwman, museum, engine, netherlands, history, first, rare, Heritage`
+                },
+                {
+                    vmid: "keywords",
+                    property: "og:keywords",
+                    content: `Toyota, toyoda, AA, спадщина, Лаувман, музей, двигун, Нідерланди, історія, перший, рідкісний, heritage, louwman, museum, engine, netherlands, history, first, rare, Heritage`
+                },
+            ],
+        }
+    },
+
         mounted() {
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper

@@ -251,7 +251,40 @@
                     }
                 }
             }
+        },
+
+    metaInfo() {
+        return {
+            title:  `Toyota Nikolaev | Мультимедійна система Toyota Touch 2`,
+            meta: [
+                {
+                    vmid: "title",
+                    property: "og:title",
+                    content: `Toyota Nikolaev | Мультимедійна система Toyota Touch 2`
+                },
+                {
+                    vmid: "description",
+                    name: "description",
+                    content: `Мультимедійну систему Toyota Touch 2 перетворює ваші подорожі на задоволення. Музика, навігація, оновлення карт та додаткових сервісів.`
+                },
+                {
+                    vmid: "description",
+                    property: "og:description",
+                    content: `Мультимедійну систему Toyota Touch 2 перетворює ваші подорожі на задоволення. Музика, навігація, оновлення карт та додаткових сервісів.`
+                },
+                {
+                    vmid: "keywords",
+                    name: "keywords",
+                    content: `Toyota Nikolaev, Нова, Toyota touch 2, навігаційна система,навігація GO, мультимедійна система, опції, авто навігація, підключені послуги, TomTom, дорожна інформація у реальному часі, map care, оновлення &quot;вільні руки&quot; Bluetooth, камера заднього огляду, завантаження, додатки, Google, Panoramio, Aupeo!, клієнтський портал. , Genuine Accessories`
+                },
+                {
+                    vmid: "keywords",
+                    property: "og:keywords",
+                    content: `Toyota Nikolaev, Нова, Toyota touch 2, навігаційна система,навігація GO, мультимедійна система, опції, авто навігація, підключені послуги, TomTom, дорожна інформація у реальному часі, map care, оновлення &quot;вільні руки&quot; Bluetooth, камера заднього огляду, завантаження, додатки, Google, Panoramio, Aupeo!, клієнтський портал. , Genuine Accessories`
+                },
+            ],
         }
+    },
     }
 </script>
 

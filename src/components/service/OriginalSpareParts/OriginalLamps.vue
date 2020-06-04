@@ -97,6 +97,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Оригінальні лампи від Toyota`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Оригінальні лампи від Toyota`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Правильні, повністю функціональні лампи вашого автомобіля Toyota ‒ невід&#39;ємний елемент безпечного водіння, особливо в нічний час.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Правильні, повністю функціональні лампи вашого автомобіля Toyota ‒ невід&#39;ємний елемент безпечного водіння, особливо в нічний час.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota, оригінальні запчастини, лампи, світло, Оptiwhite, ксенон, безпека, ремонт, Genuine Parts`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota, оригінальні запчастини, лампи, світло, Оptiwhite, ксенон, безпека, ремонт, Genuine Parts`
+                    },
+                ],
+            }
+        },
+
         methods: {
             openVideo() {
                 this.showVideo = !this.showVideo;

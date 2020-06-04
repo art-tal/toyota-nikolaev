@@ -127,12 +127,12 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Корпоративні продажі | Toyota Україна`,
+                title:  `Toyota Nikolaev | Ваш бізнес-партнер | Корпоративні продажі`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Корпоративні продажі | Toyota Україна`
+                        content: `Toyota Nikolaev | Ваш бізнес-партнер | Корпоративні продажі`
                     },
                     {
                         vmid: "description",

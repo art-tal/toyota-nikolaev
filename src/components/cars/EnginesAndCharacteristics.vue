@@ -305,12 +305,12 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`,
+                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Особливості та характеристики`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`
+                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Особливості та характеристики`
                     },
                     // {
                     //     vmid: "description",
@@ -475,6 +475,8 @@
 //                     this.model.maxSpeed = 210;
                     this.model.seats  = 5;
 //////////////////////////////////////////////////////
+                    this.modelTitle = this.model.name;
+                    this.changeTitle();
                     console.log(this.model);
                 } )
                     .catch( (error) => {

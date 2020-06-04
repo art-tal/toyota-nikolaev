@@ -100,7 +100,7 @@
                         <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                             <div class="card-body">
                                 <p>
-                                    Служба підтримки клієнтів Тойота повноцінно працює. Ви можете залишити своє запитання через <router-link exact tag="a" to="/form_call_back">форму зворотного зв'язку</router-link> та за номером гарячої лінії <a href="tel:0800302101">0 800 302 101</a>*, з Вами обов'язково зв'яжуться співробітники служби підтримки клієнтів.  * Вартість дзвінка безкоштовна
+                                    Служба підтримки клієнтів Тойота повноцінно працює. Ви можете залишити своє запитання через <router-link exact tag="a" to="/form_feed_back">форму зворотного зв'язку</router-link> та за номером гарячої лінії <a href="tel:0800302101">0 800 302 101</a>*, з Вами обов'язково зв'яжуться співробітники служби підтримки клієнтів.  * Вартість дзвінка безкоштовна
                                 </p>
 
                             </div>
@@ -337,7 +337,7 @@
                             tag="button"
                             class="btn btn-danger"
                             exact
-                            to="/form_call_back"
+                            to="/form_feed_back"
                     >
                         Форма зворотнього зв`язку
                     </router-link>
@@ -353,7 +353,40 @@
 
 <script>
     export default {
-        name: "FAQ"
+        name: "FAQ",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Часті запитання та відповіді | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Часті запитання та відповіді | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Є питання? На цій сторінці ви отримаєте відповіді на часті запитання, а також можете зв&#39;язатись з офіційним імпортером автомобілів Toyota в Україні.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Є питання? На цій сторінці ви отримаєте відповіді на часті запитання, а також можете зв&#39;язатись з офіційним імпортером автомобілів Toyota в Україні.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Напишіть нам,Зворотній зв&#39;язок ,toyota,  yaris, auris, auris touring sports, corolla, avensis, camry, rav4, highlander, land cruiser prado, land cruiser 200, hilux, ch-r, hybrid, тойта, яріс, ауріс, ауріс універсал, королла, корола, авенcіс, кармрі, рав4, хайлендер, ленд крузер, лендкрузер,  лендкрузер прадо, ленд крузер прадо`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Напишіть нам,Зворотній зв&#39;язок ,toyota,  yaris, auris, auris touring sports, corolla, avensis, camry, rav4, highlander, land cruiser prado, land cruiser 200, hilux, ch-r, hybrid, тойта, яріс, ауріс, ауріс універсал, королла, корола, авенcіс, кармрі, рав4, хайлендер, ленд крузер, лендкрузер,  лендкрузер прадо, ленд крузер прадо`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

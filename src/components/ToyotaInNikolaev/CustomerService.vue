@@ -1,7 +1,7 @@
 <template>
     <main>
         <header>
-            <h1 class="text-center">Customer service
+            <h1 class="text-center">Клієнтська служба
                 <h2 class="text-center">ПІІ «Тойота-Україна»</h2>
             </h1>
         </header>
@@ -62,7 +62,40 @@
 
 <script>
     export default {
-        name: "CustomerService"
+        name: "CustomerService",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Клієнтська служба ПІІ «Тойота-Україна»`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Клієнтська служба ПІІ «Тойота-Україна»`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Представники клієнтської служби ПІІ «Тойота-Україна» працюють з побажаннями та претензіями клієнтів, та службою  Toyota Assistance.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Представники клієнтської служби ПІІ «Тойота-Україна» працюють з побажаннями та претензіями клієнтів, та службою  Toyota Assistance.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, тойота, Україна, клієнт, клієнтська служба, відділ по роботі з клієнтами, переваги, якість, побажання, пропозиції, скарга, toyota, toyota ukraine, toyota assistance, toyota assistance plus, досвід, претензії, офіційний дилер, тойота, лексус, toyota, lexus, ukraine, Україна, Genuine Accessories, Latest news, Genuine Parts`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, тойота, Україна, клієнт, клієнтська служба, відділ по роботі з клієнтами, переваги, якість, побажання, пропозиції, скарга, toyota, toyota ukraine, toyota assistance, toyota assistance plus, досвід, претензії, офіційний дилер, тойота, лексус, toyota, lexus, ukraine, Україна, Genuine Accessories, Latest news, Genuine Parts`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

@@ -91,7 +91,40 @@
 
 <script>
     export default {
-        name: "ToyotaIchiban"
+        name: "ToyotaIchiban",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Щорічна премія для дилерів Toyota Ichiban`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Щорічна премія для дилерів Toyota Ichiban`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Премію Toyota Ichiban присуджують щорічно на підтвердження високих результатів роботи дилерів Toyota у Європі за рівнем задоволеності клієнтів.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Премію Toyota Ichiban присуджують щорічно на підтвердження високих результатів роботи дилерів Toyota у Європі за рівнем задоволеності клієнтів.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, toyota ichiban, ichiban, премія, тойота, кращий, перший, номер один, дилер, дилери, обслуговування, клієнт, автомобіль, відгук, ітібан, ічибан, премія, автоарт, автосаміт, автогалс, алмаз систем, 5.5 Toyota Ichiban award`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, toyota ichiban, ichiban, премія, тойота, кращий, перший, номер один, дилер, дилери, обслуговування, клієнт, автомобіль, відгук, ітібан, ічибан, премія, автоарт, автосаміт, автогалс, алмаз систем, 5.5 Toyota Ichiban award`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

@@ -148,6 +148,39 @@
             }
         },
 
+        metaInfo() {
+        return {
+            title:  `Toyota | MR2 – історія спорткарів Toyota`,
+            meta: [
+                {
+                    vmid: "title",
+                    property: "og:title",
+                    content: `Toyota | MR2 – історія спорткарів Toyota`
+                },
+                {
+                    vmid: "description",
+                    name: "description",
+                    content: `Модель MR2 зразка 1984 року фактично являла собою подальший розвиток розробленого у 1976 році проекту багато в чому подібного до Sports 800.`
+                },
+                {
+                    vmid: "description",
+                    property: "og:description",
+                    content: `Модель MR2 зразка 1984 року фактично являла собою подальший розвиток розробленого у 1976 році проекту багато в чому подібного до Sports 800.`
+                },
+                {
+                    vmid: "keywords",
+                    name: "keywords",
+                    content: `Toyota, спорт, спорткари, MR2, історія, спадщина, характеристики, дизайн, двигун, рік, 1984, покоління, Heritage`
+                },
+                {
+                    vmid: "keywords",
+                    property: "og:keywords",
+                    content: `Toyota, спорт, спорткари, MR2, історія, спадщина, характеристики, дизайн, двигун, рік, 1984, покоління, Heritage`
+                },
+            ],
+        }
+    },
+
         mounted() {
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper

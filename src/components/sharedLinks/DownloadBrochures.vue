@@ -99,6 +99,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Брошури та каталоги аксесуарів | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Брошури та каталоги аксесуарів | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Брошури та каталоги по автомобілям Тойота. Тут ви можете завантажити брошури та каталоги оригінальних аксесуарів для автомобілів Тойота`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Брошури та каталоги по автомобілям Тойота. Тут ви можете завантажити брошури та каталоги оригінальних аксесуарів для автомобілів Тойота`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, тойота, україна, брошура, оригінальні аксесуари, аксесуари, модельний ряд, гібридний авто, яріс, ауріс, ауріс гібрид, ауріс універсал, королла, авенсіс, камрі, рав4, хайлендер, лендкрузер, ленд крузер, прадо, лендкрузер рпадо, лендкрузер 200, хайлакс, рав4 гібрид, yaris, auris, auris hybrid, auris touring sport, corolla, avensis, camry, rav4, rav4 hybrid, highlander, land cruiser, land cruiser prado, land cruiser 200, hilux, toyota`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, тойота, україна, брошура, оригінальні аксесуари, аксесуари, модельний ряд, гібридний авто, яріс, ауріс, ауріс гібрид, ауріс універсал, королла, авенсіс, камрі, рав4, хайлендер, лендкрузер, ленд крузер, прадо, лендкрузер рпадо, лендкрузер 200, хайлакс, рав4 гібрид, yaris, auris, auris hybrid, auris touring sport, corolla, avensis, camry, rav4, rav4 hybrid, highlander, land cruiser, land cruiser prado, land cruiser 200, hilux, toyota`
+                    },
+                ],
+            }
+        },
+
         computed: {
             // photo() {
             //     return

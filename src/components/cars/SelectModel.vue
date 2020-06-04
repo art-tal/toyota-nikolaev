@@ -472,6 +472,8 @@
 //                         this.model.fuelConsumption = 8.3;
                         this.getVideo();
 //////////////////////////////////////////////////////
+                        this.modelTitle = this.model.name;
+                        this.changeTitle();
                         console.log(this.model);
                     } )
                         .catch( (error) => {

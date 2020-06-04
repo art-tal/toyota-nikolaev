@@ -80,6 +80,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Оригінальне лобове скло  | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Оригінальне лобове скло  | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Перебуваючи за кермом автомобіля Toyota, важливо бути впевненим, що лобове скло забезпечує відмінну видимість та захист від непередбачуваних обставин.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Перебуваючи за кермом автомобіля Toyota, важливо бути впевненим, що лобове скло забезпечує відмінну видимість та захист від непередбачуваних обставин.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota, оригінальні запчастини, лобове скло, післяпродажне обслуговування, Genuine Parts`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota, оригінальні запчастини, лобове скло, післяпродажне обслуговування, Genuine Parts`
+                    },
+                ],
+            }
+        },
+
         methods: {
             openVideo() {
                 this.showVideo = !this.showVideo;

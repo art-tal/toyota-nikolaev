@@ -33,7 +33,40 @@
 
 <script>
     export default {
-        name: "OriginalSparePartsGeneral"
+        name: "OriginalSparePartsGeneral",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

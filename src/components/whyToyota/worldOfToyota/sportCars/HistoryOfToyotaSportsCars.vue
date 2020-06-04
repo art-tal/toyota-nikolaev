@@ -61,6 +61,39 @@
     export default {
         name: "HistoryOfToyotaSportsCars",
 
+        metaInfo() {
+            return {
+                title:  `Toyota | Історія спорткарів Toyota | Тойота Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | Історія спорткарів Toyota | Тойота Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `З 1960-х років Toyota вражає і дивує людей своєю інтерпретацією концепції динамічного, захопливого та приємного у користуванні спорткара. Багато моделей бренда отримали культовий статус, і тут ми віддаємо належне добірці знакових спорткарів від Toyota.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `З 1960-х років Toyota вражає і дивує людей своєю інтерпретацією концепції динамічного, захопливого та приємного у користуванні спорткара. Багато моделей бренда отримали культовий статус, і тут ми віддаємо належне добірці знакових спорткарів від Toyota.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota, спорт, спорткари, історія спорткара sports 800, спадщина, купе, гібрид, характеристики, дизайн, автоспорт, двигун, Heritage, Latest news`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota, спорт, спорткари, історія спорткара sports 800, спадщина, купе, гібрид, характеристики, дизайн, автоспорт, двигун, Heritage, Latest news`
+                    },
+                ],
+            }
+        },
+
         components: {
             Continue,
         },

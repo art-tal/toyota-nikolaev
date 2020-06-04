@@ -72,7 +72,40 @@
 
 <script>
     export default {
-        name: "ToyotaAdBlueLiquid"
+        name: "ToyotaAdBlueLiquid",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Рідина для дизельних двигунів Toyota AdBlue`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Рідина для дизельних двигунів Toyota AdBlue`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `AdBlueTM - це спеціальний реагент, що використовується для нейтралізації оксидів азоту (NOx) у відпрацьованих газах дизельних двигунів`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `AdBlueTM - це спеціальний реагент, що використовується для нейтралізації оксидів азоту (NOx) у відпрацьованих газах дизельних двигунів`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota, оригінальний, запасні частини, двигун, олива, оксиди азоту, Nox`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota, оригінальний, запасні частини, двигун, олива, оксиди азоту, Nox`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

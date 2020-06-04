@@ -147,6 +147,39 @@
             }
         },
 
+        metaInfo() {
+        return {
+            title:  `Toyota | SUPRA – історія спорткарів Toyota`,
+            meta: [
+                {
+                    vmid: "title",
+                    property: "og:title",
+                    content: `Toyota | SUPRA – історія спорткарів Toyota`
+                },
+                {
+                    vmid: "description",
+                    name: "description",
+                    content: `Латинське слово «Supra», що означає «над чимось» або «нагорі», виявилось напрочуд вдалим псевдонімом для одного з найвідоміших спорткарів Toyota.`
+                },
+                {
+                    vmid: "description",
+                    property: "og:description",
+                    content: `Латинське слово «Supra», що означає «над чимось» або «нагорі», виявилось напрочуд вдалим псевдонімом для одного з найвідоміших спорткарів Toyota.`
+                },
+                {
+                    vmid: "keywords",
+                    name: "keywords",
+                    content: `Toyota, спорт, спорткари, Supra, Celica XX, історія, спадщина, купе, покоління, характеристики, дизайн, автоспорт, рік, двигун, Ле-Ман, Heritage`
+                },
+                {
+                    vmid: "keywords",
+                    property: "og:keywords",
+                    content: `Toyota, спорт, спорткари, Supra, Celica XX, історія, спадщина, купе, покоління, характеристики, дизайн, автоспорт, рік, двигун, Ле-Ман, Heritage`
+                },
+            ],
+        }
+    },
+
         mounted() {
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper

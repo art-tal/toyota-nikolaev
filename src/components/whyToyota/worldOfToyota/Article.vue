@@ -42,16 +42,16 @@
                         property: "og:description",
                         content: `${this.excerpt}`
                     },
-                    // {
-                    //     vmid: "keywords",
-                    //     name: "keywords",
-                    //     content: `toyota, тест-драйв, тест драйв, тестдрайв, тайота, купить, дилер, `
-                    // },
-                    // {
-                    //     vmid: "keywords",
-                    //     property: "og:keywords",
-                    //     content: `toyota, тест-драйв, тест драйв, тестдрайв, тайота, купить, дилер, `
-                    // },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `${this.title} | ${this.excerpt} `
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `${this.title} | ${this.excerpt} `
+                    },
                 ],
             }
         },

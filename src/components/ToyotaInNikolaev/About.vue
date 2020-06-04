@@ -29,7 +29,40 @@
 
 <script>
     export default {
-        name: "About"
+        name: "About",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Про нас | Тойота Центр Миколаїв «КиТ-Т»`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Про нас | Тойота Центр Миколаїв «КиТ-Т»`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Тойота Центр Миколаїв «КіТ-Т» - офіційний дилер Тойота в Миколаєві, є сучасним 3S-концептуальним (Sale - продажу, Service - сервіс, Spareparts - запчастини) автомобільним центром Тойота в м.Миколаєві, який відповідає всім високим корпоративним стандартам Toyota. У 2017 році дилерський центр отримав Срібну нагороду стандартів обслуговування клієнтів Toyota.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Тойота Центр Миколаїв «КіТ-Т» - офіційний дилер Тойота в Миколаєві, є сучасним 3S-концептуальним (Sale - продажу, Service - сервіс, Spareparts - запчастини) автомобільним центром Тойота в м.Миколаєві, який відповідає всім високим корпоративним стандартам Toyota. У 2017 році дилерський центр отримав Срібну нагороду стандартів обслуговування клієнтів Toyota.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, про нас, Тойота Центр Миколаїв «КиТ-Т»`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, про нас, Тойота Центр Миколаїв «КиТ-Т»`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

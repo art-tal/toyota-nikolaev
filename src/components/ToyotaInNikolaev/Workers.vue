@@ -1,7 +1,7 @@
 <template>
     <main>
         <header class="container-fluid">
-            <h1 class="container text-center">Наші співробітники</h1>
+            <h1 class="container text-center">Наші фахівці</h1>
         </header>
 
         <div class="body container">
@@ -55,6 +55,39 @@
         data() {
             return {
                 workers: [],
+            }
+        },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Тойота Центр Миколаїв «КіТ-Т» | Наші фахівці`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Тойота Центр Миколаїв «КіТ-Т» | Наші фахівці`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Тойота Центр Миколаїв «КіТ-Т». Тут Ви можете знайти інформацію про представників компанії.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Тойота Центр Миколаїв «КіТ-Т». Тут Ви можете знайти інформацію про представників компанії.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, тойота україна, купити, Toyota, Yaris, Auris, Corolla, Avensis, Prius, Camry, RAV4, Highlander, Land Cruiser Prado, Land Cruiser 200, Hilux, Тойота, Ярис, Аурис, Королла, Авенсис, Пріус, Хайлендер, Корола, Кемри, Камри, Кэмри, Камрі, РАВ4, Ленд Крузер, Прадо, Ленд Крузер 200, Хайлакс, Хайлюкс, машини, автомобілі, дилери тойота, офіційний дилер тойота, гібрид, гібридний, приус, prius, toyota prius, toyota ukraine, тойота Миколаїв купити, c-hr`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, тойота україна, купити, Toyota, Yaris, Auris, Corolla, Avensis, Prius, Camry, RAV4, Highlander, Land Cruiser Prado, Land Cruiser 200, Hilux, Тойота, Ярис, Аурис, Королла, Авенсис, Пріус, Хайлендер, Корола, Кемри, Камри, Кэмри, Камрі, РАВ4, Ленд Крузер, Прадо, Ленд Крузер 200, Хайлакс, Хайлюкс, машини, автомобілі, дилери тойота, офіційний дилер тойота, гібрид, гібридний, приус, prius, toyota prius, toyota ukraine, тойота Миколаїв купити, c-hr`
+                    },
+                ],
             }
         },
 

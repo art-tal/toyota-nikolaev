@@ -24,7 +24,40 @@
 
 <script>
     export default {
-        name: "CorporateResponsibility"
+        name: "CorporateResponsibility",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Соціальної відповідальності Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Соціальної відповідальності Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Тойота Центр Миколаїв «КіТ-Т» при здійсненні діяльності керується принципами політики корпоративної соціальної відповідальності.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Тойота Центр Миколаїв «КіТ-Т» при здійсненні діяльності керується принципами політики корпоративної соціальної відповідальності.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota, тойота, соціальна відповідальність, екологія, принцип, політика, тойота, Україна`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota, тойота, соціальна відповідальність, екологія, принцип, політика, тойота, Україна`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

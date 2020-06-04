@@ -65,6 +65,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Очисник паливної системи для автомобіля`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Очисник паливної системи для автомобіля`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                    },
+                ],
+            }
+        },
+
         methods: {
             openVideo() {
                 this.showVideo = !this.showVideo;

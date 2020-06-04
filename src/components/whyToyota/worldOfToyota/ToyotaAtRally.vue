@@ -342,6 +342,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota | GAZOO Racing - чемпіонат світу з ралі 2018`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | GAZOO Racing - чемпіонат світу з ралі 2018`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Після успішного дебюту Toyota Yaris WRC у 2017 році з перемогами на ралі Швеції та Фінляндії команда  продовжуватиме боротьбу на чемпіонаті світу з ралі.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Після успішного дебюту Toyota Yaris WRC у 2017 році з перемогами на ралі Швеції та Фінляндії команда  продовжуватиме боротьбу на чемпіонаті світу з ралі.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota | Gazoo | Racing | World | Rally | Championship | WRC | 2018 | Yaris | team | Drivers | Car | Specification | Calendar | History | Guide , Yaris, Sports events`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota | Gazoo | Racing | World | Rally | Championship | WRC | 2018 | Yaris | team | Drivers | Car | Specification | Calendar | History | Guide , Yaris, Sports events`
+                    },
+                ],
+            }
+        },
+
     mounted() {
         this.$nextTick(() => {
             const swiperTop = this.$refs.swiperTop.$swiper

@@ -204,6 +204,39 @@
             }
         },
 
+        metaInfo() {
+        return {
+            title:  `Toyota | Команда TOYOTA GAZOO Racing | Toyota Nikolaev`,
+            meta: [
+                {
+                    vmid: "title",
+                    property: "og:title",
+                    content: `Toyota | Команда TOYOTA GAZOO Racing | Toyota Nikolaev`
+                },
+                {
+                    vmid: "description",
+                    name: "description",
+                    content: `На гоночних треках або ділянках ралі по всьому світу є ціла низка автомобільних перегонів, які запалюють автолюбітелів. Сьогодні ми об&#39;єднали всі наші міжнародні заходи під одною назвою: TOYOTA GAZOO Racing.`
+                },
+                {
+                    vmid: "description",
+                    property: "og:description",
+                    content: `На гоночних треках або ділянках ралі по всьому світу є ціла низка автомобільних перегонів, які запалюють автолюбітелів. Сьогодні ми об&#39;єднали всі наші міжнародні заходи під одною назвою: TOYOTA GAZOO Racing.`
+                },
+                {
+                    vmid: "keywords",
+                    name: "keywords",
+                    content: `Toyota Gazoo Racing, автоспорт, C-HR, автосервіс, Чемпіонату світу з ралі, Чемпіонат світу на витривалість, 24 години Нюрбургрингу, 24 години Ле-Ману, TS050 Hybrid, Yaris WRC, motorsports, garage, world rally championship, world endurance championship, Nurburgring 24 hours, 24 hours of Le Mans, Sports events, Heritage, Yaris`
+                },
+                {
+                    vmid: "keywords",
+                    property: "og:keywords",
+                    content: `Toyota Gazoo Racing, автоспорт, C-HR, автосервіс, Чемпіонату світу з ралі, Чемпіонат світу на витривалість, 24 години Нюрбургрингу, 24 години Ле-Ману, TS050 Hybrid, Yaris WRC, motorsports, garage, world rally championship, world endurance championship, Nurburgring 24 hours, 24 hours of Le Mans, Sports events, Heritage, Yaris`
+                },
+            ],
+        }
+    },
+
         created() {
             this.windowTop = window.scrollY;
             this.windowBottom = window.innerHeight + this.windowTop;
@@ -211,7 +244,7 @@
         },
 
         mounted() {
-            $(window).on('scroll', this.checkParallax());
+            $(window).on('scroll', () => {this.checkParallax();} );
             // $(window).on('scroll', this.parallax());
         },
 
@@ -227,7 +260,7 @@
             checkParallax() {
                 this.windowBottom = window.innerHeight + this.windowTop;
                 let blocks = document.querySelectorAll('.parallax_block');
-                console.log( blocks );
+                // console.log( blocks );
 
                 blocks.forEach( (block) => {
                     if (block.getBoundingClientRect().top + window.scrollY < window.scrollY + window.innerHeight) {

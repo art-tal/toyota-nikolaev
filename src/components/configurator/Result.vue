@@ -72,9 +72,9 @@
                             {{getColor.color_name}}
 <!--                            ({{getColor.color_code}})-->
                         </p>
-                        <p class="info row text-left">
-                            {{getWheels.description}}
-                        </p>
+<!--                        <p class="info row text-left">-->
+<!--                            {{getWheels.description}}-->
+<!--                        </p>-->
                         <p class="info row font-weight-bold">
                             Оздоблення інтер'єру
                         </p>
@@ -201,9 +201,9 @@
             this.$store.state.equipment = JSON.parse( localStorage.equipment );
             this.$store.state.engineAndGear = JSON.parse( localStorage.transmission );
             this.$store.state.color = JSON.parse( localStorage.color );
-            this.$store.state.wheels = JSON.parse( localStorage.wheel );
+            // this.$store.state.wheels = JSON.parse( localStorage.wheel );
             this.$store.state.interior = JSON.parse( localStorage.interior );
-            this.$store.state.selectedAccessories = JSON.parse( localStorage.selectedAccessories );
+            // this.$store.state.selectedAccessories = JSON.parse( localStorage.selectedAccessories );
             window.addEventListener('resize', this.changeResize);
             this.changeResize();
             // eventEmitter.$on('close', () => { this.openConsult() } );
@@ -211,7 +211,13 @@
 
         computed: {
             getModel() {
-                return this.$store.getters.getModel;
+                // return this.$store.getters.getModel;
+
+                if(this.$store.getters.getModel.id) {
+                    return this.$store.getters.getModel;
+                } else {
+                    return JSON.parse(localStorage.model);
+                }
             },
 
             photo() {
@@ -224,28 +230,59 @@
             },
 
             getEquipment() {
-                return this.$store.getters.equip;
+                // return this.$store.getters.equip;
+                if (this.$store.getters.equip.mod_id) {
+                    return this.$store.getters.equip;
+                } else {
+                    return JSON.parse(localStorage.equipment);
+                }
             },
 
             getTransmission() {
-                return this.$store.getters.getEngineAndGear;
+                // return this.$store.getters.getEngineAndGear;
+
+                if(this.$store.getters.getEngineAndGear.eng_id) {
+                    return this.$store.getters.getEngineAndGear;
+                } else {
+                    return JSON.parse(localStorage.transmission);
+                }
             },
 
             getColor() {
-                return this.$store.getters.colored;
+                // return this.$store.getters.colored;
+                if(this.$store.getters.colored.color_id) {
+                    return this.$store.getters.colored;
+                } else {
+                    return JSON.parse(localStorage.color);
+                }
             },
 
-            getWheels() {
-                return this.$store.getters.getWheels;
-            },
+            // getWheels() {
+            //     // return this.$store.getters.getWheels;
+            //     if(this.$store.getters.getWheels.name) {
+            //         return this.$store.getters.getWheels;
+            //     } else {
+            //         return JSON.parse(localStorage.wheel);
+            //     }
+            // },
 
             getInterior() {
-                return this.$store.getters.getInterior;
+                // return this.$store.getters.getInterior;
+                if(this.$store.getters.getInterior.interior_id) {
+                    return this.$store.getters.getInterior;
+                } else {
+                    return JSON.parse(localStorage.interior);
+                }
             },
 
-            getAccessories() {
-                return this.$store.getters.accessories;
-            },
+            // getAccessories() {
+            //     return this.$store.getters.accessories;
+            //     if(this.$store.getters.accessories.length) {
+            //         return this.$store.getters.accessories;
+            //     } else {
+            //         return JSON.parse(localStorage.selectedAccessories);
+            //     }
+            // },
 
             getWinWidth() {
                 return this.windowWidth;

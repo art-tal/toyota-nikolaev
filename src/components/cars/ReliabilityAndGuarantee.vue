@@ -361,12 +361,12 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`,
+                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Надійність та гарантія`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`
+                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Надійність та гарантія`
                     },
                     // {
                     //     vmid: "description",
@@ -542,6 +542,8 @@
                     {params: {id: this.id}},
                 ).then((response) => {
                     this.model = response.data[0];
+                    this.modelTitle = this.model.name;
+                    this.changeTitle();
                     console.log(this.model);
                 })
                     .catch((error) => {

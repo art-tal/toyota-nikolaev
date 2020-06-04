@@ -145,6 +145,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota | 2000GT – історія спорткарів Toyota`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | 2000GT – історія спорткарів Toyota`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Модель Toyota 2000GT, що стала знаменитою завдяки зйомкам із Шоном Конері у фільмі 1967 року про Джеймса Бонда «Живеш тільки двічі» (You Only Live Twice).`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Модель Toyota 2000GT, що стала знаменитою завдяки зйомкам із Шоном Конері у фільмі 1967 року про Джеймса Бонда «Живеш тільки двічі» (You Only Live Twice).`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota, спорт, спорткари, 2000GT, історія, спадщина, купе, джеймс бонд, характеристики, дизайн, автоспорт, рік, 1967, двигун, Heritage`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota, спорт, спорткари, 2000GT, історія, спадщина, купе, джеймс бонд, характеристики, дизайн, автоспорт, рік, 1967, двигун, Heritage`
+                    },
+                ],
+            }
+        },
+
         mounted() {
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper

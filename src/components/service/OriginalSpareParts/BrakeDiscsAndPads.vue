@@ -80,6 +80,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Гальмівні диски та колодки Toyota`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Гальмівні диски та колодки Toyota`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Працюючи щодня у звичному режимі чи потребуючи різкої зупинки, гальмівна система автомобіля виконує важливі завдання.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Працюючи щодня у звичному режимі чи потребуючи різкої зупинки, гальмівна система автомобіля виконує важливі завдання.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, toyota, гальма, система, колодки, сервіс, заміна, якість,, Genuine Parts`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, toyota, гальма, система, колодки, сервіс, заміна, якість,, Genuine Parts`
+                    },
+                ],
+            }
+        },
+
         methods: {
             openVideo() {
                 this.showVideo = !this.showVideo;

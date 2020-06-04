@@ -325,7 +325,7 @@
 
                 <div class="row">
 
-                    <article class="col-md-6 col-12 text-left"
+                    <article class="col-md-6 col-12 text-left news"
                              v-for="(article, key) in filtered"
                              :key="key"
                              @click="openArticle(article.id)"
@@ -364,6 +364,39 @@
 
                 newsAll: [],
                 newsFiltered: [],
+            }
+        },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Новини зі світу Toyota | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Новини зі світу Toyota | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Будьте в курсі останніх новин та подій зі світу Toyota. Огляди в пресі. Дізнайтесь першими про акції, знижки, та спеціальні пропозиції. Дилерські новини.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Будьте в курсі останніх новин та подій зі світу Toyota. Огляди в пресі. Дізнайтесь першими про акції, знижки, та спеціальні пропозиції. Дилерські новини.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota, новини, тойота, статті, події, звіти, виставки, акції, спеціальні пропозиції, відкриття, дилери, тойота україна, новинии`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota, новини, тойота, статті, події, звіти, виставки, акції, спеціальні пропозиції, відкриття, дилери, тойота україна, новини`
+                    },
+                ],
             }
         },
 
@@ -588,7 +621,7 @@
                     }
                 }
                 .row {
-                    article {
+                    article.news {
                         margin-bottom: 20px;
                         .img {
                             width: 100%;
@@ -614,6 +647,9 @@
                             font-size: 1.6rem;
                             color: #6c7073;
                             padding: 10px 0;
+                        }
+                        &:hover {
+                            cursor: pointer;
                         }
                     }
                 }

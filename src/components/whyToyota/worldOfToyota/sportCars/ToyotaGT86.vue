@@ -147,6 +147,39 @@
             }
         },
 
+        metaInfo() {
+        return {
+            title:  `Toyota | GT86 – історія спорткарів Toyota`,
+            meta: [
+                {
+                    vmid: "title",
+                    property: "og:title",
+                    content: `Toyota | GT86 – історія спорткарів Toyota`
+                },
+                {
+                    vmid: "description",
+                    name: "description",
+                    content: `Для закоханих у спорткари та прихильників традиційних моделей Toyota поява GT86 у 2011 році принесла довгоочікуване полегшення та насолоду від керування.`
+                },
+                {
+                    vmid: "description",
+                    property: "og:description",
+                    content: `Для закоханих у спорткари та прихильників традиційних моделей Toyota поява GT86 у 2011 році принесла довгоочікуване полегшення та насолоду від керування.`
+                },
+                {
+                    vmid: "keywords",
+                    name: "keywords",
+                    content: `Toyota, спорт, спорткари, GT86, 86, історія, спадщина, характеристики, дизайн, двигун, рік, 2011, 2016, автоспорт, ралі, WRC, GT86, Heritage`
+                },
+                {
+                    vmid: "keywords",
+                    property: "og:keywords",
+                    content: `Toyota, спорт, спорткари, GT86, 86, історія, спадщина, характеристики, дизайн, двигун, рік, 2011, 2016, автоспорт, ралі, WRC, GT86, Heritage`
+                },
+            ],
+        }
+    },
+
         mounted() {
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper

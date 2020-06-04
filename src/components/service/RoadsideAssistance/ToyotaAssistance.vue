@@ -46,7 +46,40 @@
 
         components: {
             Sidebar
-        }
+        },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Assistance - допомога в дорозі | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Assistance - допомога в дорозі | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `&quot;Toyota Assistance&quot; — це оперативна допомога для власників автомобілів марки Toyota, які були придбані в офіційній дилерській мережі Toyota в Україні.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `&quot;Toyota Assistance&quot; — це оперативна допомога для власників автомобілів марки Toyota, які були придбані в офіційній дилерській мережі Toyota в Україні.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, toyota assistance, допомога в дорозі, зручність, програма тойота асистанс, Україна, київ, допомога в дорозі, тойота асістанс, toyota assistance, Тойота-Україна, гарант-асістанс, умови, послуги, види, покриття, Latest news`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, toyota assistance, допомога в дорозі, зручність, програма тойота асистанс, Україна, київ, допомога в дорозі, тойота асістанс, toyota assistance, Тойота-Україна, гарант-асістанс, умови, послуги, види, покриття, Latest news`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

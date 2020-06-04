@@ -198,7 +198,40 @@
 
 <script>
     export default {
-        name: "Lubricants"
+        name: "Lubricants",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Оригінальні мастильні матеріали Toyota`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Оригінальні мастильні матеріали Toyota`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Усі оригінальні мастильні матеріали Toyota відповідають найсуворішим вимогам щодо якості та мають чудові експлуатаційні характеристики.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Усі оригінальні мастильні матеріали Toyota відповідають найсуворішим вимогам щодо якості та мають чудові експлуатаційні характеристики.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, олива, оливи, масла, оригінальна олива тойота, тойота, рідина, автоматична трансмісія, механічна трансмісія, диференціал, API, ACEA, Dexron, синтетична, синтетична олива, мастильні матеріали, Genuine Accessories, Genuine Parts`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, олива, оливи, масла, оригінальна олива тойота, тойота, рідина, автоматична трансмісія, механічна трансмісія, диференціал, API, ACEA, Dexron, синтетична, синтетична олива, мастильні матеріали, Genuine Accessories, Genuine Parts`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

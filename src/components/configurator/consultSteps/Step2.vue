@@ -289,7 +289,7 @@
 </template>
 
 <script>
-    // import axios from "axios"
+    import axios from "axios"
     import Inputmask from "inputmask";
     import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 
@@ -435,18 +435,18 @@
                 console.log(consultation);
                 // eventEmitter.$emit('close');
                 this.$store.state.openConsultation = !this.$store.state.openConsultation
-                // axios.post(
-                //     'http://lara.toyota.nikolaev.ua/ajax/--',
-                //     consultation,
-                // )
-                // .then( (response) => {
-                //     console.log("Данные переданы успешно!")
-                //     console.log(response)
-                // } )
-                // .catch( (error) => {
-                //     console.log(" Ошибка передачи данных");
-                //     console.log(error);
-                // } );
+                axios.post(
+                    'http://lara.toyota.nikolaev.ua/ajax/consultation',
+                    consultation,
+                )
+                .then( (response) => {
+                    console.log("Данные переданы успешно!")
+                    console.log(response)
+                } )
+                .catch( (error) => {
+                    console.log(" Ошибка передачи данных");
+                    console.log(error);
+                } );
 
 
             },

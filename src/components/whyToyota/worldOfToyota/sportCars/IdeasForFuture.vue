@@ -155,6 +155,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota | Ідеї щодо майбутнього – історія спорткарів Toyota`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | Ідеї щодо майбутнього – історія спорткарів Toyota`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Представлений на Детройтському автосалоні 2014 року, вражаючий концепт-кар Toyota FT-1 являє собою найвищу форму вираження дизайну Toyota. Створений з опорою на спортивну спадщину, він покликаний продемонструвати, як може виглядати наше майбутнє.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Представлений на Детройтському автосалоні 2014 року, вражаючий концепт-кар Toyota FT-1 являє собою найвищу форму вираження дизайну Toyota. Створений з опорою на спортивну спадщину, він покликаний продемонструвати, як може виглядати наше майбутнє.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota, спорт, спорткари, FT1, FT-1, SFR, S-FR, купе, майбутнє, ідея, історія, характеристики, дизайн, Corolla, Heritage, GT86`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota, спорт, спорткари, FT1, FT-1, SFR, S-FR, купе, майбутнє, ідея, історія, характеристики, дизайн, Corolla, Heritage, GT86`
+                    },
+                ],
+            }
+        },
+
         mounted() {
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper

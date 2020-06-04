@@ -165,6 +165,39 @@
             }
         },
 
+        metaInfo() {
+        return {
+            title:  `Toyota | COROLLA – історія спорткарів Toyota`,
+            meta: [
+                {
+                    vmid: "title",
+                    property: "og:title",
+                    content: `Toyota | COROLLA – історія спорткарів Toyota`
+                },
+                {
+                    vmid: "description",
+                    name: "description",
+                    content: `Модель AE86 оснащувалася високообертовим двигуном, об’ємом 1,6 л з двома розподільними валами з верхнім розташуванням (DOHC) потужністю у 124 «конячки».`
+                },
+                {
+                    vmid: "description",
+                    property: "og:description",
+                    content: `Модель AE86 оснащувалася високообертовим двигуном, об’ємом 1,6 л з двома розподільними валами з верхнім розташуванням (DOHC) потужністю у 124 «конячки».`
+                },
+                {
+                    vmid: "keywords",
+                    name: "keywords",
+                    content: `Toyota, спорт, спорткари, Corolla, AE86, AE92, Levin, gti, історія, спадщина, heritage, купе, хетчбек, динаміка, дизайн, автоспорт, дрифт, рік, двигун, initial d, manga, Heritage, Corolla Sedan`
+                },
+                {
+                    vmid: "keywords",
+                    property: "og:keywords",
+                    content: `Toyota, спорт, спорткари, Corolla, AE86, AE92, Levin, gti, історія, спадщина, heritage, купе, хетчбек, динаміка, дизайн, автоспорт, дрифт, рік, двигун, initial d, manga, Heritage, Corolla Sedan`
+                },
+            ],
+        }
+    },
+
         mounted() {
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper

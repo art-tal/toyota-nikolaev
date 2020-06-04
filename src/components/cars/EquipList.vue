@@ -6,6 +6,7 @@
             <swiper class="swiper" ref="swiper" :options="swiperOption">
                 <swiper-slide v-for="(equipment, key) in equipments" :key="key">
                     <div  class="equip"
+                          @click="activated(equipment)"
                     >
                         <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.mod_name">
 
@@ -62,6 +63,8 @@
                 equipment: {},
                 fontColor: "#202020",
 
+                modelTitle: "",
+
                 swiperOption: {
                     slidesPerView: 4,
                     spaceBetween: 30,
@@ -87,6 +90,39 @@
             formattedPrice,
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota ${this.modelTitle}конфігуратор автомобілів`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota ${this.modelTitle}конфігуратор автомобілів`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Створіть власну Toyota ${this.modelTitle} використовуючи наш офіційний конфігуратор автомобілів. Підберіть колір, двигун, трансмісію та індивідуальні аксесуари.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Створіть власну Toyota ${this.modelTitle} використовуючи наш офіційний конфігуратор автомобілів. Підберіть колір, двигун, трансмісію та індивідуальні аксесуари.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Конфігуратор автомобілів, Toyota ${this.modelTitle} конфігуратор,  тойота,модельний ряд, персоналізація, аксесуари, аксесуари для Toyota Yaris`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Конфігуратор автомобілів, Toyota ${this.modelTitle} конфігуратор,  тойота,модельний ряд, персоналізація, аксесуари, аксесуари для Toyota Yaris`
+                    },
+                ],
+            }
+        },
+
         created() {
             // this.$store.state.model = JSON.parse( localStorage.model );
             // this.id = this.getModelId;//первоначальный вариант
@@ -102,28 +138,22 @@
         },
 
         computed: {
-            // model() {
-            //     return this.$store.getters.getModel.name;
-            // },
+            getModel() {
+                if (this.$store.getters.getModel.id) {
+                    // this.modelTitle = this.$store.getters.getModel.name;
+                    return this.$store.getters.getModel;
+                } else {
+                    // this.modelTitle = JSON.parse( localStorage.model ).name;
+                    return JSON.parse( localStorage.model );
+                }
 
-            // getModelId() {
-            //     if (this.id) {return this.id}//новое
-            //     else if (this.$store.getters.getModelId) {
-            //         return this.$store.getters.getModelId;
-            //     } else {
-            //         return this.$route.params.id;}
-            // },
+
+            },
 
             photo() {
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.model.image;
             },
         },
-
-        // watch: {
-        //     color() {
-        //         return this.color;
-        //     },
-        // },
 
         methods: {
 
@@ -135,6 +165,7 @@
                     .then((response) => {
                         this.equipments = response.data;
                         console.log(this.equipments);
+                        this.modelTitle = this.getModel.name;
                     })
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
@@ -142,13 +173,13 @@
                     })
             },
 
-            // activeted(equipment) {
-            //     // console.log('catch');
-            //     this.$store.state.equipment = equipment;
-            //     localStorage.mod_id = equipment.mod_id;
-            //     localStorage.equipment = JSON.stringify(equipment);
-            //     eventEmitter.$emit('selectedEquipment');
-            // },
+            activated(equipment) {
+                // console.log('catch');
+                this.$store.state.equipment = equipment;
+                localStorage.mod_id = equipment.mod_id;
+                localStorage.equipment = JSON.stringify(equipment);
+                // eventEmitter.$emit('selectedEquipment');
+            },
 
             // getFontColor: function () {
             //     try{

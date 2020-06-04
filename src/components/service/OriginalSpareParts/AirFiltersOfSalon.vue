@@ -93,6 +93,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Повітряний фільтр салону | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Повітряний фільтр салону | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Пересуваючись сучасними містами та проводячи багато часу у заторах, ніщо не може зрівнятися з насолодою свіжим повітрям. Оригінальні фільтри Toyota.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Пересуваючись сучасними містами та проводячи багато часу у заторах, ніщо не може зрівнятися з насолодою свіжим повітрям. Оригінальні фільтри Toyota.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota, фільтр, салон, повітряні фільтри, Genuine Parts`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota, фільтр, салон, повітряні фільтри, Genuine Parts`
+                    },
+                ],
+            }
+        },
+
         methods: {
             show() {
                 this.showMemo = !this.showMemo;

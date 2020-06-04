@@ -66,7 +66,7 @@
                                 exact
                                 active-class="active"
                                 to="/workers"
-                        >Наші співробітники</router-link>
+                        >Наші фахівці</router-link>
                     </li>
 
                     <li>

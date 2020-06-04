@@ -131,7 +131,12 @@
 
         computed: {
             getEngine() {
-                return this.$store.getters.getEngineAndGear;
+                // return this.$store.getters.getEngineAndGear;
+                if(this.$store.getters.getEngineAndGear.eng_id) {
+                    return this.$store.getters.getEngineAndGear;
+                } else {
+                    return JSON.parse(localStorage.transmission);
+                }
             },
 
             getPhoto() {

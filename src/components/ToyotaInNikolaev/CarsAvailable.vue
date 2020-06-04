@@ -44,12 +44,12 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Офіційний дилер Тойота у Миколаєві; Автомобілі, що є в наявності в автосалоні; Продаж моделей Toyota із гарантією 3 роки; Продаж моделей Toyota у кредит або лізинг;`,
+                title:  `Toyota Nikolaev | Автомобілі в салоні.`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Офіційний дилер Тойота у Миколаєві; Автомобілі, що є в наявності в автосалоні; Продаж моделей Toyota із гарантією 3 роки; Продаж моделей Toyota у кредит або лізинг;`
+                        content: `Toyota Nikolaev | Автомобілі в салоні.`
                     },
                     {
                         vmid: "description",

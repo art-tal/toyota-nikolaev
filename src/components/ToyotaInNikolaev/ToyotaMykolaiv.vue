@@ -27,7 +27,40 @@
 
 <script>
     export default {
-        name: "ToyotaMykolaiv"
+        name: "ToyotaMykolaiv",
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Тойота Центр Миколаїв «КіТ-Т» | Віртуальний 3d тур`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Тойота Центр Миколаїв «КіТ-Т» | Віртуальний 3d тур`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Тойота Центр Миколаїв «КіТ-Т», Віртуальний 3d тур.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Тойота Центр Миколаїв «КіТ-Т», Віртуальний 3d тур.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, тойота україна, купити, Toyota, Yaris, Auris, Corolla, Avensis, Prius, Camry, RAV4, Highlander, Land Cruiser Prado, Land Cruiser 200, Hilux, Тойота, Ярис, Аурис, Королла, Авенсис, Пріус, Хайлендер, Корола, Кемри, Камри, Кэмри, Камрі, РАВ4, Ленд Крузер, Прадо, Ленд Крузер 200, Хайлакс, Хайлюкс, машини, автомобілі, дилери тойота, офіційний дилер тойота, гібрид, гібридний, приус, prius, toyota prius, toyota ukraine, тойота Миколаїв купити, c-hr`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, тойота україна, купити, Toyota, Yaris, Auris, Corolla, Avensis, Prius, Camry, RAV4, Highlander, Land Cruiser Prado, Land Cruiser 200, Hilux, Тойота, Ярис, Аурис, Королла, Авенсис, Пріус, Хайлендер, Корола, Кемри, Камри, Кэмри, Камрі, РАВ4, Ленд Крузер, Прадо, Ленд Крузер 200, Хайлакс, Хайлюкс, машини, автомобілі, дилери тойота, офіційний дилер тойота, гібрид, гібридний, приус, prius, toyota prius, toyota ukraine, тойота Миколаїв купити, c-hr`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

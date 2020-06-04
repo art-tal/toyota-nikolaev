@@ -68,7 +68,40 @@
 
         components: {
             Sidebar
-        }
+        },
+
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Підтримка вашого авто у дорозі | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Підтримка вашого авто у дорозі | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Програма для власників авмобілів Toyota, придбаних в офіційній дилерській мережі  і для яких вичерпано гарантійний термін.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Програма для власників авмобілів Toyota, придбаних в офіційній дилерській мережі  і для яких вичерпано гарантійний термін.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota Assistance Plus, Загальні умови, зміна власника, відшкодування витрат, Toyota Assistance plus, винятки, програма Toyota Assistance plus, Toyota Assistance plus`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota Assistance Plus, Загальні умови, зміна власника, відшкодування витрат, Toyota Assistance plus, винятки, програма Toyota Assistance plus, Toyota Assistance plus`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

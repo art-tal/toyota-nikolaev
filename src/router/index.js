@@ -1,10 +1,11 @@
 import VueRouter from "vue-router";
+
 import Home from "../components/Home";
 import Lineup from "../components/cars/Lineup";
 
 import DownloadBrochures from "../components/sharedLinks/DownloadBrochures";
 import FAQ from "../components/sharedLinks/FAQ";
-import FormCallBack from "../components/sharedLinks/FormCallBack";
+import FormFeedBack from "../components/sharedLinks/FormFeedBack";
 import VypadkyShahrajstva from "../components/sharedLinks/VypadkyShahrajstva";
 
 
@@ -158,9 +159,9 @@ export default new VueRouter({
         },
 
         {
-            path: '/form_call_back',
-            name: 'form_call_back',
-            component: FormCallBack,
+            path: '/form_feed_back',
+            name: 'form_feed_back',
+            component: FormFeedBack,
         },
 
         {

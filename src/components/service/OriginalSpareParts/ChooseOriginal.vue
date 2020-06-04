@@ -261,6 +261,39 @@
             }
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Nikolaev | Обирай оригінальне | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Nikolaev | Обирай оригінальне | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Оригінальні запасні частини Toyota сконструйовані та виготовлені таким чином, щоб відповідати саме вашому автомобілю Toyota.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Оригінальні запасні частини Toyota сконструйовані та виготовлені таким чином, щоб відповідати саме вашому автомобілю Toyota.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota Nikolaev, Toyota, Тойота | Запчастини | Справжня | Стандарти | Підроблена | Безпека | Гарантія | Автомобілі | Ризики | Переваги | Гальма | Масло | Фільтр | Подушка безпеки | Аксесуари | Тестування | Ремонт | Якість | Авторизований |, Genuine Parts, Service`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota Nikolaev, Toyota, Тойота | Запчастини | Справжня | Стандарти | Підроблена | Безпека | Гарантія | Автомобілі | Ризики | Переваги | Гальма | Масло | Фільтр | Подушка безпеки | Аксесуари | Тестування | Ремонт | Якість | Авторизований |, Genuine Parts, Service`
+                    },
+                ],
+            }
+        },
+
         methods: {
             openVideo() {
                 this.showVideo = !this.showVideo;
