@@ -183,6 +183,39 @@
             SwiperSlide
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Україна | Краща планета | Життя з Тойота`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Україна | Краща планета | Життя з Тойота`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Дізнаєтесь, що ми зробили, робимо і плануємо здійснити у майбутньому, аби досягти гармонії між людьми, продуктами та планетою. Toyota Україна.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Дізнаєтесь, що ми зробили, робимо і плануємо здійснити у майбутньому, аби досягти гармонії між людьми, продуктами та планетою. Toyota Україна.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                ],
+            }
+        },
+
         data() {
             return {
                 swiperOption: {

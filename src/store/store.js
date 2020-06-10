@@ -25,6 +25,7 @@ export default new Vuex.Store ({
         consultation: {
             model: {},
             engineType: "",
+            preview: "",
         },
 
         totalCost: 0,

@@ -87,6 +87,39 @@
             SwiperSlide
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota | Краще життя з Toyota | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | Краще життя з Toyota | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                ],
+            }
+        },
+
         data() {
             return {
                 swiperOption: {

@@ -48,6 +48,39 @@
         components: {
             MenuEcology,
         },
+
+        metaInfo() {
+            return {
+                title:  `Toyota | Сертифіковано ISO 14001 | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | Сертифіковано ISO 14001 | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Ми цінуємо сертифікат ISO 14001 та запропоновані ним інструменти, які допомагають на шляху до постійного вдосконалення екологічної діяльності.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Ми цінуємо сертифікат ISO 14001 та запропоновані ним інструменти, які допомагають на шляху до постійного вдосконалення екологічної діяльності.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `тойота, екологія, еко-акція, навколишне середовище, экология, эко-акция, окружающая среда, toyota, environmental event, ecology, iso, 14001, сертификат, сертифікат, Enviroment, Social projects`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `тойота, екологія, еко-акція, навколишне середовище, экология, эко-акция, окружающая среда, toyota, environmental event, ecology, iso, 14001, сертификат, сертифікат, Enviroment, Social projects`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

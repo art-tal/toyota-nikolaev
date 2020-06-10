@@ -50,6 +50,39 @@
         components: {
             GuaranteeMenu,
         },
+
+        metaInfo() {
+            return {
+                title:  `Toyota | Хартія Клієнтів  | Toyota Україна`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | Хартія Клієнтів  | Toyota Україна`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

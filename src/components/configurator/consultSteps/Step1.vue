@@ -19,7 +19,7 @@
                 <h4>Автомобіль з яким двигуном вас цікавить?</h4>
                 <div class="engine_type d-flex justify-content-between">
                     <li class="hybrid text-center" v-if="hybrid">
-                        <input id="hybrid" type="radio" v-model="consultEngine" value="Гібридний (бензин)">
+                        <input id="hybrid" type="radio" v-model="consultEngine" value="Гібридний (бензин)" @click="setConsultEngine('Гібридний (бензин)')">
                         <label for="hybrid">
                             <i class="fas fa-leaf"></i>
                             <span>Гібирний (бензин)</span>
@@ -28,7 +28,7 @@
                     </li>
 
                     <li class="electric text-center" v-if="electric">
-                        <input id="electric" type="radio" v-model="consultEngine" value="Електричний">
+                        <input id="electric" type="radio" v-model="consultEngine" value="Електричний" @click="setConsultEngine('Електричний')">
                         <label for="electric">
                             <img src="../../../img/bolt.png" alt="photo">
                             <span>Електричний</span>
@@ -37,7 +37,7 @@
                     </li>
 
                     <li class="petrol text-center" v-if="petrol">
-                        <input id="petrol" type="radio" v-model="consultEngine" value="Бензиновий">
+                        <input id="petrol" type="radio" v-model="consultEngine" value="Бензиновий" @click="setConsultEngine('Бензиновий')">
                         <label for="petrol">
                             <i class="fas fa-gas-pump"></i>
                             <span>Бензиновий</span>
@@ -46,7 +46,7 @@
                     </li>
 
                     <li class="disel text-center" v-if="diesel">
-                        <input id="disel" type="radio" v-model="consultEngine" value="Дизельний">
+                        <input id="disel" type="radio" v-model="consultEngine" value="Дизельний" @click="setConsultEngine('Дизельний')">
                         <label for="disel">
                             <img src="../../../img/iconfinder_engine_172463-.png" alt="disel"><br>
                             <span>Дизельний</span>
@@ -55,7 +55,7 @@
                     </li>
 
                     <li class="lpg text-center" v-if="lpg">
-                        <input id="lpg" type="radio" v-model="consultEngine" value="LPG">
+                        <input id="lpg" type="radio" v-model="consultEngine" value="LPG" @click="setConsultEngine('LPG')">
                         <label for="lpg">
                             <img src="../../../img/lpg.png" alt="LPG" style="width: 40px;"><br>
                             <span>LPG</span>
@@ -64,7 +64,7 @@
                     </li>
 
                     <li class="whatever text-center" v-if="engines.length > 1">
-                        <input id="whatever" type="radio" v-model="consultEngine" value="Не має значення">
+                        <input id="whatever" type="radio" v-model="consultEngine" value="Не має значення" @click="setConsultEngine('Не має значення')">
                         <label for="whatever">
                             <i class="fas fa-random"></i>
                             <span>Без різниці</span>
@@ -121,17 +121,32 @@
 
         created() {
             this.getModels();
-            this.startPhoto();
+            // this.startPhoto();
             // this.getEquipment();
-            this.findOutEngine();
+            // this.findOutEngine();
             // this.getEngines();
 
 
         },
 
         computed: {
+            getConsultModel() {
+                try {
+                    if(this.$store.getters.getConsultation.model.name) {
+                        return this.$store.getters.getConsultation.model;
+                    } else if ( JSON.parse(localStorage.consultModel).name ) {
+                        return JSON.parse(localStorage.consultModel);
+                    } else {
+                        return "";
+                    }
+                } catch (e) {
+                    console.log(e);
+                    return "";
+                }
+
+            },
+
             getEngine() {
-                // return this.$store.getters.getEngineAndGear;
                 if(this.$store.getters.getEngineAndGear.eng_id) {
                     return this.$store.getters.getEngineAndGear;
                 } else {
@@ -140,22 +155,27 @@
             },
 
             getPhoto() {
-                return 'http://lara.toyota.nikolaev.ua/storage/' + this.photo;
-                // return 'http://lara.toyota.nikolaev.ua/storage/' + this.consultModel.image;
-
+                try {
+                    if(this.$store.getters.getConsultation.preview) {
+                        return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.getConsultation.preview;
+                    } else {
+                        return 'http://lara.toyota.nikolaev.ua/storage/' + localStorage.consultPreview;
+                    }
+                } catch (e) {
+                    return this.photo;
+                }
+                i
             },
         },
 
         watch: {
             consultModel() {
                 this.$store.state.consultation.model = this.consultModel;
-                console.log(this.$store.state.consultation.model);
                 return this.consultModel;
             },
 
             consultEngine() {
                 this.$store.state.consultation.engineType = this.consultEngine;
-                console.log(this.$store.state.consultation.engineType);
                 return this.consultEngine;
             },
         },
@@ -166,10 +186,10 @@
                     method: 'get',
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.models = response.data;
                     this.getConsultPosition();
-                    this.getEquipment();
+                    // this.getEquipment();
                 } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные модели");
@@ -177,12 +197,50 @@
                     })
             },
 
-            startPhoto() {
-                if (this.$store.getters.colored.preview) {
-                    this.photo = this.$store.getters.colored.preview;
-                } else {
-                    this.photo =  JSON.parse(localStorage.color).preview;
+            getConsultPosition() {
+                try{
+                    if (this.getConsultModel.name) {
+                        this.saveConsultModel(this.getConsultModel);
+                        console.log("consultModel");
+                    } else {
+                        if (this.$store.getters.getModel.name) {
+                            this.saveConsultModel(this.$store.getters.getModel);
+                            console.log("store");
+                        } else if(JSON.parse(localStorage.model).name) {
+                            this.saveConsultModel(JSON.parse(localStorage.model));
+                            console.log("localStorage");
+                        }
+                        else {
+                            this.saveConsultModel(this.models[0]);
+                            console.log("start");
+                        }
+                    }
+                } catch (e) {
+                    console.log(e);
+                    this.saveConsultModel(this.models[0]);
                 }
+
+
+                this.getEquipment();
+
+            },
+
+            saveConsultModel(model) {
+                this.consultModel = model;
+                this.$store.state.consultation.model = model;
+                localStorage.consultModel = JSON.stringify(model);
+            },
+
+            changeModel() {
+                this.petrol = false;
+                this.diesel = false;
+                this.electric = false;
+                this.hybrid = false;
+                this.lpg = false;
+                this.$store.state.consultation.model = this.consultModel;
+                localStorage.consultModel = JSON.stringify( this.consultModel );
+                // console.log(this.$store.state.consultation.model);
+                this.getEquipment();
             },
 
             getEquipment() {
@@ -190,8 +248,8 @@
                     .then( (response) => {
                         let equipments = response.data;
                         this.equip = equipments[0];
-                        console.log(this.consultModel.id);
-                        console.log(this.equip);
+                        // console.log(this.consultModel.id);
+                        // console.log(this.equip);
 
                         this.getEngines();
                         this.getColors();
@@ -209,14 +267,78 @@
                 )
                     .then( (response) => {
                         this.engines = response.data;
-                        console.log(this.engines);
+                        // console.log(this.engines);
                         this.findFuelType();
+                        // this.consultEngine = this.fuelType(this.engines[0]);
+                        this.setConsultEngine( this.fuelType(this.engines[0]) )
+                        console.log(this.consultEngine);
                     } )
                     .catch( (error) => {
                         console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
                         console.log(error);
                     } );
 
+            },
+
+            setConsultEngine(eng) {
+                this.consultEngine = eng;
+                this.$store.state.consultation.engineType = eng;
+                localStorage.consultEngine = eng;
+
+                console.log(this.consultEngine);
+            },
+
+            findFuelType() {
+                this.engines.forEach( eng => {
+                    switch (eng.fuel_type.toLowerCase()) {
+                        case "Бензин".toLowerCase():
+                            this.petrol = true;
+                            // console.log("Бензин", this.petrol);
+                            break;
+                        case "Дизел".toLowerCase():
+                            this.diesel = true;
+                            // console.log("Дизел", this.diesel);
+                            break;
+                        case "Електро".toLowerCase():
+                            this.electric = true;
+                            // console.log("Електро", this.electric);
+                            break;
+                        case "ГIбрид".toLowerCase():
+                            this.hybrid = true;
+                            // console.log("ГIбрид", this.hybrid);
+                            break;
+                        case "LPG".toLowerCase():
+                            this.lpg = true;
+                            // console.log("LPG", this.lpg);
+                            break;
+                    }
+                } );
+
+                if (this.consultModel.hybrid) {
+                    this.hybrid = true;
+                    // console.log("ГIбрид", this.hybrid);
+                }
+
+            },
+
+            fuelType(eng) {
+                switch (eng.fuel_type.toLowerCase()) {
+                    case "Бензин".toLowerCase():
+                        return "Бензиновий";
+                    // break;
+                    case "Дизел".toLowerCase():
+                        return "Дизельний";
+                    // break;
+                    case "Електро".toLowerCase():
+                        return "Електричний"
+                    // break;
+                    case "ГIбрид".toLowerCase():
+                        return "Гібридний (бензин)"
+                    // break;
+                    case "LPG".toLowerCase():
+                        return "LPG"
+                    // break;
+                }
             },
 
             getColors() {
@@ -228,7 +350,9 @@
                         let colors = response.data;
                         this.color = colors[0];
                         this.photo = this.color.preview;
-                        console.log(this.color);
+                        this.$store.state.consultation.preview = this.color.preview;
+                        localStorage.consultPreview = this.color.preview;
+                        // console.log(this.color);
                         // }
 
                         // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
@@ -237,74 +361,6 @@
                         console.log("Ошибка, не возможно загрузить доступные цвета");
                         console.log(error);
                     } )
-            },
-
-            getConsultPosition() {
-                if (this.$store.state.model.name) {
-                    this.consultModel = this.$store.getters.getModel;
-                } else {
-                    this.consultModel = this.models[0];
-                }
-            },
-
-            changeModel() {
-                this.petrol = false;
-                this.diesel = false;
-                this.electric = false;
-                this.hybrid = false;
-                this.lpg = false;
-                this.$store.state.consultModel = this.consultModel;
-                localStorage.consultModel = JSON.stringify( this.consultModel );
-                console.log(this.$store.state.consultModel);
-                this.getEquipment();
-            },
-
-            findOutEngine() {
-                if (this.$store.state.equipment.mod_name) {
-                    console.log(this.$store.state.equipment);
-                    if ( this.$store.getters.equip.mod_name.includes('Hybrid') ) {
-                        this.consultEngine = "Гибридный (бензин)";
-                    } else {
-                        this.consultEngine = "Бензиновый";
-                    }
-                } else {
-                    this.consultEngine = "Не имеет значения";
-                }
-
-
-            },
-
-            findFuelType() {
-                this.engines.forEach( eng => {
-                    switch (eng.fuel_type.toLowerCase()) {
-                        case "Бензин".toLowerCase():
-                            this.petrol = true;
-                            console.log("Бензин", this.petrol);
-                            break;
-                        case "Дизел".toLowerCase():
-                            this.diesel = true;
-                            console.log("Дизел", this.diesel);
-                            break;
-                        case "Електро".toLowerCase():
-                            this.electric = true;
-                            console.log("Електро", this.electric);
-                            break;
-                        case "ГIбрид".toLowerCase():
-                            this.hybrid = true;
-                            console.log("ГIбрид", this.hybrid);
-                            break;
-                        case "LPG".toLowerCase():
-                            this.lpg = true;
-                            console.log("LPG", this.lpg);
-                            break;
-                    }
-                } );
-
-                if (this.consultModel.hybrid) {
-                    this.hybrid = true;
-                    console.log("ГIбрид", this.hybrid);
-                }
-
             },
         },
 

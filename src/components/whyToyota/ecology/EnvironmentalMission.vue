@@ -126,6 +126,39 @@
         components: {
             MenuEcology,
         },
+
+        metaInfo() {
+            return {
+                title:  `Toyota | Виклики щодо навколишнього середовища 2050`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | Виклики щодо навколишнього середовища 2050`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Toyota розробила пакет амбітних завдань, над виконанням яких буде працювати до 2050 року, для дотримання правила нульового впливу на довкілля.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Toyota розробила пакет амбітних завдань, над виконанням яких буде працювати до 2050 року, для дотримання правила нульового впливу на довкілля.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

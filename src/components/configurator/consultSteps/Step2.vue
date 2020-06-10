@@ -265,13 +265,13 @@
 
             <div class="change col-xl-5 col-12">
                 <div class="image">
-                    <img :src="getPhoto" :alt="getConsultation.model.name">
+                    <img :src="getPhoto" :alt="model.name">
                 </div>
                 <div class="info row text-left">
                     <div class="col-2 p-0"><i class="fas fa-car"></i></div>
                     <div class="col-8 p-0">
                         <h5 class="font-weight-bold">Оберіть модель та двигун</h5>
-                        <p>{{getConsultation.model.name}}, {{getConsultation.engineType}}</p>
+                        <p>{{model.name}}, {{getConsultEngine}}</p>
                     </div>
                     <div class="col-2 p-0">
                         <router-link
@@ -285,6 +285,9 @@
             </div>
         </div>
 
+        <successful v-if="success"></successful>
+        <error-message v-if="error"></error-message>
+
     </article>
 </template>
 
@@ -292,11 +295,13 @@
     import axios from "axios"
     import Inputmask from "inputmask";
     import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
+    import Successful from "./../../../components/permanent/Successful";
+    import ErrorMessage from "./../../../components/permanent/ErrorMessage";
 
     export default {
         name: "Step2",
 
-        data: function () {
+        data() {
             return {
                 name: 'step2',
 
@@ -310,6 +315,9 @@
                 time: "",
                 agree: false,
 
+                success: false,
+                error: false,
+
 
                 call_time_start: "",
                 call_time_end: "",
@@ -322,7 +330,19 @@
 
         computed: {
             model() {
-                return this.$store.getters.getModel;
+                try {
+                    return this.$store.getters.getConsultation.model;
+                } catch (e) {
+                    return JSON.parse(localStorage.consultModel);
+                }
+            },
+
+            getConsultEngine() {
+                if(this.$store.getters.getConsultation.engineType) {
+                    return this.$store.getters.getConsultation.engineType;
+                } else {
+                    return localStorage.consultEngine;
+                }
             },
 
             getConsultation() {
@@ -330,11 +350,17 @@
             },
 
             getPhoto() {
-                // return 'http://lara.toyota.nikolaev.ua/storage/' + this.getConsultation.model.image;
-                if (this.$store.getters.colored.preview) {
-                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                // if (this.$store.getters.colored.preview) {
+                //     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                // } else {
+                //     return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                // }
+
+
+                if(this.$store.getters.getConsultation.preview) {
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.getConsultation.preview;
                 } else {
-                    return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + localStorage.consultPreview;
                 }
             },
 
@@ -418,8 +444,8 @@
 
             onSubmit() {
                 const consultation = {
-                    model: this.model,
-                    engineType: this.getConsultation.engineType,
+                    model: this.model.name,
+                    engineType: this.getConsultEngine,
                     firstName: this.firstName,
                     lastName: this.lastName,
                     city: this.city,
@@ -440,14 +466,29 @@
                     consultation,
                 )
                 .then( (response) => {
-                    console.log("Данные переданы успешно!")
-                    console.log(response)
+                    console.log("Данные переданы успешно!");
+                    console.log(response);
+                    this.success = true;
+                    setTimeout( () => {this.success = false}, 2500 );
+                    this.clearConsult();
                 } )
                 .catch( (error) => {
                     console.log(" Ошибка передачи данных");
                     console.log(error);
+                    this.error = true;
+                    setTimeout( () => {this.error = false}, 2500 );
                 } );
 
+
+            },
+
+            clearConsult() {
+                // this.$store.state.consultation = "";
+                // localStorage.consultModel = "";
+                // localStorage.consultEngine = "";
+                // localStorage.consultPreview = "";
+
+                setTimeout( () => {this.$router.push({name: "step_1"});}, 2500)
 
             },
 
@@ -455,7 +496,8 @@
         },
 
         components: {
-
+            ErrorMessage,
+            Successful
             },
 
 
@@ -531,6 +573,7 @@
                         float: right;
                         button.btn.btn-link {
                             @include button_link;
+                            background: none;
                             /*<!--font-size: 1.3rem;-->*/
                             /*<!--color: $font_color;-->*/
                             /*<!--text-decoration: underline;-->*/
@@ -538,6 +581,7 @@
                     }
                     button {
                         @include button;
+                        background-color: #E50000;
                         width: auto;
                         padding-left: 30px;
                         padding-right: 30px;

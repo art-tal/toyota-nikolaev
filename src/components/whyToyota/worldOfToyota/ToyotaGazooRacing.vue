@@ -30,9 +30,12 @@
         </div>
 
         <div class="parallax_block text-center">
-<!--            <div>-->
-                <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-TGR-Pushing-limits-optimized_tcm-3046-778407.jpg" alt="photo">
-<!--            </div>-->
+
+            <div class="parallax_image"
+                 style="background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-TGR-Pushing-limits-optimized_tcm-3046-778407.jpg)"
+            ></div>
+<!--                <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-TGR-Pushing-limits-optimized_tcm-3046-778407.jpg" alt="photo">-->
+
             <h2 class="font-weight-bolder">Розширюючи межі в ім'я кращого</h2>
             <p>
                 TOYOTA GAZOO Racing втілює<br>
@@ -68,7 +71,10 @@
         </div>
 
         <div class="parallax_block text-center">
-            <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-1_tcm-3046-778415.jpg" alt="foto">
+            <div class="parallax_image"
+                 style="background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-1_tcm-3046-778415.jpg)"
+            ></div>
+<!--            <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-1_tcm-3046-778415.jpg" alt="foto">-->
         </div>
 
 
@@ -95,7 +101,10 @@
 
 
         <div class="parallax_block text-center">
-            <img class="parallax_image" src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Parallax-2_tcm-3046-778422.jpg" alt="photo">
+            <div class="parallax_image"
+                 style="background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Parallax-2_tcm-3046-778422.jpg)"
+            ></div>
+<!--            <img class="parallax_image" src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Parallax-2_tcm-3046-778422.jpg" alt="photo">-->
         </div>
 
 
@@ -142,7 +151,10 @@
 
 
         <div class="parallax_block text-center">
-            <img class="parallax_image" src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/9-NUR-C-HR-Pit_tcm-3046-778444.jpg" alt="photo">
+            <div class="parallax_image"
+                 style="background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/9-NUR-C-HR-Pit_tcm-3046-778444.jpg)"
+            ></div>
+<!--            <img class="parallax_image" src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/9-NUR-C-HR-Pit_tcm-3046-778444.jpg" alt="photo">-->
         </div>
 
 
@@ -166,7 +178,10 @@
 
 
         <div class="parallax_block text-center">
-            <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-5_tcm-3046-778455.jpg" alt="photo">
+            <div class="parallax_image"
+                 style="background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-5_tcm-3046-778455.jpg)"
+            ></div>
+<!--            <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-5_tcm-3046-778455.jpg" alt="photo">-->
         </div>
 
 
@@ -256,15 +271,20 @@
 
 
             checkParallax() {
-                this.windowTop = window.scrollY;
-                this.windowBottom = window.innerHeight + this.windowTop;
+                console.log(window.innerWidth);
+                if(window.innerWidth > 767.9) {
+                    this.windowTop = window.scrollY;
+                    this.windowBottom = window.innerHeight + this.windowTop;
 
-                $(".parallax_block").each( (index, block) => {
+                    $(".parallax_block").each( (index, block) => {
 
-                    if( $(block).offset().top < this.windowBottom ) {
-                        this.parallax(block);
-                    }
-                } );
+                        if( $(block).offset().top < this.windowBottom ) {
+                            this.parallax(block);
+                        }
+                    } );
+                }
+
+
             },
 
 
@@ -406,13 +426,13 @@
             width: 100vw;
             height: 540px;
             overflow: hidden;
-            img.parallax_image {
-                width: 100%;
-                height: auto;
-                display: block;
-                position: absolute;
-                left: 0;
-                z-index: -1;
+            .parallax_image {
+                background-repeat: no-repeat;
+                background-position: center 0;
+                -webkit-background-size: cover;
+                background-size: cover;
+                width: 100vw;
+                height: 100vh;
             }
             h2 {
                 color: #ffffff;
@@ -478,6 +498,9 @@
                     margin-bottom: 30px;
                     margin-top: 30px;
                 }
+
+
+
             }
         }
     }
@@ -529,6 +552,14 @@
             }
 
             .parallax_block {
+                .parallax_image {
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    width: 100%;
+                    height: 100%;
+                }
                 h2 {
                     font-size: 3.0rem;
                     padding: 20px 0 20px;
@@ -595,7 +626,15 @@
 
             .parallax_block {
                 width: 100%;
-                height: auto;
+                height: 100vw;
+                .parallax_image {
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    width: 100%;
+                    height: 100%;
+                }
                 h2 {
                     color: #ffffff;
                     font-size: 2.5rem;

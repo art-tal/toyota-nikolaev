@@ -40,6 +40,39 @@
         components: {
             GuaranteeMenu
         },
+
+        metaInfo() {
+            return {
+                title:  `Toyota | Гарантія якості продукції Toyota`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | Гарантія якості продукції Toyota`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Щоразу, сідаючи в крісло водія автомобіля марки Toyota і запускаючи двигун, ви будете почуватиметеся повністю впевненими.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Щоразу, сідаючи в крісло водія автомобіля марки Toyota і запускаючи двигун, ви будете почуватиметеся повністю впевненими.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `Toyota, тойота, якість, гарантія якості, принципи, філософія, кіітіро тойода, автомобілі, переваги, кермо`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `Toyota, тойота, якість, гарантія якості, принципи, філософія, кіітіро тойода, автомобілі, переваги, кермо`
+                    },
+                ],
+            }
+        },
     }
 </script>
 

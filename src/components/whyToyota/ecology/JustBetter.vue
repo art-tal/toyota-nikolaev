@@ -200,6 +200,39 @@
             SwiperSlide
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Україна| Просто краще | Життя з Тойота`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Україна| Просто краще | Життя з Тойота`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Протягом десятків років Toyota закладає у свій бізнес міцний фундамент, який гарантує дотримання екологічних стандартів та охорони навколишнього середовища.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Протягом десятків років Toyota закладає у свій бізнес міцний фундамент, який гарантує дотримання екологічних стандартів та охорони навколишнього середовища.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Social projects, Enviroment`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Social projects, Enviroment`
+                    },
+                ],
+            }
+        },
+
         data() {
             return {
                 swiperOption: {

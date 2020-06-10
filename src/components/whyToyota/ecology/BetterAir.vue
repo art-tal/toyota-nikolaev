@@ -166,6 +166,39 @@
             SwiperSlide
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota Україна | Краще повітря | Життя з Тойота`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota Україна | Краще повітря | Життя з Тойота`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Наша  дорожня карта об&#39;єднує широкий спектр екологічних технологій-  гібрид, plug-in гібрид, електричний акумулятор та система паливних елементів.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Наша  дорожня карта об&#39;єднує широкий спектр екологічних технологій-  гібрид, plug-in гібрид, електричний акумулятор та система паливних елементів.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                ],
+            }
+        },
+
         data() {
             return {
                 swiperOption: {

@@ -1,5 +1,5 @@
 <template>
-    <section class="consultation">
+    <main class="consultation">
         <div class="container">
             <menu class="row">
                 <nav class="col-11 navbar navbar-expand navbar-light">
@@ -53,7 +53,7 @@
             <router-view></router-view>
 
         </div>
-    </section>
+    </main>
 </template>
 
 <script>
@@ -120,7 +120,7 @@
 <style lang="scss" scoped>
     @import '../../styles/variables';
 
-    section.consultation{
+    main.consultation{
         /*position: fixed;*/
         /*top: 0;*/
         /*left: 0;*/
@@ -190,7 +190,7 @@
     }
 
     @media ( min-width: 576px ) and (max-width: 767.9px) {
-        section.consultation{
+        main.consultation{
             height: 100%;
             .container {
                 position: absolute;
@@ -208,7 +208,7 @@
     }
 
     @media ( max-width: 575.9px ) {
-        section.consultation{
+        main.consultation{
             width: 100%;
             min-width: 400px;
             height: 100%;

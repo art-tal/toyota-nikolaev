@@ -165,12 +165,13 @@
 <!--                        </li>-->
 
                         <li>
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/hybrid_drive"
-                            >Hybrid Drive</router-link>
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="https://www.toyota.ua/hybrid-innovation/drive-eco"-->
+<!--                            >Hybrid Drive</router-link>-->
+                            <a href="https://www.toyota.ua/hybrid-innovation/drive-eco" target="_blank">Hybrid Drive</a>
                         </li>
                     </ul>
 

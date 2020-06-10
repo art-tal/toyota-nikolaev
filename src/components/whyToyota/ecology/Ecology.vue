@@ -237,6 +237,39 @@
             SwiperSlide
         },
 
+        metaInfo() {
+            return {
+                title:  `Toyota | Турбота про навколишнє середовище`,
+                meta: [
+                    {
+                        vmid: "title",
+                        property: "og:title",
+                        content: `Toyota | Турбота про навколишнє середовище`
+                    },
+                    {
+                        vmid: "description",
+                        name: "description",
+                        content: `Ми  зобов&#39;язані бути лідером у справі захисту та поліпшення довкілля. Дізнайтеся про екологічні досягнення, якими ми пишаємося, та нашу екологічну місію.`
+                    },
+                    {
+                        vmid: "description",
+                        property: "og:description",
+                        content: `Ми  зобов&#39;язані бути лідером у справі захисту та поліпшення довкілля. Дізнайтеся про екологічні досягнення, якими ми пишаємося, та нашу екологічну місію.`
+                    },
+                    {
+                        vmid: "keywords",
+                        name: "keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                    {
+                        vmid: "keywords",
+                        property: "og:keywords",
+                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                    },
+                ],
+            }
+        },
+
         data() {
         return {
             swiperOption: {

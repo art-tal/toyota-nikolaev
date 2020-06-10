@@ -34,7 +34,7 @@
                                 @blur="$v.model.$touch()"
                         >
                             <option selected="selected" disabled="disabled" value="">Вибрати</option>
-                            <option :value="model.name"
+                            <option :value="model"
                                     v-for="(model, key) in models"
                                     :key="key"
                             >
@@ -286,6 +286,9 @@
                 </div>
             </form>
         </div>
+
+        <successful v-if="success"></successful>
+        <error-message v-if="error"></error-message>
     </main>
 </template>
 
@@ -293,9 +296,16 @@
     import axios from "axios"
     import Inputmask from "inputmask";
     import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
+    import Successful from "./../../components/permanent/Successful";
+    import ErrorMessage from "./../../components/permanent/ErrorMessage";
 
     export default {
         name: "SignUpForService",
+        components: {ErrorMessage, Successful},
+        component: {
+            Successful,
+            ErrorMessage,
+        },
 
         data() {
             return {
@@ -318,7 +328,10 @@
                 call_time_end: "",
                 connection: "",
                 comment: "",
-                agree: false
+                agree: false,
+
+                success: false,
+                error: false,
 
             }
         },
@@ -452,50 +465,42 @@
             },
 
             onSubmit() {
-                const requestToService = {};
-                requestToService.model = this.model;
-                requestToService.service = this.service;
-                requestToService.gender = this.gender;
-                requestToService.phone = this.phone;
-                requestToService.firstName = this.firstName;
-                requestToService.secondName = this.secondName;
-                requestToService.lastName = this.lastName;
-                requestToService.email = this.eMail;
-                requestToService.state_number = this.state_number;
-                requestToService.vin_number = this.vin_number;
-                requestToService.date = this.date;
-                requestToService.time = this.time;
-                requestToService.connection = this.connection;
-                requestToService.call_time = `від ${this.call_time_start} до ${this.call_time_end}`;
-                requestToService.comment = this.comment;
-                requestToService.agree = this.agree;
-
+                const requestToService = {
+                    model: this.model.name,
+                    service: this.service,
+                    gender: this.gender,
+                    phone: this.phone,
+                    firstName: this.firstName,
+                    secondName: this.secondName,
+                    lastName: this.lastName,
+                    email: this.eMail,
+                    state_number: this.state_number,
+                    vin_number: this.vin_number,
+                    mileage: this.mileage,
+                    date: this.date,
+                    time: this.time,
+                    connection: this.connection,
+                    call_time: `від ${this.call_time_start} до ${this.call_time_end}`,
+                    comment: this.comment,
+                    agree: this.agree,
+                };
                 axios.post(
                     "http://lara.toyota.nikolaev.ua/ajax/service",
                     requestToService,
-                    // {
-                    //     model: this.model,
-                    //     service: this.service,
-                    //     gender: this.gender,
-                    //     phone: this.phone,
-                    //     firstName: this.firstName,
-                    //     secondName: this.secondName,
-                    //     lastName: this.lastName,
-                    //     email: this.eMail,
-                    //     state_number: this.state_number,
-                    //     vin_number: this.vin_number,
-                    //     date: this.date,
-                    //     time: this.time,
-                    //     connection: this.connection,
-                    //     call_time: `від ${this.call_time_start} до ${this.call_time_end}`,
-                    //     comment: this.comment,
-                    //     agree: this.agree,
-                    // },
                 )
-                    .then( (response) => {console.log(response)} )
+                    .then( (response) => {
+                        console.log("Данные переданы успешно!");
+                        console.log(response);
+                        console.log(requestToService);
+                        this.success = true;
+                        setTimeout( () => {this.success = false}, 2500 );
+                    } )
                     .catch( (error) => {
                         console.log("Ошибка передачи формы");
                         console.log(error);
+                        console.log(requestToService);
+                        this.error = true;
+                        setTimeout( () => {this.error = false}, 2500 );
                     } )
             },
 

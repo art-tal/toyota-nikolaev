@@ -275,7 +275,7 @@
                                    v-model="search"
                             >
                             <button class="btn btn-dark my-2 my-sm-0"
-                                    @click="searchNews()"
+                                    @click.prevent="searchNews()"
                             >
                                 <i class="fas fa-search"></i>
                             </button>
@@ -290,8 +290,8 @@
                         <input class="form-control"
                                id="news" type="checkbox"
                                value="8"
-                               v-model="news"
-                               checked
+                               v-model="categories"
+                               @change="changeCheckBox('news')"
                         >
                         <label for="news">
                             <span class="check"><i class="fas fa-check"></i></span>
@@ -302,8 +302,8 @@
                         <input class="form-control"
                                id="newcomers" type="checkbox"
                                value="9"
-                               v-model="newcomers"
-                               checked
+                               v-model="categories"
+                               @change="changeCheckBox('newcomers')"
                         >
                         <label for="newcomers">
                             <span class="check"><i class="fas fa-check"></i></span>
@@ -313,8 +313,8 @@
                         <input class="form-control"
                                id="stocks" type="checkbox"
                                value="10"
-                               v-model="stocks"
-                               checked
+                               v-model="categories"
+                               @change="changeCheckBox('stocks')"
                         >
                         <label for="stocks">
                             <span class="check"><i class="fas fa-check"></i></span>
@@ -347,6 +347,7 @@
 
 <script>
     import axios from "axios"
+    // import $ from "jquery"
 
     export default {
         name: "News",
@@ -358,9 +359,11 @@
                 themes: [],
                 search: "",
 
-                newcomers: "newcomers",
-                news: "news",
-                stocks: "stocks",
+                categories: [],
+
+                newcomers: 0,
+                news: 0,
+                stocks: 0,
 
                 newsAll: [],
                 newsFiltered: [],
@@ -406,11 +409,22 @@
 
         computed: {
             filtered() {
-                return this.newsAll
-                .filter( newsItem => {
-                    return newsItem.category_id !== null; //|| newsItem.category === "events" || newsItem.category === "news" || newsItem.category === "stories"
-                    // return  newsItem.category === "events" || newsItem.category === "news" || newsItem.category === "stories"
-                } )
+                if ( this.news === 0 && this.newcomers === 0 && this.stocks === 0 ) {
+                    return this.newsAll.filter( newsItem => {
+                        return newsItem.title.toLowerCase().includes(this.search.toLowerCase());
+                    } );
+
+                }
+                else {
+                    return this.newsAll
+                        .filter( newsItem => {
+                            return newsItem.title.toLowerCase().includes(this.search.toLowerCase());
+                        } )
+                        .filter( newsItem => {
+                            return newsItem.category_id === this.news || newsItem.category_id === this.newcomers || newsItem.category_id === this.stocks;
+                        } )
+                }
+
             },
         },
 
@@ -446,6 +460,33 @@
             openArticle(id) {
                 this.$router.push( {name: "article", params: {id: id} } );
             },
+
+            changeCheckBox(category) {
+                switch (category) {
+                    case "news":
+                        if(this.news) {
+                            this.news = 0;
+                        } else {
+                            this.news = 8;
+                        }
+                        break;
+                    case "newcomers":
+                        if(this.newcomers) {
+                            this.newcomers = 0;
+                        } else {
+                            this.newcomers = 9;
+                        }
+                        break;
+                    case "stocks":
+                        if(this.stocks) {
+                            this.stocks = 0;
+                        } else {
+                            this.stocks = 10;
+                        }
+                        break;
+                }
+                console.log( this.news, this.newcomers, this.stocks );
+            }
         },
     }
 </script>

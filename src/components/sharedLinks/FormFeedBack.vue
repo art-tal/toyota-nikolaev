@@ -185,6 +185,10 @@
             </div>
 
         </div>
+
+        <successful v-if="success"></successful>
+        <error-message v-if="error"></error-message>
+
     </main>
 </template>
 
@@ -192,9 +196,17 @@
     import axios from "axios"
     import Inputmask from "inputmask";
     import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
+    import Successful from "./../../components/permanent/Successful";
+    import ErrorMessage from "./../../components/permanent/ErrorMessage";
 
     export default {
         name: "FormFeedBack",
+
+        components: {
+            ErrorMessage,
+            Successful,
+
+        },
 
         data() {
             return {
@@ -204,6 +216,9 @@
                 eMail: "",
                 userMsg: "",
                 agree: false,
+
+                success: false,
+                error: false,
 
                 expandBlock: true,
             }
@@ -306,12 +321,16 @@
                     feedback,
                 )
                 .then( (response) => {
-                    console.log("Данные переданы успешно!")
-                    console.log(response)
+                    console.log("Данные переданы успешно!");
+                    console.log(response);
+                    this.success = true;
+                    setTimeout( () => {this.success = false}, 2500 );
                 } )
                 .catch( (error) => {
                     console.log(" Ошибка передачи данных");
                     console.log(error);
+                    this.error = true;
+                    setTimeout( () => {this.error = false}, 2500 );
                 } );
 
 

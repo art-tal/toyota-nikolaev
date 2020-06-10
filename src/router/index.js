@@ -28,7 +28,7 @@ import Interior from "../components/configurator/options/Interior";
 import ToResult from "../components/configurator/options/ToResult";
 import Price from "../components/configurator/options/Price";
 import Accessories from "../components/configurator/options/Accessories";
-import Consult from "../components/configurator/Consult";
+import Consultation from "../components/configurator/Consultation";
 import Step1 from "../components/configurator/consultSteps/Step1";
 import Step2 from "../components/configurator/consultSteps/Step2";
 
@@ -280,7 +280,7 @@ export default new VueRouter({
         {
             path: "/consultation",
             name: 'consultation',
-            component: Consult,
+            component: Consultation,
             children: [
                 {
                     path: "/consultation/step_1",

@@ -25,32 +25,32 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | ${this.title}`,
+                title:  `${this.art.seo_title}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | ${this.title}`
+                        content: `${this.art.seo_title}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `${this.excerpt}`
+                        content: `${this.art.meta_description}`
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `${this.excerpt}`
+                        content: `${this.art.meta_description}`
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `${this.title} | ${this.excerpt} `
+                        content: `${this.art.meta_keywords}`
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `${this.title} | ${this.excerpt} `
+                        content: `${this.art.meta_keywords}`
                     },
                 ],
             }
@@ -67,8 +67,8 @@
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.article.image;
             },
 
-            title() {
-                return this.article.title;
+            art() {
+                return this.article;
             },
 
             excerpt() {
