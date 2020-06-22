@@ -374,7 +374,7 @@
                     catch (e) {
                         console.log("error equipment - 382");
                         if (this.$store.getters.equip.mod_id) {
-                            console.log("not empty");
+                            // console.log("not empty");
                             return this.$store.getters.equip;
                         }
                         return "";
