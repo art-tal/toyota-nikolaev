@@ -69,7 +69,7 @@
         </div>
 
         <div class="specifications row justify-content-center align-items-end">
-            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">
                 <p>Від</p>
                 <span class="h2 d-block font-weight-bolder">
                     {{computedEquipment.gross_price | formattedPrice}}&#8372;
@@ -77,13 +77,27 @@
 
             </div>
 
-            <div class="fuelConsumption col-xl-2 col-md-3 col-6">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">
+                <p>Від</p>
+                <span class="h2 d-block font-weight-bolder">
+                    {{computedEquipment.gross_price | formattedPrice}}&#8372;
+                </span>
+
+            </div>
+
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
                 <p>Споживання пального</p>
                 <span class="h1">{{computedEquipment.fuel}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
 
-            <div class="maxSpeed col-xl-2 col-md-3 col-6">
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
+                <p>Споживання пального</p>
+                <span class="h1">{{computedEquipment.fuel}}</span>
+                <span class="font-weight-bold"> л/100 км</span>
+            </div>
+
+            <div class="seats col-xl-2 col-md-3 col-6" v-if="model.seats">
                 <p>Кількість місць</p>
                 <span class="h1">{{model.seats}}</span>
                 <span class="font-weight-bold"> шт.</span>

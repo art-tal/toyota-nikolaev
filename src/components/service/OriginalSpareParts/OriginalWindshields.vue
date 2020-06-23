@@ -17,12 +17,6 @@
 
 
             <div class="video">
-<!--                <video width="100%"-->
-<!--                       src="../../../video/original_windshields_toyota.mp4"-->
-<!--                       controls="controls"-->
-<!--                       type="video/mp4"-->
-<!--                       poster="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-939662.jpg">-->
-<!--                </video>-->
 
                 <div class="img_button" @click="openVideo()">
                     <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-939662.jpg" alt="Оригінальне лобове скло">

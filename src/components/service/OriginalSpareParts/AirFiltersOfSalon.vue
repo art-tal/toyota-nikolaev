@@ -33,13 +33,6 @@
 
 
             <div class="video">
-<!--                <video width="100%"-->
-<!--                       src="../../../video/air_filters_of_salon_toyota.mp4"-->
-<!--                       controls="controls"-->
-<!--                       type="video/mp4"-->
-<!--                       poster="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-674169.jpg">-->
-<!--                </video>-->
-                
                 <div class="img_button" @click="openVideo()">
                     <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-674169.jpg" alt="Підтримуйте свою Toyota у формі, справною і свіжою завдяки повітряним фільтрам салону Toyota">
                 </div>

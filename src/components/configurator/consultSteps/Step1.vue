@@ -164,7 +164,6 @@
                 } catch (e) {
                     return this.photo;
                 }
-                i
             },
         },
 

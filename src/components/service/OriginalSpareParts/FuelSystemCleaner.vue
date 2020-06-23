@@ -30,12 +30,6 @@
         </div>
 
         <div class="video">
-<!--            <video width="100%"-->
-<!--                   src="../../../video/original_windshields_toyota.mp4"-->
-<!--                   controls="controls"-->
-<!--                   type="video/mp4"-->
-<!--                   poster="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-parts-2014-fuel-system-cleaner-movie_tcm-3046-284905.jpg">-->
-<!--            </video>-->
 
             <div class="img_button" @click="openVideo()">
                 <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-parts-2014-fuel-system-cleaner-movie_tcm-3046-284905.jpg" alt="/">

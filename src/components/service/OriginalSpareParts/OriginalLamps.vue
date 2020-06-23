@@ -39,12 +39,6 @@
 
 
             <div class="video">
-<!--                <video width="100%"-->
-<!--                       src="../../../video/original_lamps_toyota.mp4"-->
-<!--                       controls="controls"-->
-<!--                       type="video/mp4"-->
-<!--                       poster="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-894252.jpg">-->
-<!--                </video>-->
 
                 <div class="img_button" @click="openVideo()">
                     <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-894252.jpg" alt="Оригінальні лампи Toyota">

@@ -2,10 +2,6 @@
     <main class="selectModel">
         <sub-navigation></sub-navigation>
 
-<!--        <router-link :id="this.$route.params.id"></router-link>-->
-
-<!--        <div class="container-fluid">-->
-<!--        <div class="container-fluid"  :style="{'background-color': computedColor.rgb, 'color': fontColored + '!important'}">-->
         <div class="container-fluid"  :style="{'background': getGradient( computedColor.rgb), 'color': fontColored + '!important'}">
 
             <header class="row">
@@ -41,16 +37,6 @@
                 <equipment v-if="showEquipment" :id="id"></equipment>
 
 
-
-
-<!--            <div class="compare text-left" v-if="!showEquipment">-->
-<!--                <a href="#" class="text-decoration-none" :style="{'color': fontColored + '!important'}">-->
-
-<!--                    <i class="fas fa-exchange-alt"></i>-->
-<!--                    <span>Порівняти</span>-->
-<!--                </a>-->
-<!--            </div>-->
-
             <div class="carView row">
                 <div class="carDescription col-xl-10 col-lg-9* col-12 row">
                     <ul class="description col-xl-3 col-12 text-left">
@@ -81,7 +67,7 @@
         </div>
 
         <div class="specifications row justify-content-center align-items-end">
-            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">
                 <p>Від</p>
                 <span class="h2 d-block font-weight-bolder">
                     {{computedEquipment.gross_price | formattedPrice}}&#8372;
@@ -89,17 +75,33 @@
 
             </div>
 
-            <div class="fuelConsumption col-xl-2 col-md-3 col-6">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">
+                <p>Від</p>
+                <span class="h2 d-block font-weight-bolder">
+                    {{computedEquipment.gross_price | formattedPrice}}&#8372;
+                </span>
+
+            </div>
+
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
                 <p>Споживання пального</p>
                 <span class="h1">{{computedEquipment.fuel}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
-            <div class="maxSpeed col-xl-2 col-md-3 col-6">
+
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
+                <p>Споживання пального</p>
+                <span class="h1">{{computedEquipment.fuel}}</span>
+                <span class="font-weight-bold"> л/100 км</span>
+            </div>
+
+            <div class="maxPower col-xl-2 col-md-3 col-6" v-if="model.maxPower">
                 <p>Максимальна потужність</p>
                 <span class="h1">{{model.maxPower}}</span>
                 <span class="font-weight-bold"> к.с.</span>
             </div>
-            <div class="maxPower col-xl-2 col-md-3 col-6">
+
+            <div class="maxSpeed col-xl-2 col-md-3 col-6" v-if="model.maxSpeed">
                 <p>Максимальна швидкість</p>
                 <span class="h1">{{model.maxSpeed}}</span>
                 <span class="font-weight-bold"> км/г</span>
@@ -119,7 +121,6 @@
 
         <div class="requestService row justify-content-center">
             <div class="col-6 text-right">
-<!--                <button class="col-6 btn btn-danger">Замовити тест-драйв</button>-->
                 <router-link
                         tag="button"
                         class="col-6 btn btn-danger"
@@ -176,16 +177,6 @@
             </div>
 
         </div>
-        
-<!--        <section class="container-fluid gallery">-->
-<!--            <header>-->
-<!--                <h1>Галерея</h1>-->
-<!--            </header>-->
-
-<!--            <div class="body">-->
-<!--                -->
-<!--            </div>-->
-<!--        </section>-->
 
         <section class="links container d-md-flex justify-content-between">
             <div class="link">
@@ -320,7 +311,7 @@
             this.id = this.$route.params.id;
             this.getModel();
 
-            console.log(this.model);
+            // console.log(this.model);
 
             this.getEquipment();
 
@@ -334,7 +325,7 @@
                 this.color = JSON.parse( localStorage.color );
             }
             catch (e) {
-                console.log("error color - 333");
+                // console.log("error color - 333");
                 return "";
             }
             
@@ -356,7 +347,7 @@
                         return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
                     }
                     catch (e) {
-                        console.log("error photo - 350");
+                        // console.log("error photo - 350");
                         return "";
                     }
 
@@ -372,7 +363,7 @@
                         return JSON.parse(localStorage.equipment);
                     }
                     catch (e) {
-                        console.log("error equipment - 382");
+                        // console.log("error equipment - 382");
                         if (this.$store.getters.equip.mod_id) {
                             // console.log("not empty");
                             return this.$store.getters.equip;
@@ -390,7 +381,7 @@
                         return JSON.parse( localStorage.color );
                     }
                     catch (e) {
-                        console.log("error Computed color - 379");
+                        // console.log("error Computed color - 379");
                         return "";
                     }
                 }
@@ -449,7 +440,7 @@
             },
 
             showEquipment() {
-                console.log('watch', this.showEquipment);
+                // console.log('watch', this.showEquipment);
                 return this.showEquipment;
             },
 
@@ -484,13 +475,13 @@
 
             choice() {
                 this.showEquipment = !this.showEquipment;
-                console.log( this.showEquipment);
+                // console.log( this.showEquipment);
 
             },
 
             changeTitle() {
                 this.equipmentTitle = this.computedEquipment.mod_name;
-                console.log(this.equipmentTitle);
+                // console.log(this.equipmentTitle);
             },
 
             getEquipment() {
@@ -522,7 +513,7 @@
                     return desc;
                 }
                 catch (e) {
-                    console.log("selectModel split");
+                    // console.log("selectModel split");
                 }
 
             },
@@ -557,7 +548,7 @@
                         return this.fontColor = '#202020';
                 }
             } catch (e) {
-                    console.log( "Шрифты пролетели" );
+                    // console.log( "Шрифты пролетели" );
                 }
 
             },
@@ -626,12 +617,12 @@
                                 return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 20) +  ")";
                     }
                 } catch (e) {
-                    console.log( "Градиетны пролетели" );
+                    // console.log( "Градиетны пролетели" );
                 }
             },
 
             getVideo() {
-                console.log(this.model.name.toLowerCase());
+                // console.log(this.model.name.toLowerCase());
                 try {
                     switch(this.model.name.toLowerCase()) {
 

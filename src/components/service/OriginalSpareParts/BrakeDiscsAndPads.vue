@@ -47,13 +47,6 @@
 
 
             <div class="video">
-<!--                <video width="100%"-->
-<!--                       src="../../../video/brake_discs_and_pads_toyota.mp4"-->
-<!--                       controls="controls"-->
-<!--                       type="video/mp4"-->
-<!--                       poster="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Brakes-video_tcm-3046-702187.jpg">-->
-<!--                </video>-->
-
                 <div class="img_button" @click="openVideo()">
                     <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Brakes-video_tcm-3046-702187.jpg" alt="Гальмівні диски та колодки Toyota  Зупиняють надійно та безпечно">
                 </div>

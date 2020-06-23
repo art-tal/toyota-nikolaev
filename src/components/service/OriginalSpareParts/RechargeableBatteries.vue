@@ -37,7 +37,6 @@
 
                 <div class="card">
                     <div class="card-header p-0">
-                        <!--                        id="headingOne"-->
                         <h5 class="m-0">
                             <button class="btn btn-link w-100 text-left pl-4 py-4 text-dark" style="font-size: 1.6rem" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Чи можна «прикурювати» інший автомобіль?
@@ -107,7 +106,6 @@
 
                 <div class="card">
                     <div class="card-header p-0">
-                        <!--                        id="headingOne"-->
                         <h5 class="m-0">
                             <button class="btn btn-link w-100 text-left pl-4 py-4 text-dark" style="font-size: 1.6rem" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
                                 Якщо в мороз перед запуском двигуна включити на короткий час фари автомобіля, чи допоможе це полегшити запуск?
