@@ -4,7 +4,8 @@
             <img src="../../img/toyota-ico-01.png" alt="icon">
         </div>
 
-        <div class="contacts">
+        <div class="contacts" v-if="show">
+            <i class="far fa-times-circle" @click="chowContacts()"></i>
             <div class="d-flex justify-content-center">
                 <div class="cont"
                      v-for="(cont, key) in contacts"
@@ -13,11 +14,39 @@
                     <div class="photo" :title="cont.name">
                         <img :src="'http://lara.toyota.nikolaev.ua/storage/' + cont.photo" :alt="cont.name">
                     </div>
+
                     <ul>
+                        <li v-if="cont.isVisibleViber">
+                            <a :href="'viber://chat?number=' + formatNumber(cont.viber)">
+                                <i class="fab fa-viber"></i>
+                            </a>
+                        </li>
+
                         <li v-if="cont.isVisibleMessenger">
-                            <a :href="viber://chat?number=+380676174872"></a>
+                            <a :href="'https://www.messenger.com/t/' + cont.messenger">
+                                <i class="fab fa-facebook-messenger"></i>
+                            </a>
+                        </li>
+
+                        <li v-if="cont.isVisibleSkype">
+                            <a :href="'skype:' + cont.skype + '?chat'">
+                                <i class="fab fa-skype"></i>
+                            </a>
+                        </li>
+
+                        <li v-if="cont.isVisibleTelegram">
+                            <a :href="'tg://resolve?domain=' + cont.telegram">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                        </li>
+
+                        <li v-if="cont.isVisibleWhatsApp">
+                            <a :href="'whatsapp://send?phone=' + formatNumber(cont.whatsapp)">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </div>
@@ -28,14 +57,14 @@
 
 <script>
     import axios from "axios"
-    // import $ from "jquery"
+    import $ from "jquery"
 
     export default {
         name: "FastConnection",
 
         data() {
             return {
-                chown: false,
+                show: false,
 
                 contacts: [],
                 }
@@ -47,7 +76,28 @@
 
         methods: {
             chowContacts() {
-                this.show = !this.show;
+                // this.show = !this.show;
+                if (this.show) {
+                    $('.contacts').css("animation-name", "close_contacts")
+                    .queue( () => {
+                        this.show = false;
+                        $('.contacts').dequeue();
+                    } );
+                    //     .css("transform", "rotateY(90deg)")
+                    // .css("transition-property", "transform")
+                    // .css("transition-duration", "2s");
+
+                } else {
+                    $('.contacts').css("animation-name", "show_contacts")
+                        .queue( () => {
+                            this.show = true;
+                            $('.contacts').dequeue();
+                        } );
+                        // .css("transform", "rotateY(0deg)")
+                        // .css("transition-property", "transform")
+                        // .css("transition-duration", "2s");
+                    this.show = true;
+                }
                 console.log(this.show);
             },
 
@@ -66,6 +116,33 @@
                     console.log(error);
                 } )
             },
+
+            formatNumber(phone) {
+                let format = "";
+                if(phone){
+                    for ( let num of phone) {
+                        if( num === "+" || /\d/.test(num)){
+                            format = format + num;
+                        }
+                    }
+                }
+
+                if(format.startsWith('0')){
+                    return '+38' + format;
+                }
+
+                if(format.startsWith('8')){
+                    return '+3' + format;
+                }
+
+                if(format.startsWith('3')){
+                    return '+' + format;
+                }
+
+                return format;
+
+
+            },
         },
     }
 </script>
@@ -79,6 +156,29 @@
         }
         to {
             transform: rotateY(360deg);
+        }
+    }
+
+    @keyframes show_contacts {
+        from {
+            transform: scale(0);
+            /*transform: rotateY(90deg);*/
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        to {
+            transform: scale(1);
+            /*transform: rotateY(0deg);*/
+        }
+    }
+
+    @keyframes close_contacts {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(90deg);
         }
     }
 
@@ -103,12 +203,27 @@
 
         .contacts {
             width: 700px;
-            padding: 10px;
-            background-color: rgba(0,0,0,0.5);
+            padding: 10px 10px 0;
+            background-color: rgba(240,240,240,0.9);
+            border-radius: 30px;
             position: fixed;
             top: 30vh;
             left: calc(50% - 350px);
             z-index: 150;
+            /*transform: rotateY(90deg);*/
+            animation-duration: 5s;
+            /*animation-iteration-count: infinite;*/
+            animation-timing-function: linear;
+            animation-delay: 0ms;
+            /*animation-play-state: running;*/
+
+            .fa-times-circle {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                font-size: 25px;
+                z-index: 250;
+            }
             div {
                 .cont {
                     flex: 1;
@@ -124,6 +239,41 @@
                             top: 0;
                             left: 0;
                             width: 100%;
+                        }
+                    }
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        li {
+                            display: inline-block;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            position: relative;
+                            top: -20px;
+                            margin: 2px;
+                            a {
+                                display: block;
+                                padding: 5px;
+                                i {
+                                    font-size: 30px;
+                                    &.fa-viber {
+                                        color: #815DF5;
+                                    }
+                                    &.fa-facebook-messenger {
+                                        color: #1877F2;
+                                    }
+                                    &.fa-skype {
+                                        color: #01AFEB;
+                                    }
+                                    &.fa-telegram-plane {
+                                        color: #2AA1DD;
+                                    }
+                                    &.fa-whatsapp {
+                                        color: #2CC64E;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
