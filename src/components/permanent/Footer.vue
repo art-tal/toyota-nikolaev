@@ -4,9 +4,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12 legal_links">
-                        <a href="#" class="contact">Зв’язатись з нами</a>
-                        <a href="#" class="legalInformation">Юридична інформація</a>
-                        <a href="#" class="privacySetting">Налаштування приватності</a>
+<!--                        <a href="#" class="contact">Зв’язатись з нами</a>-->
+                    <router-link class="contact"
+                            tag="a"
+                            exact
+                            to="/faq">
+                        Зв’язатись з нами
+                    </router-link>
+<!--                        <a href="#" class="legalInformation">Юридична інформація</a>-->
+                    <router-link  class="legalInformation"
+                                  tag="a"
+                                  exact
+                                  to="/legal_information"
+                    >
+                        Юридична інформація
+                    </router-link>
+<!--                        <a href="#" class="privacySetting">Налаштування приватності</a>-->
+                    <router-link class="privacySetting"
+                                  tag="a"
+                                  exact
+                                  to="/cookie_settings"
+                    >
+                        Налаштування приватності
+                    </router-link>
                 </div>
 
                 <div class="map col-md-6 col-12 text-right">

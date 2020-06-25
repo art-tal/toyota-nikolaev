@@ -152,7 +152,8 @@
             },
 
             goToHybrid() {
-                this.$router.push({name: 'toyota_in_nikolaev'});
+                // this.$router.push({params: 'https://hybrid.toyota.ua/'});
+                location.href='https://hybrid.toyota.ua/'
             },
         },
 

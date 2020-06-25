@@ -76,27 +76,15 @@
 
         methods: {
             chowContacts() {
-                // this.show = !this.show;
                 if (this.show) {
-                    $('.contacts').css("animation-name", "close_contacts")
-                    .queue( () => {
-                        this.show = false;
-                        $('.contacts').dequeue();
-                    } );
-                    //     .css("transform", "rotateY(90deg)")
-                    // .css("transition-property", "transform")
-                    // .css("transition-duration", "2s");
-
+                    $('.contacts').removeClass("show").addClass('close');
+                        setTimeout( () => {this.show = false;},2000 );
                 } else {
-                    $('.contacts').css("animation-name", "show_contacts")
-                        .queue( () => {
-                            this.show = true;
-                            $('.contacts').dequeue();
-                        } );
-                        // .css("transform", "rotateY(0deg)")
-                        // .css("transition-property", "transform")
-                        // .css("transition-duration", "2s");
                     this.show = true;
+                    setTimeout(() => {
+                        $('.contacts').removeClass('close').addClass("show");
+                    }, 5);
+                    // this.show = true;
                 }
                 console.log(this.show);
             },
@@ -161,15 +149,10 @@
 
     @keyframes show_contacts {
         from {
-            transform: scale(0);
-            /*transform: rotateY(90deg);*/
-        }
-        50% {
-            transform: scale(1.2);
+            transform: rotateY(90deg);
         }
         to {
-            transform: scale(1);
-            /*transform: rotateY(0deg);*/
+            transform: rotateY(0deg);
         }
     }
 
@@ -210,12 +193,19 @@
             top: 30vh;
             left: calc(50% - 350px);
             z-index: 150;
-            /*transform: rotateY(90deg);*/
-            animation-duration: 5s;
+            transform: rotateY(90deg);
+            animation-duration: 1s;
             /*animation-iteration-count: infinite;*/
             animation-timing-function: linear;
-            animation-delay: 0ms;
-            /*animation-play-state: running;*/
+            /*animation-delay: 0ms;*/
+            /*animation-play-state: paused;*/
+            animation-fill-mode: forwards;
+            &.show {
+                animation-name: show_contacts;
+            }
+            &.close {
+                animation-name: close_contacts;
+            }
 
             .fa-times-circle {
                 position: absolute;

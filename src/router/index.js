@@ -5,6 +5,8 @@ import Lineup from "../components/cars/Lineup";
 
 import DownloadBrochures from "../components/sharedLinks/DownloadBrochures";
 import FAQ from "../components/sharedLinks/FAQ";
+import LegalInformation from "../components/sharedLinks/LegalInformation";
+import CookieSettings from "../components/sharedLinks/CookieSettings";
 import FormFeedBack from "../components/sharedLinks/FormFeedBack";
 import VypadkyShahrajstva from "../components/sharedLinks/VypadkyShahrajstva";
 
@@ -156,6 +158,18 @@ export default new VueRouter({
             path: '/faq',
             name: 'faq',
             component: FAQ,
+        },
+
+        {
+            path: '/legal_information',
+            name: 'legal_information',
+            component: LegalInformation,
+        },
+
+        {
+            path: '/cookie_settings',
+            name: 'cookie_settings',
+            component: CookieSettings,
         },
 
         {
