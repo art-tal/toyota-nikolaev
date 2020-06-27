@@ -1,8 +1,6 @@
 <template>
     <main class="container-fluid">
 
-        <fast-connection></fast-connection>
-
         <div class="row">
             <div class="col-lg-4 col-md-8 col-12 welcome text-left">
                 <h2>Ласкаво просимо<br/><strong>що вас цікавить?</strong></h2>
@@ -102,14 +100,9 @@
 </template>
 
 <script>
-    import FastConnection from "../components/permanent/FastConnection";
 
     export default {
         name: "Home",
-
-        components: {
-            FastConnection,
-        },
 
         metaInfo: {
             title: "Toyota Nikolaev| Нові автомобілі, вживані автомобілі, гібридні автомобілі | Toyota Миколаїв",
@@ -238,7 +231,7 @@
                         height: 50px;
                         border-radius: 50%;
                         border: 1px solid #f0f0f0;
-                        padding: 11px 0px 11px 5px;
+                        padding: 11px 0 11px 5px;
                         i {
                             font-size: 2.5rem;
                             color: #f0f0f0;

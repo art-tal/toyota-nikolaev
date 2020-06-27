@@ -7,7 +7,7 @@
 
         <div class="body">
             <div class="row">
-                <div class="cookie col-3">
+                <div class="cookie col-lg-4 col-md-6 col-12" >
                     <h3>Обов’язкові файли cookie</h3>
                     <p>На цьому веб-сайті буде лише</p>
                     <ul>
@@ -20,7 +20,7 @@
 
                 </div>
 
-                <div class="cookie col-3">
+                <div class="cookie col-lg-4 col-md-6 col-12">
                     <h3>Покращення роботи сайту</h3>
                     <p>Ці налаштування забезпечать</p>
                     <ul>
@@ -29,7 +29,7 @@
                     </ul>
 
                     <form class="choise">
-                        <div class="field form-group checkbox col-12 text-center">
+                        <div class="field form-group checkbox col-12 text-left">
                             <input class="form-control"
                                    id="technical" type="checkbox"
                                    value="true"
@@ -43,31 +43,30 @@
 
                 </div>
 
-                <div class="cookie col-3">
-                    <h3>Соціальні мережі та реклама</h3>
-                    <p>Ці налаштування також</p>
-                    <ul>
-                        <li>Дозволять вам ділитися нашими сторінками у соцмережах</li>
-                    </ul>
+<!--                <div class="cookie col-3">-->
+<!--                    <h3>Соціальні мережі та реклама</h3>-->
+<!--                    <p>Ці налаштування також</p>-->
+<!--                    <ul>-->
+<!--                        <li>Дозволять вам ділитися нашими сторінками у соцмережах</li>-->
+<!--                    </ul>-->
 
-                    <form class="choise">
-                        <div class="field form-group checkbox col-12 text-center">
-                            <input class="form-control"
-                                   id="social" type="checkbox"
-                                   value="true"
-                                   v-model="socialAgree"
-                            >
-                            <label for="social"><span class="check"><i class="fas fa-check"></i></span>Вузьконаправлені</label>
+<!--                    <form class="choise">-->
+<!--                        <div class="field form-group checkbox col-12 text-left">-->
+<!--                            <input class="form-control"-->
+<!--                                   id="social" type="checkbox"-->
+<!--                                   value="true"-->
+<!--                                   v-model="socialAgree"-->
+<!--                            >-->
+<!--                            <label for="social"><span class="check"><i class="fas fa-check"></i></span>Вузьконаправлені</label>-->
 
-                            <!--                       <div class="invalid-feedback">Це поле є обов'язковим для заповненя.</div>-->
-                        </div>
-                    </form>
+<!--                            &lt;!&ndash;                       <div class="invalid-feedback">Це поле є обов'язковим для заповненя.</div>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </form>-->
 
-                </div>
+<!--                </div>-->
 
-                <div class="cookie col-3">
+                <div class="links col-4">
                     <a @click.prevent="back()">Закрити</a>
-                    <br>
                     <a @click.prevent="back()">Зберегти</a>
                 </div>
             </div>
@@ -116,33 +115,135 @@
         .body {
             .row {
                 .cookie {
+                    margin-bottom: 30px;
+                    h3 {
+                        font-size: 2rem;
+                        font-weight: bold;
+                    }
+                    p {
+                        font-size: 1.8rem;
+                    }
 
-
+                    ul {
+                        list-style-type: none;
+                        height: 170px;
+                        margin: 20px;
+                        padding: 0;
+                        li {
+                            color: #595D60;
+                            font-size: 1.6rem;
+                            margin-bottom: 20px;
+                            &:before {
+                                content: "\2713";
+                                margin-left: -20px;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
 
                     .choise {
+                        padding: 10px;
+                        background-color: #F0F0F0;
+                        p {
+                            font-size: 1.3rem;
+                        }
+
                         .field {
                             margin-bottom: 20px;
-                            label {
-                                color: #6c7073;
-                                font-size: 1.5rem;
-                                font-weight: bold;
-                                margin-bottom: 8px;
-                                span {
-                                    color: #E50000;
-                                }
-                            }
-
-
+                            padding: 0;
                             &.checkbox {
                                 @include checkbox;
+                                label {
+                                    color: #6c7073;
+                                    font-size: 1.5rem;
+                                    font-weight: bold;
+                                    margin-bottom: 8px;
+                                    span {
+                                        i.fa-check {
+                                            color: #E50000;
+                                        }
+
+                                    }
+                                }
+
                             }
 
 
+
+                        }
+                    }
+
+                }
+
+                .links {
+                    a {
+                        display: block;
+                        padding: 10px 30px;
+                        width: 100%;
+                        font-size: 1.5rem;
+                        background-color: #F0F0F0;
+                        cursor: pointer;
+                        &:hover {
+                            color: darkblue;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            margin: 30px auto;
+            p {
+                font-size: 1.6rem;
+                color: #595D60;
+            }
+
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        main.container {
+            header {
+                margin: 50px 0;
+                h1 {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .body {
+                .row {
+                    .cookie {
+                        ul {
+                            height: auto;
                         }
                     }
                 }
             }
         }
     }
+
+    @media (max-width: 576px) {
+        main.container {
+            header {
+                margin: 30px 0;
+                h1 {
+                    font-size: 3rem;
+                }
+            }
+
+            .body {
+                .row {
+                    .cookie {
+                        ul {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 
 </style>

@@ -271,4 +271,15 @@
         }
     }
 
+    @media (max-width: 767.9px) {
+        .fast_connection {
+            position: absolute;
+            top: 10vh;
+            left: calc(50% - 80px);
+            .contacts {
+                width: 160px;
+            }
+        }
+    }
+
 </style>

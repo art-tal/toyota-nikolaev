@@ -2,11 +2,15 @@
   <div id="app">
       <navigation></navigation>
 
+
       <router-view></router-view>
 
 
 <!--      <equipments></equipments>-->
 
+
+      <fast-connection></fast-connection>
+      <preloader class="preloader"/>
       <app-footer></app-footer>
   </div>
 </template>
@@ -14,14 +18,21 @@
 <script>
     import Navigation from "./components/permanent/Navigation";
     import Footer from "./components/permanent/Footer";
+    import FastConnection from "./components/permanent/FastConnection";
+    import Preloader from "./components/permanent/Preloader";
 
 export default {
   name: 'App',
   components: {
       Navigation,
       appFooter: Footer,
-
+      FastConnection,
+      Preloader,
   },
+
+    mounted(){
+        this.$nextTick(()=>document.body.classList.add('app-mounted'));
+    }
 
 
 }
@@ -44,5 +55,10 @@ export default {
     }
 
    h1 {font-family: toyotadisplay_bd,Arial,Helvetica,sans-serif;}
+
+.preloader { display: none; }
+body:not(.app-mounted) .spinner {
+    display: block;
+}
 
 </style>

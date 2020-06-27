@@ -410,7 +410,7 @@
 
         watch: {
             $route(toR, fromR) {
-                // location.reload();///костыль, так делать нельзя но по другому не получается
+                location.reload();///костыль, так делать нельзя но по другому не получается
                 fromR;
                 this.forceUpdate();
                 this.id = toR.params.id;
