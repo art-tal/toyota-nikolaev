@@ -7,7 +7,7 @@
                  :key="key"
                  @click="activated(equipment)"
             >
-<!--                :style="{'border-top': '4px solid' + color}"-->
+
                 <img :src="photo" :alt="equipment.mod_name">
                 <h4 :style="{'color': fontColor}">
                     <span><strong>{{model}} </strong></span>
@@ -15,7 +15,7 @@
 <!--                    <span>{{car.bodyType}}</span>-->
                 </h4>
                 <h4 :style="{'color': fontColor}" class="text-left">
-                    <strong>{{equipment.gross_price | formattedPrice}} &#8372;</strong>
+<!--                    <strong>{{equipment.gross_price | formattedPrice}} &#8372;</strong>-->
                 </h4>
                 <ul class="equip_desc">
                     <li v-for="(desc, key) in descriptionList(equipment)"
@@ -103,7 +103,6 @@
         methods: {
 
             getEquipment() {
-                // axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.getModelId}`)
                     .then((response) => {
                         this.equipments = response.data;
@@ -192,7 +191,14 @@
             },
 
             descriptionList(equipment) {
-                return equipment.description.split('\n');
+                try {
+                    return equipment.description.split('\n');
+                }
+                catch (e) {
+                    console.log("descriptionList error");
+                    return "";
+                }
+
             },
         }
     }

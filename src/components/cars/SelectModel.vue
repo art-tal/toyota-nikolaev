@@ -67,21 +67,21 @@
         </div>
 
         <div class="specifications row justify-content-center align-items-end">
-            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">
-                <p>Від</p>
-                <span class="h2 d-block font-weight-bolder">
-                    {{computedEquipment.gross_price | formattedPrice}}&#8372;
-                </span>
+<!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">-->
+<!--                <p>Від</p>-->
+<!--                <span class="h2 d-block font-weight-bolder">-->
+<!--                    {{computedEquipment.gross_price | formattedPrice}}&#8372;-->
+<!--                </span>-->
 
-            </div>
+<!--            </div>-->
 
-            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">
-                <p>Від</p>
-                <span class="h2 d-block font-weight-bolder">
-                    {{computedEquipment.gross_price | formattedPrice}}&#8372;
-                </span>
+<!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">-->
+<!--                <p>Від</p>-->
+<!--                <span class="h2 d-block font-weight-bolder">-->
+<!--                    {{computedEquipment.gross_price | formattedPrice}}&#8372;-->
+<!--                </span>-->
 
-            </div>
+<!--            </div>-->
 
             <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
                 <p>Споживання пального</p>
@@ -363,12 +363,15 @@
                         return JSON.parse(localStorage.equipment);
                     }
                     catch (e) {
-                        // console.log("error equipment - 382");
+                        console.log(this.$store.getters.equip.mod_id);
                         if (this.$store.getters.equip.mod_id) {
-                            // console.log("not empty");
+                            console.log("not empty");
                             return this.$store.getters.equip;
+                        } else {
+                            console.log("not empty", localStorage.mod_id);
+                            return this.equipments[0];
                         }
-                        return "";
+                        // return "";
                     }
                 // }
             },
@@ -410,10 +413,10 @@
 
         watch: {
             $route(toR, fromR) {
-                location.reload();///костыль, так делать нельзя но по другому не получается
                 fromR;
                 this.forceUpdate();
                 this.id = toR.params.id;
+                location.reload();///костыль, так делать нельзя но по другому не получается
             },
 
             equipment() {
@@ -421,7 +424,6 @@
                     return JSON.parse(localStorage.equipment);
                 }
                 catch (e) {
-                    console.log("error equipment Watch - 421");
                     return "";
                 }
             },
@@ -440,7 +442,6 @@
             },
 
             showEquipment() {
-                // console.log('watch', this.showEquipment);
                 return this.showEquipment;
             },
 
@@ -466,6 +467,8 @@
                         this.modelTitle = this.model.name;
                         this.changeTitle();
                         console.log(this.model);
+
+                        // this.getEquipment();
                     } )
                         .catch( (error) => {
                             console.log("Ошибка, не возможно загрузить доступные модели");
@@ -475,13 +478,11 @@
 
             choice() {
                 this.showEquipment = !this.showEquipment;
-                // console.log( this.showEquipment);
 
             },
 
             changeTitle() {
                 this.equipmentTitle = this.computedEquipment.mod_name;
-                // console.log(this.equipmentTitle);
             },
 
             getEquipment() {
