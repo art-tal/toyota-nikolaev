@@ -1,6 +1,8 @@
 <template>
     <main class="selectModel">
         <sub-navigation></sub-navigation>
+        <preloader v-if="showPreloader" />
+
 
         <div class="container-fluid"  :style="{'background': getGradient( computedColor.rgb), 'color': fontColored + '!important'}">
 
@@ -223,6 +225,7 @@
     import Equipment from "../configurator/Equipment";
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
+    import Preloader from "./../permanent/Preloader";
     import formattedPrice from "../../filters/price_format";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
@@ -236,7 +239,8 @@
         components: {
             Equipment,
             ColorsPanel,
-            SubNavigation
+            SubNavigation,
+            Preloader,
         },
 
         data() {
@@ -253,6 +257,7 @@
                 modelColor: "#fff",
 
                 showVideo: false,
+                showPreloader: false,
 
                 modelTitle: "",
                 equipmentTitle: "",
@@ -306,19 +311,21 @@
             }
         },
 
+        beforeCreate() {
+            this.showPreloader = true;
+        },
+
         created() {
             // this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
-
-            // console.log(this.model);
-
             this.getEquipment();
 
             eventEmitter.$on('selectedEquipment',
                 () => {
                 this.showEquipment = false;
                 this.changeTitle();
+                console.log(this.computedEquipment);
             }
                 );
             try {
@@ -333,12 +340,12 @@
 
         mounted() {
             this.showEquipment = false;
+            this.showPreloader = false;
         },
 
 
 
         computed: {
-
             photo() {
                 if (this.$store.getters.colored.preview) {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
@@ -355,25 +362,22 @@
             },
 
             computedEquipment() {
-                // if (this.$store.getters.equip.mod_id) {
-                //     console.log("not empty");
-                //     return this.$store.getters.equip;
-                // } else {
-                    try {
-                        return JSON.parse(localStorage.equipment);
-                    }
-                    catch (e) {
-                        console.log(this.$store.getters.equip.mod_id);
-                        if (this.$store.getters.equip.mod_id) {
-                            console.log("not empty");
-                            return this.$store.getters.equip;
-                        } else {
-                            console.log("not empty", localStorage.mod_id);
-                            return this.equipments[0];
-                        }
-                        // return "";
-                    }
-                // }
+                if (localStorage.equipment) {
+                    return JSON.parse(localStorage.equipment);
+                } else if (this.$store.getters.equip.mod_id) {
+                    return this.$store.getters.equip;
+                } else {
+                    return this.equipments[0];
+                }
+
+                    // try {
+                    //     console.log("JSON", JSON.parse(localStorage.equipment));
+                    //     return JSON.parse(localStorage.equipment);
+                    // }
+                    // catch (e) {
+                    //         console.log("not empty", localStorage.mod_id);
+                    //         return this.equipments[0];
+                    // }
             },
 
             computedColor() {
@@ -420,12 +424,14 @@
             },
 
             equipment() {
-                try {
-                    return JSON.parse(localStorage.equipment);
-                }
-                catch (e) {
-                    return "";
-                }
+                return JSON.parse(localStorage.equipment);
+
+                // try {
+                //     return JSON.parse(localStorage.equipment);
+                // }
+                // catch (e) {
+                //     return "";
+                // }
             },
 
             modelColor() {
@@ -510,11 +516,11 @@
 
             descriptionList() {
                 try {
-                    let desc = this.equipment.description.split('\n');
-                    return desc;
+                    return this.equipment.description.split('\n');
                 }
                 catch (e) {
-                    // console.log("selectModel split");
+                    console.log("selectModel split");
+                    // console.log(e);
                 }
 
             },

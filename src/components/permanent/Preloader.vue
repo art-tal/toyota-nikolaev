@@ -26,6 +26,8 @@
 <script>
     export default {
         name: "Preloader"
+
+
     }
 </script>
 

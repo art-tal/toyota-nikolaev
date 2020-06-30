@@ -10,7 +10,7 @@
 
 
       <fast-connection></fast-connection>
-      <preloader class="preloader"/>
+      <preloader v-if="preloader"/>
       <app-footer></app-footer>
   </div>
 </template>
@@ -30,8 +30,24 @@ export default {
       Preloader,
   },
 
+    data() {
+      return {
+          showPreloader: false,
+      }
+    },
+
+    computed: {
+      preloader() {
+          return this.$store.getters.preloader;
+      },
+    },
+
+    beforeCreate() {
+      this.showPreloader = true;
+    },
+
     mounted(){
-        this.$nextTick(()=>document.body.classList.add('app-mounted'));
+        this.$store.state.showPreloader = false;
     }
 
 
@@ -56,9 +72,9 @@ export default {
 
    h1 {font-family: toyotadisplay_bd,Arial,Helvetica,sans-serif;}
 
-.preloader { display: none; }
-body:not(.app-mounted) .spinner {
-    display: block;
-}
+/*.preloader { display: none; }*/
+/*body:not(.app-mounted) .spinner {*/
+/*    display: block;*/
+/*}*/
 
 </style>

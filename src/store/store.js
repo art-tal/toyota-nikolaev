@@ -19,6 +19,7 @@ export default new Vuex.Store ({
         selectedAccessories: [],
         showInterior: false,
         showEquipment:false,
+        showPreloader: true,
 
         openConsultation: false,
 
@@ -86,6 +87,10 @@ export default new Vuex.Store ({
 
         getTotalCost(state) {
             return state.totalCost;
+        },
+
+        preloader(state) {
+            return state.showPreloader;
         },
 
 

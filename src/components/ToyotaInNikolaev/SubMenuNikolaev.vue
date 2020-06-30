@@ -53,6 +53,15 @@
 
                     <li>
                         <router-link
+                                tag="a"
+                                exact
+                                active-class="active"
+                                to="/exclusive_projects"
+                        >Екслюзивні проекти</router-link>
+                    </li>
+
+                    <li>
+                        <router-link
                                 exact
                                 tag="a"
                                 active-class="active"

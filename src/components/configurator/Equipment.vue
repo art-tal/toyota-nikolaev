@@ -36,7 +36,7 @@
     import axios from "axios";
     import formattedPrice from "../../filters/price_format";
     import {eventEmitter} from '../../main'
-    import $ from "jquery";
+    // import $ from "jquery";
     // import {eventEmitter} from './../../app' //         for Laravel
 
 
@@ -117,26 +117,24 @@
             },
 
             checkEquipment() {
-                if(this.$store.getters.equip.mod_id) {
-                    this.equipments.forEach( equip => {
-                       if ( equip.mod_id === this.$store.getters.equip.mod_id ) {
-                           this.equipment = equip;
-                           localStorage.equipment = JSON.stringify(equip);
-                           return "";
-                       }
-                    });
-                } else if (localStorage.equipment) {
+                // if(this.$store.getters.equip.mod_id) {
+                //     this.equipments.forEach( equip => {
+                //        if ( equip.mod_id === this.$store.getters.equip.mod_id ) {
+                //            this.equipment = equip;
+                //            localStorage.equipment = JSON.stringify(equip);
+                //            return "";
+                //        }
+                //     });
+                // } else
+                    if (localStorage.equipment) {
                     this.equipments.forEach( equip => {
                         if ( equip.mod_id === JSON.parse(localStorage.equipment).mod_id ) {
                             this.equipment = equip;
                             this.$store.state.equipment = equip;
-                            return "";
+                            // return "";
                         }
                     });
                 } else {
-                    // this.equipment = this.equipments[0];
-                    // this.$store.state.equipment = this.equipment;
-                    // localStorage.equipment = JSON.stringify(this.equipment);
                     this.activated(this.equipments[0]);
                 }
             },
@@ -144,16 +142,16 @@
             activated(equipment) {
                 console.log('catch');
                 this.$store.state.equipment = equipment;
-                localStorage.mod_id = equipment.mod_id;
                 localStorage.equipment = JSON.stringify(equipment);
-                // this.$store.state.showEquipment = false;
-                // console.log(this.$store.state.showEquipment);
-                eventEmitter.$emit('selectedEquipment');
+                localStorage.mod_id = equipment.mod_id;
+                console.log(localStorage.equipment);
+                setTimeout(() => {eventEmitter.$emit('selectedEquipment');},100);
 
-                $(".equip").on('click', function () {
-                    $(".trans").removeClass('active');
-                    $(this).addClass('active');
-                })
+
+                // $(".equip").on('click', function () {
+                //     $(".trans").removeClass('active');
+                //     $(this).addClass('active');
+                // })
             },
 
             getFontColor: function () {
