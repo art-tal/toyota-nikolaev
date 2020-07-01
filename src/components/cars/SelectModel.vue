@@ -255,6 +255,7 @@
                 equipments: [],
                 equipment: {},
                 modelColor: "#fff",
+                prices: [],
 
                 showVideo: false,
                 showPreloader: false,
@@ -495,15 +496,17 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                 .then( (response) => {
                     this.equipments = response.data;
-                        this.equipment = this.equipments[0];
-                        this.$store.state.equipment = this.equipment;
-                        localStorage.equipment = JSON.stringify( this.equipments[0] );
-                        localStorage.mod_id = this.equipment.mod_id;
-                    if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
-                        console.log("да");
-                        localStorage.color = "";
-                        this.$store.state.color = null;
-                    }
+                    // this.equipment = this.equipments[0];
+                    // this.$store.state.equipment = this.equipment;
+                    // localStorage.equipment = JSON.stringify( this.equipments[0] );
+                    // localStorage.mod_id = this.equipment.mod_id;
+                    this.getPrices();
+                    // this.checkEquipment();
+                    // if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
+                    //     console.log("да");
+                    //     localStorage.color = "";
+                    //     this.$store.state.color = null;
+                    // }
 
                     this.equipmentTitle = this.equipment.mod_name;
                     console.log(this.equipment);
@@ -512,6 +515,65 @@
                     console.log("Ошибка, не возможно загрузить доступные модификации");
                     console.log(error);
                 } );
+            },
+
+            checkEquipment() {
+                let equipFromJson = JSON.parse(localStorage.equipment);
+                console.log(equipFromJson);
+
+                if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
+                    if (equipFromJson.mod_id) {
+                        this.equipments.forEach( equip => {
+                            if ( equip.mod_id === equipFromJson.mod_id ) {
+                                this.equipment = equip;
+                                this.$store.state.equipment = equip;
+                                return true;
+                            }
+                        });
+                    }
+                } //else {
+                this.equipment = this.equipments[0];
+                this.$store.state.equipment = this.equipment;
+                localStorage.equipment = JSON.stringify( this.equipment );
+                localStorage.color = "";
+                this.$store.state.color = null;
+                //}
+
+
+            },
+
+            getPrices() {
+                axios.get(
+                    `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
+                    {params: {id: this.equipment.mod_id}}
+                )
+                    .then( (response) => {
+                        this.prices = response.data;
+                        console.log(this.prices);
+
+                        this.setPrice();
+                    } )
+                    .catch( (error) => {
+                        console.log("Ошибка загрузки цен");
+                        console.log(error);
+                    } )
+            },
+
+            setPrice() {
+                let keysPrice = Object.keys(this.prices);
+                console.log(keysPrice);
+
+                this.equipments.forEach( (equip) => {
+                    keysPrice.forEach( (pr) => {
+                        if(equip.model_name_pivot.toLowerCase() === pr.toLowerCase()) {
+                            this.$set(equip, "equipPrice", this.prices[pr] );
+                        }
+                    } );
+                } );
+
+                console.log(this.equipments);
+                this.checkEquipment();
+
             },
 
             descriptionList() {

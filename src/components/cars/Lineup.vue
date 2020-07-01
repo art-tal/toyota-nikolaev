@@ -30,13 +30,13 @@
                             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
                             <h2>{{model.name}}</h2> <h3 v-if="model.hybrid">+ Гібрид</h3>
                         </div>
-                            <div class="here">
-                                <p>*Від {{model.carPrice.here}}&#8372;</p>
+                            <div class="here" v-if="isPrice(model)">
+                                <p>*Від <strong>{{model.carPrice.here}}&#8372;</strong></p>
                                 <b>(для авто у наявності)</b>
                             </div>
 
-                            <div class="there">
-                                <p>*Від {{model.carPrice.there}}&#8372;</p>
+                            <div class="there" v-if="isPrice(model)">
+                                <p>*Від <strong>{{model.carPrice.there}}&#8372;</strong></p>
                                 <b>(авто під замовлення)</b>
                             </div>
 
@@ -176,6 +176,15 @@
                 } );
 
                 console.log(this.models);
+            },
+
+            isPrice(car) {
+                if( Object.keys(car).includes('carPrice') ) {
+                    return true
+                } else {
+                    return false;
+                }
+
             },
 
             goSelectModel(model) {

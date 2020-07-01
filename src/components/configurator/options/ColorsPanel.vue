@@ -121,13 +121,15 @@
               )
               .then( (response) => {
                   this.colors = response.data;
-                  this.colors.forEach( (c) => { this.$set(c, "selected", false); } );
+                  console.log(this.colors);
+                  this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
+                  this.checkColor();
 
-                      this.colors[0].selected = true;
-                      this.selectedColor = this.colors[0];
-                      localStorage.color = JSON.stringify( this.selectedColor );
-                      this.$store.state.color = this.selectedColor;
-                      console.log(this.selectedColor);
+                      // this.colors[0].selected = true;
+                      // this.selectedColor = this.colors[0];
+                      // localStorage.color = JSON.stringify( this.selectedColor );
+                      // this.$store.state.color = this.selectedColor;
+                      // console.log(this.selectedColor);
                   // }
                   this.slides = $('#slides').width() / 3 * this.colors.length;
                   // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
@@ -137,6 +139,26 @@
                   console.log(error);
               } )
           },
+
+            checkColor() {
+
+                if(localStorage.color) {
+                    let colorFromJson = JSON.parse(localStorage.color);
+                    console.log(colorFromJson);
+                    this.colors.forEach( (color) => {
+                        if(color.preview === colorFromJson.preview) {
+                            this.selectedColor = color;
+                            this.$store.state.color = color;
+                        }
+                    } )
+                }
+
+                // this.colors[0].selected = true;
+                this.selectedColor = this.colors[0];
+                this.$store.state.color = this.colors[0];
+                localStorage.color = JSON.stringify(this.colors[0])
+                console.log(this.selectedColor);
+            },
 
             setColor(color, index) {
                 color.selected = true;

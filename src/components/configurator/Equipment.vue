@@ -11,19 +11,18 @@
                 <img :src="photo" :alt="equipment.mod_name">
                 <h4 :style="{'color': fontColor}">
                     <span><strong>{{model}} </strong></span>
-                    <span><strong>{{equipment.mod_name}} </strong></span>
-<!--                    <span>{{car.bodyType}}</span>-->
+                    <span><strong>{{equipment.mod_name}}</strong></span>
+                    <span> - {{equipment.body_type}}</span>
                 </h4>
-                <h4 :style="{'color': fontColor}" class="text-left">
-<!--                    <strong>{{equipment.gross_price | formattedPrice}} &#8372;</strong>-->
-                </h4>
-                <ul class="equip_desc">
-                    <li v-for="(desc, key) in descriptionList(equipment)"
-                        :key="key"
-                        :style="{'color': fontColor}"
-                    >{{desc}}</li>
-<!--                    <li>{{equipment.description}}</li>-->
-                </ul>
+                <h5 :style="{'color': fontColor}" class="text-left">
+                    Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>
+                </h5>
+<!--                <ul class="equip_desc">-->
+<!--                    <li v-for="(desc, key) in descriptionList(equipment)"-->
+<!--                        :key="key"-->
+<!--                        :style="{'color': fontColor}"-->
+<!--                    >{{desc}}</li>-->
+<!--                </ul>-->
             </div>
         </div>
 
@@ -55,6 +54,8 @@
                 equipments: [],
                 equipment: {},
                 fontColor: "#202020",
+
+                prices: [],
             }
         },
 
@@ -64,12 +65,10 @@
 
         created() {
             this.$store.state.model = JSON.parse( localStorage.model );
-            // this.id = this.getModelId;//первоначальный вариант
             this.color = this.$store.getters.colored;
             this.getEquipment();
-            this.equipment = this.equipments[0];
-            this.$store.state.equipment = this.equipment;
-            localStorage.equipment = JSON.stringify( this.equipment );
+            // this.$store.state.equipment = this.equipment;
+            // localStorage.equipment = JSON.stringify( this.equipment );
             this.getFontColor();
 
             eventEmitter.$on('select', () => {this.activeted()})
@@ -84,6 +83,8 @@
                 if (this.id) {return this.id}//новое
                 else if (this.$store.getters.getModelId) {
                     return this.$store.getters.getModelId;
+                } else if(localStorage.mod_id) {
+                    return localStorage.mod_id;
                 } else {
                     return this.$route.params.id;}
             },
@@ -107,8 +108,9 @@
                     .then((response) => {
                         this.equipments = response.data;
 
-                        this.checkEquipment();
+                        // this.checkEquipment();
                         console.log(this.equipments);
+                        this.getPrices();
                     })
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
@@ -126,12 +128,14 @@
                 //        }
                 //     });
                 // } else
-                    if (localStorage.equipment) {
+                let equipFromJson = JSON.parse(localStorage.equipment);
+                console.log(equipFromJson);
+
+                if (equipFromJson.mod_id) {
                     this.equipments.forEach( equip => {
-                        if ( equip.mod_id === JSON.parse(localStorage.equipment).mod_id ) {
+                        if ( equip.mod_id === equipFromJson.mod_id ) {
                             this.equipment = equip;
                             this.$store.state.equipment = equip;
-                            // return "";
                         }
                     });
                 } else {
@@ -139,19 +143,47 @@
                 }
             },
 
+            getPrices() {
+                axios.get(
+                    `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
+                    {params: {id: this.getModelId}}
+                )
+                    .then( (response) => {
+                        this.prices = response.data;
+                        console.log(this.prices);
+
+                        this.setPrice();
+                    } )
+                    .catch( (error) => {
+                        console.log("Ошибка загрузки цен");
+                        console.log(error);
+                    } )
+            },
+
+            setPrice() {
+                let keysPrice = Object.keys(this.prices);
+                console.log(keysPrice);
+
+                this.equipments.forEach( (equip) => {
+                    keysPrice.forEach( (pr) => {
+                        if(equip.model_name_pivot.toLowerCase() === pr.toLowerCase()) {
+                            this.$set(equip, "equipPrice", this.prices[pr] );
+                        }
+                    } );
+                } );
+
+                console.log(this.equipments);
+                this.checkEquipment();
+
+            },
+
             activated(equipment) {
-                console.log('catch');
+                // console.log('catch');
                 this.$store.state.equipment = equipment;
                 localStorage.equipment = JSON.stringify(equipment);
                 localStorage.mod_id = equipment.mod_id;
-                console.log(localStorage.equipment);
+                // console.log(localStorage.equipment);
                 setTimeout(() => {eventEmitter.$emit('selectedEquipment');},100);
-
-
-                // $(".equip").on('click', function () {
-                //     $(".trans").removeClass('active');
-                //     $(this).addClass('active');
-                // })
             },
 
             getFontColor: function () {
@@ -226,10 +258,8 @@
                 }
 
                 .equip_desc {
-                    /*display: none;*/
                     margin: 0;
                     padding: 0;
-                    /*list-style-type: none;*/
                     list-style-position: inside;
                     display: block !important;
                     li {
@@ -254,6 +284,13 @@
                 h4 {
                     font-size: 18px;
                     margin-bottom: 15px;
+                }
+                h5 {
+                    font-size: 1.6rem;
+                    font-weight: 100;
+                    strong {
+                        font-weight: bold;
+                    }
                 }
                     a {
                         color: $font_color;
