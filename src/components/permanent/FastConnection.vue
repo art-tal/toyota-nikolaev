@@ -97,7 +97,7 @@
                     this.contacts = response.data.filter( (contact) => {
                         return  contact.isFront === 1;
                     } );
-                    console.log(this.contacts);
+                    // console.log(this.contacts);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки контактов");

@@ -30,13 +30,13 @@
                             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="model.image">
                             <h2>{{model.name}}</h2> <h3 v-if="model.hybrid">+ Гібрид</h3>
                         </div>
-                            <div class="price_available">
-                                <p>*Від {{model.price_available}}&#8372;</p>
+                            <div class="here">
+                                <p>*Від {{model.carPrice.here}}&#8372;</p>
                                 <b>(для авто у наявності)</b>
                             </div>
 
-                            <div class="price_order">
-                                <p>*Від {{model.price_order}}&#8372;</p>
+                            <div class="there">
+                                <p>*Від {{model.carPrice.there}}&#8372;</p>
                                 <b>(авто під замовлення)</b>
                             </div>
 
@@ -123,6 +123,7 @@
         data() {
             return {
                 models: [],
+                prices: [],
 
                 showFAQ: false,
             }
@@ -139,8 +140,9 @@
                     method: 'get',
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.models = response.data;
+                    this.getPrices();
                     // return response.data;
                 } )
                 .catch( (error) => {
@@ -148,6 +150,32 @@
                     console.log(error);
                 })
 
+            },
+
+            getPrices() {
+                axios.get("http://lara.toyota.nikolaev.ua/ajax/all_model_price")
+                .then( (response) => {
+                    this.prices = response.data;
+                    this.setPrice();
+                    console.log(this.prices);
+                } )
+                .catch( (error) => {
+                    console.log("Ошибка загрузки цен");
+                    console.log(error);
+                } )
+            },
+
+            setPrice() {
+                let keysPrice = Object.keys(this.prices);
+                this.models.forEach( (model) => {
+                    keysPrice.forEach( (pr) => {
+                        if(model.name.toLowerCase() === pr.toLowerCase()) {
+                            this.$set(model, "carPrice", this.prices[pr] );
+                        }
+                    } );
+                } );
+
+                console.log(this.models);
             },
 
             goSelectModel(model) {
@@ -161,6 +189,8 @@
                 location.reload();
                 this.$store.mutations.mutationRender();
             },
+
+
 
             faq() {
                 this.showFAQ = !this.showFAQ;

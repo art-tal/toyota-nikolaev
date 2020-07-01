@@ -117,6 +117,7 @@ import BetterLife from "../components/whyToyota/ecology/BetterLife";
 import JustBetter from "../components/whyToyota/ecology/JustBetter";
 import ISO from "../components/whyToyota/ecology/ISO";
 import ExclusiveProjects from "@/components/ToyotaInNikolaev/ExclusiveProjects";
+import ExclusiveCar from "@/components/ToyotaInNikolaev/ExclusiveCar";
 
 
 // import TheLookingAround from "@/components/cars/TheLookingAround";
@@ -708,6 +709,12 @@ export default new VueRouter({
             path: "/exclusive_projects",
             name: "exclusive_projects",
             component: ExclusiveProjects,
+        },
+
+        {
+            path: "/exclusive_car",
+            name: "exclusive_car",
+            component: ExclusiveCar,
         },
 
 
