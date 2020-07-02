@@ -12,7 +12,7 @@
                 <h4 :style="{'color': fontColor}">
                     <span><strong>{{model}} </strong></span>
                     <span><strong>{{equipment.mod_name}}</strong></span>
-                    <span> - {{equipment.body_type}}</span>
+                    <span v-if="equipment.body_type"> - {{equipment.body_type}}</span>
                 </h4>
                 <h5 :style="{'color': fontColor}" class="text-left">
                     Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>

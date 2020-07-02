@@ -123,13 +123,13 @@
                   this.colors = response.data;
                   console.log(this.colors);
                   this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
-                  this.checkColor();
 
-                      // this.colors[0].selected = true;
-                      // this.selectedColor = this.colors[0];
-                      // localStorage.color = JSON.stringify( this.selectedColor );
-                      // this.$store.state.color = this.selectedColor;
+                  this.colors[0].selected = true;
+                  this.selectedColor = this.colors[0];
+                  localStorage.color = JSON.stringify( this.selectedColor );
+                  this.$store.state.color = this.selectedColor;
                       // console.log(this.selectedColor);
+                  this.checkColor();
                   // }
                   this.slides = $('#slides').width() / 3 * this.colors.length;
                   // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
@@ -141,7 +141,6 @@
           },
 
             checkColor() {
-
                 if(localStorage.color) {
                     let colorFromJson = JSON.parse(localStorage.color);
                     console.log(colorFromJson);
@@ -163,7 +162,7 @@
             setColor(color, index) {
                 color.selected = true;
                 this.colors.forEach( (c) => { c.selected = false} );
-                console.log(this.colors);
+                console.log(color);
                 this.colors[index].selected = true;
                 this.$store.state.color = color;
                 localStorage.color = JSON.stringify( color );

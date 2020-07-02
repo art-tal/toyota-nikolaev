@@ -1,7 +1,7 @@
 <template>
     <main class="selectModel">
         <sub-navigation></sub-navigation>
-        <preloader v-if="showPreloader" />
+<!--        <preloader v-if="showPreloader" />-->
 
 
         <div class="container-fluid"  :style="{'background': getGradient( computedColor.rgb), 'color': fontColored + '!important'}">
@@ -12,7 +12,7 @@
                         {{model.name}}</span>
                     <span class="carEquipment">
                         {{computedEquipment.mod_name}}</span>
-                    <small class="bodyType"> - {{computedEquipment.body_type}}</small>
+                    <small class="bodyType" v-if="computedEquipment.body_type"> - {{computedEquipment.body_type}}</small>
                 </h1>
 
                 <div class="col-xl-2 col-lg-3 col-md-6 col-12">
@@ -69,20 +69,19 @@
         </div>
 
         <div class="specifications row justify-content-center align-items-end">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.equipPrice">
+                <p>Від</p>
+                <span class="h2 d-block font-weight-bolder">
+                    {{computedEquipment.equipPrice | formattedPrice}}&#8372;
+                </span>
+
+            </div>
+
 <!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">-->
 <!--                <p>Від</p>-->
 <!--                <span class="h2 d-block font-weight-bolder">-->
 <!--                    {{computedEquipment.gross_price | formattedPrice}}&#8372;-->
 <!--                </span>-->
-
-<!--            </div>-->
-
-<!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">-->
-<!--                <p>Від</p>-->
-<!--                <span class="h2 d-block font-weight-bolder">-->
-<!--                    {{computedEquipment.gross_price | formattedPrice}}&#8372;-->
-<!--                </span>-->
-
 <!--            </div>-->
 
             <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
@@ -225,7 +224,7 @@
     import Equipment from "../configurator/Equipment";
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
-    import Preloader from "./../permanent/Preloader";
+    // import Preloader from "./../permanent/Preloader";
     import formattedPrice from "../../filters/price_format";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
@@ -240,7 +239,7 @@
             Equipment,
             ColorsPanel,
             SubNavigation,
-            Preloader,
+            // Preloader,
         },
 
         data() {
@@ -258,7 +257,7 @@
                 prices: [],
 
                 showVideo: false,
-                showPreloader: false,
+                // showPreloader: false,
 
                 modelTitle: "",
                 equipmentTitle: "",
@@ -312,12 +311,12 @@
             }
         },
 
-        beforeCreate() {
-            this.showPreloader = true;
-        },
+        // beforeCreate() {
+        //     this.showPreloader = true;
+        // },
 
         created() {
-            // this.renderComponent = 0;
+            this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
             this.getEquipment();
@@ -341,14 +340,14 @@
 
         mounted() {
             this.showEquipment = false;
-            this.showPreloader = false;
+            // this.showPreloader = false;
         },
 
 
 
         computed: {
             photo() {
-                if (this.$store.getters.colored.preview) {
+                if (Object.keys(this.$store.getters.colored).length > 0) {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
                 } else {
                     try {
@@ -365,7 +364,7 @@
             computedEquipment() {
                 if (localStorage.equipment) {
                     return JSON.parse(localStorage.equipment);
-                } else if (this.$store.getters.equip.mod_id) {
+                } else if (Object.keys(this.$store.getters.equip).length > 0) {
                     return this.$store.getters.equip;
                 } else {
                     return this.equipments[0];
@@ -382,17 +381,18 @@
             },
 
             computedColor() {
-                if (this.$store.getters.colored.color_code) {
-                    return this.$store.getters.colored;
-                } else {
-                    try {
-                        return JSON.parse( localStorage.color );
+                try {
+                    if (Object.keys(this.$store.getters.colored).length > 0) {
+                        return this.$store.getters.colored;
+                    } else {
+                        return JSON.parse(localStorage.color);
                     }
+                }
                     catch (e) {
                         // console.log("error Computed color - 379");
                         return "";
                     }
-                }
+
             },
 
             fontColored() {
@@ -465,10 +465,7 @@
                         {params: {id: this.getID}},
                     ).then( (response) => {
                         this.model = response.data[0];
-///////////////////////////////////////////////////////ЗАГЛУШКА
-//                         this.model.maxSpeed = 210;
-//                         this.model.maxPower = 181;
-//                         this.model.fuelConsumption = 8.3;
+///////////////////////////////////////////////////////ЗАГЛУШКА//
                         this.getVideo();
 //////////////////////////////////////////////////////
                         this.modelTitle = this.model.name;
@@ -496,10 +493,11 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
                 .then( (response) => {
                     this.equipments = response.data;
-                    // this.equipment = this.equipments[0];
-                    // this.$store.state.equipment = this.equipment;
-                    // localStorage.equipment = JSON.stringify( this.equipments[0] );
-                    // localStorage.mod_id = this.equipment.mod_id;
+
+                    this.equipment = this.equipments[0];
+                    this.$store.state.equipment = this.equipment;
+                    localStorage.equipment = JSON.stringify( this.equipments[0] );
+                    localStorage.mod_id = this.equipment.mod_id;
                     this.getPrices();
                     // this.checkEquipment();
                     // if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
@@ -522,7 +520,7 @@
                 console.log(equipFromJson);
 
                 if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
-                    if (equipFromJson.mod_id) {
+                    if (Object.keys(equipFromJson) > 0) {
                         this.equipments.forEach( equip => {
                             if ( equip.mod_id === equipFromJson.mod_id ) {
                                 this.equipment = equip;
