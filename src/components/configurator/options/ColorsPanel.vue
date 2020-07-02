@@ -34,38 +34,11 @@
             </div>
 
 
-<!--            <div class="swiper-button-prev" slot="button-prev"></div>-->
+
             <button id="button-next" class="btn" @click="nextSlide()">
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
-
-
-
-
-
-
-<!--        <div class="row navbar-colors" id="navbarNav">-->
-
-<!--                        <ul class="sampleOfColor navbar-nav">-->
-<!--                            <li v-for="(color, index) in colors"-->
-<!--                                :key="index"-->
-<!--                                class="nav-item sample"-->
-<!--                                @click="setColor(color, index)"-->
-<!--                            >-->
-
-<!--                                    <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"-->
-<!--                                         :alt="color.color_name"-->
-<!--                                         :title="color.color_name + ' (' + color.color_code + ')'"-->
-<!--                                    >-->
-<!--                                    <div class="check text-center" v-if="color.selected">-->
-<!--                                        <i class="fas fa-check"></i>-->
-<!--                                    </div>-->
-<!--                            </li>-->
-
-<!--                        </ul>-->
-<!--        </div>-->
-
 
     </div>
 
@@ -108,9 +81,9 @@
                 return this.mod_id;
             },
 
-            colored() {
-                return this.colors;
-            },
+            // colored() {
+            //     return this.colors;
+            // },
         },
 
         methods: {
@@ -125,10 +98,9 @@
                   this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
 
                   this.colors[0].selected = true;
-                  this.selectedColor = this.colors[0];
-                  localStorage.color = JSON.stringify( this.selectedColor );
-                  this.$store.state.color = this.selectedColor;
-                      // console.log(this.selectedColor);
+                  // this.selectedColor = this.colors[0];
+                  // localStorage.color = JSON.stringify( this.selectedColor );
+                  // this.$store.state.color = this.selectedColor;
                   this.checkColor();
                   // }
                   this.slides = $('#slides').width() / 3 * this.colors.length;
@@ -146,23 +118,28 @@
                     console.log(colorFromJson);
                     this.colors.forEach( (color) => {
                         if(color.preview === colorFromJson.preview) {
-                            this.selectedColor = color;
-                            this.$store.state.color = color;
+                            // this.selectedColor = color;
+                            // this.$store.state.color = color;
+                            this.setColor(color);
+                            return true;
                         }
                     } )
                 }
 
+                this.setColor(this.colors[0]);
                 // this.colors[0].selected = true;
-                this.selectedColor = this.colors[0];
-                this.$store.state.color = this.colors[0];
-                localStorage.color = JSON.stringify(this.colors[0])
+                // this.selectedColor = this.colors[0];
+                // this.$store.state.color = this.colors[0];
+                // localStorage.color = JSON.stringify(this.colors[0])
                 console.log(this.selectedColor);
             },
 
-            setColor(color, index) {
+            // setColor(color, index) {
+            setColor(color) {
                 color.selected = true;
                 this.colors.forEach( (c) => { c.selected = false} );
                 console.log(color);
+                let index = this.colors.indexOf(color);
                 this.colors[index].selected = true;
                 this.$store.state.color = color;
                 localStorage.color = JSON.stringify( color );

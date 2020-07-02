@@ -1,6 +1,7 @@
 <template>
     <main class="selectModel">
         <sub-navigation></sub-navigation>
+        <!--        <preloader v-if="showPreloader" />-->
 
 
         <div class="container-fluid"  :style="{'background': getGradient( computedColor.rgb), 'color': fontColored + '!important'}">
@@ -11,7 +12,7 @@
                         {{model.name}}</span>
                     <span class="carEquipment">
                         {{computedEquipment.mod_name}}</span>
-                    <small class="bodyType" v-if="computedEquipment.body_type"> - {{computedEquipment.body_type}}</small>
+                    <small class="bodyType"> - {{computedEquipment.body_type}}</small>
                 </h1>
 
                 <div class="col-xl-2 col-lg-3 col-md-6 col-12">
@@ -35,7 +36,7 @@
 
 
 
-                <equipment v-if="showEquipment" :id="id"></equipment>
+            <equipment v-if="showEquipment" :id="id"></equipment>
 
 
             <div class="carView row">
@@ -46,17 +47,17 @@
                             :style="{'color': fontColored + '!important'}"
                         >
                             {{desc}}</li>
-<!--                        <li :style="{'color': fontColored + '!important'}">{{equipment.description}}</li>-->
+                        <!--                        <li :style="{'color': fontColored + '!important'}">{{equipment.description}}</li>-->
                     </ul>
 
                     <div class="carPhoto col-xl-9 col-12">
-<!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.model_name_pivot">-->
+                        <!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.model_name_pivot">-->
                         <img :src="photo" :alt="computedEquipment.model_name_pivot">
                     </div>
                 </div>
 
 
-<!--                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">-->
+                <!--                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">-->
                 <div class="carColors position-absolute">
                     <colors-panel
                             :mod_id="equipment.mod_id"
@@ -73,15 +74,15 @@
                 <span class="h2 d-block font-weight-bolder">
                     {{computedEquipment.equipPrice | formattedPrice}}&#8372;
                 </span>
-
             </div>
 
-<!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">-->
-<!--                <p>Від</p>-->
-<!--                <span class="h2 d-block font-weight-bolder">-->
-<!--                    {{computedEquipment.gross_price | formattedPrice}}&#8372;-->
-<!--                </span>-->
-<!--            </div>-->
+            <!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">-->
+            <!--                <p>Від</p>-->
+            <!--                <span class="h2 d-block font-weight-bolder">-->
+            <!--                    {{computedEquipment.gross_price | formattedPrice}}&#8372;-->
+            <!--                </span>-->
+
+            <!--            </div>-->
 
             <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
                 <p>Споживання пального</p>
@@ -108,15 +109,15 @@
             </div>
         </div>
 
-<!--        <div class="show_info container text-left" @click="showInfo = !showInfo">Інформація щодо цін</div>-->
+        <!--        <div class="show_info container text-left" @click="showInfo = !showInfo">Інформація щодо цін</div>-->
 
-<!--        <div class="info container text-left" v-if="showInfo">-->
-<!--            <p>-->
-<!--                Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою).</p>-->
-<!--            <p>-->
-<!--                Вказані рекомендовані ціни на відповідні автомобілі у базових комплектаціях, без врахування вартості додаткових опцій та/або послуг та спеціальних акцій і пропозицій, які можуть діяти на момент придбання автомобіля. Ціни на інші комплектації вказані у відповідних розділах. Ціни є актуальними для наявних на складах Товариства автомобілів, щодо яких здійснене митне оформлення. Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.-->
-<!--            </p>-->
-<!--        </div>-->
+        <!--        <div class="info container text-left" v-if="showInfo">-->
+        <!--            <p>-->
+        <!--                Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою).</p>-->
+        <!--            <p>-->
+        <!--                Вказані рекомендовані ціни на відповідні автомобілі у базових комплектаціях, без врахування вартості додаткових опцій та/або послуг та спеціальних акцій і пропозицій, які можуть діяти на момент придбання автомобіля. Ціни на інші комплектації вказані у відповідних розділах. Ціни є актуальними для наявних на складах Товариства автомобілів, щодо яких здійснене митне оформлення. Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.-->
+        <!--            </p>-->
+        <!--        </div>-->
 
 
         <div class="requestService row justify-content-center">
@@ -152,13 +153,13 @@
 
             <div class="player" v-if="showVideo">
                 <video
-                       width="100%"
-                       height="auto"
-                       :src="modelVideo.link"
-                       controls="controls"
-                       autoplay
-                       type="video/mp4"
-                       :poster="modelVideo.poster">
+                        width="100%"
+                        height="auto"
+                        :src="modelVideo.link"
+                        controls="controls"
+                        autoplay
+                        type="video/mp4"
+                        :poster="modelVideo.poster">
                 </video>
                 <i class="fas fa-times" @click="openVideo()" v-if="showVideo"></i>
             </div>
@@ -223,6 +224,7 @@
     import Equipment from "../configurator/Equipment";
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
+    // import Preloader from "./../permanent/Preloader";
     import formattedPrice from "../../filters/price_format";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
@@ -237,6 +239,7 @@
             Equipment,
             ColorsPanel,
             SubNavigation,
+            // Preloader,
         },
 
         data() {
@@ -254,6 +257,7 @@
                 prices: [],
 
                 showVideo: false,
+                // showPreloader: false,
 
                 modelTitle: "",
                 equipmentTitle: "",
@@ -307,19 +311,23 @@
             }
         },
 
+        // beforeCreate() {
+        //     this.showPreloader = true;
+        // },
+
         created() {
-            this.renderComponent = 0;
+            // this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
             this.getEquipment();
 
             eventEmitter.$on('selectedEquipment',
                 () => {
-                this.showEquipment = false;
-                this.changeTitle();
-                console.log(this.computedEquipment);
-            }
-                );
+                    this.showEquipment = false;
+                    this.changeTitle();
+                    console.log(this.computedEquipment);
+                }
+            );
             try {
                 this.color = JSON.parse( localStorage.color );
             }
@@ -332,13 +340,14 @@
 
         mounted() {
             this.showEquipment = false;
+            // this.showPreloader = false;
         },
 
 
 
         computed: {
             photo() {
-                console.log(this.$store.getters.colored);
+                // if (this.$store.getters.colored.preview) {
                 if (Object.keys(this.$store.getters.colored).length > 0) {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
                 } else {
@@ -346,6 +355,7 @@
                         return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
                     }
                     catch (e) {
+                        // console.log("error photo - 350");
                         return "";
                     }
 
@@ -355,35 +365,42 @@
             computedEquipment() {
                 if (localStorage.equipment) {
                     return JSON.parse(localStorage.equipment);
+                    // } else if (this.$store.getters.equip.mod_id) {
                 } else if (Object.keys(this.$store.getters.equip).length > 0) {
                     return this.$store.getters.equip;
                 } else {
                     return this.equipments[0];
                 }
 
-                    // try {
-                    //     console.log("JSON", JSON.parse(localStorage.equipment));
-                    //     return JSON.parse(localStorage.equipment);
-                    // }
-                    // catch (e) {
-                    //         console.log("not empty", localStorage.mod_id);
-                    //         return this.equipments[0];
-                    // }
+                // try {
+                //     console.log("JSON", JSON.parse(localStorage.equipment));
+                //     return JSON.parse(localStorage.equipment);
+                // }
+                // catch (e) {
+                //         console.log("not empty", localStorage.mod_id);
+                //         return this.equipments[0];
+                // }
             },
 
             computedColor() {
-                try {
-                    if (Object.keys(this.$store.getters.colored).length > 0) {
-                        return this.$store.getters.colored;
-                    } else {
-                        return JSON.parse(localStorage.color);
-                    }
+                // if (this.$store.getters.colored.color_code) {
+                let colored = {};
+                try{
+                    colored = this.$store.getters.colored
+                } catch (e) {
+                    console.log(e)
                 }
+                if (Object.keys(colored).length > 0) {
+                    return this.$store.getters.colored;
+                } else {
+                    try {
+                        return JSON.parse( localStorage.color );
+                    }
                     catch (e) {
                         // console.log("error Computed color - 379");
                         return "";
                     }
-
+                }
             },
 
             fontColored() {
@@ -415,16 +432,9 @@
                 location.reload();///костыль, так делать нельзя но по другому не получается
             },
 
-            equipment() {
-                return JSON.parse(localStorage.equipment);
-
-                // try {
-                //     return JSON.parse(localStorage.equipment);
-                // }
-                // catch (e) {
-                //     return "";
-                // }
-            },
+            // equipment() {
+            //     return JSON.parse(localStorage.equipment);
+            // },
 
             modelColor() {
                 try {
@@ -451,24 +461,21 @@
         methods: {
 
             getModel() {
-                    axios.get(
-                        "http://lara.toyota.nikolaev.ua/ajax/all_model",
-                        {params: {id: this.getID}},
-                    ).then( (response) => {
-                        this.model = response.data[0];
-///////////////////////////////////////////////////////ЗАГЛУШКА//
-                        this.getVideo();
+                axios.get(
+                    "http://lara.toyota.nikolaev.ua/ajax/all_model",
+                    {params: {id: this.getID}},
+                ).then( (response) => {
+                    this.model = response.data[0];
+///////////////////////////////////////////////////////ЗАГЛУШКА
+                    this.getVideo();
 //////////////////////////////////////////////////////
-                        this.modelTitle = this.model.name;
-                        this.changeTitle();
-                        console.log(this.model);
-
-                        // this.getEquipment();
-                    } )
-                        .catch( (error) => {
-                            console.log("Ошибка, не возможно загрузить доступные модели");
-                            console.log(error);
-                        })
+                    this.modelTitle = this.model.name;
+                    this.changeTitle();
+                } )
+                    .catch( (error) => {
+                        console.log("Ошибка, не возможно загрузить доступные модели");
+                        console.log(error);
+                    })
             },
 
             choice() {
@@ -482,52 +489,58 @@
 
             getEquipment() {
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
-                .then( (response) => {
-                    this.equipments = response.data;
+                    .then( (response) => {
+                        this.equipments = response.data;
 
-                    this.equipment = this.equipments[0];
-                    this.$store.state.equipment = this.equipment;
-                    localStorage.equipment = JSON.stringify( this.equipments[0] );
-                    localStorage.mod_id = this.equipment.mod_id;
-                    this.getPrices();
-                    // this.checkEquipment();
-                    // if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
-                    //     console.log("да");
-                    //     localStorage.color = "";
-                    //     this.$store.state.color = null;
-                    // }
+                        this.equipment = this.equipments[0];
+                        this.$store.state.equipment = this.equipment;
+                        // localStorage.equipment = JSON.stringify( this.equipments[0] );
+                        // localStorage.mod_id = this.equipment.mod_id;
+                        this.getPrices();
+                        // this.checkEquipment();
+                        // if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
+                        //     console.log("да");
+                        //     localStorage.color = "";
+                        //     this.$store.state.color = null;
+                        // }
 
-                    this.equipmentTitle = this.equipment.mod_name;
-                    console.log(this.equipment);
-                } )
-                .catch( (error) => {
-                    console.log("Ошибка, не возможно загрузить доступные модификации");
-                    console.log(error);
-                } );
+                        this.equipmentTitle = this.equipment.mod_name;
+                        // console.log(this.equipment);
+                    } )
+                    .catch( (error) => {
+                        console.log("Ошибка, не возможно загрузить доступные модификации");
+                        console.log(error);
+                    } );
             },
 
             checkEquipment() {
-                let equipFromJson = JSON.parse(localStorage.equipment);
-                console.log(equipFromJson);
+                let equipFromJson = {};
+                try{
+                    equipFromJson = JSON.parse(localStorage.equipment);
+                    console.log(equipFromJson);
+                } catch (e) {
+                    console.log(e);
+                }
 
-                if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
-                    if (Object.keys(equipFromJson) > 0) {
-                        this.equipments.forEach( equip => {
-                            if ( equip.mod_id === equipFromJson.mod_id ) {
-                                this.equipment = equip;
-                                this.$store.state.equipment = equip;
-                                return true;
-                            }
-                        });
+                if(Object.keys(equipFromJson) > 0) {
+                    if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
+                        if (Object.keys(equipFromJson) > 0) {
+                            this.equipments.forEach( equip => {
+                                if ( equip.mod_id === equipFromJson.mod_id ) {
+                                    this.equipment = equip;
+                                    this.$store.state.equipment = equip;
+                                    return true;
+                                }
+                            });
+                        }
                     }
-                } //else {
+                }
+
                 this.equipment = this.equipments[0];
                 this.$store.state.equipment = this.equipment;
                 localStorage.equipment = JSON.stringify( this.equipment );
-                // localStorage.color = "";
-                // this.$store.state.color = null;
-                //}
-
+                localStorage.color = "";
+                this.$store.state.color = null;
 
             },
 
@@ -579,33 +592,33 @@
             getFontColor() {
                 // console.log(this.computedColor.rgb);
                 try{
-                switch(this.computedColor.rgb.toLowerCase()){
-                    case '#000000'.toLowerCase():
-                    case '#030303'.toLowerCase():
-                    case '#182B66'.toLowerCase():
-                    case '#1d50aa'.toLowerCase():
-                    case '#5C5653'.toLowerCase():
-                    case '#60101e'.toLowerCase():
-                    case '#740310'.toLowerCase():
-                    case '#7a766f'.toLowerCase():
-                    case '#7c7a7a'.toLowerCase():
-                    case '#7d8489'.toLowerCase():
-                    case '#817e6e'.toLowerCase():
-                    case '#8c0414'.toLowerCase():
-                    case '#97a4ac'.toLowerCase():
-                    case '#aeabac'.toLowerCase():
-                    case '#b4ae9c'.toLowerCase():
-                    case '#ff0000'.toLowerCase():
-                        return this.fontColor = '#FFFFFF';
-                    case '#727270'.toLowerCase():
-                    case '#d7dcd9'.toLowerCase():
-                    case '#EDE7E1'.toLowerCase():
-                    case '#f2f2f0'.toLowerCase():
-                    case '#fafafa'.toLowerCase():
-                    case '#FFFFFF'.toLowerCase():
-                        return this.fontColor = '#202020';
-                }
-            } catch (e) {
+                    switch(this.computedColor.rgb.toLowerCase()){
+                        case '#000000'.toLowerCase():
+                        case '#030303'.toLowerCase():
+                        case '#182B66'.toLowerCase():
+                        case '#1d50aa'.toLowerCase():
+                        case '#5C5653'.toLowerCase():
+                        case '#60101e'.toLowerCase():
+                        case '#740310'.toLowerCase():
+                        case '#7a766f'.toLowerCase():
+                        case '#7c7a7a'.toLowerCase():
+                        case '#7d8489'.toLowerCase():
+                        case '#817e6e'.toLowerCase():
+                        case '#8c0414'.toLowerCase():
+                        case '#97a4ac'.toLowerCase():
+                        case '#aeabac'.toLowerCase():
+                        case '#b4ae9c'.toLowerCase():
+                        case '#ff0000'.toLowerCase():
+                            return this.fontColor = '#FFFFFF';
+                        case '#727270'.toLowerCase():
+                        case '#d7dcd9'.toLowerCase():
+                        case '#EDE7E1'.toLowerCase():
+                        case '#f2f2f0'.toLowerCase():
+                        case '#fafafa'.toLowerCase():
+                        case '#FFFFFF'.toLowerCase():
+                            return this.fontColor = '#202020';
+                    }
+                } catch (e) {
                     // console.log( "Шрифты пролетели" );
                 }
 
@@ -639,7 +652,7 @@
 
                 return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
 
-    },
+            },
 
             getGradient(rgb){
                 try{
@@ -671,8 +684,8 @@
                         case '#fafafa'.toLowerCase():
                         case '#FFFFFF'.toLowerCase():
                             return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, -50) + ")";
-                            default:
-                                return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 20) +  ")";
+                        default:
+                            return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 20) +  ")";
                     }
                 } catch (e) {
                     // console.log( "Градиетны пролетели" );
@@ -861,15 +874,15 @@
                     margin: 0;
                 }
             }
-                p {
-                    font-size: 1.6rem;
-                }
-                .h1 {
-                    font-size: 4rem;
-                }
-                .h1 + span {
-                    font-size: 1.6rem;
-                }
+            p {
+                font-size: 1.6rem;
+            }
+            .h1 {
+                font-size: 4rem;
+            }
+            .h1 + span {
+                font-size: 1.6rem;
+            }
         }
 
         .show_info {
