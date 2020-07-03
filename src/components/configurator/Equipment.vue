@@ -1,31 +1,116 @@
 <template>
     <div class="allEquipment container-fluid w-100">
 
-        <div class="carousel row" :style="{'color': fontColor}">
-            <div  class="equip col-lg-4 col-md-6 col-12"
-                 v-for="(equipment, key) in equipments"
-                 :key="key"
-                 @click="activated(equipment)"
-            >
+<!--        <div class="carousel_wrapper d-flex justify-content-between"  :style="{'color': fontColor}">-->
 
-                <img :src="photo" :alt="equipment.mod_name">
-                <h4 :style="{'color': fontColor}">
-                    <span><strong>{{model}} </strong></span>
-                    <span><strong>{{equipment.mod_name}}</strong></span>
-                    <span v-if="equipment.body_type"> - {{equipment.body_type}}</span>
-                </h4>
-                <h5 :style="{'color': fontColor}" class="text-left">
-                    Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>
-                </h5>
-<!--                <ul class="equip_desc">-->
-<!--                    <li v-for="(desc, key) in descriptionList(equipment)"-->
-<!--                        :key="key"-->
-<!--                        :style="{'color': fontColor}"-->
-<!--                    >{{desc}}</li>-->
-<!--                </ul>-->
-            </div>
-        </div>
+<!--            <button id="button-prev" class="btn" @click="prevSlide()">-->
+<!--                <i class="fas fa-chevron-left"></i>-->
+<!--            </button>-->
 
+<!--            <div class="slide_wrapper container">-->
+<!--                <div id="slides" class="slides ">-->
+<!--                    <div class="slide equip d-inline-block"-->
+<!--                         v-for="(equipment, key) in equipments"-->
+<!--                         :key="key"-->
+<!--                         @click="activated(equipment)"-->
+<!--                    >-->
+
+<!--                        &lt;!&ndash;                        <div&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                class="nav-item"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        >&ndash;&gt;-->
+
+<!--                        <img :src="photo" :alt="equipment.mod_name">-->
+<!--                        <h4 :style="{'color': fontColor}">-->
+<!--                            <span><strong>{{model}} </strong></span>-->
+<!--                            <span><strong>{{equipment.mod_name}}</strong></span>-->
+<!--                            <span v-if="equipment.body_type"> - {{equipment.body_type}}</span>-->
+<!--                        </h4>-->
+<!--                        <h5 :style="{'color': fontColor}" class="text-left">-->
+<!--                            Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>-->
+<!--                        </h5>-->
+<!--                        &lt;!&ndash;                <ul class="equip_desc">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                    <li v-for="(desc, key) in descriptionList(equipment)"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        :key="key"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        :style="{'color': fontColor}"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                    >{{desc}}</li>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+<!--            &lt;!&ndash;            <div class="swiper-button-prev" slot="button-prev"></div>&ndash;&gt;-->
+<!--            <button id="button-next" class="btn" @click="nextSlide()">-->
+<!--                <i class="fas fa-chevron-right"></i>-->
+<!--            </button>-->
+<!--        </div>-->
+
+
+                //////////////работает за исключением клика////////////////
+                <div class="carousel row" :style="{'color': fontColor}">
+                    <swiper class="swiper" :options="swiperOption">
+                        <swiper-slide
+                                v-for="(equipment, key) in equipments"
+                                :key="key"
+                                @click="activated(equipment)"
+                        >
+                            <div  class="equip">
+
+                                <img :src="photo" :alt="equipment.mod_name">
+                                <h4 :style="{'color': fontColor}">
+                                    <span><strong>{{model}} </strong></span>
+                                    <span><strong>{{equipment.mod_name}}</strong></span>
+                                    <span v-if="equipment.body_type"> - {{equipment.body_type}}</span>
+                                </h4>
+                                <h5 :style="{'color': fontColor}" class="text-left">
+                                    Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>
+                                </h5>
+                                <!--                <ul class="equip_desc">-->
+                                <!--                    <li v-for="(desc, key) in descriptionList(equipment)"-->
+                                <!--                        :key="key"-->
+                                <!--                        :style="{'color': fontColor}"-->
+                                <!--                    >{{desc}}</li>-->
+                                <!--                </ul>-->
+                            </div>
+                        </swiper-slide>
+
+                        <div class="swiper-pagination" slot="pagination"></div>
+                        <div class="swiper-button-prev" slot="button-prev"></div>
+                        <div class="swiper-button-next" slot="button-next"></div>
+                    </swiper>
+                </div>
+                //////////////работает за исключением клика////////////////
+
+
+
+        <!--        ///////////////////рабочий без карусели////////////////-->
+        <!--        <div class="carousel row" :style="{'color': fontColor}">-->
+        <!--            <div  class="equip col-lg-4 col-md-6 col-12"-->
+        <!--                 v-for="(equipment, key) in equipments"-->
+        <!--                 :key="key"-->
+        <!--                 @click="activated(equipment)"-->
+        <!--            >-->
+
+        <!--                <img :src="photo" :alt="equipment.mod_name">-->
+        <!--                <h4 :style="{'color': fontColor}">-->
+        <!--                    <span><strong>{{model}} </strong></span>-->
+        <!--                    <span><strong>{{equipment.mod_name}}</strong></span>-->
+        <!--                    <span v-if="equipment.body_type"> - {{equipment.body_type}}</span>-->
+        <!--                </h4>-->
+        <!--                <h5 :style="{'color': fontColor}" class="text-left">-->
+        <!--                    Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>-->
+        <!--                </h5>-->
+        <!--&lt;!&ndash;                <ul class="equip_desc">&ndash;&gt;-->
+        <!--&lt;!&ndash;                    <li v-for="(desc, key) in descriptionList(equipment)"&ndash;&gt;-->
+        <!--&lt;!&ndash;                        :key="key"&ndash;&gt;-->
+        <!--&lt;!&ndash;                        :style="{'color': fontColor}"&ndash;&gt;-->
+        <!--&lt;!&ndash;                    >{{desc}}</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;                </ul>&ndash;&gt;-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        ///////////////////рабочий без карусели////////////////-->
     </div>
 
 
@@ -34,7 +119,10 @@
 <script>
     import axios from "axios";
     import formattedPrice from "../../filters/price_format";
+    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
     import {eventEmitter} from '../../main'
+    import $ from "jquery";
     // import $ from "jquery";
     // import {eventEmitter} from './../../app' //         for Laravel
 
@@ -46,6 +134,11 @@
             'id'
         ],
 
+        components: {
+            Swiper,
+            SwiperSlide
+        },
+
 
         data() {
             return {
@@ -56,6 +149,29 @@
                 fontColor: "#202020",
 
                 prices: [],
+
+                x: 0,
+                slides: 0,
+
+                mousePress: false,
+                mouseX: 0,
+                xNow: 0,
+
+                swiperOption: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    slidesPerGroup: 3,
+                    loop: true,
+                    loopFillGroupWithBlank: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
+                }
             }
         },
 
@@ -70,6 +186,8 @@
             // this.$store.state.equipment = this.equipment;
             // localStorage.equipment = JSON.stringify( this.equipment );
             this.getFontColor();
+
+            // this.carouselSizes();
 
             eventEmitter.$on('select', () => {this.activeted()})
         },
@@ -178,7 +296,7 @@
             },
 
             activated(equipment) {
-                // console.log('catch');
+                console.log('catch');
                 this.$store.state.equipment = equipment;
                 localStorage.equipment = JSON.stringify(equipment);
                 localStorage.mod_id = equipment.mod_id;
@@ -230,84 +348,201 @@
                 }
 
             },
+
+            // carouselSizes() {
+            //     let slide_wrapper = $(".slide_wrapper").width();
+            //     $(".slide").css( "width", slide_wrapper / 3 + 'px');
+            //     console.log( slide_wrapper, $(".slide").width());
+            // },
+
+            prevSlide() {
+                this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;//
+                this.x = this.x - $('.slide_wrapper').width();
+                if ( this.x < 0 ) {
+                    if(this.equipments.length % 3){
+                        this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.equipments.length % 3));
+                        console.log(this.x);
+                    } else {
+                        this.x = this.slides - $('.slide_wrapper').width();
+                        console.log(this.x);
+                    }
+
+                }
+                $('#slides').css("transform", `translateX(-${this.x}px)`);
+            },
+
+            nextSlide() {
+                this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;
+                this.x = this.x + $('.slide_wrapper').width();
+                console.log($('.slide_wrapper').width());
+                console.log(this.x , this.slides);
+                if ( this.x >= this.slides ) {
+                    this.x = 0;
+                }
+                $('#slides').css("transform", `translateX(-${this.x}px)`);
+            },
         }
     }
 </script>
 
 <style lang="scss" scoped>
     @import '../../styles/variables';
+    /*@import './base.scss';*/
 
     .allEquipment {
         width: 100%;
         margin: 0;
         position: relative;
         background-color: rgba(0,0,0,0.3);
-        .carousel.row {
-            position: static;
-            width: 85%;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: stretch;
-            .equip {
-                box-sizing: border-box;
-                padding: 30px 40px;
-                img {
-                    width: 100%;
-                }
 
-                .equip_desc {
-                    margin: 0;
-                    padding: 0;
-                    list-style-position: inside;
-                    display: block !important;
-                    li {
-                        text-align: left;
-                        font-size: 1.4rem;
-                        line-height: 1.5;
-                    }
-                }
-                &.active,
-                &:hover{
-                    overflow: hidden;
-                    align-self: stretch;
-                    background-color: rgba(0,0,0,0.25);
-                    border-top: 5px solid black;
-                    color: #000;
-                    img, h4 {
-                        transform: scale(1.1);
-                        transition: all 700ms;
+        /*.carousel_wrapper {
+            .slide_wrapper.container {
+                overflow: hidden;
+                padding: 0;
+                .slides {
+                    white-space: nowrap;
+                    .slide {
+                        position: relative;
+                        width: calc(1140px / 3);
+                        box-sizing: border-box;
+                        padding: 30px 40px;
+                        img {
+                            width: 100%;
+                        }
+                        .equip_desc {
+                            margin: 0;
+                            padding: 0;
+                            list-style-position: inside;
+                            display: block !important;
+                            li {
+                                text-align: left;
+                                font-size: 1.4rem;
+                                line-height: 1.5;
+                            }
+                        }
+                        &.active,
+                        &:hover{
+                            overflow: hidden;
+                            align-self: stretch;
+                            background-color: rgba(0,0,0,0.25);
+                            border-top: 5px solid black;
+                            color: #000;
+                            img, h4 {
+                                transform: scale(1.1);
+                                transition: all 700ms;
 
-                    }
-                }
-                h4 {
-                    font-size: 18px;
-                    margin-bottom: 15px;
-                }
-                h5 {
-                    font-size: 1.6rem;
-                    font-weight: 100;
-                    strong {
-                        font-weight: bold;
-                    }
-                }
-                    a {
-                        color: $font_color;
-                        font-size: 18px;
-                        span{
-                            display: inline-block;
-                            margin-left: 10px;
+                            }
+                        }
+                        h4 {
+                            font-size: 18px;
+                            margin-bottom: 15px;
+                        }
+                        h5 {
+                            font-size: 1.6rem;
+                            font-weight: 100;
+                            strong {
+                                font-weight: bold;
+                            }
+                        }
+                        a {
+                            color: $font_color;
+                            font-size: 18px;
+                            span{
+                                display: inline-block;
+                                margin-left: 10px;
+                            }
+                        }
+                        .nav-item {
+                            cursor: pointer;
+                            margin: auto;
+
                         }
                     }
-
                 }
+
             }
+        }*/
 
+        /*//////////////////////////////////////////////*/
+         .carousel.row {
+             position: static;
+             width: 85%;
+             margin: auto;
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: center;
+             align-items: stretch;
+             .equip {
+                 box-sizing: border-box;
+                 padding: 30px 40px;
+                 img {
+                     width: 100%;
+                 }
 
+                 .equip_desc {
+                     margin: 0;
+                     padding: 0;
+                     list-style-position: inside;
+                     display: block !important;
+                     li {
+                         text-align: left;
+                         font-size: 1.4rem;
+                         line-height: 1.5;
+                     }
+                 }
+                 &.active,
+                 &:hover{
+                     overflow: hidden;
+                     align-self: stretch;
+                     background-color: rgba(0,0,0,0.25);
+                     border-top: 5px solid black;
+                     color: #000;
+                     img, h4 {
+                         transform: scale(1.1);
+                         transition: all 700ms;
+
+                     }
+                 }
+                 h4 {
+                     font-size: 18px;
+                     margin-bottom: 15px;
+                 }
+                 h5 {
+                     font-size: 1.6rem;
+                     font-weight: 100;
+                     strong {
+                         font-weight: bold;
+                     }
+                 }
+                     a {
+                         color: $font_color;
+                         font-size: 18px;
+                         span{
+                             display: inline-block;
+                             margin-left: 10px;
+                         }
+                     }
+
+                 }
+             }
+        /*//////////////////////////////////////////////////*/
+
+    }
+    /*//////////////////////////////////////////*/
+    .swiper {
+        /*height: 300px;*/
+        width: 100%;
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+            /*font-size: $font-size-huge * 2;
+            background-color: $white;*/
         }
-
-
+    }
 
 
 
