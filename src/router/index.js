@@ -119,8 +119,16 @@ import ISO from "../components/whyToyota/ecology/ISO";
 import ExclusiveProjects from "@/components/ToyotaInNikolaev/ExclusiveProjects";
 import ExclusiveCar from "@/components/ToyotaInNikolaev/ExclusiveCar";
 
+// import NProgress from
+
 
 // import TheLookingAround from "@/components/cars/TheLookingAround";
+
+
+
+
+
+
 
 
 
@@ -762,4 +770,23 @@ export default new VueRouter({
     ],
 
     mode: 'history'
-})
+});
+
+
+
+
+// VueRouter.beforeResolve((to, from, next) => {
+//     // If this isn't an initial page load.
+//     if (to.name) {
+//         // Start the route progress bar.
+//         // NProgress.start()
+//         NProgress.start()
+//         console.log(to, from, next);
+//     }
+//     next()
+// })
+//
+// VueRouter.afterEach((to, from) => {
+//     // Complete the animation of the route progress bar.
+//     // NProgress.done()
+// })
