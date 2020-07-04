@@ -40,7 +40,7 @@ export default {
                         this.pageBody.body = this.pageBody.body.replace("&raquo;", "»");
                     }
 
-                    console.log(this.pageBody.body);
+                    // console.log(this.pageBody.body);
                     // this.changeBody();
                 } )
                 .catch( (error) => {

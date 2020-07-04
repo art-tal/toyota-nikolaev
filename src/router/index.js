@@ -119,20 +119,14 @@ import ISO from "../components/whyToyota/ecology/ISO";
 import ExclusiveProjects from "@/components/ToyotaInNikolaev/ExclusiveProjects";
 import ExclusiveCar from "@/components/ToyotaInNikolaev/ExclusiveCar";
 
-// import NProgress from
+import NProgress from "nprogress";
 
 
 // import TheLookingAround from "@/components/cars/TheLookingAround";
 
 
+const route = new VueRouter({
 
-
-
-
-
-
-
-export default new VueRouter({
     routes: [
         {
             path: "/",
@@ -359,11 +353,6 @@ export default new VueRouter({
                     name: "corporate_clients",
                     component: Corporate_clients,
                 },
-                // {
-                //     path: "/corporate_sales/special_solutions",
-                //     name: "special_solutions",
-                //     component: Special_solutions,
-                // },
             ],
         },
 
@@ -772,21 +761,663 @@ export default new VueRouter({
     mode: 'history'
 });
 
+route.beforeResolve( (to, from, next) => {
+    if(to.name) {
+        NProgress.start();
+    }
+    next();
+    console.log(to, from, next);
+})
+
+route.afterEach( (to, from) => {
+    NProgress.done();
+    console.log(to, from);
+})
+
+export default route;
 
 
 
-// VueRouter.beforeResolve((to, from, next) => {
-//     // If this isn't an initial page load.
-//     if (to.name) {
-//         // Start the route progress bar.
-//         // NProgress.start()
-//         NProgress.start()
-//         console.log(to, from, next);
-//     }
-//     next()
-// })
+
+
+// export default new VueRouter({
+//     routes: [
+//         {
+//             path: "/",
+//             name: "home",
+//             component: Home,
+//         },
 //
-// VueRouter.afterEach((to, from) => {
-//     // Complete the animation of the route progress bar.
-//     // NProgress.done()
-// })
+//         {
+//             path: '/lineup',
+//             name: 'Lineup',
+//             component: Lineup,
+//         },
+//
+//         {
+//             path: '/new_cars',
+//             name: 'new_cars',
+//             component: NewCars,
+//         },
+//
+//         {
+//             path: '/model',
+//             name: 'model',
+//             component: Model,
+//         },
+//
+//         {
+//             path: '/download_brochures',
+//             name: 'download_brochures',
+//             component: DownloadBrochures,
+//         },
+//
+//         {
+//             path: '/faq',
+//             name: 'faq',
+//             component: FAQ,
+//         },
+//
+//         {
+//             path: '/legal_information',
+//             name: 'legal_information',
+//             component: LegalInformation,
+//         },
+//
+//         {
+//             path: '/cookie_settings',
+//             name: 'cookie_settings',
+//             component: CookieSettings,
+//         },
+//
+//         {
+//             path: '/form_feed_back',
+//             name: 'form_feed_back',
+//             component: FormFeedBack,
+//         },
+//
+//         {
+//             path: '/vypadky_shahrajstva',
+//             name: 'vypadky_shahrajstva',
+//             component: VypadkyShahrajstva,
+//         },
+//
+//
+//
+//
+//
+//         {
+//             path: '/select_model/:id',
+//             name: 'selectModel',
+//             component: SelectModel,
+//             children: [
+//
+//                 {
+//                     path: '/select_model/:id/equipment',
+//                     name: 'Equipment',
+//                     component: Equipment,
+//                 },
+//
+//             ]
+//         },
+//
+//         {
+//             path: '/engines_and_characteristics/:id',
+//             name: 'engines_and_characteristics',
+//             component: EnginesAndCharacteristics,
+//         },
+//
+//         {
+//             path: '/prices/:id',
+//             name: 'prices',
+//             component: Prices,
+//         },
+//
+//         {
+//             path: '/reliability_and_guarantee/:id',
+//             name: 'reliability_and_guarantee',
+//             component: ReliabilityAndGuarantee,
+//         },
+//
+//
+//         {
+//             path: '/configurator',
+//             // path: '/configurator/:id_params',
+//             name: 'Configurator',
+//             component: Configurator,
+//             children: [
+//                 {
+//                     path: '/configurator/equipment',
+//                     name: 'Equipment',
+//                     component: Equipment,
+//                 },
+//                 {
+//                     path: '/configurator/selected_engine',
+//                     name: 'selected_engine',
+//                     component: Engine
+//                 },
+//                 {
+//                     path: '/configurator/color_and_option',
+//                     name: "color_and_option",
+//                     component: ColorAndOption,
+//                     children: [
+//                         {
+//                             path: '/configurator/color_and_option/colors',
+//                             name: 'colors',
+//                             component: Colors,
+//                         },
+//                         {
+//                             path: '/configurator/color_and_option/wheels',
+//                             name: 'wheels',
+//                             component: Wheels,
+//                         },
+//                         {
+//                             path: '/configurator/color_and_option/interior',
+//                             name: 'interior',
+//                             component: Interior
+//                         },
+//                         {
+//                             path: '/configurator/color_and_option/accessories',
+//                             name: "accessories",
+//                             component: Accessories,
+//                         },
+//                         {
+//                             path: '/configurator/color_and_option/price',
+//                             name: "price",
+//                             component: Price,
+//                         },
+//                         {
+//                             path: '/configurator/color_and_option/to_result',
+//                             name: 'to_result',
+//                             component: ToResult,
+//                         }
+//                     ]
+//                 },
+//                 {
+//                     path: '/configurator/result',
+//                     name: 'result',
+//                     component: Result,
+//                 },
+//                 {
+//                     path: '/configurator/edit_equipment/:id',
+//                     name: 'edit_equipment',
+//                     component: EditEquipment,
+//                 },
+//
+//
+//
+//             ]
+//         },
+//
+//         {
+//             path: "/consultation",
+//             name: 'consultation',
+//             component: Consultation,
+//             children: [
+//                 {
+//                     path: "/consultation/step_1",
+//                     name: "step_1",
+//                     component: Step1,
+//                 },
+//                 {
+//                     path: "/consultation/step_2",
+//                     name: "step_2",
+//                     component: Step2,
+//                 },
+//             ]
+//         },
+//
+//
+//
+//
+//         {
+//             path: "/insurance",
+//             name: "insurance",
+//             component: Insurance
+//         },
+//
+//         {
+//             path: "/credit",
+//             name: "credit",
+//             component: Credit,
+//         },
+//
+//         {
+//             path: "/corporate_sales",
+//             name: "corporate_sales",
+//             component: Corporate_sales,
+//             children: [
+//                 {
+//                     path: "/corporate_sales/general",
+//                     name: "general",
+//                     component: General,
+//                 },
+//                 {
+//                     path: "/corporate_sales/business_car",
+//                     name: "business_car",
+//                     component: Business_car,
+//                 },
+//                 {
+//                     path: "/corporate_sales/business_owner",
+//                     name: "business_owner",
+//                     component: Business_owner,
+//                 },
+//                 {
+//                     path: "/corporate_sales/corporate_clients",
+//                     name: "corporate_clients",
+//                     component: Corporate_clients,
+//                 },
+//             ],
+//         },
+//
+//
+//         {
+//             path: "/service",
+//             name: "service",
+//             component: SignUpForService,
+//         },
+//
+//         {
+//             path: "/maintenance",
+//             name: "maintenance",
+//             component: Maintenance,
+//             children: [
+//                 {
+//                     path: "/maintenance/maintenance_general",
+//                     name: "maintenance_general",
+//                     component: MaintenanceGeneral,
+//                 },
+//                 {
+//                     path: "/maintenance/principles",
+//                     name: "principles",
+//                     component: Principles,
+//                 },
+//                 {
+//                     path: "/maintenance/guarantee",
+//                     name: "guarantee",
+//                     component: Guarantee,
+//                 },
+//                 {
+//                     path: "/maintenance/lubricants",
+//                     name: "lubricants",
+//                     component: Lubricants,
+//                 },
+//                 // {
+//                 //     path: "/maintenance/calc",
+//                 //     name: "calc",
+//                 //     component: Calc,
+//                 // },
+//                 {
+//                     path: "/maintenance/special_company",
+//                     name: "special_company",
+//                     component: SpecialCompany,
+//                 },
+//             ],
+//         },
+//
+//         {
+//             path: "/original_accessories",
+//             name: "original_accessories",
+//             component: OriginalAccessories,
+//             children: [
+//                 {
+//                     path: "/original_accessories/accessories_general",
+//                     name: "accessories_general",
+//                     component: AccessoriesGeneral,
+//                 },
+//                 {
+//                     path: "/original_accessories/entertainment_system",
+//                     name: "entertainment_system",
+//                     component: EntertainmentSystem,
+//                 },
+//                 {
+//                     path: "/original_accessories/toyota_pro_tech",
+//                     name: "toyota_pro_tech",
+//                     component: ToyotaProTect,
+//                 },
+//                 {
+//                     path: "/original_accessories/toyota_touch2",
+//                     name: "toyota_touch2",
+//                     component: ToyotaTouch2,
+//                 },
+//                 {
+//                     path: "/original_accessories/baby_car_seats",
+//                     name: "baby_car_seats",
+//                     component: BabyCarSeats,
+//                 }
+//             ],
+//         },
+//
+//         {
+//             path: "/original_spare_parts",
+//             name: "original_spare_parts",
+//             component: OriginalSpareParts,
+//             children: [
+//                 {
+//                     path: "/original_spare_parts/original_spare_parts_general",
+//                     name: "original_spare_parts_general",
+//                     component: OriginalSparePartsGeneral,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/choose_original",
+//                     name: "choose_original",
+//                     component: ChooseOriginal,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/air_filters_of_salon",
+//                     name: "air_filters_of_salon",
+//                     component: AirFiltersOfSalon,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/rechargeable_batteries",
+//                     name: "rechargeable_batteries",
+//                     component: RechargeableBatteries,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/original_lamps",
+//                     name: "original_lamps",
+//                     component: OriginalLamps,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/wiper_blades",
+//                     name: "wiper_blades",
+//                     component: WiperBlades,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/toyota_ad_blue_liquid",
+//                     name: "toyota_ad_blue_liquid",
+//                     component: ToyotaAdBlueLiquid,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/brake_discs_and_pads",
+//                     name: "brake_discs_and_pads",
+//                     component: BrakeDiscsAndPads,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/original_windshields",
+//                     name: "original_windshields",
+//                     component: OriginalWindshields,
+//                 },
+//                 {
+//                     path: "/original_spare_parts/fuel_system_cleaner",
+//                     name: "fuel_system_cleaner",
+//                     component: FuelSystemCleaner,
+//                 }
+//             ],
+//         },
+//
+//         {
+//             path: "/toyota_assistance",
+//             name: "toyota_assistance",
+//             component: ToyotaAssistance,
+//         },
+//
+//         {
+//             path: "/toyota_assistance_plus",
+//             name: "toyota_assistance_plus",
+//             component: ToyotaAssistancePlus,
+//         },
+//
+//
+//         {
+//             path: "/world_of_toyota",
+//             name: "world_of_toyota",
+//             component: WorldOfToyota,
+//             children: [
+//                 {
+//                     path: "/world_of_toyota/news",
+//                     name: "news",
+//                     component: News,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/article/:id",
+//                     name: "article",
+//                     component: Article,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/olympic_partnership",
+//                     name: "olympic_partnership",
+//                     component: OlympicPartnership,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/toyota_gazoo_racing",
+//                     name: "toyota_gazoo_racing",
+//                     component: ToyotaGazooRacing,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/toyota_at_rally",
+//                     name: "toyota_at_rally",
+//                     component: ToyotaAtRally,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/history_of_toyota_sports_cars",
+//                     name: "history_of_toyota_sports_cars",
+//                     component: HistoryOfToyotaSportsCars,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/toyota_2000_gt",
+//                     name: "toyota_2000_gt",
+//                     component: Toyota2000GT,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/toyota_celica",
+//                     name: "toyota_celica",
+//                     component: ToyotaCelica,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/toyota_supra",
+//                     name: "toyota_supra",
+//                     component: ToyotaSupra,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/toyota_corolla",
+//                     name: "toyota_corolla",
+//                     component: ToyotaCorolla,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/toyota_mr2",
+//                     name: "toyota_mr2",
+//                     component: ToyotaMR2,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/toyota_gt86",
+//                     name: "toyota_gt86",
+//                     component: ToyotaGT86,
+//                 },
+//
+//                 {
+//                     path: "/world_of_toyota/IdeasForFuture",
+//                     name: "IdeasForFuture",
+//                     component: IdeasForFuture,
+//                 },
+//
+//
+//
+//                 {
+//                     path: "/world_of_toyota/toyoda_aa",
+//                     name: "toyoda_aa",
+//                     component: ToyodaAA,
+//                 },
+//             ],
+//         },
+//
+//
+//
+//         {
+//             path: "/ecology",
+//             name: "ecology",
+//             component: Ecology,
+//         },
+//         {
+//             path: "/environmental_mission",
+//             name: "environmental_mission",
+//             component: EnvironmentalMission,
+//         },
+//         {
+//             path: "/better_air",
+//             name: "better_air",
+//             component: BetterAir,
+//         },
+//         {
+//             path: "/best_planet",
+//             name: "best_planet",
+//             component: BestPlanet,
+//         },
+//         {
+//             path: "/better_life",
+//             name: "better_life",
+//             component: BetterLife,
+//         },
+//         {
+//             path: "/just_better",
+//             name: "just_better",
+//             component: JustBetter,
+//         },
+//         {
+//             path: "/iso",
+//             name: "iso",
+//             component: ISO,
+//         },
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//         {
+//             path: "/warranty_service",
+//             name: "warranty_service",
+//             component: WarrantyService,
+//         },
+//         {
+//             path: "/quality_guarantee",
+//             name: "quality_guarantee",
+//             component: QualityGuarantee,
+//         },
+//         {
+//             path: "/clients_charter",
+//             name: "clients_charter",
+//             component: ClientsCharter,
+//         },
+//
+//         {
+//             path: "/hybrid_innovations",
+//             name: "hybrid_innovations",
+//             component: HybridInnovations,
+//         },
+//         {
+//             path: "/hybrid_drive",
+//             name: "hybrid_drive",
+//             component: HybridDrive,
+//         },
+//
+//
+//
+//
+//         {
+//             path: "/sub_menu_mykolaiv",
+//             name: "sub_menu_mykolaiv",
+//             component: SubMenuNikolaev,
+//         },
+//
+//         {
+//             path: "/toyota_mykolaiv",
+//             name: "toyota_mykolaiv",
+//             component: ToyotaMykolaiv,
+//         },
+//
+//         {
+//             path: "/customer_service",
+//             name: "customer_service",
+//             component: CustomerService,
+//         },
+//         {
+//             path: "/toyota_ichiban",
+//             name: "toyota_ichiban",
+//             component: ToyotaIchiban,
+//         },
+//         {
+//             path: "/corporate_responsibility",
+//             name: "corporate_responsibility",
+//             component: CorporateResponsibility,
+//         },
+//
+//         {
+//             path: "/exclusive_projects",
+//             name: "exclusive_projects",
+//             component: ExclusiveProjects,
+//         },
+//
+//         {
+//             path: "/exclusive_car",
+//             name: "exclusive_car",
+//             component: ExclusiveCar,
+//         },
+//
+//
+//
+//         {
+//             path: "/cars_available",
+//             name: "cars_available",
+//             component: CarsAvailable,
+//         },
+//
+//         {
+//             path: "/car/:id",
+//             name: "car",
+//             component: Car,
+//         },
+//
+//         {
+//             path: "/workers",
+//             name: "workers",
+//             component: Workers,
+//         },
+//
+//         {
+//             path: "/about",
+//             name: "about",
+//             component: About,
+//         },
+//
+//         {
+//             path: "/where",
+//             name: "where",
+//             component: Where,
+//         },
+//
+//         ////////////////////Заглушки//////////////////////////
+//
+//
+//         // {
+//         //     path: "/souvenir_products",
+//         //     name: "SouvenirProducts",
+//         //     component: SouvenirProducts,
+//         // },
+//
+//
+//     ],
+//
+//     mode: 'history'
+// });
+
+
+
+
+
+
+

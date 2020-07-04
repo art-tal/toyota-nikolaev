@@ -48,15 +48,14 @@
 <!--        </div>-->
 
 
-                //////////////работает за исключением клика////////////////
+<!--                //////////////работает за исключением клика////////////////-->
                 <div class="carousel row" :style="{'color': fontColor}">
                     <swiper class="swiper" :options="swiperOption">
                         <swiper-slide
                                 v-for="(equipment, key) in equipments"
                                 :key="key"
-                                @click="activated(equipment)"
                         >
-                            <div  class="equip">
+                            <div  class="equip" @click="activated(equipment)">
 
                                 <img :src="photo" :alt="equipment.mod_name">
                                 <h4 :style="{'color': fontColor}">
@@ -73,6 +72,8 @@
                                 <!--                        :style="{'color': fontColor}"-->
                                 <!--                    >{{desc}}</li>-->
                                 <!--                </ul>-->
+
+<!--                                <button class="btn" @click="activated(equipment)">Обрати</button>-->
                             </div>
                         </swiper-slide>
 
@@ -81,7 +82,7 @@
                         <div class="swiper-button-next" slot="button-next"></div>
                     </swiper>
                 </div>
-                //////////////работает за исключением клика////////////////
+<!--                //////////////работает за исключением клика////////////////-->
 
 
 
@@ -159,10 +160,11 @@
 
                 swiperOption: {
                     slidesPerView: 3,
-                    spaceBetween: 30,
+                    spaceBetween: 20,
                     slidesPerGroup: 3,
                     loop: true,
                     loopFillGroupWithBlank: true,
+                    clickable: true,
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
@@ -475,6 +477,9 @@
              .equip {
                  box-sizing: border-box;
                  padding: 30px 40px;
+                 position: relative;
+                 z-index: 1100;
+                 cursor: pointer;
                  img {
                      width: 100%;
                  }
@@ -514,6 +519,14 @@
                          font-weight: bold;
                      }
                  }
+
+                 /*button.btn {*/
+                 /*    font-size: 1.4rem;*/
+                 /*    padding: 2px 15px;*/
+                 /*    border-radius: 13px;*/
+                 /*    background-color: rgba(255,255,255,0.5);*/
+                 /*}*/
+
                      a {
                          color: $font_color;
                          font-size: 18px;

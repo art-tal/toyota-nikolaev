@@ -114,6 +114,14 @@ export default new Vuex.Store ({
             state.totalCost = payload;
         },
 
+        setEquipment(state) {
+            state.equipmet = JSON.parse(localStorage.equipment);
+        },
+
+        setColor(state) {
+            state.color = JSON.parse(localStorage.color);
+        },
+
 
 
 

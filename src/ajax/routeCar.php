@@ -1,2 +1,0 @@
-<?php
-echo ("https://images.toyota-europe.com/ua/product-token/" . $_GET['model'] . "/vehicle/97b1f1c6-0aab-4963-a46c-01bc214d6781/" . $_GET['wheels'] . "/width/1160/height/446/scale-mode/1/padding/10/background-colour/F0F0F0/image-quality/75/day-exterior-" . $_GET['corner'] . "_" . $_GET['color'] . "_FA20.jpg");

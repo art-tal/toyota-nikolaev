@@ -56,9 +56,13 @@
 
         },
 
+        props: [
+            'mod_id',
+        ],
+
         data() {
             return {
-                mod_id: 0,
+                // mod_id: 0,
                 colors: [],
                 selectedColor: {},
                 x: 0,
@@ -71,6 +75,9 @@
         },
 
         created() {
+        },
+
+        mounted() {
             this.mod_id = localStorage.mod_id;
             this.getColors();
         },
@@ -79,11 +86,9 @@
         computed: {
             get_mod_id() {
                 return this.mod_id;
+                // return this.$store.getters.equip.mod_id;
+                // return this.mod_id;
             },
-
-            // colored() {
-            //     return this.colors;
-            // },
         },
 
         methods: {
@@ -95,14 +100,13 @@
               .then( (response) => {
                   this.colors = response.data;
                   console.log(this.colors);
-                  this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
-
-                  this.colors[0].selected = true;
+                      this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
+                      this.colors[0].selected = true;
+                      this.setColor(this.colors[0]);
                   // this.selectedColor = this.colors[0];
-                  // localStorage.color = JSON.stringify( this.selectedColor );
-                  // this.$store.state.color = this.selectedColor;
-                  this.checkColor();
-                  // }
+                  // localStorage.color = JSON.stringify( this.colors[0] );
+                  // this.$store.state.color = this.this.colors[0];
+
                   this.slides = $('#slides').width() / 3 * this.colors.length;
                   // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
               } )
@@ -112,27 +116,28 @@
               } )
           },
 
-            checkColor() {
-                if(localStorage.color) {
-                    let colorFromJson = JSON.parse(localStorage.color);
-                    console.log(colorFromJson);
-                    this.colors.forEach( (color) => {
-                        if(color.preview === colorFromJson.preview) {
-                            // this.selectedColor = color;
-                            // this.$store.state.color = color;
-                            this.setColor(color);
-                            return true;
-                        }
-                    } )
-                }
+            // checkColor() {
+            //
+            //     if(localStorage.color.length > 0) {
+            //         let colorFromJson = JSON.parse(localStorage.color);
+            //         console.log(colorFromJson);
+            //         this.colors.forEach( (color) => {
+            //             if(color.preview === colorFromJson.preview) {
+            //                 // this.selectedColor = color;
+            //                 // this.$store.state.color = color;
+            //                 this.setColor(color);
+            //                 return true;
+            //             }
+            //         } )
+            //     }
 
-                this.setColor(this.colors[0]);
+                // this.setColor(this.colors[0]);
                 // this.colors[0].selected = true;
                 // this.selectedColor = this.colors[0];
                 // this.$store.state.color = this.colors[0];
                 // localStorage.color = JSON.stringify(this.colors[0])
-                console.log(this.selectedColor);
-            },
+                // console.log(this.selectedColor);
+            // },
 
             // setColor(color, index) {
             setColor(color) {

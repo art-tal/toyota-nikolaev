@@ -68,42 +68,42 @@
         </div>
 
         <div class="specifications row justify-content-center align-items-end">
-            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.equipPrice">
-                <p>Від</p>
-                <span class="h2 d-block font-weight-bolder">
-                    {{computedEquipment.equipPrice | formattedPrice}}&#8372;
-                </span>
-
-            </div>
-
-<!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.gross_price">-->
+<!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.equipPrice">-->
 <!--                <p>Від</p>-->
 <!--                <span class="h2 d-block font-weight-bolder">-->
-<!--                    {{computedEquipment.gross_price | formattedPrice}}&#8372;-->
+<!--                    {{computedEquipment.equipPrice | formattedPrice}}&#8372;-->
 <!--                </span>-->
+
 <!--            </div>-->
 
-            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedColor.min_price">
+                <p>Від</p>
+                <span class="h2 d-block font-weight-bolder">
+                    {{computedColor.min_price | formattedPrice}}&#8372;
+                </span>
+            </div>
+
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption">
                 <p>Споживання пального</p>
-                <span class="h1">{{computedEquipment.fuel}}</span>
+                <span class="h1">{{computedColor.fuel_consumption}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
 
-            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedEquipment.fuel">
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption_city">
                 <p>Споживання пального</p>
-                <span class="h1">{{computedEquipment.fuel}}</span>
+                <span class="h1">{{computedColor.fuel_consumption_city}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
 
-            <div class="maxPower col-xl-2 col-md-3 col-6" v-if="model.maxPower">
+            <div class="maxPower col-xl-2 col-md-3 col-6" v-if="computedColor.horspower">
                 <p>Максимальна потужність</p>
-                <span class="h1">{{model.maxPower}}</span>
+                <span class="h1">{{computedColor.horspower}}</span>
                 <span class="font-weight-bold"> к.с.</span>
             </div>
 
-            <div class="maxSpeed col-xl-2 col-md-3 col-6" v-if="model.maxSpeed">
+            <div class="maxSpeed col-xl-2 col-md-3 col-6" v-if="computedColor.max_speed">
                 <p>Максимальна швидкість</p>
-                <span class="h1">{{model.maxSpeed}}</span>
+                <span class="h1">{{computedColor.max_speed}}</span>
                 <span class="font-weight-bold"> км/г</span>
             </div>
         </div>
@@ -224,6 +224,7 @@
     import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
     import formattedPrice from "../../filters/price_format";
+    // import NProgress from "nprogress";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
     // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
@@ -307,6 +308,10 @@
             }
         },
 
+        // beforeCreate() {
+        //     NProgress.start();
+        // },
+
         created() {
             this.renderComponent = 0;
             this.id = this.$route.params.id;
@@ -317,7 +322,7 @@
                 () => {
                 this.showEquipment = false;
                 this.changeTitle();
-                console.log(this.computedEquipment);
+                // console.log(this.computedEquipment);
             }
                 );
             try {
@@ -332,57 +337,53 @@
 
         mounted() {
             this.showEquipment = false;
+            // NProgress.done();
         },
 
 
 
         computed: {
             photo() {
-                console.log(this.$store.getters.colored);
-                if (Object.keys(this.$store.getters.colored).length > 0) {
-                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
-                } else {
-                    try {
-                        return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
-                    }
-                    catch (e) {
-                        return "";
-                    }
-
-                }
+                return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                // console.log(this.$store.getters.colored);
+                // if (Object.keys(this.$store.getters.colored).length > 0) {
+                //     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
+                // } else {
+                //     try {
+                //         return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
+                //     }
+                //     catch (e) {
+                //         return "";
+                //     }
+                //
+                // }
             },
 
             computedEquipment() {
-                if (localStorage.equipment) {
-                    return JSON.parse(localStorage.equipment);
-                } else if (Object.keys(this.$store.getters.equip).length > 0) {
-                    return this.$store.getters.equip;
-                } else {
-                    return this.equipments[0];
-                }
+                // if (localStorage.equipment) {
+                //     return JSON.parse(localStorage.equipment);
+                // } else if (Object.keys(this.$store.getters.equip).length > 0) {
+                //     return this.$store.getters.equip;
+                // } else {
+                //     return this.equipments[0];
+                // }
 
-                    // try {
-                    //     console.log("JSON", JSON.parse(localStorage.equipment));
-                    //     return JSON.parse(localStorage.equipment);
-                    // }
-                    // catch (e) {
-                    //         console.log("not empty", localStorage.mod_id);
-                    //         return this.equipments[0];
-                    // }
+                return this.$store.getters.equip;
             },
 
             computedColor() {
-                try {
-                    if (Object.keys(this.$store.getters.colored).length > 0) {
-                        return this.$store.getters.colored;
-                    } else {
-                        return JSON.parse(localStorage.color);
-                    }
-                }
-                    catch (e) {
-                        // console.log("error Computed color - 379");
-                        return "";
-                    }
+                return this.$store.getters.colored;
+                // try {
+                //     if (Object.keys(this.$store.getters.colored).length > 0) {
+                //         return this.$store.getters.colored;
+                //     } else {
+                //         return JSON.parse(localStorage.color);
+                //     }
+                // }
+                //     catch (e) {
+                //         // console.log("error Computed color - 379");
+                //         return "";
+                //     }
 
             },
 
@@ -410,7 +411,7 @@
         watch: {
             $route(toR, fromR) {
                 fromR;
-                this.forceUpdate();
+                // this.forceUpdate();
                 this.id = toR.params.id;
                 location.reload();///костыль, так делать нельзя но по другому не получается
             },
@@ -567,7 +568,7 @@
 
             descriptionList() {
                 try {
-                    return this.equipment.description.split('\n');
+                    return this.computedEquipment.description.split('\n');
                 }
                 catch (e) {
                     console.log("selectModel split");
