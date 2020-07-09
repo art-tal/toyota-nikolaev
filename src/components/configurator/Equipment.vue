@@ -229,7 +229,7 @@
                         this.equipments = response.data;
 
                         // this.checkEquipment();
-                        console.log(this.equipments);
+                        // console.log(this.equipments);
                         this.getPrices();
                     })
                     .catch((error) => {
@@ -270,7 +270,7 @@
                 )
                     .then( (response) => {
                         this.prices = response.data;
-                        console.log(this.prices);
+                        // console.log(this.prices);
 
                         this.setPrice();
                     } )
@@ -335,7 +335,7 @@
                             return this.fontColor = '#202020';
                     }
                 } catch (e) {
-                    console.log( "Шрифты пролетели" );
+                    // console.log( "Error Шрифты пролетели" );
                 }
 
             },

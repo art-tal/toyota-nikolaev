@@ -114,12 +114,24 @@ export default new Vuex.Store ({
             state.totalCost = payload;
         },
 
-        setEquipment(state) {
-            state.equipmet = JSON.parse(localStorage.equipment);
+        setEquipment(state, equipment) {
+            if(equipment) {
+                console.log(equipment);
+                state.equipment = equipment;
+            } else {
+                state.equipment = JSON.parse(localStorage.equipment);
+            }
+
         },
 
-        setColor(state) {
-            state.color = JSON.parse(localStorage.color);
+        setColor(state, color) {
+            if(color) {
+                console.log(color);
+                state.color = color;
+            } else {
+                state.color = JSON.parse(localStorage.color);
+            }
+
         },
 
 
@@ -128,7 +140,9 @@ export default new Vuex.Store ({
     },
 
     actions: {
-
+        setColorAction({context}, color) {
+            context.commit("setColor", color);
+        },
     },
 
 

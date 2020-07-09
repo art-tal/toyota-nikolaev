@@ -767,12 +767,12 @@ route.beforeResolve( (to, from, next) => {
     }
     next();
     console.log(to, from, next);
-})
+});
 
 route.afterEach( (to, from) => {
     NProgress.done();
     console.log(to, from);
-})
+});
 
 export default route;
 

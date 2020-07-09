@@ -85,9 +85,8 @@
 
         computed: {
             get_mod_id() {
-                return this.mod_id;
-                // return this.$store.getters.equip.mod_id;
                 // return this.mod_id;
+                return this.$store.getters.equip.mod_id;
             },
         },
 
@@ -103,9 +102,6 @@
                       this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
                       this.colors[0].selected = true;
                       this.setColor(this.colors[0]);
-                  // this.selectedColor = this.colors[0];
-                  // localStorage.color = JSON.stringify( this.colors[0] );
-                  // this.$store.state.color = this.this.colors[0];
 
                   this.slides = $('#slides').width() / 3 * this.colors.length;
                   // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
@@ -146,7 +142,7 @@
                 console.log(color);
                 let index = this.colors.indexOf(color);
                 this.colors[index].selected = true;
-                this.$store.state.color = color;
+                this.$store.commit("setColor", color);
                 localStorage.color = JSON.stringify( color );
                 // console.log(key);
             },
