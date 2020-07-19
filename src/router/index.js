@@ -116,10 +116,12 @@ import BestPlanet from "../components/whyToyota/ecology/BestPlanet";
 import BetterLife from "../components/whyToyota/ecology/BetterLife";
 import JustBetter from "../components/whyToyota/ecology/JustBetter";
 import ISO from "../components/whyToyota/ecology/ISO";
-import ExclusiveProjects from "@/components/ToyotaInNikolaev/ExclusiveProjects";
-import ExclusiveCar from "@/components/ToyotaInNikolaev/ExclusiveCar";
+import ExclusiveProjects from "../components/ToyotaInNikolaev/ExclusiveProjects";
+import ExclusiveCar from "../components/ToyotaInNikolaev/ExclusiveCar";
 
-import NProgress from "nprogress";
+import Store from "./../store/store"
+
+// import NProgress from "nprogress";
 
 
 // import TheLookingAround from "@/components/cars/TheLookingAround";
@@ -763,14 +765,18 @@ const route = new VueRouter({
 
 route.beforeResolve( (to, from, next) => {
     if(to.name) {
-        NProgress.start();
+        // NProgress.start();
+        Store.commit("setShowPreload", true);
+
     }
     next();
     console.log(to, from, next);
 })
 
 route.afterEach( (to, from) => {
-    NProgress.done();
+    // NProgress.done();
+
+    // Store.commit("setShowPreload", false);
     console.log(to, from);
 })
 

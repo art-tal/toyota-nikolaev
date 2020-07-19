@@ -42,9 +42,9 @@ export default {
       },
     },
 
-    beforeCreate() {
-      this.showPreloader = true;
-    },
+    // beforeCreate() {
+    //   this.showPreloader = true;
+    // },
 
     mounted(){
         this.$store.state.showPreloader = false;

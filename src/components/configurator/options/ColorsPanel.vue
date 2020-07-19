@@ -56,13 +56,13 @@
 
         },
 
-        props: [
-            'mod_id',
-        ],
+        // props: [
+        //     'mod_id',
+        // ],
 
         data() {
             return {
-                // mod_id: 0,
+                mod_id: 0,
                 colors: [],
                 selectedColor: {},
                 x: 0,
@@ -75,34 +75,34 @@
         },
 
         created() {
+            // this.mod_id = localStorage.mod_id;
+            // setTimeout(() => {
+                this.mod_id = this.$store.getters.equip.mod_id;
+            // }, 100);
         },
 
         mounted() {
-            this.mod_id = localStorage.mod_id;
+            // setTimeout(this.getColors, 500);
             this.getColors();
         },
 
 
         computed: {
-            get_mod_id() {
-                return this.mod_id;
-                // return this.$store.getters.equip.mod_id;
-                // return this.mod_id;
-            },
+
         },
 
         methods: {
             getColors() {
               axios.get(
                   `http://lara.toyota.nikolaev.ua/ajax/mod_color`,
-                  {params: {id: this.get_mod_id} },//
+                  {params: {id: this.mod_id} },//
               )
               .then( (response) => {
                   this.colors = response.data;
                   console.log(this.colors);
-                      this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
-                      this.colors[0].selected = true;
-                      this.setColor(this.colors[0]);
+                  this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
+                  this.setColor(this.colors[0]);
+                      // this.colors[0].selected = true;
                   // this.selectedColor = this.colors[0];
                   // localStorage.color = JSON.stringify( this.colors[0] );
                   // this.$store.state.color = this.this.colors[0];
@@ -141,12 +141,13 @@
 
             // setColor(color, index) {
             setColor(color) {
-                color.selected = true;
                 this.colors.forEach( (c) => { c.selected = false} );
+                // color.selected = true;
                 console.log(color);
                 let index = this.colors.indexOf(color);
                 this.colors[index].selected = true;
-                this.$store.state.color = color;
+                // this.$store.state.color = color;
+                this.$store.commit("setColorDefault", color);
                 localStorage.color = JSON.stringify( color );
                 // console.log(key);
             },

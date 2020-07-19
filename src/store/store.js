@@ -17,6 +17,7 @@ export default new Vuex.Store ({
         maxPower: 0,
         interior: {},
         selectedAccessories: [],
+
         showInterior: false,
         showEquipment:false,
         showPreloader: true,
@@ -45,8 +46,10 @@ export default new Vuex.Store ({
             return 'http://lara.toyota.nikolaev.ua/storage/' + state.model.image;
         },
 
+        // equip() {
         equip(state) {
             return state.equipment;
+            // return JSON.parse(localStorage.equipment);
         },
 
         showEquip(state) {
@@ -98,6 +101,33 @@ export default new Vuex.Store ({
     },
 
     mutations: {
+        setModel(state, model) {
+            state.model = model;
+        },
+
+        setEquipment(state) {
+            state.equipmet = JSON.parse(localStorage.equipment);
+        },
+
+        setColor(state) {
+            state.color = JSON.parse(localStorage.color);
+        },
+        setColorDefault(state, color) {
+            state.color = color;
+        },
+
+        setWheels(state) {
+            state.wheels = JSON.parse(localStorage.wheels);
+        },
+
+        setEngineAndGear(state) {
+            state.engineAndGear = JSON.parse(localStorage.transmission);
+        },
+
+        setInterior(state) {
+            state.interior = JSON.parse(localStorage.interior);
+        },
+
         addAccessories(state, payload) {
             state.selectedAccessories.push(payload);
             localStorage.selectedAccessories = JSON.stringify(state.selectedAccessories);
@@ -110,16 +140,22 @@ export default new Vuex.Store ({
             localStorage.selectedAccessories = JSON.stringify(state.selectedAccessories);
         },
 
+        setShowInterior(state, show) {
+            state.showInterior = show;
+        },
+
+        setShowEquipment(state, show) {
+            state.showEquipment = show;
+        },
+
+        setShowPreload(state, show) {
+            state.showPreloader = show;
+        },
+
+
+
         recordTotalCost(state, payload) {
             state.totalCost = payload;
-        },
-
-        setEquipment(state) {
-            state.equipmet = JSON.parse(localStorage.equipment);
-        },
-
-        setColor(state) {
-            state.color = JSON.parse(localStorage.color);
         },
 
 

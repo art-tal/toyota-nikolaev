@@ -409,12 +409,11 @@
         },
 
         watch: {
-            $route(toR, fromR) {
-                fromR;
-                // this.forceUpdate();
-                this.id = toR.params.id;
-                location.reload();///костыль, так делать нельзя но по другому не получается
-            },
+            // $route(toR, fromR) {
+            //     console.log(fromR);
+            //     this.id = toR.params.id;
+            //     // location.reload();///костыль, так делать нельзя но по другому не получается
+            // },
 
             equipment() {
                 return JSON.parse(localStorage.equipment);
@@ -758,9 +757,9 @@
                 this.showVideo = !this.showVideo;
             },
 
-            forceRerender() {
-                this.renderComponent++;
-            },
+            // forceUpdate() {
+            //     this.renderComponent++;
+            // },
         }
     }
 </script>
