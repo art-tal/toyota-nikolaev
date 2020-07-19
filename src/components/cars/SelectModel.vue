@@ -308,10 +308,6 @@
             }
         },
 
-        // beforeCreate() {
-        //     NProgress.start();
-        // },
-
         created() {
             this.renderComponent = 0;
             this.id = this.$route.params.id;
@@ -417,13 +413,6 @@
 
             equipment() {
                 return JSON.parse(localStorage.equipment);
-
-                // try {
-                //     return JSON.parse(localStorage.equipment);
-                // }
-                // catch (e) {
-                //     return "";
-                // }
             },
 
             modelColor() {
@@ -461,7 +450,7 @@
 //////////////////////////////////////////////////////
                         this.modelTitle = this.model.name;
                         this.changeTitle();
-                        console.log(this.model);
+                        // console.log(this.model);
 
                         // this.getEquipment();
                     } )
@@ -486,19 +475,13 @@
                     this.equipments = response.data;
 
                     this.equipment = this.equipments[0];
-                    this.$store.state.equipment = this.equipment;
-                    localStorage.equipment = JSON.stringify( this.equipments[0] );
+                    this.$store.commit("setEquipment", this.equipment);
+                    // localStorage.equipment = JSON.stringify( this.equipments[0] );
                     localStorage.mod_id = this.equipment.mod_id;
                     this.getPrices();
-                    // this.checkEquipment();
-                    // if ( !this.equipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
-                    //     console.log("да");
-                    //     localStorage.color = "";
-                    //     this.$store.state.color = null;
-                    // }
 
                     this.equipmentTitle = this.equipment.mod_name;
-                    console.log(this.equipment);
+                    // console.log(this.equipment);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модификации");
@@ -515,23 +498,21 @@
                         this.equipments.forEach( equip => {
                             if ( equip.mod_id === equipFromJson.mod_id ) {
                                 this.equipment = equip;
-                                this.$store.state.equipment = equip;
+                                this.$store.commit("setEquipment", equip);
                                 return true;
                             }
                         });
                     }
                 } //else {
                 this.equipment = this.equipments[0];
-                this.$store.state.equipment = this.equipment;
+                this.$store.commit("setEquipment", this.equipment);
                 localStorage.equipment = JSON.stringify( this.equipment );
-                // localStorage.color = "";
-                // this.$store.state.color = null;
-                //}
 
 
             },
 
             getPrices() {
+                console.log(this.equipment.mod_id);
                 axios.get(
                     `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
                     {params: {id: this.equipment.mod_id}}
@@ -570,7 +551,7 @@
                     return this.computedEquipment.description.split('\n');
                 }
                 catch (e) {
-                    console.log("selectModel split");
+                    // console.log("error selectModel split");
                     // console.log(e);
                 }
 

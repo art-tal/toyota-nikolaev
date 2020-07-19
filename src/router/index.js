@@ -771,14 +771,14 @@ route.beforeResolve( (to, from, next) => {
     }
     next();
     console.log(to, from, next);
-})
+});
 
 route.afterEach( (to, from) => {
     // NProgress.done();
 
     // Store.commit("setShowPreload", false);
     console.log(to, from);
-})
+});
 
 export default route;
 

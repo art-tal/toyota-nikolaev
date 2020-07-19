@@ -157,7 +157,7 @@
                 .then( (response) => {
                     this.prices = response.data;
                     this.setPrice();
-                    console.log(this.prices);
+                    // console.log(this.prices);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки цен");
@@ -175,7 +175,7 @@
                     } );
                 } );
 
-                console.log(this.models);
+                // console.log(this.models);
             },
 
             isPrice(car) {
