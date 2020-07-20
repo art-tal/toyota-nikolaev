@@ -59,7 +59,11 @@
 
 <script>
     export default {
-        name: "GuaranteeMenu"
+        name: "GuaranteeMenu",
+
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
     }
 </script>
 

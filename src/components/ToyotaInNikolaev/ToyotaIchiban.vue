@@ -125,6 +125,10 @@
                 ],
             }
         },
+
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
     }
 </script>
 

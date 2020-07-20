@@ -117,6 +117,10 @@
             this.modelTitle = JSON.parse(localStorage.model).name;
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         components:{
             SubNavigation,
         }

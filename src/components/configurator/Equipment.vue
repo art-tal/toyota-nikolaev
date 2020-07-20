@@ -124,7 +124,6 @@
     import 'swiper/css/swiper.css'
     import {eventEmitter} from '../../main'
     import $ from "jquery";
-    // import $ from "jquery";
     // import {eventEmitter} from './../../app' //         for Laravel
 
 

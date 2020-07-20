@@ -433,6 +433,8 @@
         mounted () {
             let im = new Inputmask("+38 (999) 99-99-999");
             im.mask(document.getElementById('phone'));
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
         },
 
 

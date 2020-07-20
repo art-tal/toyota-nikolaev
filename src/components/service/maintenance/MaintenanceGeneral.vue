@@ -65,6 +65,10 @@
     export default {
         name: "MaintenanceGeneral",
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         metaInfo() {
             return {
                 title:  `Toyota Nikolaev | Технічне обслуговування автомобілів`,

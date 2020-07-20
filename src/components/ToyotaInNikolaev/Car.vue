@@ -245,6 +245,9 @@
                 const swiperThumbs = this.$refs.swiperThumbs.$swiper;
                 swiperTop.controller.control = swiperThumbs;
                 swiperThumbs.controller.control = swiperTop;
+
+                setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
             });
         },
 

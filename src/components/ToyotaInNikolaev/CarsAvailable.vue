@@ -83,6 +83,10 @@
             this.getCars();
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             getCars() {
                 axios.get(

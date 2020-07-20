@@ -46,21 +46,52 @@
                             :style="{'color': fontColored + '!important'}"
                         >
                             {{desc}}</li>
-<!--                        <li :style="{'color': fontColored + '!important'}">{{equipment.description}}</li>-->
+
                     </ul>
 
                     <div class="carPhoto col-xl-9 col-12">
-<!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + model.image" :alt="equipment.model_name_pivot">-->
                         <img :src="photo" :alt="computedEquipment.model_name_pivot">
                     </div>
                 </div>
 
-
-<!--                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">-->
                 <div class="carColors position-absolute">
-                    <colors-panel
-                            :mod_id="equipment.mod_id"
-                    ></colors-panel>
+                    <div class="carousel_wrapper d-flex justify-content-between">
+
+                        <button id="button-prev" class="btn" @click="prevSlide()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="slide_wrapper">
+                            <div id="slides" class="slides ">
+                                <div class="slide d-inline-block"
+                                     v-for="(color, key) in colors"
+                                     :key="key"
+                                >
+
+                                    <div
+                                            class="nav-item sample"
+                                            @click="setColor(color, key)"
+                                    >
+
+                                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
+                                             :alt="color.color_name"
+                                             :title="color.color_name + ')'"
+                                        >
+                                        <div class="check text-center" v-if="color.selected">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <button id="button-next" class="btn" @click="nextSlide()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
 
 
@@ -68,18 +99,12 @@
         </div>
 
         <div class="specifications row justify-content-center align-items-end">
-<!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedEquipment.equipPrice">-->
-<!--                <p>Від</p>-->
-<!--                <span class="h2 d-block font-weight-bolder">-->
-<!--                    {{computedEquipment.equipPrice | formattedPrice}}&#8372;-->
-<!--                </span>-->
 
-<!--            </div>-->
 
-            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="computedColor.min_price">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="selectedColor.min_price">
                 <p>Від</p>
                 <span class="h2 d-block font-weight-bolder">
-                    {{computedColor.min_price | formattedPrice}}&#8372;
+                    {{selectedColor.min_price | formattedPrice}}&#8372;
                 </span>
             </div>
 
@@ -221,14 +246,12 @@
     import axios from 'axios';
     import {eventEmitter} from "../../main";
     import Equipment from "../configurator/Equipment";
-    import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
     import formattedPrice from "../../filters/price_format";
-    // import NProgress from "nprogress";
+    import $ from "jquery";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
     // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
-    // import ColorsPanel from "./../configurator/options/ColorsPanel";//              for Laravel
     // import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
 
     export default {
@@ -236,7 +259,6 @@
 
         components: {
             Equipment,
-            ColorsPanel,
             SubNavigation,
         },
 
@@ -248,7 +270,6 @@
                 model: {},
                 showEquipment: true,
                 showInfo: false,
-                selectedColor: {},
                 equipments: [],
                 equipment: {},
                 modelColor: "#fff",
@@ -268,6 +289,14 @@
 
                 fontColor: "#202020",
 
+                colors: [],
+                selectedColor: {},
+                x: 0,
+                slides: 0,
+
+                mousePress: false,
+                mouseX: 0,
+                xNow: 0,
             }
         },
 
@@ -309,7 +338,7 @@
         },
 
         created() {
-            this.renderComponent = 0;
+            // this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
             this.getEquipment();
@@ -319,68 +348,31 @@
                 this.showEquipment = false;
                 this.changeTitle();
                 // console.log(this.computedEquipment);
-            }
-                );
-            try {
-                this.color = JSON.parse( localStorage.color );
-            }
-            catch (e) {
-                // console.log("error color - 333");
-                return "";
-            }
+            } );
 
         },
 
         mounted() {
             this.showEquipment = false;
-            // NProgress.done();
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
         },
 
 
 
         computed: {
             photo() {
-                return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
-                // console.log(this.$store.getters.colored);
-                // if (Object.keys(this.$store.getters.colored).length > 0) {
-                //     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
-                // } else {
-                //     try {
-                //         return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
-                //     }
-                //     catch (e) {
-                //         return "";
-                //     }
-                //
-                // }
+                return 'http://lara.toyota.nikolaev.ua/storage/' + this.selectedColor.preview;
             },
 
             computedEquipment() {
-                // if (localStorage.equipment) {
-                //     return JSON.parse(localStorage.equipment);
-                // } else if (Object.keys(this.$store.getters.equip).length > 0) {
-                //     return this.$store.getters.equip;
-                // } else {
-                //     return this.equipments[0];
-                // }
-
-                return this.$store.getters.equip;
+                return this.equipment;
+                // return this.$store.getters.equip;
             },
 
             computedColor() {
                 return this.$store.getters.colored;
-                // try {
-                //     if (Object.keys(this.$store.getters.colored).length > 0) {
-                //         return this.$store.getters.colored;
-                //     } else {
-                //         return JSON.parse(localStorage.color);
-                //     }
-                // }
-                //     catch (e) {
-                //         // console.log("error Computed color - 379");
-                //         return "";
-                //     }
-
+                // return this.selectedColor;
             },
 
             fontColored() {
@@ -405,29 +397,6 @@
         },
 
         watch: {
-            // $route(toR, fromR) {
-            //     console.log(fromR);
-            //     this.id = toR.params.id;
-            //     // location.reload();///костыль, так делать нельзя но по другому не получается
-            // },
-
-            equipment() {
-                return JSON.parse(localStorage.equipment);
-            },
-
-            modelColor() {
-                try {
-                    this.modelColor = JSON.parse( localStorage.color );
-                }
-                catch (e) {
-                    console.log("error model color watch - 431");
-
-                }
-                // this.modelColor = this.$store.getters.colored;
-                this.getFontColor();
-                return this.modelColor;
-            },
-
             showEquipment() {
                 return this.showEquipment;
             },
@@ -450,9 +419,6 @@
 //////////////////////////////////////////////////////
                         this.modelTitle = this.model.name;
                         this.changeTitle();
-                        // console.log(this.model);
-
-                        // this.getEquipment();
                     } )
                         .catch( (error) => {
                             console.log("Ошибка, не возможно загрузить доступные модели");
@@ -462,7 +428,6 @@
 
             choice() {
                 this.showEquipment = !this.showEquipment;
-
             },
 
             changeTitle() {
@@ -470,19 +435,22 @@
             },
 
             getEquipment() {
-                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
+                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod`,
+                    {params: {id: this.getID}})
                 .then( (response) => {
                     this.equipments = response.data;
-
                     this.equipment = this.equipments[0];
-                    this.$store.commit("setEquipment", this.equipment);
-                    // localStorage.equipment = JSON.stringify( this.equipments[0] );
-                    localStorage.mod_id = this.equipment.mod_id;
-                    this.getPrices();
-
-                    this.equipmentTitle = this.equipment.mod_name;
                     // console.log(this.equipment);
+                    /////////////////////////
+                    // localStorage.mod_id = this.equipment.mod_id;
+                    // localStorage.equipment = JSON.stringify( this.equipment );
+                    // this.$store.commit("setEquipment");
+/////////////////////////////////////////////
+                    this.equipmentTitle = this.equipment.mod_name;
+                    //
                 } )
+                    .then( () => {this.getPrices();} )
+                    .then( () => {this.getColors();} )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модификации");
                     console.log(error);
@@ -493,22 +461,26 @@
                 let equipFromJson = JSON.parse(localStorage.equipment);
                 console.log(equipFromJson);
 
-                if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
-                    if (Object.keys(equipFromJson) > 0) {
+                if (Object.keys(equipFromJson) > 0) {
+                    if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
+
                         this.equipments.forEach( equip => {
                             if ( equip.mod_id === equipFromJson.mod_id ) {
                                 this.equipment = equip;
-                                this.$store.commit("setEquipment", equip);
+                                localStorage.mod_id = this.equipment.mod_id;
+                                localStorage.equipment = JSON.stringify( this.equipment );
+                                this.$store.commit("setEquipment");
                                 return true;
                             }
                         });
+
                     }
-                } //else {
+                }
+
+
                 this.equipment = this.equipments[0];
-                this.$store.commit("setEquipment", this.equipment);
                 localStorage.equipment = JSON.stringify( this.equipment );
-
-
+                this.$store.commit("setEquipment");
             },
 
             getPrices() {
@@ -519,7 +491,7 @@
                 )
                     .then( (response) => {
                         this.prices = response.data;
-                        console.log(this.prices);
+                        console.log(response.data);
 
                         this.setPrice();
                     } )
@@ -557,8 +529,38 @@
 
             },
 
+            getColors() {
+                axios.get(
+                    `http://lara.toyota.nikolaev.ua/ajax/mod_color`,
+                    {params: {id: this.equipment.mod_id} },//
+                )
+                    .then( (response) => {
+                        this.colors = response.data;
+                        console.log(this.colors);
+                        this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
+                        this.setColor(this.colors[0]);
+
+                        this.slides = $('#slides').width() / 3 * this.colors.length;
+
+                    } )
+                    .catch( (error) => {
+                        console.log("Ошибка, не возможно загрузить доступные цвета");
+                        console.log(error);
+                    } )
+            },
+
+            setColor(color) {
+                this.colors.forEach( (c) => { c.selected = false} );
+                console.log(color.preview);
+                let index = this.colors.indexOf(color);
+                this.colors[index].selected = true;
+                this.selectedColor = color;
+                this.$store.commit("setColorDefault", color);
+                localStorage.color = JSON.stringify( color );
+                this.getFontColor();
+            },
+
             getFontColor() {
-                // console.log(this.computedColor.rgb);
                 try{
                 switch(this.computedColor.rgb.toLowerCase()){
                     case '#000000'.toLowerCase():
@@ -738,9 +740,40 @@
                 this.showVideo = !this.showVideo;
             },
 
+
+
+            prevSlide() {
+                this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
+                this.x = this.x - $('.slide_wrapper').width();
+                if ( this.x < 0 ) {
+                    if(this.colors.length % 3){
+                        this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.colors.length % 3));
+                        console.log(this.x);
+                    } else {
+                        this.x = this.slides - $('.slide_wrapper').width();
+                        console.log(this.x);
+                    }
+
+                }
+                $('#slides').css("transform", `translateX(-${this.x}px)`);
+            },
+
+            nextSlide() {
+                this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
+                this.x = this.x + $('.slide_wrapper').width();
+                console.log($('.slide_wrapper').width());
+                console.log(this.x , this.slides);
+                if ( this.x >= this.slides ) {
+                    this.x = 0;
+                }
+                $('#slides').css("transform", `translateX(-${this.x}px)`);
+            },
+
             // forceUpdate() {
             //     this.renderComponent++;
             // },
+
+
         }
     }
 </script>
@@ -828,6 +861,73 @@
                     margin-bottom: 15px;
                     overflow: visible !important;
 
+                    .carousel_wrapper {
+                        .slide_wrapper {
+                            overflow: hidden;
+                            width: 180px;
+                            .slides {
+                                white-space: nowrap;
+                                .slide {
+                                    position: relative;
+                                    margin: 10px;
+                                    .sample {
+                                        cursor: pointer;
+                                        margin: auto;
+                                        img {
+                                            width: 40px;
+                                            height: 40px;
+                                            border-radius: 50%;
+                                            border: 2px solid #cccccc;
+                                        }
+                                        .check {
+                                            color: red;
+                                            width: 15px;
+                                            height: 15px;
+                                            border-radius: 50%;
+                                            border: 1px solid #cccccc;
+                                            background-color: #fff;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                        }
+                                        &:hover,
+                                        &.active {
+                                            img {
+                                                box-shadow: 0 0 5px 2px #eeeeee;
+                                                transform: scale(1.1);
+                                                transition: all 500ms;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            /*flex: 6;*/
+
+                        }
+
+
+                        button.btn {
+                            align-self: center;
+                            align-content: center;
+                            /*flex: 1;*/
+                            width: 30px !important;
+                            height: 30px;
+                            box-sizing: border-box;
+                            display: inline-block;
+                            border-radius: 50%;
+                            background-color: rgba(255,255,255, 0.5);
+                            font-size: 1.9rem;
+                            color: #7a7a7a;
+                            &#button-prev {
+                                padding: 1px 10px 1px 6px;
+                            }
+                            &#button-next {
+                                padding: 1px 7px 1px 9px;
+                            }
+                        }
+
+
+                    }
                 }
             }
         }

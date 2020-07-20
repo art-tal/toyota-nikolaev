@@ -87,6 +87,10 @@
             // this.getColor();
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             getEquipment() {
                 axios.get(

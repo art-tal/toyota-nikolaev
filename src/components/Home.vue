@@ -135,6 +135,10 @@
             ],
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             goToConsult() {
                 this.$router.push({name: 'consultation'});
@@ -238,8 +242,8 @@
                         }
                     }
                     &:hover {
-                        -webkit-background-size: 110%;
-                        background-size: 110%;
+                        -webkit-background-size: 120%;
+                        background-size: 120%;
                         transition: 500ms linear 200ms;
                     }
                     &.new_car {

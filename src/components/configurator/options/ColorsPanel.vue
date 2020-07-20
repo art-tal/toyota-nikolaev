@@ -52,9 +52,6 @@
     export default {
         name: "ColorsPanel",
 
-        components: {
-
-        },
 
         // props: [
         //     'mod_id',
@@ -84,12 +81,12 @@
         mounted() {
             // setTimeout(this.getColors, 500);
             this.getColors();
-        },
-
-
-        computed: {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
 
         },
+
+
+
 
         methods: {
             getColors() {

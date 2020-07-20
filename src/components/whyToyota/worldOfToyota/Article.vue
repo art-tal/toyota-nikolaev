@@ -62,6 +62,10 @@
             this.getArticle();
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         computed: {
             photo() {
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.article.image;

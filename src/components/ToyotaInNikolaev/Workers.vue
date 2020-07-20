@@ -95,6 +95,10 @@
             this.getWorkers();
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             getWorkers() {
                 axios.get(

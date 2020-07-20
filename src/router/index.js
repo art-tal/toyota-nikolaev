@@ -121,10 +121,7 @@ import ExclusiveCar from "../components/ToyotaInNikolaev/ExclusiveCar";
 
 import Store from "./../store/store"
 
-// import NProgress from "nprogress";
 
-
-// import TheLookingAround from "@/components/cars/TheLookingAround";
 
 
 const route = new VueRouter({
@@ -748,37 +745,24 @@ const route = new VueRouter({
             component: Where,
         },
 
-        ////////////////////Заглушки//////////////////////////
-
-
-        // {
-        //     path: "/souvenir_products",
-        //     name: "SouvenirProducts",
-        //     component: SouvenirProducts,
-        // },
-
-
     ],
 
     mode: 'history'
 });
 
 route.beforeResolve( (to, from, next) => {
+    next();
     if(to.name) {
-        // NProgress.start();
         Store.commit("setShowPreload", true);
 
     }
-    next();
     console.log(to, from, next);
 });
 
-route.afterEach( (to, from) => {
-    // NProgress.done();
-
-    // Store.commit("setShowPreload", false);
-    console.log(to, from);
-});
+// route.afterEach( (to, from) => {
+//     Store.commit("setShowPreload", false);
+//     console.log(to, from);
+// });
 
 export default route;
 

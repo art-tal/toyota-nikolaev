@@ -43,6 +43,10 @@
     export default {
         name: "Guarantee",
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         metaInfo() {
             return {
                 title:  `Toyota Nikolaev | Гарантія якості технічного обслуговування Toyota`,

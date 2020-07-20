@@ -88,6 +88,10 @@
         created() {
             this.$router.push({name: "maintenance_general"});
         },
+
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
     }
 </script>
 

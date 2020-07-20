@@ -145,6 +145,10 @@
             eventEmitter.$on('checkAcc', () => { this.accessoriesCheck(); });
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         computed: {
             getSelectedAccessories() {
                 return this.$store.getters.accessories;

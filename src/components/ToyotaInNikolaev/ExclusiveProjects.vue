@@ -101,6 +101,10 @@
             this.getExclusiveProjects();
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             getExclusiveProjects() {
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/exclusives`)

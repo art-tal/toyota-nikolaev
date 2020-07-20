@@ -137,7 +137,11 @@
 
 <script>
     export default {
-        name: "SubMenuToBuyers"
+        name: "SubMenuToBuyers",
+
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
     }
 </script>
 

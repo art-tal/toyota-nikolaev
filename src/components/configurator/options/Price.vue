@@ -151,6 +151,8 @@
             }
 
             // this.$store.state.wheels = JSON.parse( localStorage.wheel);
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
 
         },
 

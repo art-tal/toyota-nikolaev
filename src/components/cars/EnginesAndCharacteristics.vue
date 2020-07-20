@@ -375,6 +375,8 @@
             this.getEquipment();
             this.getEngine();
             this.showEquipment = false;
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
         },
 
         computed: {

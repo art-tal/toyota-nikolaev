@@ -46,6 +46,8 @@
         mounted() {
             this.$store.state.showInterior = true;
             console.log('showInterior = ' + this.$store.state.showInterior);
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
         },
         beforeDestroy() {
             this.$store.state.showInterior = false;

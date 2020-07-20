@@ -259,6 +259,8 @@
 
         mounted() {
             $(window).on('scroll', () => {this.checkParallax();} );
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
         },
 
         methods: {

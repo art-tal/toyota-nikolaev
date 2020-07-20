@@ -200,6 +200,10 @@
     export default {
         name: "Lubricants",
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         metaInfo() {
             return {
                 title:  `Toyota Nikolaev | Оригінальні мастильні матеріали Toyota`,

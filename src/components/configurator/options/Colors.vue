@@ -50,6 +50,10 @@
             this.getColors();
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         watch: {
             mod_id() {
                 this.getColors();

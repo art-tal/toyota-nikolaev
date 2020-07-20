@@ -142,6 +142,10 @@
             this.getBrochures();
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             getBrochures() {
                 axios.get(

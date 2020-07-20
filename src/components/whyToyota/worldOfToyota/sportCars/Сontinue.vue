@@ -106,6 +106,10 @@ import 'swiper/css/swiper.css'
             }
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             goNext(path) {
                 this.$router.push({name: path});

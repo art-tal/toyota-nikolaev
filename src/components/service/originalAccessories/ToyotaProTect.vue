@@ -17,7 +17,11 @@
 
 <script>
     export default {
-        name: "ToyotaProTect"
+        name: "ToyotaProTect",
+
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
     }
 </script>
 

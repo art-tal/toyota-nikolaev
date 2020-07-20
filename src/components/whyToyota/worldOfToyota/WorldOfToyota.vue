@@ -127,8 +127,10 @@
             }
         },
 
-        created() {
-            // this.$router.push({name: "news"});
+
+
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
         },
     }
 </script>

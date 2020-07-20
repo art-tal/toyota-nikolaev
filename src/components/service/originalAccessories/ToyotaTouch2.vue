@@ -253,6 +253,10 @@
             }
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
     metaInfo() {
         return {
             title:  `Toyota Nikolaev | Мультимедійна система Toyota Touch 2`,

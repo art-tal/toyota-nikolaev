@@ -106,6 +106,10 @@
             this.$router.push({name: 'step_1'});
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             closeConsult() {
                 // eventEmitter.$emit('close');

@@ -197,6 +197,8 @@
 
         mounted() {
             this.showOption = true;
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
         },
 
         computed: {

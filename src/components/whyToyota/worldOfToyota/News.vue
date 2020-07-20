@@ -407,6 +407,10 @@
             this.getNews();
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         computed: {
             filtered() {
                 if ( this.news === 0 && this.newcomers === 0 && this.stocks === 0 ) {

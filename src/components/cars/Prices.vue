@@ -304,7 +304,7 @@
     import SubNavigation from "./../cars/SubNavigation";
     import formattedPrice from "../../filters/price_format";
     import $ from "jquery";
-
+    //
     // import {eventEmitter} from "./../../app";//                                     for Laravel
     // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
     // import ColorsPanel from "./../configurator/options/ColorsPanel";//              for Laravel
@@ -409,6 +409,8 @@
             console.log('get Engine');
             this.getEngine();
             this.showEquipment = false;
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
         },
 
         computed: {

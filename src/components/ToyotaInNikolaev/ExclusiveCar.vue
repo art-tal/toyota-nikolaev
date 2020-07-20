@@ -77,6 +77,8 @@
 
         mounted() {
             this.imageSize();
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+
         },
 
         methods: {

@@ -60,6 +60,10 @@
             this.getWheels(this.mod_id);
         },
 
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        },
+
         methods: {
             getWheels(id) {
                 axios.get(
