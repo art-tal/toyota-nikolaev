@@ -46,10 +46,6 @@ export default {
     //   this.showPreloader = true;
     // },
 
-    mounted(){
-
-    }
-
 
 }
 </script>
@@ -72,9 +68,6 @@ export default {
 
    h1 {font-family: toyotadisplay_bd,Arial,Helvetica,sans-serif;}
 
-/*.preloader { display: none; }*/
-/*body:not(.app-mounted) .spinner {*/
-/*    display: block;*/
-/*}*/
+
 
 </style>

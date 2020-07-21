@@ -7,7 +7,16 @@
 
                 <div class="button_block row">
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-                        <button class="btn btn-light">Нові автомобілі</button>
+                        <router-link
+                                tag="button"
+                                class="btn btn-light"
+                                exact
+                                active-class="active"
+                                to="/cars_available"
+                        >
+                            <!--                            <i class="fas fa-phone"></i>-->
+                            <span>Авто в наявності</span>
+                        </router-link>
                     </div>
 
 <!--                    <br/>-->
@@ -27,7 +36,16 @@
 
 <!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-                        <button class="btn btn-light">Автомобілі з пробігом</button>
+                        <router-link
+                                tag="button"
+                                class="btn btn-light"
+                                exact
+                                active-class="active"
+                                to="/exclusive_projects"
+                        >
+                            <!--                            <i class="fas fa-phone"></i>-->
+                            <span>Екслюзивні проекти</span>
+                        </router-link>
                     </div>
 
 <!--                    <br/>-->
@@ -242,9 +260,10 @@
                         }
                     }
                     &:hover {
-                        -webkit-background-size: 120%;
-                        background-size: 120%;
+                        -webkit-background-size: 130%;
+                        background-size: 130%;
                         transition: 500ms linear 200ms;
+                        cursor: pointer;
                     }
                     &.new_car {
                         background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/new-c-hr-960x416_tcm-3046-1769744.jpg);

@@ -366,8 +366,8 @@
             },
 
             computedEquipment() {
-                return this.equipment;
-                // return this.$store.getters.equip;
+                // return this.equipment;
+                return this.$store.getters.equip;
             },
 
             computedColor() {
