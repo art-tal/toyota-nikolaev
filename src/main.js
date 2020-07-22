@@ -11,7 +11,6 @@ import 'swiper/css/swiper.css'
 import store from "./store/store"
 import router from './router/index'
 import App from './App.vue'
-// import VueCarousel from 'vue-carousel';
 
 
 
@@ -19,8 +18,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export const eventEmitter = new Vue();
-
-// let inputmask = require('inputmask');
 
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
@@ -31,7 +28,7 @@ Vue.use(VueMeta, {
   refreshOnceOnNavigation: true
 });
 Vue.use(Inputmask);
-Vue.use(VueAwesomeSwiper, );
+Vue.use(VueAwesomeSwiper);
 
 
 Vue.config.productionTip = false;

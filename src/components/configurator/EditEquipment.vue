@@ -94,8 +94,7 @@
         methods: {
             getEquipment() {
                 axios.get(
-                    'http://lara.toyota.nikolaev.ua/ajax/id_mod',
-                    {params: {id: this.id}},
+                    `http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.getModelId}`
                 )
                 .then( (response) => {
                     this.equipments = response.data;

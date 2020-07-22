@@ -209,7 +209,7 @@
                             &:hover {
                                 background-color: #E50000;
                                 color: #f0f0f0;
-                                border: none;
+                                border-color: #E50000;
                                 transition: all 1s;
                             }
                         }

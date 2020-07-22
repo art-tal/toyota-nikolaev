@@ -21,8 +21,7 @@ export default {
                     this.pageBody = response.data[0];
                     // console.log(this.pageBody.body);
 
-                    // let startP = /<p>/gi;
-                    // let endP = /<\/p>/gi;
+
                     while (this.pageBody.body.includes("<p>") ||
                             this.pageBody.body.includes("</p>") ||
                             this.pageBody.body.includes("&lt;") ||
@@ -40,8 +39,7 @@ export default {
                         this.pageBody.body = this.pageBody.body.replace("&raquo;", "»");
                     }
 
-                    // console.log(this.pageBody.body);
-                    // this.changeBody();
+
                 } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки тела страницы");

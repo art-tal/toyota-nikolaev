@@ -1,7 +1,7 @@
 <template>
 <!--    <main>-->
     <main v-html="pageBody.body">
-<!--        <div></div>-->
+
 
 <!--        <header class="container-fluid">-->
 <!--            <h1 class="text-center">ЮРИДИЧНА ІНФОРМАЦІЯ-->
@@ -65,6 +65,7 @@
 <!--            <div class="p">ПІІ «Тойота-Україна» зберігає за собою право періодично вносити зміни та доповнення до цих умов та положень залежно від необхідності. Просимо вас час від часу відвідувати цю сторінку для відстеження змін.</div>-->
 <!--        </div>-->
     </main>
+<!--    </main>-->
 </template>
 
 <script>
@@ -126,57 +127,66 @@
 </script>
 
 <style lang="scss" scoped>
+/*<style scoped>*/
     @import '../../styles/variables';
 
     * {
         margin: 0;
-        /*padding: 0;*/
         color: $font_color;
+        /*color: red;*/
+        /*font-size: 3rem !important;*/
     }
+
+
     
     main {
-        header.container-fluid {
-            @include header-xl;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-hybrid-logo-1600x900_tcm-3046-1092790.jpg);
-            h1 {
-                color: #FFFFFF;
-                h2 {
+
+            header.container-fluid {
+                @include header-xl;
+                background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-hybrid-logo-1600x900_tcm-3046-1092790.jpg);
+                h1 {
                     color: #FFFFFF;
+                    h2 {
+                        color: #FFFFFF;
+                    }
                 }
             }
-        }
 
-        .body.container {
-            margin: 68px auto;
-            h3 {
-                font-size: 2.2rem;
-                font-weight: bolder;
-                margin-bottom: 24px;
-                text-align: center;
-            }
+            .body.container {
+                margin: 68px auto;
+                h3 {
+                    font-size: 2.2rem;
+                    font-weight: bolder;
+                    margin-bottom: 24px;
+                    text-align: center;
+                }
 
-            h4 {
-                font-size: 1.8rem;
-                font-weight: bold;
-                margin: 60px 0 30px;
-            }
+                h4 {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    margin: 60px 0 30px;
+                }
 
-            .p {
-                font-size: 1.4rem;
-                color: #595D60;
-                margin-bottom: 30px;
-            }
 
-            ul {
-                margin-left: 20px;
-                font-size: 1.4rem;
-                padding: 0;
-                li {
+
+                .p {
+                    font-size: 1.4rem;
                     color: #595D60;
-                    margin-bottom: 10px;
+                    margin-bottom: 30px;
+                }
+
+                ul {
+                    margin-left: 20px;
+                    font-size: 1.4rem;
+                    padding: 0;
+                    li {
+                        color: #595D60;
+                        margin-bottom: 10px;
+                    }
                 }
             }
-        }
+
+
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
