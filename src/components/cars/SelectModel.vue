@@ -247,9 +247,14 @@
     import {eventEmitter} from "../../main";
     import Equipment from "../configurator/Equipment";
     import SubNavigation from "./../cars/SubNavigation";
+    import MixinSelectModel from "../../mixins/mixinSelectModel";
+
+
+
     // import formattedPrice from "../../filters/price_format";
     // import $ from "jquery";
-    import MixinSelectModel from "../../mixins/mixinSelectModel";
+
+
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
     // import Equipment from "./../../components/configurator/Equipment";//            for Laravel

@@ -137,6 +137,7 @@
 
     // import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
     // import Price from "./../../components/configurator/options/Price";//                 for Laravel
+
     import ToResult from "./../../components/configurator/options/ToResult";//           for Laravel
 
     export default {

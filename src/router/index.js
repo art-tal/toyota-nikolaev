@@ -757,6 +757,7 @@ route.beforeResolve( (to, from, next) => {
 
     }
     console.log(to, from, next);
+    window.scrollTo(pageXOffset, 0);
 });
 
 // route.afterEach( (to, from) => {

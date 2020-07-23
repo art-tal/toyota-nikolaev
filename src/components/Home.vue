@@ -167,9 +167,9 @@
                 this.$router.push({name: 'consultation'});
             },
 
-            goToService() {
-                this.$router.push({name: 'service'});
-            },
+            // goToService() {
+            //     this.$router.push({name: 'service'});
+            // },
 
             goToHybrid() {
                 // this.$router.push({params: 'https://hybrid.toyota.ua/'});

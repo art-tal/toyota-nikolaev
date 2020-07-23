@@ -328,16 +328,17 @@
     import axios from 'axios';
     import {eventEmitter} from "../../main";
     import Equipment from "../configurator/Equipment";
-    // import ColorsPanel from "../configurator/options/ColorsPanel";
     import SubNavigation from "./../cars/SubNavigation";
-    // import formattedPrice from "../../filters/price_format";
-    // import $ from "jquery";
     import MixinSelectModel from "../../mixins/mixinSelectModel";
 
-    //
+
+    // import formattedPrice from "../../filters/price_format";
+    // import $ from "jquery";
+
+
+
     // import {eventEmitter} from "./../../app";//                                     for Laravel
     // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
-    // import ColorsPanel from "./../configurator/options/ColorsPanel";//              for Laravel
     // import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
 
     export default {
