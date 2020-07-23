@@ -56,7 +56,8 @@
                     </div>
                 </div>
 
-                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">
+                <div class="carColors position-absolute">
+<!--                <div class="carColors col-xl-2 col-lg-3 col-md-12 col-12">-->
 <!--                    <colors-panel-->
 <!--                            :mod_id="equipment.mod_id"-->
 <!--                    ></colors-panel>-->
@@ -75,7 +76,7 @@
 
                                     <div
                                             class="nav-item sample"
-                                            @click="setColor(color, key)"
+                                            @click="setColor(color)"
                                     >
 
                                         <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
@@ -561,7 +562,6 @@
                         this.equipment = this.equipments[0];
                     } )
                     .then( () => {
-
                         if ( this.computedEquipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
                             this.equipment = this.computedEquipment;
                         } else {
@@ -576,7 +576,7 @@
                         localStorage.mod_id = this.equipment.mod_id;
 
                         this.equipmentTitle = this.equipment.mod_name;
-                        console.log(this.equipment);
+                        // console.log(this.equipment);
                     } )
                     .then( () => {this.getColors();} )
                     .catch( (error) => {
@@ -763,7 +763,7 @@
     * {
         margin: 0;
         padding: 0;
-        color: $font_color;
+        //color: $font_color;
     }
 
     .selectModel {
@@ -834,84 +834,85 @@
                 }
 
                 .carColors{
-                    width: 240px;
-                    position: absolute;
-                    padding: 0;
-                    bottom: 0;
-                    right: 0;
-                    z-index: 10;
-                    /*align-self: flex-end;*/
-                    margin-bottom: 15px;
-                    overflow: visible !important;
+                    @include car-colors;
+                    /*width: 240px;*/
+                    /*position: absolute;*/
+                    /*padding: 0;*/
+                    /*bottom: 0;*/
+                    /*right: 0;*/
+                    /*z-index: 10;*/
+                    /*!*align-self: flex-end;*!*/
+                    /*margin-bottom: 15px;*/
+                    /*overflow: visible !important;*/
 
-                    .carousel_wrapper {
-                        .slide_wrapper {
-                            overflow: hidden;
-                            width: 180px;
-                            .slides {
-                                /*width: 180px;*/
-                                white-space: nowrap;
-                                .slide {
-                                    position: relative;
-                                    margin: 7px;
-                                    .sample {
-                                        cursor: pointer;
-                                        margin: auto;
-                                        img {
-                                            width: 40px;
-                                            height: 40px;
-                                            border-radius: 50%;
-                                            border: 2px solid #cccccc;
-                                        }
-                                        .check {
-                                            color: red;
-                                            width: 15px;
-                                            height: 15px;
-                                            border-radius: 50%;
-                                            border: 1px solid #cccccc;
-                                            background-color: #fff;
-                                            position: absolute;
-                                            top: 0;
-                                            left: 0;
-                                        }
-                                        &:hover,
-                                        &.active {
-                                            img {
-                                                box-shadow: 0 0 5px 2px #eeeeee;
-                                                transform: scale(1.1);
-                                                transition: all 500ms;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            /*flex: 6;*/
+                    /*.carousel_wrapper {*/
+                    /*    .slide_wrapper {*/
+                    /*        overflow: hidden;*/
+                    /*        width: 180px;*/
+                    /*        .slides {*/
+                    /*            !*width: 180px;*!*/
+                    /*            white-space: nowrap;*/
+                    /*            .slide {*/
+                    /*                position: relative;*/
+                    /*                margin: 10px;*/
+                    /*                .sample {*/
+                    /*                    cursor: pointer;*/
+                    /*                    margin: auto;*/
+                    /*                    img {*/
+                    /*                        width: 40px;*/
+                    /*                        height: 40px;*/
+                    /*                        border-radius: 50%;*/
+                    /*                        border: 2px solid #cccccc;*/
+                    /*                    }*/
+                    /*                    .check {*/
+                    /*                        color: red;*/
+                    /*                        width: 15px;*/
+                    /*                        height: 15px;*/
+                    /*                        border-radius: 50%;*/
+                    /*                        border: 1px solid #cccccc;*/
+                    /*                        background-color: #fff;*/
+                    /*                        position: absolute;*/
+                    /*                        top: 0;*/
+                    /*                        left: 0;*/
+                    /*                    }*/
+                    /*                    &:hover,*/
+                    /*                    &.active {*/
+                    /*                        img {*/
+                    /*                            box-shadow: 0 0 5px 2px #eeeeee;*/
+                    /*                            transform: scale(1.1);*/
+                    /*                            transition: all 500ms;*/
+                    /*                        }*/
+                    /*                    }*/
+                    /*                }*/
+                    /*            }*/
+                    /*        }*/
+                    /*        !*flex: 6;*!*/
 
-                        }
-
-
-                        button.btn {
-                            align-self: center;
-                            align-content: center;
-                            /*flex: 1;*/
-                            width: 30px !important;
-                            height: 30px;
-                            box-sizing: border-box;
-                            display: inline-block;
-                            border-radius: 50%;
-                            background-color: rgba(255,255,255, 0.5);
-                            font-size: 1.9rem;
-                            color: #7a7a7a;
-                            &#button-prev {
-                                padding: 1px 10px 1px 6px;
-                            }
-                            &#button-next {
-                                padding: 1px 7px 1px 9px;
-                            }
-                        }
+                    /*    }*/
 
 
-                    }
+                    /*    button.btn {*/
+                    /*        align-self: center;*/
+                    /*        align-content: center;*/
+                    /*        !*flex: 1;*!*/
+                    /*        width: 30px !important;*/
+                    /*        height: 30px;*/
+                    /*        box-sizing: border-box;*/
+                    /*        display: inline-block;*/
+                    /*        border-radius: 50%;*/
+                    /*        background-color: rgba(255,255,255, 0.5);*/
+                    /*        font-size: 1.9rem;*/
+                    /*        color: #7a7a7a;*/
+                    /*        &#button-prev {*/
+                    /*            padding: 1px 10px 1px 6px;*/
+                    /*        }*/
+                    /*        &#button-next {*/
+                    /*            padding: 1px 7px 1px 9px;*/
+                    /*        }*/
+                    /*    }*/
+
+
+                    /*}*/
                 }
             }
         }

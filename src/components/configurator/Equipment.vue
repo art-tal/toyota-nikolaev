@@ -123,7 +123,7 @@
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
     import {eventEmitter} from '../../main'
-    import $ from "jquery";
+    // import $ from "jquery";
     // import {eventEmitter} from './../../app' //         for Laravel
 
 
@@ -158,9 +158,9 @@
                 xNow: 0,
 
                 swiperOption: {
-                    slidesPerView: 3,
+                    slidesPerView: 3,//3
                     spaceBetween: 20,
-                    slidesPerGroup: 3,
+                    slidesPerGroup: 1,//3
                     loop: true,
                     loopFillGroupWithBlank: true,
                     clickable: true,
@@ -362,32 +362,32 @@
             //     console.log( slide_wrapper, $(".slide").width());
             // },
 
-            prevSlide() {
-                this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;//
-                this.x = this.x - $('.slide_wrapper').width();
-                if ( this.x < 0 ) {
-                    if(this.equipments.length % 3){
-                        this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.equipments.length % 3));
-                        console.log(this.x);
-                    } else {
-                        this.x = this.slides - $('.slide_wrapper').width();
-                        console.log(this.x);
-                    }
-
-                }
-                $('#slides').css("transform", `translateX(-${this.x}px)`);
-            },
-
-            nextSlide() {
-                this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;
-                this.x = this.x + $('.slide_wrapper').width();
-                console.log($('.slide_wrapper').width());
-                console.log(this.x , this.slides);
-                if ( this.x >= this.slides ) {
-                    this.x = 0;
-                }
-                $('#slides').css("transform", `translateX(-${this.x}px)`);
-            },
+            // prevSlide() {
+            //     this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;//
+            //     this.x = this.x - $('.slide_wrapper').width();
+            //     if ( this.x < 0 ) {
+            //         if(this.equipments.length % 3){
+            //             this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.equipments.length % 3));
+            //             console.log(this.x);
+            //         } else {
+            //             this.x = this.slides - $('.slide_wrapper').width();
+            //             console.log(this.x);
+            //         }
+            //
+            //     }
+            //     $('#slides').css("transform", `translateX(-${this.x}px)`);
+            // },
+            //
+            // nextSlide() {
+            //     this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;
+            //     this.x = this.x + $('.slide_wrapper').width();
+            //     console.log($('.slide_wrapper').width());
+            //     console.log(this.x , this.slides);
+            //     if ( this.x >= this.slides ) {
+            //         this.x = 0;
+            //     }
+            //     $('#slides').css("transform", `translateX(-${this.x}px)`);
+            // },
         }
     }
 </script>

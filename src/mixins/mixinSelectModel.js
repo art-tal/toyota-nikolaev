@@ -118,7 +118,7 @@ export default {
 
                 .then( () => {this.getPrices();} )
                 .then( () => {this.getColors();} )
-                // .then( () => {this.getEngine();} )
+                .then( () => {this.getEngine();} )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модификации");
                     console.log(error);
@@ -231,15 +231,24 @@ export default {
                     this.colors = response.data;
                     console.log(this.colors);
                     this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
-                    this.setColor(this.colors[0]);
-
-                    this.slides = $('#slides').width() / 3 * this.colors.length;
-
+                    // this.setColor(this.colors[0]);
                 } )
+                .then( () => {this.slides = $('#slides').width() / 3 * this.colors.length;} )
+                .then( () => { this.checkColor() } )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные цвета");
                     console.log(error);
                 } )
+        },
+
+        checkColor() {
+            this.colors.forEach( color => {
+                if(this.computedColor.color_id === color.color_id) {
+                    console.log("yes");
+                    return this.setColor(color);
+                }
+            });
+            this.setColor(this.colors[0]);
         },
 
         setColor(color) {
