@@ -212,6 +212,10 @@
                 // return this.$store.getters.modelImage;
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
             },
+
+            computedEquipment() {
+                return this.$store.getters.equip;
+            },
         },
 
         watch: {
@@ -235,31 +239,6 @@
                         console.log("Ошибка, не возможно загрузить доступные модификации");
                         console.log(error);
                     });
-            },
-
-            checkEquipment() {
-                // if(this.$store.getters.equip.mod_id) {
-                //     this.equipments.forEach( equip => {
-                //        if ( equip.mod_id === this.$store.getters.equip.mod_id ) {
-                //            this.equipment = equip;
-                //            localStorage.equipment = JSON.stringify(equip);
-                //            return "";
-                //        }
-                //     });
-                // } else
-                let equipFromJson = JSON.parse(localStorage.equipment);
-                console.log(equipFromJson);
-
-                if (equipFromJson.mod_id) {
-                    this.equipments.forEach( equip => {
-                        if ( equip.mod_id === equipFromJson.mod_id ) {
-                            this.equipment = equip;
-                            this.$store.state.equipment = equip;
-                        }
-                    });
-                } else {
-                    this.activated(this.equipments[0]);
-                }
             },
 
             getPrices() {
@@ -294,6 +273,33 @@
                 console.log(this.equipments);
                 this.checkEquipment();
 
+            },
+
+            checkEquipment() {
+                // if(this.$store.getters.equip.mod_id) {
+                //     this.equipments.forEach( equip => {
+                //        if ( equip.mod_id === this.$store.getters.equip.mod_id ) {
+                //            this.equipment = equip;
+                //            localStorage.equipment = JSON.stringify(equip);
+                //            return "";
+                //        }
+                //     });
+                // } else
+                // let equipFromJson = JSON.parse(localStorage.equipment);
+                // console.log(equipFromJson);
+
+                if (this.computedEquipment.mod_id) {
+                // if (equipFromJson.mod_id) {
+                    this.equipments.forEach( equip => {
+                        if ( equip.mod_id === this.computedEquipment.mod_id ) {
+                        // if ( equip.mod_id === equipFromJson.mod_id ) {
+                            this.equipment = equip;
+                            this.$store.state.equipment = equip;
+                        }
+                    });
+                } else {
+                    this.activated(this.equipments[0]);
+                }
             },
 
             activated(equipment) {

@@ -30,16 +30,16 @@
                 </div>
 
                 <div class="map col-md-6 col-12 text-right">
-                    <a href="#app" class="up">Нагору</a>
-                    <div class="mapSite">
-                        <a href="#">
-                            <span>Карта сайту</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <div class="mapSiteDown">
+                    <a href="" class="up" @click.prevent="top()">Нагору</a>
+<!--                    <div class="mapSite">-->
+<!--                        <a href="#">-->
+<!--                            <span>Карта сайту</span>-->
+<!--                            <i class="fas fa-chevron-down"></i>-->
+<!--                        </a>-->
+<!--                        <div class="mapSiteDown">-->
 
-                        </div>
-                    </div>
+<!--                        </div>-->
+<!--                    </div>-->
 
                 </div>
             </div>
@@ -134,7 +134,13 @@
 
 <script>
     export default {
-        name: "Footer"
+        name: "Footer",
+
+        methods: {
+            top() {
+                window.scrollTo(pageXOffset, 0);
+            },
+        },
     }
 </script>
 
