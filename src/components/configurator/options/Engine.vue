@@ -93,10 +93,10 @@
                                         <!--                                        <li>Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км</li>-->
                                     </ul>
                                     <footer class="row">
-                                        <a href="#" class="more_info col-lg-5 col-12">
-                                            <i class="far fa-file"></i>
-                                            <span>Більше інформації</span>
-                                        </a>
+<!--                                        <a href="#" class="more_info col-lg-5 col-12">-->
+<!--                                            <i class="far fa-file"></i>-->
+<!--                                            <span>Більше інформації</span>-->
+<!--                                        </a>-->
                                         <button @click="applyTransmission(trans)"
                                                 class="btn btn-outline-danger col-lg-5 col-12 text-center">
                                             <span class="align-middle">Прийняти</span>

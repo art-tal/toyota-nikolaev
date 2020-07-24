@@ -75,15 +75,11 @@ export default {
                 console.log("error model color watch - 431");
 
             }
-            // this.modelColor = this.$store.getters.colored;
             this.getFontColor();
             return this.modelColor;
         },
 
-        // equipment() {
-        //     return this.$store.getters.equip;
-        //
-        // },
+
     },
 
     methods: {
@@ -101,7 +97,6 @@ export default {
                 return this.computedEquipment.description.split('\n');
             }
             catch (e) {
-                // console.log("error selectModel split");
                 // console.log(e);
             }
 
@@ -187,7 +182,6 @@ export default {
         },
 
         getEngine() {
-            // console.log('try get Engine');
             axios.get(
                 'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',//?id=15',//
                 {params: {id: this.id_equip} },

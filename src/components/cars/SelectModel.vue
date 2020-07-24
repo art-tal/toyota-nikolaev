@@ -245,8 +245,8 @@
 <script>
     import axios from 'axios';
     import {eventEmitter} from "../../main";
-    import Equipment from "../configurator/Equipment";
-    import SubNavigation from "./../cars/SubNavigation";
+    // import Equipment from "../configurator/Equipment";
+    // import SubNavigation from "./../cars/SubNavigation";
     import MixinSelectModel from "../../mixins/mixinSelectModel";
 
 
@@ -257,8 +257,8 @@
 
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
-    // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
-    // import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
+    import Equipment from "./../../components/configurator/Equipment";//            for Laravel
+    import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
 
     export default {
         name: "SelectModel",

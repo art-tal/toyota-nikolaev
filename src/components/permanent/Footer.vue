@@ -115,10 +115,18 @@
                             <li>Україна, Миколаїв 54028,</li>
                             <li>Херсонське шосе, 109</li>
                             <li>
-                                <a href="">
+                                <router-link
+                                             tag="a"
+                                             exact
+                                             to="/where"
+                                >
                                     <i class="fas fa-map-marker-alt"></i>
                                     <span>Відкрити карту</span>
-                                </a>
+                                </router-link>
+<!--                                <a href="">-->
+<!--                                    <i class="fas fa-map-marker-alt"></i>-->
+<!--                                    <span>Відкрити карту</span>-->
+<!--                                </a>-->
                             </li>
                         </ul>
                     </article>

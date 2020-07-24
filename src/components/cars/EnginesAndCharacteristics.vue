@@ -202,9 +202,9 @@
                                             <h3>{{trans.horspower}} к.с.</h3>
                                         </div>
 
-                                        <div class="field text-center">
-                                            <button class="btn btn-light">Подивитись всі характеристики</button>
-                                        </div>
+<!--                                        <div class="field text-center">-->
+<!--                                            <button class="btn btn-light">Подивитись всі характеристики</button>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
 
@@ -305,8 +305,8 @@
 <script>
     import axios from 'axios';
     import {eventEmitter} from "../../main";
-    import Equipment from "../configurator/Equipment";
-    import SubNavigation from "./../cars/SubNavigation";
+    // import Equipment from "../configurator/Equipment";
+    // import SubNavigation from "./../cars/SubNavigation";
     import MixinSelectModel from "../../mixins/mixinSelectModel";
 
 
@@ -316,8 +316,8 @@
 
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
-    // import Equipment from "./../../components/configurator/Equipment";//            for Laravel
-    // import SubNavigation from "./../../components/cars/SubNavigation";//
+    import Equipment from "./../../components/configurator/Equipment";//            for Laravel
+    import SubNavigation from "./../../components/cars/SubNavigation";//
 
     export default {
         name: "EnginesAndCharacteristics",

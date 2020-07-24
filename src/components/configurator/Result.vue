@@ -8,7 +8,7 @@
                     <div class="wrap col-10">
                         <h2 class="carModel font-weight-bold">{{getModel.name}}</h2>
                         <h3 class="carEquipment font-weight-bold">{{getEquipment.mod_name}}
-                        <span class="bodyType"> - {{getEquipment.body_type}}</span>
+                        <span class="bodyType"> {{getEquipment.body_type}}</span>
                         </h3>
                     </div>
                     <div class="wrap_button col-2 text-right">
@@ -45,7 +45,7 @@
                                 <span v-if="getTransmission.drive">(Передній привод)</span>
                                 <span v-if="getTransmission.wd">(Повний привод)</span>
                             </h4>
-                            <div class="col-5 text-right">{{getColor.min_price | formattedPrice}}&#8372;</div>
+<!--                            <div class="col-5 text-right">{{getColor.min_price | formattedPrice}}&#8372;</div>-->
                         </div>
                     </section>
 
@@ -141,11 +141,10 @@
 <!--                            </li>-->
                         </ul>
                         
-                        <div class="result_prise row">
-                            <p class="col-7">Загалом</p>
-                            <h4 class="col-5 font-weight-bold text-right">{{getColor.min_price | formattedPrice}}&#8372;</h4>
-<!--                            <h4 class="col-5 font-weight-bold text-right">{{getTotalCost | formattedPrice}}&#8372;</h4>-->
-                        </div>
+<!--                        <div class="result_prise row">-->
+<!--                            <p class="col-7">Загалом</p>-->
+<!--                            <h4 class="col-5 font-weight-bold text-right">{{getColor.min_price | formattedPrice}}&#8372;</h4>                            -->
+<!--                        </div>-->
 
                         <p class="attention">
                             Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою). Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.

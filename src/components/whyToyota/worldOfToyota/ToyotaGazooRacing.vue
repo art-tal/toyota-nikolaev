@@ -346,7 +346,7 @@
                     position: relative;
                     width: 100%;
                     height: 100%;
-                    background-image: url(https://img.youtube.com/vi/AmvjLpmK844/sddefault.jpg);
+                    background-image: url(../../../img/toyota-yaris-wrc-2018-01.jpg);
                     background-repeat: no-repeat;
                     background-position: center center;
                     -webkit-background-size: cover;
