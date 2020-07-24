@@ -13,6 +13,7 @@ export default {
             equipments: [],
             equipment: {},
 
+
             modelTitle: "",
             equipmentTitle: "",
 
