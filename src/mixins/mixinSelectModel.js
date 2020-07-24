@@ -183,7 +183,7 @@ export default {
 
         getEngine() {
             axios.get(
-                'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',//?id=15',//
+                'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
                 {params: {id: this.id_equip} },
             )
                 .then( (response) => {
@@ -195,7 +195,6 @@ export default {
                     if (!this.transmission) {
                         this.transmission = {
                             eng_name: "none",
-                            // id: null,
                         }
                     }
                 } )
