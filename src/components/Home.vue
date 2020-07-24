@@ -66,9 +66,12 @@
                 </div>
             </div>
 
+
+
             <div class="col-lg-8 col-12 links text-left row">
 
                 <article class="col-12 block_link new_car" @click="goToConsult()">
+                    <div class="background"></div>
                     <header>
                         <span class="text-uppercase">ЗАМОВИТИ ОНЛАЙН КОНСУЛЬТАЦІЮ</span>
                         <h1>Щодо придбання нових автомобілів</h1>
@@ -84,6 +87,7 @@
                         class="col-md-6 col-12 block_link service"
                         to="/service"
                 >
+                    <div class="background"></div>
                         <header>
                             <span>ЗВ’ЯЗАТИСЯ З ОФІЦІЙНИМ ДИЛЕРОМ </span>
                             <h1 class="text-uppercase">СЕРВІСНІ СТАНЦІЇ TOYOTA ПРАЦЮЮТЬ</h1>
@@ -104,6 +108,7 @@
 
 
                     <article class="col-md-6 col-12 block_link hybrid" @click="goToHybrid">
+                        <div class="background"></div>
                         <header>
                             <span>Твоя наступна Toyota </span>
                             <h1>Самозарядні бензиново-електричні гібриди Toyota</h1>
@@ -162,9 +167,9 @@
                 this.$router.push({name: 'consultation'});
             },
 
-            goToService() {
-                this.$router.push({name: 'service'});
-            },
+            // goToService() {
+            //     this.$router.push({name: 'service'});
+            // },
 
             goToHybrid() {
                 // this.$router.push({params: 'https://hybrid.toyota.ua/'});
@@ -223,12 +228,19 @@
                     padding: 0;
                     width: 100%;
                     height: calc(50vh - 35px);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    -webkit-background-size: cover;
-                    background-size: cover;
                     position: relative;
+                    overflow: hidden;
                     /*align-content: flex-end;*/
+                    .background {
+                        width: 100%;
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        /*-webkit-background-size: 100%;*/
+                        /*background-size: 100%;*/
+                        -webkit-background-size: cover;
+                        background-size: cover;
+                    }
                     header {
                         position: absolute;
                         bottom: 0;
@@ -260,19 +272,32 @@
                         }
                     }
                     &:hover {
-                        -webkit-background-size: 130%;
-                        background-size: 130%;
-                        transition: 500ms linear 200ms;
-                        cursor: pointer;
+                        .background {
+                            /*-webkit-background-size: 130%;*/
+                            /*background-size: 130%;*/
+                            transform: scale(1.3);
+                            transition: all 1s;
+                            cursor: pointer;
+                        }
+
                     }
                     &.new_car {
-                        background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/new-c-hr-960x416_tcm-3046-1769744.jpg);
+                        .background {
+                            background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/new-c-hr-960x416_tcm-3046-1769744.jpg);
+                        }
+
                     }
                     &.service {
-                        background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/480x416-Toyota-Service-2_tcm-3046-1771998.jpg);
+                        .background {
+                            background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/480x416-Toyota-Service-2_tcm-3046-1771998.jpg);
+                        }
+
                     }
                     &.hybrid {
-                        background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-hybrid-480x416-new_tcm-3046-1772000.png);
+                        .background {
+                            background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-hybrid-480x416-new_tcm-3046-1772000.png);
+                        }
+
                     }
                 }
 

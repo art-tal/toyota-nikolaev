@@ -45,7 +45,7 @@
                                 <span v-if="getTransmission.drive">(Передній привод)</span>
                                 <span v-if="getTransmission.wd">(Повний привод)</span>
                             </h4>
-                            <div class="col-5 text-right">{{price | formattedPrice}}&#8372;</div>
+                            <div class="col-5 text-right">{{getColor.min_price | formattedPrice}}&#8372;</div>
                         </div>
                     </section>
 
@@ -66,7 +66,7 @@
                             </p>
                         </header>
                         <p class="info row font-weight-bold">
-                            Кольори та колеса
+                            Кольори
                         </p>
                         <p class="info row">
                             {{getColor.color_name}}
@@ -89,7 +89,8 @@
                             <h1 class="col-12">Підсумкова ціна</h1>
                         </header>
                         <div class="row">
-                            <p class="font-weight-bold text-right">{{getTotalCost | formattedPrice}}&#8372;</p>
+                            <p class="font-weight-bold text-right">{{getColor.min_price | formattedPrice}}&#8372;</p>
+<!--                            <p class="font-weight-bold text-right">{{getTotalCost | formattedPrice}}&#8372;</p>-->
                         </div>
 
                     </section>
@@ -100,7 +101,7 @@
 
             <aside class="col-lg-4 col-12" v-if="showAside">
                 <div class="header text-left">
-                    <h2 class="font-weight-bold">{{getTotalCost | formattedPrice}}&#8372;</h2>
+                    <h2 class="font-weight-bold">{{getColor.min_price | formattedPrice}}&#8372;</h2>
                     <p>Ціна</p>
                     <i class="fas fa-times" @click="openBlock()"></i>
                 </div>
@@ -111,10 +112,20 @@
                     <div class="body">
                         <ul class="links">
                             <li>
-                                <a href.prevent="#" target="_blank">
+<!--                                <a href.prevent="#" target="_blank">-->
+<!--                                    <i class="far fa-file-alt"></i>-->
+<!--                                    <span>Завантажити PDF</span>-->
+<!--                                </a>-->
+
+                                <router-link
+                                        tag="a"
+                                        exact
+                                        active-class="active"
+                                        to="/download_brochures"
+                                >
                                     <i class="far fa-file-alt"></i>
-                                    <span>Завантажити PDF</span>
-                                </a>
+                                    <span>Завантажити брошуру</span>
+                                </router-link>
                             </li>
                             <li>
                                 <a href.prevent="#" @click.prevent="openConsult()">
@@ -122,28 +133,29 @@
                                     <span>Онлайн консультація</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href.prevent="#" target="_blank">
-                                    <i class="fas fa-print"></i>
-                                    <span>Надрукувати</span>
-                                </a>
-                            </li>
+<!--                            <li>-->
+<!--                                <a href.prevent="#" target="_blank">-->
+<!--                                    <i class="fas fa-print"></i>-->
+<!--                                    <span>Надрукувати</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
                         </ul>
                         
                         <div class="result_prise row">
                             <p class="col-7">Загалом</p>
-                            <h4 class="col-5 font-weight-bold text-right">{{getTotalCost | formattedPrice}}&#8372;</h4>
+                            <h4 class="col-5 font-weight-bold text-right">{{getColor.min_price | formattedPrice}}&#8372;</h4>
+<!--                            <h4 class="col-5 font-weight-bold text-right">{{getTotalCost | formattedPrice}}&#8372;</h4>-->
                         </div>
 
                         <p class="attention">
                             Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою). Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.
                         </p>
 
-                        <div class="save row">
-                            <p class="col-8">Ваш Toyota-код <i class="fas fa-info-circle"></i></p>
-                            <h4 class="col-4 font-weight-bold text-right">{{code}}</h4>
-                            <button class="btn btn-danger">Зберегти</button>
-                        </div>
+<!--                        <div class="save row">-->
+<!--                            <p class="col-8">Ваш Toyota-код <i class="fas fa-info-circle"></i></p>-->
+<!--                            <h4 class="col-4 font-weight-bold text-right">{{code}}</h4>-->
+<!--                            <button class="btn btn-danger">Зберегти</button>-->
+<!--                        </div>-->
 
                         <footer>
                             <p>

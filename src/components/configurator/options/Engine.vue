@@ -10,19 +10,19 @@
 <!--                                        <span class="bodyType font-weight-normal">{{car.bodyType}}</span>-->
                                     </h3>
                                 </div>
-                                <div class="col-lg-12 col-md-3 col-12">
-                                    <a
-                                            class="nav-link ml-2 mr-2 editEquipment"
-                                            @click="goToEquipment()"
-                                    >
-                                        <i class="fas fa-sync-alt"></i>
-                                        <span>Змінити комплектацію</span>
-                                        <!--                        <span class="sr-only">(current)</span>-->
-                                    </a>
-
-<!--                                    <a href="#" class="">-->
+<!--                                <div class="col-lg-12 col-md-3 col-12">-->
+<!--                                    <a-->
+<!--                                            class="nav-link ml-2 mr-2 editEquipment"-->
+<!--                                            @click="goToEquipment()"-->
+<!--                                    >-->
+<!--                                        <i class="fas fa-sync-alt"></i>-->
+<!--                                        <span>Змінити комплектацію</span>-->
+<!--                                        &lt;!&ndash;                        <span class="sr-only">(current)</span>&ndash;&gt;-->
 <!--                                    </a>-->
-                                </div>
+
+<!--&lt;!&ndash;                                    <a href="#" class="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--                                </div>-->
                             </div>
 
                         </header>

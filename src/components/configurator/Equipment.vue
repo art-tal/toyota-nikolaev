@@ -123,7 +123,7 @@
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
     import {eventEmitter} from '../../main'
-    import $ from "jquery";
+    // import $ from "jquery";
     // import {eventEmitter} from './../../app' //         for Laravel
 
 
@@ -158,9 +158,9 @@
                 xNow: 0,
 
                 swiperOption: {
-                    slidesPerView: 3,
+                    slidesPerView: 3,//3
                     spaceBetween: 20,
-                    slidesPerGroup: 3,
+                    slidesPerGroup: 1,//3
                     loop: true,
                     loopFillGroupWithBlank: true,
                     clickable: true,
@@ -212,6 +212,10 @@
                 // return this.$store.getters.modelImage;
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
             },
+
+            computedEquipment() {
+                return this.$store.getters.equip;
+            },
         },
 
         watch: {
@@ -235,31 +239,6 @@
                         console.log("Ошибка, не возможно загрузить доступные модификации");
                         console.log(error);
                     });
-            },
-
-            checkEquipment() {
-                // if(this.$store.getters.equip.mod_id) {
-                //     this.equipments.forEach( equip => {
-                //        if ( equip.mod_id === this.$store.getters.equip.mod_id ) {
-                //            this.equipment = equip;
-                //            localStorage.equipment = JSON.stringify(equip);
-                //            return "";
-                //        }
-                //     });
-                // } else
-                let equipFromJson = JSON.parse(localStorage.equipment);
-                console.log(equipFromJson);
-
-                if (equipFromJson.mod_id) {
-                    this.equipments.forEach( equip => {
-                        if ( equip.mod_id === equipFromJson.mod_id ) {
-                            this.equipment = equip;
-                            this.$store.state.equipment = equip;
-                        }
-                    });
-                } else {
-                    this.activated(this.equipments[0]);
-                }
             },
 
             getPrices() {
@@ -294,6 +273,33 @@
                 console.log(this.equipments);
                 this.checkEquipment();
 
+            },
+
+            checkEquipment() {
+                // if(this.$store.getters.equip.mod_id) {
+                //     this.equipments.forEach( equip => {
+                //        if ( equip.mod_id === this.$store.getters.equip.mod_id ) {
+                //            this.equipment = equip;
+                //            localStorage.equipment = JSON.stringify(equip);
+                //            return "";
+                //        }
+                //     });
+                // } else
+                // let equipFromJson = JSON.parse(localStorage.equipment);
+                // console.log(equipFromJson);
+
+                if (this.computedEquipment.mod_id) {
+                // if (equipFromJson.mod_id) {
+                    this.equipments.forEach( equip => {
+                        if ( equip.mod_id === this.computedEquipment.mod_id ) {
+                        // if ( equip.mod_id === equipFromJson.mod_id ) {
+                            this.equipment = equip;
+                            this.$store.state.equipment = equip;
+                        }
+                    });
+                } else {
+                    this.activated(this.equipments[0]);
+                }
             },
 
             activated(equipment) {
@@ -356,32 +362,32 @@
             //     console.log( slide_wrapper, $(".slide").width());
             // },
 
-            prevSlide() {
-                this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;//
-                this.x = this.x - $('.slide_wrapper').width();
-                if ( this.x < 0 ) {
-                    if(this.equipments.length % 3){
-                        this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.equipments.length % 3));
-                        console.log(this.x);
-                    } else {
-                        this.x = this.slides - $('.slide_wrapper').width();
-                        console.log(this.x);
-                    }
-
-                }
-                $('#slides').css("transform", `translateX(-${this.x}px)`);
-            },
-
-            nextSlide() {
-                this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;
-                this.x = this.x + $('.slide_wrapper').width();
-                console.log($('.slide_wrapper').width());
-                console.log(this.x , this.slides);
-                if ( this.x >= this.slides ) {
-                    this.x = 0;
-                }
-                $('#slides').css("transform", `translateX(-${this.x}px)`);
-            },
+            // prevSlide() {
+            //     this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;//
+            //     this.x = this.x - $('.slide_wrapper').width();
+            //     if ( this.x < 0 ) {
+            //         if(this.equipments.length % 3){
+            //             this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.equipments.length % 3));
+            //             console.log(this.x);
+            //         } else {
+            //             this.x = this.slides - $('.slide_wrapper').width();
+            //             console.log(this.x);
+            //         }
+            //
+            //     }
+            //     $('#slides').css("transform", `translateX(-${this.x}px)`);
+            // },
+            //
+            // nextSlide() {
+            //     this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;
+            //     this.x = this.x + $('.slide_wrapper').width();
+            //     console.log($('.slide_wrapper').width());
+            //     console.log(this.x , this.slides);
+            //     if ( this.x >= this.slides ) {
+            //         this.x = 0;
+            //     }
+            //     $('#slides').css("transform", `translateX(-${this.x}px)`);
+            // },
         }
     }
 </script>
