@@ -349,8 +349,10 @@
 
         created() {
             // this.renderComponent = 0;
+            console.log("1");
             this.id = this.$route.params.id;
             this.getModel();
+            console.log("4");
             this.getEquipment();
 
             eventEmitter.$on('selectedEquipment',
@@ -427,6 +429,8 @@
 ///////////////////////////////////////////////////////ЗАГЛУШКА//
                         this.getVideo();
 //////////////////////////////////////////////////////
+                        console.log("2");
+
                         this.modelTitle = this.model.name;
                         this.changeTitle();
                     } )

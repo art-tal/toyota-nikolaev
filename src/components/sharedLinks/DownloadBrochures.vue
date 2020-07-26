@@ -14,7 +14,7 @@
             </header>
 
             <div class="body row">
-                <h2 class="col-12 text-center">Ви можете завантатажити їх у форматі PDF</h2>
+                <h2 class="col-12 text-center">Ви можете завантажити їх у форматі PDF</h2>
 
                 <div class="col-3" v-for="(doc, key) in brochures" :key="key">
                     <div class="card">

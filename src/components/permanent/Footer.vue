@@ -134,7 +134,7 @@
             </div>
 
 
-            <div class="row w-100 py-4 mx-0 justify-content-center bg-light">© 2019 Тойота Центр Миколаїв «КиТ-Т» — офіційний дилер Тойота в Україні</div>
+            <div class="row w-100 py-4 mx-0 justify-content-center bg-light">© 2020 Тойота Центр Миколаїв «КиТ-Т» — офіційний дилер Тойота в Україні</div>
         </div>
 
     </footer>

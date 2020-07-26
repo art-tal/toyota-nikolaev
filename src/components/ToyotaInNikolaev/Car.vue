@@ -134,7 +134,14 @@
                         (050) 692-11-11
                     </p>
                     <footer>
-                        <button class="btn btn-danger">Надіслати заявку</button>
+<!--                        <button class="btn btn-danger">Надіслати заявку</button>-->
+                        <router-link class="btn btn-danger"
+                                     tag="button"
+                                     exact
+                                     to="/consultation/step_1">
+                            Надіслати заявку
+                        </router-link>
+
                     </footer>
                 </article>
             </div>

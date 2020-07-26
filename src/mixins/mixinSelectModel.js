@@ -91,6 +91,8 @@ export default {
 
         changeTitle() {
             this.equipmentTitle = this.computedEquipment.mod_name;
+            console.log("3");
+
         },
 
         descriptionList() {
@@ -110,6 +112,8 @@ export default {
                     this.equipments = response.data;
                     this.equipment = this.equipments[0];
                     this.equipmentTitle = this.equipment.mod_name;
+                    console.log("5");
+
                 } )
 
                 .then( () => {this.getPrices();} )
@@ -124,6 +128,8 @@ export default {
         checkEquipment() {
             let equipFromJson = JSON.parse(localStorage.equipment);
             console.log(equipFromJson);
+            console.log("8");
+
 
             if (Object.keys(equipFromJson) > 0) {
                 if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
@@ -139,16 +145,18 @@ export default {
                     });
 
                 }
+            } else {
+                this.equipment = this.equipments[0];
+                localStorage.equipment = JSON.stringify( this.equipment );
+                this.$store.commit("setEquipment");
             }
 
 
-            this.equipment = this.equipments[0];
-            localStorage.equipment = JSON.stringify( this.equipment );
-            this.$store.commit("setEquipment");
+
         },
 
         getPrices() {
-            console.log(this.equipment.mod_id);
+            // console.log(this.equipment.mod_id);
             axios.get(
                 `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
                 {params: {id: this.equipment.mod_id}}
@@ -156,6 +164,7 @@ export default {
                 .then( (response) => {
                     this.prices = response.data;
                     console.log(response.data);
+                    console.log("6");
 
                     this.setPrice();
                 } )
@@ -168,6 +177,7 @@ export default {
         setPrice() {
             let keysPrice = Object.keys(this.prices);
             console.log(keysPrice);
+            console.log("7");
 
             this.equipments.forEach( (equip) => {
                 keysPrice.forEach( (pr) => {
@@ -226,6 +236,8 @@ export default {
                     console.log(this.colors);
                     this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
                     // this.setColor(this.colors[0]);
+                    console.log("9");
+
                 } )
                 .then( () => {this.slides = $('#slides').width() / 3 * this.colors.length;} )
                 .then( () => { this.checkColor() } )
@@ -236,13 +248,20 @@ export default {
         },
 
         checkColor() {
+            console.log("10");
+            let findColor = false;
+
             this.colors.forEach( color => {
                 if(this.computedColor.color_id === color.color_id) {
                     console.log("yes");
-                    return this.setColor(color);
+                    this.setColor(color);
+                    findColor = true;
                 }
             });
-            this.setColor(this.colors[0]);
+            if ( !findColor ) {
+                this.setColor(this.colors[0]);
+            }
+
         },
 
         setColor(color) {
