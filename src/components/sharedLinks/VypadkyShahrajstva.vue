@@ -1,48 +1,62 @@
 <template>
     <main>
-        <header class="container-fluid">
-            <h1 class="text-center">Шановні клієнти
-                <h2 class="text-center">Перевіряйте інформацію щодо розіграшу авто</h2>
-            </h1>
-        </header>
-        
-        <div class="body container text-left">
-            <h3>У зв`язку з тим, що кількість випадків шахрайства за допомогою смс розсилок та мережі Інтернет постійно зростає, просимо Вас бути пильними та уважними.</h3>
+        <div v-html="pageBody.body"></div>
 
-            <h3>Ще раз підтверджуємо, що вся інформація, в тому числі і про акційні пропозиції, опублікована на сайтах:</h3>
+<!--        <header class="container-fluid">-->
+<!--            <h1 class="text-center">Шановні клієнти-->
+<!--                <h2 class="text-center">Перевіряйте інформацію щодо розіграшу авто</h2>-->
+<!--            </h1>-->
+<!--        </header>-->
+<!--        -->
+<!--        <div class="body container text-left">-->
+<!--            <h3>У зв`язку з тим, що кількість випадків шахрайства за допомогою смс розсилок та мережі Інтернет постійно зростає, просимо Вас бути пильними та уважними.</h3>-->
 
-            <ul>
-                <li><a href="http://www.ukr-autocenter.com/" target="_blank">http://www.ukr-autocenter.com/</a></li>
-                <li><a href="http://www.ukr-autoclub.com/" target="_blank">http://www.ukr-autoclub.com/</a></li>
-                <li><a href="http://www.dealer-toyota.com.ua/" target="_blank">http://www.dealer-toyota.com.ua/</a></li>
-                <li><a href="http://www.toyota-delivery.com.ua/" target="_blank">http://www.toyota-delivery.com.ua/</a></li>
-                <li><a href="http://www.toyota-drive.com.ua/" target="_blank">http://www.toyota-drive.com.ua/</a></li>
-                <li><a href="http://www.toyota-desire.com.ua/" target="_blank">http://www.toyota-desire.com.ua/</a></li>
-                <li><a href="http://www.toyota-samid.com.ua" target="_blank">http://www.toyota-samid.com.ua</a></li>
-            </ul>
+<!--            <h3>Ще раз підтверджуємо, що вся інформація, в тому числі і про акційні пропозиції, опублікована на сайтах:</h3>-->
 
-                <h3>не має ніякого відношення до ПІІ «Тойота-Україна» або уповноважених дилерів Toyota в Україні.</h3>
+<!--            <ul>-->
+<!--                <li><a href="http://www.ukr-autocenter.com/" target="_blank">http://www.ukr-autocenter.com/</a></li>-->
+<!--                <li><a href="http://www.ukr-autoclub.com/" target="_blank">http://www.ukr-autoclub.com/</a></li>-->
+<!--                <li><a href="http://www.dealer-toyota.com.ua/" target="_blank">http://www.dealer-toyota.com.ua/</a></li>-->
+<!--                <li><a href="http://www.toyota-delivery.com.ua/" target="_blank">http://www.toyota-delivery.com.ua/</a></li>-->
+<!--                <li><a href="http://www.toyota-drive.com.ua/" target="_blank">http://www.toyota-drive.com.ua/</a></li>-->
+<!--                <li><a href="http://www.toyota-desire.com.ua/" target="_blank">http://www.toyota-desire.com.ua/</a></li>-->
+<!--                <li><a href="http://www.toyota-samid.com.ua" target="_blank">http://www.toyota-samid.com.ua</a></li>-->
+<!--            </ul>-->
 
-                <p>У разі отримання будь-якого смс, в якому Вам пропонують перерахувати кошти або надіслати Ваші персональні дані з метою приймання участі в розіграші або будь-яких інших заходах, в яких фігурує бренд Toyotа, радимо Вам:       - перевірити інформацію про акції та маркетингові заходи офіційної дилерської мережі Toyota в Україні на сайті
-                    <a href="https://www.toyota.ua/" target="_blank">www.toyota.ua</a>, а також на сайтах офіційних дилерів Toyota в Україні у разі, якщо ви постраждали від дій шахраїв, безвідкладно звертайтесь до відділу поліції.</p>
+<!--                <h3>не має ніякого відношення до ПІІ «Тойота-Україна» або уповноважених дилерів Toyota в Україні.</h3>-->
 
-                <h3>Також хочемо звернути Вашу увагу на те, що:
-                </h3>
+<!--                <p>У разі отримання будь-якого смс, в якому Вам пропонують перерахувати кошти або надіслати Ваші персональні дані з метою приймання участі в розіграші або будь-яких інших заходах, в яких фігурує бренд Toyotа, радимо Вам:       - перевірити інформацію про акції та маркетингові заходи офіційної дилерської мережі Toyota в Україні на сайті-->
+<!--                    <a href="https://www.toyota.ua/" target="_blank">www.toyota.ua</a>, а також на сайтах офіційних дилерів Toyota в Україні у разі, якщо ви постраждали від дій шахраїв, безвідкладно звертайтесь до відділу поліції.</p>-->
 
-                <ul>
-                    <li>інформація про всі дилерські центри Toyota в Україні міститься на сайті за посиланням</li>
-                    <li>всі дилерські центри Toyota в Україні мають стаціонарний номер телефону, перевіряти необхідно саме за ним, а не за мобільними номерами </li>
-                    <li>якщо ви свідомо не брали участі у конкурсі чи опитуванні, де пропонувався автомобіль в якості приза, виграш автомобіля є підозрілим </li>
-                    <li>вимоги або пропозиції негайно/протягом декількох годин переказати гроші на рахунки невідомих осіб без належно оформлених платіжних документів є підозрілими</li>
-                </ul>
+<!--                <h3>Також хочемо звернути Вашу увагу на те, що:-->
+<!--                </h3>-->
 
-        </div>
+<!--                <ul>-->
+<!--                    <li>інформація про всі дилерські центри Toyota в Україні міститься на сайті за посиланням</li>-->
+<!--                    <li>всі дилерські центри Toyota в Україні мають стаціонарний номер телефону, перевіряти необхідно саме за ним, а не за мобільними номерами </li>-->
+<!--                    <li>якщо ви свідомо не брали участі у конкурсі чи опитуванні, де пропонувався автомобіль в якості приза, виграш автомобіля є підозрілим </li>-->
+<!--                    <li>вимоги або пропозиції негайно/протягом декількох годин переказати гроші на рахунки невідомих осіб без належно оформлених платіжних документів є підозрілими</li>-->
+<!--                </ul>-->
+
+<!--        </div>-->
     </main>
 </template>
 
 <script>
+    import PageBody from "../../mixins/mixinPages"
+
     export default {
         name: "VypadkyShahrajstva",
+
+        mixins: [
+            PageBody
+        ],
+
+        data() {
+            return {
+                id: 42,
+            }
+        },
 
         metaInfo() {
             return {
@@ -77,9 +91,9 @@
             }
         },
 
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        },
+        // mounted() {
+        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        // },
     }
 </script>
 
@@ -91,7 +105,7 @@
         padding: 0;
     }
 
-    main {
+    main ::v-deep div {
         header.container-fluid {
             @include header-xl;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header-1600x900_tcm-3046-712523.jpg);
@@ -124,7 +138,7 @@
                 }
             }
 
-            p {
+            .p {
                 font-size: 1.4rem;
                 color: #595D60;
                 margin-bottom: 24px;
@@ -138,7 +152,7 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-lg;
                 h1 {
@@ -150,7 +164,7 @@
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-md;
                 h1 {
@@ -161,7 +175,7 @@
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-sm;
                 h1 {
@@ -180,7 +194,7 @@
                     margin-bottom: 20px;
                 }
 
-                p {
+                .p {
                     margin-bottom: 15px;
                     margin-top: 20px;
                 }
@@ -189,7 +203,7 @@
     }
 
     @media (max-width: 575.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-xs;
                 h1 {
@@ -208,7 +222,7 @@
                     margin-bottom: 20px;
                 }
 
-                p {
+                .p {
                     margin-bottom: 15px;
                     margin-top: 20px;
                 }

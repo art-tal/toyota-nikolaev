@@ -149,7 +149,7 @@
         text-align: left;
     }
 
-    main.container[data-v-192454f2] ::v-deep .wrap {
+    main.container ::v-deep .wrap {
 
             header {
                 margin: 50px 0;
@@ -255,7 +255,7 @@
 
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main.container {
+        main.container ::v-deep div {
             header {
                 margin: 50px 0;
                 h1 {
@@ -276,7 +276,7 @@
     }
 
     @media (max-width: 576px) {
-        main.container {
+        main.container ::v-deep div {
             header {
                 margin: 30px 0;
                 h1 {

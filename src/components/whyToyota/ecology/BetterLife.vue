@@ -37,43 +37,45 @@
                 <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
         </header>
+        <div v-html="pageBody.body"></div>
 
-        <div class="body container text-left">
-            <h5>Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету, тож мусимо залишити її в кращому стані, ніж отримали. У цьому розділі йдеться про зусилля, яких Toyota докладає для формування майбутнього суспільства в гармонії з природою.</h5>
+<!--        <div class="body container text-left">-->
+<!--            <h5>Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету, тож мусимо залишити її в кращому стані, ніж отримали. У цьому розділі йдеться про зусилля, яких Toyota докладає для формування майбутнього суспільства в гармонії з природою.</h5>-->
 
-            <blockquote>
-                <p>"Лише продовжуючи бути лідером у царині захисту навколишнього середовища, ми зможемо досягти успіху."</p>
+<!--            <blockquote>-->
+<!--                <p>"Лише продовжуючи бути лідером у царині захисту навколишнього середовища, ми зможемо досягти успіху."</p>-->
 
-                <cite>Дідьє Лерой, виконавчий віце-президент TMC</cite>
-            </blockquote>
+<!--                <cite>Дідьє Лерой, виконавчий віце-президент TMC</cite>-->
+<!--            </blockquote>-->
 
-            <h2>Підвищення обізнаності</h2>
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <p>Аби досягти мети зі створення кращого світу для дітей, слід роз'яснити їм важливість проблем довкілля. Тож це - один із основних напрямів нашої роботи. Паралельно ми підвищуємо поінформованість щодо екологічної проблематики наших працівників, а також членів територіальних громад, поряд з якими ми працюємо. Як ми це робимо? Для цього у нас є екологічна кампанія "Зелений місяць" еко-акція "Купив автомобіль? - Посади дерево". У цьому розділі ви дізнаєтесь про те, що поєднує усі ці дуже різні елементи на шляху до досягнення нашої мети з поширення знань.</p>
-                </div>
-                <div class="col-md-6 col-12">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_infogaphics1-ok_tcm-3046-766178.jpg" alt="">
-                </div>
-            </div>
+<!--            <h2>Підвищення обізнаності</h2>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <p>Аби досягти мети зі створення кращого світу для дітей, слід роз'яснити їм важливість проблем довкілля. Тож це - один із основних напрямів нашої роботи. Паралельно ми підвищуємо поінформованість щодо екологічної проблематики наших працівників, а також членів територіальних громад, поряд з якими ми працюємо. Як ми це робимо? Для цього у нас є екологічна кампанія "Зелений місяць" еко-акція "Купив автомобіль? - Посади дерево". У цьому розділі ви дізнаєтесь про те, що поєднує усі ці дуже різні елементи на шляху до досягнення нашої мети з поширення знань.</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_infogaphics1-ok_tcm-3046-766178.jpg" alt="">-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <h2>Прогресивне мислення</h2>
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <p>Раніше люди жили в гармонії з природою. Але у теперішні часи зв'язок значно послабився. Наслідком стали природні катаклізми, на кшталт глобального потепління. Тож нам слід повернутися до першооснов. Як компанія ми з одного боку потребуємо інновацій та нових шляхів підтримання якості життя (економіка), з іншого - збереження і навіть відновлення природи (екологія).</p>
-                </div>
-                <div class="col-md-6 col-12">
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_infogaphics3-ok_tcm-3046-766180.jpg" alt="">
-                </div>
-            </div>
+<!--            <h2>Прогресивне мислення</h2>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <p>Раніше люди жили в гармонії з природою. Але у теперішні часи зв'язок значно послабився. Наслідком стали природні катаклізми, на кшталт глобального потепління. Тож нам слід повернутися до першооснов. Як компанія ми з одного боку потребуємо інновацій та нових шляхів підтримання якості життя (економіка), з іншого - збереження і навіть відновлення природи (екологія).</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_infogaphics3-ok_tcm-3046-766180.jpg" alt="">-->
+<!--                </div>-->
+<!--            </div>-->
 
-        </div>
+<!--        </div>-->
 
 
     </main>
 </template>
 
 <script>
+    import PageBody from "../../../mixins/mixinPages"
     import MenuEcology from "./../../../components/whyToyota/ecology/MenuEcology";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
@@ -86,6 +88,10 @@
             Swiper,
             SwiperSlide
         },
+
+        mixins: [
+            PageBody
+        ],
 
         metaInfo() {
             return {
@@ -122,6 +128,8 @@
 
         data() {
             return {
+                id: 33,
+
                 swiperOption: {
                     spaceBetween: 0,
                     slidesPerView: 1,
@@ -142,9 +150,9 @@
             }
         },
 
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        },
+        // mounted() {
+        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        // },
     }
 </script>
 
@@ -216,7 +224,9 @@
                 }
             }
         }
+    }
 
+    main ::v-deep div {
         .body.container {
             margin: 68px auto;
             color: $font_color;
@@ -227,7 +237,7 @@
 
             blockquote {
                 margin: 100px 0;
-                p {
+                .p {
                     font-size: 2.4rem;
                     &::before {
                         content: "\201C";
@@ -259,7 +269,7 @@
             .row {
                 margin-bottom: 68px;
                 div {
-                    p {
+                    .p {
                         font-size: 1.4rem;
                         color: #595D60;
                         margin-bottom: 30px;
@@ -291,7 +301,9 @@
                     }
                 }
             }
+        }
 
+        main ::v-deep div {
             .body.container {
                 .row {
                     margin-top: 30px;
@@ -324,7 +336,9 @@
                     }
                 }
             }
+        }
 
+        main ::v-deep div {
             .body.container {
                 margin: 30px auto;
                 h5 {
@@ -344,7 +358,7 @@
 
                 blockquote {
                     margin: 30px 0;
-                    p {
+                    .p {
                         font-size: 2rem;
                         &::before {
                             font-size: 6rem;
@@ -375,7 +389,9 @@
                     }
                 }
             }
+        }
 
+        main ::v-deep div {
             .body.container {
                 margin: 30px auto;
                 h5 {
@@ -394,7 +410,7 @@
 
                 blockquote {
                     margin: 10px 0 30px;
-                    p {
+                    .p {
                         font-size: 2rem;
                         &::before {
                             font-size: 6rem;
@@ -447,7 +463,9 @@
                     }
                 }
             }
+        }
 
+        main ::v-deep div {
             .body.container {
                 margin: 30px auto;
                 h5 {
@@ -467,7 +485,7 @@
 
                 blockquote {
                     margin: 20px 0 30px;
-                    p {
+                    .p {
                         font-size: 2rem;
                         &::before {
                             font-size: 5rem;

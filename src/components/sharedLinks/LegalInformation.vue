@@ -1,5 +1,5 @@
 <template>
-<!--    <main>-->
+
     <main>
         <div v-html="pageBody.body"></div>
 
@@ -77,16 +77,6 @@
         mixins: [
             PageBody
         ],
-
-        computed: {
-            // styles() {
-            //     return scssStyle
-            // }
-        },
-
-        // modules: [
-        //     sassStyles,
-        // ],
 
         data() {
             return {
@@ -196,7 +186,7 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-lg;
             }
@@ -204,7 +194,7 @@
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-md;
             }
@@ -212,7 +202,7 @@
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-sm;
             }
@@ -228,7 +218,7 @@
                     margin: 40px 0 20px;
                 }
 
-                p {
+                .p {
                     margin-bottom: 20px;
                 }
             }
@@ -236,7 +226,7 @@
     }
 
     @media (max-width: 575.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-xs;
             }
@@ -252,7 +242,7 @@
                     margin: 30px 0 15px;
                 }
 
-                p {
+                .p {
                     margin-bottom: 15px;
                 }
             }
@@ -260,121 +250,3 @@
     }
 
 </style>
-
-<!--<style lang="scss" module scoped>-->
-<!--    @import '../../styles/variables';-->
-
-<!--    /*@import "../../styles/legalInformation.module";*/-->
-
-<!--    .page {-->
-<!--        header.container-fluid {-->
-<!--            @include header-xl;-->
-<!--            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-hybrid-logo-1600x900_tcm-3046-1092790.jpg);-->
-<!--            h1 {-->
-<!--                color: #FFFFFF;-->
-<!--                h2 {-->
-<!--                    color: #FFFFFF;-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-
-<!--        .body.container {-->
-<!--            margin: 68px auto;-->
-<!--            h3 {-->
-<!--                font-size: 2.2rem;-->
-<!--                font-weight: bolder;-->
-<!--                margin-bottom: 24px;-->
-<!--                text-align: center;-->
-<!--            }-->
-
-<!--            h4 {-->
-<!--                font-size: 1.8rem;-->
-<!--                font-weight: bold;-->
-<!--                margin: 60px 0 30px;-->
-<!--            }-->
-
-<!--            .p {-->
-<!--                font-size: 1.4rem;-->
-<!--                color: #595D60;-->
-<!--                margin-bottom: 30px;-->
-<!--            }-->
-
-<!--            ul {-->
-<!--                margin-left: 20px;-->
-<!--                font-size: 1.4rem;-->
-<!--                padding: 0;-->
-<!--                li {-->
-<!--                    color: #595D60;-->
-<!--                    margin-bottom: 10px;-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-
-<!--    @media (min-width: 992px) and (max-width: 1199.9px) {-->
-<!--        main {-->
-<!--            header.container-fluid {-->
-<!--                @include header-lg;-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-
-<!--    @media (min-width: 768px) and (max-width: 991.9px) {-->
-<!--        main {-->
-<!--            header.container-fluid {-->
-<!--                @include header-md;-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-
-<!--    @media (min-width: 576px) and (max-width: 767.9px) {-->
-<!--        main {-->
-<!--            header.container-fluid {-->
-<!--                @include header-sm;-->
-<!--            }-->
-
-<!--            .body.container {-->
-<!--                margin: 30px auto;-->
-<!--                h3 {-->
-<!--                    font-size: 1.8rem;-->
-<!--                }-->
-
-<!--                h4 {-->
-<!--                    font-size: 1.6rem;-->
-<!--                    margin: 40px 0 20px;-->
-<!--                }-->
-
-<!--                p {-->
-<!--                    margin-bottom: 20px;-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-
-<!--    @media (max-width: 575.9px) {-->
-<!--        main {-->
-<!--            header.container-fluid {-->
-<!--                @include header-xs;-->
-<!--            }-->
-
-<!--            .body.container {-->
-<!--                margin: 30px auto;-->
-<!--                h3 {-->
-<!--                    font-size: 1.8rem;-->
-<!--                }-->
-
-<!--                h4 {-->
-<!--                    font-size: 1.6rem;-->
-<!--                    margin: 30px 0 15px;-->
-<!--                }-->
-
-<!--                p {-->
-<!--                    margin-bottom: 15px;-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-
-<!--</style>-->
-
-
