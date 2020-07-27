@@ -1,9 +1,10 @@
 <template>
     <section class="container-fluid">
+<!--        <div v-html="pageBody.body"></div>-->
         <header>
             <h1 class="container text-center">Toyota Fuel System Cleaner
-                <h2 class="font-weight-bold">очисник паливної системи для автомобіля Toyota</h2>
             </h1>
+            <h2 class="font-weight-bold">очисник паливної системи для автомобіля Toyota</h2>
         </header>
 
         <div class="body container text-left">
@@ -50,11 +51,17 @@
 </template>
 
 <script>
+    // import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "FuelSystemCleaner",
 
+        // mixins: [
+        //     PageBody
+        // ],
+
         data() {
             return {
+                id: 24,
                 showVideo: false,
             }
         },
@@ -92,9 +99,9 @@
             }
         },
 
-        mounted() {
+       /* mounted() {
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        },
+        },*/
 
         methods: {
             openVideo() {
@@ -121,18 +128,18 @@
             background-position: center center;
             -webkit-background-size: cover;
             background-size: cover;
-            color: $font_color;
+            //color: $font_color;
+            color: #ffffff;
 
             h1 {
                 font-size: 5.4rem;
                 font-weight: bolder;
-                color: #ffffff;
                 text-align: left;
+            }
 
-                h2 {
-                    font-size: 3.4rem;
-                    margin-top: 16px;
-                }
+            h2 {
+                font-size: 3.4rem;
+                margin-top: 16px;
             }
         }
 
@@ -204,7 +211,7 @@
 
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        section.container-fluid{
+        section.container-fluid {
             header {
                 max-height: 60vw;
                 h1 {
@@ -225,17 +232,17 @@
                 h1 {
                     width: 100%;
                     font-size: 4rem;
-                    h2 {
-                        font-size: 3rem;
-                        padding-top: 10px;
-                    }
+                }
+                h2 {
+                    font-size: 3rem;
+                    padding-top: 10px;
                 }
             }
         }
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        section.container-fluid{
+        section.container-fluid {
             header {
                 min-height: 180px;
                 height: 56vw;
@@ -243,10 +250,10 @@
                 h1 {
                     width: 100%;
                     font-size: 3.5rem;
-                    h2 {
-                        font-size: 2.5rem;
-                        padding-top: 5px;
-                    }
+                }
+                h2 {
+                    font-size: 2.5rem;
+                    padding-top: 5px;
                 }
             }
 
@@ -279,10 +286,10 @@
                     width: 100%;
                     padding: 10px 15px;
                     font-size: 2.5rem;
-                    h2 {
-                        font-size: 1.8rem;
-                        padding-top: 5px;
-                    }
+                }
+                h2 {
+                    font-size: 1.8rem;
+                    padding-top: 5px;
                 }
             }
 

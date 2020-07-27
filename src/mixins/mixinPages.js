@@ -1,5 +1,4 @@
 import axios from "axios"
-// import $ from "jquery"
 
 export default {
     data() {
@@ -8,25 +7,15 @@ export default {
             isActive: false,
         }
     },
-    //
+
     created() {
         this.getPageBody(this.id);
     },
 
     mounted() {
-        // this.$watch( "pageBody", () => {
-        //     $("main").addClass("page");
-        //     this.$forceUpdate();
-        // } );
-
         setTimeout(() => {
             this.$store.commit("setShowPreload", false);
             }, 1500)
-    },
-
-    updated() {
-        // console.log(this.pageBody);
-        // $("main").addClass("page");
     },
 
     methods: {
@@ -37,12 +26,7 @@ export default {
                 )
                     .then( (response) => {
                         this.pageBody = response.data[0];
-                        // console.log(response.data);
-                        // console.log(this.pageBody.body);
                     } )
-                    // .then( () => {
-                    //     this.pageBody.body = JSON.parse(this.pageBody.body);
-                    // } )
                     .then( () => {
                         while (this.pageBody.body.includes("<p>") ||
                         this.pageBody.body.includes("</p>") ||
@@ -60,24 +44,14 @@ export default {
                             this.pageBody.body = this.pageBody.body.replace("&laquo;", "«");
                             this.pageBody.body = this.pageBody.body.replace("&raquo;", "»");
                         }
-                        console.log(this.pageBody.body);
+                        // console.log(this.pageBody.body);
                     } )
-                    // .then( () => {
-                    //     // this.addStyle();
-                    //     // this.isActive = true;
-                    //     // console.log(this.isActive);
-                    // } )
                     .catch( (error) => {
                         console.log("Ошибка загрузки тела страницы");
                         console.log(error);
                     } )
 
         },
-
-        // addStyle() {
-        //     $("main").addClass("page");
-        // },
-
 
     },
 }

@@ -1,44 +1,46 @@
 <template>
     <main class="container-fluid">
         <sidebar></sidebar>
+        <div v-html="pageBody.body"></div>
 
-        <header>
-            <h1 class="text-center">"Toyota Assistance"
-                <h2 class="text-center">Ви користуєтесь автомобілем, а «Тойота» піклується про нього</h2>
-            </h1>
-        </header>
+<!--        <header>-->
+<!--            <h1 class="text-center">"Toyota Assistance"-->
+<!--            </h1>-->
+<!--            <h2 class="text-center">Ви користуєтесь автомобілем, а «Тойота» піклується про нього</h2>-->
+<!--        </header>-->
 
-        <section class="container">
-            <header>
-                <h1 class="text-center">В офіційній дилерській мережі ПІІ «Тойота-Україна» діє унікальна програма допомоги в дорозі під назвою "Toyota Assistancе"</h1>
-            </header>
+<!--        <section class="container">-->
+<!--            <header>-->
+<!--                <h1 class="text-center">В офіційній дилерській мережі ПІІ «Тойота-Україна» діє унікальна програма допомоги в дорозі під назвою "Toyota Assistancе"</h1>-->
+<!--            </header>-->
 
-            <div class="body text-left">
-                <p>Купуючи офіційний автомобіль Toyota, його власник автоматично отримує професійну підтримку та допомогу в дорозі не тільки у технічних питаннях, але й у нестандартних ситуаціях. Послуга Toyota Assistance діє протягом трьох років з дня першої реєстрації автомобіля без обмеження пробігу.</p>
-                <p>Звертаємо вашу увагу на те, що програма "Toyota Assistancе" унікальна у своєму класі і що в межах цієї програми надається безпрецедентно повний спектр послуг із підтримки автомобіля в дорозі.</p>
-                <p>Програма допомоги в дорозі "Toyota Assistance" впроваджена в офіційній дилерській мережі ПІІ «Тойота-Україна» 2005 року та передбачає цілодобову інформаційну підтримку та професійну допомогу в дорозі. "Toyota Assistance" унікальна тому, що включає в себе чимало безкоштовних для клієнтів послуг та діє в 35 країнах Європи.</p>
-                <p><strong>Телефон Toyota Assistance</strong> - <a href="tel:+380444942298">+38044-494-22-98</a>  24 години на добу, 365 днів на рік</p>
-            </div>
+<!--            <div class="body text-left">-->
+<!--                <p>Купуючи офіційний автомобіль Toyota, його власник автоматично отримує професійну підтримку та допомогу в дорозі не тільки у технічних питаннях, але й у нестандартних ситуаціях. Послуга Toyota Assistance діє протягом трьох років з дня першої реєстрації автомобіля без обмеження пробігу.</p>-->
+<!--                <p>Звертаємо вашу увагу на те, що програма "Toyota Assistancе" унікальна у своєму класі і що в межах цієї програми надається безпрецедентно повний спектр послуг із підтримки автомобіля в дорозі.</p>-->
+<!--                <p>Програма допомоги в дорозі "Toyota Assistance" впроваджена в офіційній дилерській мережі ПІІ «Тойота-Україна» 2005 року та передбачає цілодобову інформаційну підтримку та професійну допомогу в дорозі. "Toyota Assistance" унікальна тому, що включає в себе чимало безкоштовних для клієнтів послуг та діє в 35 країнах Європи.</p>-->
+<!--                <p><strong>Телефон Toyota Assistance</strong> - <a href="tel:+380444942298">+38044-494-22-98</a>  24 години на добу, 365 днів на рік</p>-->
+<!--            </div>-->
 
-            <footer class="text-left">
-                <h4 class="d-flex justify-content-between">
-                    <strong class="text-left flex-grow-1">Файли для завантаження</strong>
-                    <i class="fas fa-download"></i>
-                </h4>
+<!--            <footer class="text-left">-->
+<!--                <h4 class="d-flex justify-content-between">-->
+<!--                    <strong class="text-left flex-grow-1">Файли для завантаження</strong>-->
+<!--                    <i class="fas fa-download"></i>-->
+<!--                </h4>-->
 
-                <ul>
-                    <li>
-                        <i class="far fa-file-alt"></i>
-                        <a href="https://www.toyota.ua/download/cms/uaua/toyota-assistance-2019_tcm-3046-165300.pdf" >Брошура про програму Toyota Assistance (pdf)</a>
-                    </li>
-                </ul>
-            </footer>
-        </section>
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <i class="far fa-file-alt"></i>-->
+<!--                        <a href="https://www.toyota.ua/download/cms/uaua/toyota-assistance-2019_tcm-3046-165300.pdf" >Брошура про програму Toyota Assistance (pdf)</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </footer>-->
+<!--        </section>-->
 
     </main>
 </template>
 
 <script>
+    import PageBody from "../../../mixins/mixinPages"
     import Sidebar from "../../permanent/Sidebar";
 
     export default {
@@ -46,6 +48,16 @@
 
         components: {
             Sidebar
+        },
+
+        mixins: [
+            PageBody
+        ],
+
+        data() {
+            return {
+                id: 25,
+            }
         },
 
         metaInfo() {
@@ -90,7 +102,7 @@
 <style lang="scss" scoped>
     @import '../../../styles/variables';
 
-    main.container-fluid {
+    main.container-fluid ::v-deep div {
         padding: 0;
         margin: 0;
 
@@ -112,12 +124,12 @@
                 font-size: 5.2rem;
                 font-weight: bolder;
                 text-align: left;
+            }
 
-                h2 {
-                    font-size: 3.4rem;
-                    text-align: left;
-                    padding-top: 16px;
-                }
+            h2 {
+                font-size: 3.4rem;
+                text-align: left;
+                padding-top: 16px;
             }
         }
 
@@ -135,7 +147,7 @@
                 }
             }
 
-            p {
+            .p {
                 font-size: 1.5rem;
                 color: #595D60;
                 margin-bottom: 40px;
@@ -187,7 +199,7 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
                 max-height: 60vw;
                 h1 {
@@ -199,7 +211,7 @@
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
                 height: 56vh;
                 min-height: 180px;
@@ -208,17 +220,17 @@
                 h1 {
                     width: 100%;
                     font-size: 4rem;
-                    h2 {
-                        font-size: 3rem;
-                        padding-top: 10px;
-                    }
+                }
+                h2 {
+                    font-size: 3rem;
+                    padding-top: 10px;
                 }
             }
         }
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
                 min-height: 180px;
                 height: 56vw;
@@ -226,10 +238,10 @@
                 h1 {
                     width: 100%;
                     font-size: 3.5rem;
-                    h2 {
-                        font-size: 2.5rem;
-                        padding-top: 5px;
-                    }
+                }
+                h2 {
+                    font-size: 2.5rem;
+                    padding-top: 5px;
                 }
             }
 
@@ -247,7 +259,7 @@
     }
 
     @media (max-width: 575.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
                 height: auto;
                 min-height: 180px;
@@ -255,10 +267,10 @@
                 h1 {
                     padding: 10px 15px;
                     font-size: 2.5rem;
-                    h2 {
-                        font-size: 1.8rem;
-                        padding-top: 5px;
-                    }
+                }
+                h2 {
+                    font-size: 1.8rem;
+                    padding-top: 5px;
                 }
             }
 
