@@ -146,9 +146,9 @@
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-hybrid-logo-1600x900_tcm-3046-1092790.jpg);
             h1 {
                 color: #FFFFFF;
-                h2 {
-                    color: #FFFFFF;
-                }
+            }
+            h2 {
+                color: #FFFFFF;
             }
         }
 

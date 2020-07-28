@@ -1,15 +1,17 @@
 <template>
     <main class="container-fluid">
         <sidebar></sidebar>
+<!--        <div v-html="pageBody.body"></div>-->
 
         <header>
-            <h1 class="container text-left">Власникам бізнесу</h1>
+            <h1 class="container text-left">{{pageTitle}}</h1>
         </header>
 
         <div class="body container text-left">
-            <p>
-                Якщо ви працюєте на себе, або ж у Вас власний малий бізнес і Ви бажаєте поповнити Ваш автопарк новим автомобілем, Toyota BusinessPlus з легкістю допоможе Вам. У рамках великої дилерської мережі Toyota, наші професійні консультанти готові запропонувати найвигідніші умови придбання та обслуговування Ваших автомобілів.
-            </p>
+            <div class="p">{{pageExcerpt}}</div>
+<!--            <div class="p">-->
+<!--                Якщо ви працюєте на себе, або ж у Вас власний малий бізнес і Ви бажаєте поповнити Ваш автопарк новим автомобілем, Toyota BusinessPlus з легкістю допоможе Вам. У рамках великої дилерської мережі Toyota, наші професійні консультанти готові запропонувати найвигідніші умови придбання та обслуговування Ваших автомобілів.-->
+<!--            </div>-->
 
             <h2>Причини для роботи з Toyota BusinessPlus</h2>
 
@@ -26,39 +28,43 @@
                     </swiper-slide>
                 </swiper>
             </div>
-            
-            <article class="row">
-                <div class="col-md-6 col-12">
-                    <h3>Фінансові рішення</h3>
-                    <p>Скористайтеся можливістю придбати автомобіль Toyota за програмою «Тойота Кредит» та застрахувати його за програмою «Тойота Страхування»!</p>
-                </div>
 
-                <div class="col-md-6 col-12">
-                    <h3>Гібридні автомобілі</h3>
-                    <p>Toyota пропонує ряд гібридних моделей. Зменшення рівня викидів в атмосферу, паливна економічність та конкурентоспроможна сукупна вартість володіння сприяють підтриманню дружньої атмосфери всередині компанії.</p>
-                </div>
 
-                <div class="col-md-6 col-12">
-                    <h3>Якість Toyota</h3>
-                    <p>Всесвітньо відома якість, надійність і довговічність Toyota.</p>
-                </div>
 
-                <div class="col-md-6 col-12">
-                    <h3>Розвинена дилерська мережа</h3>
-                    <p>Завдяки використанню оригінальних запасних частин, якісному сервісному обслуговуванню та унікальному досвіду дилерська мережа надовго збереже належний технічний стан Вашого автомобіля.</p>
-                </div>
+            <div v-html="pageBody"></div>
 
-                <div class="col-md-6 col-12">
-                    <h3>Широкий модельний ряд</h3>
-                    <p>Програма Toyota Business Plus пропонує клієнтам ― як власникам малого підприємства, так і менеджерам великого автопарку ― широкий вибір автомобілів відповідно до їхніх потреб.</p>
-                </div>
+<!--            <article class="row">-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <h3>Фінансові рішення</h3>-->
+<!--                    <div class="p">Скористайтеся можливістю придбати автомобіль Toyota за програмою «Тойота Кредит» та застрахувати його за програмою «Тойота Страхування»!</div>-->
+<!--                </div>-->
 
-                <div class="col-md-6 col-12">
-                    <h3>Досвід Toyota</h3>
-                    <p>Професійні знання підготовлених техніків, роблять їх фахівцями у всіх автомобілях Toyota та гібридних автомобілях.</p>
-                </div>
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <h3>Гібридні автомобілі</h3>-->
+<!--                    <div class="p">Toyota пропонує ряд гібридних моделей. Зменшення рівня викидів в атмосферу, паливна економічність та конкурентоспроможна сукупна вартість володіння сприяють підтриманню дружньої атмосфери всередині компанії.</div>-->
+<!--                </div>-->
 
-            </article>
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <h3>Якість Toyota</h3>-->
+<!--                    <div class="p">Всесвітньо відома якість, надійність і довговічність Toyota.</div>-->
+<!--                </div>-->
+
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <h3>Розвинена дилерська мережа</h3>-->
+<!--                    <div class="p">Завдяки використанню оригінальних запасних частин, якісному сервісному обслуговуванню та унікальному досвіду дилерська мережа надовго збереже належний технічний стан Вашого автомобіля.</div>-->
+<!--                </div>-->
+
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <h3>Широкий модельний ряд</h3>-->
+<!--                    <div class="p">Програма Toyota Business Plus пропонує клієнтам ― як власникам малого підприємства, так і менеджерам великого автопарку ― широкий вибір автомобілів відповідно до їхніх потреб.</div>-->
+<!--                </div>-->
+
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <h3>Досвід Toyota</h3>-->
+<!--                    <div class="p">Професійні знання підготовлених техніків, роблять їх фахівцями у всіх автомобілях Toyota та гібридних автомобілях.</div>-->
+<!--                </div>-->
+
+<!--            </article>-->
         </div>
 
         <fragnet-lineup></fragnet-lineup>
@@ -70,10 +76,15 @@
     import FragnetLineup from "../toBuyers/FragnetLineup";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
     import 'swiper/css/swiper.css';
+    import PageBody from "../../mixins/mixinPages";
     // import Article from "@/components/whyToyota/Article";
 
     export default {
         name: "Business_owner",
+
+        mixins: [
+            PageBody
+        ],
 
         components: {
             FragnetLineup,
@@ -84,6 +95,8 @@
 
         data() {
             return {
+                id: 6,
+
                 swiperOption: {
                     spaceBetween: 30,
                     centeredSlides: true,
@@ -136,9 +149,9 @@
             }
         },
 
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        },
+        // mounted() {
+        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        // },
     }
 </script>
 
@@ -166,7 +179,7 @@
         .body.container {
             padding: 50px 0;
             color: $font_color;
-            p {
+            .p {
                 font-size: 2.0rem;
                 margin-bottom: 50px;
             }
@@ -179,6 +192,14 @@
             .carousel {
                 margin-bottom: 50px;
             }
+        }
+
+    }
+
+    main.container-fluid {
+
+        .body.container ::v-deep div {
+
 
             article.row {
                 div {
@@ -187,7 +208,7 @@
                         margin-bottom: 24px;
                         font-weight: bold;
                     }
-                    p {
+                    .p {
                         font-size: 1.6rem;
                         color: #595D60;
                     }
@@ -196,6 +217,8 @@
         }
 
     }
+
+
 
     .swiper {
         height: 300px;
@@ -255,7 +278,7 @@
             .body.container {
                 padding: 50px 0;
                 color: $font_color;
-                p {
+                .p {
                     font-size: 2.0rem;
                     margin-bottom: 50px;
                 }
@@ -300,7 +323,7 @@
 
             .body.container {
                 padding: 30px 0;
-                p {
+                .p {
                     font-size: 1.8rem;
                     margin-bottom: 30px;
                 }
@@ -311,7 +334,12 @@
                 .carousel {
                     margin-bottom: 20px;
                 }
+            }
+        }
 
+
+        main.container-fluid {
+            .body.container ::v-deep div {
                 article.row {
                     div {
                         h3 {
@@ -320,8 +348,8 @@
                     }
                 }
             }
-
         }
+
 
         .swiper {
             height: 30vw;
@@ -348,7 +376,7 @@
 
             .body.container {
                 padding: 30px 15px;
-                p {
+                .p {
                     font-size: 1.6rem;
                     margin-bottom: 20px;
                 }
@@ -359,21 +387,27 @@
                 .carousel {
                     margin-bottom: 20px;
                 }
+            }
 
+        }
+
+
+        main.container-fluid {
+            .body.container ::v-deep div {
                 article.row {
                     div {
                         h3 {
                             font-size: 1.8rem;
                             margin-bottom: 10px;
                         }
-                        p {
+                        .p {
                             font-size: 1.6rem;
                         }
                     }
                 }
             }
-
         }
+
 
         .swiper {
             height: 30vw;

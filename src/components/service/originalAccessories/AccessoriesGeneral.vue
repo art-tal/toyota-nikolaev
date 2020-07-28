@@ -3,8 +3,8 @@
         <header>
             <h1>
                 Оригінальні аксесуари Toyota
-                <h2>Додаткове обладнання, що створює індивідуальність</h2>
             </h1>
+            <h2>Додаткове обладнання, що створює індивідуальність</h2>
         </header>
 
         <div class="body container">
@@ -95,10 +95,10 @@
                 font-size: 5.2rem;
                 /*color: #ffffff;*/
                 font-weight: bolder;
-                h2 {
-                    font-size: 3.4rem;
-                    font-weight: bold;
-                }
+            }
+            h2 {
+                font-size: 3.4rem;
+                font-weight: bold;
             }
         }
 
@@ -149,10 +149,10 @@
                     width: 100%;
                     padding-top: 30px;
                     font-size: 3.5rem;
-                    h2 {
-                        font-size: 2.2rem;
-                        padding-top: 10px;
-                    }
+                }
+                h2 {
+                    font-size: 2.2rem;
+                    padding-top: 10px;
                 }
             }
             .body.container {
@@ -182,10 +182,10 @@
                     width: 100%;
                     padding-top: 15px;
                     font-size: 3rem;
-                    h2 {
-                        font-size: 2.0rem;
-                        padding-top: 5px;
-                    }
+                }
+                h2 {
+                    font-size: 2.0rem;
+                    padding-top: 5px;
                 }
             }
             .body.container {
@@ -216,10 +216,10 @@
                     padding: 10px 15px 120px;
                     font-size: 2.5rem;
                     color: $font_color;
-                    h2 {
-                        font-size: 1.8rem;
-                        padding-top: 5px;
-                    }
+                }
+                h2 {
+                    font-size: 1.8rem;
+                    padding-top: 5px;
                 }
             }
 

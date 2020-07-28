@@ -1,51 +1,62 @@
 <template>
     <main class="container-fluid">
         <sidebar></sidebar>
+        <div v-html="pageBody"></div>
 
-        <header>
-            <h1 class="container">Гарантія якості
-                <h2>Технічне обслуговування за найвищими стандартами</h2>
-            </h1>
-        </header>
-        
-        <div class="body container">
-            <h3>Кому, як не нам, найкраще відомо все про ваш автомобіль! Адже ми його спроектували, виготовили і підготували майстрів для технічного обслуговування вашого авто.</h3>
-            <ul class="text-left">
-                <li>
-                    <h3>Якість Toyota</h3>
-                    <p>Кожна операція під час технічного обслуговування або ремонтних робіт буде виконана у відповідності до найсуворіших технічних нормативів компанії «Тойота».</p>
-                </li>
-                <li>
-                    <h3>Гарантія бездоганного сервісу</h3>
-                    <p>Кому, як не нам, найкраще відомо все про ваш автомобіль! Адже ми його спроектували, виготовили і підготували майстрів для технічного обслуговування вашого авто.</p>
-                </li>
-                <li>
-                    <h3>Строгий регламент</h3>
-                    <p>Ви можете бути впевненими у тому, що на офіційній сервісній станції Toyota всі роботи з технічного обслуговування або ремонту вашого автомобіля будуть виконані у відповідності до чітко прописаних процедур та нормативів.</p>
-                </li>
-                <li>
-                    <h3>Збереження ринкової вартості</h3>
-                    <p>Для того, щоб гарантувати високу ринкову вартість свого автомобіля, обслуговуйте його на офіційних сервісних станція Toyota. Це стане запорукою тривалої та безпроблемної експлуатації.</p>
-                </li>
-                <li>
-                    <h3>Цілковита впевненість</h3>
-                    <p>Наші автомобілі виготовляються у відповідності до найсуворіших нормативів якості, проте для того, щоб убезпечити власників від надмірних хвилювань, ми пропонуємо гарантію на виконані роботи та встановлені деталі.</p>
-                </li>
-            </ul>
-        </div>
+<!--        <header>-->
+<!--            <h1 class="container">Гарантія якості</h1>-->
+<!--            <h2>Технічне обслуговування за найвищими стандартами</h2>-->
+<!--        </header>-->
+<!--        -->
+<!--        <div class="body container">-->
+<!--            <h3>Кому, як не нам, найкраще відомо все про ваш автомобіль! Адже ми його спроектували, виготовили і підготували майстрів для технічного обслуговування вашого авто.</h3>-->
+<!--            <ul class="text-left">-->
+<!--                <li>-->
+<!--                    <h3>Якість Toyota</h3>-->
+<!--                    <div class="p">Кожна операція під час технічного обслуговування або ремонтних робіт буде виконана у відповідності до найсуворіших технічних нормативів компанії «Тойота».</div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <h3>Гарантія бездоганного сервісу</h3>-->
+<!--                    <div class="p">Кому, як не нам, найкраще відомо все про ваш автомобіль! Адже ми його спроектували, виготовили і підготували майстрів для технічного обслуговування вашого авто.</div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <h3>Строгий регламент</h3>-->
+<!--                    <div class="p">Ви можете бути впевненими у тому, що на офіційній сервісній станції Toyota всі роботи з технічного обслуговування або ремонту вашого автомобіля будуть виконані у відповідності до чітко прописаних процедур та нормативів.</div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <h3>Збереження ринкової вартості</h3>-->
+<!--                    <div class="p">Для того, щоб гарантувати високу ринкову вартість свого автомобіля, обслуговуйте його на офіційних сервісних станція Toyota. Це стане запорукою тривалої та безпроблемної експлуатації.</div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <h3>Цілковита впевненість</h3>-->
+<!--                    <div class="p">Наші автомобілі виготовляються у відповідності до найсуворіших нормативів якості, проте для того, щоб убезпечити власників від надмірних хвилювань, ми пропонуємо гарантію на виконані роботи та встановлені деталі.</div>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
     </main>
 </template>
 
 <script>
+    import PageBody from "../../../mixins/mixinPages"
     // import Sidebar from "../permanent/Sidebar";
     import Sidebar from "../../permanent/Sidebar";//           for Laravel
 
     export default {
         name: "Guarantee",
 
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        mixins: [
+            PageBody
+        ],
+
+        data() {
+            return {
+                id: 10,
+            }
         },
+
+        // mounted() {
+        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        // },
 
         metaInfo() {
             return {
@@ -91,6 +102,10 @@
 
     main.container-fluid {
         padding: 0;
+    }
+
+    main.container-fluid ::v-deep div {
+        padding: 0;
         margin: 0;
 
         header {
@@ -111,12 +126,12 @@
                 font-size: 5.2rem;
                 font-weight: bolder;
                 text-align: left;
+            }
 
-                h2 {
-                    font-size: 3.4rem;
-                    text-align: left;
-                    padding-top: 16px;
-                }
+            h2 {
+                font-size: 3.4rem;
+                text-align: left;
+                padding-top: 16px;
             }
         }
 
@@ -136,7 +151,7 @@
                     h3 {
                         margin-bottom: 20px;
                     }
-                    p {
+                    .p {
                         font-size: 1.8rem;
                         color: #595D60;
                         margin-bottom: 20px;
@@ -148,7 +163,7 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        main.container-fluid{
+        main.container-fluid ::v-deep div {
             header {
                 height: 80vh;
                 max-height: 60vw;
@@ -161,7 +176,7 @@
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
                 height: 56vh;
                 min-height: 180px;
@@ -170,17 +185,17 @@
                 h1 {
                     width: 100%;
                     font-size: 3.5rem;
-                    h2 {
-                        font-size: 2.2rem;
-                        padding-top: 10px;
-                    }
+                }
+                h2 {
+                    font-size: 2.2rem;
+                    padding-top: 10px;
                 }
             }
         }
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
                 min-height: 180px;
                 height: 56vw;
@@ -188,17 +203,17 @@
                 h1 {
                     width: 100%;
                     font-size: 3rem;
-                    h2 {
-                        font-size: 2.0rem;
-                        padding-top: 5px;
-                    }
+                }
+                h2 {
+                    font-size: 2.0rem;
+                    padding-top: 5px;
                 }
             }
         }
     }
 
     @media (max-width: 575.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
                 width: 100%;
                 height: auto;
@@ -209,10 +224,10 @@
                     padding: 10px 15px 120px;
                     font-size: 2.5rem;
                     color: $font_color;
-                    h2 {
-                        font-size: 1.8rem;
-                        padding-top: 5px;
-                    }
+                }
+                h2 {
+                    font-size: 1.8rem;
+                    padding-top: 5px;
                 }
             }
 
@@ -227,7 +242,7 @@
                         h3 {
                             margin-bottom: 10px;
                         }
-                        p {
+                        .p {
                             font-size: 1.6rem;
                         }
                     }
