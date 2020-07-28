@@ -80,7 +80,7 @@
                 <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
         </header>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <div class="body container text-left">-->
 <!--            <h3>Toyota взяла на себе зобов'язання бути лідерами у захисті та поліпшенні стану довкілля.</h3>-->
@@ -245,32 +245,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota | Турбота про навколишнє середовище`,
+                // title:  `Toyota | Турбота про навколишнє середовище`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Турбота про навколишнє середовище`
+                        // content: `Toyota | Турбота про навколишнє середовище`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Ми  зобов&#39;язані бути лідером у справі захисту та поліпшення довкілля. Дізнайтеся про екологічні досягнення, якими ми пишаємося, та нашу екологічну місію.`
+                        // content: `Ми  зобов&#39;язані бути лідером у справі захисту та поліпшення довкілля. Дізнайтеся про екологічні досягнення, якими ми пишаємося, та нашу екологічну місію.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Ми  зобов&#39;язані бути лідером у справі захисту та поліпшення довкілля. Дізнайтеся про екологічні досягнення, якими ми пишаємося, та нашу екологічну місію.`
+                        // content: `Ми  зобов&#39;язані бути лідером у справі захисту та поліпшення довкілля. Дізнайтеся про екологічні досягнення, якими ми пишаємося, та нашу екологічну місію.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                 ],
             }

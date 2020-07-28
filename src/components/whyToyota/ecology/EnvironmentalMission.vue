@@ -2,7 +2,7 @@
     <main>
         <menu-ecology></menu-ecology>
         <header></header>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <div class="body container text-left">-->
 <!--            <h5>Виклики Toyota щодо навколишнього середовища до 2050 року, оголошені 2015 року, містять шість позицій, які охоплюють усі аспекти нашого бізнесу, процес дослідження нових продуктів та технологій, а також стосуються нашої функції зі сприяння вивчення та вдосконалення навколишнього природного світу людьми та громадами.</h5>-->
@@ -141,32 +141,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota | Виклики щодо навколишнього середовища 2050`,
+                // title:  `Toyota | Виклики щодо навколишнього середовища 2050`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Виклики щодо навколишнього середовища 2050`
+                        // content: `Toyota | Виклики щодо навколишнього середовища 2050`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Toyota розробила пакет амбітних завдань, над виконанням яких буде працювати до 2050 року, для дотримання правила нульового впливу на довкілля.`
+                        // content: `Toyota розробила пакет амбітних завдань, над виконанням яких буде працювати до 2050 року, для дотримання правила нульового впливу на довкілля.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Toyota розробила пакет амбітних завдань, над виконанням яких буде працювати до 2050 року, для дотримання правила нульового впливу на довкілля.`
+                        // content: `Toyota розробила пакет амбітних завдань, над виконанням яких буде працювати до 2050 року, для дотримання правила нульового впливу на довкілля.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                 ],
             }

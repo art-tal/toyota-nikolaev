@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container">Лобове скло-->
 <!--            </h1>-->
@@ -85,32 +85,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Оригінальне лобове скло  | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Оригінальне лобове скло  | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Оригінальне лобове скло  | Toyota Україна`
+                        // content: `Toyota Nikolaev | Оригінальне лобове скло  | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Перебуваючи за кермом автомобіля Toyota, важливо бути впевненим, що лобове скло забезпечує відмінну видимість та захист від непередбачуваних обставин.`
+                        // content: `Перебуваючи за кермом автомобіля Toyota, важливо бути впевненим, що лобове скло забезпечує відмінну видимість та захист від непередбачуваних обставин.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Перебуваючи за кермом автомобіля Toyota, важливо бути впевненим, що лобове скло забезпечує відмінну видимість та захист від непередбачуваних обставин.`
+                        // content: `Перебуваючи за кермом автомобіля Toyota, важливо бути впевненим, що лобове скло забезпечує відмінну видимість та захист від непередбачуваних обставин.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, Toyota, оригінальні запчастини, лобове скло, післяпродажне обслуговування, Genuine Parts`
+                        // content: `Toyota Nikolaev, Toyota, оригінальні запчастини, лобове скло, післяпродажне обслуговування, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, Toyota, оригінальні запчастини, лобове скло, післяпродажне обслуговування, Genuine Parts`
+                        // content: `Toyota Nikolaev, Toyota, оригінальні запчастини, лобове скло, післяпродажне обслуговування, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -131,6 +137,12 @@
 
 <style lang="scss" scoped>
     @import '../../../styles/variables';
+
+    section.container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
 
     section.container-fluid ::v-deep div {
         padding: 0;

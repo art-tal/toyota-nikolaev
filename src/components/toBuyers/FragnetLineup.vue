@@ -5,15 +5,15 @@
         </header>
         <footer class="container">
             <!--                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>-->
-            <router-link
-                    tag="button"
-                    exact
-                    class="btn btn-light"
-                    active-class="active"
-                    to=""
-            >
-                Відкрий для себе Toyota Hybrid
-            </router-link>
+<!--            <router-link-->
+<!--                    tag="button"-->
+<!--                    exact-->
+<!--                    class="btn btn-light"-->
+<!--                    active-class="active"-->
+<!--                    to=""-->
+<!--            >-->
+<!--                Відкрий для себе Toyota Hybrid-->
+<!--            </router-link>-->
         </footer>
     </section>
 </template>

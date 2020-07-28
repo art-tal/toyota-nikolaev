@@ -1,7 +1,7 @@
 <template>
     <main>
         <menu-ecology></menu-ecology>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <header>-->
 <!--            <h1 class="container">ПІІ "Тойота-Україна"-->
@@ -64,32 +64,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota | Сертифіковано ISO 14001 | Toyota Україна`,
+                // title:  `Toyota | Сертифіковано ISO 14001 | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Сертифіковано ISO 14001 | Toyota Україна`
+                        // content: `Toyota | Сертифіковано ISO 14001 | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Ми цінуємо сертифікат ISO 14001 та запропоновані ним інструменти, які допомагають на шляху до постійного вдосконалення екологічної діяльності.`
+                        // content: `Ми цінуємо сертифікат ISO 14001 та запропоновані ним інструменти, які допомагають на шляху до постійного вдосконалення екологічної діяльності.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Ми цінуємо сертифікат ISO 14001 та запропоновані ним інструменти, які допомагають на шляху до постійного вдосконалення екологічної діяльності.`
+                        // content: `Ми цінуємо сертифікат ISO 14001 та запропоновані ним інструменти, які допомагають на шляху до постійного вдосконалення екологічної діяльності.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `тойота, екологія, еко-акція, навколишне середовище, экология, эко-акция, окружающая среда, toyota, environmental event, ecology, iso, 14001, сертификат, сертифікат, Enviroment, Social projects`
+                        // content: `тойота, екологія, еко-акція, навколишне середовище, экология, эко-акция, окружающая среда, toyota, environmental event, ecology, iso, 14001, сертификат, сертифікат, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `тойота, екологія, еко-акція, навколишне середовище, экология, эко-акция, окружающая среда, toyota, environmental event, ecology, iso, 14001, сертификат, сертифікат, Enviroment, Social projects`
+                        // content: `тойота, екологія, еко-акція, навколишне середовище, экология, эко-акция, окружающая среда, toyota, environmental event, ecology, iso, 14001, сертификат, сертифікат, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                 ],
             }

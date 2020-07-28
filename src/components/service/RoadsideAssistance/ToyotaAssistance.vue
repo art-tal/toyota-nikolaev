@@ -1,7 +1,7 @@
 <template>
     <main class="container-fluid">
         <sidebar></sidebar>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <header>-->
 <!--            <h1 class="text-center">"Toyota Assistance"-->
@@ -62,45 +62,56 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Assistance - допомога в дорозі | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Assistance - допомога в дорозі | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Assistance - допомога в дорозі | Toyota Україна`
+                        // content: `Toyota Nikolaev | Assistance - допомога в дорозі | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `&quot;Toyota Assistance&quot; — це оперативна допомога для власників автомобілів марки Toyota, які були придбані в офіційній дилерській мережі Toyota в Україні.`
+                        // content: `&quot;Toyota Assistance&quot; — це оперативна допомога для власників автомобілів марки Toyota, які були придбані в офіційній дилерській мережі Toyota в Україні.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `&quot;Toyota Assistance&quot; — це оперативна допомога для власників автомобілів марки Toyota, які були придбані в офіційній дилерській мережі Toyota в Україні.`
+                        // content: `&quot;Toyota Assistance&quot; — це оперативна допомога для власників автомобілів марки Toyota, які були придбані в офіційній дилерській мережі Toyota в Україні.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, toyota assistance, допомога в дорозі, зручність, програма тойота асистанс, Україна, київ, допомога в дорозі, тойота асістанс, toyota assistance, Тойота-Україна, гарант-асістанс, умови, послуги, види, покриття, Latest news`
+                        // content: `Toyota Nikolaev, toyota assistance, допомога в дорозі, зручність, програма тойота асистанс, Україна, київ, допомога в дорозі, тойота асістанс, toyota assistance, Тойота-Україна, гарант-асістанс, умови, послуги, види, покриття, Latest news`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, toyota assistance, допомога в дорозі, зручність, програма тойота асистанс, Україна, київ, допомога в дорозі, тойота асістанс, toyota assistance, Тойота-Україна, гарант-асістанс, умови, послуги, види, покриття, Latest news`
+                        // content: `Toyota Nikolaev, toyota assistance, допомога в дорозі, зручність, програма тойота асистанс, Україна, київ, допомога в дорозі, тойота асістанс, toyota assistance, Тойота-Україна, гарант-асістанс, умови, послуги, види, покриття, Latest news`
+                        content: this.meta_keywords,
                     },
                 ],
             }
         },
 
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        },
+        // mounted() {
+        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        // },
     }
 </script>
 
 <style lang="scss" scoped>
     @import '../../../styles/variables';
+
+    main.container-fluid {
+        padding: 0;
+        margin: 0;
+    }
 
     main.container-fluid ::v-deep div {
         padding: 0;

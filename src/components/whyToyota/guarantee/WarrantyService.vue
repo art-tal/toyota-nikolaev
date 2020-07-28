@@ -1,7 +1,7 @@
 <template>
     <main>
         <guarantee-menu></guarantee-menu>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 <!--        <header class="container-fluid">-->
 <!--            <h1 class="text-center">-->
 <!--                Гарантія-->
@@ -64,32 +64,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota | Гарантія  на автомобілі Тойота (Toyota)`,
+                // title:  `Toyota | Гарантія  на автомобілі Тойота (Toyota)`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Гарантія  на автомобілі Тойота (Toyota)`
+                        // content: `Toyota | Гарантія  на автомобілі Тойота (Toyota)`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `На автомобілі марки Toyota, що були придбані у офіційних дилерів Toyota в Україні, надається гарантія терміном на три роки або 100 тис. км пробігу.`
+                        // content: `На автомобілі марки Toyota, що були придбані у офіційних дилерів Toyota в Україні, надається гарантія терміном на три роки або 100 тис. км пробігу.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `На автомобілі марки Toyota, що були придбані у офіційних дилерів Toyota в Україні, надається гарантія терміном на три роки або 100 тис. км пробігу.`
+                        // content: `На автомобілі марки Toyota, що були придбані у офіційних дилерів Toyota в Україні, надається гарантія терміном на три роки або 100 тис. км пробігу.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Гарантія, тойота, гарантія тойота Україна, умови гарантії, тойота, Україна, дія гарантії, гарантійні зобов’язання, тойота, Україна, гарантія, термін, Toyota, тойота`
+                        // content: `Гарантія, тойота, гарантія тойота Україна, умови гарантії, тойота, Україна, дія гарантії, гарантійні зобов’язання, тойота, Україна, гарантія, термін, Toyota, тойота`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Гарантія, тойота, гарантія тойота Україна, умови гарантії, тойота, Україна, дія гарантії, гарантійні зобов’язання, тойота, Україна, гарантія, термін, Toyota, тойота`
+                        // content: `Гарантія, тойота, гарантія тойота Україна, умови гарантії, тойота, Україна, дія гарантії, гарантійні зобов’язання, тойота, Україна, гарантія, термін, Toyota, тойота`
+                        content: this.meta_keywords,
                     },
                 ],
             }

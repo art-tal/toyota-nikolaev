@@ -60,32 +60,40 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Гарантія якості технічного обслуговування Toyota`,
+                // title:  `Toyota Nikolaev | Гарантія якості технічного обслуговування Toyota`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Гарантія якості технічного обслуговування Toyota`
+                        // content: `Toyota Nikolaev | Гарантія якості технічного обслуговування Toyota`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Завітайте на офіційну сервісну станцію Toyota і гарантовано отримайте технічне обслуговування свого автомобіля Toyota у виконанні спеціально підготовленого персоналу у відповідності до суворих нормативів Toyota.`
+                        // content: `Завітайте на офіційну сервісну станцію Toyota і гарантовано отримайте технічне обслуговування свого автомобіля Toyota у виконанні спеціально підготовленого персоналу у відповідності до суворих нормативів Toyota.`
+
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Завітайте на офіційну сервісну станцію Toyota і гарантовано отримайте технічне обслуговування свого автомобіля Toyota у виконанні спеціально підготовленого персоналу у відповідності до суворих нормативів Toyota.`
+                        // content: `Завітайте на офіційну сервісну станцію Toyota і гарантовано отримайте технічне обслуговування свого автомобіля Toyota у виконанні спеціально підготовленого персоналу у відповідності до суворих нормативів Toyota.`
+
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota, сервіс, тойота, якість, якісний сервіс, технічне обслуговування, ремонт, то`
+                        // content: `Toyota, сервіс, тойота, якість, якісний сервіс, технічне обслуговування, ремонт, то`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota, сервіс, тойота, якість, якісний сервіс, технічне обслуговування, ремонт, то`
+                        // content: `Toyota, сервіс, тойота, якість, якісний сервіс, технічне обслуговування, ремонт, то`
+                        content: this.meta_keywords,
                     },
                 ],
             }

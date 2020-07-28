@@ -218,32 +218,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Оригінальні мастильні матеріали Toyota`,
+                // title:  `Toyota Nikolaev | Оригінальні мастильні матеріали Toyota`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Оригінальні мастильні матеріали Toyota`
+                        // content: `Toyota Nikolaev | Оригінальні мастильні матеріали Toyota`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Усі оригінальні мастильні матеріали Toyota відповідають найсуворішим вимогам щодо якості та мають чудові експлуатаційні характеристики.`
+                        // content: `Усі оригінальні мастильні матеріали Toyota відповідають найсуворішим вимогам щодо якості та мають чудові експлуатаційні характеристики.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Усі оригінальні мастильні матеріали Toyota відповідають найсуворішим вимогам щодо якості та мають чудові експлуатаційні характеристики.`
+                        // content: `Усі оригінальні мастильні матеріали Toyota відповідають найсуворішим вимогам щодо якості та мають чудові експлуатаційні характеристики.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, олива, оливи, масла, оригінальна олива тойота, тойота, рідина, автоматична трансмісія, механічна трансмісія, диференціал, API, ACEA, Dexron, синтетична, синтетична олива, мастильні матеріали, Genuine Accessories, Genuine Parts`
+                        // content: `toyota, олива, оливи, масла, оригінальна олива тойота, тойота, рідина, автоматична трансмісія, механічна трансмісія, диференціал, API, ACEA, Dexron, синтетична, синтетична олива, мастильні матеріали, Genuine Accessories, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, олива, оливи, масла, оригінальна олива тойота, тойота, рідина, автоматична трансмісія, механічна трансмісія, диференціал, API, ACEA, Dexron, синтетична, синтетична олива, мастильні матеріали, Genuine Accessories, Genuine Parts`
+                        // content: `toyota, олива, оливи, масла, оригінальна олива тойота, тойота, рідина, автоматична трансмісія, механічна трансмісія, диференціал, API, ACEA, Dexron, синтетична, синтетична олива, мастильні матеріали, Genuine Accessories, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }

@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container text-center">Гальмівні диски та колодки Toyota</h1>-->
 <!--            <h2 class="font-weight-bold">Зупиняють надійно та безпечно</h2>-->
@@ -81,32 +81,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Гальмівні диски та колодки Toyota`,
+                // title:  `Toyota Nikolaev | Гальмівні диски та колодки Toyota`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Гальмівні диски та колодки Toyota`
+                        // content: `Toyota Nikolaev | Гальмівні диски та колодки Toyota`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Працюючи щодня у звичному режимі чи потребуючи різкої зупинки, гальмівна система автомобіля виконує важливі завдання.`
+                        // content: `Працюючи щодня у звичному режимі чи потребуючи різкої зупинки, гальмівна система автомобіля виконує важливі завдання.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Працюючи щодня у звичному режимі чи потребуючи різкої зупинки, гальмівна система автомобіля виконує важливі завдання.`
+                        // content: `Працюючи щодня у звичному режимі чи потребуючи різкої зупинки, гальмівна система автомобіля виконує важливі завдання.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, toyota, гальма, система, колодки, сервіс, заміна, якість,, Genuine Parts`
+                        // content: `Toyota Nikolaev, toyota, гальма, система, колодки, сервіс, заміна, якість,, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, toyota, гальма, система, колодки, сервіс, заміна, якість,, Genuine Parts`
+                        // content: `Toyota Nikolaev, toyota, гальма, система, колодки, сервіс, заміна, якість,, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -128,8 +134,14 @@
 <style lang="scss" scoped>
     @import '../../../styles/variables';
 
-    section.container-fluid ::v-deep div {
+    section.container-fluid {
         padding: 0;
+        margin: 0;
+    }
+
+
+    section.container-fluid ::v-deep div {
+        /*padding: 0;*/
         /*margin: 0;*/
 
         header {

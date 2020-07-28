@@ -6,30 +6,37 @@
 
                 <swiper-slide>
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-817965.jpg" alt="Краще життя">
-                    <h1>Краще життя
+                    <div class="title">
+                        <h1>Краще життя</h1>
                         <h2>Формування майбутнього суспільства в гармонії з природою</h2>
-                    </h1>
+                    </div>
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Raising-Awareness_1600x900_tcm-3046-765901.jpg" alt="Краще життя">
-                    <h1>Підвищення обізнаності
+                    <div class="title">
+                        <h1>Підвищення обізнаності</h1>
                         <h2>Винесення питань навколишнього середовища на перше місце у  помислах, планах та діях TOYOTA</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture3NEW3_tcm-3046-765902.jpg" alt="Краще життя">
-                    <h1>Біорізноманіття
+                    <div class="title">
+                        <h1>Біорізноманіття</h1>
                         <h2>Допомога у збереженні екосистеми планети</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture4_tcm-3046-816670.jpg" alt="Краще життя">
-                    <h1>Прогресивне мислення
+                    <div class="title">
+                        <h1>Прогресивне мислення</h1>
                         <h2>Створення кращого світу для наших дітей</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <div class="swiper-pagination" slot="pagination"></div>
@@ -37,7 +44,7 @@
                 <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
         </header>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <div class="body container text-left">-->
 <!--            <h5>Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету, тож мусимо залишити її в кращому стані, ніж отримали. У цьому розділі йдеться про зусилля, яких Toyota докладає для формування майбутнього суспільства в гармонії з природою.</h5>-->
@@ -95,32 +102,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota | Краще життя з Toyota | Toyota Україна`,
+                // title:  `Toyota | Краще життя з Toyota | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Краще життя з Toyota | Toyota Україна`
+                        // content: `Toyota | Краще життя з Toyota | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                        // content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                        // content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -182,23 +195,26 @@
                         width: 100%;
                         height: 100%;
                     }
-                    h1 {
+                    .title {
                         position: absolute;
                         top: 100px;
                         left: 100px;
                         z-index: 100;
                         text-align: left;
-                        font-size: 5.2rem;
-                        font-weight: bold;
-                        margin-bottom: 15px;
-                        width: auto;
-                        color: #ffffff;
+                        h1 {
+                            font-size: 5.2rem;
+                            font-weight: bold;
+                            margin-bottom: 15px;
+                            width: auto;
+                            color: #ffffff;
+                        }
                         h2 {
                             font-size: 3.5rem;
                             font-weight: bold;
                             color: #ffffff;
                         }
                     }
+
 
 
                 }
@@ -290,10 +306,12 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 100px;
                             left: 100px;
-                            font-size: 4.5rem;
+                            h1 {
+                                font-size: 4.5rem;
+                            }
                             h2 {
                                 font-size: 3rem;
                             }
@@ -325,13 +343,16 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 50px;
                             left: 50px;
-                            font-size: 4rem;
+                            h1 {
+                                font-size: 4rem;
+                            }
                             h2 {
                                 font-size: 3rem;
                             }
+
                         }
                     }
                 }
@@ -378,13 +399,16 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 30px;
                             left: 30px;
-                            font-size: 3.5rem;
+                            h1 {
+                                font-size: 3.5rem;
+                            }
                             h2 {
                                 font-size: 2.5rem;
                             }
+
                         }
                     }
                 }
@@ -435,13 +459,16 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 20px;
                             left: 20px;
-                            font-size: 3rem;
+                            h1 {
+                                font-size: 3rem;
+                            }
                             h2 {
                                 font-size: 2rem;
                             }
+
                         }
 
 

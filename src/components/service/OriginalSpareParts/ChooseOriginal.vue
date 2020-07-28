@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container text-left">Оригінальні запчастини</h1>-->
 <!--        </header>-->
@@ -275,32 +275,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Обирай оригінальне | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Обирай оригінальне | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Обирай оригінальне | Toyota Україна`
+                        // content: `Toyota Nikolaev | Обирай оригінальне | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Оригінальні запасні частини Toyota сконструйовані та виготовлені таким чином, щоб відповідати саме вашому автомобілю Toyota.`
+                        // content: `Оригінальні запасні частини Toyota сконструйовані та виготовлені таким чином, щоб відповідати саме вашому автомобілю Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Оригінальні запасні частини Toyota сконструйовані та виготовлені таким чином, щоб відповідати саме вашому автомобілю Toyota.`
+                        // content: `Оригінальні запасні частини Toyota сконструйовані та виготовлені таким чином, щоб відповідати саме вашому автомобілю Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, Toyota, Тойота | Запчастини | Справжня | Стандарти | Підроблена | Безпека | Гарантія | Автомобілі | Ризики | Переваги | Гальма | Масло | Фільтр | Подушка безпеки | Аксесуари | Тестування | Ремонт | Якість | Авторизований |, Genuine Parts, Service`
+                        // content: `Toyota Nikolaev, Toyota, Тойота | Запчастини | Справжня | Стандарти | Підроблена | Безпека | Гарантія | Автомобілі | Ризики | Переваги | Гальма | Масло | Фільтр | Подушка безпеки | Аксесуари | Тестування | Ремонт | Якість | Авторизований |, Genuine Parts, Service`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, Toyota, Тойота | Запчастини | Справжня | Стандарти | Підроблена | Безпека | Гарантія | Автомобілі | Ризики | Переваги | Гальма | Масло | Фільтр | Подушка безпеки | Аксесуари | Тестування | Ремонт | Якість | Авторизований |, Genuine Parts, Service`
+                        // content: `Toyota Nikolaev, Toyota, Тойота | Запчастини | Справжня | Стандарти | Підроблена | Безпека | Гарантія | Автомобілі | Ризики | Переваги | Гальма | Масло | Фільтр | Подушка безпеки | Аксесуари | Тестування | Ремонт | Якість | Авторизований |, Genuine Parts, Service`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -322,9 +328,12 @@
 <style lang="scss" scoped>
     @import '../../../styles/variables';
 
+    section.container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
     section.container-fluid ::v-deep div {
-        /*padding: 0;*/
-        /*margin: 0;*/
 
         header {
             height: 420px;

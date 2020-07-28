@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container">Оригінальні запчастини</h1>-->
 <!--        </header>-->
@@ -49,32 +49,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`
+                        // content: `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                        // content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                        // content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                        // content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                        // content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -88,6 +94,11 @@
 
 <style lang="scss" scoped>
     @import '../../../styles/variables';
+
+    section.container-fluid {
+        margin: 0;
+        padding: 0;
+    }
 
     section.container-fluid ::v-deep div {
         /*padding: 0;*/

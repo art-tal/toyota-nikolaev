@@ -1,7 +1,7 @@
 <template>
     <main>
         <guarantee-menu></guarantee-menu>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <header class="container-fluid">-->
 <!--            <h1 class="container text-left">Хартія клієнтів-->
@@ -66,32 +66,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota | Хартія Клієнтів  | Toyota Україна`,
+                // title:  `Toyota | Хартія Клієнтів  | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Хартія Клієнтів  | Toyota Україна`
+                        // content: `Toyota | Хартія Клієнтів  | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                        // content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                        // content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                        // content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                        // content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                        content: this.meta_keywords,
                     },
                 ],
             }

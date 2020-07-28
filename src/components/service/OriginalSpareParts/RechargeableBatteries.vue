@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container text-center">Акумуляторні батареї Toyota</h1>-->
 <!--            <h2>Відкривають нові горизонти за кермом</h2>-->
@@ -264,32 +264,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Акумуляторні батареї Toyota`,
+                // title:  `Toyota Nikolaev | Акумуляторні батареї Toyota`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Акумуляторні батареї Toyota`
+                        // content: `Toyota Nikolaev | Акумуляторні батареї Toyota`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Сучасний автомобіль Toyota демонструє найкращі досягнення електронних систем, які роблять керування більш безпечним, більш легким і приємним.`
+                        // content: `Сучасний автомобіль Toyota демонструє найкращі досягнення електронних систем, які роблять керування більш безпечним, більш легким і приємним.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Сучасний автомобіль Toyota демонструє найкращі досягнення електронних систем, які роблять керування більш безпечним, більш легким і приємним.`
+                        // content: `Сучасний автомобіль Toyota демонструє найкращі досягнення електронних систем, які роблять керування більш безпечним, більш легким і приємним.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, Сервіс Toyota, Тойота, тойота королла,  автомобіль Toyota, технічне обслуговування toyota, заміна моторного масла,  дилерський центр Toyota, дилер тойота, дилер Toyota, Тойота Україна,  сервісна пропозиція тойота, виграти автомобіль Toyota Corolla, акція Тойота, заміна масла двигуна, оригінальне масло Toyota, Toyota Corolla, розіграш автомобіля Toyota  Corolla, Toyota corola, сервис Toyota, toyota, Toyota Україна, автомобиль Toyota, техническое обслуживание тойота, замена моторного масла toyota, дилерский центр Toyota Украина, сервисное предложение toyota, выиграть автомобиль Toyota Corolla, акция Тойота, замена масла двигателя, оригинальное масло Toyota, Приз Toyota Corolla, подарок тойота королла, розыгрыш автомобиля Toyota Corolla, тойота корола, тойота украина, обслуживание автомобиля тойота, техническое обслуживание автомобиля, техобслуживание автомобиля, техобслуживание тойота, замена масла тойота, замена масла тойота цена, Genuine Parts`
+                        // content: `Toyota Nikolaev, Сервіс Toyota, Тойота, тойота королла,  автомобіль Toyota, технічне обслуговування toyota, заміна моторного масла,  дилерський центр Toyota, дилер тойота, дилер Toyota, Тойота Україна,  сервісна пропозиція тойота, виграти автомобіль Toyota Corolla, акція Тойота, заміна масла двигуна, оригінальне масло Toyota, Toyota Corolla, розіграш автомобіля Toyota  Corolla, Toyota corola, сервис Toyota, toyota, Toyota Україна, автомобиль Toyota, техническое обслуживание тойота, замена моторного масла toyota, дилерский центр Toyota Украина, сервисное предложение toyota, выиграть автомобиль Toyota Corolla, акция Тойота, замена масла двигателя, оригинальное масло Toyota, Приз Toyota Corolla, подарок тойота королла, розыгрыш автомобиля Toyota Corolla, тойота корола, тойота украина, обслуживание автомобиля тойота, техническое обслуживание автомобиля, техобслуживание автомобиля, техобслуживание тойота, замена масла тойота, замена масла тойота цена, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, Сервіс Toyota, Тойота, тойота королла,  автомобіль Toyota, технічне обслуговування toyota, заміна моторного масла,  дилерський центр Toyota, дилер тойота, дилер Toyota, Тойота Україна,  сервісна пропозиція тойота, виграти автомобіль Toyota Corolla, акція Тойота, заміна масла двигуна, оригінальне масло Toyota, Toyota Corolla, розіграш автомобіля Toyota  Corolla, Toyota corola, сервис Toyota, toyota, Toyota Україна, автомобиль Toyota, техническое обслуживание тойота, замена моторного масла toyota, дилерский центр Toyota Украина, сервисное предложение toyota, выиграть автомобиль Toyota Corolla, акция Тойота, замена масла двигателя, оригинальное масло Toyota, Приз Toyota Corolla, подарок тойота королла, розыгрыш автомобиля Toyota Corolla, тойота корола, тойота украина, обслуживание автомобиля тойота, техническое обслуживание автомобиля, техобслуживание автомобиля, техобслуживание тойота, замена масла тойота, замена масла тойота цена, Genuine Parts`
+                        // content: `Toyota Nikolaev, Сервіс Toyota, Тойота, тойота королла,  автомобіль Toyota, технічне обслуговування toyota, заміна моторного масла,  дилерський центр Toyota, дилер тойота, дилер Toyota, Тойота Україна,  сервісна пропозиція тойота, виграти автомобіль Toyota Corolla, акція Тойота, заміна масла двигуна, оригінальне масло Toyota, Toyota Corolla, розіграш автомобіля Toyota  Corolla, Toyota corola, сервис Toyota, toyota, Toyota Україна, автомобиль Toyota, техническое обслуживание тойота, замена моторного масла toyota, дилерский центр Toyota Украина, сервисное предложение toyota, выиграть автомобиль Toyota Corolla, акция Тойота, замена масла двигателя, оригинальное масло Toyota, Приз Toyota Corolla, подарок тойота королла, розыгрыш автомобиля Toyota Corolla, тойота корола, тойота украина, обслуживание автомобиля тойота, техническое обслуживание автомобиля, техобслуживание автомобиля, техобслуживание тойота, замена масла тойота, замена масла тойота цена, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -303,6 +309,12 @@
 
 <style lang="scss" scoped>
     @import '../../../styles/variables';
+
+    section.container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
 
     section.container-fluid ::v-deep div {
         /*padding: 0;*/

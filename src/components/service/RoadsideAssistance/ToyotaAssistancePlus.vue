@@ -1,7 +1,7 @@
 <template>
     <main class="container-fluid">
         <sidebar></sidebar>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <header>-->
 <!--            <h1 class="text-center">Toyota Assistance-->
@@ -84,32 +84,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Підтримка вашого авто у дорозі | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Підтримка вашого авто у дорозі | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Підтримка вашого авто у дорозі | Toyota Україна`
+                        // content: `Toyota Nikolaev | Підтримка вашого авто у дорозі | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Програма для власників авмобілів Toyota, придбаних в офіційній дилерській мережі  і для яких вичерпано гарантійний термін.`
+                        // content: `Програма для власників авмобілів Toyota, придбаних в офіційній дилерській мережі  і для яких вичерпано гарантійний термін.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Програма для власників авмобілів Toyota, придбаних в офіційній дилерській мережі  і для яких вичерпано гарантійний термін.`
+                        // content: `Програма для власників авмобілів Toyota, придбаних в офіційній дилерській мережі  і для яких вичерпано гарантійний термін.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, Toyota Assistance Plus, Загальні умови, зміна власника, відшкодування витрат, Toyota Assistance plus, винятки, програма Toyota Assistance plus, Toyota Assistance plus`
+                        // content: `Toyota Nikolaev, Toyota Assistance Plus, Загальні умови, зміна власника, відшкодування витрат, Toyota Assistance plus, винятки, програма Toyota Assistance plus, Toyota Assistance plus`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, Toyota Assistance Plus, Загальні умови, зміна власника, відшкодування витрат, Toyota Assistance plus, винятки, програма Toyota Assistance plus, Toyota Assistance plus`
+                        // content: `Toyota Nikolaev, Toyota Assistance Plus, Загальні умови, зміна власника, відшкодування витрат, Toyota Assistance plus, винятки, програма Toyota Assistance plus, Toyota Assistance plus`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -123,6 +129,12 @@
 
 <style lang="scss" scoped>
     @import '../../../styles/variables';
+
+    main.container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
 
     main.container-fluid ::v-deep div {
         padding: 0;

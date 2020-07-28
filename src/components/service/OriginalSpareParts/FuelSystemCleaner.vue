@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container text-center">Toyota Fuel System Cleaner</h1>-->
 <!--            <h2 class="font-weight-bold">очисник паливної системи для автомобіля Toyota</h2>-->
@@ -67,32 +67,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Очисник паливної системи для автомобіля`,
+                // title:  `Toyota Nikolaev | Очисник паливної системи для автомобіля`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Очисник паливної системи для автомобіля`
+                        // content: `Toyota Nikolaev | Очисник паливної системи для автомобіля`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                        // content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                        // content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                        // content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                        // content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -113,6 +119,12 @@
 
 <style lang="scss" scoped>
     @import '../../../styles/variables';
+
+    section.container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
 
     section.container-fluid ::v-deep div {
         padding: 0;

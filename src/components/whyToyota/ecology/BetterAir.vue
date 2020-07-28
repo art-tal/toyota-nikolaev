@@ -9,34 +9,38 @@
                         style="background-color: rgba(0,0,0,.1);"
                 >
                         <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Carousel%202_tcm-3046-559422.jpg" alt="Краще повітря">
-                    <h1 style="color: #202020">Краще повітря
+                    <div class="title">
+                        <h1 style="color: #202020">Краще повітря</h1>
                         <h2>Створення екологічно чистих автомобілів для світу</h2>
-                    </h1>
+                    </div>
                 </swiper-slide>
 
                 <swiper-slide>
                         <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Carousel%203_tcm-3046-559423.jpg" alt="Краще повітря">
-                    <h1 style="color: #202020">Краще повітря
+                    <div class="title">
+                        <h1 style="color: #202020">Краще повітря</h1>
                         <h2>Створення екологічно чистих автомобілів для світу</h2>
-                    </h1>
+                    </div>
                 </swiper-slide>
 
                 <swiper-slide
                         style="color: #ffffff"
                 >
                         <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Carousel%204_tcm-3046-577527.jpg" alt="Краще повітря">
-                    <h1 style="color: #202020">Краще повітря
+                    <div class="title">
+                        <h1 style="color: #202020">Краще повітря</h1>
                         <h2>Створення екологічно чистих автомобілів для світу</h2>
-                    </h1>
+                    </div>
                 </swiper-slide>
 
                 <swiper-slide
                         style="color: #ffffff;"
                 >
                         <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Section%201_Carousel_PRODpicture%2001_tcm-3046-551899.jpg" alt="Краще повітря">
-                        <h1>Краще життя
-                            <h2>Створення майбутнього суспільства в гармонії з природою</h2>
-                        </h1>
+                    <div class="title">
+                        <h1>Краще життя</h1>
+                        <h2>Створення майбутнього суспільства в гармонії з природою</h2>
+                    </div>
                 </swiper-slide>
 
 
@@ -45,7 +49,7 @@
                 <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
         </header>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
         
 <!--        <div class="body container text-left">-->
 
@@ -174,32 +178,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Україна | Краще повітря | Життя з Тойота`,
+                // title:  `Toyota Україна | Краще повітря | Життя з Тойота`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Україна | Краще повітря | Життя з Тойота`
+                        // content: `Toyota Україна | Краще повітря | Життя з Тойота`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Наша  дорожня карта об&#39;єднує широкий спектр екологічних технологій-  гібрид, plug-in гібрид, електричний акумулятор та система паливних елементів.`
+                        // content: `Наша  дорожня карта об&#39;єднує широкий спектр екологічних технологій-  гібрид, plug-in гібрид, електричний акумулятор та система паливних елементів.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Наша  дорожня карта об&#39;єднує широкий спектр екологічних технологій-  гібрид, plug-in гібрид, електричний акумулятор та система паливних елементів.`
+                        // content: `Наша  дорожня карта об&#39;єднує широкий спектр екологічних технологій-  гібрид, plug-in гібрид, електричний акумулятор та система паливних елементів.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -261,21 +271,24 @@
                         width: 100%;
                         height: 100%;
                     }
-                    h1 {
+                    .title {
                         position: absolute;
                         top: 100px;
                         left: 100px;
                         z-index: 100;
-                        text-align: left;
-                        font-size: 5.2rem;
-                        font-weight: bold;
-                        margin-bottom: 15px;
                         width: auto;
+                        h1 {
+                            text-align: left;
+                            font-size: 5.2rem;
+                            font-weight: bold;
+                            margin-bottom: 15px;
+                        }
                         h2 {
                             font-size: 3.5rem;
                             font-weight: bold;
                         }
                     }
+
 
 
                 }
@@ -375,14 +388,17 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 100px;
                             left: 100px;
-                            font-size: 4.5rem;
+                            h1 {
+                                font-size: 4.5rem;
+                            }
                             h2 {
                                 font-size: 3rem;
                             }
                         }
+
                     }
                 }
             }
@@ -410,14 +426,17 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 50px;
                             left: 50px;
-                            font-size: 4rem;
+                            h1 {
+                                font-size: 4rem;
+                            }
                             h2 {
                                 font-size: 3rem;
                             }
                         }
+
                     }
                 }
             }
@@ -468,14 +487,17 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 30px;
                             left: 30px;
-                            font-size: 3.5rem;
+                            h1 {
+                                font-size: 3.5rem;
+                            }
                             h2 {
                                 font-size: 2.5rem;
                             }
                         }
+
                     }
                 }
             }
@@ -525,14 +547,17 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 20px;
                             left: 20px;
-                            font-size: 3rem;
+                            h1 {
+                                font-size: 3rem;
+                            }
                             h2 {
                                 font-size: 2rem;
                             }
                         }
+
 
 
                     }

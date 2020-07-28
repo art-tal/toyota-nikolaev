@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container">Повітряні фільтри салону Toyota</h1>-->
 <!--            <h2>Секрет чистого повітря</h2>-->
@@ -86,32 +86,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Повітряний фільтр салону | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Повітряний фільтр салону | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Повітряний фільтр салону | Toyota Україна`
+                        // content: `Toyota Nikolaev | Повітряний фільтр салону | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Пересуваючись сучасними містами та проводячи багато часу у заторах, ніщо не може зрівнятися з насолодою свіжим повітрям. Оригінальні фільтри Toyota.`
+                        // content: `Пересуваючись сучасними містами та проводячи багато часу у заторах, ніщо не може зрівнятися з насолодою свіжим повітрям. Оригінальні фільтри Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Пересуваючись сучасними містами та проводячи багато часу у заторах, ніщо не може зрівнятися з насолодою свіжим повітрям. Оригінальні фільтри Toyota.`
+                        // content: `Пересуваючись сучасними містами та проводячи багато часу у заторах, ніщо не може зрівнятися з насолодою свіжим повітрям. Оригінальні фільтри Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, Toyota, фільтр, салон, повітряні фільтри, Genuine Parts`
+                        // content: `Toyota Nikolaev, Toyota, фільтр, салон, повітряні фільтри, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, Toyota, фільтр, салон, повітряні фільтри, Genuine Parts`
+                        // content: `Toyota Nikolaev, Toyota, фільтр, салон, повітряні фільтри, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -136,6 +142,13 @@
 
 <style lang="scss" scoped>
     @import '../../../styles/variables';
+
+
+
+    section.container-fluid {
+        padding: 0;
+        margin: 0;
+    }
 
     section.container-fluid ::v-deep div {
         /*padding: 0;*/

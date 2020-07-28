@@ -6,30 +6,37 @@
 
                 <swiper-slide>
                     <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-1_tcm-3046-616845.jpg" alt="Просто краще">
-                    <h1>Просто краще
+                    <div class="title">
+                        <h1>Просто краще</h1>
                         <h2>Серце нашої світової екологічної місії</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-2_tcm-3046-616846.jpg" alt="Просто краще">
-                    <h1>Просто краще
+                    <div class="title">
+                        <h1>Просто краще</h1>
                         <h2>Шлях до сталої мобільності та еко-автомобіля</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-3_tcm-3046-616848.jpg" alt="Просто краще">
-                    <h1>Просто краще
+                    <div class="title">
+                        <h1>Просто краще</h1>
                         <h2>Працювати сьогодні, аби завтра світ був чистішим</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Section-1_Picture-frame4_tcm-3046-616853.jpg" alt="Просто краще">
-                    <h1>Просто краще
+                    <div class="title">
+                        <h1>Просто краще</h1>
                         <h2>Моніторинг та сертифікація</h2>
-                    </h1>
+                    </div>
                 </swiper-slide>
 
                 <div class="swiper-pagination" slot="pagination"></div>
@@ -37,7 +44,7 @@
                 <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
         </header>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <div class="body container text-left">-->
 <!--            <h3>Що означає "Просто краще"? Toyota долучилася до охорони навколишнього середовища десятки років тому. Протягом усього цього часу ми закладаємо у свій бізнес міцний фундамент, який гарантує, що дотримання екологічних стандартів є наріжним каменем нашої діяльності.</h3>-->
@@ -208,32 +215,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Україна| Просто краще | Життя з Тойота`,
+                // title:  `Toyota Україна| Просто краще | Життя з Тойота`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Україна| Просто краще | Життя з Тойота`
+                        // content: `Toyota Україна| Просто краще | Життя з Тойота`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Протягом десятків років Toyota закладає у свій бізнес міцний фундамент, який гарантує дотримання екологічних стандартів та охорони навколишнього середовища.`
+                        // content: `Протягом десятків років Toyota закладає у свій бізнес міцний фундамент, який гарантує дотримання екологічних стандартів та охорони навколишнього середовища.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Протягом десятків років Toyota закладає у свій бізнес міцний фундамент, який гарантує дотримання екологічних стандартів та охорони навколишнього середовища.`
+                        // content: `Протягом десятків років Toyota закладає у свій бізнес міцний фундамент, який гарантує дотримання екологічних стандартів та охорони навколишнього середовища.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Social projects, Enviroment`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Social projects, Enviroment`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Social projects, Enviroment`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Social projects, Enviroment`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -295,22 +308,25 @@
                         width: 100%;
                         height: 100%;
                     }
-                    h1 {
+                    .title {
                         position: absolute;
                         top: 100px;
                         left: 100px;
                         z-index: 100;
                         text-align: left;
-                        font-size: 5.2rem;
-                        font-weight: bold;
-                        margin-bottom: 15px;
                         width: auto;
-                        color: #ffffff;
+                        h1 {
+                            font-size: 5.2rem;
+                            font-weight: bold;
+                            margin-bottom: 15px;
+                            color: #ffffff;
+                        }
                         h2 {
                             font-size: 3.5rem;
                             font-weight: bold;
                             color: #ffffff;
                         }
+
                     }
 
 
@@ -399,14 +415,17 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 100px;
                             left: 100px;
-                            font-size: 4.5rem;
+                            h1 {
+                                font-size: 4.5rem;
+                            }
                             h2 {
                                 font-size: 3rem;
                             }
                         }
+
                     }
                 }
             }
@@ -431,14 +450,17 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 50px;
                             left: 50px;
-                            font-size: 4rem;
+                            h1 {
+                                font-size: 4rem;
+                            }
                             h2 {
                                 font-size: 3rem;
                             }
                         }
+
                     }
                 }
             }
@@ -470,14 +492,17 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 30px;
                             left: 30px;
-                            font-size: 3.5rem;
+                            h1 {
+                                font-size: 3.5rem;
+                            }
                             h2 {
                                 font-size: 2.5rem;
                             }
                         }
+
                     }
                 }
             }
@@ -509,14 +534,17 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 20px;
                             left: 20px;
-                            font-size: 3rem;
+                            h1 {
+                                font-size: 3rem;
+                            }
                             h2 {
                                 font-size: 2rem;
                             }
                         }
+
 
 
                     }
