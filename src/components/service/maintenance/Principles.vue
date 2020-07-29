@@ -90,20 +90,21 @@
         color: $font_color;
 
         header {
-            height: 80vh;
+            @include header-xl;
+            /*height: 80vh;*/
             max-height: 60vw;
             background-image: url('//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             margin-bottom: 50px;
 
             h1 {
                 padding-top: 350px;
-                font-size: 5.2rem;
+                /*font-size: 5.2rem;*/
                 color: #ffffff;
-                font-weight: bolder;
+                /*font-weight: bolder;*/
             }
         }
 
@@ -132,9 +133,10 @@
     @media (min-width: 992px) and (max-width: 1199.9px) {
         main.container-fluid ::v-deep div {
             header {
-                max-height: 60vw;
+                @include header-lg;
+                /*max-height: 60vw;*/
                 h1 {
-                    width: 100%;
+                    /*width: 100%;*/
                     padding-top: 250px;
                 }
             }
@@ -145,12 +147,13 @@
     @media (min-width: 768px) and (max-width: 991.9px) {
         main.container-fluid ::v-deep div {
             header  {
-                height: 56vh;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 15px;
+                @include header-md;
+                /*height: 56vh;*/
+                /*min-height: 180px;*/
+                /*max-height: 480px;*/
+                /*padding-top: 15px;*/
                 h1 {
-                    width: 100%;
+                    /*width: 100%;*/
                     font-size: 3.5rem;
                     padding-top: 200px;
                 }
@@ -182,11 +185,12 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         main.container-fluid ::v-deep div{
             header  {
-                min-height: 180px;
-                height: 56vw;
-                padding-top: 15px;
+                @include header-sm;
+                /*min-height: 180px;*/
+                /*height: 56vw;*/
+                /*padding-top: 15px;*/
                 h1 {
-                    width: 100%;
+                    /*width: 100%;*/
                     font-size: 3rem;
                     padding-top: 150px;
                 }
@@ -198,11 +202,12 @@
     @media (max-width: 575.9px) {
         main.container-fluid ::v-deep div {
             header {
+                @include header-xs;
                 width: 100%;
                 height: 56vw;
-                min-height: 180px;
+                /*min-height: 180px;*/
                 max-height: 320px;
-                padding-top: 10px;
+                /*padding-top: 10px;*/
                 h1 {
                     width: 100%;
                     font-size: 2.5rem;

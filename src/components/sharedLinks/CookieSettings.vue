@@ -1,7 +1,7 @@
 <template>
 <!--    <main class="container">-->
     <main class="container">
-        <div class="wrap" v-html="pageBody.body"></div>
+        <div class="wrap" v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="text-center">Налаштування файлів Cookie</h1>-->
 <!--            <p>Виберіть такі налаштування файлів cookie, які ви бажаєте дозволити. Звертаємо вашу увагу на те, що налаштування, які конче необхідні для функціонування сайту, не підпадають під дію директиви ЄС про захист персональних даних і, відповідно, не можуть бути вимкнені.</p>-->
@@ -96,15 +96,15 @@
             }
         },
 
-        metaInfo() {
-            return {
-                title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`,
-                meta: [
-                    {
-                        vmid: "title",
-                        property: "og:title",
-                        content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`
-                    },
+        // metaInfo() {
+        //     return {
+                // title:  `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`,
+                // meta: [
+                //     {
+                //         vmid: "title",
+                //         property: "og:title",
+                //         content: `Toyota Nikolaev | ${this.modelTitle}, комплектація ${this.equipmentTitle} | Загальна інформація`
+                //     },
                     // {
                     //     vmid: "description",
                     //     name: "description",
@@ -125,9 +125,9 @@
                     //     property: "og:keywords",
                     //     content: `Toyota Nikolaev, Toyota, модельный ряд toyota, домашняя страница, акции, новости, модели, автомобиль, новый автомобиль, мой автомобиль, безопасные автомобили, экологически автомобили, безопасный автомобиль, идеальный автомобиль, семейный автомобиль, городской автомобиль, внедорожник, кроссовер, хэтчбек, модельный ряд toyota, домашняя страница, акции, новости, модели`
                     // },
-                ],
-            }
-        },
+        //         ],
+        //     }
+        // },
 
         // mounted() {
         //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)

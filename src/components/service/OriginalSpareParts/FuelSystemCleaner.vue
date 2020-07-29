@@ -131,26 +131,28 @@
         /*margin: 0;*/
 
         header {
-            height: 80vh;
-            width: 100%;
+            @include header-xl;
+            /*height: 80vh;*/
+            /*width: 100%;*/
             padding-top: 120px;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-parts-2014-fuel-system-cleaner-focus_tcm-3046-284899.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             //color: $font_color;
             color: #ffffff;
 
             h1 {
-                font-size: 5.4rem;
-                font-weight: bolder;
-                text-align: left;
+                /*font-size: 5.4rem;*/
+                /*font-weight: bolder;*/
+                text-align: center;
             }
 
             h2 {
-                font-size: 3.4rem;
-                margin-top: 16px;
+                /*font-size: 3.4rem;*/
+                /*margin-top: 16px;*/
+                text-align: center;
             }
         }
 
@@ -225,10 +227,11 @@
     @media (min-width: 992px) and (max-width: 1199.9px) {
         section.container-fluid ::v-deep div {
             header {
-                max-height: 60vw;
-                h1 {
-                    width: 100%;
-                }
+                @include header-lg;
+                /*max-height: 60vw;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*}*/
             }
 
         }
@@ -237,18 +240,19 @@
     @media (min-width: 768px) and (max-width: 991.9px) {
         section.container-fluid ::v-deep div {
             header {
-                height: 56vh;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 15px;
-                h1 {
-                    width: 100%;
-                    font-size: 4rem;
-                }
-                h2 {
-                    font-size: 3rem;
-                    padding-top: 10px;
-                }
+                @include header-md;
+                /*height: 56vh;*/
+                /*min-height: 180px;*/
+                /*max-height: 480px;*/
+                /*padding-top: 15px;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*    font-size: 4rem;*/
+                /*}*/
+                /*h2 {*/
+                /*    font-size: 3rem;*/
+                /*    padding-top: 10px;*/
+                /*}*/
             }
         }
     }
@@ -256,17 +260,18 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         section.container-fluid ::v-deep div {
             header {
-                min-height: 180px;
-                height: 56vw;
-                padding-top: 15px;
-                h1 {
-                    width: 100%;
-                    font-size: 3.5rem;
-                }
-                h2 {
-                    font-size: 2.5rem;
-                    padding-top: 5px;
-                }
+                @include header-sm;
+                /*min-height: 180px;*/
+                /*height: 56vw;*/
+                /*padding-top: 15px;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*    font-size: 3.5rem;*/
+                /*}*/
+                /*h2 {*/
+                /*    font-size: 2.5rem;*/
+                /*    padding-top: 5px;*/
+                /*}*/
             }
 
             .p {
@@ -290,19 +295,20 @@
     @media (max-width: 575.9px) {
         section.container-fluid ::v-deep div {
             header {
+                @include header-xs;
                 width: 100%;
-                height: auto;
-                min-height: 180px;
-                padding-top: 10px;
+                /*height: auto;*/
+                /*min-height: 180px;*/
+                /*padding-top: 10px;*/
                 h1 {
                     width: 100%;
-                    padding: 10px 15px;
-                    font-size: 2.5rem;
+                    /*padding: 10px 15px;*/
+                    /*font-size: 2.5rem;*/
                 }
-                h2 {
-                    font-size: 1.8rem;
-                    padding-top: 5px;
-                }
+                /*h2 {*/
+                    /*font-size: 1.8rem;*/
+                    /*padding-top: 5px;*/
+                /*}*/
             }
 
             .p {

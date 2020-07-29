@@ -3,10 +3,10 @@
         <header class="container-fluid">
             <h1 class="container text-left">
                 З чого все почалося
-                <h2 class="text-left">
-                    Toyoda AA
-                </h2>
             </h1>
+            <h2 class="container text-left">
+                Toyoda AA
+            </h2>
         </header>
 
         <div class="body container">
@@ -263,12 +263,12 @@
     },
 
         mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper;
                 const swiperThumbs = this.$refs.swiperThumbs.$swiper;
                 swiperTop.controller.control = swiperThumbs;
                 swiperThumbs.controller.control = swiperTop;
-                setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
 
             })
         },
@@ -297,9 +297,9 @@
             padding-top: 70px;
             h1 {
                 color: #ffffff;
-                h2 {
-                    color: #ffffff;
-                }
+            }
+            h2 {
+                color: #ffffff;
             }
         }
 

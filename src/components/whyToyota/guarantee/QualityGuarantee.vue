@@ -1,7 +1,7 @@
 <template>
     <main>
         <guarantee-menu></guarantee-menu>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <header class="container-fluid">-->
 <!--            <h1 class="container text-center">Гарантія якості-->

@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <header>-->
 <!--            <h1 class="text-center">Клієнтська служба-->
@@ -79,32 +79,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Клієнтська служба ПІІ «Тойота-Україна»`,
+                // title:  `Toyota Nikolaev | Клієнтська служба ПІІ «Тойота-Україна»`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Клієнтська служба ПІІ «Тойота-Україна»`
+                        // content: `Toyota Nikolaev | Клієнтська служба ПІІ «Тойота-Україна»`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Представники клієнтської служби ПІІ «Тойота-Україна» працюють з побажаннями та претензіями клієнтів, та службою  Toyota Assistance.`
+                        // content: `Представники клієнтської служби ПІІ «Тойота-Україна» працюють з побажаннями та претензіями клієнтів, та службою  Toyota Assistance.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Представники клієнтської служби ПІІ «Тойота-Україна» працюють з побажаннями та претензіями клієнтів, та службою  Toyota Assistance.`
+                        // content: `Представники клієнтської служби ПІІ «Тойота-Україна» працюють з побажаннями та претензіями клієнтів, та службою  Toyota Assistance.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, тойота, Україна, клієнт, клієнтська служба, відділ по роботі з клієнтами, переваги, якість, побажання, пропозиції, скарга, toyota, toyota ukraine, toyota assistance, toyota assistance plus, досвід, претензії, офіційний дилер, тойота, лексус, toyota, lexus, ukraine, Україна, Genuine Accessories, Latest news, Genuine Parts`
+                        // content: `Toyota Nikolaev, тойота, Україна, клієнт, клієнтська служба, відділ по роботі з клієнтами, переваги, якість, побажання, пропозиції, скарга, toyota, toyota ukraine, toyota assistance, toyota assistance plus, досвід, претензії, офіційний дилер, тойота, лексус, toyota, lexus, ukraine, Україна, Genuine Accessories, Latest news, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, тойота, Україна, клієнт, клієнтська служба, відділ по роботі з клієнтами, переваги, якість, побажання, пропозиції, скарга, toyota, toyota ukraine, toyota assistance, toyota assistance plus, досвід, претензії, офіційний дилер, тойота, лексус, toyota, lexus, ukraine, Україна, Genuine Accessories, Latest news, Genuine Parts`
+                        // content: `Toyota Nikolaev, тойота, Україна, клієнт, клієнтська служба, відділ по роботі з клієнтами, переваги, якість, побажання, пропозиції, скарга, toyota, toyota ukraine, toyota assistance, toyota assistance plus, досвід, претензії, офіційний дилер, тойота, лексус, toyota, lexus, ukraine, Україна, Genuine Accessories, Latest news, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }

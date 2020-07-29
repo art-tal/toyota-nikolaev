@@ -123,17 +123,19 @@
 
     section {
         header.container-fluid {
+            @include header-xl;
             background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/business-customers-company-car-1600x900_tcm-3046-663239.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
-            height: 80vh;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
+            /*height: 80vh;*/
             padding: 95px 0;
             h1 {
-                font-size: 5.2rem;
+                /*font-size: 5.2rem;*/
                 color: #ffffff;
-                font-weight: bolder;
+                text-align: center;
+                /*font-weight: bolder;*/
             }
         }
     }
@@ -190,8 +192,9 @@
     @media (min-width: 992px) and (max-width: 1199.9px) {
         section {
             header.container-fluid {
+                @include header-lg;
                 height: 80vh;
-                max-height: 60vw;
+                /*max-height: 60vw;*/
                 h1 {
                     font-size: 5.0rem;
                 }
@@ -202,9 +205,10 @@
     @media (min-width: 768px) and (max-width: 991.9px) {
         section {
             header.container-fluid {
-                min-height: 180px;
-                height: 56vh;
-                max-height: 480px;
+                @include header-md;
+                /*min-height: 180px;*/
+                /*height: 56vh;*/
+                /*max-height: 480px;*/
                 h1 {
                     font-size: 3.4rem;
                 }
@@ -245,13 +249,14 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         section {
             header.container-fluid {
-                min-height: 180px;
-                height: 56vw;
+                @include header-sm;
+                /*min-height: 180px;*/
+                /*height: 56vw;*/
                 max-height: 480px;
                 padding: 20px 0;
-                h1 {
-                    font-size: 3.4rem;
-                }
+                /*h1 {*/
+                    /*font-size: 3.4rem;*/
+                /*}*/
             }
         }
 
@@ -293,7 +298,8 @@
     @media (max-width: 575.9px) {
         section {
             header.container-fluid {
-                min-height: 180px;
+                @include header-xs;
+                /*min-height: 180px;*/
                 height: 56vw;
                 max-height: 480px;
                 padding: 20px 0;

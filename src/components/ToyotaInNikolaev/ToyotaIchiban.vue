@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <header>-->
 <!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-ichiban-header_tcm-3046-247016.jpg" alt="photo">-->
@@ -108,32 +108,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Щорічна премія для дилерів Toyota Ichiban`,
+                // title:  `Toyota Nikolaev | Щорічна премія для дилерів Toyota Ichiban`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Щорічна премія для дилерів Toyota Ichiban`
+                        // content: `Toyota Nikolaev | Щорічна премія для дилерів Toyota Ichiban`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Премію Toyota Ichiban присуджують щорічно на підтвердження високих результатів роботи дилерів Toyota у Європі за рівнем задоволеності клієнтів.`
+                        // content: `Премію Toyota Ichiban присуджують щорічно на підтвердження високих результатів роботи дилерів Toyota у Європі за рівнем задоволеності клієнтів.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Премію Toyota Ichiban присуджують щорічно на підтвердження високих результатів роботи дилерів Toyota у Європі за рівнем задоволеності клієнтів.`
+                        // content: `Премію Toyota Ichiban присуджують щорічно на підтвердження високих результатів роботи дилерів Toyota у Європі за рівнем задоволеності клієнтів.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, toyota ichiban, ichiban, премія, тойота, кращий, перший, номер один, дилер, дилери, обслуговування, клієнт, автомобіль, відгук, ітібан, ічибан, премія, автоарт, автосаміт, автогалс, алмаз систем, 5.5 Toyota Ichiban award`
+                        // content: `toyota, toyota ichiban, ichiban, премія, тойота, кращий, перший, номер один, дилер, дилери, обслуговування, клієнт, автомобіль, відгук, ітібан, ічибан, премія, автоарт, автосаміт, автогалс, алмаз систем, 5.5 Toyota Ichiban award`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, toyota ichiban, ichiban, премія, тойота, кращий, перший, номер один, дилер, дилери, обслуговування, клієнт, автомобіль, відгук, ітібан, ічибан, премія, автоарт, автосаміт, автогалс, алмаз систем, 5.5 Toyota Ichiban award`
+                        // content: `toyota, toyota ichiban, ichiban, премія, тойота, кращий, перший, номер один, дилер, дилери, обслуговування, клієнт, автомобіль, відгук, ітібан, ічибан, премія, автоарт, автосаміт, автогалс, алмаз систем, 5.5 Toyota Ichiban award`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -161,20 +167,23 @@
             img {
                 width: 100%;
             }
-            h1 {
+            .title {
                 width: 100%;
                 position: absolute;
                 top: 10px;
                 left: 0;
-                color: #ffffff;
-                font-size: 5.2rem;
-                font-weight: bold;
+                h1 {
+                    color: #ffffff;
+                    font-size: 5.2rem;
+                    font-weight: bold;
+                }
                 h2 {
                     font-size: 3.5rem;
                     color: #ffffff;
                     font-weight: bold;
                 }
             }
+
         }
 
         .body.container {
@@ -212,8 +221,10 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         main ::v-deep div {
             header {
-                h1 {
-                    font-size: 4rem;
+                .title {
+                    h1 {
+                        font-size: 4rem;
+                    }
                     h2 {
                         font-size: 3rem;
                     }
@@ -235,12 +246,15 @@
     @media (max-width: 576px) {
         main ::v-deep div {
             header {
-                h1 {
-                    font-size: 3.5rem;
+                .title {
+                    h1 {
+                        font-size: 3.5rem;
+                    }
                     h2 {
                         font-size: 3rem;
                     }
                 }
+
             }
 
             .body.container {

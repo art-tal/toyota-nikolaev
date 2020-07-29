@@ -64,7 +64,7 @@
                                 class="btn btn-outline-danger"
                                 tag="button"
                                 exact
-                                to="/new_cars"
+                                to="/select_model/1"
                         >
                             Дізнайся про технічні характеристики Yaris,
                         </router-link>
@@ -377,11 +377,12 @@
 
     mounted() {
         this.$nextTick(() => {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
             const swiperTop = this.$refs.swiperTop.$swiper;
             const swiperThumbs = this.$refs.swiperThumbs.$swiper;
             swiperTop.controller.control = swiperThumbs;
             swiperThumbs.controller.control = swiperTop;
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
+
 
         })
     },

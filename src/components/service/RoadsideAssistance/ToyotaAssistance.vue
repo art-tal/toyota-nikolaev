@@ -118,29 +118,30 @@
         margin: 0;
 
         header {
-            width: 100%;
-            height: 80vh;
-            padding-top: 30px;
+            @include header-xl;
+            /*width: 100%;*/
+            /*height: 80vh;*/
+            /*padding-top: 30px;*/
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Toyota-Assistance_tcm-3046-1600899.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
-            color: $font_color;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
+            //color: $font_color;
 
             h1 {
-                width: 100%;
-                padding: 15px;
-                margin: 0 auto;
-                font-size: 5.2rem;
-                font-weight: bolder;
-                text-align: left;
+                /*width: 100%;*/
+                /*padding: 15px;*/
+                /*margin: 0 auto;*/
+                /*font-size: 5.2rem;*/
+                /*font-weight: bolder;*/
+                text-align: center;
             }
 
             h2 {
-                font-size: 3.4rem;
-                text-align: left;
-                padding-top: 16px;
+                /*font-size: 3.4rem;*/
+                text-align: center;
+                /*padding-top: 16px;*/
             }
         }
 
@@ -212,10 +213,11 @@
     @media (min-width: 992px) and (max-width: 1199.9px) {
         main.container-fluid ::v-deep div {
             header {
-                max-height: 60vw;
-                h1 {
-                    width: 100%;
-                }
+                /*//@include header-lg;*/
+                /*max-height: 60vw;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*}*/
             }
 
         }
@@ -224,18 +226,19 @@
     @media (min-width: 768px) and (max-width: 991.9px) {
         main.container-fluid ::v-deep div {
             header {
-                height: 56vh;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 15px;
-                h1 {
-                    width: 100%;
-                    font-size: 4rem;
-                }
-                h2 {
-                    font-size: 3rem;
-                    padding-top: 10px;
-                }
+                @include header-md;
+                /*height: 56vh;*/
+                /*min-height: 180px;*/
+                /*max-height: 480px;*/
+                /*padding-top: 15px;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*    font-size: 4rem;*/
+                /*}*/
+                /*h2 {*/
+                /*    font-size: 3rem;*/
+                /*    padding-top: 10px;*/
+                /*}*/
             }
         }
     }
@@ -243,25 +246,27 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         main.container-fluid ::v-deep div {
             header {
-                min-height: 180px;
-                height: 56vw;
-                padding-top: 15px;
-                h1 {
-                    width: 100%;
-                    font-size: 3.5rem;
-                }
-                h2 {
-                    font-size: 2.5rem;
-                    padding-top: 5px;
-                }
+                @include header-sm;
+                /*min-height: 180px;*/
+                /*height: 56vw;*/
+                /*padding-top: 15px;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*    font-size: 3.5rem;*/
+                /*}*/
+                /*h2 {*/
+                /*    font-size: 2.5rem;*/
+                /*    padding-top: 5px;*/
+                /*}*/
             }
 
             section.container {
                 header {
+                    @include header-xs;
                     margin: 30px auto;
                     h1 {
                         width: 100%;
-                        font-size: 3rem;
+                        /*font-size: 3rem;*/
                     }
                 }
             }
