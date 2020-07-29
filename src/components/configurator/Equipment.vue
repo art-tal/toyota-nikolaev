@@ -163,7 +163,8 @@
                     slidesPerGroup: 1,//3
                     loop: true,
                     loopFillGroupWithBlank: true,
-                    clickable: true,
+
+                    // clickable: true,
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
@@ -309,6 +310,7 @@
                 localStorage.mod_id = equipment.mod_id;
                 // console.log(localStorage.equipment);
                 setTimeout(() => {eventEmitter.$emit('selectedEquipment');},100);
+                // eventEmitter.$emit('selectedEquipment');
             },
 
             getFontColor: function () {
@@ -401,6 +403,7 @@
         margin: 0;
         position: relative;
         background-color: rgba(0,0,0,0.3);
+        z-index: 100;
 
         /*.carousel_wrapper {
             .slide_wrapper.container {
@@ -483,7 +486,7 @@
                  box-sizing: border-box;
                  padding: 30px 40px;
                  position: relative;
-                 z-index: 1100;
+                 z-index: 1000;
                  cursor: pointer;
                  img {
                      width: 100%;

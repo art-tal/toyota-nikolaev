@@ -343,7 +343,7 @@
 
 <script>
     import axios from 'axios';
-    import {eventEmitter} from "../../main";
+    // import {eventEmitter} from "../../main";
     // import Equipment from "../configurator/Equipment";
     // import SubNavigation from "./../cars/SubNavigation";
     import MixinSelectModel from "../../mixins/mixinSelectModel";
@@ -375,17 +375,17 @@
                 renderComponent: 0,
 
                 // id: 0,
-                id_equip: localStorage.mod_id,
+                // id_equip: localStorage.mod_id,
                 // model: {},
                 // showEquipment: false,
 
                 // selectedColor: {},
                 // equipments: [],
                 // equipment: {},
-                // modelColor: "#fff",
-
-                transmission: {},
-                transmissions: [],
+                // // modelColor: "#fff",
+                //
+                // transmission: {},
+                // transmissions: [],
 
                 showMore: false,
 
@@ -440,12 +440,15 @@
             // this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
-            eventEmitter.$on('selectedEquipment', //this.choice
-                () => {
-                    this.showEquipment = false;
-                    this.changeTitle();
-                }
-            );
+            // eventEmitter.$on('selectedEquipment', //this.choice
+            //     () => {
+            //         this.showEquipment = false;
+            //         this.changeTitle();
+            //         this.getEngine();
+            //     }
+            // );
+
+
             // try {
             //     this.color = JSON.parse( localStorage.color );
             // }

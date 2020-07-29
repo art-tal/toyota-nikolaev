@@ -1,6 +1,7 @@
 import axios from "axios"
 import $ from "jquery";
 import formattedPrice from "../filters/price_format";
+import {eventEmitter} from "../main";
 
 
 export default {
@@ -16,6 +17,9 @@ export default {
 
             modelTitle: "",
             equipmentTitle: "",
+
+            transmission: {},
+            transmissions: [],
 
             modelColor: "#fff",
 
@@ -38,6 +42,14 @@ export default {
 
     mounted() {
         this.showEquipment = false;
+
+        eventEmitter.$on('selectedEquipment', //this.choice
+            () => {
+                this.showEquipment = false;
+                this.changeTitle();
+                this.getEngine();
+            }
+        );
     },
 
     computed: {
@@ -56,6 +68,10 @@ export default {
         checkId() {
             this.$forceUpdate();
             return this.$route.params.id;
+        },
+
+        idEquip() {
+            return localStorage.mod_id;
         },
     },
 
@@ -81,6 +97,9 @@ export default {
         },
 
 
+        transmissions() {
+            return this.transmissions;
+        },
     },
 
     methods: {
@@ -195,14 +214,15 @@ export default {
         getEngine() {
             axios.get(
                 'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
-                {params: {id: this.id_equip} },
+                // {params: {id: this.id_equip} },
+                {params: {id: this.idEquip} },
             )
                 .then( (response) => {
                     this.transmissions = response.data;
                     console.log(this.transmissions);
                     this.transmission = this.transmissions[0];
                     localStorage.transmission = JSON.stringify( this.transmission);
-                    console.log(this.id_equip, this.transmission);
+                    console.log(this.idEquip, this.transmission);
                     if (!this.transmission) {
                         this.transmission = {
                             eng_name: "none",
