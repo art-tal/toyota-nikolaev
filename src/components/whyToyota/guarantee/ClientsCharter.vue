@@ -30,16 +30,16 @@
 
 <!--        </div>-->
 
-<!--        <footer class="container text-center">-->
-<!--            <router-link-->
-<!--                    tag="button"-->
-<!--                    class="btn btn-danger"-->
-<!--                    exact-->
-<!--                    to="/form_call_back"-->
-<!--            >-->
-<!--                <i class="fas fa-phone-alt"></i> Форма зворотнього зв`язку-->
-<!--            </router-link>-->
-<!--        </footer>-->
+        <footer class="container text-center">
+            <router-link
+                    tag="button"
+                    class="btn btn-danger"
+                    exact
+                    to="/form_feed_back"
+            >
+                <i class="fas fa-phone-alt"></i> Форма зворотнього зв`язку
+            </router-link>
+        </footer>
     </main>
 </template>
 
@@ -147,7 +147,9 @@
                 color: #595D60;
             }
         }
+    }
 
+    main {
         footer {
             margin: 68px auto;
             .btn.btn-danger {
@@ -210,6 +212,10 @@
                 }
             }
 
+
+        }
+
+        main {
             footer {
                 margin: 40px auto;
             }

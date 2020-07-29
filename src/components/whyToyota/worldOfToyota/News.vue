@@ -502,16 +502,18 @@
         padding: 0;
 
         header {
+            @include header-xl;
             height: 56vh;
             background-image: url("//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg");
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             h1 {
-                font-size: 5.2rem;
-                font-weight: bolder;
-                color: #ffffff;
+                /*font-size: 5.2rem;*/
+                /*font-weight: bolder;*/
+                text-align: center;
+                /*color: #ffffff;*/
                 padding-top: 130px;
             }
         }

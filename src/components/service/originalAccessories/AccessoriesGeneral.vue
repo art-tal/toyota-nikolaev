@@ -91,24 +91,27 @@
         color: $font_color;
 
         header {
-            height: 80vh;
+            @include header-xl;
+            /*height: 80vh;*/
             max-height: 60vw;
             background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/header-aksesuary-1600x900_tcm-3046-1336869.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             margin-bottom: 50px;
 
             h1 {
                 padding-top: 70px;
-                font-size: 5.2rem;
+                /*font-size: 5.2rem;*/
                 /*color: #ffffff;*/
-                font-weight: bolder;
+                /*font-weight: bolder;*/
+                text-align: center;
             }
             h2 {
-                font-size: 3.4rem;
-                font-weight: bold;
+                text-align: center;
+            /*    font-size: 3.4rem;*/
+            /*    font-weight: bold;*/
             }
         }
 
@@ -138,11 +141,12 @@
     @media (min-width: 992px) and (max-width: 1199.9px) {
         section.container-fluid{
             header {
+                @include header-lg;
                 height: 80vh;
-                max-height: 60vw;
-                h1 {
-                    width: 100%;
-                }
+                /*max-height: 60vw;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*}*/
             }
 
         }
@@ -151,19 +155,20 @@
     @media (min-width: 768px) and (max-width: 991.9px) {
         section.container-fluid {
             header {
-                height: 56vh;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 15px;
+                @include header-md;
+                /*height: 56vh;*/
+                /*min-height: 180px;*/
+                /*max-height: 480px;*/
+                /*padding-top: 15px;*/
                 h1 {
-                    width: 100%;
+                    /*width: 100%;*/
                     padding-top: 30px;
-                    font-size: 3.5rem;
+                    /*font-size: 3.5rem;*/
                 }
-                h2 {
-                    font-size: 2.2rem;
-                    padding-top: 10px;
-                }
+                /*h2 {*/
+                    /*font-size: 2.2rem;*/
+                    /*padding-top: 10px;*/
+                /*}*/
             }
             .body.container {
                 h2 {
@@ -185,18 +190,19 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         section.container-fluid {
             header {
-                min-height: 180px;
-                height: 56vw;
-                padding-top: 15px;
+                @include header-sm;
+                /*min-height: 180px;*/
+                /*height: 56vw;*/
+                /*padding-top: 15px;*/
                 h1 {
-                    width: 100%;
+                    /*width: 100%;*/
                     padding-top: 15px;
-                    font-size: 3rem;
+                    /*font-size: 3rem;*/
                 }
-                h2 {
-                    font-size: 2.0rem;
-                    padding-top: 5px;
-                }
+                /*h2 {*/
+                    /*font-size: 2.0rem;*/
+                    /*padding-top: 5px;*/
+                /*}*/
             }
             .body.container {
                 margin: 30px auto;
@@ -217,20 +223,21 @@
     @media (max-width: 575.9px) {
         section.container-fluid {
             header {
+                @include header-xs;
                 width: 100%;
-                height: auto;
-                min-height: 180px;
-                padding-top: 10px;
+                /*height: auto;*/
+                /*min-height: 180px;*/
+                /*padding-top: 10px;*/
                 h1 {
                     width: 100%;
-                    padding: 10px 15px 120px;
-                    font-size: 2.5rem;
-                    color: $font_color;
+                    /*padding: 10px 15px 120px;*/
+                    /*font-size: 2.5rem;*/
+                    //color: $font_color;
                 }
-                h2 {
-                    font-size: 1.8rem;
-                    padding-top: 5px;
-                }
+                /*h2 {*/
+                /*    font-size: 1.8rem;*/
+                /*    padding-top: 5px;*/
+                /*}*/
             }
 
             .body.container {

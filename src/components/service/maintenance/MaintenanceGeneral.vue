@@ -120,18 +120,19 @@
         padding: 0;
         color: $font_color;
         header {
+            @include header-xl;
             height: 56vh;
             background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-service-maintenance-focus_tcm-3046-65752.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             margin-bottom: 50px;
             h1 {
                 padding-top: 100px;
-                font-size: 5.2rem;
+                /*font-size: 5.2rem;*/
                 color: #ffffff;
-                font-weight: bolder;
+                /*font-weight: bolder;*/
             }
         }
 
@@ -156,6 +157,40 @@
                 }
             }
 
+        }
+    }
+
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+        main.container-fluid{
+            header {
+                @include header-lg
+            }
+
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        main.container-fluid{
+            header {
+                @include header-md;
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        main.container-fluid {
+            header  {
+                @include header-sm;
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        main.container-fluid {
+            header {
+                @include header-xs;
+            }
         }
     }
 

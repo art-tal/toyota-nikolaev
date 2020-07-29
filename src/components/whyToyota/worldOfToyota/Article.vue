@@ -106,16 +106,17 @@
         padding: 0;
         margin: 0;
         header {
-            height: 80vh;
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            @include header-xl;
+            /*height: 80vh;*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             margin-bottom: 50px;
             h1 {
                 font-size: 4.4rem;
                 color: #ffffff;
-                font-weight: bolder;
+                /*font-weight: bolder;*/
                 padding-top: 150px;
             }
         }
@@ -140,11 +141,21 @@
     @media (max-width: 767.9px) {
         article.container-fluid {
             header {
+                @include header-lg;
                 height: 56vw;
                 h1 {
                     font-size: 3.5rem;
                     padding-top: 50px;
                 }
+            }
+        }
+    }
+
+
+    @media (max-width: 575.9px) {
+        article.container-fluid {
+            header {
+                @include header-xs;
             }
         }
     }

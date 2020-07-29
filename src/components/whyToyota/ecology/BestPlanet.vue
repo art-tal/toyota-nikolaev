@@ -39,7 +39,7 @@
                 <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
         </header>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <div class="body container text-left">-->
 <!--            <h5>Ми в Toyota безупинно шукаємо шляхи зменшення нашого впливу на довкілля. У розділі Краща планета ви дізнаєтесь, що ми зробили, робимо і плануємо здійснити у майбутньому, аби досягти гармонії між людьми, продуктами та планетою.</h5>-->

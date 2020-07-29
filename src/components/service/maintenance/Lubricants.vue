@@ -279,20 +279,21 @@
         color: $font_color;
 
         header {
-            height: 80vh;
+            @include header-xl;
+            /*height: 80vh;*/
             max-height: 60vw;
             background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/%D0%9E%D1%80%D0%B8%D0%B3%D1%96%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96_%D0%BC%D0%B0%D1%81%D1%82%D0%B8%D0%BB%D0%B0_tcm-3046-165533.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             margin-bottom: 50px;
 
             h1 {
                 padding-top: 50px;
-                font-size: 5.2rem;
+                /*font-size: 5.2rem;*/
                 color: #ffffff;
-                font-weight: bolder;
+                /*font-weight: bolder;*/
             }
         }
 
@@ -339,11 +340,12 @@
     @media (min-width: 992px) and (max-width: 1199.9px) {
         main.container-fluid ::v-deep div {
             header {
+                @include header-lg;
                 height: 80vh;
-                max-height: 60vw;
-                h1 {
-                    width: 100%;
-                }
+                /*max-height: 60vw;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*}*/
             }
 
         }
@@ -352,13 +354,14 @@
     @media (min-width: 768px) and (max-width: 991.9px) {
         main.container-fluid ::v-deep div {
             header {
-                height: 56vh;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 15px;
-                h1 {
-                    width: 100%;
-                }
+                @include header-md;
+                /*height: 56vh;*/
+                /*min-height: 180px;*/
+                /*max-height: 480px;*/
+                /*padding-top: 15px;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*}*/
             }
         }
     }
@@ -366,13 +369,14 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         main.container-fluid ::v-deep div {
             header {
-                min-height: 180px;
-                height: 56vw;
-                padding-top: 15px;
-                h1 {
-                    width: 100%;
-                    font-size: 3.5rem;
-                }
+                @include header-sm;
+                /*min-height: 180px;*/
+                /*height: 56vw;*/
+                /*padding-top: 15px;*/
+                /*h1 {*/
+                /*    width: 100%;*/
+                /*    font-size: 3.5rem;*/
+                /*}*/
             }
 
             .body.container {
@@ -412,15 +416,16 @@
     @media (max-width: 575.9px) {
         main.container-fluid ::v-deep div {
             header {
+                @include header-xs;
                 width: 100%;
                 height: 56vw;
-                min-height: 180px;
+                /*min-height: 180px;*/
                 max-height: 380px;
                 padding-top: 30px;
                 h1 {
                     width: 100%;
-                    padding: 10px 15px;
-                    font-size: 3rem;
+                    /*padding: 10px 15px;*/
+                    /*font-size: 3rem;*/
                 }
             }
 

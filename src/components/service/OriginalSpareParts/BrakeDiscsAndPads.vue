@@ -154,23 +154,25 @@
         /*margin: 0;*/
 
         header {
+            @include header-xl;
             height: 420px;
-            width: 100%;
+            /*width: 100%;*/
             padding-top: 120px;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-674174_tcm-3046-674174.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             color: #ffffff;
             h1 {
-                font-size: 5.4rem;
-                font-weight: bolder;
-                text-align: left;
+                /*font-size: 5.4rem;*/
+                /*font-weight: bolder;*/
+                text-align: center;
             }
             h2 {
-                font-size: 3.4rem;
-                margin-top: 16px;
+                text-align: center;
+                /*font-size: 3.4rem;*/
+                /*margin-top: 16px;*/
             }
         }
 
@@ -260,9 +262,10 @@
         section.container-fluid ::v-deep div {
 
             header {
-                min-height: 180px;
+                @include header-sm;
+                /*min-height: 180px;*/
                 max-height: 420px;
-                height: 56vw;
+                /*height: 56vw;*/
                 padding-top: 20px;
 
                 h1 {

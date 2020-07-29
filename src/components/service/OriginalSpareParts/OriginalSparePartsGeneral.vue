@@ -113,18 +113,20 @@
         /*padding: 0;*/
         /*margin: 0;*/
         header {
-            height: 80vh;
-            width: 100%;
+            @include header-xl;
+            /*height: 80vh;*/
+            /*width: 100%;*/
             padding-top: 50px;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-genuine-parts-focus_tcm-3046-65770.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             h1 {
-                font-size: 5.4rem;
-                font-weight: bolder;
-                color: $font_color;
+                text-align: center;
+                /*font-size: 5.4rem;*/
+                /*font-weight: bolder;*/
+                //color: $font_color;
             }
         }
 
@@ -158,8 +160,9 @@
     @media (min-width: 992px) and (max-width: 1199.9px) {
         main.container-fluid ::v-deep div {
             header {
+                @include header-lg;
                 height: 80vh;
-                max-height: 60vw;
+                /*max-height: 60vw;*/
                 h1 {
                     font-size: 5rem;
                 }
@@ -170,13 +173,14 @@
     @media (min-width: 768px) and (max-width: 991.9px) {
         main.container-fluid ::v-deep div {
             header {
-                height: 56vw;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 30px;
-                h1 {
-                    font-size: 4.5rem;
-                }
+                @include header-md;
+                /*height: 56vw;*/
+                /*min-height: 180px;*/
+                /*max-height: 480px;*/
+                /*padding-top: 30px;*/
+                /*h1 {*/
+                /*    font-size: 4.5rem;*/
+                /*}*/
             }
         }
     }
@@ -184,12 +188,13 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         main.container-fluid ::v-deep div {
             header {
+                @include header-sm;
                 height: 40vh;
-                min-height: 180px;
+                /*min-height: 180px;*/
                 padding-top: 20px;
-                h1 {
-                    font-size: 3.5rem;
-                }
+                /*h1 {*/
+                /*    font-size: 3.5rem;*/
+                /*}*/
             }
 
             .body.container {
@@ -204,9 +209,10 @@
     @media (max-width: 575.9px) {
         main.container-fluid ::v-deep div {
             header {
-                height: 30vh;
+                @include header-xs;
+                height: 20vh;
                 min-height: 180px;
-                max-height: 380px;
+                max-height: 280px;
                 padding-top: 15px;
                 h1 {
                     font-size: 3.5rem;

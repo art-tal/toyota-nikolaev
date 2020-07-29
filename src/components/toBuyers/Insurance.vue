@@ -126,25 +126,28 @@
         padding: 0;
         section {
             header {
+                @include header-xl;
                 margin: 0;
-                width: 100%;
-                height: 80vh;
+                /*width: 100%;*/
+                /*height: 80vh;*/
                 padding: 70px 15px 20px;
 
                 background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/insurance-header_tcm-3046-165896.jpg');
-                background-repeat: no-repeat;
-                -webkit-background-size: cover;
-                background-size: cover;
-                background-position: center center;
+                /*background-repeat: no-repeat;*/
+                /*-webkit-background-size: cover;*/
+                /*background-size: cover;*/
+                /*background-position: center center;*/
                 color: #ffffff;
                 h1 {
                     font-size: 4.4rem;
-                    font-weight: bolder;
+                    /*font-weight: bolder;*/
                     padding-bottom: 16px;
+                    text-align: center;
                 }
                 h2 {
-                    font-size: 3.4rem;
+                    /*font-size: 3.4rem;*/
                     font-weight: bold;
+                    text-align: center;
                 }
             }
             .body {
@@ -177,6 +180,26 @@
 
                 em {
                     font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        main.container-fluid ::v-deep div {
+            section {
+                header {
+                    @include header-sm;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        section.container-fluid ::v-deep div {
+            section {
+                header {
+                    @include header-xs;
                 }
             }
         }

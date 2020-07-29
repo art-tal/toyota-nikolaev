@@ -12,6 +12,7 @@ import store from "./store/store"
 import router from './router/index'
 import App from './App.vue'
 
+// import "@babel/polyfill";
 
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -32,6 +33,8 @@ Vue.use(VueAwesomeSwiper);
 
 
 Vue.config.productionTip = false;
+
+
 
 new Vue({
 

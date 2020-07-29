@@ -171,25 +171,28 @@
         /*margin: 0;*/
 
         header {
+            @include header-xl;
             height: 420px;
-            width: 100%;
+            /*width: 100%;*/
             padding-top: 100px;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header-toyota-genuine-bulbs_tcm-3046-688373.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+            /*-webkit-background-size: cover;*/
+            /*background-size: cover;*/
             color: #ffffff;
 
             h1 {
-                font-size: 5.4rem;
-                font-weight: bolder;
+                text-align: center;
+                /*font-size: 5.4rem;*/
+                /*font-weight: bolder;*/
                 /*text-align: left;*/
             }
 
             h2 {
-                font-size: 3.4rem;
-                margin-top: 16px;
+                text-align: center;
+                /*font-size: 3.4rem;*/
+                /*margin-top: 16px;*/
             }
         }
 
@@ -283,17 +286,18 @@
         section.container-fluid ::v-deep div {
 
             header {
-                min-height: 180px;
+                @include header-sm;
+                /*min-height: 180px;*/
                 max-height: 420px;
-                height: 56vw;
-                padding-top: 50px;
+                /*height: 56vw;*/
+                padding-top: 20px;
 
-                h1 {
-                    font-size: 3rem;
-                }
-                h2 {
-                    font-size: 2.5rem;
-                }
+                /*h1 {*/
+                /*    font-size: 3rem;*/
+                /*}*/
+                /*h2 {*/
+                /*    font-size: 2.5rem;*/
+                /*}*/
             }
 
             .body.container {
