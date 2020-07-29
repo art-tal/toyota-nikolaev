@@ -1,50 +1,19 @@
 <template>
     <main>
         <sidebar></sidebar>
+        <menu-to-corporate/>
 
-        <menu>
-            <nav class="navbar navbar-expand-lg navbar-light">
+<!--        <menu>-->
+<!--            <nav class="navbar navbar-expand-lg navbar-light">-->
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
 
 
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav text-lg-center text-left">
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/corporate_sales/business_car"
-                            >
-                                Користувачам службових автомобілів
-                            </router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/corporate_sales/business_owner"
-                            >Власникам бізнесу</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="Corporate_clients"
-                            >Корпоративним клієнтам</router-link>
-                        </li>
+<!--                <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--                    <ul class="navbar-nav text-lg-center text-left">-->
 
 <!--                        <li class="nav-item">-->
 <!--                            <router-link-->
@@ -52,14 +21,46 @@
 <!--                                    active-class="active"-->
 <!--                                    tag="a"-->
 <!--                                    exact-->
-<!--                                    to="Special_solutions"-->
-<!--                            >Спеціальні фінансові рішення</router-link>-->
+<!--                                    to="/corporate_sales/business_car"-->
+<!--                            >-->
+<!--                                Користувачам службових автомобілів-->
+<!--                            </router-link>-->
 <!--                        </li>-->
 
-                    </ul>
-                </div>
-            </nav>
-        </menu>
+<!--                        <li class="nav-item">-->
+<!--                            <router-link-->
+<!--                                    class="nav-link"-->
+<!--                                    active-class="active"-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    to="/corporate_sales/business_owner"-->
+<!--                            >Власникам бізнесу</router-link>-->
+<!--                        </li>-->
+
+<!--                        <li class="nav-item">-->
+<!--                            <router-link-->
+<!--                                    class="nav-link"-->
+<!--                                    active-class="active"-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    to="Corporate_clients"-->
+<!--                            >Корпоративним клієнтам</router-link>-->
+<!--                        </li>-->
+
+<!--&lt;!&ndash;                        <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <router-link&ndash;&gt;-->
+<!--&lt;!&ndash;                                    class="nav-link"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    active-class="active"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    tag="a"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    exact&ndash;&gt;-->
+<!--&lt;!&ndash;                                    to="Special_solutions"&ndash;&gt;-->
+<!--&lt;!&ndash;                            >Спеціальні фінансові рішення</router-link>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </nav>-->
+<!--        </menu>-->
 
         <router-view></router-view>
 
@@ -85,9 +86,8 @@
 </template>
 
 <script>
-    // import Sidebar from "@/components/permanent/Sidebar";
-    // import FragnetLineup from "@/components/toBuyers/FragnetLineup";
     import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
+    import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
 
     export default {
         name: "Corporate_sales",
@@ -126,8 +126,8 @@
         },
 
         components: {
-            // FragnetLineup,
             Sidebar,
+            MenuToCorporate
         },
 
         created() {
@@ -144,28 +144,28 @@
     @import '../../styles/variables';
 
     main {
-        menu {
-            width: 100%;
-            padding-left: 100px;
-            position: sticky;
-            top: 0;
-            z-index: 998;
-            left: 0;
-            background-color: #fff;
+        /*menu {*/
+        /*    width: 100%;*/
+        /*    padding-left: 100px;*/
+        /*    position: sticky;*/
+        /*    top: 0;*/
+        /*    z-index: 998;*/
+        /*    left: 0;*/
+        /*    background-color: #fff;*/
 
-            nav.navbar {
-                background-color: #fff;
-                font-size: 1.5rem;
+        /*    nav.navbar {*/
+        /*        background-color: #fff;*/
+        /*        font-size: 1.5rem;*/
 
-                .collapse.navbar-collapse {
-                    ul.navbar-nav {
-                        li.nav-item {
-                            padding: 0 30px;
-                        }
-                    }
-                }
-            }
-        }
+        /*        .collapse.navbar-collapse {*/
+        /*            ul.navbar-nav {*/
+        /*                li.nav-item {*/
+        /*                    padding: 0 30px;*/
+        /*                }*/
+        /*            }*/
+        /*        }*/
+        /*    }*/
+        /*}*/
 
         /*section.lineup.container-fluid {
             height: 56vh;

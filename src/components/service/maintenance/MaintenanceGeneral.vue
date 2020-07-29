@@ -1,5 +1,7 @@
 <template>
     <main class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-maintenance/>
         <header>
             <h1 class="container">Технічне обслуговування</h1>
         </header>
@@ -62,8 +64,15 @@
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToMaintenance from "./../../../components/service/maintenance/MenuToMaintenance";
     export default {
         name: "MaintenanceGeneral",
+
+        components: {
+            Sidebar,
+            MenuToMaintenance
+        },
 
         mounted() {
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)

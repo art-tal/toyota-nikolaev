@@ -1,126 +1,16 @@
 <template>
     <main class="container-fluid">
-        <sidebar></sidebar>
-
-        <menu>
-            <nav class="navbar navbar-expand-xl navbar-light">
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
 
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav text-xl-center text-left">
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/choose_original"
-                            >Обирай оригінальне!</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/air_filters_of_salon"
-                            >Повітряні фільтри салону</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/rechargeable_batteries"
-                            >Акумуляторні батареї</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/original_lamps"
-                            >Оригінальні лампи</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/wiper_blades"
-                            >Щітки склоочисника</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/toyota_ad_blue_liquid"
-                            >Рідина Toyota AdBlue™</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/brake_discs_and_pads"
-                            >Гальмівні диски та колодки</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/original_windshields"
-                            >Оригінальні лобові стекла</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_spare_parts/fuel_system_cleaner"
-                            >Очисник паливної системи</router-link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </menu>
 
         <router-view></router-view>
     </main>
 </template>
 
 <script>
-    import Sidebar from "../../permanent/Sidebar";
 
     export default {
         name: "OriginalSpareParts",
-
-        components: {
-            Sidebar,
-        },
 
         created() {
             this.$router.push({name: 'original_spare_parts_general'});

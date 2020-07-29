@@ -8,7 +8,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/maintenance"
+                            to="/maintenance_general"
                     >Технічне обслуговування</router-link>
 
                     <ul>
@@ -17,7 +17,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/maintenance/principles"
+                                    to="/principles"
                             >Принципи</router-link>
                         </li>
 
@@ -26,7 +26,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/maintenance/guarantee"
+                                    to="/guarantee"
                             >Гарантія якості сервісу</router-link>
                         </li>
 
@@ -35,18 +35,10 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/maintenance/lubricants"
+                                    to="/lubricants"
                             >Оригінальні мастильні матеріали</router-link>
                         </li>
 
-<!--                        <li>-->
-<!--                            <router-link-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/maintenance/calc"-->
-<!--                            >Калькулятор вартості технічного обслуговування</router-link>-->
-<!--                        </li>-->
                     </ul>
                 </div>
 
@@ -56,7 +48,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/original_accessories/accessories_general"
+                            to="/accessories_general"
                     >Оригінальні аксесуари</router-link>
 
                     <ul>
@@ -65,25 +57,16 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_accessories/entertainment_system"
+                                    to="/entertainment_system"
                             >Модульна розважальна система</router-link>
                         </li>
-
-<!--                        <li>-->
-<!--                            <router-link-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/original_accessories/toyota_pro_tech"-->
-<!--                            >Toyota ProTect</router-link>-->
-<!--                        </li>-->
 
                         <li>
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_accessories/toyota_touch2"
+                                    to="/toyota_touch2"
                             >Cистема Toyota Touch 2</router-link>
                         </li>
 
@@ -92,7 +75,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_accessories/baby_car_seats"
+                                    to="/baby_car_seats"
                             >Дитячі автомобільні крісла</router-link>
                         </li>
                     </ul>
@@ -104,7 +87,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/original_spare_parts/original_spare_parts_general"
+                            to="/original_spare_parts_general"
                     >Оригінальні запчастини</router-link>
 
                     <ul>
@@ -113,7 +96,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/choose_original"
+                                    to="/choose_original"
                             >Обирай оригінальне!</router-link>
                         </li>
 
@@ -122,7 +105,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/air_filters_of_salon"
+                                    to="/air_filters_of_salon"
                             >Повітряні фільтри салону</router-link>
                         </li>
 
@@ -131,7 +114,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/rechargeable_batteries"
+                                    to="/rechargeable_batteries"
                             >Акумуляторні батареї</router-link>
                         </li>
 
@@ -140,7 +123,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/original_lamps"
+                                    to="/original_lamps"
                             >Оригінальні лампи</router-link>
                         </li>
 
@@ -149,7 +132,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/wiper_blades"
+                                    to="/wiper_blades"
                             >Щітки склоочисника</router-link>
                         </li>
 
@@ -158,7 +141,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/toyota_ad_blue_liquid"
+                                    to="/toyota_ad_blue_liquid"
                             >Рідина Toyota AdBlue™</router-link>
                         </li>
 
@@ -167,7 +150,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/brake_discs_and_pads"
+                                    to="/brake_discs_and_pads"
                             >Гальмівні диски та колодки</router-link>
                         </li>
 
@@ -176,7 +159,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/original_windshields"
+                                    to="/original_windshields"
                             >Оригінальні лобові стекла</router-link>
                         </li>
 
@@ -185,7 +168,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/fuel_system_cleaner"
+                                    to="/fuel_system_cleaner"
                             >Очисник паливної системи</router-link>
                         </li>
                     </ul>

@@ -1,5 +1,7 @@
 <template>
     <section class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-accessories/>
         <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/dityachi-krisla-header-1600x900_tcm-3046-1543719.jpg"-->
@@ -214,9 +216,16 @@
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
     import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "BabyCarSeats",
+
+        components: {
+            Sidebar,
+            MenuToAccessories
+        },
 
         mixins: [
             PageBody

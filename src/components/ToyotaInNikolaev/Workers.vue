@@ -1,5 +1,6 @@
 <template>
     <main>
+        <menu-nikolaev/>
         <header class="container-fluid">
             <h1 class="container text-center">Наші фахівці</h1>
         </header>
@@ -47,10 +48,15 @@
 </template>
 
 <script>
+    import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
     import axios from "axios"
 
     export default {
         name: "Workers",
+
+        components: {
+            MenuNikolaev
+        },
 
         data() {
             return {

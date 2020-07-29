@@ -1,5 +1,7 @@
 <template>
     <section class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-spare-parts/>
         <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container">Лобове скло-->
@@ -68,9 +70,16 @@
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
     import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "OriginalWindshields",
+
+        components: {
+            Sidebar,
+            MenuToSpareParts
+        },
 
         mixins: [
             PageBody

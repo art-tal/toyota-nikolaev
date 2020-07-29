@@ -1,5 +1,7 @@
 <template>
     <section>
+        <sidebar></sidebar>
+        <menu-to-corporate/>
         <header class="container-fluid">
             <h1>{{pageTitle}}</h1>
 <!--            <h1>Користувачам службових автомобілів</h1>-->
@@ -51,6 +53,8 @@
 <script>
     import PageBody from "../../mixins/mixinPages"
     import FragnetLineup from "../toBuyers/FragnetLineup";
+    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
+    import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
 
     export default {
         name: "Business_car",
@@ -67,6 +71,8 @@
 
         components: {
             FragnetLineup,
+            Sidebar,
+            MenuToCorporate,
         },
 
         metaInfo() {

@@ -215,7 +215,7 @@ export default {
             axios.get(
                 'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
                 // {params: {id: this.id_equip} },
-                {params: {id: this.idEquip} },
+                {params: {id: this.computedEquipment.mod_id} },
             )
                 .then( (response) => {
                     this.transmissions = response.data;

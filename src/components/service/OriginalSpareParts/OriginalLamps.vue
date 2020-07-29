@@ -1,5 +1,7 @@
 <template>
     <section class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-spare-parts/>
         <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container">Оригінальні лампи Toyota</h1>-->
@@ -82,9 +84,16 @@
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
     import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "OriginalLamps",
+
+        components: {
+            Sidebar,
+            MenuToSpareParts
+        },
 
         mixins: [
             PageBody

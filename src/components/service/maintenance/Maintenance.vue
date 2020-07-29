@@ -2,87 +2,19 @@
     <main>
         <sidebar></sidebar>
 
-        <menu>
-            <nav class="navbar navbar-expand-lg navbar-light">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav text-lg-center text-left">
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/maintenance/principles"
-                            >
-                                Принципи
-                            </router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/maintenance/guarantee"
-                            >Гарантія якості сервісу</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/maintenance/lubricants"
-                            >Оригінальні мастильні матеріали</router-link>
-                        </li>
-
-<!--                        <li class="nav-item">-->
-<!--                            <router-link-->
-<!--                                    class="nav-link"-->
-<!--                                    active-class="active"-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    to="/maintenance/calc"-->
-<!--                            >Калькулятор вартості технічного обслуговування</router-link>-->
-<!--                        </li>-->
-
-<!--                        <li class="nav-item">-->
-<!--                            <router-link-->
-<!--                                    class="nav-link"-->
-<!--                                    active-class="active"-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    to="/maintenance/special_company"-->
-<!--                            >Спеціальні сервісні кампанії</router-link>-->
-<!--                        </li>-->
-
-                    </ul>
-                </div>
-            </nav>
-        </menu>
 
         <router-view></router-view>
     </main>
 </template>
 
 <script>
-    import Sidebar from "../../permanent/Sidebar";
 
     export default {
         name: "Maintenance",
 
         components: {
-            Sidebar
+
         },
 
         created() {
@@ -96,31 +28,10 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../../../styles/variables';
+
 
     main {
-        menu {
-            width: 100%;
-            padding-left: 100px;
-            position: sticky;
-            top: 0;
-            z-index: 998;
-            left: 0;
-            background-color: #fff;
 
-            nav.navbar {
-                background-color: #fff;
-                font-size: 1.5rem;
-
-                .collapse.navbar-collapse {
-                    ul.navbar-nav {
-                        li.nav-item {
-                            padding: 0 30px;
-                        }
-                    }
-                }
-            }
-        }
     }
 
 

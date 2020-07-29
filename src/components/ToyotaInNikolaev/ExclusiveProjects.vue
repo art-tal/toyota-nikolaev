@@ -1,5 +1,6 @@
 <template>
     <main>
+        <menu-nikolaev/>
         <header>
             <h1>Наші укслюзивні проекти</h1>
         </header>
@@ -69,11 +70,16 @@
 </template>
 
 <script>
+    import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
     import axios from "axios"
     // import { Swiper, SwiperSlide} from 'vue-awesome-swiper'
     // import 'swiper/css/swiper.css'
     export default {
         name: "ExclusiveProjects",
+
+        components: {
+            MenuNikolaev
+        },
 
         // components: {
         //     Swiper,

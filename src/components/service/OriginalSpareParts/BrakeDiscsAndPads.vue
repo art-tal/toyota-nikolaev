@@ -1,5 +1,7 @@
 <template>
     <section class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-spare-parts/>
         <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1 class="container text-center">Гальмівні диски та колодки Toyota</h1>-->
@@ -64,9 +66,16 @@
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
     import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "BrakeDiscsAndPads",
+
+        components: {
+            Sidebar,
+            MenuToSpareParts
+        },
 
         mixins: [
             PageBody

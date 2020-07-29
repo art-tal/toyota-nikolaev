@@ -1,5 +1,7 @@
 <template>
     <main class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-corporate/>
         <div v-html="pageBody"></div>
 <!--        <div class="img"></div>-->
 <!--        <section class="container business_plus">-->
@@ -163,9 +165,16 @@
 </template>
 
 <script>
+    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
+    import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
     import PageBody from "../../mixins/mixinPages"
     export default {
         name: "Corporate_clients",
+
+        components: {
+            Sidebar,
+            MenuToCorporate
+        },
 
         mixins: [
             PageBody

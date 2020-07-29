@@ -1,7 +1,7 @@
 <template>
     <main>
         <guarantee-menu></guarantee-menu>
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <header class="container-fluid">-->
 <!--            <h1 class="container text-center">Гарантія якості-->
@@ -55,32 +55,40 @@
 
         metaInfo() {
             return {
-                title:  `Toyota | Гарантія якості продукції Toyota`,
+                // title:  `Toyota | Гарантія якості продукції Toyota`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Гарантія якості продукції Toyota`
+                        // content: `Toyota | Гарантія якості продукції Toyota`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Щоразу, сідаючи в крісло водія автомобіля марки Toyota і запускаючи двигун, ви будете почуватиметеся повністю впевненими.`
+                        // content: `Щоразу, сідаючи в крісло водія автомобіля марки Toyota і запускаючи двигун, ви будете почуватиметеся повністю впевненими.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Щоразу, сідаючи в крісло водія автомобіля марки Toyota і запускаючи двигун, ви будете почуватиметеся повністю впевненими.`
+                        // content: `Щоразу, сідаючи в крісло водія автомобіля марки Toyota і запускаючи двигун, ви будете почуватиметеся повністю впевненими.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota, тойота, якість, гарантія якості, принципи, філософія, кіітіро тойода, автомобілі, переваги, кермо`
+                        // content: `Toyota, тойота, якість, гарантія якості, принципи, філософія, кіітіро тойода, автомобілі, переваги, кермо`
+
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota, тойота, якість, гарантія якості, принципи, філософія, кіітіро тойода, автомобілі, переваги, кермо`
+                        // content: `Toyota, тойота, якість, гарантія якості, принципи, філософія, кіітіро тойода, автомобілі, переваги, кермо`
+
+                        content: this.meta_keywords,
                     },
                 ],
             }

@@ -1,69 +1,13 @@
 <template>
     <main>
-        <sidebar></sidebar>
-
-        <menu>
-            <nav class="navbar navbar-expand-lg navbar-light">
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
 
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav text-lg-center text-left">
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_accessories/entertainment_system"
-                            >Модульна розважальна система</router-link>
-                        </li>
-
-<!--                        <li class="nav-item">-->
-<!--                            <router-link-->
-<!--                                    class="nav-link"-->
-<!--                                    active-class="active"-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    to="/original_accessories/toyota_pro_tech"-->
-<!--                            >Toyota ProTect</router-link>-->
-<!--                        </li>-->
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_accessories/toyota_touch2"
-                            >Cистема Toyota Touch 2</router-link>
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                    class="nav-link"
-                                    active-class="active"
-                                    tag="a"
-                                    exact
-                                    to="/original_accessories/baby_car_seats"
-                            >Дитячі автомобільні крісла</router-link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </menu>
 
         <router-view></router-view>
     </main>
 </template>
 
 <script>
-    import Sidebar from "../../permanent/Sidebar";
 
     export default {
         name: "OriginalAccessories",
@@ -101,10 +45,6 @@
             }
         },
 
-        components: {
-            Sidebar,
-        },
-
         created() {
             this.$router.push({name: 'accessories_general'});
         },
@@ -116,7 +56,6 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../../../styles/variables';
 
     main {
         menu {

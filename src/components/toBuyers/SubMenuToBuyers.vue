@@ -27,7 +27,7 @@
                         tag="a"
                         class="nav-link"
                         active-class="active"
-                        to="/corporate_sales/general"
+                        to="/general"
                 >Корпоративні продажі</router-link>
 
                 <ul>
@@ -36,7 +36,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to="/corporate_sales/business_car"
+                                to="/business_car"
                         >Користувачам службових автомобілів</router-link>
                     </li>
 
@@ -45,7 +45,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to="/corporate_sales/business_owner"
+                                to="/business_owner"
                         >Власникам бізнесу</router-link>
                     </li>
 
@@ -54,7 +54,7 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to="/corporate_sales/corporate_clients"
+                                to="/corporate_clients"
                         >Корпоративним клієнтам</router-link>
                     </li>
 

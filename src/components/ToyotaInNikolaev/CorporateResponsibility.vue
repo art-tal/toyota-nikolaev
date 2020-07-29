@@ -1,6 +1,7 @@
 <template>
     <main class="container">
-        <div v-html="pageBody.body"></div>
+        <menu-nikolaev/>
+        <div v-html="pageBody"></div>
 <!--        <header>-->
 <!--            <h1>Політика соціальної корпоративної відповідальності</h1>-->
 <!--            <h2>Відповідальність перед суспільством</h2>-->
@@ -24,9 +25,14 @@
 </template>
 
 <script>
+    import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
     import PageBody from "../../mixins/mixinPages"
     export default {
         name: "CorporateResponsibility",
+
+        components: {
+            MenuNikolaev
+        },
 
         mixins: [
             PageBody
@@ -41,32 +47,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Соціальної відповідальності Toyota Україна`,
+                // title:  `Toyota Nikolaev | Соціальної відповідальності Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Соціальної відповідальності Toyota Україна`
+                        // content: `Toyota Nikolaev | Соціальної відповідальності Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Тойота Центр Миколаїв «КіТ-Т» при здійсненні діяльності керується принципами політики корпоративної соціальної відповідальності.`
+                        // content: `Тойота Центр Миколаїв «КіТ-Т» при здійсненні діяльності керується принципами політики корпоративної соціальної відповідальності.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Тойота Центр Миколаїв «КіТ-Т» при здійсненні діяльності керується принципами політики корпоративної соціальної відповідальності.`
+                        // content: `Тойота Центр Миколаїв «КіТ-Т» при здійсненні діяльності керується принципами політики корпоративної соціальної відповідальності.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, Toyota, тойота, соціальна відповідальність, екологія, принцип, політика, тойота, Україна`
+                        // content: `Toyota Nikolaev, Toyota, тойота, соціальна відповідальність, екологія, принцип, політика, тойота, Україна`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, Toyota, тойота, соціальна відповідальність, екологія, принцип, політика, тойота, Україна`
+                        // content: `Toyota Nikolaev, Toyota, тойота, соціальна відповідальність, екологія, принцип, політика, тойота, Україна`
+                        content: this.meta_keywords,
                     },
                 ],
             }

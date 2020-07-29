@@ -1,5 +1,7 @@
 <template>
     <section>
+        <sidebar></sidebar>
+        <menu-to-corporate/>
         <header class="container-fluid">
             <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg"
                  alt="lineup">
@@ -116,6 +118,8 @@
 </template>
 
 <script>
+    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
+    import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
     import FragnetLineup from "../toBuyers/FragnetLineup";
 
     export default {
@@ -123,6 +127,8 @@
 
         components: {
             FragnetLineup,
+            Sidebar,
+            MenuToCorporate
         },
 
         metaInfo() {

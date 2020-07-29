@@ -1,6 +1,6 @@
 <template>
     <main class="container">
-        <div v-html="pageBody.body"></div>
+        <div v-html="pageBody"></div>
 
 <!--        <section>-->
 
@@ -369,32 +369,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Часті запитання та відповіді | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Часті запитання та відповіді | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Часті запитання та відповіді | Toyota Україна`
+                        // content: `Toyota Nikolaev | Часті запитання та відповіді | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Є питання? На цій сторінці ви отримаєте відповіді на часті запитання, а також можете зв&#39;язатись з офіційним імпортером автомобілів Toyota в Україні.`
+                        // content: `Є питання? На цій сторінці ви отримаєте відповіді на часті запитання, а також можете зв&#39;язатись з офіційним імпортером автомобілів Toyota в Україні.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Є питання? На цій сторінці ви отримаєте відповіді на часті запитання, а також можете зв&#39;язатись з офіційним імпортером автомобілів Toyota в Україні.`
+                        // content: `Є питання? На цій сторінці ви отримаєте відповіді на часті запитання, а також можете зв&#39;язатись з офіційним імпортером автомобілів Toyota в Україні.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, Напишіть нам,Зворотній зв&#39;язок ,toyota,  yaris, auris, auris touring sports, corolla, avensis, camry, rav4, highlander, land cruiser prado, land cruiser 200, hilux, ch-r, hybrid, тойта, яріс, ауріс, ауріс універсал, королла, корола, авенcіс, кармрі, рав4, хайлендер, ленд крузер, лендкрузер,  лендкрузер прадо, ленд крузер прадо`
+                        // content: `Toyota Nikolaev, Напишіть нам,Зворотній зв&#39;язок ,toyota,  yaris, auris, auris touring sports, corolla, avensis, camry, rav4, highlander, land cruiser prado, land cruiser 200, hilux, ch-r, hybrid, тойта, яріс, ауріс, ауріс універсал, королла, корола, авенcіс, кармрі, рав4, хайлендер, ленд крузер, лендкрузер,  лендкрузер прадо, ленд крузер прадо`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, Напишіть нам,Зворотній зв&#39;язок ,toyota,  yaris, auris, auris touring sports, corolla, avensis, camry, rav4, highlander, land cruiser prado, land cruiser 200, hilux, ch-r, hybrid, тойта, яріс, ауріс, ауріс універсал, королла, корола, авенcіс, кармрі, рав4, хайлендер, ленд крузер, лендкрузер,  лендкрузер прадо, ленд крузер прадо`
+                        // content: `Toyota Nikolaev, Напишіть нам,Зворотній зв&#39;язок ,toyota,  yaris, auris, auris touring sports, corolla, avensis, camry, rav4, highlander, land cruiser prado, land cruiser 200, hilux, ch-r, hybrid, тойта, яріс, ауріс, ауріс універсал, королла, корола, авенcіс, кармрі, рав4, хайлендер, ленд крузер, лендкрузер,  лендкрузер прадо, ленд крузер прадо`
+                        content: this.meta_keywords,
                     },
                 ],
             }

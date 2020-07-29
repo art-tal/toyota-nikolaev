@@ -67,22 +67,22 @@ import About from "../components/ToyotaInNikolaev/About";
 import Where from "../components/ToyotaInNikolaev/Where";
 
 
-import Maintenance from "../components/service/maintenance/Maintenance";
+// import Maintenance from "../components/service/maintenance/Maintenance";
 import Principles from "../components/service/maintenance/Principles";
 import MaintenanceGeneral from "../components/service/maintenance/MaintenanceGeneral";
 import Guarantee from "../components/service/maintenance/Guarantee";
 import Lubricants from "../components/service/maintenance/Lubricants";
 // import Calc from "../components/service/maintenance/Calc";
-import SpecialCompany from "../components/service/maintenance/SpecialCompany";
+// import SpecialCompany from "../components/service/maintenance/SpecialCompany";
 
-import OriginalAccessories from "../components/service/originalAccessories/OriginalAccessories";
+// import OriginalAccessories from "../components/service/originalAccessories/OriginalAccessories";
 import AccessoriesGeneral from "../components/service/originalAccessories/AccessoriesGeneral";
 import EntertainmentSystem from "../components/service/originalAccessories/EntertainmentSystem";
-import ToyotaProTect from "../components/service/originalAccessories/ToyotaProTect";
+// import ToyotaProTect from "../components/service/originalAccessories/ToyotaProTect";
 import ToyotaTouch2 from "../components/service/originalAccessories/ToyotaTouch2";
 import BabyCarSeats from "../components/service/originalAccessories/BabyCarSeats";
 
-import OriginalSpareParts from "../components/service/OriginalSpareParts/OriginalSpareParts";
+// import OriginalSpareParts from "../components/service/OriginalSpareParts/OriginalSpareParts";
 import OriginalSparePartsGeneral from "../components/service/OriginalSpareParts/OriginalSparePartsGeneral";
 import ChooseOriginal from "../components/service/OriginalSpareParts/ChooseOriginal";
 import AirFiltersOfSalon from "../components/service/OriginalSpareParts/AirFiltersOfSalon";
@@ -331,29 +331,52 @@ const route = new VueRouter({
             path: "/corporate_sales",
             name: "corporate_sales",
             component: Corporate_sales,
-            children: [
-                {
-                    path: "/corporate_sales/general",
-                    name: "general",
-                    component: General,
-                },
-                {
-                    path: "/corporate_sales/business_car",
-                    name: "business_car",
-                    component: Business_car,
-                },
-                {
-                    path: "/corporate_sales/business_owner",
-                    name: "business_owner",
-                    component: Business_owner,
-                },
-                {
-                    path: "/corporate_sales/corporate_clients",
-                    name: "corporate_clients",
-                    component: Corporate_clients,
-                },
-            ],
+            // children: [
+            //     {
+            //         path: "/corporate_sales/general",
+            //         name: "general",
+            //         component: General,
+            //     },
+            //     {
+            //         path: "/corporate_sales/business_car",
+            //         name: "business_car",
+            //         component: Business_car,
+            //     },
+            //     {
+            //         path: "/corporate_sales/business_owner",
+            //         name: "business_owner",
+            //         component: Business_owner,
+            //     },
+            //     {
+            //         path: "/corporate_sales/corporate_clients",
+            //         name: "corporate_clients",
+            //         component: Corporate_clients,
+            //     },
+            // ],
         },
+        {
+            path: "/general",
+            name: "general",
+            component: General,
+        },
+        {
+            path: "/business_car",
+            name: "business_car",
+            component: Business_car,
+        },
+        {
+            path: "/business_owner",
+            name: "business_owner",
+            component: Business_owner,
+        },
+        {
+            path: "/corporate_clients",
+            name: "corporate_clients",
+            component: Corporate_clients,
+        },
+
+
+
 
 
         {
@@ -362,134 +385,232 @@ const route = new VueRouter({
             component: SignUpForService,
         },
 
+        // {
+        //     path: "/maintenance",
+        //     name: "maintenance",
+        //     component: Maintenance,
+        //     children: [
+        //         {
+        //             path: "/maintenance/maintenance_general",
+        //             name: "maintenance_general",
+        //             component: MaintenanceGeneral,
+        //         },
+        //         {
+        //             path: "/maintenance/principles",
+        //             name: "principles",
+        //             component: Principles,
+        //         },
+        //         {
+        //             path: "/maintenance/guarantee",
+        //             name: "guarantee",
+        //             component: Guarantee,
+        //         },
+        //         {
+        //             path: "/maintenance/lubricants",
+        //             name: "lubricants",
+        //             component: Lubricants,
+        //         },
+        //         // {
+        //         //     path: "/maintenance/calc",
+        //         //     name: "calc",
+        //         //     component: Calc,
+        //         // },
+        //         // {
+        //         //     path: "/maintenance/special_company",
+        //         //     name: "special_company",
+        //         //     component: SpecialCompany,
+        //         // },
+        //     ],
+        // },
         {
-            path: "/maintenance",
-            name: "maintenance",
-            component: Maintenance,
-            children: [
-                {
-                    path: "/maintenance/maintenance_general",
-                    name: "maintenance_general",
-                    component: MaintenanceGeneral,
-                },
-                {
-                    path: "/maintenance/principles",
-                    name: "principles",
-                    component: Principles,
-                },
-                {
-                    path: "/maintenance/guarantee",
-                    name: "guarantee",
-                    component: Guarantee,
-                },
-                {
-                    path: "/maintenance/lubricants",
-                    name: "lubricants",
-                    component: Lubricants,
-                },
-                // {
-                //     path: "/maintenance/calc",
-                //     name: "calc",
-                //     component: Calc,
-                // },
-                {
-                    path: "/maintenance/special_company",
-                    name: "special_company",
-                    component: SpecialCompany,
-                },
-            ],
+            path: "/maintenance_general",
+            name: "maintenance_general",
+            component: MaintenanceGeneral,
+        },
+        {
+            path: "/principles",
+            name: "principles",
+            component: Principles,
+        },
+        {
+            path: "/guarantee",
+            name: "guarantee",
+            component: Guarantee,
+        },
+        {
+            path: "/lubricants",
+            name: "lubricants",
+            component: Lubricants,
+        },
+
+
+
+
+        // {
+        //     path: "/original_accessories",
+        //     name: "original_accessories",
+        //     component: OriginalAccessories,
+        //     children: [
+        //         {
+        //             path: "/original_accessories/accessories_general",
+        //             name: "accessories_general",
+        //             component: AccessoriesGeneral,
+        //         },
+        //         {
+        //             path: "/original_accessories/entertainment_system",
+        //             name: "entertainment_system",
+        //             component: EntertainmentSystem,
+        //         },
+        //         {
+        //             path: "/original_accessories/toyota_pro_tech",
+        //             name: "toyota_pro_tech",
+        //             component: ToyotaProTect,
+        //         },
+        //         {
+        //             path: "/original_accessories/toyota_touch2",
+        //             name: "toyota_touch2",
+        //             component: ToyotaTouch2,
+        //         },
+        //         {
+        //             path: "/original_accessories/baby_car_seats",
+        //             name: "baby_car_seats",
+        //             component: BabyCarSeats,
+        //         }
+        //     ],
+        // },
+        {
+            path: "/accessories_general",
+            name: "accessories_general",
+            component: AccessoriesGeneral,
+        },
+        {
+            path: "/entertainment_system",
+            name: "entertainment_system",
+            component: EntertainmentSystem,
+        },
+        {
+            path: "/toyota_touch2",
+            name: "toyota_touch2",
+            component: ToyotaTouch2,
         },
 
         {
-            path: "/original_accessories",
-            name: "original_accessories",
-            component: OriginalAccessories,
-            children: [
-                {
-                    path: "/original_accessories/accessories_general",
-                    name: "accessories_general",
-                    component: AccessoriesGeneral,
-                },
-                {
-                    path: "/original_accessories/entertainment_system",
-                    name: "entertainment_system",
-                    component: EntertainmentSystem,
-                },
-                {
-                    path: "/original_accessories/toyota_pro_tech",
-                    name: "toyota_pro_tech",
-                    component: ToyotaProTect,
-                },
-                {
-                    path: "/original_accessories/toyota_touch2",
-                    name: "toyota_touch2",
-                    component: ToyotaTouch2,
-                },
-                {
-                    path: "/original_accessories/baby_car_seats",
-                    name: "baby_car_seats",
-                    component: BabyCarSeats,
-                }
-            ],
+            path: "/baby_car_seats",
+            name: "baby_car_seats",
+            component: BabyCarSeats,
         },
 
+
+
+
+        // {
+        //     path: "/original_spare_parts",
+        //     name: "original_spare_parts",
+        //     component: OriginalSpareParts,
+        //     children: [
+        //         {
+        //             path: "/original_spare_parts/original_spare_parts_general",
+        //             name: "original_spare_parts_general",
+        //             component: OriginalSparePartsGeneral,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/choose_original",
+        //             name: "choose_original",
+        //             component: ChooseOriginal,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/air_filters_of_salon",
+        //             name: "air_filters_of_salon",
+        //             component: AirFiltersOfSalon,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/rechargeable_batteries",
+        //             name: "rechargeable_batteries",
+        //             component: RechargeableBatteries,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/original_lamps",
+        //             name: "original_lamps",
+        //             component: OriginalLamps,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/wiper_blades",
+        //             name: "wiper_blades",
+        //             component: WiperBlades,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/toyota_ad_blue_liquid",
+        //             name: "toyota_ad_blue_liquid",
+        //             component: ToyotaAdBlueLiquid,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/brake_discs_and_pads",
+        //             name: "brake_discs_and_pads",
+        //             component: BrakeDiscsAndPads,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/original_windshields",
+        //             name: "original_windshields",
+        //             component: OriginalWindshields,
+        //         },
+        //         {
+        //             path: "/original_spare_parts/fuel_system_cleaner",
+        //             name: "fuel_system_cleaner",
+        //             component: FuelSystemCleaner,
+        //         }
+        //     ],
+        // },
         {
-            path: "/original_spare_parts",
-            name: "original_spare_parts",
-            component: OriginalSpareParts,
-            children: [
-                {
-                    path: "/original_spare_parts/original_spare_parts_general",
-                    name: "original_spare_parts_general",
-                    component: OriginalSparePartsGeneral,
-                },
-                {
-                    path: "/original_spare_parts/choose_original",
-                    name: "choose_original",
-                    component: ChooseOriginal,
-                },
-                {
-                    path: "/original_spare_parts/air_filters_of_salon",
-                    name: "air_filters_of_salon",
-                    component: AirFiltersOfSalon,
-                },
-                {
-                    path: "/original_spare_parts/rechargeable_batteries",
-                    name: "rechargeable_batteries",
-                    component: RechargeableBatteries,
-                },
-                {
-                    path: "/original_spare_parts/original_lamps",
-                    name: "original_lamps",
-                    component: OriginalLamps,
-                },
-                {
-                    path: "/original_spare_parts/wiper_blades",
-                    name: "wiper_blades",
-                    component: WiperBlades,
-                },
-                {
-                    path: "/original_spare_parts/toyota_ad_blue_liquid",
-                    name: "toyota_ad_blue_liquid",
-                    component: ToyotaAdBlueLiquid,
-                },
-                {
-                    path: "/original_spare_parts/brake_discs_and_pads",
-                    name: "brake_discs_and_pads",
-                    component: BrakeDiscsAndPads,
-                },
-                {
-                    path: "/original_spare_parts/original_windshields",
-                    name: "original_windshields",
-                    component: OriginalWindshields,
-                },
-                {
-                    path: "/original_spare_parts/fuel_system_cleaner",
-                    name: "fuel_system_cleaner",
-                    component: FuelSystemCleaner,
-                }
-            ],
+            path: "/original_spare_parts_general",
+            name: "original_spare_parts_general",
+            component: OriginalSparePartsGeneral,
         },
+        {
+            path: "/choose_original",
+            name: "choose_original",
+            component: ChooseOriginal,
+        },
+        {
+            path: "/air_filters_of_salon",
+            name: "air_filters_of_salon",
+            component: AirFiltersOfSalon,
+        },
+        {
+            path: "/rechargeable_batteries",
+            name: "rechargeable_batteries",
+            component: RechargeableBatteries,
+        },
+        {
+            path: "/original_lamps",
+            name: "original_lamps",
+            component: OriginalLamps,
+        },
+        {
+            path: "/wiper_blades",
+            name: "wiper_blades",
+            component: WiperBlades,
+        },
+        {
+            path: "/toyota_ad_blue_liquid",
+            name: "toyota_ad_blue_liquid",
+            component: ToyotaAdBlueLiquid,
+        },
+        {
+            path: "/brake_discs_and_pads",
+            name: "brake_discs_and_pads",
+            component: BrakeDiscsAndPads,
+        },
+        {
+            path: "/original_windshields",
+            name: "original_windshields",
+            component: OriginalWindshields,
+        },
+        {
+            path: "/fuel_system_cleaner",
+            name: "fuel_system_cleaner",
+            component: FuelSystemCleaner,
+        },
+
 
         {
             path: "/toyota_assistance",

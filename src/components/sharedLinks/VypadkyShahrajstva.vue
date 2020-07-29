@@ -60,32 +60,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Звертаємо Вашу увагу на випадки шахрайства!`,
+                // title:  `Toyota Nikolaev | Звертаємо Вашу увагу на випадки шахрайства!`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Звертаємо Вашу увагу на випадки шахрайства!`
+                        // content: `Toyota Nikolaev | Звертаємо Вашу увагу на випадки шахрайства!`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Шановні клієнти Toyota! Кількість випадків шахрайства за допомогою смс та Інтернет постійно зростає, тому просимо Вас бути пильними та уважними.`
+                        // content: `Шановні клієнти Toyota! Кількість випадків шахрайства за допомогою смс та Інтернет постійно зростає, тому просимо Вас бути пильними та уважними.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Шановні клієнти Toyota! Кількість випадків шахрайства за допомогою смс та Інтернет постійно зростає, тому просимо Вас бути пильними та уважними.`
+                        // content: `Шановні клієнти Toyota! Кількість випадків шахрайства за допомогою смс та Інтернет постійно зростає, тому просимо Вас бути пильними та уважними.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, клієнти,Toyota,СМС,розсилка,виграш,корола,Corolla, 5.20 Dealers&#39; news`
+                        // content: `Toyota Nikolaev, клієнти,Toyota,СМС,розсилка,виграш,корола,Corolla, 5.20 Dealers&#39; news`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, клієнти,Toyota,СМС,розсилка,виграш,корола,Corolla, 5.20 Dealers&#39; news`
+                        // content: `Toyota Nikolaev, клієнти,Toyota,СМС,розсилка,виграш,корола,Corolla, 5.20 Dealers&#39; news`
+                        content: this.meta_keywords,
                     },
                 ],
             }

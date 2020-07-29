@@ -1,6 +1,7 @@
 <template>
     <main>
-        <div v-html="pageBody.body"></div>
+        <menu-nikolaev/>
+        <div v-html="pageBody"></div>
 
 <!--        <header></header>-->
 
@@ -30,10 +31,15 @@
 </template>
 
 <script>
+    import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
     import PageBody from "../../mixins/mixinPages"
 
     export default {
         name: "About",
+
+        components: {
+            MenuNikolaev
+        },
 
         mixins: [
             PageBody
@@ -47,32 +53,38 @@
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Про нас | Тойота Центр Миколаїв «КиТ-Т»`,
+                // title:  `Toyota Nikolaev | Про нас | Тойота Центр Миколаїв «КиТ-Т»`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Про нас | Тойота Центр Миколаїв «КиТ-Т»`
+                        // content: `Toyota Nikolaev | Про нас | Тойота Центр Миколаїв «КиТ-Т»`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Тойота Центр Миколаїв «КіТ-Т» - офіційний дилер Тойота в Миколаєві, є сучасним 3S-концептуальним (Sale - продажу, Service - сервіс, Spareparts - запчастини) автомобільним центром Тойота в м.Миколаєві, який відповідає всім високим корпоративним стандартам Toyota. У 2017 році дилерський центр отримав Срібну нагороду стандартів обслуговування клієнтів Toyota.`
+                        // content: `Тойота Центр Миколаїв «КіТ-Т» - офіційний дилер Тойота в Миколаєві, є сучасним 3S-концептуальним (Sale - продажу, Service - сервіс, Spareparts - запчастини) автомобільним центром Тойота в м.Миколаєві, який відповідає всім високим корпоративним стандартам Toyota. У 2017 році дилерський центр отримав Срібну нагороду стандартів обслуговування клієнтів Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Тойота Центр Миколаїв «КіТ-Т» - офіційний дилер Тойота в Миколаєві, є сучасним 3S-концептуальним (Sale - продажу, Service - сервіс, Spareparts - запчастини) автомобільним центром Тойота в м.Миколаєві, який відповідає всім високим корпоративним стандартам Toyota. У 2017 році дилерський центр отримав Срібну нагороду стандартів обслуговування клієнтів Toyota.`
+                        // content: `Тойота Центр Миколаїв «КіТ-Т» - офіційний дилер Тойота в Миколаєві, є сучасним 3S-концептуальним (Sale - продажу, Service - сервіс, Spareparts - запчастини) автомобільним центром Тойота в м.Миколаєві, який відповідає всім високим корпоративним стандартам Toyota. У 2017 році дилерський центр отримав Срібну нагороду стандартів обслуговування клієнтів Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, про нас, Тойота Центр Миколаїв «КиТ-Т»`
+                        // content: `Toyota Nikolaev, про нас, Тойота Центр Миколаїв «КиТ-Т»`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, про нас, Тойота Центр Миколаїв «КиТ-Т»`
+                        // content: `Toyota Nikolaev, про нас, Тойота Центр Миколаїв «КиТ-Т»`
+                        content: this.meta_keywords,
                     },
                 ],
             }

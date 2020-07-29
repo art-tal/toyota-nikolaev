@@ -1,5 +1,7 @@
 <template>
     <section class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-accessories/>
         <div class="black">
             <div class="container">
                 <header>
@@ -231,6 +233,8 @@
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
     import 'swiper/css/swiper.css';
 
@@ -238,6 +242,8 @@
         name: "ToyotaTouch2",
 
         components: {
+            Sidebar,
+            MenuToAccessories,
             Swiper,
             SwiperSlide
         },

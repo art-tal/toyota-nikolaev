@@ -1,6 +1,7 @@
 <template>
     <main class="container-fluid">
         <sidebar></sidebar>
+        <menu-to-maintenance/>
         <div v-html="pageBody"></div>
 
 <!--        <header>-->
@@ -38,8 +39,8 @@
 
 <script>
     import PageBody from "../../../mixins/mixinPages"
-    // import Sidebar from "../permanent/Sidebar";
-    import Sidebar from "../../permanent/Sidebar";//           for Laravel
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToMaintenance from "./../../../components/service/maintenance/MenuToMaintenance";
 
     export default {
         name: "Guarantee",
@@ -100,7 +101,8 @@
         },
 
         components: {
-            Sidebar
+            Sidebar,
+            MenuToMaintenance
         },
     }
 </script>
