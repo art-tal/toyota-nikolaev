@@ -1,12 +1,15 @@
 <template>
     <div class="allEquipment container-fluid w-100 position-relative">
-        <button id="button-prev" class="btn" @click="prevSlide()">
+        <button id="button-prev" class="btn"
+                @click="prevSlideEquip()"
+                :disabled="xSlide?false:true"
+        >
             <i class="fas fa-chevron-left"></i>
         </button>
 
         <div class="container carousel overflow-hidden" :style="{'color': fontColor}">
 
-            <div class="slide_wrapper row align-items-start flex-nowrap ">
+            <div class="slides_wrapper row align-items-start flex-nowrap ">
 <!--            <div class="slide_wrapper">-->
 
                 <div  class="equip col-lg-4 col-md-6 col-1 "
@@ -37,7 +40,9 @@
             </div>
         </div>
 
-        <button id="button-next" class="btn" @click="nextSlide()">
+        <button id="button-next" class="btn"
+                @click="nextSlideEquip()"
+        >
             <i class="fas fa-chevron-right"></i>
         </button>
     </div>
@@ -67,7 +72,7 @@
 
                 prices: [],
 
-                x: 0,
+                xSlide: 0,
                 slideWidth: 0,
                 slides: 0,
 
@@ -272,37 +277,36 @@
                 // $(".slide_wrapper").scrollLeft("0");
             },
 
-            prevSlide() {
-                this.x = this.x - this.slideWidth;
+            prevSlideEquip() {
+                this.xSlide = this.xSlide + this.slideWidth;
 
-
-
-
-                // if ( this.x < 0 ) {
-                //     if(this.equipments.length % 3){
-                //         this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.equipments.length % 3));
-                        console.log(this.x);
-                //     } else {
-                //         this.x = this.slides - $('.slide_wrapper').width();
-                //         console.log(this.x);
-                //     }
-                //
-                // }
-                $('.slide_wrapper').css("transform", `translateX(-${this.x}px)`);
-                // $('.slide_wrapper').scrollLeft(this.x + 'px');
-                console.log($('.slide_wrapper').scrollLeft());
-                // $('.slide_wrapper').css("margin-left", `-${this.x}px`);
-            },
-            //
-            nextSlide() {
-                this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;
-                this.x = this.x + $('.slide_wrapper').width();
-                console.log($('.slide_wrapper').width());
-                console.log(this.x , this.slides);
-                if ( this.x >= this.slides ) {
-                    this.x = 0;
+                if (this.xSlide > 0) {
+                    console.log(this.xSlide);
+                    // this.xSlide = $(".equip").width() * this.equipments.length - $(".carousel").width();
+                    this.xSlide = 0;
+                    $(".button-prev").attr("disabled", "true").css("opacity", 0.5);
+                } else {
+                    $(".button-prev").attr("disabled", "false").css("opacity", 1);
                 }
-                $('#slides').css("transform", `translateX(-${this.x}px)`);
+                $('.slides_wrapper').css("transform", `translateX(${this.xSlide}px)`);
+
+                            },
+            //
+            nextSlideEquip() {
+                // this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;
+                this.xSlide = this.xSlide - this.slideWidth;
+                console.log(this.xSlide);
+                if ( this.xSlide <  $(".carousel").width() - $(".equip").width() * this.equipments.length ) {
+                    this.x = $(".carousel").width() - $(".equip").width() * this.equipments.length;
+                    $(".button-next").attr("disabled", "true").css("opacity", 0.5)
+                } else {
+                    $(".button-next").attr("disabled", "false").css("opacity", 0.5)
+
+                }
+                // console.log($(".carousel").width(), $(".equip").width() * this.equipments.length);
+
+                $('.slides_wrapper').css("transform", `translateX(${this.xSlide}px)`);                console.log($('.slide_wrapper').scrollLeft());
+
             },
         }
     }
@@ -326,7 +330,7 @@
             height: 100%;
             padding: 0;
             margin: auto;
-            .slide_wrapper.row{
+            .slides_wrapper.row{
             /*.slide_wrapper{*/
                 width: 100%;
                 height: 100%;
