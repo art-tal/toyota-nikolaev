@@ -501,65 +501,6 @@ const route = new VueRouter({
         },
 
 
-
-
-        // {
-        //     path: "/original_spare_parts",
-        //     name: "original_spare_parts",
-        //     component: OriginalSpareParts,
-        //     children: [
-        //         {
-        //             path: "/original_spare_parts/original_spare_parts_general",
-        //             name: "original_spare_parts_general",
-        //             component: OriginalSparePartsGeneral,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/choose_original",
-        //             name: "choose_original",
-        //             component: ChooseOriginal,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/air_filters_of_salon",
-        //             name: "air_filters_of_salon",
-        //             component: AirFiltersOfSalon,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/rechargeable_batteries",
-        //             name: "rechargeable_batteries",
-        //             component: RechargeableBatteries,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/original_lamps",
-        //             name: "original_lamps",
-        //             component: OriginalLamps,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/wiper_blades",
-        //             name: "wiper_blades",
-        //             component: WiperBlades,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/toyota_ad_blue_liquid",
-        //             name: "toyota_ad_blue_liquid",
-        //             component: ToyotaAdBlueLiquid,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/brake_discs_and_pads",
-        //             name: "brake_discs_and_pads",
-        //             component: BrakeDiscsAndPads,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/original_windshields",
-        //             name: "original_windshields",
-        //             component: OriginalWindshields,
-        //         },
-        //         {
-        //             path: "/original_spare_parts/fuel_system_cleaner",
-        //             name: "fuel_system_cleaner",
-        //             component: FuelSystemCleaner,
-        //         }
-        //     ],
-        // },
         {
             path: "/original_spare_parts_general",
             name: "original_spare_parts_general",

@@ -1,0 +1,24 @@
+Oleksandr Nykytin, [10.03.20 22:20]
+http://lara.toyota.nikolaev.ua/storage - общий ресурс (часть адреса для картинок)
+
+Запроси принимают id
+
+
+lara.toyota.nikolaev.ua/ajax/all_model - Возвращает все модели
+
+lara.toyota.nikolaev.ua/ajax/id_mod - принимает id модели, возвращает список модификаций
+
+lara.toyota.nikolaev.ua/ajax/mod_color - принимает id модификации, возвращает доступные цвета ( пока только один id, 33) 
+
+lara.toyota.nikolaev.ua/ajax/mod_wheel - принимает id модификации, возвращает доступные колеса ( пока только один id, 4)
+
+lara.toyota.nikolaev.ua/ajax/mod_eng_gear - принимает id модификации, возвращает доступные двигатели и коробки для этой модификации
+
+
+
+
+Вход на админ панель Laravel
+
+http://lara.toyota.nikolaev.ua/admin
+login: toyotatema@admin
+password: xxOlwaOwTGU3
