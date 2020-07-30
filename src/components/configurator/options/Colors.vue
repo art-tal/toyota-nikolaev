@@ -22,12 +22,19 @@
                 </li>
 
             </ul>
+
+
+
+
+
         </div>
     </div>
 
 </template>
 
 <script>
+
+
     import axios from 'axios';
     import {eventEmitter} from "@/main";
     // import {eventEmitter} from "./../../../app"; //     for Laravel
@@ -51,7 +58,8 @@
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
+
         },
 
         watch: {
@@ -120,10 +128,10 @@
                  font-size: 1.5rem;
 
              }
-             ul.sampleOfColor {
+             .sampleOfColor {
                  list-style-type: none;
                  padding: 0;
-                 li.sample {
+                 .sample {
                      display: inline-block;
                      padding: 10px;
                      position: relative;

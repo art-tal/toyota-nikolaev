@@ -89,7 +89,7 @@ export default {
                 this.modelColor = JSON.parse( localStorage.color );
             }
             catch (e) {
-                console.log("error model color watch - 431");
+                // console.log("error model color watch - 431");
 
             }
             this.getFontColor();
@@ -110,8 +110,6 @@ export default {
 
         changeTitle() {
             this.equipmentTitle = this.computedEquipment.mod_name;
-            console.log("3");
-
         },
 
         descriptionList() {
@@ -131,8 +129,6 @@ export default {
                     this.equipments = response.data;
                     this.equipment = this.equipments[0];
                     this.equipmentTitle = this.equipment.mod_name;
-                    console.log("5");
-
                 } )
 
                 .then( () => {this.getPrices();} )
@@ -146,9 +142,6 @@ export default {
 
         checkEquipment() {
             let equipFromJson = JSON.parse(localStorage.equipment);
-            console.log(equipFromJson);
-            console.log("8");
-
 
             if (Object.keys(equipFromJson) > 0) {
                 if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
@@ -175,15 +168,13 @@ export default {
         },
 
         getPrices() {
-            // console.log(this.equipment.mod_id);
             axios.get(
                 `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
                 {params: {id: this.equipment.mod_id}}
             )
                 .then( (response) => {
                     this.prices = response.data;
-                    console.log(response.data);
-                    console.log("6");
+                    // console.log(response.data);
 
                     this.setPrice();
                 } )
@@ -195,8 +186,7 @@ export default {
 
         setPrice() {
             let keysPrice = Object.keys(this.prices);
-            console.log(keysPrice);
-            console.log("7");
+            // console.log(keysPrice);
 
             this.equipments.forEach( (equip) => {
                 keysPrice.forEach( (pr) => {
@@ -206,7 +196,6 @@ export default {
                 } );
             } );
 
-            console.log(this.equipments);
             this.checkEquipment();
 
         },
@@ -219,10 +208,10 @@ export default {
             )
                 .then( (response) => {
                     this.transmissions = response.data;
-                    console.log(this.transmissions);
+                    // console.log(this.transmissions);
                     this.transmission = this.transmissions[0];
                     localStorage.transmission = JSON.stringify( this.transmission);
-                    console.log(this.idEquip, this.transmission);
+                    // console.log(this.idEquip, this.transmission);
                     if (!this.transmission) {
                         this.transmission = {
                             eng_name: "none",
@@ -231,7 +220,6 @@ export default {
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
-
                     console.log(error);
                 } );
         },
@@ -253,10 +241,8 @@ export default {
             )
                 .then( (response) => {
                     this.colors = response.data;
-                    console.log(this.colors);
+                    // console.log(this.colors);
                     this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
-                    // this.setColor(this.colors[0]);
-                    console.log("9");
 
                 } )
                 .then( () => {this.slides = $('#slides').width() / 3 * this.colors.length;} )
@@ -268,12 +254,10 @@ export default {
         },
 
         checkColor() {
-            console.log("10");
             let findColor = false;
 
             this.colors.forEach( color => {
                 if(this.computedColor.color_id === color.color_id) {
-                    console.log("yes");
                     this.setColor(color);
                     findColor = true;
                 }
@@ -286,7 +270,6 @@ export default {
 
         setColor(color) {
             this.colors.forEach( (c) => { c.selected = false} );
-            console.log(color.preview);
             let index = this.colors.indexOf(color);
             this.colors[index].selected = true;
             this.selectedColor = color;
@@ -403,10 +386,8 @@ export default {
             if ( this.x < 0 ) {
                 if(this.colors.length % 3){
                     this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.colors.length % 3));
-                    console.log(this.x);
                 } else {
                     this.x = this.slides - $('.slide_wrapper').width();
-                    console.log(this.x);
                 }
 
             }
@@ -416,8 +397,6 @@ export default {
         nextSlide() {
             this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
             this.x = this.x + $('.slide_wrapper').width();
-            console.log($('.slide_wrapper').width());
-            console.log(this.x , this.slides);
             if ( this.x >= this.slides ) {
                 this.x = 0;
             }

@@ -1,69 +1,60 @@
 <template>
-    <div class="allEquipment container-fluid w-100">
+    <div class="allEquipment container-fluid w-100 position-relative">
+        <button id="button-prev" class="btn" @click="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
 
-<!--                //////////////работает за исключением клика////////////////-->
-                <div class="carousel row" :style="{'color': fontColor}">
-                    <swiper class="swiper" :options="swiperOption">
-                        <swiper-slide
-                                v-for="(equipment, key) in equipments"
-                                :key="key"
-                        >
-                            <div  class="equip" @click="activated(equipment)">
+        <div class="container carousel overflow-hidden" :style="{'color': fontColor}">
 
-                                <img :src="photo" :alt="equipment.mod_name">
-                                <h4 :style="{'color': fontColor}">
-                                    <span><strong>{{model}} </strong></span>
-                                    <span><strong>{{equipment.mod_name}}</strong></span>
-                                    <span v-if="equipment.body_type"> - {{equipment.body_type}}</span>
-                                </h4>
-                                <h5 :style="{'color': fontColor}" class="text-left">
-                                    Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>
-                                </h5>
-                                <!--                <ul class="equip_desc">-->
-                                <!--                    <li v-for="(desc, key) in descriptionList(equipment)"-->
-                                <!--                        :key="key"-->
-                                <!--                        :style="{'color': fontColor}"-->
-                                <!--                    >{{desc}}</li>-->
-                                <!--                </ul>-->
+            <div class="slide_wrapper row align-items-start flex-nowrap ">
+<!--            <div class="slide_wrapper">-->
 
-<!--                                <button class="btn" @click="activated(equipment)">Обрати</button>-->
-                            </div>
-                        </swiper-slide>
+                <div  class="equip col-lg-4 col-md-6 col-1 "
+                      v-for="(equipment, key) in equipments"
+                      :key="key"
+                      @click="activated(equipment)">
+<!--                    <div  class="equip d-inline-block"-->
+<!--                      v-for="(equipment, key) in equipments"-->
+<!--                      :key="key"-->
+<!--                      @click="activated(equipment)">-->
 
-                        <div class="swiper-pagination" slot="pagination"></div>
-                        <div class="swiper-button-prev" slot="button-prev"></div>
-                        <div class="swiper-button-next" slot="button-next"></div>
-                    </swiper>
+                    <img :src="photo" :alt="equipment.mod_name">
+                    <h4 :style="{'color': fontColor}">
+                        <span><strong>{{model}} </strong></span>
+                        <span><strong>{{equipment.mod_name}}</strong></span>
+                        <span v-if="equipment.body_type"> - {{equipment.body_type}}</span>
+                    </h4>
+                    <h5 :style="{'color': fontColor}" class="text-left">
+                        Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>
+                    </h5>
+                    <!--                <ul class="equip_desc">-->
+                    <!--                    <li v-for="(desc, key) in descriptionList(equipment)"-->
+                    <!--                        :key="key"-->
+                    <!--                        :style="{'color': fontColor}"-->
+                    <!--                    >{{desc}}</li>-->
+                    <!--                </ul>-->
                 </div>
-<!--                //////////////работает за исключением клика////////////////-->
+            </div>
+        </div>
 
-
+        <button id="button-next" class="btn" @click="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </div>
-
-
 </template>
 
 <script>
     import axios from "axios";
     import formattedPrice from "../../filters/price_format";
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
     import {eventEmitter} from '../../main'
-
-    // import {eventEmitter} from './../../app' //         for Laravel
-
+    import $ from "jquery";
 
     export default {
-        name: "Equipment",
+        name: "Equip",
 
         props: [
             'id'
         ],
-
-        components: {
-            Swiper,
-            SwiperSlide
-        },
 
 
         data() {
@@ -77,29 +68,12 @@
                 prices: [],
 
                 x: 0,
+                slideWidth: 0,
                 slides: 0,
 
                 mousePress: false,
                 mouseX: 0,
                 xNow: 0,
-
-                swiperOption: {
-                    slidesPerView: 3,//3
-                    spaceBetween: 20,
-                    slidesPerGroup: 1,//3
-                    loop: true,
-                    loopFillGroupWithBlank: true,
-                    clickable: true,
-
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
-                }
             }
         },
 
@@ -111,17 +85,14 @@
             this.$store.state.model = JSON.parse( localStorage.model );
             this.color = this.$store.getters.colored;
             this.getEquipment();
-            // this.$store.state.equipment = this.equipment;
-            // localStorage.equipment = JSON.stringify( this.equipment );
             this.getFontColor();
 
-            // this.carouselSizes();
+            console.log("create");
 
             eventEmitter.$on('select', () => {this.activeted()})
         },
 
         mounted() {
-            this.carouselSizes();
         },
 
         computed: {
@@ -166,6 +137,7 @@
                         // console.log(this.equipments);
                         this.getPrices();
                     })
+                    .then( () => { this.carouselSizes(); } )
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
                         console.log(error);
@@ -220,10 +192,10 @@
                 // console.log(equipFromJson);
 
                 if (this.computedEquipment.mod_id) {
-                // if (equipFromJson.mod_id) {
+                    // if (equipFromJson.mod_id) {
                     this.equipments.forEach( equip => {
                         if ( equip.mod_id === this.computedEquipment.mod_id ) {
-                        // if ( equip.mod_id === equipFromJson.mod_id ) {
+                            // if ( equip.mod_id === equipFromJson.mod_id ) {
                             this.equipment = equip;
                             this.$store.state.equipment = equip;
                         }
@@ -288,21 +260,158 @@
 
             },
 
+            carouselSizes() {
+                this.slideWidth = $('.carousel.container').width() / 3;
+                $(".equip").width(this.slideWidth + "px");
+                console.log(this.slideWidth);
+                $('.equip > img').width(this.slideWidth - 80 + "px");
+                // let slide_wrapper = $(".slide_wrapper").width();
 
+                // $(".slide").css( "width", slide_wrapper / 3 + 'px');
+                // console.log( slide_wrapper, $(".slide").width());
+                // $(".slide_wrapper").scrollLeft("0");
+            },
+
+            prevSlide() {
+                this.x = this.x - this.slideWidth;
+
+
+
+
+                // if ( this.x < 0 ) {
+                //     if(this.equipments.length % 3){
+                //         this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.equipments.length % 3));
+                        console.log(this.x);
+                //     } else {
+                //         this.x = this.slides - $('.slide_wrapper').width();
+                //         console.log(this.x);
+                //     }
+                //
+                // }
+                $('.slide_wrapper').css("transform", `translateX(-${this.x}px)`);
+                // $('.slide_wrapper').scrollLeft(this.x + 'px');
+                console.log($('.slide_wrapper').scrollLeft());
+                // $('.slide_wrapper').css("margin-left", `-${this.x}px`);
+            },
+            //
+            nextSlide() {
+                this.slides = $('.slide_wrapper').width() / 3 * this.equipments.length;
+                this.x = this.x + $('.slide_wrapper').width();
+                console.log($('.slide_wrapper').width());
+                console.log(this.x , this.slides);
+                if ( this.x >= this.slides ) {
+                    this.x = 0;
+                }
+                $('#slides').css("transform", `translateX(-${this.x}px)`);
+            },
         }
     }
 </script>
 
 <style lang="scss" scoped>
     @import '../../styles/variables';
-    /*@import './base.scss';*/
 
-    .allEquipment {
+    .allEquipment.container-fluid {
         width: 100%;
+        height: 266px;
         margin: 0;
+        overflow: hidden;
+        /*padding: 30px;*/
         position: relative;
         background-color: rgba(0,0,0,0.3);
         z-index: 100;
+
+        .carousel.container {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: auto;
+            .slide_wrapper.row{
+            /*.slide_wrapper{*/
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                justify-content: start;
+                white-space: nowrap;
+                .equip {
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 100%;
+                    padding: 30px;
+                    position: relative;
+                    z-index: 950;
+                    cursor: pointer;
+                    &.active,
+                    &:hover {
+                        /*overflow: hidden;*/
+                        align-self: stretch;
+                        background-color: rgba(0,0,0,0.25);
+                        border-top: 15px solid rgba(0,0,0,0.5);
+                        color: #000;
+                        cursor: pointer;
+                        transform-origin: center center;
+                        transform: scale(1.05);
+                        transition: all 700ms;
+                        img, h4 {
+                            transform-origin: center center;
+                            transform: scale(1.05);
+                            transition: all 700ms;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                    }
+                    .equip_desc {
+                        margin: 0;
+                        padding: 0;
+                        list-style-position: inside;
+                        display: block !important;
+                        li {
+                            text-align: left;
+                            font-size: 1.4rem;
+                            line-height: 1.5;
+                        }
+                    }
+                    h4 {
+                        font-size: 18px;
+                        margin-bottom: 15px;
+                    }
+                    h5 {
+                        font-size: 1.6rem;
+                        font-weight: 100;
+                        strong {
+                            font-weight: bold;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        button.btn {
+            position: absolute;
+            top: 105px;
+            z-index: 950;
+            align-self: center;
+            align-content: center;
+            /*flex: 1;*/
+            width: 30px !important;
+            height: 30px;
+            box-sizing: border-box;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: rgba(255,255,255, 0.5);
+            font-size: 1.9rem;
+            color: #7a7a7a;
+            &#button-prev {
+                padding: 1px 10px 1px 6px;
+                left: 70px;
+            }
+            &#button-next {
+                padding: 1px 7px 1px 9px;
+                right: 70px;
+            }
+        }
 
         /*.carousel_wrapper {
             .slide_wrapper.container {
@@ -373,96 +482,25 @@
         }*/
 
         /*//////////////////////////////////////////////*/
-         .carousel.row {
-             position: static;
-             width: 85%;
-             margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-             justify-content: center;
-             align-items: stretch;
-             .equip {
-                 box-sizing: border-box;
-                 padding: 30px 40px;
-                 position: relative;
-                 z-index: 1000;
-                 cursor: pointer;
-                 img {
-                     width: 100%;
-                 }
+        /*.carousel.row {
+            .equip {
 
-                 .equip_desc {
-                     margin: 0;
-                     padding: 0;
-                     list-style-position: inside;
-                     display: block !important;
-                     li {
-                         text-align: left;
-                         font-size: 1.4rem;
-                         line-height: 1.5;
-                     }
-                 }
-                 &.active,
-                 &:hover{
-                     overflow: hidden;
-                     align-self: stretch;
-                     background-color: rgba(0,0,0,0.25);
-                     border-top: 5px solid black;
-                     color: #000;
-                     img, h4 {
-                         transform: scale(1.1);
-                         transition: all 700ms;
+                a {
+                    color: $font_color;
+                    font-size: 18px;
+                    span{
+                        display: inline-block;
+                        margin-left: 10px;
+                    }
+                }
 
-                     }
-                 }
-                 h4 {
-                     font-size: 18px;
-                     margin-bottom: 15px;
-                 }
-                 h5 {
-                     font-size: 1.6rem;
-                     font-weight: 100;
-                     strong {
-                         font-weight: bold;
-                     }
-                 }
-
-                 /*button.btn {*/
-                 /*    font-size: 1.4rem;*/
-                 /*    padding: 2px 15px;*/
-                 /*    border-radius: 13px;*/
-                 /*    background-color: rgba(255,255,255,0.5);*/
-                 /*}*/
-
-                     a {
-                         color: $font_color;
-                         font-size: 18px;
-                         span{
-                             display: inline-block;
-                             margin-left: 10px;
-                         }
-                     }
-
-                 }
-             }
+            }
+        }*/
         /*//////////////////////////////////////////////////*/
 
     }
     /*//////////////////////////////////////////*/
-    .swiper {
-        /*height: 300px;*/
-        width: 100%;
 
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-weight: bold;
-            /*font-size: $font-size-huge * 2;
-            background-color: $white;*/
-        }
-    }
 
 
 

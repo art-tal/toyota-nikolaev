@@ -32,7 +32,7 @@
                 </div>
 
             </header>
-
+                <equip  :id="id"/>
 
 
                 <equipment v-if="showEquipment" :id="id"></equipment>
@@ -243,6 +243,9 @@
 </template>
 
 <script>
+    import Equip from "./../../components/configurator/Equip";
+
+
     import axios from 'axios';
     import {eventEmitter} from "../../main";
     // import Equipment from "../configurator/Equipment";
@@ -266,6 +269,8 @@
         components: {
             Equipment,
             SubNavigation,
+
+            Equip
         },
 
         mixins: [
@@ -348,18 +353,14 @@
         },
 
         created() {
-            // this.renderComponent = 0;
-            console.log("1");
             this.id = this.$route.params.id;
             this.getModel();
-            console.log("4");
             this.getEquipment();
 
             eventEmitter.$on('selectedEquipment',
                 () => {
                 this.showEquipment = false;
                 this.changeTitle();
-                // console.log(this.computedEquipment);
             } );
 
         },
@@ -429,7 +430,6 @@
 ///////////////////////////////////////////////////////ЗАГЛУШКА//
                         this.getVideo();
 //////////////////////////////////////////////////////
-                        console.log("2");
 
                         this.modelTitle = this.model.name;
                         this.changeTitle();
@@ -466,7 +466,6 @@
 
             checkEquipment() {
                 let equipFromJson = JSON.parse(localStorage.equipment);
-                console.log(equipFromJson);
 
                 if (Object.keys(equipFromJson) > 0) {
                     if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
@@ -491,7 +490,6 @@
             },
 
             // getPrices() {
-            //     console.log(this.equipment.mod_id);
             //     axios.get(
             //         `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
             //         {params: {id: this.equipment.mod_id}}
@@ -510,7 +508,6 @@
             //
             // setPrice() {
             //     let keysPrice = Object.keys(this.prices);
-            //     console.log(keysPrice);
             //
             //     this.equipments.forEach( (equip) => {
             //         keysPrice.forEach( (pr) => {
@@ -520,7 +517,6 @@
             //         } );
             //     } );
             //
-            //     console.log(this.equipments);
             //     this.checkEquipment();
             //
             // },
@@ -558,7 +554,6 @@
             //
             // setColor(color) {
             //     this.colors.forEach( (c) => { c.selected = false} );
-            //     console.log(color.preview);
             //     let index = this.colors.indexOf(color);
             //     this.colors[index].selected = true;
             //     this.selectedColor = color;
@@ -670,7 +665,6 @@
     //         },
 
             getVideo() {
-                // console.log(this.model.name.toLowerCase());
                 try {
                     switch(this.model.name.toLowerCase()) {
 
@@ -755,10 +749,10 @@
             //     if ( this.x < 0 ) {
             //         if(this.colors.length % 3){
             //             this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.colors.length % 3));
-            //             console.log(this.x);
+            //
             //         } else {
             //             this.x = this.slides - $('.slide_wrapper').width();
-            //             console.log(this.x);
+            //
             //         }
             //
             //     }
@@ -768,8 +762,6 @@
             // nextSlide() {
             //     this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
             //     this.x = this.x + $('.slide_wrapper').width();
-            //     console.log($('.slide_wrapper').width());
-            //     console.log(this.x , this.slides);
             //     if ( this.x >= this.slides ) {
             //         this.x = 0;
             //     }
