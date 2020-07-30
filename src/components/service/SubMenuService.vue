@@ -2,7 +2,7 @@
     <div class="sub_service container-fluid">
         <div class="row">
             <div class="col-xl-9 col-lg-8 col-12 row">
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <router-link
                             exact
                             tag="a"
@@ -12,7 +12,7 @@
                     >Технічне обслуговування</router-link>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -21,7 +21,7 @@
                             >Принципи</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -30,7 +30,7 @@
                             >Гарантія якості сервісу</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -42,7 +42,7 @@
                     </ul>
                 </div>
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <router-link
                             exact
                             tag="a"
@@ -52,7 +52,7 @@
                     >Оригінальні аксесуари</router-link>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -61,7 +61,7 @@
                             >Модульна розважальна система</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -70,7 +70,7 @@
                             >Cистема Toyota Touch 2</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -81,7 +81,7 @@
                     </ul>
                 </div>
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <router-link
                             exact
                             tag="a"
@@ -91,7 +91,7 @@
                     >Оригінальні запчастини</router-link>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -100,7 +100,7 @@
                             >Обирай оригінальне!</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -109,7 +109,7 @@
                             >Повітряні фільтри салону</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -118,7 +118,7 @@
                             >Акумуляторні батареї</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -127,7 +127,7 @@
                             >Оригінальні лампи</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -136,7 +136,7 @@
                             >Щітки склоочисника</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -145,7 +145,7 @@
                             >Рідина Toyota AdBlue™</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -154,7 +154,7 @@
                             >Гальмівні диски та колодки</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -163,7 +163,7 @@
                             >Оригінальні лобові стекла</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -175,11 +175,11 @@
 
                 </div>
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <a href.prevent="" class="nav-link">Допомога в дорозі</a>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -188,7 +188,7 @@
                             >Toyota Assistance</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -207,13 +207,13 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-                        <li class="servies">
+                        <li class="servies linked">
                             <a href="#">
                                 <i class="fas fa-car"></i>
                                 <span>Конфігуратор</span>
                             </a>
                         </li>
-                        <li class="dilers">
+                        <li class="dilers linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -236,7 +236,7 @@
 <!--                                <span>Сувенирна продукція</span>-->
 <!--                            </a>-->
 <!--                        </li>-->
-                        <li class="download">
+                        <li class="download linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -247,12 +247,6 @@
                                 <span>Часті запитання</span>
                             </router-link>
                         </li>
-<!--                        <li class="download">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-map-marker-alt"></i>-->
-<!--                                <span>Офіційні дилери</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
                     </ol>
                 </div>
             </div>
@@ -261,8 +255,14 @@
 </template>
 
 <script>
+    import mixinNavigation from "./../../mixins/mixinNavigation";
+
     export default {
         name: "SubMenuService",
+
+        mixinns: [
+            mixinNavigation,
+        ],
 
         mounted() {
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)

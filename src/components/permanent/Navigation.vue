@@ -208,13 +208,17 @@
     // import SubMenuWhyToyota from "../whyToyota/SubMenuWhyToyota";
     // import SubMenuNikolaev from "../ToyotaInNikolaev/SubMenuNikolaev";
 
-    import $ from "jquery"
+    import $ from "jquery";
 
     import Lineup from "../cars/Lineup";//                                       for Laravel
     import SubMenuToBuyers from "./../../components/toBuyers/SubMenuToBuyers";//                      for Laravel
     import SubMenuService from "./../../components/service/SubMenuService";//                          for Laravel
     import SubMenuWhyToyota from "./../../components/whyToyota/SubMenuWhyToyota";//                     for Laravel
-    import SubMenuNikolaev from "./../../components/ToyotaInNikolaev/SubMenuNikolaev";//         for Laravel
+    import SubMenuNikolaev from "./../../components/ToyotaInNikolaev/SubMenuNikolaev";
+    import {eventEmitter} from "./../../main";
+
+
+    // import {eventEmitter} from "./../../app";//         for Laravel
 
     export default {
         name: "Navigation",
@@ -227,12 +231,25 @@
             SubMenuNikolaev,
         },
 
+        created() {
+            eventEmitter.$on("closeNavbar", () => {
+                console.log("emit");
+                this.closeNavigation();
+            });
+        },
+
         methods: {
             activated() {
                 $(".nav-link").on("click", function () {
                     $(".nav-link").removeClass("active");
                     $(this).addClass("active");
                 })
+            },
+
+            closeNavigation() {
+                console.log("close");
+                $("#navbarSupportedContent").removeClass("show");
+                console.log("closeddd");
             },
         },
     }

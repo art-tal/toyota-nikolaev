@@ -1,17 +1,18 @@
 <template>
     <div class="sub_toBuyers container-fluid">
         <div class="row">
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-6 col-12 linked" >
                 <router-link
                         exact
                         tag="a"
                         class="nav-link"
                         active-class="active"
                         to="/insurance"
+
                 >Тойота Страхування</router-link>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-6 col-12 linked">
                 <router-link
                         exact
                         tag="a"
@@ -21,7 +22,7 @@
                 >Toyota Кредит</router-link>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-6 col-12 linked">
                 <router-link
                         exact
                         tag="a"
@@ -31,7 +32,7 @@
                 >Корпоративні продажі</router-link>
 
                 <ul>
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -40,7 +41,7 @@
                         >Користувачам службових автомобілів</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -49,7 +50,7 @@
                         >Власникам бізнесу</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -57,34 +58,21 @@
                                 to="/corporate_clients"
                         >Корпоративним клієнтам</router-link>
                     </li>
-
-<!--                    <li>-->
-<!--                        <router-link-->
-<!--                                tag="a"-->
-<!--                                exact-->
-<!--                                active-class="active"-->
-<!--                                to="/corporate_sales/special_solutions"-->
-<!--                        >Спеціальні фінансові рішення</router-link>-->
-<!--                    </li>-->
                 </ul>
 
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-6 col-12 linked">
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-                        <li class="servies">
+                        <li class="servies linked">
                             <a href="#">
                                 <i class="fas fa-car"></i>
                                 <span>Конфігуратор</span>
                             </a>
                         </li>
-                        <li class="dilers">
-<!--                            <a href="#">-->
-<!--                                <i class="far fa-file-alt"></i>-->
-<!--                                <span>Завантажити брошури</span>-->
-<!--                            </a>-->
+                        <li class="dilers linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -95,23 +83,13 @@
                                 <span>Завантажити брошури</span>
                             </router-link>
                         </li>
-<!--                        <li class="contact">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-car"></i>-->
-<!--                                <span>Гібридні іновації</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
 <!--                        <li class="test_drive">-->
 <!--                            <a href="#">-->
 <!--                                <i class="fas fa-tag"></i>-->
 <!--                                <span>Сувенирна продукція</span>-->
 <!--                            </a>-->
 <!--                        </li>-->
-                        <li class="download">
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-phone"></i>-->
-<!--                                <span>Часті запитання</span>-->
-<!--                            </a>-->
+                        <li class="download linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -122,12 +100,7 @@
                                 <span>Часті запитання</span>
                             </router-link>
                         </li>
-<!--                        <li class="download">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-map-marker-alt"></i>-->
-<!--                                <span>Офіційні дилери</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
+
                     </ol>
                 </div>
             </div>
@@ -136,12 +109,29 @@
 </template>
 
 <script>
+    // import {eventEmitter} from "@/main";
+    // import $ from "jquery";
+    import mixinNavigation from "./../../mixins/mixinNavigation";
+
     export default {
         name: "SubMenuToBuyers",
 
+        mixins: [
+            mixinNavigation
+        ],
+
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
+
+            // $(".linked").on("click", this.close);
         },
+
+        // methods: {
+        //     close() {
+        //         console.log("click");
+        //         eventEmitter.$emit("closeNavbar");
+        //     },
+        // },
     }
 </script>
 

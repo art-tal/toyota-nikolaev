@@ -2,7 +2,7 @@
     <div class="sub_why_toyota container-fluid">
         <div class="row">
             <div class="col-xl-9 col-lg-8 col-12 row">
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <a href="" class="nav-link" @click.prevent="">Світ «Тойоти»</a>
 <!--                    <router-link-->
 <!--                            exact-->
@@ -13,7 +13,7 @@
 <!--                    >Світ «Тойоти»</router-link>-->
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -22,7 +22,7 @@
                             >Статті / Новини / Події</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -31,7 +31,7 @@
                             >Олімпійське партнерство</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -40,7 +40,7 @@
                             >TOYOTA GAZOO Racing</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -49,7 +49,7 @@
                             >Toyota на чемпіонаті світу з ралі</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -58,7 +58,7 @@
                             >Історія спорткарів Toyota</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -73,7 +73,7 @@
 
 
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <router-link
                             exact
                             tag="a"
@@ -83,7 +83,7 @@
                     >Гарантія якості</router-link>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -92,7 +92,7 @@
                             >Гарантійнe обслуговування</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -101,7 +101,7 @@
                             >Toyota Assistance</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -110,7 +110,7 @@
                             >Toyota Assistance Plus</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -121,7 +121,7 @@
                     </ul>
                 </div>
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <a
                             class="nav-link"
                             href="https://hybrid.toyota.ua/"
@@ -164,7 +164,7 @@
 <!--                            >Часті запитання</router-link>-->
 <!--                        </li>-->
 
-                        <li>
+                        <li class=" linked">
 <!--                            <router-link-->
 <!--                                    tag="a"-->
 <!--                                    exact-->
@@ -177,7 +177,7 @@
 
                 </div>
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <router-link
                             exact
                             tag="a"
@@ -187,7 +187,7 @@
                     >Турбота про навколишнє середовище</router-link>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -196,7 +196,7 @@
                             >Екологічна місія для кращого майбутнього</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -205,7 +205,7 @@
                             >Краще повітря</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -214,7 +214,7 @@
                             >Краща планета</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -223,7 +223,7 @@
                             >Краще життя</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -232,7 +232,7 @@
                             >Просто краще</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -259,7 +259,7 @@
 <!--                            </a>-->
 <!--                        </li>-->
 
-                        <li class="dilers">
+                        <li class="linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -271,7 +271,7 @@
                             </router-link>
                         </li>
 
-                        <li class="contact">
+                        <li class="linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -282,7 +282,7 @@
                             </router-link>
                         </li>
 
-                        <li class="download">
+                        <li class="linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -301,8 +301,14 @@
 </template>
 
 <script>
+    import mixinNavigation from "./../../mixins/mixinNavigation";
+
     export default {
         name: "SubMenuWhyToyota",
+
+        mixins: [
+            mixinNavigation,
+        ],
 
         mounted() {
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)

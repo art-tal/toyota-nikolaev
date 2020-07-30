@@ -1,7 +1,7 @@
 <template>
     <div class="sub_nikolaev container-fluid">
         <div class="row">
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-6 col-12 linked">
                 <router-link
                         exact
                         tag="a"
@@ -11,7 +11,7 @@
                 >Клієнтська служба</router-link>
 
                 <ul>
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -20,7 +20,7 @@
                         >Про службу</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -31,7 +31,7 @@
                 </ul>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-6 col-12 linked">
                 <router-link
                         exact
                         tag="a"
@@ -42,7 +42,7 @@
 
                 <ul>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -51,7 +51,7 @@
                         >Авто в наявносі</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -60,7 +60,7 @@
                         >Екслюзивні проекти</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 exact
                                 tag="a"
@@ -69,7 +69,7 @@
                         >Про нас</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -78,7 +78,7 @@
                         >Наші фахівці</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -87,7 +87,7 @@
                         >Корпоративна відповідальність</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -96,7 +96,7 @@
                         >Зв’язатись з нами</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -107,7 +107,7 @@
                 </ul>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12 align-self-start">
+            <div class="col-xl-3 col-lg-6 col-12 align-self-start linked">
 <!--                <router-link-->
 <!--                        exact-->
 <!--                        tag="a"-->
@@ -156,7 +156,7 @@
 <!--                            </a>-->
 <!--                        </li>-->
 
-                        <li class="servies">
+                        <li class="servies linked">
 <!--                            <a href="#">-->
 <!--                                <i class="fas fa-car"></i>-->
 <!--                                <span>Замовити тест-драйв</span>-->
@@ -171,7 +171,7 @@
                             </router-link>
                         </li>
 
-                        <li class="download">
+                        <li class="download linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -197,8 +197,14 @@
 </template>
 
 <script>
+    import mixinNavigation from "./../../mixins/mixinNavigation";
+
     export default {
         name: "SubMenuNikolaev",
+
+        mixins: [
+            mixinNavigation,
+        ],
 
         mounted() {
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
