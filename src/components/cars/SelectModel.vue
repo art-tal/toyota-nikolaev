@@ -32,8 +32,6 @@
                 </div>
 
             </header>
-                <equip  :id="id"/>
-
 
                 <equipment v-if="showEquipment" :id="id"></equipment>
 
@@ -243,9 +241,6 @@
 </template>
 
 <script>
-    import Equip from "./../../components/configurator/Equip";
-
-
     import axios from 'axios';
     import {eventEmitter} from "../../main";
     // import Equipment from "../configurator/Equipment";
@@ -269,8 +264,6 @@
         components: {
             Equipment,
             SubNavigation,
-
-            Equip
         },
 
         mixins: [
