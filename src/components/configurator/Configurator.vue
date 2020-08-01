@@ -27,7 +27,6 @@
                     >
                         <b class="font-weight-bold align-middle">2</b>
                         <span>Колір та оснащення</span>
-<!--                        <span class="sr-only">(current)</span>-->
                     </router-link>
 
                     <router-link
@@ -39,7 +38,6 @@
                     >
                         <b class="font-weight-bold align-middle">3</b>
                         <span>Підсумок</span>
-<!--                        <span class="sr-only">(current)</span>-->
                     </router-link>
                 </div>
             </div>
@@ -73,8 +71,8 @@
 
         data() {
             return {
-                id_mod: localStorage.id,//this.$route.params.id_params.id_mod,
-                id_equip: localStorage.mod_id,//this.$route.params.id_params.id_equip,
+                id_mod: localStorage.id,
+                id_equip: localStorage.mod_id,
                 modelTitle: "",
             }
         },
@@ -113,7 +111,6 @@
         },
 
         created() {
-            // this.$router.push({name: "selected_engine"});
             this.modelTitle = JSON.parse(localStorage.model).name;
         },
 
@@ -137,7 +134,6 @@
 
     .configurator {
         width: 100%;
-        /*height: 56px;*/
         border-bottom: $border;
         menu {
             margin: 0;
@@ -256,7 +252,6 @@
             }
             .config {
                 a.nav-link {
-                    /*border-left: 1px solid #202020;*/
                     color: #202020;
                 }
                 &.active {

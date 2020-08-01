@@ -17,7 +17,7 @@
 
 <script>
     import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
-    import PageBody from "@/mixins/mixinPages";
+    import PageBody from "./../../mixins/mixinPages";
 
     export default {
         name: "Where",
@@ -74,10 +74,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 

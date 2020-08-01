@@ -32,7 +32,7 @@
 <script>
     import Sidebar from "../../permanent/Sidebar";
     import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
-    import PageBody from "@/mixins/mixinPages";
+    import PageBody from "./../../../mixins/mixinPages";
 
     export default {
         name: "EntertainmentSystem",
@@ -90,10 +90,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -106,26 +102,17 @@
 
         header {
             @include header-xl;
-            /*height: 80vh;*/
             max-height: 60vw;
             background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/rear-entertainment-system-header_tcm-3046-273547.jpg);
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
             margin-bottom: 50px;
             color: #ffffff;
 
             h1 {
                 padding-top: 200px;
                 text-align: center;
-                /*font-size: 5.2rem;*/
-                /*font-weight: bolder;*/
             }
             h2 {
                 text-align: center;
-                /*font-size: 3.4rem;*/
-                /*font-weight: bold;*/
             }
         }
 
@@ -153,10 +140,6 @@
             header {
                 @include header-lg;
                 height: 80vh;
-                /*max-height: 60vw;*/
-                /*h1 {*/
-                /*    width: 100%;*/
-                /*}*/
             }
 
         }
@@ -166,19 +149,9 @@
         section.container-fluid ::v-deep div {
             header {
                 @include header-md;
-                /*height: 56vh;*/
-                /*min-height: 180px;*/
-                /*max-height: 480px;*/
-                /*padding-top: 15px;*/
                 h1 {
                     padding-top: 50px;
-                /*    width: 100%;*/
-                /*    font-size: 3.5rem;*/
                 }
-                /*h2 {*/
-                /*    font-size: 2.2rem;*/
-                /*    padding-top: 10px;*/
-                /*}*/
             }
         }
     }
@@ -187,17 +160,8 @@
         section.container-fluid ::v-deep div {
             header {
                 @include header-sm;
-                /*min-height: 180px;*/
-                /*height: 56vw;*/
-                /*padding-top: 15px;*/
                 h1 {
-                    /*width: 100%;*/
                     padding-top: 100px;
-                    /*font-size: 3rem;*/
-                }
-                h2 {
-                    /*font-size: 2.0rem;*/
-                    /*padding-top: 5px;*/
                 }
             }
         }
@@ -210,17 +174,10 @@
                 width: 100%;
                 height: 56vw;
                 max-height: 380px;
-                /*min-height: 180px;*/
-                /*padding-top: 10px;*/
                 h1 {
                     width: 100%;
                     padding: 20px 15px;
-                    /*font-size: 2.5rem;*/
                 }
-                /*h2 {*/
-                /*    font-size: 1.8rem;*/
-                /*    padding-top: 5px;*/
-                /*}*/
             }
 
             .body.container {

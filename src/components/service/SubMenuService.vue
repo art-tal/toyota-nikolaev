@@ -224,18 +224,6 @@
                                 <span>Завантажити брошури</span>
                             </router-link>
                         </li>
-<!--                        <li class="contact">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-car"></i>-->
-<!--                                <span>Гібридні іновації</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="test_drive">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-tag"></i>-->
-<!--                                <span>Сувенирна продукція</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
                         <li class="download linked">
                             <router-link
                                     tag="a"
@@ -265,7 +253,7 @@
         ],
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
     }
 </script>

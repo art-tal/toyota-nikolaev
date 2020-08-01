@@ -53,7 +53,6 @@
 
 <script>
     import PageBody from "../../mixins/mixinPages"
-    // import Sidebar from "../permanent/Sidebar";
     import Sidebar from "./../../components/permanent/Sidebar"; //               for Laravel
 
     export default {
@@ -108,10 +107,6 @@
             }
         },
 
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
-
         components: {
             Sidebar
         },
@@ -128,24 +123,16 @@
             header {
                 @include header-xl;
                 margin: 0;
-                /*width: 100%;*/
-                /*height: 80vh;*/
                 padding: 70px 15px 20px;
 
                 background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/insurance-header_tcm-3046-165896.jpg');
-                /*background-repeat: no-repeat;*/
-                /*-webkit-background-size: cover;*/
-                /*background-size: cover;*/
-                /*background-position: center center;*/
                 color: #ffffff;
                 h1 {
                     font-size: 4.4rem;
-                    /*font-weight: bolder;*/
                     padding-bottom: 16px;
                     text-align: center;
                 }
                 h2 {
-                    /*font-size: 3.4rem;*/
                     font-weight: bold;
                     text-align: center;
                 }

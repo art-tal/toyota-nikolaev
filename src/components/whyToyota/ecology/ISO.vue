@@ -100,10 +100,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -123,7 +119,6 @@
                 font-size: 3.4rem;
                 margin-bottom: 68px;
                 text-align: center;
-                /*font-weight: bold;*/
             }
             .p {
                 font-size: 1.4rem;
@@ -169,13 +164,11 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        /*main {*/
             main ::v-deep div {
                 header {
                     @include header-lg;
                 }
             }
-        /*}*/
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {

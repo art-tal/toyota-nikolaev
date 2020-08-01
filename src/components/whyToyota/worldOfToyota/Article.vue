@@ -58,12 +58,11 @@
 
         created() {
             this.id = this.$route.params['id'];
-            console.log(this.id);
             this.getArticle();
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
 
         computed: {
@@ -88,7 +87,6 @@
                 )
                 .then( (responce) => {
                     this.article = responce.data[0];
-                    console.log(this.article);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки статьи");
@@ -107,16 +105,10 @@
         margin: 0;
         header {
             @include header-xl;
-            /*height: 80vh;*/
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
             margin-bottom: 50px;
             h1 {
                 font-size: 4.4rem;
                 color: #ffffff;
-                /*font-weight: bolder;*/
                 padding-top: 150px;
             }
         }
@@ -135,8 +127,6 @@
             }
         }
     }
-
-
 
     @media (max-width: 767.9px) {
         article.container-fluid {

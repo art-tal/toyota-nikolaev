@@ -28,7 +28,6 @@
 
 <script>
     import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
-    // import MenuNikolaev from "@/components/ToyotaInNikolaev/MenuNikolaev";
 
     export default {
         name: "ToyotaMykolaiv",

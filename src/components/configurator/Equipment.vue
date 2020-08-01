@@ -1,5 +1,6 @@
 <template>
     <div class="allEquipment container-fluid w-100 position-relative">
+
         <button id="button-prev" class="btn"
                 @click="prevSlideEquip()"
                 :disabled="xSlide?false:true"
@@ -10,16 +11,11 @@
         <div class="container carousel overflow-hidden" :style="{'color': fontColor}">
 
             <div class="slides_wrapper row align-items-start flex-nowrap ">
-<!--            <div class="slide_wrapper">-->
 
                 <div  class="equip col-lg-4 col-md-6 col-12 "
                       v-for="(equipment, key) in equipments"
                       :key="key"
                       @click="activated(equipment)">
-<!--                    <div  class="equip d-inline-block"-->
-<!--                      v-for="(equipment, key) in equipments"-->
-<!--                      :key="key"-->
-<!--                      @click="activated(equipment)">-->
 
                     <img :src="photo" :alt="equipment.mod_name">
                     <h4 :style="{'color': fontColor}">
@@ -30,12 +26,6 @@
                     <h5 :style="{'color': fontColor}" class="text-left">
                         Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>
                     </h5>
-                    <!--                <ul class="equip_desc">-->
-                    <!--                    <li v-for="(desc, key) in descriptionList(equipment)"-->
-                    <!--                        :key="key"-->
-                    <!--                        :style="{'color': fontColor}"-->
-                    <!--                    >{{desc}}</li>-->
-                    <!--                </ul>-->
                 </div>
             </div>
         </div>
@@ -55,6 +45,9 @@
     import {eventEmitter} from '../../main'
     import $ from "jquery";
 
+    // import {eventEmitter} from './../../app'
+
+
     export default {
         name: "Equip",
 
@@ -65,7 +58,6 @@
 
         data() {
             return {
-                // id: 0,//первоначальный вариант
                 color: {},
                 equipments: [],
                 equipment: {},
@@ -94,9 +86,6 @@
             this.color = this.$store.getters.colored;
             this.getEquipment();
             this.getFontColor();
-
-            console.log("create");
-
             eventEmitter.$on('select', () => {this.activeted()})
         },
 
@@ -120,7 +109,6 @@
             },
 
             photo() {
-                // return this.$store.getters.modelImage;
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
             },
 
@@ -141,9 +129,6 @@
                 axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.getModelId}`)
                     .then((response) => {
                         this.equipments = response.data;
-
-                        // this.checkEquipment();
-                        // console.log(this.equipments);
                         this.getPrices();
                     })
                     .then( () => { this.carouselSizes(); } )
@@ -160,8 +145,6 @@
                 )
                     .then( (response) => {
                         this.prices = response.data;
-                        // console.log(this.prices);
-
                         this.setPrice();
                     } )
                     .catch( (error) => {
@@ -172,8 +155,6 @@
 
             setPrice() {
                 let keysPrice = Object.keys(this.prices);
-                console.log(keysPrice);
-
                 this.equipments.forEach( (equip) => {
                     keysPrice.forEach( (pr) => {
                         if(equip.model_name_pivot.toLowerCase() === pr.toLowerCase()) {
@@ -181,30 +162,14 @@
                         }
                     } );
                 } );
-
-                console.log(this.equipments);
                 this.checkEquipment();
 
             },
 
             checkEquipment() {
-                // if(this.$store.getters.equip.mod_id) {
-                //     this.equipments.forEach( equip => {
-                //        if ( equip.mod_id === this.$store.getters.equip.mod_id ) {
-                //            this.equipment = equip;
-                //            localStorage.equipment = JSON.stringify(equip);
-                //            return "";
-                //        }
-                //     });
-                // } else
-                // let equipFromJson = JSON.parse(localStorage.equipment);
-                // console.log(equipFromJson);
-
                 if (this.computedEquipment.mod_id) {
-                    // if (equipFromJson.mod_id) {
                     this.equipments.forEach( equip => {
                         if ( equip.mod_id === this.computedEquipment.mod_id ) {
-                            // if ( equip.mod_id === equipFromJson.mod_id ) {
                             this.equipment = equip;
                             this.$store.state.equipment = equip;
                         }
@@ -215,13 +180,10 @@
             },
 
             activated(equipment) {
-                console.log('catch');
                 this.$store.state.equipment = equipment;
                 localStorage.equipment = JSON.stringify(equipment);
                 localStorage.mod_id = equipment.mod_id;
-                // console.log(localStorage.equipment);
                 setTimeout(() => {eventEmitter.$emit('selectedEquipment');},100);
-                // eventEmitter.$emit('selectedEquipment');
             },
 
             getFontColor: function () {
@@ -264,6 +226,7 @@
                 }
                 catch (e) {
                     console.log("descriptionList error");
+                    console.log(e);
                     return "";
                 }
 
@@ -273,11 +236,9 @@
                 this.countSlides = 3;
                 if ( window.innerWidth < 992 && window.innerWidth > 768 ) { this.countSlides = 2; }
                 if ( window.innerWidth < 768 ) { this.countSlides = 1; }
-                // else {  }
 
                 this.slideWidth = $('.carousel.container').width() / this.countSlides;
                 $(".equip").width(this.slideWidth + "px");
-                console.log(this.slideWidth);
                 $('.equip > img').width(this.slideWidth - 80 + "px");
                 this.wrapper = this.slideWidth * this.equipments.length;
                 this.diferent = this.wrapper - $(".carousel.container").width();
@@ -285,10 +246,7 @@
 
             prevSlideEquip() {
                 this.xSlide = this.xSlide + this.slideWidth;
-
                 if (this.xSlide > 0) {
-                    console.log(this.xSlide);
-                    // this.xSlide = $(".equip").width() * this.equipments.length - $(".carousel").width();
                     this.xSlide = 0;
                     $("#button-prev").attr("disabled", "disabled");
                 } else {
@@ -299,7 +257,7 @@
                 $("#button-next").removeAttr("disabled");
 
                             },
-            //
+
             nextSlideEquip() {
 
                 this.xSlide = this.xSlide - this.slideWidth;
@@ -326,7 +284,6 @@
         height: 266px;
         margin: 0;
         overflow: hidden;
-        /*padding: 30px;*/
         position: relative;
         background-color: rgba(0,0,0,0.3);
         z-index: 100;
@@ -337,7 +294,6 @@
             padding: 0;
             margin: auto;
             .slides_wrapper.row{
-            /*.slide_wrapper{*/
                 width: 100%;
                 height: 100%;
                 margin: 0;
@@ -353,7 +309,6 @@
                     cursor: pointer;
                     &.active,
                     &:hover {
-                        /*overflow: hidden;*/
                         align-self: stretch;
                         background-color: rgba(0,0,0,0.25);
                         border-top: 15px solid rgba(0,0,0,0.5);
@@ -427,10 +382,6 @@
     }
 
 
-
-
-
-
     @media (min-width: 1200px) and (max-width: 1439.9px) {
 
     }
@@ -449,7 +400,6 @@
                     .equip_desc {
                         margin: 0;
                         padding: 0;
-                        /*list-style-type: none;*/
                         list-style-position: inside;
                         display: block !important;
                         li {
@@ -473,28 +423,13 @@
                             margin-left: 10px;
                         }
                     }
-
                 }
             }
-            /*.carousel-control-prev {*/
-            /*    width: 7.5%;*/
-            /*    height: 100%;*/
-            /*    left: 0;*/
-            /*    text-align: right;*/
-            /*    justify-content: center;*/
-            /*}*/
-            /*.carousel-control-next {*/
-            /*    width: 7.5%;*/
-            /*    height: 100%;*/
-            /*    right: 0;*/
-            /*}*/
-
         }
     }
 
     @media (max-width: 767.9px) {
         .allEquipment.container-fluid {
-            /*height: auto;*/
             overflow: hidden;
             .carousel.container {
                 .slides_wrapper.row{
@@ -507,17 +442,6 @@
                         img {
                             width: 100%;
                         }
-                        /*.equip_desc {*/
-                        /*    margin: 0;*/
-                        /*    padding: 0;*/
-                        /*    list-style-position: inside;*/
-                        /*    display: block !important;*/
-                        /*    li {*/
-                        /*        text-align: left;*/
-                        /*        font-size: 1.4rem;*/
-                        /*        line-height: 1.5;*/
-                        /*    }*/
-                        /*}*/
                         h4 {
                             font-size: 18px;
                             margin-bottom: 15px;

@@ -332,7 +332,6 @@
 
 <script>
     import PageBody from "../../mixins/mixinPages"
-    // import Sidebar from "../permanent/Sidebar";
     import Sidebar from "./../../components/permanent/Sidebar";//           for Laravel
 
     export default {
@@ -394,10 +393,6 @@
             Sidebar
         },
 
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
-
         methods: {
             blockInfo() {
                 this.showInfo = !this.showInfo;
@@ -414,28 +409,8 @@
         margin: 0;
         header.container-fluid  {
             @include header-xl;
-            /*width: 100%;*/
-            /*height: 80vh;*/
             padding-top: 70px;
             background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/credit-1600x900_tcm-3046-165545.jpg');
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
-            //color: $font_color;
-            /*h1 {*/
-                /*width: 1200px;*/
-                /*padding: 15px;*/
-                /*margin: 0 auto;*/
-                /*font-size: 5.2rem;*/
-                /*font-weight: bolder;*/
-                /*text-align: left;*/
-            /*}*/
-            /*h2 {*/
-                /*font-size: 3.4rem;*/
-                /*text-align: left;*/
-                /*padding-top: 16px;*/
-            /*}*/
         }
         article.container {
             header {
@@ -449,9 +424,6 @@
                 }
             }
             .body {
-                /*width: 1200px;*/
-                /*margin: 0 auto;*/
-                /*padding: 0 15px;*/
                 text-align: left;
                 .p {
                     font-size: 1.6rem;
@@ -562,10 +534,6 @@
         main ::v-deep div{
             header.container-fluid  {
                 @include header-lg
-                /*max-height: 60vw;*/
-                /*h1 {*/
-                /*    width: 100%;*/
-                /*}*/
             }
 
         }
@@ -575,17 +543,11 @@
         main ::v-deep div{
             header.container-fluid  {
                 @include header-md;
-                /*height: 56vh;*/
-                /*min-height: 180px;*/
-                /*max-height: 480px;*/
-                /*padding-top: 15px;*/
                 h1 {
-                /*    width: 100%;*/
                     font-size: 3.5rem;
                 }
                 h2 {
                     font-size: 2.2rem;
-                    /*padding-top: 10px;*/
                 }
             }
             article.container {
@@ -616,19 +578,13 @@
         main ::v-deep div {
             header.container-fluid  {
                 @include header-sm;
-                /*min-height: 180px;*/
-                /*height: 56vw;*/
-                /*padding-top: 15px;*/
                 h1 {
-                    /*width: 100%;*/
                     font-size: 3rem;
 
                 }
                 h2 {
                     width: 100%;
                     font-size: 2.0rem;
-
-                    /*padding-top: 5px;*/
                 }
             }
             article.container {
@@ -687,19 +643,11 @@
             header.container-fluid  {
                 @include header-xs;
                 width: 100%;
-                /*height: auto;*/
-                /*min-height: 180px;*/
-                /*padding-top: 10px;*/
                 h1 {
                     width: 100%;
                     padding: 10px 15px 10px;
-                    /*font-size: 2.5rem;*/
                     color: $font_color;
                 }
-                /*h2 {*/
-                /*    font-size: 1.8rem;*/
-                /*    padding-top: 5px;*/
-                /*}*/
             }
             article.container {
                 width: 100%;

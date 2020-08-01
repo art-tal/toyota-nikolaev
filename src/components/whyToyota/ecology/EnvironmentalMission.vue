@@ -177,10 +177,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -191,7 +187,6 @@
         header {
             @include header-xl;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/new_banner_EC_tcm-3046-617990.jpg);
-
         }
     }
     
@@ -234,10 +229,8 @@
                             width: 100%;
                         }
                     }
-
                 }
             }
-
         }
     }
 
@@ -276,7 +269,6 @@
                         }
                     }
                 }
-
             }
         }
     }
@@ -310,10 +302,8 @@
                                 margin-bottom: 20px;
                             }
                         }
-
                     }
                 }
-
             }
         }
     }
@@ -351,10 +341,8 @@
                                 margin-bottom: 15px;
                             }
                         }
-
                     }
                 }
-
             }
         }
     }

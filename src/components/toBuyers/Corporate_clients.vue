@@ -224,10 +224,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -478,8 +474,6 @@
             -webkit-background-size: cover;
             background-size: cover;
             header {
-                /*width: 1170px;*/
-                /*margin: auto;*/
                 h1 {
                     padding-top: 150px;
                     padding-bottom: 100px;
@@ -489,8 +483,6 @@
                 }
             }
             footer {
-                /*width: 1170px;*/
-                /*margin: auto;*/
                 button.btn {
                     @include button;
                     background-color: #f0f0f0;
@@ -570,8 +562,6 @@
                 -webkit-background-size: cover;
                 background-size: cover;
                 header {
-                    /*width: 1170px;*/
-                    /*margin: auto;*/
                     h1 {
                         padding-top: 150px;
                         padding-bottom: 100px;
@@ -581,8 +571,6 @@
                     }
                 }
                 footer {
-                    /*width: 1170px;*/
-                    /*margin: auto;*/
                     button.btn {
                         @include button;
                         background-color: #f0f0f0;
@@ -634,7 +622,6 @@
 
             section.map {
                 margin-bottom: 30px;
-                /*padding-bottom: 70px;*/
                 .body.container {
                     .legend {
                         top: 239px;
@@ -851,7 +838,6 @@
                         font-size: 1.6rem;
                     }
                     ul.icons {
-                        /*margin-bottom: 75px;*/
                         li {
                             height: 180px;
                             span {

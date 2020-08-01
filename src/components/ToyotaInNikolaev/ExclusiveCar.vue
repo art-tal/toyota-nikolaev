@@ -42,16 +42,12 @@
             SwiperSlide
         },
 
-        // props: [
-        //     car,
-        // ],
-
         data() {
             return {
                 car: {},
 
                 swiperOption: {
-                    autoHeight: true, //enable auto height
+                    autoHeight: true,
                     spaceBetween: 20,
                     pagination: {
                         el: '.swiper-pagination',
@@ -148,8 +144,6 @@
                 align-items: center;
                 text-align: center;
                 font-weight: bold;
-                /*font-size: $font-size-huge * 2;
-                background-color: $white;*/
             }
         }
 
@@ -191,7 +185,6 @@
             .body {
                 margin: 20px auto;
                     section {
-                    /*margin: 0;*/
                     header {
                         padding-top: 0;
                         h2 {
@@ -270,8 +263,6 @@
                     align-items: center;
                     text-align: center;
                     font-weight: bold;
-                    /*font-size: $font-size-huge * 2;
-                    background-color: $white;*/
                 }
             }
 

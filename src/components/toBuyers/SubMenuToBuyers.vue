@@ -83,12 +83,6 @@
                                 <span>Завантажити брошури</span>
                             </router-link>
                         </li>
-<!--                        <li class="test_drive">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-tag"></i>-->
-<!--                                <span>Сувенирна продукція</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
                         <li class="download linked">
                             <router-link
                                     tag="a"
@@ -109,8 +103,6 @@
 </template>
 
 <script>
-    // import {eventEmitter} from "@/main";
-    // import $ from "jquery";
     import mixinNavigation from "./../../mixins/mixinNavigation";
 
     export default {
@@ -122,16 +114,7 @@
 
         mounted() {
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
-
-            // $(".linked").on("click", this.close);
         },
-
-        // methods: {
-        //     close() {
-        //         console.log("click");
-        //         eventEmitter.$emit("closeNavbar");
-        //     },
-        // },
     }
 </script>
 

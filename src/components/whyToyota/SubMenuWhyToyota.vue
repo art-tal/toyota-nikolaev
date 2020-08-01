@@ -3,14 +3,13 @@
         <div class="row">
             <div class="col-xl-9 col-lg-8 col-12 row">
                 <div class="col-xl-4 col-md-6 col-12 linked">
-                    <a href="" class="nav-link" @click.prevent="">Світ «Тойоти»</a>
-<!--                    <router-link-->
-<!--                            exact-->
-<!--                            tag="a"-->
-<!--                            class="nav-link"-->
-<!--                            active-class="active"-->
-<!--                            to="/world_of_toyota"-->
-<!--                    >Світ «Тойоти»</router-link>-->
+                    <router-link
+                            exact
+                            tag="a"
+                            class="nav-link"
+                            active-class="active"
+                            to="//world_of_toyota/news"
+                    >Світ «Тойоти»</router-link>
 
                     <ul>
                         <li class=" linked">
@@ -128,14 +127,6 @@
                             target="_blank"
                     >Гібридні інновації</a>
 
-<!--                    <router-link-->
-<!--                            exact-->
-<!--                            tag="a"-->
-<!--                            class="nav-link"-->
-<!--                            active-class="active"-->
-<!--                            to="/hybrid_innovations"-->
-<!--                    >Гібридні інновації</router-link>-->
-
                     <ul>
 <!--                        <li>-->
 <!--                            <router-link-->
@@ -252,13 +243,6 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-<!--                        <li class="download">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-map-marker-alt"></i>-->
-<!--                                <span>Офіційні дилери</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-
                         <li class="linked">
                             <router-link
                                     tag="a"
@@ -311,7 +295,7 @@
         ],
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
     }
 </script>

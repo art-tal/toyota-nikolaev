@@ -15,12 +15,9 @@
                             active-class="active"
                             :to="'/select_model/' + this.getID"
                     >
-<!--                        <span>Сконфигурировать</span>-->
                         <a class="nav-link">Загальний огляд <span class="sr-only">(current)</span></a>
                     </router-link>
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link" href="#">Общий обзор <span class="sr-only">(current)</span></a>-->
-<!--                    </li>-->
+
                     <router-link
                             class="nav-item"
                             tag="li"
@@ -28,12 +25,9 @@
                             active-class="active"
                             :to="'/engines_and_characteristics/' + this.getID"
                     >
-<!--                        <span>Сконфигурировать</span>-->
                         <a class="nav-link" href="#">Двигуни та характеристики</a>
                     </router-link>
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link" href="#">Особенности и характеристики</a>-->
-<!--                    </li>-->
+
                     <router-link
                             class="nav-item"
                             tag="li"
@@ -41,12 +35,9 @@
                             active-class="active"
                             :to="'/prices/' + this.getID"
                     >
-<!--                        <span>Сконфигурировать</span>-->
                         <a class="nav-link" href="#">Ціни</a>
                     </router-link>
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link" href="#">Цены</a>-->
-<!--                    </li>-->
+
                     <router-link
                             class="nav-item"
                             tag="li"
@@ -54,12 +45,9 @@
                             active-class="active"
                             :to="'/reliability_and_guarantee/' + this.getID"
                     >
-<!--                        <span>Сконфигурировать</span>-->
                         <a class="nav-link" href="#">Надійність та гарантія</a>
                     </router-link>
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link" href="#">Надежность и гарантия</a>-->
-<!--                    </li>-->
+
                     <router-link
                             class="config nav-item"
                             tag="li"
@@ -67,24 +55,12 @@
                             active-class="active"
                             to="/configurator/selected_engine"
                     >
-<!--                        <span>Сконфигурировать</span>-->
                         <a class="nav-link" href="#">Сконфігурувати</a>
                     </router-link>
 
 
                 </ul>
 
-<!--                <div class="config">-->
-<!--                    <router-link-->
-<!--                            class="nav-link ml-2 mr-2"-->
-<!--                            tag="a"-->
-<!--                            exact-->
-<!--                            active-class="active"-->
-<!--                            to="/configurator/selected_engine"-->
-<!--                    >-->
-<!--                        <span>Сконфигурировать</span>-->
-<!--                    </router-link>-->
-<!--                </div>-->
             </div>
         </nav>
     </menu>
@@ -153,7 +129,6 @@
                         text-align: right;
                         a.nav-link {
                             width: 200px;
-                            /*border-left: 1px solid #ffffff;*/
                             color: rgba(255,255,255,0.5);
                             &:hover {
                                 text-decoration: none;
@@ -219,7 +194,6 @@
 
         }
     }
-    /*@media (min-width: 768px) and (max-width: 991.9px)*/
 
 </style>
 

@@ -112,7 +112,6 @@
                 )
                 .then( (response) => {
                     this.workers = response.data;
-                    console.log( this.workers );
                 } )
                 .catch( () => {} )
             },
@@ -199,13 +198,9 @@
                             font-weight: normal;
                         }
                     }
-
-
                 }
             }
         }
-
-
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
@@ -309,8 +304,6 @@
                         h5 {
                             font-size: 1.6rem;
                         }
-
-
                     }
                 }
             }
@@ -361,8 +354,6 @@
                         h5 {
                             font-size: 1.6rem;
                         }
-
-
                     }
                 }
             }

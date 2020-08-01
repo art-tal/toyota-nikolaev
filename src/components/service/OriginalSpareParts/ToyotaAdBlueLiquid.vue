@@ -132,10 +132,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -149,30 +145,17 @@
 
 
     section.container-fluid ::v-deep div {
-        /*padding: 0;*/
-        /*margin: 0;*/
 
         header {
             @include header-xl;
             height: 420px;
-            /*width: 100%;*/
             padding-top: 50px;
             background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Adblue_Header-420_tcm-3046-729063.jpg);
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
-            //color: $font_color;
             h1 {
-                /*font-size: 5.4rem;*/
-                /*font-weight: bolder;*/
-                /*color: #ffffff;*/
                 text-align: center;
             }
             h2 {
                 text-align: center;
-                /*font-size: 3.4rem;*/
-                /*margin-top: 16px;*/
             }
         }
 
@@ -251,21 +234,15 @@
                 font-size: 1.5rem;
                 margin-bottom: 24px;
             }
-
         }
-
     }
-
-
 
     @media (max-width: 767.9px) {
         section.container-fluid ::v-deep div {
 
             header {
                 @include header-sm;
-                /*min-height: 180px;*/
                 max-height: 420px;
-                /*height: 56vw;*/
                 padding-top: 20px;
 
                 h1 {
@@ -324,7 +301,6 @@
                     font-size: 1.5rem;
                     margin-bottom: 24px;
                 }
-
             }
         }
     }

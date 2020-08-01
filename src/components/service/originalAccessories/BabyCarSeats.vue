@@ -275,10 +275,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -286,8 +282,6 @@
     @import '../../../styles/variables';
 
     section.container-fluid ::v-deep div {
-        /*padding: 0;*/
-        /*margin: 0;*/
         header {
             img {
                 width: 100%;
@@ -296,12 +290,10 @@
 
         .body.container {
             color: $font_color;
-            /*.header {*/
                 h1 {
                     font-size: 3.4rem;
                     margin: 68px 0;
                 }
-            /*}*/
 
             div {
                 article.row {

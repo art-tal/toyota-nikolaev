@@ -108,33 +108,6 @@
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12 align-self-start linked">
-<!--                <router-link-->
-<!--                        exact-->
-<!--                        tag="a"-->
-<!--                        class="nav-link"-->
-<!--                        active-class="active"-->
-<!--                        to="/corporate_sales/general"-->
-<!--                >Робота в Toyota</router-link>-->
-
-<!--                <ul>-->
-<!--                    <li>-->
-<!--                        <router-link-->
-<!--                                tag="a"-->
-<!--                                exact-->
-<!--                                active-class="active"-->
-<!--                                to="/corporate_sales/business_car"-->
-<!--                        >Кар'єра «Тойота-Україна»</router-link>-->
-<!--                    </li>-->
-
-<!--                    <li>-->
-<!--                        <router-link-->
-<!--                                tag="a"-->
-<!--                                exact-->
-<!--                                active-class="active"-->
-<!--                                to="/corporate_sales/business_owner"-->
-<!--                        >Кар’єрні можливості</router-link>-->
-<!--                    </li>-->
-<!--                </ul>-->
 
             </div>
 
@@ -142,25 +115,7 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-<!--                        <li class="download">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-map-marker-alt"></i>-->
-<!--                                <span>Офіційні дилери</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-
-<!--                        <li class="dilers">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-car-side"></i>-->
-<!--                                <span>Автомобілі з пробігом</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-
                         <li class="servies linked">
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-car"></i>-->
-<!--                                <span>Замовити тест-драйв</span>-->
-<!--                            </a>-->
                             <router-link
                                     tag="a"
                                     exact
@@ -182,13 +137,6 @@
                                 <span>Часті запитання</span>
                             </router-link>
                         </li>
-
-<!--                        <li class="contact">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-key"></i>-->
-<!--                                <span>Гібридні іновації</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
                     </ol>
                 </div>
             </div>
@@ -207,7 +155,7 @@
         ],
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
     }
 </script>

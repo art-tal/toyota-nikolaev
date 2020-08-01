@@ -90,7 +90,6 @@
         </div>
         
         <div class="img container-fluid">
-<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_full-width_1600x503_tcm-3046-1215946.jpg" alt="photo">-->
         </div>
 
         <div class="container rally-team">
@@ -202,7 +201,6 @@
         <div class="container-fluid carousel-img">
             <h2>Галерея</h2>
             <div class="carousel" @click="show()">
-<!--                <swiper class="swiper" ref="swiper" :options="swiperOption">-->
                 <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
                     <swiper-slide v-for="(img, key) in images" :key="key">
                         <img :src="img" alt="photo">
@@ -217,7 +215,6 @@
 
             <div class="carousel_view" v-if="showCarousel">
                 <i class="fas fa-times" @click="show()"></i>
-<!--                <swiper class="swiper" :options="swiperOption">-->
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
                     <swiper-slide v-for="(img, key) in images"
                                   :key="key"
@@ -290,33 +287,6 @@
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery6_fullsize_1600x1200_tcm-3046-1253051.jpg",
                 ],
 
-
-                // swiperOption: {
-                //     slidesPerView: 4,
-                //     spaceBetween: 0,
-                //     direction: 'horizontal',
-                //     navigation: {
-                //         nextEl: '.swiper-button-next',
-                //         prevEl: '.swiper-button-prev'
-                //     },
-                //
-                //
-                //     pagination: {
-                //         el: '.swiper-pagination',
-                //         type: 'fraction'
-                //     },
-                //
-                //     on: {
-                //         resize: () => {
-                //             this.$refs.swiper.$swiper.changeDirection(
-                //                 window.innerWidth <= 960
-                //                     ? 'vertical'
-                //                     : 'horizontal'
-                //             )
-                //         }
-                //     }
-                // }
-
                 swiperOptionTop: {
                     loop: true,
                     loopedSlides: 5, // looped slides should be the same
@@ -382,8 +352,6 @@
             const swiperThumbs = this.$refs.swiperThumbs.$swiper;
             swiperTop.controller.control = swiperThumbs;
             swiperThumbs.controller.control = swiperTop;
-
-
         })
     },
 
@@ -577,7 +545,6 @@
         }
 
         .container-fluid.carousel-img {
-            /*position: relative;*/
             h2 {
                 font-size: 4.4rem;
                 margin-bottom: 40px;
@@ -596,8 +563,6 @@
                     font-weight: bold;
                     overflow: hidden;
                     position: relative;
-                    /*font-size: $font-size-huge * 2;
-                    background-color: $white;*/
                     img {
                         width: 100%;
 
@@ -943,7 +908,6 @@
             }
 
             .container-fluid.carousel-img {
-                /*position: relative;*/
                 h2 {
                     font-size: 3.5rem;
                     margin-bottom: 30px;

@@ -4,14 +4,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12 legal_links">
-<!--                        <a href="#" class="contact">Зв’язатись з нами</a>-->
                     <router-link class="contact"
                             tag="a"
                             exact
                             to="/faq">
                         Зв’язатись з нами
                     </router-link>
-<!--                        <a href="#" class="legalInformation">Юридична інформація</a>-->
                     <router-link  class="legalInformation"
                                   tag="a"
                                   exact
@@ -19,7 +17,6 @@
                     >
                         Юридична інформація
                     </router-link>
-<!--                        <a href="#" class="privacySetting">Налаштування приватності</a>-->
                     <router-link class="privacySetting"
                                   tag="a"
                                   exact
@@ -123,10 +120,6 @@
                                     <i class="fas fa-map-marker-alt"></i>
                                     <span>Відкрити карту</span>
                                 </router-link>
-<!--                                <a href="">-->
-<!--                                    <i class="fas fa-map-marker-alt"></i>-->
-<!--                                    <span>Відкрити карту</span>-->
-<!--                                </a>-->
                             </li>
                         </ul>
                     </article>
@@ -216,8 +209,6 @@
             background-color: #edf0f5;
             .container {
                 .row {
-                    /*width: 1170px;*/
-                    /*margin: 0 auto;*/
                     padding: 40px 0;
                     article {
                         padding: 0 25px;
@@ -256,7 +247,6 @@
                 }
             }
             .row {
-                /*background-color: #fff;*/
                 font-size: 1.4rem;
             }
 
@@ -447,8 +437,6 @@
                 .container {
                     margin-bottom: 0;
                     .row {
-                        /*width: 1170px;*/
-                        /*margin: 0 auto;*/
                         padding: 40px 0;
                         article {
                             padding: 0 25px;
@@ -487,7 +475,6 @@
                     }
                 }
                 .row {
-                    /*background-color: #fff;*/
                     font-size: 1.4rem;
                 }
 

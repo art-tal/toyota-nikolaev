@@ -147,10 +147,10 @@
                     spaceBetween: 0,
                     slidesPerView: 1,
                     centeredSlides: true,
-                    // autoplay: {
-                    //     delay: 2500,
-                    //     disableOnInteraction: false
-                    // },
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false
+                    },
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
@@ -162,10 +162,6 @@
                 }
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -295,10 +291,7 @@
                     }
                 }
             }
-
-
         }
-
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {

@@ -69,7 +69,6 @@
 
 <script>
     import PageBody from "../../mixins/mixinPages"
-    // import scssStyle from "../../styles/legalInformation.module.scss"
 
     export default {
         name: "LegalInformation",
@@ -122,16 +121,6 @@
                 ],
             }
         },
-
-        // created() {
-        //        this.getPageBody(this.id);
-        //
-        //
-        // },
-        //
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -142,7 +131,6 @@
 
     * {
         margin: 0;
-        /*padding: 0;*/
         color: $font_color;
     }
 

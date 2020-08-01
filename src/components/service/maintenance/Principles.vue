@@ -41,10 +41,6 @@
             }
         },
 
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
-
         metaInfo() {
             return {
                 // title:  `Toyota Nikolaev | Технічне обслуговування автомобілів Toyota`,
@@ -100,20 +96,13 @@
 
         header {
             @include header-xl;
-            /*height: 80vh;*/
             max-height: 60vw;
             background-image: url('//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg');
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
             margin-bottom: 50px;
 
             h1 {
                 padding-top: 350px;
-                /*font-size: 5.2rem;*/
                 color: #ffffff;
-                /*font-weight: bolder;*/
             }
         }
 
@@ -143,9 +132,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-lg;
-                /*max-height: 60vw;*/
                 h1 {
-                    /*width: 100%;*/
                     padding-top: 250px;
                 }
             }
@@ -157,12 +144,7 @@
         main.container-fluid ::v-deep div {
             header  {
                 @include header-md;
-                /*height: 56vh;*/
-                /*min-height: 180px;*/
-                /*max-height: 480px;*/
-                /*padding-top: 15px;*/
                 h1 {
-                    /*width: 100%;*/
                     font-size: 3.5rem;
                     padding-top: 200px;
                 }
@@ -195,11 +177,7 @@
         main.container-fluid ::v-deep div{
             header  {
                 @include header-sm;
-                /*min-height: 180px;*/
-                /*height: 56vw;*/
-                /*padding-top: 15px;*/
                 h1 {
-                    /*width: 100%;*/
                     font-size: 3rem;
                     padding-top: 150px;
                 }
@@ -214,9 +192,7 @@
                 @include header-xs;
                 width: 100%;
                 height: 56vw;
-                /*min-height: 180px;*/
                 max-height: 320px;
-                /*padding-top: 10px;*/
                 h1 {
                     width: 100%;
                     font-size: 2.5rem;

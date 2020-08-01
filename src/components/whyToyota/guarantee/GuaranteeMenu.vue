@@ -72,7 +72,6 @@
 
     menu {
         width: 100%;
-        /*padding-left:30px;*/
         position: sticky;
         top: 0;
         z-index: 998;

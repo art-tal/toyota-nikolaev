@@ -1,5 +1,4 @@
 import axios from "axios"
-// import $ from "jquery"
 
 export default {
     data() {
@@ -34,7 +33,6 @@ export default {
                 )
                     .then( (response) => {
                         this.page = response.data[0];
-                        console.log(this.page);
                     } )
                     .then( () => {
                         while (this.page.body.includes("<p>") ||
@@ -70,12 +68,6 @@ export default {
 
         openVideo() {
             this.showVideo = !this.showVideo;
-            // if (this.showVideo) {
-            //     $(".open-video").css("display", "block");
-            // } else {
-            //     $(".open-video").css("display", "none");
-            // }
-            console.log(this.showVideo);
         },
 
     },

@@ -260,10 +260,10 @@
                     spaceBetween: 0,
                     slidesPerView: 1,
                     centeredSlides: true,
-                    // autoplay: {
-                    //     delay: 2500,
-                    //     disableOnInteraction: false
-                    // },
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false
+                    },
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
@@ -275,10 +275,6 @@
                 }
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -326,10 +322,7 @@
                             font-weight: bold;
                             color: #ffffff;
                         }
-
                     }
-
-
                 }
 
                 .swiper-button-prev, .swiper-button-next {
@@ -395,19 +388,9 @@
                         width: 100%;
                         margin-bottom: 15px;
                     }
-                    /*a {*/
-                    /*    font-size: 1.4rem;*/
-                    /*    &:hover {*/
-                    /*        text-decoration: underline;*/
-                    /*        cursor: pointer;*/
-                    /*    }*/
-                    /*}*/
                 }
             }
-
-
         }
-
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
@@ -425,7 +408,6 @@
                                 font-size: 3rem;
                             }
                         }
-
                     }
                 }
             }
@@ -515,16 +497,13 @@
                     font-size: 2.2rem;
                     margin-bottom: 30px;
                 }
-
                 .row {
                     margin-top: 30px;
                 }
-
                 h2 {
                     font-size: 3rem;
                     margin: 10px 0 20px;
                 }
-
             }
         }
     }
@@ -544,9 +523,6 @@
                                 font-size: 2rem;
                             }
                         }
-
-
-
                     }
 
                     .swiper-button-prev, .swiper-button-next {

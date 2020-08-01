@@ -63,35 +63,6 @@
                             >
                                 <span>Колір</span>
                             </a>
-<!--                            <router-link-->
-<!--                                    class="nav-link"-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/configurator/color_and_option/colors"-->
-<!--                            >-->
-<!--                                <span>Колір</span>-->
-<!--                            </router-link>-->
-
-<!--                            <router-link-->
-<!--                                    class="nav-link"-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/configurator/color_and_option/wheels"-->
-<!--                            >-->
-<!--                                <span>Колеса</span>-->
-<!--                            </router-link>-->
-
-<!--                            <router-link-->
-<!--                                    class="nav-link ml-2 mr-2"-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/configurator/color_and_option/interior"-->
-<!--                            >-->
-<!--                                <span>Інтер'єр</span>-->
-<!--                            </router-link>-->
                             <a class="nav-link ml-2 mr-2" @click="option()"
                             >
                                 <span>Інтер'єр</span>
@@ -106,18 +77,6 @@
             </div>
         </section>
 
-<!--        <section class="price container">-->
-<!--            <div class="row text-left">-->
-<!--                <div class="col-lg-8 col-12">-->
-<!--                    <accessories></accessories>-->
-<!--                </div>-->
-
-<!--                <div class="pr col-md-4 col-12">-->
-<!--                    <price></price>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
-
         <to-result></to-result>
 
 
@@ -126,19 +85,14 @@
 </template>
 
 <script>
-    // import Accessories from "../configurator/options/Accessories";
-    // import Price from "../configurator/options/Price";
-    // import ToResult from "../configurator/options/ToResult";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
-
     import Colors from "./../../components/configurator/options/Colors";
     import Interior from "./../../components/configurator/options/Interior";
+    import ToResult from "./../../components/configurator/options/ToResult";//           for Laravel
 
     // import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
     // import Price from "./../../components/configurator/options/Price";//                 for Laravel
-
-    import ToResult from "./../../components/configurator/options/ToResult";//           for Laravel
 
     export default {
         name: "ColorAndOption",
@@ -241,24 +195,10 @@
                 return this.$store.getters.getShowInterior;
             },
 
-            // interiorPhoto() {
-            //     return JSON.parse( this.getInterior.interior_car );
-            //     // let inter_car = this.getInterior.interior_car.split(",");
-            //     // console.log(inter_car);
-            //     // return inter_car;
-            //
-            //     // if(this.$store.getters.getInterior.interior_car) {
-            //     //     return  this.$store.getters.getInterior.interior_car;
-            //     // } else {
-            //     //     return JSON.parse(localStorage.interior).interior_car;
-            //     // }
-            // },
-
             photo() {
                     if (this.$store.getters.colored.code) {
                         return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.getEngineType}/${this.$store.getters.colored.color_code}/${this.getInterior.interior_code}/image-${this.corner}.jpg`;
                     } else {
-                        // return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).code;
                         return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.getEngineType}/${JSON.parse(localStorage.color).color_code}/${this.getInterior.interior_code}/image-${this.corner}.jpg`;
                     }
             },
@@ -270,11 +210,7 @@
 
         watch: {
             getInterior() {
-                // if(this.$store.getters.getInterior) {
                     return this.$store.getters.getInterior;
-                // } else {
-                //     return JSON.parse(localStorage.interior);
-                // }
             }
         },
 
@@ -284,10 +220,9 @@
                 this.allScreen = !this.allScreen;
             },
 
-            click3DDown(event) {
+            click3DDown() {
                 this.is3DClick = true;
-                // this.mouseX = event.pageX;
-                console.log(event);
+                // console.log(event);
             },
 
             click3DUP() {
@@ -314,15 +249,6 @@
 
             interiorPhoto() {
                     return JSON.parse( this.getInterior.interior_car );
-                //     // let inter_car = this.getInterior.interior_car.split(",");
-                //     // console.log(inter_car);
-                //     // return inter_car;
-                //
-                //     // if(this.$store.getters.getInterior.interior_car) {
-                //     //     return  this.$store.getters.getInterior.interior_car;
-                //     // } else {
-                //     //     return JSON.parse(localStorage.interior).interior_car;
-                //     // }
                 },
 
         }
@@ -378,7 +304,6 @@
                 }
 
                 .swiper {
-                    /*height: 300px;*/
                     height: auto;
                     width: 100%;
 
@@ -388,8 +313,6 @@
                         align-items: center;
                         text-align: center;
                         font-weight: bold;
-                        /*font-size: $font-size-huge * 2;
-                        background-color: $white;*/
                         img {
                             width: 100%;
                         }
@@ -413,9 +336,6 @@
                         }
                     }
                 }
-
-
-
             }
 
             &.all_screen {
@@ -451,9 +371,9 @@
                         }
                     }
                 }
-                .body.row {
-                    width: 100vw;
-                    margin: auto;
+                .body.container.row {
+                    width: 100%;
+                    margin: 0;
                     padding: 0;
                     img {
                         width: 100%;
@@ -542,12 +462,10 @@
 
                 .body {
                     img {
-                        width: 100vw;
-                        margin: auto;
+                        width: 100%;
+                        margin: 0;
                     }
                 }
-
-
             }
         }
 
@@ -555,9 +473,7 @@
             .pr {
                 display: none;
             }
-
         }
-
     }
 
     @media (max-width: 767.9px) {
@@ -594,16 +510,13 @@
                     }
                 }
 
-                .body {
+                .body.container.row {
                     img {
-                        width: 100vw;
-                        margin: auto;
+                        width: 100%;
+                        margin: 0!important;
                     }
                 }
-
-
             }
-
         }
         section.price.container {
             .pr {

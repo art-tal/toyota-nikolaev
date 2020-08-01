@@ -6,8 +6,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav text-lg-center text-left">
 

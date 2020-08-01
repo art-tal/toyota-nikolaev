@@ -3,6 +3,8 @@ import $ from "jquery";
 import formattedPrice from "../filters/price_format";
 import {eventEmitter} from "../main";
 
+// import {eventEmitter} from "./../app";
+
 
 export default {
     data() {

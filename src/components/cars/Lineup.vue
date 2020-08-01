@@ -1,13 +1,6 @@
 <template>
     <section class="container-fluid">
         <div class="row car_type">
-<!--            <a href="#" class="new_car">Нові автомтобілі</a>-->
-<!--            <router-link-->
-<!--                    tag="a"-->
-<!--                    exact-->
-<!--                    active-class="active"-->
-<!--                    to="/new_cars"-->
-<!--            >Нові автомобілі</router-link>-->
 
             <router-link
                     tag="a"
@@ -16,7 +9,6 @@
                     to="/cars_available"
             >Авто в наявності</router-link>
 
-<!--            <a href="#" class="old_car">Автомобілі с пробігом</a>-->
         </div>
 
         <div class="row">
@@ -48,18 +40,6 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-<!--                        <li class="servies">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-oil-can"></i>-->
-<!--                                <span>Спеціальні сервісні кампанії</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="dilers">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-map-marker-alt"></i>-->
-<!--                                <span>Офіційні дилери</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
                         <li class="contact">
                             <router-link
                                     tag="a"
@@ -69,7 +49,6 @@
                                 <i class="fas fa-phone"></i>
                                 <span>Часті запитання</span>
                             </router-link>
-<!--                            <f-a-q v-if="showFAQ"></f-a-q>-->
                         </li>
                         <li class="test_drive">
                             <router-link
@@ -80,16 +59,8 @@
                                 <i class="far fa-calendar-alt"></i>
                                 <span>Замовити онлайн консультацію</span>
                             </router-link>
-<!--                            <a href="#">-->
-<!--                                <i class="far fa-calendar-alt"></i>-->
-<!--                                <span>Замовити онлайн консультацію</span>-->
-<!--                            </a>-->
                         </li>
                         <li class="download">
-<!--                            <a href="#">-->
-<!--                                <i class="far fa-file-alt"></i>-->
-<!--                                <span>Завантажити брошури</span>-->
-<!--                            </a>-->
                             <router-link
                                     tag="a"
                                     exact
@@ -110,14 +81,9 @@
 
 <script>
     import axios from 'axios';
-    // import FAQ from "../cars/FAQ";
 
     export default {
         name: "AllModell",
-
-        components: {
-            // FAQ,
-        },
 
 
         data() {
@@ -131,7 +97,6 @@
 
         created() {
             this.getModel();
-            // this.$store.state.car
         },
 
         methods: {
@@ -140,10 +105,8 @@
                     method: 'get',
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
-                    // console.log(response.data);
                     this.models = response.data;
                     this.getPrices();
-                    // return response.data;
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модели");
@@ -157,7 +120,6 @@
                 .then( (response) => {
                     this.prices = response.data;
                     this.setPrice();
-                    // console.log(this.prices);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки цен");
@@ -175,7 +137,6 @@
                     } );
                 } );
 
-                // console.log(this.models);
             },
 
             isPrice(car) {
@@ -191,8 +152,6 @@
                 this.$store.state.model = model;
                 this.dumpingOfStorage();
                 this.$router.push({name: "selectModel", params: {id: model.id}});
-                console.log(model);
-                // this.$router.push({name: "selectModel"});
                 localStorage.id = model.id;
                 localStorage.model = JSON.stringify(model);
                 location.reload();
@@ -347,24 +306,17 @@
                         }
                     }
                 }
-
                 }
             }
-
     }
 
-
-    /*@media (min-width: 1200px) and (max-width: 1439.9px) {*/
-
-    /*}*/
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
         section.container-fluid {
             padding: 0;
             .car_type {
-                padding: 6px 0px 6px;
+                padding: 6px 0 6px;
             }
-
             .row {
                 padding: 0 22px;
             }

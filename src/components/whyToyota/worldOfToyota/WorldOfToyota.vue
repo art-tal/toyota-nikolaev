@@ -130,7 +130,7 @@
 
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
     }
 </script>
@@ -142,7 +142,6 @@
         padding: 0;
         menu {
             width: 100%;
-            /*padding-left:30px;*/
             position: sticky;
             top: 0;
             z-index: 998;

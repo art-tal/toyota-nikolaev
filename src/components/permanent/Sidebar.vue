@@ -1,32 +1,6 @@
 <template>
     <aside>
         <ul>
-<!--            <li>-->
-<!--                <router-link to=""-->
-<!--                             exact-->
-<!--                             active-class="active"-->
-<!--                             tag="a"-->
-<!--                >-->
-<!--                    <i class="fas fa-oil-can"></i>-->
-<!--                    <div>-->
-<!--                        <span>Спеціальні сервисні компаніі</span>-->
-<!--                    </div>-->
-
-<!--                </router-link>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <router-link to=""-->
-<!--                             exact-->
-<!--                             active-class="active"-->
-<!--                             tag="a"-->
-<!--                >-->
-<!--                    <i class="fas fa-map-marker-alt"></i>-->
-<!--                    <div>-->
-<!--                        <span>Офіційні ділери</span>-->
-<!--                    </div>-->
-
-<!--                </router-link>-->
-<!--            </li>-->
             <li>
                 <router-link to="/faq"
                              exact
@@ -76,17 +50,6 @@
                     </div>
 
                 </a>
-<!--                <router-link to=""-->
-<!--                             exact-->
-<!--                             active-class="active"-->
-<!--                             tag="a"-->
-<!--                >-->
-<!--                    <i class="far fa-user"></i>-->
-<!--                    <div>-->
-<!--                        <span>Моя Toyota</span>-->
-<!--                    </div>-->
-
-<!--                </router-link>-->
             </li>
         </ul>
     </aside>
@@ -134,7 +97,6 @@
                         width: 50px;
                         height: 40px;
                         margin: 7px 0;
-                        /*padding-right: 75px;*/
                         opacity: 0;
                         span {
                             display: inline-block;
@@ -143,11 +105,9 @@
                             width: auto;
                             height: 100%;
                             padding: 10px 20px;
-                            /*vertical-align: middle;*/
                             font-size: 1.3rem;
                             white-space: nowrap;
                             border-radius: 20px;
-                            /*display: none;*/
                         }
                     }
 
@@ -156,7 +116,6 @@
                             color: #E50000;
                         }
                         div {
-                            /*display: table;*/
                             opacity: 1;
                             padding-right: 75px;
                             width: auto;

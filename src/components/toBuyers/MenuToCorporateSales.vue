@@ -43,16 +43,6 @@
                         >Корпоративним клієнтам</router-link>
                     </li>
 
-                    <!--                        <li class="nav-item">-->
-                    <!--                            <router-link-->
-                    <!--                                    class="nav-link"-->
-                    <!--                                    active-class="active"-->
-                    <!--                                    tag="a"-->
-                    <!--                                    exact-->
-                    <!--                                    to="Special_solutions"-->
-                    <!--                            >Спеціальні фінансові рішення</router-link>-->
-                    <!--                        </li>-->
-
                 </ul>
             </div>
         </nav>

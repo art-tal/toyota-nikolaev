@@ -14,7 +14,6 @@
 
 
                 <div class="img_button" @click="openVideo()">
-<!--                    <img src="https://img.youtube.com/vi/AmvjLpmK844/sddefault.jpg" alt="/">-->
 
                     <button class="btn btn-play">
                         <i class="fas fa-play"></i>
@@ -34,7 +33,6 @@
             <div class="parallax_image"
                  style="background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-TGR-Pushing-limits-optimized_tcm-3046-778407.jpg)"
             ></div>
-<!--                <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-TGR-Pushing-limits-optimized_tcm-3046-778407.jpg" alt="photo">-->
 
             <h2 class="font-weight-bolder">Розширюючи межі в ім'я кращого</h2>
             <p>
@@ -60,12 +58,10 @@
             <p>Ще у 50-х роках засновник компанії Toyota Кіічіро Тойода був настільки впевнений у перевагах, які змагання надають його компанії, що навіть проголосив:</p>
             <p>"Автоспорт є не тільки розвагою. Він життєво важливий для всієї автомобільної промисловості Японії. Як атлети випробовують свої можливості, докладаючи всіх зусиль на Олімпіаді, так і виробники автомобілів використовують автоспорт як інструмент доведення характеристик автомобіля до межі його можливостей та боротьби за першорядність. Завдяки такому підходу виробники спроможні відкривати нові шляхи вдосконалення автомобільних технологій.</p>
             <p>Йдеться не лише про дослідження. Щоб відкрити справжні можливості автомобіля, потрібно знайти гармонію між механізмами та людьми. Це як робота чотирьох коліс – рух уперед можливий, тільки якщо автоспорт й автомобільна промисловість будуть існувати пліч-о-пліч."</p>
-<!--        </div>-->
 
 
             <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3-TGR-New-name_tcm-3046-778412.jpg" alt="/">
 
-<!--        <div class="body container right_side">-->
             <p>Сьогодні “GAZOO” є синонімом автосервісу: дуже задушевного місця, де люди разом працюють над удосконаленням найдрібніших деталей кращих автомобілів і супутніх послуг на радість кожного покупця в кожному автосервісі. Отже, вже сама назва втілює той самий дух, що надихає команду TOYOTA GAZOO Racing.</p>
             <p>До заходів з автоспорту, об'єднаних назвою TOYOTA GAZOO Racing, належать: передовий Чемпіонат світу на витривалість World Endurance Championship, повернення до престижного Чемпіонату світу з ралі World Rally Championship у 2017 році, найскладніший марафон "24 години Нюрбургрингу" (цього року Toyota вдесяте братиме участь у цьому надзвичайно важкому змаганні), а також пам'ятаймо про початок проекту Five Continents Drive Project – захід, в межах якого співробітники Toyota до 2020 року подорожують п'ятьма континентами, щоб не тільки створювати кращі автомобілі, але й вдосконалювати вміння людей, які забезпечують виробничу діяльність.</p>
         </div>
@@ -74,7 +70,6 @@
             <div class="parallax_image"
                  style="background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-1_tcm-3046-778415.jpg)"
             ></div>
-<!--            <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-1_tcm-3046-778415.jpg" alt="foto">-->
         </div>
 
 
@@ -82,18 +77,14 @@
             <h4>Проектування майбутньої структури Toyota</h4>
 
             <p>Запальний, карколомний та захоплюючий World Endurance Championship (WEC) – це апофеоз інновацій, надійності та командної праці. Охопивши дев'ять перегонів по всьому світу, зокрема відомі 24 години Ле-Мана, TOYOTA GAZOO Racing є учасником відомого Ле-Мана з 1985 року і знову бере участь у чемпіонаті у 2012 році. Згодом, у 2016 році Toyota увісімнадцяте бере участь у 24 годинах Ле-Мана та, на жаль, команда перетнула фінішну смугу із затримкою у декілька секунд після змаху клітчастим прапором. Але TOYOTA GAZOO Racing запевняє, що продувжуватиме боротися на шляху до ще більших перемог.</p>
-<!--        </div>-->
 
             <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-ts050-gazoo-racing_tcm-3046-778418.jpg" alt="photo">
 
-<!--        <div class="body container right_side">-->
             <p>У шаленій боротьбі, яка триватиме від шести до двадцяти чотирьох годин, візьмуть участь два передові автомобілі для перегонів на витривалість TS050 HYBRID з потужністю близько 1000 к.с. Використовуючи потужність комбінованого джерела енергії для вибухового прискорення, ККД та досягнення швидкостей понад 330 км/год, ці високотехнологічні гібридні автомобілі (такі як автомобілі Toyota загального користування) відновлюють енергію, що поглинається гальмами, яка накопичується в акумуляторі для подальшого використання.</p>
-<!--        </div>-->
 
 
             <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/6-TGR-WEC-mosaic_tcm-3046-778421.jpg" alt="photo">
 
-<!--        <div class="body container right_side">-->
             <p>Досвід, який ми здобули з моменту першого перегону WEC у 2012 році й до перемоги у чемпіонаті у 2014 році, значною мірою вплинув на розвиток гібридної технології, застосованої в наших дорожніх автомобілях. Такі інновації, як зменшення об'єму двигуна, яке компенсується наддувом, та система охолодження, втілюють у життя наше прагнення до створення кращих автомобілів і задоволення від водіння.</p>
 
         </div>
@@ -104,7 +95,6 @@
             <div class="parallax_image"
                  style="background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Parallax-2_tcm-3046-778422.jpg)"
             ></div>
-<!--            <img class="parallax_image" src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Parallax-2_tcm-3046-778422.jpg" alt="photo">-->
         </div>
 
 
@@ -118,7 +108,6 @@
             <div class="video">
 
                 <div class="img_button second" @click="openVideo()">
-<!--                    <img class="w-100" src="https://img.youtube.com/vi/cpE3U_wSoPA/sddefault.jpg" alt="/">-->
 
                     <button class="btn btn-play">
                         <i class="fas fa-play"></i>
@@ -138,11 +127,9 @@
 
         <div class="body container right_side">
             <p>У січні після багатьох місяців інтенсивних випробувань новісінький Yaris WRC викочується до стартової рампи у Монте Карло, готовий до виснажливого графіку перегонів. У корпусі розміщені зовсім новий 1,6-літровий двигун з прямим впорскуванням (380 к.с.) та ходова частина, відрегульована на основі передового моделювання, випробувань та виробничих технологій.</p>
-<!--        </div>-->
 
             <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-gazoo-racing_tcm-3046-778440.jpg" alt="photo">
 
-<!--        <div class="body container right_side">-->
             <p>Долаючи гірські повороти, різкі підйоми та переліски, вкриті снігом, потрібен не тільки швидкісний автомобіль, але й ініціативна і талановита команда поруч. До команди Томмі Мякінена, чотириразового чемпіону світу з ралі, який очолює майстерні TOYOTA GAZOO Racing WRC в Пуполі, Фінляндія, входять дуже віддані спеціалісти та справжні любителі ралі.</p>
 
             <p>Разом з Yaris WRC вони створюють потужний тандем – ми вже не можемо дочекатися початку сезону!</p>
@@ -154,7 +141,6 @@
             <div class="parallax_image"
                  style="background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/9-NUR-C-HR-Pit_tcm-3046-778444.jpg)"
             ></div>
-<!--            <img class="parallax_image" src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/9-NUR-C-HR-Pit_tcm-3046-778444.jpg" alt="photo">-->
         </div>
 
 
@@ -162,17 +148,13 @@
             <h4>Найскладніший марафон світу</h4>
 
             <p>Вперше GAZOO Racing взяла участь у чемпіонаті на витривалість "24 години Нюрнбургрінгу" у 2007 році. У цьому чемпіонаті, який вважається найскладнішим марафоном у світі, що проходив на 25-кілометровому треку, відомому як «Зелене Пекло», що у Німеччині, змагалися як заводські команди, так і самостійні.</p>
-<!--        </div>-->
 
             <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/10-NUR-Toyota-C-HR_tcm-3046-778447.jpg" alt="photo">
 
-<!--        <div class="body container right_side">-->
             <p>Цього року в десятому перегоні за нашої участі та 44-му перегоні взагалі до команди TOYOTA GAZOO Racing увійдуть три автомобілі: зовсім новий Toyota C-HR Racing, Lexus RC та Lexus RC F. Toyota C-HR Racing – це адаптована для ралі версія кросовера Toyota C-HR. Він буде керований командою з чотирьох водіїв. Після 24 виснажливих годин команда посіла вельми задовільне 84-те місце у перегонах та третє місце у класі.</p>
-<!--        </div>-->
 
             <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/11-NUR-Mosaic_tcm-3046-778448.jpg" alt="photo">
 
-<!--        <div class="body container right_side">-->
             <p>Окрім неоціненної зворотної інформації для безперервного розвитку наших дорожних автомобілів, перегони також дають змогу професійно розвиватися нашому персоналу. Щороку наші штатні інженери та механіки залучаються до розроблення гоночних автомобілів, які братимуть участь у перегонах цього року, а також беспосередьо під час самих перегонів. Це дає можливість набувати безцінних знань, якими можна поділитися з колегами з метою вдосконалення та покращення виробництва автомобілів у майбутньому.</p>
         </div>
 
@@ -181,7 +163,6 @@
             <div class="parallax_image"
                  style="background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-5_tcm-3046-778455.jpg)"
             ></div>
-<!--            <img class="parallax_image" src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Parallax-5_tcm-3046-778455.jpg" alt="photo">-->
         </div>
 
 
@@ -252,28 +233,21 @@
         }
     },
 
-        created() {
-
-
-        },
-
         mounted() {
             $(window).on('scroll', () => {this.checkParallax();} );
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
 
         },
 
         methods: {
             openVideo() {
                 this.showVideo = !this.showVideo;
-                console.log(this.showVideo);
             },
 
 
 
 
             checkParallax() {
-                console.log(window.innerWidth);
                 if(window.innerWidth > 767.9) {
                     this.windowTop = window.scrollY;
                     this.windowBottom = window.innerHeight + this.windowTop;
@@ -302,10 +276,8 @@
                 this.windowTop = $(window).scrollTop();
                 this.windowBottom = window.innerHeight + this.windowTop;
 
-                console.log( $(block).children(".parallax_image").offset().top );
                 if ( blockTop < this.windowBottom && blockEnd > this.windowTop ) {
                     $(block).children(".parallax_image").offset({top: this.windowTop, left: 0});
-                    console.log( $(block).children(".parallax_image").position().top );
                 }
 
             },
@@ -399,7 +371,6 @@
 
             &.right_side {
                 margin-top: 68px;
-                /*padding-left: 20%;*/
                 text-align: left;
             }
 

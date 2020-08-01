@@ -2,7 +2,6 @@
     <main class="container-fluid">
         <sidebar></sidebar>
         <menu-to-corporate/>
-<!--        <div v-html="pageBody.body"></div>-->
 
         <header>
             <h1 class="container text-left">{{pageTitle}}</h1>
@@ -10,9 +9,7 @@
 
         <div class="body container text-left">
             <div class="p">{{pageExcerpt}}</div>
-<!--            <div class="p">-->
-<!--                Якщо ви працюєте на себе, або ж у Вас власний малий бізнес і Ви бажаєте поповнити Ваш автопарк новим автомобілем, Toyota BusinessPlus з легкістю допоможе Вам. У рамках великої дилерської мережі Toyota, наші професійні консультанти готові запропонувати найвигідніші умови придбання та обслуговування Ваших автомобілів.-->
-<!--            </div>-->
+
 
             <h2>Причини для роботи з Toyota BusinessPlus</h2>
 
@@ -79,7 +76,6 @@
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
     import 'swiper/css/swiper.css';
     import PageBody from "../../mixins/mixinPages";
-    // import Article from "@/components/whyToyota/Article";
 
     export default {
         name: "Business_owner",
@@ -156,10 +152,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -170,19 +162,8 @@
         padding: 0;
         header {
             @include header-xl;
-            /*height: 80vh;*/
-            /*width: 100%;*/
             padding-top: 50px;
             background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/b2b-1600x900_tcm-3046-906751.jpg');
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
-            /*h1 {*/
-                /*font-size: 5.4rem;*/
-                /*font-weight: bolder;*/
-                //color: $font_color;
-            /*}*/
         }
 
         .body.container {
@@ -250,7 +231,6 @@
             header {
                 @include header-lg;
                 height: 80vh;
-                /*max-height: 60vw;*/
                 h1 {
                     font-size: 5rem;
                 }
@@ -277,13 +257,7 @@
         main.container-fluid {
             header {
                 @include header-md;
-                /*height: 56vw;*/
-                /*min-height: 180px;*/
-                /*max-height: 480px;*/
                 padding-top: 30px;
-                /*h1 {*/
-                    /*font-size: 4.5rem;*/
-                /*}*/
             }
 
             .body.container {
@@ -326,11 +300,7 @@
             header {
                 @include header-sm;
                 height: 40vh;
-                /*min-height: 180px;*/
                 padding-top: 20px;
-                /*h1 {*/
-                /*    font-size: 3.5rem;*/
-                /*}*/
             }
 
             .body.container {
@@ -379,7 +349,6 @@
             header {
                 @include header-xs;
                 height: 30vh;
-                /*min-height: 180px;*/
                 max-height: 380px;
                 padding-top: 15px;
                 h1 {

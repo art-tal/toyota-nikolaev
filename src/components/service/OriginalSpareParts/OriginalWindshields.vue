@@ -88,7 +88,6 @@
         data() {
             return {
                 id: 23,
-                // showVideo: false,
             }
         },
 
@@ -130,17 +129,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
-
-        methods: {
-            // openVideo() {
-            //     this.showVideo = !this.showVideo;
-            //     console.log(this.showVideo);
-            // },
-        }
     }
 </script>
 
@@ -160,24 +148,13 @@
         header {
             @include header-xl;
             height: 420px;
-            /*width: 100%;*/
             padding-top: 120px;
             background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/header-windscreen_tcm-3046-939609.jpg);
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
             color: #ffffff;
-
             h1 {
-                /*font-size: 5.4rem;*/
-                /*font-weight: bolder;*/
                 text-align: center;
             }
-
             h2 {
-                /*font-size: 3.4rem;*/
-                /*margin-top: 16px;*/
                 text-align: center;
             }
         }
@@ -274,9 +251,7 @@
 
             header {
                 @include header-sm;
-                /*min-height: 180px;*/
                 max-height: 420px;
-                /*height: 56vw;*/
                 padding-top: 20px;
 
                 h1 {

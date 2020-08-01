@@ -145,9 +145,6 @@
             }
         },
 
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -254,7 +251,6 @@
                         font-size: 3rem;
                     }
                 }
-
             }
 
             .body.container {
@@ -276,7 +272,6 @@
                         font-size: 1.5rem;
                     }
                 }
-
             }
         }
     }

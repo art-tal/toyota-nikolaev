@@ -1,9 +1,8 @@
 <template>
     <main class="container-fluid">
         <header>
-            <h1 class="container text-right">БРОШУРИ
-                <h2 class="text-right">та каталоги аксесуарів</h2>
-            </h1>
+            <h1 class="container text-right">БРОШУРИ</h1>
+            <h2 class="container text-right">та каталоги аксесуарів</h2>
         </header>
 
         <section class="container text-left">
@@ -16,7 +15,7 @@
             <div class="body row">
                 <h2 class="col-12 text-center">Ви можете завантажити їх у форматі PDF</h2>
 
-                <div class="col-3" v-for="(doc, key) in brochures" :key="key">
+                <div class="col-lg-4 col-md-6 col-12 mb-5" v-for="(doc, key) in brochures" :key="key">
                     <div class="card">
                         <img :src="'http://lara.toyota.nikolaev.ua/storage/' + doc.preview" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -75,11 +74,6 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                </div>
-
-
-
                 </div>
 
             </div>
@@ -132,18 +126,12 @@
             }
         },
 
-        computed: {
-            // photo() {
-            //     return
-            // },
-        },
-
         created() {
             this.getBrochures();
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
 
         methods: {
@@ -153,7 +141,6 @@
                 )
                 .then( (responce) => {
                     this.brochures = responce.data;
-                    console.log(this.brochures);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки документов");
@@ -163,7 +150,6 @@
             },
 
             getDocs(obj) {
-                // console.log( JSON.parse(obj) );
                 return JSON.parse(obj);
             },
 
@@ -175,15 +161,12 @@
                 )
                 .then( (response) => {
                     car = response.data[0];
-                    console.log(car.name);
                     return car.name;
                 } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки модели");
                     console.log(error);
                 } );
-                // .then( () => {return car.name;} );
-                // return car.name;
             },
         },
     }
@@ -196,30 +179,9 @@
         padding: 0;
         margin: 0;
         header {
-            width: 100%;
-            height: 80vh;
+            @include header-xl;
             padding-top: 70px;
             background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B8%D1%82%D0%B8_%D0%B1%D1%80%D0%BE%D1%88%D1%83%D1%80%D1%83_1600x900_tcm-3046-830653.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
-            color: $font_color;
-
-            h1 {
-                width: 100%;
-                padding: 15px;
-                margin: 0 auto;
-                font-size: 5.2rem;
-                font-weight: bolder;
-                text-align: left;
-
-                h2 {
-                    font-size: 3.4rem;
-                    text-align: left;
-                    padding-top: 16px;
-                }
-            }
         }
 
         section.container{
@@ -227,7 +189,9 @@
             header {
                 height: auto;
                 background: none;
-                font-size: 4.4rem;
+                h1 {
+                    font-size: 4.4rem;
+                }
             }
 
             .body.row {
@@ -273,6 +237,98 @@
         }
 
 
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+        main.container-fluid {
+            header {
+                @include header-lg;
+            }
+
+            section.container{
+                header {
+                    h1 {
+                        font-size: 4rem;
+                    }
+                }
+                .body.row {
+                    margin: 68px 0;
+                    h2 {
+                        font-size: 3.4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        main.container-fluid {
+            header {
+                @include header-md;
+            }
+
+            section.container{
+                header {
+                    h1 {
+                        font-size: 3.6rem;
+                    }
+                }
+
+                .body.row {
+                    margin: 30px 0;
+                    h2 {
+                        font-size: 3.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        main.container-fluid {
+            header {
+                @include header-sm;
+            }
+            section.container{
+                header {
+                    h1 {
+                        font-size: 3.2rem;
+                    }
+
+                }
+
+                .body.row {
+                    margin: 30px 0;
+                    h2 {
+                        font-size: 2.8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        main.container-fluid {
+            header {
+                @include header-xs;
+            }
+
+            section.container{
+                header {
+                    h1 {
+                        font-size: 2.8rem;
+                    }
+
+                }
+
+                .body.row {
+                    margin: 20px 0;
+                    h2 {
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+        }
     }
 
 </style>

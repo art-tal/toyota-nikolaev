@@ -290,10 +290,10 @@
                 spaceBetween: 0,
                 slidesPerView: 1,
                 centeredSlides: true,
-                // autoplay: {
-                //     delay: 2500,
-                //     disableOnInteraction: false
-                // },
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false
+                },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true
@@ -305,10 +305,6 @@
             }
         }
     },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
 
     }
 </script>
@@ -335,8 +331,6 @@
                     text-align: center;
                     font-weight: bold;
                     position: relative;
-                    /*font-size: $font-size-huge * 2;
-                    background-color: $white;*/
                     div {
                         width: 100%;
                         height: 100%;
@@ -420,7 +414,6 @@
                             width: 100%;
                         }
                     }
-
                 }
             }
         }

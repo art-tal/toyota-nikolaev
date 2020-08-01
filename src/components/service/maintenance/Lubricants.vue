@@ -222,10 +222,6 @@
             }
         },
 
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
-
         metaInfo() {
             return {
                 // title:  `Toyota Nikolaev | Оригінальні мастильні матеріали Toyota`,
@@ -280,20 +276,13 @@
 
         header {
             @include header-xl;
-            /*height: 80vh;*/
             max-height: 60vw;
             background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/%D0%9E%D1%80%D0%B8%D0%B3%D1%96%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96_%D0%BC%D0%B0%D1%81%D1%82%D0%B8%D0%BB%D0%B0_tcm-3046-165533.jpg');
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
             margin-bottom: 50px;
 
             h1 {
                 padding-top: 50px;
-                /*font-size: 5.2rem;*/
                 color: #ffffff;
-                /*font-weight: bolder;*/
             }
         }
 
@@ -342,10 +331,6 @@
             header {
                 @include header-lg;
                 height: 80vh;
-                /*max-height: 60vw;*/
-                /*h1 {*/
-                /*    width: 100%;*/
-                /*}*/
             }
 
         }
@@ -355,13 +340,6 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-md;
-                /*height: 56vh;*/
-                /*min-height: 180px;*/
-                /*max-height: 480px;*/
-                /*padding-top: 15px;*/
-                /*h1 {*/
-                /*    width: 100%;*/
-                /*}*/
             }
         }
     }
@@ -370,13 +348,6 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-sm;
-                /*min-height: 180px;*/
-                /*height: 56vw;*/
-                /*padding-top: 15px;*/
-                /*h1 {*/
-                /*    width: 100%;*/
-                /*    font-size: 3.5rem;*/
-                /*}*/
             }
 
             .body.container {
@@ -419,13 +390,10 @@
                 @include header-xs;
                 width: 100%;
                 height: 56vw;
-                /*min-height: 180px;*/
                 max-height: 380px;
                 padding-top: 30px;
                 h1 {
                     width: 100%;
-                    /*padding: 10px 15px;*/
-                    /*font-size: 3rem;*/
                 }
             }
 
@@ -455,10 +423,6 @@
                     }
                 }
             }
-
-
         }
     }
-
-
 </style>

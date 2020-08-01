@@ -50,8 +50,6 @@
     }
     }
     footer {
-    /*width: 1170px;*/
-    /*margin: auto;*/
     button.btn {
     @include button;
         background-color: #f0f0f0;

@@ -278,7 +278,6 @@
         data() {
             return {
                 id: 16,
-                // showVideo: false,
             }
         },
 
@@ -320,17 +319,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
-
-        // methods: {
-        //     openVideo() {
-        //         this.showVideo = !this.showVideo;
-        //         console.log(this.showVideo);
-        //     },
-        // }
     }
 </script>
 
@@ -350,14 +338,9 @@
             width: 100%;
             padding-top: 130px;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-688387_tcm-3046-688387.jpg);
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
 
             h1 {
                 font-size: 5.4rem;
-                /*font-weight: bolder;*/
                 color: #ffffff;
             }
         }

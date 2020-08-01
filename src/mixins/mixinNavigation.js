@@ -11,7 +11,6 @@ export default {
 
     methods: {
         close() {
-            console.log("click");
             eventEmitter.$emit("closeNavbar");
         },
     },

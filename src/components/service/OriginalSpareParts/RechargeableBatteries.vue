@@ -309,10 +309,6 @@
                 ],
             }
         },
-
-        // mounted() {
-        //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        // },
     }
 </script>
 
@@ -326,31 +322,14 @@
 
 
     section.container-fluid ::v-deep div {
-        /*padding: 0;*/
-        /*margin: 0;*/
 
         header {
             @include header-xl;
-            /*height: 80vh;*/
-            /*width: 100%;*/
             padding-top: 300px;
             background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/%D0%BE%D1%80%D0%B8%D0%B3%D1%96%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%97-toyota-1600x900_tcm-3046-688570.jpg);
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
             color: #ffffff;
-
-            /*h1 {*/
-                /*font-size: 5.4rem;*/
-                /*font-weight: bolder;*/
-                /*text-align: left;*/
-            /*}*/
-
             h2 {
                 text-align: center;
-            /*    font-size: 3.4rem;*/
-            /*    margin-top: 16px;*/
             }
         }
 
@@ -413,13 +392,8 @@
 
     @media (max-width: 768px) {
         section.container-fluid ::v-deep div {
-            /*padding: 0;*/
-            /*margin: 0;*/
-
             header {
                 @include header-sm;
-                /*min-height: 180px;*/
-                /*height: 56vw;*/
                 padding-top: 25vw;
                 h1 {
                     font-size: 5vw;
