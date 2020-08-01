@@ -3,10 +3,10 @@
         <header class="container-fluid">
             <h1 class="container text-left">
                 З чого все почалося
-                <h2 class="text-left">
-                    Toyoda AA
-                </h2>
             </h1>
+            <h2 class="container text-left">
+                Toyoda AA
+            </h2>
         </header>
 
         <div class="body container">
@@ -72,7 +72,6 @@
         </div>
         
         <div class="container-fluid img">
-<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-05_tcm-3046-403762.jpg" alt="">-->
         </div>
         
         <div class="body container">
@@ -138,7 +137,6 @@
                                   :key="key"
                                   :style="'background-image: url(' + img + ')'"
                     >
-                        <!--                        <img :src="img" alt="photo">-->
                         <span><i class="fas fa-search"></i></span>
                     </swiper-slide>
 
@@ -150,7 +148,6 @@
 
             <div class="carousel_view" v-if="showCarousel">
                 <i class="fas fa-times" @click="show()"></i>
-                <!--                <swiper class="swiper" :options="swiperOption">-->
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
                     <swiper-slide v-for="(img, key) in images"
                                   :key="key"
@@ -263,12 +260,12 @@
     },
 
         mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
             this.$nextTick(() => {
                 const swiperTop = this.$refs.swiperTop.$swiper;
                 const swiperThumbs = this.$refs.swiperThumbs.$swiper;
                 swiperTop.controller.control = swiperThumbs;
                 swiperThumbs.controller.control = swiperTop;
-                setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
 
             })
         },
@@ -297,9 +294,9 @@
             padding-top: 70px;
             h1 {
                 color: #ffffff;
-                h2 {
-                    color: #ffffff;
-                }
+            }
+            h2 {
+                color: #ffffff;
             }
         }
 
@@ -316,7 +313,6 @@
             .coll {
                 column-count: 3;
                 column-gap: 4%;
-                /*column-width: 30%;*/
                 h4 {
                     font-size: 2.2rem;
                 }

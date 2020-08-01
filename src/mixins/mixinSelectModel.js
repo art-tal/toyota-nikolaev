@@ -1,6 +1,9 @@
 import axios from "axios"
 import $ from "jquery";
 import formattedPrice from "../filters/price_format";
+import {eventEmitter} from "../main";
+
+// import {eventEmitter} from "./../app";
 
 
 export default {
@@ -16,6 +19,9 @@ export default {
 
             modelTitle: "",
             equipmentTitle: "",
+
+            transmission: {},
+            transmissions: [],
 
             modelColor: "#fff",
 
@@ -38,6 +44,14 @@ export default {
 
     mounted() {
         this.showEquipment = false;
+
+        eventEmitter.$on('selectedEquipment', //this.choice
+            () => {
+                this.showEquipment = false;
+                this.changeTitle();
+                this.getEngine();
+            }
+        );
     },
 
     computed: {
@@ -57,6 +71,10 @@ export default {
             this.$forceUpdate();
             return this.$route.params.id;
         },
+
+        idEquip() {
+            return localStorage.mod_id;
+        },
     },
 
     watch: {
@@ -73,7 +91,7 @@ export default {
                 this.modelColor = JSON.parse( localStorage.color );
             }
             catch (e) {
-                console.log("error model color watch - 431");
+                // console.log("error model color watch - 431");
 
             }
             this.getFontColor();
@@ -81,6 +99,9 @@ export default {
         },
 
 
+        transmissions() {
+            return this.transmissions;
+        },
     },
 
     methods: {
@@ -123,7 +144,6 @@ export default {
 
         checkEquipment() {
             let equipFromJson = JSON.parse(localStorage.equipment);
-            console.log(equipFromJson);
 
             if (Object.keys(equipFromJson) > 0) {
                 if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
@@ -139,23 +159,24 @@ export default {
                     });
 
                 }
+            } else {
+                this.equipment = this.equipments[0];
+                localStorage.equipment = JSON.stringify( this.equipment );
+                this.$store.commit("setEquipment");
             }
 
 
-            this.equipment = this.equipments[0];
-            localStorage.equipment = JSON.stringify( this.equipment );
-            this.$store.commit("setEquipment");
+
         },
 
         getPrices() {
-            console.log(this.equipment.mod_id);
             axios.get(
                 `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
                 {params: {id: this.equipment.mod_id}}
             )
                 .then( (response) => {
                     this.prices = response.data;
-                    console.log(response.data);
+                    // console.log(response.data);
 
                     this.setPrice();
                 } )
@@ -167,7 +188,7 @@ export default {
 
         setPrice() {
             let keysPrice = Object.keys(this.prices);
-            console.log(keysPrice);
+            // console.log(keysPrice);
 
             this.equipments.forEach( (equip) => {
                 keysPrice.forEach( (pr) => {
@@ -177,7 +198,6 @@ export default {
                 } );
             } );
 
-            console.log(this.equipments);
             this.checkEquipment();
 
         },
@@ -185,14 +205,15 @@ export default {
         getEngine() {
             axios.get(
                 'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
-                {params: {id: this.id_equip} },
+                // {params: {id: this.id_equip} },
+                {params: {id: this.computedEquipment.mod_id} },
             )
                 .then( (response) => {
                     this.transmissions = response.data;
-                    console.log(this.transmissions);
+                    // console.log(this.transmissions);
                     this.transmission = this.transmissions[0];
                     localStorage.transmission = JSON.stringify( this.transmission);
-                    console.log(this.id_equip, this.transmission);
+                    // console.log(this.idEquip, this.transmission);
                     if (!this.transmission) {
                         this.transmission = {
                             eng_name: "none",
@@ -201,7 +222,6 @@ export default {
                 } )
                 .catch( (error) => {
                     console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
-
                     console.log(error);
                 } );
         },
@@ -223,9 +243,9 @@ export default {
             )
                 .then( (response) => {
                     this.colors = response.data;
-                    console.log(this.colors);
+                    // console.log(this.colors);
                     this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
-                    // this.setColor(this.colors[0]);
+
                 } )
                 .then( () => {this.slides = $('#slides').width() / 3 * this.colors.length;} )
                 .then( () => { this.checkColor() } )
@@ -236,18 +256,22 @@ export default {
         },
 
         checkColor() {
+            let findColor = false;
+
             this.colors.forEach( color => {
                 if(this.computedColor.color_id === color.color_id) {
-                    console.log("yes");
-                    return this.setColor(color);
+                    this.setColor(color);
+                    findColor = true;
                 }
             });
-            this.setColor(this.colors[0]);
+            if ( !findColor ) {
+                this.setColor(this.colors[0]);
+            }
+
         },
 
         setColor(color) {
             this.colors.forEach( (c) => { c.selected = false} );
-            console.log(color.preview);
             let index = this.colors.indexOf(color);
             this.colors[index].selected = true;
             this.selectedColor = color;
@@ -364,10 +388,8 @@ export default {
             if ( this.x < 0 ) {
                 if(this.colors.length % 3){
                     this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.colors.length % 3));
-                    console.log(this.x);
                 } else {
                     this.x = this.slides - $('.slide_wrapper').width();
-                    console.log(this.x);
                 }
 
             }
@@ -377,8 +399,6 @@ export default {
         nextSlide() {
             this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
             this.x = this.x + $('.slide_wrapper').width();
-            console.log($('.slide_wrapper').width());
-            console.log(this.x , this.slides);
             if ( this.x >= this.slides ) {
                 this.x = 0;
             }

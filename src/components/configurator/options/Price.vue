@@ -95,9 +95,7 @@
                 wheels: null,
                 selectedAccessories: null,
 
-                // price_auto: "734556,00",
                 price: 0,
-                // price_wheels: "32099,23",//ЗАГЛУШКА
                 prAcc: 0,
                 totalCost: 0,
             }
@@ -111,47 +109,46 @@
             try {
                 this.model = JSON.parse( localStorage.model);
         } catch (e) {
-                console.log("JSON.parse( localStorage.model)");
+                // console.log(e);
             }
 
             try {
                 this.equipment = JSON.parse( localStorage.equipment);
         } catch (e) {
-                console.log("this.equipment = JSON.parse( localStorage.equipment);");
+                // console.log(e);
             }
 
             try {
                 this.$store.state.engineAndGear = JSON.parse( localStorage.transmission);
         } catch (e) {
-                console.log("this.$store.state.engineAndGear = JSON.parse( localStorage.transmission);");
+                // console.log(e);
             }
 
             try {
                 this.$store.state.color = JSON.parse( localStorage.color);
         } catch (e) {
-                console.log("this.$store.state.color = JSON.parse( localStorage.color);");
+                // console.log(e);
             }
 
             try {
                 this.$store.state.interior = JSON.parse( localStorage.interior);
         } catch (e) {
-                console.log("this.$store.state.interior = JSON.parse( localStorage.interior);");
+                // console.log(e);
             }
 
             try {
                 this.$store.state.interior = JSON.parse( localStorage.interior);
         } catch (e) {
-                console.log("this.$store.state.interior = JSON.parse( localStorage.interior);");
+                // console.log(e);
             }
 
             try {
                 this.selectedAccessories = JSON.parse( localStorage.selectedAccessories);
         } catch (e) {
-                console.log("this.selectedAccessories = JSON.parse( localStorage.selectedAccessories);");
+                // console.log(e);
             }
 
-            // this.$store.state.wheels = JSON.parse( localStorage.wheel);
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
 
 
         },
@@ -196,15 +193,11 @@
 
         },
 
-
-
         methods: {
             deleteAccessory(accessory) {
                 this.$store.commit('delAccessories', accessory);
                 eventEmitter.$emit('checkAcc');
             },
-
-
         },
     }
 </script>
@@ -258,7 +251,6 @@
                         text-align: right;
                         padding: 12px 0 10px 5px;
                     }
-
             }
 
 
@@ -287,9 +279,6 @@
                 }
             }
 
-
-
-
             .result.row {
                 padding-top: 40px;
                 font-size: 1.3rem;
@@ -297,9 +286,6 @@
                         color: #020202;
                     }
                 }
-
-
-
 
             p {
                 font-size: 1.3rem;

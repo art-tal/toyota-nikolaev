@@ -1,39 +1,41 @@
 <template>
     <main>
         <guarantee-menu></guarantee-menu>
-        <header class="container-fluid">
-            <h1 class="container text-left">Хартія клієнтів
-                <h2 class="text-left">Toyota</h2>
-            </h1>
-        </header>
-        
-        <div class="body container">
-            <h3>Кожен офіційний дилерський центр Toyota дотримується наступних принципів:</h3>
-            <ol>
-                <li>Зробимо все можливе, щоб Вам було зручно в нашому дилерському центрі.</li>
-                <li>Завжди зустрінемо Вас без затримки та чемно привітаємо.</li>
-                <li>Запропонуємо спільно оглянути Ваш автомобіль та обговоримо будь-які технічні питання, які у Вас можуть виникнути.</li>
-                <li>Надамо інформацію про вартість робіт для прийняття рішення щодо ремонту та обслуговування автомобіля.</li>
-                <li>Вашому автомобілю буде надано якісний сервіс з першого разу.</li>
-                <li>Зробимо Ваш візит до дилерського центру якомога зручнішим, запропонувавши рішення зі збереження мобільності.</li>
-                <li>Перед тим як повернути Ваш автомобіль, проведемо його ретельну перевірку.</li>
-                <li>Автомобіль завжди буде переданий Вам в узгоджений час.</li>
-                <li>Завжди детально пояснимо зміст рахунку до сплати та перелік виконаних робіт на Вашому автомобілі.</li>
-                <li>Запропонуємо разом провести дорожній тест, якщо Ви вважатимете це доречним.</li>
-                <li>Обов'язково зв’яжемося з Вами після візиту, щоб отримати зворотній зв'язок щодо якості обслуговування.</li>
-                <li>У разі виникнення проблем негайно відреагуємо та обіцяємо звести їх до мінімуму.</li>
-            </ol>
+        <div v-html="pageBody"></div>
 
-            <p>Якщо у вас виникла необхідність поділитися своїми побажаннями та пропозиціями щодо покращення роботи дилерських центрів залиште повідомлення через форму зворотного зв’язку</p>
+<!--        <header class="container-fluid">-->
+<!--            <h1 class="container text-left">Хартія клієнтів-->
+<!--                <h2 class="text-left">Toyota</h2>-->
+<!--            </h1>-->
+<!--        </header>-->
+<!--        -->
+<!--        <div class="body container">-->
+<!--            <h3>Кожен офіційний дилерський центр Toyota дотримується наступних принципів:</h3>-->
+<!--            <ol>-->
+<!--                <li>Зробимо все можливе, щоб Вам було зручно в нашому дилерському центрі.</li>-->
+<!--                <li>Завжди зустрінемо Вас без затримки та чемно привітаємо.</li>-->
+<!--                <li>Запропонуємо спільно оглянути Ваш автомобіль та обговоримо будь-які технічні питання, які у Вас можуть виникнути.</li>-->
+<!--                <li>Надамо інформацію про вартість робіт для прийняття рішення щодо ремонту та обслуговування автомобіля.</li>-->
+<!--                <li>Вашому автомобілю буде надано якісний сервіс з першого разу.</li>-->
+<!--                <li>Зробимо Ваш візит до дилерського центру якомога зручнішим, запропонувавши рішення зі збереження мобільності.</li>-->
+<!--                <li>Перед тим як повернути Ваш автомобіль, проведемо його ретельну перевірку.</li>-->
+<!--                <li>Автомобіль завжди буде переданий Вам в узгоджений час.</li>-->
+<!--                <li>Завжди детально пояснимо зміст рахунку до сплати та перелік виконаних робіт на Вашому автомобілі.</li>-->
+<!--                <li>Запропонуємо разом провести дорожній тест, якщо Ви вважатимете це доречним.</li>-->
+<!--                <li>Обов'язково зв’яжемося з Вами після візиту, щоб отримати зворотній зв'язок щодо якості обслуговування.</li>-->
+<!--                <li>У разі виникнення проблем негайно відреагуємо та обіцяємо звести їх до мінімуму.</li>-->
+<!--            </ol>-->
 
-        </div>
+<!--            <p>Якщо у вас виникла необхідність поділитися своїми побажаннями та пропозиціями щодо покращення роботи дилерських центрів залиште повідомлення через форму зворотного зв’язку</p>-->
+
+<!--        </div>-->
 
         <footer class="container text-center">
             <router-link
                     tag="button"
                     class="btn btn-danger"
                     exact
-                    to="/form_call_back"
+                    to="/form_feed_back"
             >
                 <i class="fas fa-phone-alt"></i> Форма зворотнього зв`язку
             </router-link>
@@ -42,6 +44,7 @@
 </template>
 
 <script>
+    import PageBody from "../../../mixins/mixinPages"
     import GuaranteeMenu from "./../../../components/whyToyota/guarantee/GuaranteeMenu";
 
     export default {
@@ -51,41 +54,53 @@
             GuaranteeMenu,
         },
 
+        mixins: [
+            PageBody
+        ],
+
+        data() {
+            return {
+                id: 29,
+            }
+        },
+
         metaInfo() {
             return {
-                title:  `Toyota | Хартія Клієнтів  | Toyota Україна`,
+                // title:  `Toyota | Хартія Клієнтів  | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Хартія Клієнтів  | Toyota Україна`
+                        // content: `Toyota | Хартія Клієнтів  | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                        // content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                        // content: `Хартія Клієнтів Toyota - це набір правил та принципів, які дотримуються кожним офіційним дилерським центр Toyota.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                        // content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                        // content: `toyota, тойота, офіційний дилер, хартія, клієнт, відношення, официальный дилер, хартия, клиент, отношение, Latest news`
+                        content: this.meta_keywords,
                     },
                 ],
             }
-        },
-
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
         },
     }
 </script>
@@ -98,7 +113,7 @@
         padding: 0;
     }
     
-    main {
+    main ::v-deep div {
         header.container-fluid {
             @include header-xl;
             background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/khartiya-kliyentiv-1600x900_tcm-3046-1964732.jpg);
@@ -123,15 +138,17 @@
                     margin-bottom: 15px;
                 }
             }
-            p {
+            .p {
                 font-size: 1.5rem;
                 color: #595D60;
             }
         }
+    }
 
+    main {
         footer {
             margin: 68px auto;
-            button.btn.btn-danger {
+            .btn.btn-danger {
                 @include button;
                 background-color: #E50000;
                 i {
@@ -143,7 +160,7 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-lg;
             }
@@ -151,7 +168,7 @@
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-md;
             }
@@ -159,7 +176,7 @@
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-sm;
             }
@@ -167,7 +184,7 @@
     }
 
     @media (max-width: 575.9px) {
-        main {
+        main ::v-deep div {
             header.container-fluid {
                 @include header-xs;
             }
@@ -186,11 +203,15 @@
                         margin-bottom: 10px;
                     }
                 }
-                p {
+                .p {
                     font-size: 1.4rem;
                 }
             }
 
+
+        }
+
+        main {
             footer {
                 margin: 40px auto;
             }

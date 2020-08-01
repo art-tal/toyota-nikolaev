@@ -1,33 +1,39 @@
 <template>
     <section class="container-fluid">
-        <header>
-            <h1 class="container text-center">Toyota Fuel System Cleaner
-                <h2 class="font-weight-bold">очисник паливної системи для автомобіля Toyota</h2>
-            </h1>
-        </header>
+        <sidebar></sidebar>
+        <menu-to-spare-parts/>
+        <div v-html="pageBody"></div>
+<!--        <header>-->
+<!--            <h1 class="container text-center">Toyota Fuel System Cleaner</h1>-->
+<!--            <h2 class="font-weight-bold">очисник паливної системи для автомобіля Toyota</h2>-->
+<!--        </header>-->
 
-        <div class="body container text-left">
-            <p class="header text-center">
-                Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.
-            </p>
+<!--        <div class="body container text-left">-->
+<!--            <div class="p header text-center">-->
+<!--                Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.-->
+<!--            </div>-->
 
-            <p>Одноразова обробка очисником паливної системи Toyota Fuel System Cleaner поверне показники викидів в атмосферу до початкового рівня, передбаченого саме для вашого автомобіля Toyota. Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в наступних випадках:</p>
+<!--            <div class="p">Одноразова обробка очисником паливної системи Toyota Fuel System Cleaner поверне показники викидів в атмосферу до початкового рівня, передбаченого саме для вашого автомобіля Toyota. Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в наступних випадках:</div>-->
 
-            <ul>
-                <li>складний запуск;</li>
-                <li>нестабільний холостий хід;</li>
-                <li>недостатня потужність;</li>
-                <li>погіршена паливна економічність;</li>
-                <li>стукіт у двигуні;</li>
-                <li>нестійка робота;</li>
-                <li>підвищена кількість шкідливих викидів у відпрацьованих газах.</li>
-            </ul>
+<!--            <ul>-->
+<!--                <li>складний запуск;</li>-->
+<!--                <li>нестабільний холостий хід;</li>-->
+<!--                <li>недостатня потужність;</li>-->
+<!--                <li>погіршена паливна економічність;</li>-->
+<!--                <li>стукіт у двигуні;</li>-->
+<!--                <li>нестійка робота;</li>-->
+<!--                <li>підвищена кількість шкідливих викидів у відпрацьованих газах.</li>-->
+<!--            </ul>-->
 
-            <p>Очисник Toyota Diesel Fuel System Cleaner призначений для глибокого очищення всієї паливної системи та двигуна. Він ретельно протестований на сумісність та покращення експлуатаційних характеристик, усування відкладень та різноманітних накопичень з метою забезпечення економії палива та плавності ходу.</p>
-            <p>Подібним чином очисник Toyota Petrol System Cleaner очищує свічки запалювання, покращує запуск двигуна та ретельно очищує камери згоряння, у результаті чого ваш автомобіль Toyota набуває відновлену вихідну потужність, кращу паливну економічність та безшумну роботу.</p>
+<!--            <div class="p">Очисник Toyota Diesel Fuel System Cleaner призначений для глибокого очищення всієї паливної системи та двигуна. Він ретельно протестований на сумісність та покращення експлуатаційних характеристик, усування відкладень та різноманітних накопичень з метою забезпечення економії палива та плавності ходу.</div>-->
+<!--            <div class="p">Подібним чином очисник Toyota Petrol System Cleaner очищує свічки запалювання, покращує запуск двигуна та ретельно очищує камери згоряння, у результаті чого ваш автомобіль Toyota набуває відновлену вихідну потужність, кращу паливну економічність та безшумну роботу.</div>-->
+<!--        </div>        -->
+
+<!--        <div class="p container text-left">Можна уникнути необхідності дорогої заміни паливного інжектора при відновленні продуктивності автомобіля, паливної економічності та приведенні рівні викидів в атмосферу ближче до рівня початкових показників, визначених для вашого автомобіля Toyota. Для цього подбайте про ретельне очищення двигуна вже сьогодні.</div>-->
 
 
-        </div>
+
+
 
         <div class="video">
 
@@ -42,66 +48,69 @@
             </div>
         </div>
 
-        <p class="container text-left">Можна уникнути необхідності дорогої заміни паливного інжектора при відновленні продуктивності автомобіля, паливної економічності та приведенні рівні викидів в атмосферу ближче до рівня початкових показників, визначених для вашого автомобіля Toyota. Для цього подбайте про ретельне очищення двигуна вже сьогодні.</p>
-
-
-
     </section>
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
+    import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "FuelSystemCleaner",
 
+        components: {
+            Sidebar,
+            MenuToSpareParts
+        },
+
+        mixins: [
+            PageBody
+        ],
+
         data() {
             return {
-                showVideo: false,
+                id: 24,
             }
         },
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Очисник паливної системи для автомобіля`,
+                // title:  `Toyota Nikolaev | Очисник паливної системи для автомобіля`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Очисник паливної системи для автомобіля`
+                        // content: `Toyota Nikolaev | Очисник паливної системи для автомобіля`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                        // content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                        // content: `Лише одна процедура зможе забезпечити ефективне очищення, що поліпшить роботу транспортного засобу в багатьох аспектах.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                        // content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                        // content: `Toyota Nikolaev, toyota, паливо, система, очисник, бензиновий, дизельний, інжектори, свічі запалювання,, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }
         },
-
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-        },
-
-        methods: {
-            openVideo() {
-                this.showVideo = !this.showVideo;
-                console.log(this.showVideo);
-            },
-        }
     }
 </script>
 
@@ -111,32 +120,28 @@
     section.container-fluid {
         padding: 0;
         margin: 0;
+    }
+
+
+    section.container-fluid ::v-deep div {
+        padding: 0;
 
         header {
-            height: 80vh;
-            width: 100%;
+            @include header-xl;
             padding-top: 120px;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-parts-2014-fuel-system-cleaner-focus_tcm-3046-284899.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
-            color: $font_color;
+            color: #ffffff;
 
             h1 {
-                font-size: 5.4rem;
-                font-weight: bolder;
-                color: #ffffff;
-                text-align: left;
+                text-align: center;
+            }
 
-                h2 {
-                    font-size: 3.4rem;
-                    margin-top: 16px;
-                }
+            h2 {
+                text-align: center;
             }
         }
 
-        p {
+        .p {
             font-size: 1.5rem;
             color: #595D60;
             margin: 68px auto;
@@ -145,7 +150,7 @@
         .body.container {
             color: $font_color;
 
-            p {
+            .p {
                 font-size: 1.5rem;
                 color: #595D60;
                 margin: 30px 0;
@@ -166,7 +171,9 @@
             }
 
         }
+    }
 
+    section.container-fluid {
         .video {
             margin: 20px 0;
             padding: 0;
@@ -199,65 +206,39 @@
             }
 
         }
-
     }
 
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        section.container-fluid{
+        section.container-fluid ::v-deep div {
             header {
-                max-height: 60vw;
-                h1 {
-                    width: 100%;
-                }
+                @include header-lg;
             }
-
         }
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        section.container-fluid {
+        section.container-fluid ::v-deep div {
             header {
-                height: 56vh;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 15px;
-                h1 {
-                    width: 100%;
-                    font-size: 4rem;
-                    h2 {
-                        font-size: 3rem;
-                        padding-top: 10px;
-                    }
-                }
+                @include header-md;
             }
         }
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        section.container-fluid{
+        section.container-fluid ::v-deep div {
             header {
-                min-height: 180px;
-                height: 56vw;
-                padding-top: 15px;
-                h1 {
-                    width: 100%;
-                    font-size: 3.5rem;
-                    h2 {
-                        font-size: 2.5rem;
-                        padding-top: 5px;
-                    }
-                }
+                @include header-sm;
             }
 
-            p {
+            .p {
                 margin: 30px auto;
             }
 
             .body.container {
                 color: $font_color;
 
-                p {
+                .p {
                     &.header {
                         font-size: 2.0rem;
                         margin: 30px 0;
@@ -269,30 +250,22 @@
     }
 
     @media (max-width: 575.9px) {
-        section.container-fluid {
+        section.container-fluid ::v-deep div {
             header {
+                @include header-xs;
                 width: 100%;
-                height: auto;
-                min-height: 180px;
-                padding-top: 10px;
                 h1 {
                     width: 100%;
-                    padding: 10px 15px;
-                    font-size: 2.5rem;
-                    h2 {
-                        font-size: 1.8rem;
-                        padding-top: 5px;
-                    }
                 }
             }
 
-            p {
+            .p {
                 margin: 30px auto;
             }
 
             .body.container {
 
-                p {
+                .p {
                     margin: 30px 0;
                     &.header {
                         font-size: 2.0rem;
@@ -306,14 +279,7 @@
                         margin-bottom: 10px;
                     }
                 }
-
             }
-
         }
     }
-
-
-
-
-
 </style>

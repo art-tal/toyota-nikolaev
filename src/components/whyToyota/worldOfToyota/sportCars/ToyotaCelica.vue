@@ -8,9 +8,7 @@
                 </h1>
 
                 <div class="series d-flex justify-content-around">
-                    <!--                    <hr/>-->
                     <span>СЕРІЯ HERITAGE</span>
-                    <!--                    <hr/>-->
                 </div>
             </div>
             <div class="header-image">
@@ -56,7 +54,6 @@
 
             <div class="carousel_view" v-if="showCarousel">
                 <i class="fas fa-times" @click="show()"></i>
-                <!--                <swiper class="swiper" :options="swiperOption">-->
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
                     <swiper-slide v-for="(img, key) in images"
                                   :key="key"
@@ -186,9 +183,8 @@
                 const swiperThumbs = this.$refs.swiperThumbs.$swiper;
                 swiperTop.controller.control = swiperThumbs;
                 swiperThumbs.controller.control = swiperTop;
-                setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-
             })
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
 
         methods: {
@@ -315,7 +311,6 @@
         .container-fluid.carousel-img {
             margin: 0;
             padding: 0;
-            /*position: relative;*/
             h2 {
                 font-size: 4.4rem;
                 margin-bottom: 40px;
@@ -334,8 +329,6 @@
                     font-weight: bold;
                     overflow: hidden;
                     position: relative;
-                    /*font-size: $font-size-huge * 2;
-                    background-color: $white;*/
                     img {
                         width: 100%;
 

@@ -315,16 +315,13 @@
                     userMsg: this.userMsg,
                     agree: this.agree,
                 };
-                console.log(feedback);
-                // eventEmitter.$emit('close');
                 this.$store.state.openConsultation = !this.$store.state.openConsultation
                 axios.post(
                     'http://lara.toyota.nikolaev.ua/ajax/feedback',
                     feedback,
                 )
-                .then( (response) => {
+                .then( () => {
                     console.log("Данные переданы успешно!");
-                    console.log(response);
                     this.success = true;
                     setTimeout( () => {this.success = false}, 2500 );
                 } )
@@ -366,7 +363,6 @@
                 border-bottom: 1px solid #f0f0f0;
                 padding: 50px 0;
                 div {
-                    /*padding: 0;*/
                     form {
                         .field {
                             margin-bottom: 20px;
@@ -432,9 +428,6 @@
                                 overflow: hidden;
                             }
                         }
-
-
-
                     }
 
                     .raffle.row {
@@ -451,8 +444,6 @@
                             font-size: 1.8rem;
                         }
                     }
-
-
                 }
             }
         }

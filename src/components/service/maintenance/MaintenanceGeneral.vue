@@ -1,5 +1,7 @@
 <template>
     <main class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-maintenance/>
         <header>
             <h1 class="container">Технічне обслуговування</h1>
         </header>
@@ -35,26 +37,6 @@
                     <h3>Оригінальні мастильні матеріали Toyota</h3>
                     <p>Усі оригінальні мастильні матеріали Toyota відповідають найсуворішим вимогам щодо якості та мають чудові експлуатаційні характеристики.</p>
                 </router-link>
-
-<!--                <router-link tag="article"-->
-<!--                             class="col-md-6 col-12"-->
-<!--                             exact-->
-<!--                             to="/maintenance/calc"-->
-<!--                >-->
-<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/555x249_Toyota_Service_1_tcm-3046-1921515.jpg" alt="Калькулятор технічного обслуговування">-->
-<!--                    <h3>Калькулятор технічного обслуговування</h3>-->
-<!--                    <p>Дізнайтесь орієнтовну вартість періодичного обслуговування.</p>-->
-<!--                </router-link>-->
-
-<!--                <router-link tag="article"-->
-<!--                             class="col-md-6 col-12"-->
-<!--                             exact-->
-<!--                             to="/maintenance/special_company"-->
-<!--                >-->
-<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/ssc-taxonomy-555x249_tcm-3046-1556314.jpg" alt="За допомогою програми перевірки, Ви можете перевірити чи залучений Ваш автомобіль до проведення Спеціальних Сервісних Кампаній.">-->
-<!--                    <h3>Перевірте ваш автомобіль на наявність спеціальних сервісних кампаній</h3>-->
-<!--                    <p>За допомогою програми перевірки, Ви можете перевірити чи залучений Ваш автомобіль до проведення Спеціальних Сервісних Кампаній.</p>-->
-<!--                </router-link>-->
             </div>
 
         </div>
@@ -62,11 +44,18 @@
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToMaintenance from "./../../../components/service/maintenance/MenuToMaintenance";
     export default {
         name: "MaintenanceGeneral",
 
+        components: {
+            Sidebar,
+            MenuToMaintenance
+        },
+
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
 
         metaInfo() {
@@ -111,18 +100,13 @@
         padding: 0;
         color: $font_color;
         header {
+            @include header-xl;
             height: 56vh;
             background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-service-maintenance-focus_tcm-3046-65752.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
             margin-bottom: 50px;
             h1 {
                 padding-top: 100px;
-                font-size: 5.2rem;
                 color: #ffffff;
-                font-weight: bolder;
             }
         }
 
@@ -147,6 +131,40 @@
                 }
             }
 
+        }
+    }
+
+
+    @media (min-width: 992px) and (max-width: 1199.9px) {
+        main.container-fluid{
+            header {
+                @include header-lg
+            }
+
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        main.container-fluid{
+            header {
+                @include header-md;
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        main.container-fluid {
+            header  {
+                @include header-sm;
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        main.container-fluid {
+            header {
+                @include header-xs;
+            }
         }
     }
 

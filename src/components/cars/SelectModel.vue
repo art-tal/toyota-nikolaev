@@ -33,8 +33,6 @@
 
             </header>
 
-
-
                 <equipment v-if="showEquipment" :id="id"></equipment>
 
 
@@ -245,20 +243,15 @@
 <script>
     import axios from 'axios';
     import {eventEmitter} from "../../main";
-    // import Equipment from "../configurator/Equipment";
-    // import SubNavigation from "./../cars/SubNavigation";
     import MixinSelectModel from "../../mixins/mixinSelectModel";
+    import Equipment from "./../../components/configurator/Equipment";//            for Laravel
+    import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
 
 
 
     // import formattedPrice from "../../filters/price_format";
-    // import $ from "jquery";
-
-
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
-    import Equipment from "./../../components/configurator/Equipment";//            for Laravel
-    import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
 
     export default {
         name: "SelectModel",
@@ -276,19 +269,10 @@
             return {
                 renderComponent: 0,
 
-                // id: 0,
-                // model: {},
-                // showEquipment: true,
                 showInfo: false,
-                // equipments: [],
-                // equipment: {},
-                // modelColor: "#fff",
                 prices: [],
 
                 showVideo: false,
-
-                // modelTitle: "",
-                // equipmentTitle: "",
 
                 modelVideo: {
                     poster: '',
@@ -296,23 +280,8 @@
                     header: "",
                     info: "",
                 },
-
-                // fontColor: "#202020",
-
-                // colors: [],
-                // selectedColor: {},
-                // x: 0,
-                // slides: 0,
-                //
-                // mousePress: false,
-                // mouseX: 0,
-                // xNow: 0,
             }
         },
-
-        // filters: {
-        //     formattedPrice,
-        // },
 
         metaInfo() {
             return {
@@ -348,7 +317,6 @@
         },
 
         created() {
-            // this.renderComponent = 0;
             this.id = this.$route.params.id;
             this.getModel();
             this.getEquipment();
@@ -357,13 +325,11 @@
                 () => {
                 this.showEquipment = false;
                 this.changeTitle();
-                // console.log(this.computedEquipment);
             } );
 
         },
 
         mounted() {
-            // this.showEquipment = false;
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
 
         },
@@ -374,25 +340,6 @@
             photo() {
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.selectedColor.preview;
             },
-
-            // computedEquipment() {
-            //     // return this.equipment;
-            //     return this.$store.getters.equip;
-            // },
-
-            // computedColor() {
-            //     return this.$store.getters.colored;
-            //     // return this.selectedColor;
-            // },
-
-            // fontColored() {
-            //     return this.getFontColor();
-            // },
-
-            // checkId() {///////////////////////////////////////////////////
-            //     this.$forceUpdate();
-            //     return this.$route.params.id;
-            // },////////////////////////////////////////////////////////////
 
             getID() {
                 if(this.$route.params.id) {
@@ -406,15 +353,6 @@
 
         },
 
-        watch: {
-            // showEquipment() {
-            //     return this.showEquipment;
-            // },
-            //
-            // equipmentTitle() {
-            //     return  this.equipmentTitle;
-            // },
-        },
 
         methods: {
 
@@ -427,6 +365,7 @@
 ///////////////////////////////////////////////////////ЗАГЛУШКА//
                         this.getVideo();
 //////////////////////////////////////////////////////
+
                         this.modelTitle = this.model.name;
                         this.changeTitle();
                     } )
@@ -436,33 +375,8 @@
                         })
             },
 
-            // choice() {
-            //     this.showEquipment = !this.showEquipment;
-            // },
-
-            // changeTitle() {
-            //     this.equipmentTitle = this.computedEquipment.mod_name;
-            // },
-
-            // getEquipment() {
-            //     axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod`,
-            //         {params: {id: this.getID}})
-            //     .then( (response) => {
-            //         this.equipments = response.data;
-            //         this.equipment = this.equipments[0];
-            //         this.equipmentTitle = this.equipment.mod_name;
-            //     } )
-            //         .then( () => {this.getPrices();} )
-            //         .then( () => {this.getColors();} )
-            //     .catch( (error) => {
-            //         console.log("Ошибка, не возможно загрузить доступные модификации");
-            //         console.log(error);
-            //     } );
-            // },
-
             checkEquipment() {
                 let equipFromJson = JSON.parse(localStorage.equipment);
-                console.log(equipFromJson);
 
                 if (Object.keys(equipFromJson) > 0) {
                     if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
@@ -486,187 +400,9 @@
                 this.$store.commit("setEquipment");
             },
 
-            // getPrices() {
-            //     console.log(this.equipment.mod_id);
-            //     axios.get(
-            //         `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
-            //         {params: {id: this.equipment.mod_id}}
-            //     )
-            //         .then( (response) => {
-            //             this.prices = response.data;
-            //             console.log(response.data);
-            //
-            //             this.setPrice();
-            //         } )
-            //         .catch( (error) => {
-            //             console.log("Ошибка загрузки цен");
-            //             console.log(error);
-            //         } )
-            // },
-            //
-            // setPrice() {
-            //     let keysPrice = Object.keys(this.prices);
-            //     console.log(keysPrice);
-            //
-            //     this.equipments.forEach( (equip) => {
-            //         keysPrice.forEach( (pr) => {
-            //             if(equip.model_name_pivot.toLowerCase() === pr.toLowerCase()) {
-            //                 this.$set(equip, "equipPrice", this.prices[pr] );
-            //             }
-            //         } );
-            //     } );
-            //
-            //     console.log(this.equipments);
-            //     this.checkEquipment();
-            //
-            // },
 
-            // descriptionList() {
-            //     try {
-            //         return this.computedEquipment.description.split('\n');
-            //     }
-            //     catch (e) {
-            //         // console.log("error selectModel split");
-            //         // console.log(e);
-            //     }
-            //
-            // },
-
-            // getColors() {
-            //     axios.get(
-            //         `http://lara.toyota.nikolaev.ua/ajax/mod_color`,
-            //         {params: {id: this.equipment.mod_id} },//
-            //     )
-            //         .then( (response) => {
-            //             this.colors = response.data;
-            //             console.log(this.colors);
-            //             this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
-            //             this.setColor(this.colors[0]);
-            //
-            //             this.slides = $('#slides').width() / 3 * this.colors.length;
-            //
-            //         } )
-            //         .catch( (error) => {
-            //             console.log("Ошибка, не возможно загрузить доступные цвета");
-            //             console.log(error);
-            //         } )
-            // },
-            //
-            // setColor(color) {
-            //     this.colors.forEach( (c) => { c.selected = false} );
-            //     console.log(color.preview);
-            //     let index = this.colors.indexOf(color);
-            //     this.colors[index].selected = true;
-            //     this.selectedColor = color;
-            //     this.$store.commit("setColorDefault", color);
-            //     localStorage.color = JSON.stringify( color );
-            //     this.getFontColor();
-    //         // },
-    //
-    //         getFontColor() {
-    //             try{
-    //             switch(this.computedColor.rgb.toLowerCase()){
-    //                 case '#000000'.toLowerCase():
-    //                 case '#030303'.toLowerCase():
-    //                 case '#182B66'.toLowerCase():
-    //                 case '#1d50aa'.toLowerCase():
-    //                 case '#5C5653'.toLowerCase():
-    //                 case '#60101e'.toLowerCase():
-    //                 case '#740310'.toLowerCase():
-    //                 case '#7a766f'.toLowerCase():
-    //                 case '#7c7a7a'.toLowerCase():
-    //                 case '#7d8489'.toLowerCase():
-    //                 case '#817e6e'.toLowerCase():
-    //                 case '#8c0414'.toLowerCase():
-    //                 case '#97a4ac'.toLowerCase():
-    //                 case '#aeabac'.toLowerCase():
-    //                 case '#b4ae9c'.toLowerCase():
-    //                 case '#ff0000'.toLowerCase():
-    //                     return this.fontColor = '#FFFFFF';
-    //                 case '#727270'.toLowerCase():
-    //                 case '#d7dcd9'.toLowerCase():
-    //                 case '#EDE7E1'.toLowerCase():
-    //                 case '#f2f2f0'.toLowerCase():
-    //                 case '#fafafa'.toLowerCase():
-    //                 case '#FFFFFF'.toLowerCase():
-    //                     return this.fontColor = '#202020';
-    //             }
-    //         } catch (e) {
-    //                 // console.log( "Шрифты пролетели" );
-    //             }
-    //
-    //         },
-    //
-    //         lightenDarkenColor(col, amt) {
-    //
-    //             let usePound = false;
-    //
-    //             if (col[0] == "#") {
-    //                 col = col.slice(1);
-    //                 usePound = true;
-    //             }
-    //
-    //             let num = parseInt(col,16);
-    //
-    //             let r = (num >> 16) + amt;
-    //
-    //             if (r > 255) r = 255;
-    //             else if  (r < 0) r = 0;
-    //
-    //             let b = ((num >> 8) & 0x00FF) + amt;
-    //
-    //             if (b > 255) b = 255;
-    //             else if  (b < 0) b = 0;
-    //
-    //             let g = (num & 0x0000FF) + amt;
-    //
-    //             if (g > 255) g = 255;
-    //             else if (g < 0) g = 0;
-    //
-    //             return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
-    //
-    // },
-    //
-    //         getGradient(rgb){
-    //             try{
-    //                 switch(rgb.toLowerCase()){
-    //                     case '#000000'.toLowerCase():
-    //                     case '#030303'.toLowerCase():
-    //                         return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 70) +  ")";
-    //                     case '#182B66'.toLowerCase():
-    //                     case '#1d50aa'.toLowerCase():
-    //                     case '#5C5653'.toLowerCase():
-    //                     case '#60101e'.toLowerCase():
-    //                     case '#727270'.toLowerCase():
-    //                     case '#740310'.toLowerCase():
-    //                     case '#7a766f'.toLowerCase():
-    //                     case '#7c7a7a'.toLowerCase():
-    //                     case '#7d8489'.toLowerCase():
-    //                     case '#817e6e'.toLowerCase():
-    //                     case '#8c0414'.toLowerCase():
-    //                     case '#97a4ac'.toLowerCase():
-    //                     case '#aeabac'.toLowerCase():
-    //                     case '#b4ae9c'.toLowerCase():
-    //                     case '#c9021a'.toLowerCase():
-    //                     case '#ff0000'.toLowerCase():
-    //
-    //                         return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 50) +  ")";
-    //                     case '#d7dcd9'.toLowerCase():
-    //                     case '#EDE7E1'.toLowerCase():
-    //                     case '#f2f2f0'.toLowerCase():
-    //                     case '#fafafa'.toLowerCase():
-    //                     case '#FFFFFF'.toLowerCase():
-    //                         return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, -50) + ")";
-    //                         default:
-    //                             return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 20) +  ")";
-    //                 }
-    //             } catch (e) {
-    //                 // console.log( "Градиетны пролетели" );
-    //             }
-    //         },
 
             getVideo() {
-                // console.log(this.model.name.toLowerCase());
                 try {
                     switch(this.model.name.toLowerCase()) {
 
@@ -742,41 +478,6 @@
             openVideo() {
                 this.showVideo = !this.showVideo;
             },
-
-
-
-            // prevSlide() {
-            //     this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
-            //     this.x = this.x - $('.slide_wrapper').width();
-            //     if ( this.x < 0 ) {
-            //         if(this.colors.length % 3){
-            //             this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.colors.length % 3));
-            //             console.log(this.x);
-            //         } else {
-            //             this.x = this.slides - $('.slide_wrapper').width();
-            //             console.log(this.x);
-            //         }
-            //
-            //     }
-            //     $('#slides').css("transform", `translateX(-${this.x}px)`);
-            // },
-            //
-            // nextSlide() {
-            //     this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
-            //     this.x = this.x + $('.slide_wrapper').width();
-            //     console.log($('.slide_wrapper').width());
-            //     console.log(this.x , this.slides);
-            //     if ( this.x >= this.slides ) {
-            //         this.x = 0;
-            //     }
-            //     $('#slides').css("transform", `translateX(-${this.x}px)`);
-            // },
-
-            // forceUpdate() {
-            //     this.renderComponent++;
-            // },
-
-
         }
     }
 </script>
@@ -855,83 +556,6 @@
 
                 .carColors{
                     @include car-colors;
-                    /*width: 240px;*/
-                    /*position: absolute;*/
-                    /*padding: 0;*/
-                    /*bottom: 0;*/
-                    /*right: 0;*/
-                    /*z-index: 10;*/
-                    /*!*align-self: flex-end;*!*/
-                    /*margin-bottom: 15px;*/
-                    /*overflow: visible !important;*/
-
-                    /*.carousel_wrapper {*/
-                    /*    .slide_wrapper {*/
-                    /*        overflow: hidden;*/
-                    /*        width: 180px;*/
-                    /*        .slides {*/
-                    /*            white-space: nowrap;*/
-                    /*            .slide {*/
-                    /*                position: relative;*/
-                    /*                margin: 10px;*/
-                    /*                .sample {*/
-                    /*                    cursor: pointer;*/
-                    /*                    margin: auto;*/
-                    /*                    img {*/
-                    /*                        width: 40px;*/
-                    /*                        height: 40px;*/
-                    /*                        border-radius: 50%;*/
-                    /*                        border: 2px solid #cccccc;*/
-                    /*                    }*/
-                    /*                    .check {*/
-                    /*                        color: red;*/
-                    /*                        width: 15px;*/
-                    /*                        height: 15px;*/
-                    /*                        border-radius: 50%;*/
-                    /*                        border: 1px solid #cccccc;*/
-                    /*                        background-color: #fff;*/
-                    /*                        position: absolute;*/
-                    /*                        top: 0;*/
-                    /*                        left: 0;*/
-                    /*                    }*/
-                    /*                    &:hover,*/
-                    /*                    &.active {*/
-                    /*                        img {*/
-                    /*                            box-shadow: 0 0 5px 2px #eeeeee;*/
-                    /*                            transform: scale(1.1);*/
-                    /*                            transition: all 500ms;*/
-                    /*                        }*/
-                    /*                    }*/
-                    /*                }*/
-                    /*            }*/
-                    /*        }*/
-                    /*        !*flex: 6;*!*/
-
-                    /*    }*/
-
-
-                    /*    button.btn {*/
-                    /*        align-self: center;*/
-                    /*        align-content: center;*/
-                    /*        !*flex: 1;*!*/
-                    /*        width: 30px !important;*/
-                    /*        height: 30px;*/
-                    /*        box-sizing: border-box;*/
-                    /*        display: inline-block;*/
-                    /*        border-radius: 50%;*/
-                    /*        background-color: rgba(255,255,255, 0.5);*/
-                    /*        font-size: 1.9rem;*/
-                    /*        color: #7a7a7a;*/
-                    /*        &#button-prev {*/
-                    /*            padding: 1px 10px 1px 6px;*/
-                    /*        }*/
-                    /*        &#button-next {*/
-                    /*            padding: 1px 7px 1px 9px;*/
-                    /*        }*/
-                    /*    }*/
-
-
-                    /*}*/
                 }
             }
         }
@@ -996,7 +620,6 @@
             position: relative;
             width: 100%;
             height: auto;
-            /*height: 600px;*/
 
             .poster {
                 width: 100%;

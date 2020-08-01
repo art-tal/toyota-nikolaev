@@ -26,24 +26,11 @@
                             >
                                 <b class="font-weight-bold align-middle">2</b>
                                 <span>Крок 2</span>
-                                <!--                        <span class="sr-only">(current)</span>-->
                             </router-link>
 
-<!--                            <router-link-->
-<!--                                    class="nav-link ml-2 mr-2"-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/configurator/consultation/step_3"-->
-<!--                            >-->
-<!--                                <b class="font-weight-bold align-middle">3</b>-->
-<!--                                <span>Шаг 3</span>-->
-<!--                                &lt;!&ndash;                        <span class="sr-only">(current)</span>&ndash;&gt;-->
-<!--                            </router-link>-->
                         </div>
                     </div>
                 </nav>
-<!--                <i class="fas fa-times col-1" @click="closeConsult()"></i>-->
             </menu>
 
             <header class="text-left">
@@ -57,9 +44,6 @@
 </template>
 
 <script>
-    // import {eventEmitter} from "@/main";
-    // import {eventEmitter} from "./../../app";//         for Laravel
-
     export default {
         name: "Сonsultation",
 
@@ -112,7 +96,6 @@
 
         methods: {
             closeConsult() {
-                // eventEmitter.$emit('close');
                 this.$store.state.openConsultation = !this.$store.state.openConsultation;
                 console.log("click");
                 console.log(this.$store.state.openConsultation);
@@ -125,16 +108,7 @@
     @import '../../styles/variables';
 
     main.consultation{
-        /*position: fixed;*/
-        /*top: 0;*/
-        /*left: 0;*/
-        /*width: 100vw;*/
-        /*height: 100vh;*/
-        /*background-color: rgba(0,0,0,0.5);*/
-        /*z-index: 999;*/
         .container {
-            /*overflow: auto;*/
-            /*top: 20px;*/
             padding: 0 0 30px 0;
             bottom: 50px;
             margin-top: 0;

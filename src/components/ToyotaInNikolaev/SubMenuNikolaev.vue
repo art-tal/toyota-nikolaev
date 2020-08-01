@@ -1,7 +1,7 @@
 <template>
     <div class="sub_nikolaev container-fluid">
         <div class="row">
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-6 col-12 linked">
                 <router-link
                         exact
                         tag="a"
@@ -11,7 +11,7 @@
                 >Клієнтська служба</router-link>
 
                 <ul>
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -20,7 +20,7 @@
                         >Про службу</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -31,7 +31,7 @@
                 </ul>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-6 col-12 linked">
                 <router-link
                         exact
                         tag="a"
@@ -42,7 +42,7 @@
 
                 <ul>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -51,7 +51,7 @@
                         >Авто в наявносі</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -60,7 +60,7 @@
                         >Екслюзивні проекти</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 exact
                                 tag="a"
@@ -69,7 +69,7 @@
                         >Про нас</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -78,7 +78,7 @@
                         >Наші фахівці</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -87,7 +87,7 @@
                         >Корпоративна відповідальність</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -96,7 +96,7 @@
                         >Зв’язатись з нами</router-link>
                     </li>
 
-                    <li>
+                    <li class=" linked">
                         <router-link
                                 tag="a"
                                 exact
@@ -107,34 +107,7 @@
                 </ul>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12 align-self-start">
-<!--                <router-link-->
-<!--                        exact-->
-<!--                        tag="a"-->
-<!--                        class="nav-link"-->
-<!--                        active-class="active"-->
-<!--                        to="/corporate_sales/general"-->
-<!--                >Робота в Toyota</router-link>-->
-
-<!--                <ul>-->
-<!--                    <li>-->
-<!--                        <router-link-->
-<!--                                tag="a"-->
-<!--                                exact-->
-<!--                                active-class="active"-->
-<!--                                to="/corporate_sales/business_car"-->
-<!--                        >Кар'єра «Тойота-Україна»</router-link>-->
-<!--                    </li>-->
-
-<!--                    <li>-->
-<!--                        <router-link-->
-<!--                                tag="a"-->
-<!--                                exact-->
-<!--                                active-class="active"-->
-<!--                                to="/corporate_sales/business_owner"-->
-<!--                        >Кар’єрні можливості</router-link>-->
-<!--                    </li>-->
-<!--                </ul>-->
+            <div class="col-xl-3 col-lg-6 col-12 align-self-start linked">
 
             </div>
 
@@ -142,25 +115,7 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-<!--                        <li class="download">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-map-marker-alt"></i>-->
-<!--                                <span>Офіційні дилери</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-
-<!--                        <li class="dilers">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-car-side"></i>-->
-<!--                                <span>Автомобілі з пробігом</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-
-                        <li class="servies">
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-car"></i>-->
-<!--                                <span>Замовити тест-драйв</span>-->
-<!--                            </a>-->
+                        <li class="servies linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -171,7 +126,7 @@
                             </router-link>
                         </li>
 
-                        <li class="download">
+                        <li class="download linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -182,13 +137,6 @@
                                 <span>Часті запитання</span>
                             </router-link>
                         </li>
-
-<!--                        <li class="contact">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-key"></i>-->
-<!--                                <span>Гібридні іновації</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
                     </ol>
                 </div>
             </div>
@@ -197,11 +145,17 @@
 </template>
 
 <script>
+    import mixinNavigation from "./../../mixins/mixinNavigation";
+
     export default {
         name: "SubMenuNikolaev",
 
+        mixins: [
+            mixinNavigation,
+        ],
+
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
     }
 </script>

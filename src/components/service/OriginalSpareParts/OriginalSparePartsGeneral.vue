@@ -1,75 +1,98 @@
 <template>
     <section class="container-fluid">
-        <header>
-            <h1 class="container">Оригінальні запчастини</h1>
-        </header>
+        <sidebar></sidebar>
+        <menu-to-spare-parts/>
+        <div v-html="pageBody"></div>
+<!--        <header>-->
+<!--            <h1 class="container">Оригінальні запчастини</h1>-->
+<!--        </header>-->
 
-        <div class="body container text-left">
-            <h2 class="text-center">
-                Оригінальні запасні частини до автомобілів Toyota відповідають найсуворішим нормативам якості та стануть запорукою тривалої експлуатації вашого автомобіля Toyota.
-            </h2>
+<!--        <div class="body container text-left">-->
+<!--            <h2 class="text-center">-->
+<!--                Оригінальні запасні частини до автомобілів Toyota відповідають найсуворішим нормативам якості та стануть запорукою тривалої експлуатації вашого автомобіля Toyota.-->
+<!--            </h2>-->
 
-            <p>
-                Для того, щоб бути на 100 % впевненими у своєму автомобілі, ми рекомендуємо використовувати оригінальні запасні частини Toyota. Всі оригінальні вузли та запасні деталі Toyota схвалені до використання конструкторськими бюро, які створили ваш автомобіль. Ці запчастини:
-            </p>
+<!--            <div class="p">-->
+<!--                Для того, щоб бути на 100 % впевненими у своєму автомобілі, ми рекомендуємо використовувати оригінальні запасні частини Toyota. Всі оригінальні вузли та запасні деталі Toyota схвалені до використання конструкторськими бюро, які створили ваш автомобіль. Ці запчастини:-->
+<!--            </div>-->
 
-            <ul>
-                <li>сконструйовані спеціально для вашого автомобіля;</li>
-                <li>відповідають суворим нормативам компанії «Тойота», що висуваються до якості виконання та надійної експлуатації;</li>
-                <li>покриваються офіційною гарантією Toyota (щонайменше на 12 місяців з дати встановлення);</li>
-                <li>встановлюються лише спеціально підготовленими технічними працівниками.</li>
-            </ul>
+<!--            <ul>-->
+<!--                <li>сконструйовані спеціально для вашого автомобіля;</li>-->
+<!--                <li>відповідають суворим нормативам компанії «Тойота», що висуваються до якості виконання та надійної експлуатації;</li>-->
+<!--                <li>покриваються офіційною гарантією Toyota (щонайменше на 12 місяців з дати встановлення);</li>-->
+<!--                <li>встановлюються лише спеціально підготовленими технічними працівниками.</li>-->
+<!--            </ul>-->
 
-            <p>Бездоганна репутація компанії «Тойота» у сфері якості має за основу продуману конструкцію, бездоганне виконання та експлуатаційну надійність наших автомобілів. Ці ж принципи поширюються на наші оригінальні запасні частини. Вони виготовляються із якісних матеріалів та у відповідності до таких самих високих виробничих нормативів, які було застосовано до виробництва вузлів та агрегатів вашого автомобіля під час збірки. Крім того, ви завжди зможете покластися на нас: ми гарантуємо оперативну доставку запасних частин та якісне технічне обслуговування.</p>
+<!--            <div class="p">Бездоганна репутація компанії «Тойота» у сфері якості має за основу продуману конструкцію, бездоганне виконання та експлуатаційну надійність наших автомобілів. Ці ж принципи поширюються на наші оригінальні запасні частини. Вони виготовляються із якісних матеріалів та у відповідності до таких самих високих виробничих нормативів, які було застосовано до виробництва вузлів та агрегатів вашого автомобіля під час збірки. Крім того, ви завжди зможете покластися на нас: ми гарантуємо оперативну доставку запасних частин та якісне технічне обслуговування.</div>-->
 
-            <p>Для безпечної та безпроблемної експлуатації обирайте оригінальні запасні частини Toyota! З метою придбання запчастин, будь ласка, звертайтеся до офіційних дилерів Toyota.</p>
+<!--            <div class="p">Для безпечної та безпроблемної експлуатації обирайте оригінальні запасні частини Toyota! З метою придбання запчастин, будь ласка, звертайтеся до офіційних дилерів Toyota.</div>-->
 
 
-        </div>
+<!--        </div>-->
 
 
     </section>
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
+    import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "OriginalSparePartsGeneral",
 
+        components: {
+            Sidebar,
+            MenuToSpareParts
+        },
+
+        mixins: [
+            PageBody
+        ],
+
+        data() {
+            return {
+                id: 15,
+            }
+        },
+
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`
+                        // content: `Toyota Nikolaev | Оригінальні запчастини | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                        // content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                        // content: `Для безпроблемної екпслуатації автомобілів Toyota ми рекомендуємо використовувати оригінальні запасні частині та витратні матеріали.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                        // content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                        // content: `Toyota Nikolaev, тойота, запасні частини, запчастини, вибір, купити, замовити, дилер, якість, гарантія, toyota, Genuine Parts`
+                        content: this.meta_keywords,
                     },
                 ],
             }
-        },
-
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
         },
     }
 </script>
@@ -78,21 +101,17 @@
     @import '../../../styles/variables';
 
     section.container-fluid {
-        padding: 0;
         margin: 0;
+        padding: 0;
+    }
+
+    section.container-fluid ::v-deep div {
         header {
-            height: 80vh;
-            width: 100%;
+            @include header-xl;
             padding-top: 50px;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-genuine-parts-focus_tcm-3046-65770.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
             h1 {
-                font-size: 5.4rem;
-                font-weight: bolder;
-                color: $font_color;
+                text-align: center;
             }
         }
 
@@ -103,7 +122,7 @@
                 margin: 68px 0;
             }
 
-            p {
+            .p {
                 font-size: 1.8rem;
                 color: #595D60;
                 margin-bottom: 25px;
@@ -124,10 +143,10 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
+                @include header-lg;
                 height: 80vh;
-                max-height: 60vw;
                 h1 {
                     font-size: 5rem;
                 }
@@ -136,28 +155,19 @@
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
-                height: 56vw;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 30px;
-                h1 {
-                    font-size: 4.5rem;
-                }
+                @include header-md;
             }
         }
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
+                @include header-sm;
                 height: 40vh;
-                min-height: 180px;
                 padding-top: 20px;
-                h1 {
-                    font-size: 3.5rem;
-                }
             }
 
             .body.container {
@@ -170,11 +180,12 @@
     }
 
     @media (max-width: 575.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
-                height: 30vh;
+                @include header-xs;
+                height: 20vh;
                 min-height: 180px;
-                max-height: 380px;
+                max-height: 280px;
                 padding-top: 15px;
                 h1 {
                     font-size: 3.5rem;
@@ -187,7 +198,7 @@
                     margin: 30px 0;
                 }
 
-                p {
+                .p {
                     font-size: 1.6rem;
                 }
             }

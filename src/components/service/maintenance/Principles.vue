@@ -1,57 +1,80 @@
 <template>
     <main class="container-fluid">
-        <header>
-            <h1 class="container">Технічне обслуговування автомобілів</h1>
-        </header>
-        
-        <div class="body container">
-            <h3>Ви зможете спокійно зосередитися на отриманні задоволення від їзди, а фахівці дилерських центрів Toyota
-                подбають про підтримання вашої Toyota в ідеальному стані.</h3>
-            <h2>Сервіс найвищої якості!</h2>
-            <p>Працівники дилерських центрів проходять підготовку із залученням усіх необхідних ресурсів виробника, суворо дотримуються регламенту виконання робіт та використовують лише оригінальні запасні частини і витратні матеріали Toyota, щоб Ви отримали сервіс найвищої якості.</p>
-            <p>Дотримуючись рекомендованого проміжку між обслуговуваннями вашої Toyota (12 місяців або 15 тис. км пробігу залежно від того, що настане раніше), ви зможете бути впевненими у своєму автомобілі.</p>
-            <p>Персонал дилерських центрів Toyota спілкується із клієнтами, адже ваша думка про рівень обслуговування є важливою для подальшого покращення.</p>
-            <p>Дізнайтесь що нового у найближчого дилера Toyota, для того щоб завжди бути в курсі останніх подій.</p>
-        </div>
+        <sidebar></sidebar>
+        <menu-to-maintenance/>
+        <div v-html="pageBody"></div>
+<!--        <header>-->
+<!--            <h1 class="container">Технічне обслуговування автомобілів</h1>-->
+<!--        </header>-->
+<!--        -->
+<!--        <div class="body container">-->
+<!--            <h3>Ви зможете спокійно зосередитися на отриманні задоволення від їзди, а фахівці дилерських центрів Toyota-->
+<!--                подбають про підтримання вашої Toyota в ідеальному стані.</h3>-->
+<!--            <h2>Сервіс найвищої якості!</h2>-->
+<!--            <div class="p">Працівники дилерських центрів проходять підготовку із залученням усіх необхідних ресурсів виробника, суворо дотримуються регламенту виконання робіт та використовують лише оригінальні запасні частини і витратні матеріали Toyota, щоб Ви отримали сервіс найвищої якості.</div>-->
+<!--            <div class="p">Дотримуючись рекомендованого проміжку між обслуговуваннями вашої Toyota (12 місяців або 15 тис. км пробігу залежно від того, що настане раніше), ви зможете бути впевненими у своєму автомобілі.</div>-->
+<!--            <div class="p">Персонал дилерських центрів Toyota спілкується із клієнтами, адже ваша думка про рівень обслуговування є важливою для подальшого покращення.</div>-->
+<!--            <div class="p">Дізнайтесь що нового у найближчого дилера Toyota, для того щоб завжди бути в курсі останніх подій.</div>-->
+<!--        </div>-->
     </main>
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToMaintenance from "./../../../components/service/maintenance/MenuToMaintenance";
+    import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "Principles",
 
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+        components: {
+            Sidebar,
+            MenuToMaintenance
+        },
+
+        mixins: [
+            PageBody
+        ],
+
+        data() {
+            return {
+                id: 9,
+            }
         },
 
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Технічне обслуговування автомобілів Toyota`,
+                // title:  `Toyota Nikolaev | Технічне обслуговування автомобілів Toyota`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Технічне обслуговування автомобілів Toyota`
+                        // content: `Toyota Nikolaev | Технічне обслуговування автомобілів Toyota`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Обслуговуючий персонал центрів та технічні фахівці пройшли повний курс підготовки відповідно до суворих нормативів Toyota. Якість - перш за все!`
+                        // content: `Обслуговуючий персонал центрів та технічні фахівці пройшли повний курс підготовки відповідно до суворих нормативів Toyota. Якість - перш за все!`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Обслуговуючий персонал центрів та технічні фахівці пройшли повний курс підготовки відповідно до суворих нормативів Toyota. Якість - перш за все!`
+                        // content: `Обслуговуючий персонал центрів та технічні фахівці пройшли повний курс підготовки відповідно до суворих нормативів Toyota. Якість - перш за все!`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `техобслуговування, тойота, то, технічне обслуговування, оригінальні масла, toyota, сервіс, сервісний центр, спеціаліст, запасні частини, сервісне обслуговування, офіційний сервіс тойота, сервіс тойота`
+                        // content: `техобслуговування, тойота, то, технічне обслуговування, оригінальні масла, toyota, сервіс, сервісний центр, спеціаліст, запасні частини, сервісне обслуговування, офіційний сервіс тойота, сервіс тойота`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `техобслуговування, тойота, то, технічне обслуговування, оригінальні масла, toyota, сервіс, сервісний центр, спеціаліст, запасні частини, сервісне обслуговування, офіційний сервіс тойота, сервіс тойота`
+                        // content: `техобслуговування, тойота, то, технічне обслуговування, оригінальні масла, toyota, сервіс, сервісний центр, спеціаліст, запасні частини, сервісне обслуговування, офіційний сервіс тойота, сервіс тойота`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -65,23 +88,21 @@
 
     main.container-fluid {
         padding: 0;
+    }
+
+    main.container-fluid ::v-deep div {
+        padding: 0;
         color: $font_color;
 
         header {
-            height: 80vh;
+            @include header-xl;
             max-height: 60vw;
             background-image: url('//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
             margin-bottom: 50px;
 
             h1 {
                 padding-top: 350px;
-                font-size: 5.2rem;
                 color: #ffffff;
-                font-weight: bolder;
             }
         }
 
@@ -98,7 +119,7 @@
                 text-align: left;
                 margin-bottom: 40px;
             }
-            p {
+            .p {
                 font-size: 1.6rem;
                 color: #595D60;
                 margin-bottom: 30px;
@@ -108,11 +129,10 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        main.container-fluid {
+        main.container-fluid ::v-deep div {
             header {
-                max-height: 60vw;
+                @include header-lg;
                 h1 {
-                    width: 100%;
                     padding-top: 250px;
                 }
             }
@@ -121,14 +141,10 @@
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        main.container-fluid{
+        main.container-fluid ::v-deep div {
             header  {
-                height: 56vh;
-                min-height: 180px;
-                max-height: 480px;
-                padding-top: 15px;
+                @include header-md;
                 h1 {
-                    width: 100%;
                     font-size: 3.5rem;
                     padding-top: 200px;
                 }
@@ -158,13 +174,10 @@
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main.container-fluid{
+        main.container-fluid ::v-deep div{
             header  {
-                min-height: 180px;
-                height: 56vw;
-                padding-top: 15px;
+                @include header-sm;
                 h1 {
-                    width: 100%;
                     font-size: 3rem;
                     padding-top: 150px;
                 }
@@ -174,13 +187,12 @@
     }
 
     @media (max-width: 575.9px) {
-        main.container-fluid{
+        main.container-fluid ::v-deep div {
             header {
+                @include header-xs;
                 width: 100%;
                 height: 56vw;
-                min-height: 180px;
                 max-height: 320px;
-                padding-top: 10px;
                 h1 {
                     width: 100%;
                     font-size: 2.5rem;
@@ -198,7 +210,7 @@
                     margin-bottom: 20px;
                     text-align: center;
                 }
-                p {
+                .p {
                     font-size: 1.4rem;
                     margin-bottom: 20px;
                 }

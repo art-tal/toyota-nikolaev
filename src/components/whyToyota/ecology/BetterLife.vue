@@ -6,30 +6,37 @@
 
                 <swiper-slide>
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-817965.jpg" alt="Краще життя">
-                    <h1>Краще життя
+                    <div class="title">
+                        <h1>Краще життя</h1>
                         <h2>Формування майбутнього суспільства в гармонії з природою</h2>
-                    </h1>
+                    </div>
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Raising-Awareness_1600x900_tcm-3046-765901.jpg" alt="Краще життя">
-                    <h1>Підвищення обізнаності
+                    <div class="title">
+                        <h1>Підвищення обізнаності</h1>
                         <h2>Винесення питань навколишнього середовища на перше місце у  помислах, планах та діях TOYOTA</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture3NEW3_tcm-3046-765902.jpg" alt="Краще життя">
-                    <h1>Біорізноманіття
+                    <div class="title">
+                        <h1>Біорізноманіття</h1>
                         <h2>Допомога у збереженні екосистеми планети</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <swiper-slide>
                     <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture4_tcm-3046-816670.jpg" alt="Краще життя">
-                    <h1>Прогресивне мислення
+                    <div class="title">
+                        <h1>Прогресивне мислення</h1>
                         <h2>Створення кращого світу для наших дітей</h2>
-                    </h1>
+                    </div>
+
                 </swiper-slide>
 
                 <div class="swiper-pagination" slot="pagination"></div>
@@ -37,43 +44,45 @@
                 <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
         </header>
+        <div v-html="pageBody"></div>
 
-        <div class="body container text-left">
-            <h5>Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету, тож мусимо залишити її в кращому стані, ніж отримали. У цьому розділі йдеться про зусилля, яких Toyota докладає для формування майбутнього суспільства в гармонії з природою.</h5>
+<!--        <div class="body container text-left">-->
+<!--            <h5>Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету, тож мусимо залишити її в кращому стані, ніж отримали. У цьому розділі йдеться про зусилля, яких Toyota докладає для формування майбутнього суспільства в гармонії з природою.</h5>-->
 
-            <blockquote>
-                <p>"Лише продовжуючи бути лідером у царині захисту навколишнього середовища, ми зможемо досягти успіху."</p>
+<!--            <blockquote>-->
+<!--                <p>"Лише продовжуючи бути лідером у царині захисту навколишнього середовища, ми зможемо досягти успіху."</p>-->
 
-                <cite>Дідьє Лерой, виконавчий віце-президент TMC</cite>
-            </blockquote>
+<!--                <cite>Дідьє Лерой, виконавчий віце-президент TMC</cite>-->
+<!--            </blockquote>-->
 
-            <h2>Підвищення обізнаності</h2>
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <p>Аби досягти мети зі створення кращого світу для дітей, слід роз'яснити їм важливість проблем довкілля. Тож це - один із основних напрямів нашої роботи. Паралельно ми підвищуємо поінформованість щодо екологічної проблематики наших працівників, а також членів територіальних громад, поряд з якими ми працюємо. Як ми це робимо? Для цього у нас є екологічна кампанія "Зелений місяць" еко-акція "Купив автомобіль? - Посади дерево". У цьому розділі ви дізнаєтесь про те, що поєднує усі ці дуже різні елементи на шляху до досягнення нашої мети з поширення знань.</p>
-                </div>
-                <div class="col-md-6 col-12">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_infogaphics1-ok_tcm-3046-766178.jpg" alt="">
-                </div>
-            </div>
+<!--            <h2>Підвищення обізнаності</h2>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <p>Аби досягти мети зі створення кращого світу для дітей, слід роз'яснити їм важливість проблем довкілля. Тож це - один із основних напрямів нашої роботи. Паралельно ми підвищуємо поінформованість щодо екологічної проблематики наших працівників, а також членів територіальних громад, поряд з якими ми працюємо. Як ми це робимо? Для цього у нас є екологічна кампанія "Зелений місяць" еко-акція "Купив автомобіль? - Посади дерево". У цьому розділі ви дізнаєтесь про те, що поєднує усі ці дуже різні елементи на шляху до досягнення нашої мети з поширення знань.</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_infogaphics1-ok_tcm-3046-766178.jpg" alt="">-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <h2>Прогресивне мислення</h2>
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <p>Раніше люди жили в гармонії з природою. Але у теперішні часи зв'язок значно послабився. Наслідком стали природні катаклізми, на кшталт глобального потепління. Тож нам слід повернутися до першооснов. Як компанія ми з одного боку потребуємо інновацій та нових шляхів підтримання якості життя (економіка), з іншого - збереження і навіть відновлення природи (екологія).</p>
-                </div>
-                <div class="col-md-6 col-12">
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_infogaphics3-ok_tcm-3046-766180.jpg" alt="">
-                </div>
-            </div>
+<!--            <h2>Прогресивне мислення</h2>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <p>Раніше люди жили в гармонії з природою. Але у теперішні часи зв'язок значно послабився. Наслідком стали природні катаклізми, на кшталт глобального потепління. Тож нам слід повернутися до першооснов. Як компанія ми з одного боку потребуємо інновацій та нових шляхів підтримання якості життя (економіка), з іншого - збереження і навіть відновлення природи (екологія).</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-6 col-12">-->
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_infogaphics3-ok_tcm-3046-766180.jpg" alt="">-->
+<!--                </div>-->
+<!--            </div>-->
 
-        </div>
+<!--        </div>-->
 
 
     </main>
 </template>
 
 <script>
+    import PageBody from "../../../mixins/mixinPages"
     import MenuEcology from "./../../../components/whyToyota/ecology/MenuEcology";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
@@ -87,34 +96,44 @@
             SwiperSlide
         },
 
+        mixins: [
+            PageBody
+        ],
+
         metaInfo() {
             return {
-                title:  `Toyota | Краще життя з Toyota | Toyota Україна`,
+                // title:  `Toyota | Краще життя з Toyota | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota | Краще життя з Toyota | Toyota Україна`
+                        // content: `Toyota | Краще життя з Toyota | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                        // content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                        // content: `Toyota - не лише компанія, що забезпечує комплексні мобільні рішення. Ми - громадяни світу, й, відповідно, несемо відповідальність за планету.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        // content: `toyota, екологія, турбота, гібрид, автомобілі, захист, зелені технології, тойота, тайота, Enviroment, Social projects`
+                        content: this.meta_keywords,
                     },
                 ],
             }
@@ -122,14 +141,16 @@
 
         data() {
             return {
+                id: 33,
+
                 swiperOption: {
                     spaceBetween: 0,
                     slidesPerView: 1,
                     centeredSlides: true,
-                    // autoplay: {
-                    //     delay: 2500,
-                    //     disableOnInteraction: false
-                    // },
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false
+                    },
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
@@ -140,10 +161,6 @@
                     }
                 }
             }
-        },
-
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
         },
     }
 </script>
@@ -174,23 +191,26 @@
                         width: 100%;
                         height: 100%;
                     }
-                    h1 {
+                    .title {
                         position: absolute;
                         top: 100px;
                         left: 100px;
                         z-index: 100;
                         text-align: left;
-                        font-size: 5.2rem;
-                        font-weight: bold;
-                        margin-bottom: 15px;
-                        width: auto;
-                        color: #ffffff;
+                        h1 {
+                            font-size: 5.2rem;
+                            font-weight: bold;
+                            margin-bottom: 15px;
+                            width: auto;
+                            color: #ffffff;
+                        }
                         h2 {
                             font-size: 3.5rem;
                             font-weight: bold;
                             color: #ffffff;
                         }
                     }
+
 
 
                 }
@@ -216,7 +236,9 @@
                 }
             }
         }
+    }
 
+    main ::v-deep div {
         .body.container {
             margin: 68px auto;
             color: $font_color;
@@ -227,7 +249,7 @@
 
             blockquote {
                 margin: 100px 0;
-                p {
+                .p {
                     font-size: 2.4rem;
                     &::before {
                         content: "\201C";
@@ -259,7 +281,7 @@
             .row {
                 margin-bottom: 68px;
                 div {
-                    p {
+                    .p {
                         font-size: 1.4rem;
                         color: #595D60;
                         margin-bottom: 30px;
@@ -269,10 +291,7 @@
                     }
                 }
             }
-
-
         }
-
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
@@ -280,10 +299,12 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 100px;
                             left: 100px;
-                            font-size: 4.5rem;
+                            h1 {
+                                font-size: 4.5rem;
+                            }
                             h2 {
                                 font-size: 3rem;
                             }
@@ -291,7 +312,9 @@
                     }
                 }
             }
+        }
 
+        main ::v-deep div {
             .body.container {
                 .row {
                     margin-top: 30px;
@@ -313,18 +336,23 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 50px;
                             left: 50px;
-                            font-size: 4rem;
+                            h1 {
+                                font-size: 4rem;
+                            }
                             h2 {
                                 font-size: 3rem;
                             }
+
                         }
                     }
                 }
             }
+        }
 
+        main ::v-deep div {
             .body.container {
                 margin: 30px auto;
                 h5 {
@@ -344,7 +372,7 @@
 
                 blockquote {
                     margin: 30px 0;
-                    p {
+                    .p {
                         font-size: 2rem;
                         &::before {
                             font-size: 6rem;
@@ -364,18 +392,23 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 30px;
                             left: 30px;
-                            font-size: 3.5rem;
+                            h1 {
+                                font-size: 3.5rem;
+                            }
                             h2 {
                                 font-size: 2.5rem;
                             }
+
                         }
                     }
                 }
             }
+        }
 
+        main ::v-deep div {
             .body.container {
                 margin: 30px auto;
                 h5 {
@@ -394,7 +427,7 @@
 
                 blockquote {
                     margin: 10px 0 30px;
-                    p {
+                    .p {
                         font-size: 2rem;
                         &::before {
                             font-size: 6rem;
@@ -419,13 +452,16 @@
             header {
                 .swiper {
                     .swiper-slide {
-                        h1 {
+                        .title {
                             top: 20px;
                             left: 20px;
-                            font-size: 3rem;
+                            h1 {
+                                font-size: 3rem;
+                            }
                             h2 {
                                 font-size: 2rem;
                             }
+
                         }
 
 
@@ -447,7 +483,9 @@
                     }
                 }
             }
+        }
 
+        main ::v-deep div {
             .body.container {
                 margin: 30px auto;
                 h5 {
@@ -467,7 +505,7 @@
 
                 blockquote {
                     margin: 20px 0 30px;
-                    p {
+                    .p {
                         font-size: 2rem;
                         &::before {
                             font-size: 5rem;

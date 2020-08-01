@@ -331,7 +331,6 @@
                              @click="openArticle(article.id)"
                     >
                         <div class="img" :style="'background-image: url(http://lara.toyota.nikolaev.ua/storage/' + article.image + ')'"></div>
-<!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + article.image" alt="post">-->
                         <div class="category" v-if="article.category_id === 8" style="border-color: forestgreen; color: forestgreen">Новини</div>
                         <div class="category" v-else-if="article.category_id === 9" style="border-color: #E50000; color: #E50000">Новинки</div>
                         <div class="category" v-else-if="article.category_id === 10" style="border-color: blueviolet; color: blueviolet">Акції</div>
@@ -347,7 +346,6 @@
 
 <script>
     import axios from "axios"
-    // import $ from "jquery"
 
     export default {
         name: "News",
@@ -408,7 +406,7 @@
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
 
         computed: {
@@ -452,7 +450,6 @@
                     "http://lara.toyota.nikolaev.ua/ajax/news"
                 )
                 .then( (response) => {
-                    console.log(response.data);
                     this.newsAll = response.data;
                 } )
                 .catch( (error) => {
@@ -489,7 +486,6 @@
                         }
                         break;
                 }
-                console.log( this.news, this.newcomers, this.stocks );
             }
         },
     }
@@ -502,16 +498,11 @@
         padding: 0;
 
         header {
+            @include header-xl;
             height: 56vh;
             background-image: url("//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg");
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
             h1 {
-                font-size: 5.2rem;
-                font-weight: bolder;
-                color: #ffffff;
+                text-align: center;
                 padding-top: 130px;
             }
         }

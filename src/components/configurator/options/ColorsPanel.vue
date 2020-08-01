@@ -52,11 +52,6 @@
     export default {
         name: "ColorsPanel",
 
-
-        // props: [
-        //     'mod_id',
-        // ],
-
         data() {
             return {
                 mod_id: 0,
@@ -72,14 +67,10 @@
         },
 
         created() {
-            // this.mod_id = localStorage.mod_id;
-            // setTimeout(() => {
                 this.mod_id = this.$store.getters.equip.mod_id;
-            // }, 100);
         },
 
         mounted() {
-            // setTimeout(this.getColors, 500);
             this.getColors();
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
 
@@ -96,16 +87,9 @@
               )
               .then( (response) => {
                   this.colors = response.data;
-                  console.log(this.colors);
                   this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
                   this.setColor(this.colors[0]);
-                      // this.colors[0].selected = true;
-                  // this.selectedColor = this.colors[0];
-                  // localStorage.color = JSON.stringify( this.colors[0] );
-                  // this.$store.state.color = this.this.colors[0];
-
                   this.slides = $('#slides').width() / 3 * this.colors.length;
-                  // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
               } )
               .catch( (error) => {
                   console.log("Ошибка, не возможно загрузить доступные цвета");
@@ -113,40 +97,13 @@
               } )
           },
 
-            // checkColor() {
-            //
-            //     if(localStorage.color.length > 0) {
-            //         let colorFromJson = JSON.parse(localStorage.color);
-            //         console.log(colorFromJson);
-            //         this.colors.forEach( (color) => {
-            //             if(color.preview === colorFromJson.preview) {
-            //                 // this.selectedColor = color;
-            //                 // this.$store.state.color = color;
-            //                 this.setColor(color);
-            //                 return true;
-            //             }
-            //         } )
-            //     }
-
-                // this.setColor(this.colors[0]);
-                // this.colors[0].selected = true;
-                // this.selectedColor = this.colors[0];
-                // this.$store.state.color = this.colors[0];
-                // localStorage.color = JSON.stringify(this.colors[0])
-                // console.log(this.selectedColor);
-            // },
-
-            // setColor(color, index) {
             setColor(color) {
                 this.colors.forEach( (c) => { c.selected = false} );
-                // color.selected = true;
                 console.log(color);
                 let index = this.colors.indexOf(color);
                 this.colors[index].selected = true;
-                // this.$store.state.color = color;
                 this.$store.commit("setColorDefault", color);
                 localStorage.color = JSON.stringify( color );
-                // console.log(key);
             },
 
             prevSlide() {
@@ -155,10 +112,8 @@
                 if ( this.x < 0 ) {
                     if(this.colors.length % 3){
                         this.x = this.slides - ( ($('.slide_wrapper').width() / 3) * (this.colors.length % 3));
-                        console.log(this.x);
                     } else {
                         this.x = this.slides - $('.slide_wrapper').width();
-                        console.log(this.x);
                     }
 
                 }
@@ -168,8 +123,6 @@
             nextSlide() {
                 this.slides = $('.slide_wrapper').width() / 3 * this.colors.length;
                 this.x = this.x + $('.slide_wrapper').width();
-                console.log($('.slide_wrapper').width());
-                console.log(this.x , this.slides);
                 if ( this.x >= this.slides ) {
                     this.x = 0;
                 }
@@ -234,15 +187,11 @@
                         }
                     }
                 }
-                /*flex: 6;*/
-
             }
-
 
             button.btn {
                 align-self: center;
                 align-content: center;
-                /*flex: 1;*/
                 width: 30px !important;
                 height: 30px;
                 box-sizing: border-box;
@@ -258,216 +207,7 @@
                     padding: 1px 7px 1px 9px;
                 }
             }
-
-
         }
-
-
     }
-
-
-
-
-
-
-
-    /*@media (min-width: 992px) and (max-width: 1199.9px) {*/
-    /*    .carColors {*/
-    /*        padding: 0;*/
-    /*        margin: 0;*/
-    /*        width: 100%;*/
-    /*        position: relative;*/
-    /*        z-index: 100;*/
-    /*        .sample {*/
-    /*                    padding: 5px;*/
-    /*                    position: relative;*/
-    /*                    z-index: 101;*/
-    /*                    img {*/
-    /*                        width: 50px;*/
-    /*                        height: 50px;*/
-    /*                        border-radius: 50%;*/
-    /*                        border: 2px solid #cccccc;*/
-    /*                    }*/
-
-
-    /*                }*/
-    /*        .swiper {*/
-    /*            .swiper-button-prev {*/
-    /*                z-index: 110;*/
-    /*            }*/
-    /*            .swiper-button-next {*/
-    /*                z-index: 110;*/
-    /*            }*/
-    /*        }*/
-
-    /*    }*/
-    /*}*/
-
-    /*@media (min-width: 768px) and (max-width: 991.9px) {*/
-    /*    .carColors {*/
-    /*        padding: 0;*/
-    /*        margin: 20px 0;*/
-    /*        width: 100% !important;*/
-
-    /*        .sample {*/
-    /*            cursor: pointer;*/
-    /*            width: auto !important;*/
-    /*            img {*/
-    /*                width: 50px;*/
-    /*                height: 50px;*/
-    /*                border-radius: 50%;*/
-    /*                border: 2px solid #cccccc;*/
-    /*            }*/
-    /*            .check {*/
-    /*                color: red;*/
-    /*                width: 15px;*/
-    /*                height: 15px;*/
-    /*                border-radius: 50%;*/
-    /*                border: 1px solid #cccccc;*/
-    /*                background-color: #fff;*/
-    /*                position: absolute;*/
-    /*                top: 5px;*/
-    /*                left: 5px;*/
-    /*            }*/
-    /*            &:hover,*/
-    /*            &.active {*/
-    /*                img {*/
-    /*                    box-shadow: 0 0 5px 2px #eeeeee;*/
-    /*                    transform: scale(1.1);*/
-    /*                    transition: all 500ms;*/
-    /*                }*/
-    /*            }*/
-    /*        }*/
-    /*    }*/
-    /*    .swiper-container {*/
-    /*        .swiper-wrapper {*/
-    /*            width: auto !important;*/
-    /*            justify-content: center;*/
-
-    /*        }*/
-    /*    }*/
-    /*    .swiper {*/
-    /*        .swiper-button-prev {*/
-    /*            display: none;*/
-
-    /*        }*/
-    /*        .swiper-button-next {*/
-    /*            display: none;*/
-
-    /*        }*/
-    /*    }*/
-
-    /*}*/
-
-    /*@media (min-width: 576px) and (max-width: 767.9px) {*/
-    /*    .carColors {*/
-    /*        margin-right: 0;*/
-    /*        .sample {*/
-    /*            img {*/
-    /*                width: 50px;*/
-    /*                height: 50px;*/
-    /*            }*/
-    /*        }*/
-    /*            }*/
-
-    /*    .swiper-container {*/
-    /*        .swiper-wrapper {*/
-    /*            justify-content: center;*/
-
-    /*        }*/
-    /*    }*/
-
-    /*    .swiper {*/
-    /*        .swiper-button-prev {*/
-    /*            display: none;*/
-
-    /*        }*/
-    /*        .swiper-button-next {*/
-    /*            display: none;*/
-
-    /*        }*/
-    /*    }*/
-
-    /*}*/
-
-    /*@media (max-width: 575.9px) {*/
-    /*    .carColors {*/
-    /*        margin-right: 0;*/
-    /*        .sample {*/
-    /*            img {*/
-    /*                width: 50px;*/
-    /*                height: 50px;*/
-    /*            }*/
-    /*        }*/
-    /*    }*/
-
-    /*    .swiper-container {*/
-    /*        .swiper-wrapper {*/
-    /*            justify-content: center;*/
-
-    /*        }*/
-    /*    }*/
-
-    /*    .swiper {*/
-    /*        height: 60px;*/
-    /*        padding: 0 20px;*/
-    /*        width: 100%;*/
-    /*        !*padding: 0;*!*/
-    /*        overflow: hidden;*/
-
-    /*        .swiper-slide {*/
-    /*            display: flex;*/
-    /*            justify-content: center;*/
-    /*            align-items: center;*/
-    /*            text-align: center;*/
-    /*            font-weight: bold;*/
-
-    /*            width: auto !important;*/
-    /*            margin: 0 2px 0 2px;*/
-
-    /*        }*/
-
-
-    /*        .swiper-button-prev {*/
-    /*            top: 15px;*/
-    /*            left: 0;*/
-    /*            width: 30px;*/
-    /*            height: 30px;*/
-    /*            border-radius: 50%;*/
-    /*            background-color: rgba(255,255,255, 0.5);*/
-    /*            &::after {*/
-    /*                font-size: 20px;*/
-    /*                font-weight: bold;*/
-    /*            }*/
-
-    /*        }*/
-    /*        .swiper-button-next {*/
-    /*            top: 15px;*/
-    /*            right: 0;*/
-    /*            width: 30px;*/
-    /*            height: 30px;*/
-    /*            border-radius: 50%;*/
-    /*            background-color: rgba(255,255,255, 0.5);*/
-    /*            &::after {*/
-    /*                font-size: 20px;*/
-    /*                font-weight: bold;*/
-    /*            }*/
-
-    /*        }*/
-    /*    }*/
-    /*}*/
-
-
-
-    /*@media (max-width: $container-width) {
-        .swiper-button-next {
-            right: 20px;
-            transform: rotate(90deg);
-        }
-        .swiper-button-prev {
-            left: 20px;
-            transform: rotate(90deg);
-        }
-    }*/
 
 </style>

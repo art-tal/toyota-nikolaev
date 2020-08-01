@@ -1,5 +1,7 @@
 <template>
     <section class="container-fluid">
+        <sidebar></sidebar>
+        <menu-to-accessories/>
         <div class="black">
             <div class="container">
                 <header>
@@ -231,6 +233,8 @@
 </template>
 
 <script>
+    import Sidebar from "../../permanent/Sidebar";
+    import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
     import 'swiper/css/swiper.css';
 
@@ -238,6 +242,8 @@
         name: "ToyotaTouch2",
 
         components: {
+            Sidebar,
+            MenuToAccessories,
             Swiper,
             SwiperSlide
         },
@@ -305,27 +311,23 @@
                 color: #fff;
 
                 header {
-                    height: 80vh;
+                    @include header-xl;
                     max-height: 60vw;
                     background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-header_tcm-3046-634725.jpg);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    -webkit-background-size: cover;
-                    background-size: cover;
                     margin-bottom: 20px;
                     position: relative;
+                    color: #FFFFFF;
                     h1 {
                         padding-top: 40px;
                         font-size: 4.5rem;
-                        font-weight: bolder;
                     }
                     h2 {
                         padding-top: 20px;
                         font-size: 2.2rem;
+                        text-align: center;
                     }
                     p {
                         font-size: 1.8rem;
-                        /*margin-top: 350px;*/
                         padding: 20px;
                         position: absolute;
                         bottom: 30px;
@@ -448,8 +450,8 @@
             .black {
                 .container {
                     header {
+                        @include header-lg;
                         height: 80vh;
-                        max-height: 60vw;
                         h1 {
                             padding-top: 20px;
                             font-size: 4rem;
@@ -472,17 +474,12 @@
             .black {
                 .container {
                     header {
-                        height: 56vh;
-                        min-height: 180px;
-                        max-height: 480px;
-                        padding-top: 15px;
+                        @include header-md;
                         h1 {
-                            width: 100%;
                             padding-top: 20px;
                             font-size: 3.5rem;
                         }
                         h2 {
-                            padding-top: 10px;
                             font-size: 2.2rem;
                         }
                         p {
@@ -537,11 +534,8 @@
             .black {
                 .container {
                     header {
-                        min-height: 180px;
-                        height: 56vw;
-                        padding-top: 15px;
+                        @include header-sm;
                         h1 {
-                            width: 100%;
                             padding-top: 15px;
                             font-size: 2.4rem;
                         }
@@ -627,8 +621,6 @@
                     }
                 }
             }
-
-
         }
     }
 
@@ -637,19 +629,15 @@
             .black {
                 .container {
                     header {
+                        @include header-xs;
                         width: 100%;
                         height: 56vw;
                         max-height: 380px;
-                        min-height: 180px;
-                        padding-top: 10px;
                         h1 {
                             width: 100%;
-                            padding: 10px 15px;
-                            font-size: 2.5rem;
                         }
                         h2 {
                             padding-top: 10px;
-                            font-size: 3.5vw;
                         }
                         p {
                             position: static;
@@ -694,9 +682,6 @@
                     }
                 }
             }
-
-
-
         }
     }
 

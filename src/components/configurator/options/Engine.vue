@@ -37,10 +37,6 @@
                                     :key="key"
                                 >{{equip}}</li>
                             </ul>
-
-<!--                            <button type="button" class="btn btn-grey btn-small">-->
-<!--                                <span>Показать стандартное оборудование</span>-->
-<!--                            </button>-->
                         </div>
                     </div>
                 </article>
@@ -69,39 +65,26 @@
                                                     {{trans.eng_name}}
                                                     ({{trans.horspower}} к.с.)
                                                 </a>
-                                                <!--                                            <a href="#engine-7c781068-6a4f-4648-9d9d-753e3f46e300">{{equipment.engine.valueOfEngine}} {{equipment.engine.nameOfEngine}} ({{equipment.engine.maxPower}})</a>-->
                                             </h2>
                                             <h3 class="">
                                                 {{trans.gear_name}}
                                                 {{trans.drive_type}}
 
                                             </h3>
-                                            <!--                                        <h3 class="">{{equipment.transmision}}</h3>-->
                                         </header>
                                         <div class="engine_img col-3 text-right">
                                             <img src="https://webcarconfig.toyota-europe.com/toyota/svg/engine.svg" width="90" alt="" class="">
-<!--                                            <div class="font-weight-bold font-italic text-uppercase" v-if="equipment.mod_name.includes('Hybrid')" style="color: #00A0F0">Гібридний (бензин)</div>-->
-<!--                                            <div class="font-weight-bold font-italic text-uppercase" v-else>Бензиновий</div>-->
                                             <div class="font-weight-bold font-italic text-uppercase text-center">{{trans.fuel_type}}</div>
                                         </div>
                                     </div>
                                     <ul class="options text-left">
-                                        <!--                                        <li v-for="(i, key) in equipment.engine.info"-->
                                         <li v-for="(i, key) in trans.eng_description"
                                             :key="key">{{i}}</li>
-                                        <!--                                        <li>Комбінований цикл: 8,3 л/100 км</li>-->
-                                        <!--                                        <li>Вміст вуглекислого газу у відпрацьованих газах (комбінований цикл): 187 г/км</li>-->
                                     </ul>
                                     <footer class="row">
-<!--                                        <a href="#" class="more_info col-lg-5 col-12">-->
-<!--                                            <i class="far fa-file"></i>-->
-<!--                                            <span>Більше інформації</span>-->
-<!--                                        </a>-->
                                         <button @click="applyTransmission(trans)"
                                                 class="btn btn-outline-danger col-lg-5 col-12 text-center">
                                             <span class="align-middle">Прийняти</span>
-<!--                                            <span class="align-middle">Продолжить</span>-->
-<!--                                            <i class="fas fa-angle-right"></i>-->
                                         </button>
                                     </footer>
                                 </div>
@@ -120,9 +103,6 @@
 
 <script>
     import axios from "axios";
-    // import jQuery from "jquery";
-
-    // let $ = jQuery;
 
     export default {
         name: "SelectedEngine",
@@ -133,8 +113,8 @@
 
                 id_mod: localStorage.id,
                 id_equip: localStorage.mod_id,
-                model: {},//JSON.parse( localStorage.model ),//this.$store.state.model//$.cookie('cookie_model')
-                equipment: {},//JSON.parse( localStorage.equipment ), //this.$store.state.equipment//$.cookie('cookie_equip')
+                model: {},
+                equipment: {},
                 transmission: {},
                 transmissions: [],
             }
@@ -147,7 +127,7 @@
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
 
 
@@ -159,7 +139,6 @@
                 } else {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
                 }
-
             },
         },
 
@@ -167,14 +146,11 @@
 
             getEngine() {
                 axios.get(
-                    'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',//?id=15',//
+                    'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
                     {params: {"id": this.id_equip}},
                 )
                 .then( (response) => {
                     this.transmissions = response.data;
-                    console.log(this.transmissions);
-                    // this.transmission = this.transmissions[0];
-                    // localStorage.transmission = JSON.stringify( this.transmission);
                     this.checkEngine();
                 } )
                 .catch( (error) => {
@@ -190,7 +166,6 @@
                         if( eng.eng_id === trans.eng_id ) {localStorage.transmission = JSON.stringify( this.transmission);
                             this.$store.state.engineAndGear = JSON.parse( localStorage.transmission );
                             this.transmission = JSON.parse( localStorage.transmission );
-                            console.log(this.transmission)
                             return;
                         }
                     } );
@@ -201,42 +176,16 @@
                 this.transmission = this.transmissions[0];
                 localStorage.transmission = JSON.stringify( this.transmission );
                 this.$store.state.engineAndGear = this.transmission;
-                console.log(this.transmission)
             },
 
             applyTransmission(trans) {
                 this.transmission = trans;
                 localStorage.transmission = JSON.stringify( this.transmission);
-                // this.$router.push({name: 'color_and_option'});
             },
 
             goToEquipment() {
                 this.$router.push({name: 'edit_equipment', params: {id: this.model.id}});
             },
-
-
-
-            // getEquipment() {
-            //     // console.log(this.id);
-            //     axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
-            //         .then((response) => {
-            //             this.equipments = response.data;
-            //             ///////////////////////////
-            //             this.equipments.forEach( (eq) => {
-            //                 eq.description = [
-            //                     "Светодиодные дневные ходовые огни",
-            //                     "Круиз-контроль",
-            //                     "6 громкоговорителей",
-            //                     "Двухзонный климат-контроль"
-            //                 ];} );
-            //             //////////////////////////////
-            //             console.log(this.equipments);
-            //         })
-            //         .catch((error) => {
-            //             console.log("Ошибка, не возможно загрузить доступные модификации");
-            //             console.log(error);
-            //         });
-            // },
     },
     }
 </script>

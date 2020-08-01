@@ -120,7 +120,6 @@ import 'swiper/css/swiper.css'
 
 <style lang="scss" scoped>
     @import '../../../../styles/variables';
-    /*@import './base.scss';*/
 
     .carousel.container-fluid {
         padding: 68px 0 0;
@@ -140,8 +139,6 @@ import 'swiper/css/swiper.css'
                 align-items: stretch;
                 text-align: center;
                 font-weight: bold;
-                /*font-size: $font-size-huge * 2;
-                background-color: $white;*/
 
                 .link {
                     width: 100%;
@@ -173,13 +170,6 @@ import 'swiper/css/swiper.css'
                         font-weight: normal;
                     }
                 }
-
-                /*.swiper-button-prev {*/
-                /*    left: 100px;*/
-                /*}*/
-                /*.swiper-button-next {*/
-                /*    right: 100px;*/
-                /*}*/
 
 
             }
@@ -217,15 +207,6 @@ import 'swiper/css/swiper.css'
                             left: calc(50% - 33px);
                         }
                     }
-
-                    /*.swiper-button-prev {*/
-                    /*    left: 100px;*/
-                    /*}*/
-                    /*.swiper-button-next {*/
-                    /*    right: 100px;*/
-                    /*}*/
-
-
                 }
             }
         }
@@ -316,15 +297,6 @@ import 'swiper/css/swiper.css'
                             display: none;
                         }
                     }
-
-                    /*.swiper-button-prev {*/
-                    /*    left: 100px;*/
-                    /*}*/
-                    /*.swiper-button-next {*/
-                    /*    right: 100px;*/
-                    /*}*/
-
-
                 }
             }
         }

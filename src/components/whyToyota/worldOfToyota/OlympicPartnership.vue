@@ -20,17 +20,6 @@
                    type="video/mp4"
                    poster="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/videoPlaceholder_tcm-3046-908391.jpg">
             </video>
-<!--            src="../../../video/olympic.mp4"-->
-
-<!--            <div class="img_button" @click="openVideo()">-->
-<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/videoPlaceholder_tcm-3046-908391.jpg" alt="Підтримуйте свою Toyota у формі, справною і свіжою завдяки повітряним фільтрам салону Toyota">-->
-<!--            </div>-->
-
-<!--            <div class="open-video" v-if="showVideo">-->
-<!--                <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>-->
-
-<!--                <iframe width="100%" height="50%" src="https://www.youtube.com/embed/Skn0N-g7Arw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-<!--            </div>-->
         </div>
         
         
@@ -108,7 +97,6 @@
 
             openVideo() {
                 this.showVideo = !this.showVideo;
-                console.log(this.showVideo);
             },
         }
     }
@@ -121,26 +109,12 @@
         margin: 0;
         padding: 0;
         header  {
-            width: 100%;
-            height: 80vh;
+            @include header-xl;
             padding-top: 70px;
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/header_tcm-3046-908181.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-background-size: cover;
-            background-size: cover;
             h1 {
-                width: 100%;
-                padding: 15px;
-                margin: 0 auto;
-                font-size: 5.2rem;
-                font-weight: bolder;
-                text-align: left;
                 color: #ffffff;
                 h2 {
-                    font-size: 3.4rem;
-                    text-align: left;
-                    padding-top: 16px;
                 }
             }
         }
@@ -163,7 +137,6 @@
                 margin-bottom: 24px;
             }
         }
-
 
         .video {
             margin: 20px 0;
@@ -202,10 +175,7 @@
     @media (min-width: 992px) and (max-width: 1199.9px) {
         section.container-fluid {
             header {
-                max-height: 60vw;
-                h1 {
-                    width: 100%;
-                }
+                @include header-lg;
             }
 
         }
@@ -214,12 +184,9 @@
     @media (min-width: 768px) and (max-width: 991.9px) {
         section.container-fluid {
             header {
-                height: 56vh;
-                min-height: 180px;
-                max-height: 480px;
+                @include header-md;
                 padding-top: 50px;
                 h1 {
-                    width: 100%;
                     font-size: 3.5rem;
                     h2 {
                         font-size: 2.5rem;
@@ -233,17 +200,12 @@
     @media (min-width: 576px) and (max-width: 767.9px) {
         section.container-fluid {
             header {
-                min-height: 180px;
-                height: 56vw;
+                @include header-sm;
                 padding-top: 50px;
-                h1 {
-                    width: 100%;
-                    font-size: 3.5rem;
-                    h2 {
-                        font-size: 3rem;
-                        padding-top: 15px;
-                    }
-                }
+            h2 {
+                font-size: 3rem;
+                padding-top: 15px;
+            }
             }
 
             .body.container {
@@ -268,19 +230,8 @@
     @media (max-width: 575.9px) {
         section.container-fluid {
             header {
+                @include header-xs;
                 width: 100%;
-                height: auto;
-                min-height: 180px;
-                padding-top: 10px;
-                h1 {
-                    width: 100%;
-                    padding: 10px 15px 120px;
-                    font-size: 2.5rem;
-                    h2 {
-                        font-size: 1.8rem;
-                        padding-top: 5px;
-                    }
-                }
             }
 
             .body.container {
@@ -294,7 +245,6 @@
                     font-size: 3rem;
                 }
             }
-
 
             .video {
                 margin: 20px 0;

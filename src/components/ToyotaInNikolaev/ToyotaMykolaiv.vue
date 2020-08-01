@@ -1,5 +1,6 @@
 <template>
     <main class="container-fluid">
+        <menu-nikolaev/>
         <header class="position-relative">
             <h1>Тойота Центр Миколаїв «КіТ-Т»
                 <h2>офіційний дилер Тойота в Миколаєві</h2>
@@ -26,8 +27,14 @@
 </template>
 
 <script>
+    import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
+
     export default {
         name: "ToyotaMykolaiv",
+
+        components: {
+            MenuNikolaev
+        },
 
         metaInfo() {
             return {

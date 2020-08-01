@@ -1,205 +1,228 @@
 <template>
     <main class="container-fluid">
-        <div class="img"></div>
-        <section class="container business_plus">
-            <header>
-                <p>Якщо одним з Ваших обов’язків є управління великим автопарком, то Вам необхідний і партнер, який надаватиме послуги найвищого рівня. Цей партнер – Toyota, він пропонує широкий вибір легкових автомобілів та комерційного транспорту, якісне післяпродажне обслуговування, постійно вдосконалює швидкість та якість надання послуг, наслідуючи ідею «Більше переваг для Вашого бізнесу»</p>
-                <h1>Причини для роботи з Toyota BusinessPlus</h1>
-            </header>
-            <div class="body">
-                <img src="//collection.toyota.ua/euro-sales.jpg" alt="Toyota BusinessPlus">
-
-                <ul class="icons d-flex justify-content-center align-items-end">
-                    <li class="">
-                        <span>Бізнес-центр</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-business_tcm-3046-901836.png" alt="business">
-                        <div class="message">Підготовлені консультанти готові запропонувати найвигідніши способи придбання та обслуговування Ваших автомобілів.</div>
-                    </li>
-
-                    <li>
-                        <span>Фінансові рішення</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-fsl_tcm-3046-901837.png" alt="finanse">
-                        <div class="message">Наші всеосяжні фінансові рішення, адаптовані до Ваших потреб, пропонують альтернативні та економічно ефективні способи фінансування Вашого автопарку Toyota.</div>
-                    </li>
-
-                    <li>
-                        <span>Розширений сервіс та технічне обслуговування</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-esm_tcm-3046-901834.png" alt="service">
-                        <div class="message">Для підтримки Вашого автопарку компанія пропонує спеціальні послуги, включаючи обслуговування, страхування, шиномонтаж.</div>
-                    </li>
-
-                    <li>
-                        <span>Toyota Plus</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-trade_tcm-3046-901832.png" alt="Toyota Plus">
-                        <div class="message">Програма Toyota Plus - програма продажу автомобілів Toyota з пробігом.</div>
-                    </li>
-
-                    <li>
-                        <span>Модельний ряд гібридних автомобілів</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-hybrid_tcm-3046-901831.png" alt="lineup hybrid">
-                        <div class="message">Toyota – світовий лідер гібридних моделей з низьким рівнем викидів, що презентує найширший спектр гібридних автомобілів.</div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="map container-fluid">
-            <header>
-                <h1>Toyota в світі</h1>
-            </header>
-            <div class="body container">
-                <div class="legend">
-                    <ul class="text-left">
-                        <li id="legend"><h3>Умовні позначення</h3></li>
-                        <li id="legend1"><span>Регіональні представництва</span></li>
-                        <li id="legend2"><span>Проектні та науково-дослідні центри</span></li>
-                        <li id="legend3"><span>Виробничі компанії</span></li>
-                    </ul>
-                </div>
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-plus-eurocorp-toyota-in-the-world-map-v3_tcm-3046-901970.png"
-                     alt="map">
-                <div class="facts">
-                    <ul class="d-flex justify-content-between">
-                        <li id="fact1">
-                            370,000 +/-<br/>
-                            <span>Кількість працівників</span>
-                        </li>
-
-                        <li id="fact2">
-                            160<br/>
-                            <span>Продажі в 160 країнах та регіонах світу</span>
-                        </li>
-
-                        <li id="fact3">
-                            69*<br/>
-                            <span>Виробничі компанії</span>
-                        </li>
-
-                        <li id="fact4">
-                            16<br/>
-                            <span>Проектні та науково-дослідні центри</span>
-                        </li>
-
-                    </ul>
-                </div>
-                <span class="d-block w-md-75 m-auto text-left">*включає в себе повністю належні компанії, спільні підприємства та контрактне виробництво.</span>
-            </div>
-
-
-
-        </section>
-
-        <section class="now">
-            <header>
-                <h1>Де ми сьогодні</h1>
-            </header>
-            <div class="body">
-                <p>Станом на кінець грудня 2017 року, Toyota веде бізнес з 53 виробничими компаніями у 28 країнах і регіонах за межами Японії.</p>
-
-                <ul class="icons d-flex justify-content-center align-items-end">
-                    <li>
-                        <span>1937</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1937_tcm-3046-901991.png" alt="1937">
-                        <div class="message">створено компанію Toyota Motor Co., Ltd</div>
-                    </li>
-                    <li>
-                        <span>1987</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1987_tcm-3046-901990.png" alt="1987">
-                        <div class="message">засновано Європейський технічний центр Toyota</div>
-                    </li>
-                    <li>
-                        <span>1990</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1990_tcm-3046-901989.png" alt="1990">
-                        <div class="message">створено акціонерне товариство Toyota Motor Europe Marketing & Engineering S.A.</div>
-                    </li>
-                    <li>
-                        <span>370.000</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-344109_tcm-3046-901988.png" alt="370.000">
-                        <div class="message">Кількість працівників (у світі)</div>
-                    </li>
-                    <li>
-                        <span>72%</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-72_tcm-3046-901986.png" alt="72%">
-                        <div class="message">Відсоток проданих в Європі автомобілів Toyota, які зібрано в Європі.</div>
-                    </li>
-                    <li>
-                        <span>+11 million</span>
-                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-9m_tcm-3046-901987.png" alt="+11 million">
-                        <div class="message">Більше 11 мільйонів гібридів продано в усьому світі та понад 1 мільйон – в Європі. Частка продажу гібридних транспортних засобів становить близько 30% від усіх продажів компанії Toyota.</div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="europe container">
+        <sidebar></sidebar>
+        <menu-to-corporate/>
+        <div v-html="pageBody"></div>
+<!--        <div class="img"></div>-->
+<!--        <section class="container business_plus">-->
 <!--            <header>-->
-<!--                <h1>Тойота в Європі</h1>-->
+<!--                <div class="p">Якщо одним з Ваших обов’язків є управління великим автопарком, то Вам необхідний і партнер, який надаватиме послуги найвищого рівня. Цей партнер – Toyota, він пропонує широкий вибір легкових автомобілів та комерційного транспорту, якісне післяпродажне обслуговування, постійно вдосконалює швидкість та якість надання послуг, наслідуючи ідею «Більше переваг для Вашого бізнесу»</div>-->
+<!--                <h1>Причини для роботи з Toyota BusinessPlus</h1>-->
 <!--            </header>-->
-            <div class="body">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-plus_tcm-3046-902077.png" alt="map">
-            </div>
-        </section>
+<!--            <div class="body">-->
+<!--                <img src="//collection.toyota.ua/euro-sales.jpg" alt="Toyota BusinessPlus">-->
 
-        <section class="lineup container-fluid text-left">
-            <header class="container">
-                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>
-            </header>
-            <footer class="container">
-                <!--                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>-->
-                <router-link
-                        tag="button"
-                        exact
-                        class="btn btn-light"
-                        active-class="active"
-                        to=""
-                >
-                    Відкрий для себе Toyota
-                </router-link>
-            </footer>
-        </section>
+<!--                <ul class="icons d-flex justify-content-center align-items-end">-->
+<!--                    <li class="">-->
+<!--                        <span>Бізнес-центр</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-business_tcm-3046-901836.png" alt="business">-->
+<!--                        <div class="message">Підготовлені консультанти готові запропонувати найвигідніши способи придбання та обслуговування Ваших автомобілів.</div>-->
+<!--                    </li>-->
+
+<!--                    <li>-->
+<!--                        <span>Фінансові рішення</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-fsl_tcm-3046-901837.png" alt="finanse">-->
+<!--                        <div class="message">Наші всеосяжні фінансові рішення, адаптовані до Ваших потреб, пропонують альтернативні та економічно ефективні способи фінансування Вашого автопарку Toyota.</div>-->
+<!--                    </li>-->
+
+<!--                    <li>-->
+<!--                        <span>Розширений сервіс та технічне обслуговування</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-esm_tcm-3046-901834.png" alt="service">-->
+<!--                        <div class="message">Для підтримки Вашого автопарку компанія пропонує спеціальні послуги, включаючи обслуговування, страхування, шиномонтаж.</div>-->
+<!--                    </li>-->
+
+<!--                    <li>-->
+<!--                        <span>Toyota Plus</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-trade_tcm-3046-901832.png" alt="Toyota Plus">-->
+<!--                        <div class="message">Програма Toyota Plus - програма продажу автомобілів Toyota з пробігом.</div>-->
+<!--                    </li>-->
+
+<!--                    <li>-->
+<!--                        <span>Модельний ряд гібридних автомобілів</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-hybrid_tcm-3046-901831.png" alt="lineup hybrid">-->
+<!--                        <div class="message">Toyota – світовий лідер гібридних моделей з низьким рівнем викидів, що презентує найширший спектр гібридних автомобілів.</div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        <section class="map container-fluid">-->
+<!--            <header>-->
+<!--                <h1>Toyota в світі</h1>-->
+<!--            </header>-->
+<!--            <div class="body container">-->
+<!--                <div class="legend">-->
+<!--                    <ul class="text-left">-->
+<!--                        <li id="legend"><h3>Умовні позначення</h3></li>-->
+<!--                        <li id="legend1"><span>Регіональні представництва</span></li>-->
+<!--                        <li id="legend2"><span>Проектні та науково-дослідні центри</span></li>-->
+<!--                        <li id="legend3"><span>Виробничі компанії</span></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-plus-eurocorp-toyota-in-the-world-map-v3_tcm-3046-901970.png"-->
+<!--                     alt="map">-->
+<!--                <div class="facts">-->
+<!--                    <ul class="d-flex justify-content-between">-->
+<!--                        <li id="fact1">-->
+<!--                            370,000 +/-<br/>-->
+<!--                            <span>Кількість працівників</span>-->
+<!--                        </li>-->
+
+<!--                        <li id="fact2">-->
+<!--                            160<br/>-->
+<!--                            <span>Продажі в 160 країнах та регіонах світу</span>-->
+<!--                        </li>-->
+
+<!--                        <li id="fact3">-->
+<!--                            69*<br/>-->
+<!--                            <span>Виробничі компанії</span>-->
+<!--                        </li>-->
+
+<!--                        <li id="fact4">-->
+<!--                            16<br/>-->
+<!--                            <span>Проектні та науково-дослідні центри</span>-->
+<!--                        </li>-->
+
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <span class="d-block w-md-75 m-auto text-left">*включає в себе повністю належні компанії, спільні підприємства та контрактне виробництво.</span>-->
+<!--            </div>-->
+
+
+
+<!--        </section>-->
+
+<!--        <section class="now">-->
+<!--            <header>-->
+<!--                <h1>Де ми сьогодні</h1>-->
+<!--            </header>-->
+<!--            <div class="body">-->
+<!--                <div class="p">Станом на кінець грудня 2017 року, Toyota веде бізнес з 53 виробничими компаніями у 28 країнах і регіонах за межами Японії.</div>-->
+
+<!--                <ul class="icons d-flex justify-content-center align-items-end">-->
+<!--                    <li>-->
+<!--                        <span>1937</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1937_tcm-3046-901991.png" alt="1937">-->
+<!--                        <div class="message">створено компанію Toyota Motor Co., Ltd</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span>1987</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1987_tcm-3046-901990.png" alt="1987">-->
+<!--                        <div class="message">засновано Європейський технічний центр Toyota</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span>1990</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1990_tcm-3046-901989.png" alt="1990">-->
+<!--                        <div class="message">створено акціонерне товариство Toyota Motor Europe Marketing & Engineering S.A.</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span>370.000</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-344109_tcm-3046-901988.png" alt="370.000">-->
+<!--                        <div class="message">Кількість працівників (у світі)</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span>72%</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-72_tcm-3046-901986.png" alt="72%">-->
+<!--                        <div class="message">Відсоток проданих в Європі автомобілів Toyota, які зібрано в Європі.</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span>+11 million</span>-->
+<!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-9m_tcm-3046-901987.png" alt="+11 million">-->
+<!--                        <div class="message">Більше 11 мільйонів гібридів продано в усьому світі та понад 1 мільйон – в Європі. Частка продажу гібридних транспортних засобів становить близько 30% від усіх продажів компанії Toyota.</div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        <section class="europe container">-->
+<!--&lt;!&ndash;            <header>&ndash;&gt;-->
+<!--&lt;!&ndash;                <h1>Тойота в Європі</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;            </header>&ndash;&gt;-->
+<!--            <div class="body">-->
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-plus_tcm-3046-902077.png" alt="map">-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        <section class="lineup container-fluid text-left">-->
+<!--            <header class="container">-->
+<!--                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>-->
+<!--            </header>-->
+<!--            <footer class="container">-->
+<!--                &lt;!&ndash;                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>&ndash;&gt;-->
+<!--                <router-link-->
+<!--                        tag="button"-->
+<!--                        exact-->
+<!--                        class="btn btn-light"-->
+<!--                        active-class="active"-->
+<!--                        to=""-->
+<!--                >-->
+<!--                    Відкрий для себе Toyota-->
+<!--                </router-link>-->
+<!--            </footer>-->
+<!--        </section>-->
 
     </main>
 </template>
 
 <script>
+    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
+    import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
+    import PageBody from "../../mixins/mixinPages"
     export default {
         name: "Corporate_clients",
 
+        components: {
+            Sidebar,
+            MenuToCorporate
+        },
+
+        mixins: [
+            PageBody
+        ],
+
+        data() {
+            return {
+                id: 7,
+            }
+        },
+
         metaInfo() {
             return {
-                title:  `Toyota Nikolaev | Корпоративні продажі | Toyota Україна`,
+                // title:  `Toyota Nikolaev | Корпоративні продажі | Toyota Україна`,
+                title: `Toyota Nikolaev | ${this.pageTitle}`,
                 meta: [
                     {
                         vmid: "title",
                         property: "og:title",
-                        content: `Toyota Nikolaev | Корпоративні продажі | Toyota Україна`
+                        // content: `Toyota Nikolaev | Корпоративні продажі | Toyota Україна`
+                        content: `Toyota Nikolaev | ${this.pageTitle}`
                     },
                     {
                         vmid: "description",
                         name: "description",
-                        content: `Якщо ваші обов&#39;язки включають  управління потребами великого автопарку та водіїв, тоді вам потрібен партнер, що надасть послуги найвищого рівня.`
+                        // content: `Якщо ваші обов&#39;язки включають  управління потребами великого автопарку та водіїв, тоді вам потрібен партнер, що надасть послуги найвищого рівня.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "description",
                         property: "og:description",
-                        content: `Якщо ваші обов&#39;язки включають  управління потребами великого автопарку та водіїв, тоді вам потрібен партнер, що надасть послуги найвищого рівня.`
+                        // content: `Якщо ваші обов&#39;язки включають  управління потребами великого автопарку та водіїв, тоді вам потрібен партнер, що надасть послуги найвищого рівня.`
+                        content: this.meta_description,
                     },
                     {
                         vmid: "keywords",
                         name: "keywords",
-                        content: `Toyota, BusinessPlus, автопарк, службовий автомобіль, бізнес, автопарк, продажі, модельний ряд, фінансування, продукти, послуги, гібрид,служебный автомобиль, бизнес, автопарк, продажи, модельный ряд, финансирование, продукты, услуги, гибрид, Toyota BusinessPlus`
+                        // content: `Toyota, BusinessPlus, автопарк, службовий автомобіль, бізнес, автопарк, продажі, модельний ряд, фінансування, продукти, послуги, гібрид,служебный автомобиль, бизнес, автопарк, продажи, модельный ряд, финансирование, продукты, услуги, гибрид, Toyota BusinessPlus`
+                        content: this.meta_keywords,
                     },
                     {
                         vmid: "keywords",
                         property: "og:keywords",
-                        content: `Toyota, BusinessPlus, автопарк, службовий автомобіль, бізнес, автопарк, продажі, модельний ряд, фінансування, продукти, послуги, гібрид,служебный автомобиль, бизнес, автопарк, продажи, модельный ряд, финансирование, продукты, услуги, гибрид, Toyota BusinessPlus`
+                        // content: `Toyota, BusinessPlus, автопарк, службовий автомобіль, бізнес, автопарк, продажі, модельний ряд, фінансування, продукти, послуги, гібрид,служебный автомобиль, бизнес, автопарк, продажи, модельный ряд, финансирование, продукты, услуги, гибрид, Toyota BusinessPlus`
+                        content: this.meta_keywords,
                     },
                 ],
             }
-        },
-
-        mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
         },
     }
 </script>
@@ -207,7 +230,7 @@
 <style lang="scss" scoped>
     @import '../../styles/variables';
 
-    main.container-fluid {
+    main.container-fluid::v-deep div {
         padding: 0;
         color: $font_color;
         .img {
@@ -224,7 +247,7 @@
         section.container.business_plus {
             header {
                 padding: 50px 0;
-                p {
+                .p {
                     text-align: left;
                     margin-bottom: 50px;
                     font-size: 2.0rem;
@@ -378,7 +401,7 @@
                 }
             }
             .body {
-                p {
+                .p {
                     font-size: 1.8rem;
                 }
                 ul.icons {
@@ -451,8 +474,6 @@
             -webkit-background-size: cover;
             background-size: cover;
             header {
-                /*width: 1170px;*/
-                /*margin: auto;*/
                 h1 {
                     padding-top: 150px;
                     padding-bottom: 100px;
@@ -462,8 +483,6 @@
                 }
             }
             footer {
-                /*width: 1170px;*/
-                /*margin: auto;*/
                 button.btn {
                     @include button;
                     background-color: #f0f0f0;
@@ -478,7 +497,7 @@
         }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
-        main.container-fluid {
+        main.container-fluid::v-deep div {
             .img {
                 height: 80vh;
                 max-height: 60vw;
@@ -543,8 +562,6 @@
                 -webkit-background-size: cover;
                 background-size: cover;
                 header {
-                    /*width: 1170px;*/
-                    /*margin: auto;*/
                     h1 {
                         padding-top: 150px;
                         padding-bottom: 100px;
@@ -554,8 +571,6 @@
                     }
                 }
                 footer {
-                    /*width: 1170px;*/
-                    /*margin: auto;*/
                     button.btn {
                         @include button;
                         background-color: #f0f0f0;
@@ -571,7 +586,7 @@
     }
 
     @media (min-width: 768px) and (max-width: 991.9px) {
-        main.container-fluid {
+        main.container-fluid::v-deep div {
             .img {
                 height: 56vw;
                 min-height: 180px;
@@ -582,7 +597,7 @@
             section.container.business_plus {
                 header {
                     padding: 30px 0;
-                    p {
+                    .p {
                         margin-bottom: 30px;
                         font-size: 1.8rem;
                     }
@@ -607,7 +622,6 @@
 
             section.map {
                 margin-bottom: 30px;
-                /*padding-bottom: 70px;*/
                 .body.container {
                     .legend {
                         top: 239px;
@@ -660,7 +674,7 @@
                     }
                 }
                 .body {
-                    p {
+                    .p {
                         font-size: 1.6rem;
                     }
                     ul.icons {
@@ -704,7 +718,7 @@
     }
 
     @media (min-width: 576px) and (max-width: 767.9px) {
-        main.container-fluid {
+        main.container-fluid::v-deep div {
             .img {
                 height: 40vh;
                 min-height: 180px;
@@ -714,7 +728,7 @@
             section.container.business_plus {
                 header {
                     padding: 30px 0;
-                    p {
+                    .p {
                         margin-bottom: 30px;
                         font-size: 1.8rem;
                     }
@@ -820,11 +834,10 @@
                     }
                 }
                 .body {
-                    p {
+                    .p {
                         font-size: 1.6rem;
                     }
                     ul.icons {
-                        /*margin-bottom: 75px;*/
                         li {
                             height: 180px;
                             span {
@@ -873,7 +886,7 @@
     }
 
     @media (max-width: 575.9px) {
-        main.container-fluid {
+        main.container-fluid::v-deep div {
             .img {
                 height: 30vh;
                 min-height: 180px;
@@ -883,7 +896,7 @@
             section.container.business_plus {
                 header {
                     padding: 30px 0;
-                    p {
+                    .p {
                         margin-bottom: 30px;
                         font-size: 1.6rem;
                     }
@@ -992,7 +1005,7 @@
                     }
                 }
                 .body {
-                    p {
+                    .p {
                         font-size: 1.6rem;
                     }
                     ul.icons {

@@ -1,5 +1,6 @@
 <template>
     <main class="container-fluid">
+        <menu-nikolaev/>
         <header class="position-relative">
 <!--            <img src="../../img/toyota-nikolaev-.jpg" alt="toyota-nikolaev.jpg">-->
             <h1>Автомобілі в салоні</h1>
@@ -30,11 +31,16 @@
 </template>
 
 <script>
+    import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
     import axios from "axios"
     import formattedPrice from "../../filters/price_format";
 
     export default {
         name: "CarsAvailable",
+
+        components: {
+            MenuNikolaev
+        },
 
         data() {
             return {

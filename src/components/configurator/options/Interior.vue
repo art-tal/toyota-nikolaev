@@ -24,8 +24,6 @@
 
 <script>
     import axios from "axios"
-    // import {eventEmitter} from "@/main";
-    // import {eventEmitter} from "@/app";//        for Laravel
 
     export default {
         name: "Interior",
@@ -63,7 +61,6 @@
                 .then( (response) => {
                     this.interiors = response.data;
                     this.checkInterior();
-                    console.log(this.interiors);
                 } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки интерьера");
@@ -76,15 +73,12 @@
                     let interior = JSON.parse( localStorage.interior );
                     this.interiors.forEach( (inter, index) => {
                         if (inter.interior_id === interior.interior_id ) {
-                            console.log(index);
                             this.setInterior(inter, index);
-                            console.log(this.selectedInterior, index);
-                            // return true;
                         }
                     } );
                 }
                 catch (e) {
-                    console.log("localStorage interior is empty");
+                    console.log(e);
                     localStorage.interior = '';
                 }
                 if(!localStorage.interior) {
@@ -94,7 +88,6 @@
             },
 
             setInterior(interior, key) {
-                // this.interiors.forEach( interior => {this.$set(interior, "checked", false)} );
                 this.interiorChecker(key);
                 this.selectedInterior = interior;
                 this.$store.state.interior = interior;

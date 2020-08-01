@@ -92,10 +92,6 @@
 
                 <div class="field form-group col-md-6 col-12">
                     <label for="time">Час</label><br>
-<!--                    <input class="form-control"-->
-<!--                           id="time"-->
-<!--                           type="time"-->
-<!--                           v-model="time">-->
                     <select name="time" id="time" v-model="time">
                         <option selected="selected" disabled="disabled" value="">Вибрати</option>
                         <option value="09:00">09:00</option>
@@ -167,14 +163,7 @@
                             <option value="18:00">18:00</option>
                         </select>
                     </div>
-
-
-
                 </div>
-
-
-
-
 
                 <div class="field col-12">
                     <div class="info" :class="{ 'expand_info' : expandBlock }">
@@ -255,13 +244,7 @@
                 <div class="field col-12">
                     <small class="font-italic">*  Попри те, що ми надаємо можливість записатися на пробну поїздку на будь-якій моделі з модельного ряду Toyota в Україні, не всі моделі наявні у всіх дилерів для тест-драйву. Актуальний модельний ряд, доступний для тест-драйву, уточнюйте, будь ласка, в обраного вами дилера Toyota.</small>
                 </div>
-
-
             </form>
-
-
-
-
 
             <div class="change col-xl-5 col-12">
                 <div class="image">
@@ -323,7 +306,6 @@
                 call_time_end: "",
                 connection: "",
 
-                // consultation: {},
                 expandBlock: true,
             }
         },
@@ -350,12 +332,6 @@
             },
 
             getPhoto() {
-                // if (this.$store.getters.colored.preview) {
-                //     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.colored.preview;
-                // } else {
-                //     return 'http://lara.toyota.nikolaev.ua/storage/' + JSON.parse(localStorage.color).preview;
-                // }
-
 
                 if(this.$store.getters.getConsultation.preview) {
                     return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.getConsultation.preview;
@@ -460,16 +436,13 @@
                     connection: this.connection,
                     call_time: `від ${this.call_time_start} до ${this.call_time_end}`,
                 };
-                console.log(consultation);
-                // eventEmitter.$emit('close');
                 this.$store.state.openConsultation = !this.$store.state.openConsultation
                 axios.post(
                     'http://lara.toyota.nikolaev.ua/ajax/consultation',
                     consultation,
                 )
-                .then( (response) => {
-                    console.log("Данные переданы успешно!");
-                    console.log(response);
+                .then( () => {
+                    // console.log("Данные переданы успешно!");
                     this.success = true;
                     setTimeout( () => {this.success = false}, 2500 );
                     this.clearConsult();
@@ -485,25 +458,14 @@
             },
 
             clearConsult() {
-                // this.$store.state.consultation = "";
-                // localStorage.consultModel = "";
-                // localStorage.consultEngine = "";
-                // localStorage.consultPreview = "";
-
-                setTimeout( () => {this.$router.push({name: "step_1"});}, 2500)
-
+                setTimeout( () => {this.$router.push({name: "step_1"});}, 2500);
             },
-
-
         },
 
         components: {
             ErrorMessage,
             Successful
             },
-
-
-
     }
 </script>
 
@@ -516,8 +478,6 @@
     }
 
     article.step_2.container {
-        /*height: 70vh;*/
-        /*overflow: auto;*/
         padding: 36px 20px;
         .row {
             form[name="consultation"] {
@@ -576,9 +536,6 @@
                         button.btn.btn-link {
                             @include button_link;
                             background: none;
-                            /*<!--font-size: 1.3rem;-->*/
-                            /*<!--color: $font_color;-->*/
-                            /*<!--text-decoration: underline;-->*/
                         }
                     }
                     button {
@@ -717,9 +674,6 @@
                             float: right;
                             button.btn.btn-link {
                                 @include button_link;
-                                /*<!--font-size: 1.3rem;-->*/
-                                /*<!--color: $font_color;-->*/
-                                /*<!--text-decoration: underline;-->*/
                             }
                         }
                         button {
@@ -738,8 +692,6 @@
                     order: -1;
                     margin-bottom: 40px;
                     padding: 0 30px;
-
-
                     .info.row {
                         @include inputForm;
                         padding: 30px;

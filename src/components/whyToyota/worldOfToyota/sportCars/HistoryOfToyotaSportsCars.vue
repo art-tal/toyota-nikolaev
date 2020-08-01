@@ -8,9 +8,7 @@
                 </h1>
 
                 <div class="series d-flex justify-content-around">
-<!--                    <hr/>-->
                     <span>СЕРІЯ HERITAGE</span>
-<!--                    <hr/>-->
                 </div>
             </div>
             <div class="header-image">
@@ -55,7 +53,6 @@
 </template>
 
 <script>
-    // import Continue from "./../../components/whyToyota/worldOfToyota/sportCars/Continue"
     import Continue from "./../../../../components/whyToyota/worldOfToyota/sportCars/Сontinue";
 
     export default {
@@ -99,7 +96,7 @@
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
     }
 </script>

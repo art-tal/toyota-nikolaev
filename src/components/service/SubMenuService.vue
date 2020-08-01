@@ -2,201 +2,184 @@
     <div class="sub_service container-fluid">
         <div class="row">
             <div class="col-xl-9 col-lg-8 col-12 row">
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <router-link
                             exact
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/maintenance"
+                            to="/maintenance_general"
                     >Технічне обслуговування</router-link>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/maintenance/principles"
+                                    to="/principles"
                             >Принципи</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/maintenance/guarantee"
+                                    to="/guarantee"
                             >Гарантія якості сервісу</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/maintenance/lubricants"
+                                    to="/lubricants"
                             >Оригінальні мастильні матеріали</router-link>
                         </li>
 
-<!--                        <li>-->
-<!--                            <router-link-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/maintenance/calc"-->
-<!--                            >Калькулятор вартості технічного обслуговування</router-link>-->
-<!--                        </li>-->
                     </ul>
                 </div>
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <router-link
                             exact
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/original_accessories/accessories_general"
+                            to="/accessories_general"
                     >Оригінальні аксесуари</router-link>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_accessories/entertainment_system"
+                                    to="/entertainment_system"
                             >Модульна розважальна система</router-link>
                         </li>
 
-<!--                        <li>-->
-<!--                            <router-link-->
-<!--                                    tag="a"-->
-<!--                                    exact-->
-<!--                                    active-class="active"-->
-<!--                                    to="/original_accessories/toyota_pro_tech"-->
-<!--                            >Toyota ProTect</router-link>-->
-<!--                        </li>-->
-
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_accessories/toyota_touch2"
+                                    to="/toyota_touch2"
                             >Cистема Toyota Touch 2</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_accessories/baby_car_seats"
+                                    to="/baby_car_seats"
                             >Дитячі автомобільні крісла</router-link>
                         </li>
                     </ul>
                 </div>
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <router-link
                             exact
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="/original_spare_parts/original_spare_parts_general"
+                            to="/original_spare_parts_general"
                     >Оригінальні запчастини</router-link>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/choose_original"
+                                    to="/choose_original"
                             >Обирай оригінальне!</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/air_filters_of_salon"
+                                    to="/air_filters_of_salon"
                             >Повітряні фільтри салону</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/rechargeable_batteries"
+                                    to="/rechargeable_batteries"
                             >Акумуляторні батареї</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/original_lamps"
+                                    to="/original_lamps"
                             >Оригінальні лампи</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/wiper_blades"
+                                    to="/wiper_blades"
                             >Щітки склоочисника</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/toyota_ad_blue_liquid"
+                                    to="/toyota_ad_blue_liquid"
                             >Рідина Toyota AdBlue™</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/brake_discs_and_pads"
+                                    to="/brake_discs_and_pads"
                             >Гальмівні диски та колодки</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/original_windshields"
+                                    to="/original_windshields"
                             >Оригінальні лобові стекла</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/original_spare_parts/fuel_system_cleaner"
+                                    to="/fuel_system_cleaner"
                             >Очисник паливної системи</router-link>
                         </li>
                     </ul>
 
                 </div>
 
-                <div class="col-xl-4 col-md-6 col-12">
+                <div class="col-xl-4 col-md-6 col-12 linked">
                     <a href.prevent="" class="nav-link">Допомога в дорозі</a>
 
                     <ul>
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -205,7 +188,7 @@
                             >Toyota Assistance</router-link>
                         </li>
 
-                        <li>
+                        <li class=" linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -224,13 +207,13 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-                        <li class="servies">
+                        <li class="servies linked">
                             <a href="#">
                                 <i class="fas fa-car"></i>
                                 <span>Конфігуратор</span>
                             </a>
                         </li>
-                        <li class="dilers">
+                        <li class="dilers linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -241,19 +224,7 @@
                                 <span>Завантажити брошури</span>
                             </router-link>
                         </li>
-<!--                        <li class="contact">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-car"></i>-->
-<!--                                <span>Гібридні іновації</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="test_drive">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-tag"></i>-->
-<!--                                <span>Сувенирна продукція</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-                        <li class="download">
+                        <li class="download linked">
                             <router-link
                                     tag="a"
                                     exact
@@ -264,12 +235,6 @@
                                 <span>Часті запитання</span>
                             </router-link>
                         </li>
-<!--                        <li class="download">-->
-<!--                            <a href="#">-->
-<!--                                <i class="fas fa-map-marker-alt"></i>-->
-<!--                                <span>Офіційні дилери</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
                     </ol>
                 </div>
             </div>
@@ -278,11 +243,17 @@
 </template>
 
 <script>
+    import mixinNavigation from "./../../mixins/mixinNavigation";
+
     export default {
         name: "SubMenuService",
 
+        mixinns: [
+            mixinNavigation,
+        ],
+
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
     }
 </script>

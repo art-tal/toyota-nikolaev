@@ -21,12 +21,6 @@
 
                 <div class="field form-group col-md-6 col-12">
                     <label for="model">Модель <span>*</span></label>
-<!--                    <input id="model"-->
-<!--                           :class="{'is-invalid' : $v.model.$error}"-->
-<!--                           type="text"-->
-<!--                           v-model="model"-->
-<!--                           @blur="$v.model.$touch()"-->
-<!--                    >-->
                         <select name="model"
                                 id="model"
                                 v-model="model"
@@ -111,8 +105,6 @@
                            type="text"
                            v-model="secondName"
                     >
-
-<!--                    <div class="invalid-feedback"  v-if="!$v.secondName.alfaValidate">Для введення допускається тільки букви.</div>-->
                 </div>
 
                     <div class="field form-group col-md-6 col-12">
@@ -127,7 +119,6 @@
 
                         <div class="invalid-feedback"  v-if="!$v.phone.required">Це поле є обов'язковим для заповненя.</div>
                         <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength">Невірний формат номеру.</div>
-<!--                        <div class="invalid-feedback"  v-if="!$v.phone.minLength || !$v.phone.maxLength || !$v.phone.phone">Невірний формат номеру.</div>-->
                     </div>
 
                 <div class="field form-group col-md-6 col-12">
@@ -179,7 +170,6 @@
 
                 <div class="field form-group col-md-6 col-12">
                     <label for="time">Оберіть бажаний час <span>*</span></label>
-<!--                    <input id="time" type="time" v-model="time" >-->
                     <select name="time" id="time" v-model="time">
                         <option selected="selected" disabled="disabled" value="">Вибрати</option>
                         <option value="09:00">09:00</option>
@@ -249,8 +239,6 @@
                             <option value="18:00">18:00</option>
                         </select>
                     </div>
-
-
 
                 </div>
 
@@ -439,13 +427,12 @@
         mounted () {
             let im = new Inputmask("+38 (999) 99-99-999");
             im.mask(document.getElementById('phone'));
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
 
         },
 
         watch: {
             date(){
-                console.log(this.date);
                 return this.date;
             }
         },
@@ -456,9 +443,7 @@
                     method: 'get',
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
-                    // console.log(response.data);
                     this.models = response.data;
-                    // return response.data;
                 } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные модели");
@@ -490,27 +475,19 @@
                     "http://lara.toyota.nikolaev.ua/ajax/service",
                     requestToService,
                 )
-                    .then( (response) => {
+                    .then( () => {
                         console.log("Данные переданы успешно!");
-                        console.log(response);
-                        console.log(requestToService);
                         this.success = true;
                         setTimeout( () => {this.success = false}, 2500 );
                     } )
                     .catch( (error) => {
                         console.log("Ошибка передачи формы");
                         console.log(error);
-                        console.log(requestToService);
                         this.error = true;
                         setTimeout( () => {this.error = false}, 2500 );
                     } )
             },
-
-
-
-
         },
-
     }
 </script>
 

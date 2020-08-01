@@ -1,5 +1,7 @@
 <template>
     <section>
+        <sidebar></sidebar>
+        <menu-to-corporate/>
         <header class="container-fluid">
             <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg"
                  alt="lineup">
@@ -45,18 +47,6 @@
                     <p>Зв'яжіться з нашою мережею, аби дізнатися більше про продуктову лінійку Toyota та перелік послуг.</p>
                 </router-link>
 
-<!--                <router-link-->
-<!--                        tag="article"-->
-<!--                        class="col-md-6 col-12"-->
-<!--                        active-class="active"-->
-<!--                        exact-->
-<!--                        to="/corporate_sales/special_solutions"-->
-<!--                >-->
-<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/555x249_Thumb_Tailored_financial_solution_tcm-3046-663266.jpg" alt="special_solutions">-->
-<!--                    <strong>Спеціальні фінансові рішення</strong>-->
-<!--                    <p>Скористайтеся можливістю придбати автомобіль Toyota за програмою «Тойота Кредит» та застрахувати його за програмою «Тойота Страхування»!</p>-->
-<!--                </router-link>-->
-
             </section>
 
             <section>
@@ -90,32 +80,15 @@
                     </div>
                 </div>
             </section>
-
-
         </div>
 
-<!--        <section class="lineup container-fluid text-left">-->
-<!--            <header class="container">-->
-<!--                <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>-->
-<!--            </header>-->
-<!--            <footer class="container">-->
-<!--                &lt;!&ndash;                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>&ndash;&gt;-->
-<!--                <router-link-->
-<!--                        tag="button"-->
-<!--                        exact-->
-<!--                        class="btn btn-light"-->
-<!--                        active-class="active"-->
-<!--                        to=""-->
-<!--                >-->
-<!--                    Відкрий для себе Toyota Hybrid-->
-<!--                </router-link>-->
-<!--            </footer>-->
-<!--        </section>-->
         <fragnet-lineup></fragnet-lineup>
     </section>
 </template>
 
 <script>
+    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
+    import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
     import FragnetLineup from "../toBuyers/FragnetLineup";
 
     export default {
@@ -123,6 +96,8 @@
 
         components: {
             FragnetLineup,
+            Sidebar,
+            MenuToCorporate
         },
 
         metaInfo() {
@@ -159,7 +134,7 @@
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
     }
 </script>
@@ -173,12 +148,6 @@
             padding: 0;
             width: 100%;
             height: auto;
-            /*height: 80vh;*/
-            /*background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg');*/
-            /*background-repeat: no-repeat;*/
-            /*background-position: center center;*/
-            /*-webkit-background-size: cover;*/
-            /*background-size: cover;*/
             img {
                 width: 100%;
                 height: auto;
@@ -240,14 +209,9 @@
                             margin: 0;
                         }
                     }
-
                 }
-
             }
-
-
         }
-
     }
 
     @media (max-width: 991.9px) {
@@ -292,19 +256,10 @@
                                 padding: 10px 0;
                             }
                         }
-
                     }
-
                 }
-
-
             }
-
-
         }
-
-
-
     }
 
 

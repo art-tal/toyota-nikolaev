@@ -124,7 +124,7 @@
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
         },
 
         computed: {
@@ -138,7 +138,7 @@
                         return "";
                     }
                 } catch (e) {
-                    console.log(e);
+                    // console.log(e);
                     return "";
                 }
 
@@ -183,10 +183,8 @@
                     method: 'get',
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
-                    // console.log(response.data);
                     this.models = response.data;
                     this.getConsultPosition();
-                    // this.getEquipment();
                 } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные модели");
@@ -198,28 +196,21 @@
                 try{
                     if (this.getConsultModel.name) {
                         this.saveConsultModel(this.getConsultModel);
-                        console.log("consultModel");
                     } else {
                         if (this.$store.getters.getModel.name) {
                             this.saveConsultModel(this.$store.getters.getModel);
-                            console.log("store");
                         } else if(JSON.parse(localStorage.model).name) {
                             this.saveConsultModel(JSON.parse(localStorage.model));
-                            console.log("localStorage");
                         }
                         else {
                             this.saveConsultModel(this.models[0]);
-                            console.log("start");
                         }
                     }
                 } catch (e) {
                     console.log(e);
                     this.saveConsultModel(this.models[0]);
                 }
-
-
                 this.getEquipment();
-
             },
 
             saveConsultModel(model) {
@@ -236,7 +227,6 @@
                 this.lpg = false;
                 this.$store.state.consultation.model = this.consultModel;
                 localStorage.consultModel = JSON.stringify( this.consultModel );
-                // console.log(this.$store.state.consultation.model);
                 this.getEquipment();
             },
 
@@ -245,9 +235,6 @@
                     .then( (response) => {
                         let equipments = response.data;
                         this.equip = equipments[0];
-                        // console.log(this.consultModel.id);
-                        // console.log(this.equip);
-
                         this.getEngines();
                         this.getColors();
                     } )
@@ -264,11 +251,8 @@
                 )
                     .then( (response) => {
                         this.engines = response.data;
-                        // console.log(this.engines);
                         this.findFuelType();
-                        // this.consultEngine = this.fuelType(this.engines[0]);
                         this.setConsultEngine( this.fuelType(this.engines[0]) )
-                        console.log(this.consultEngine);
                     } )
                     .catch( (error) => {
                         console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
@@ -281,8 +265,6 @@
                 this.consultEngine = eng;
                 this.$store.state.consultation.engineType = eng;
                 localStorage.consultEngine = eng;
-
-                console.log(this.consultEngine);
             },
 
             findFuelType() {
@@ -290,30 +272,24 @@
                     switch (eng.fuel_type.toLowerCase()) {
                         case "Бензин".toLowerCase():
                             this.petrol = true;
-                            // console.log("Бензин", this.petrol);
                             break;
                         case "Дизел".toLowerCase():
                             this.diesel = true;
-                            // console.log("Дизел", this.diesel);
                             break;
                         case "Електро".toLowerCase():
                             this.electric = true;
-                            // console.log("Електро", this.electric);
                             break;
                         case "ГIбрид".toLowerCase():
                             this.hybrid = true;
-                            // console.log("ГIбрид", this.hybrid);
                             break;
                         case "LPG".toLowerCase():
                             this.lpg = true;
-                            // console.log("LPG", this.lpg);
                             break;
                     }
                 } );
 
                 if (this.consultModel.hybrid) {
                     this.hybrid = true;
-                    // console.log("ГIбрид", this.hybrid);
                 }
 
             },
@@ -322,19 +298,14 @@
                 switch (eng.fuel_type.toLowerCase()) {
                     case "Бензин".toLowerCase():
                         return "Бензиновий";
-                    // break;
                     case "Дизел".toLowerCase():
                         return "Дизельний";
-                    // break;
                     case "Електро".toLowerCase():
                         return "Електричний"
-                    // break;
                     case "ГIбрид".toLowerCase():
                         return "Гібридний (бензин)"
-                    // break;
                     case "LPG".toLowerCase():
                         return "LPG"
-                    // break;
                 }
             },
 
@@ -349,10 +320,6 @@
                         this.photo = this.color.preview;
                         this.$store.state.consultation.preview = this.color.preview;
                         localStorage.consultPreview = this.color.preview;
-                        // console.log(this.color);
-                        // }
-
-                        // eventEmitter.$emit('selectedColor', this.selectedColor.rgb);
                     } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные цвета");
@@ -412,7 +379,6 @@
                             img {
                                 width: 64px;
                                 margin-bottom: 20px;
-                                /*height: 64px;*/
                             }
                             span {
                                 font-size: 1.6rem;
@@ -444,7 +410,6 @@
                             border-bottom: 4px solid #E50000;
                         }
                     }
-
                 }
             }
 

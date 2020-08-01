@@ -113,22 +113,7 @@
                                     <sub-menu-nikolaev></sub-menu-nikolaev>
                                 </div>
                             </li>
-<!--                            <li class="nav-item">-->
-<!--                                <router-link-->
-<!--                                        class="nav-link"-->
-<!--                                        tag="a"-->
-<!--                                        exact-->
-<!--                                        active-class="active"-->
-<!--                                        to="/mobility_for_everyone"-->
-<!--                                >-->
-<!--                                    <span>Мобильность для всех</span>-->
-<!--                                </router-link>-->
-<!--                            </li>-->
                         </ul>
-<!--                        <form class="form-inline my-2 my-lg-0">-->
-<!--                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-<!--                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-<!--                        </form>-->
                     </div>
                 </nav>
 
@@ -171,16 +156,6 @@
                             <i class="far fa-user"></i>
                             <span>Моя Toyota</span>
                         </a>
-<!--                        <router-link-->
-<!--                                class="nav-link"-->
-<!--                                tag="a"-->
-<!--                                exact-->
-<!--                                active-class="active"-->
-<!--                                to=""-->
-<!--                        >-->
-<!--                            <i class="far fa-user"></i>-->
-<!--                            <span>Моя Toyota</span>-->
-<!--                        </router-link>-->
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <button class="btn btn-dark">Увійти</button>
                             <a class="dropdown-item" href="#">Мої конфігурації</a>
@@ -202,19 +177,16 @@
 </template>
 
 <script>
-    // import Lineup from "../cars/Lineup";
-    // import SubMenuToBuyers from "../toBuyers/SubMenuToBuyers";
-    // import SubMenuService from "../service/SubMenuService";
-    // import SubMenuWhyToyota from "../whyToyota/SubMenuWhyToyota";
-    // import SubMenuNikolaev from "../ToyotaInNikolaev/SubMenuNikolaev";
-
-    import $ from "jquery"
-
+    import $ from "jquery";
     import Lineup from "../cars/Lineup";//                                       for Laravel
     import SubMenuToBuyers from "./../../components/toBuyers/SubMenuToBuyers";//                      for Laravel
     import SubMenuService from "./../../components/service/SubMenuService";//                          for Laravel
     import SubMenuWhyToyota from "./../../components/whyToyota/SubMenuWhyToyota";//                     for Laravel
-    import SubMenuNikolaev from "./../../components/ToyotaInNikolaev/SubMenuNikolaev";//         for Laravel
+    import SubMenuNikolaev from "./../../components/ToyotaInNikolaev/SubMenuNikolaev";
+    import {eventEmitter} from "./../../main";
+
+
+    // import {eventEmitter} from "./../../app";//         for Laravel
 
     export default {
         name: "Navigation",
@@ -227,12 +199,25 @@
             SubMenuNikolaev,
         },
 
+        created() {
+            eventEmitter.$on("closeNavbar", () => {
+                console.log("emit");
+                this.closeNavigation();
+            });
+        },
+
         methods: {
             activated() {
                 $(".nav-link").on("click", function () {
                     $(".nav-link").removeClass("active");
                     $(this).addClass("active");
                 })
+            },
+
+            closeNavigation() {
+                console.log("close");
+                $("#navbarSupportedContent").removeClass("show");
+                console.log("closeddd");
             },
         },
     }
@@ -243,7 +228,6 @@
 
     header {
         position: relative;
-        /*position: sticky;*/
         box-sizing: border-box;
         z-index: 999;
         top: 0;
@@ -290,10 +274,8 @@
                             .dropdown-menu {
                                 box-sizing: border-box;
                                 width: 100vw;
-                                /*left: 0;*/
                                 margin: 0 -15px;
                                 background-color: #f0f0f0;
-                                /*overflow-y: scroll !important;*/
                             }
 
                         }
