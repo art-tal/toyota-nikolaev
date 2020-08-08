@@ -112,6 +112,9 @@
                 )
                 .then( (response) => {
                     this.workers = response.data;
+                    console.log(this.workers);
+                    this.workers.sort( (a, b) => { return a.dep_id - b.dep_id } );
+                    console.log(this.workers);
                 } )
                 .catch( () => {} )
             },
