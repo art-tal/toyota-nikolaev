@@ -38,7 +38,7 @@
                         class="nav-link"
                         active-class="active"
                         to="/toyota_mykolaiv"
-                >Тойота Центр Миколаїв «КіТ-Т»</router-link>
+                >Тойота Центр Миколаїв «КиТ-Т»</router-link>
 
                 <ul>
 
