@@ -587,7 +587,7 @@
         display: inline-block;
         height: 100%;
         min-width: 84px;
-        background-image: url(../../img/logo-toyota-sm.png);
+        background-image: url(../../img/logo-toyota.svg);
         background-repeat: no-repeat;
         background-position: center center;
         -webkit-background-size: 70%;

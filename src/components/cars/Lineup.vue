@@ -216,6 +216,7 @@
                     margin-bottom: 28px;
                     align-self: flex-start;
                     position: relative;
+                    border-bottom: 1px solid #F0F0F0;
                     div {
                         display: block;
                         border-bottom: 1px solid #D7D7D7;

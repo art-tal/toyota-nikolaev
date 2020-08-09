@@ -27,7 +27,7 @@
                                 class="btn btn-light"
                                 exact
                                 active-class="active"
-                                to="/corporate_sales/general"
+                                to="/general"
                         >
 <!--                            <i class="fas fa-phone"></i>-->
                             <span>Корпоративні продажі</span>

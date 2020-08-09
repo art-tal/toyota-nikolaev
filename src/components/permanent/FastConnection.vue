@@ -6,8 +6,8 @@
 
         <div class="contacts" v-if="show">
             <i class="far fa-times-circle" @click="chowContacts()"></i>
-            <div class="d-flex justify-content-center">
-                <div class="cont"
+            <div class="d-flex justify-content-center flex-md-row flex-column">
+                <div class="cont d-flex d-md-block align-items-center"
                      v-for="(cont, key) in contacts"
                      :key="key"
                 >
@@ -15,9 +15,9 @@
                         <img :src="'http://lara.toyota.nikolaev.ua/storage/' + cont.photo" :alt="cont.name">
                     </div>
 
-                    <ul>
+                    <ul class="d-flex d-md-block flex-row">
                         <li v-if="cont.isVisibleViber">
-                            <a :href="'viber://chat?number=' + formatNumber(cont.viber)">
+                            <a class="viber" :href="viberContext + formatNumber(cont.viber)">
                                 <i class="fab fa-viber"></i>
                             </a>
                         </li>
@@ -41,7 +41,7 @@
                         </li>
 
                         <li v-if="cont.isVisibleWhatsApp">
-                            <a :href="'whatsapp://send?phone=' + formatNumber(cont.whatsapp)">
+                            <a :href="'whatsapp://send?phone=+' + formatNumber(cont.whatsapp)">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </li>
@@ -66,12 +66,16 @@
             return {
                 show: false,
 
+                viberContext: 'viber://chat?number=+',
+
                 contacts: [],
                 }
             },
 
         created() {
             this.getContacts();
+            this.identifyDevice();
+
         },
 
         methods: {
@@ -130,6 +134,18 @@
                 return format;
 
 
+            },
+
+            identifyDevice() {
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+
+                    console.log("Вы используете мобильное устройство (телефон или планшет).");
+                    this.viberContext = 'viber://add?number=+';
+
+                } else {
+                    console.log("Вы используете ПК.");
+                    this.viberContext = 'viber://chat?number=';
+                }
             },
         },
     }
@@ -275,9 +291,41 @@
         .fast_connection {
             position: absolute;
             top: 10vh;
-            left: calc(50% - 80px);
+            left: 10px;
             .contacts {
-                width: 160px;
+                width: auto;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                .cont {
+
+                    .photo {
+                        width: 120px !important;
+                        height: 120px;
+                        padding: 0 !important;
+                        img {
+                            position: static;
+                            /*width: 100px !important;*/
+                        }
+
+                    }
+                    ul {
+                        /*left: 170px;*/
+                        /*top: calc(50% - 31px);*/
+                        /*padding: 5px;*/
+                        /*background-color: rgba(240,240,240,0.9);*/
+                        /*border-radius: 5px;*/
+                        li {
+                            position: static !important;
+                            align-items: center;
+                            a {
+                                i {
+                                    font-size: 48px !important;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
