@@ -1,6 +1,5 @@
 <template>
     <main>
-        <sidebar></sidebar>
         <menu-to-corporate/>
 
 <!--        <menu>-->
@@ -86,7 +85,6 @@
 </template>
 
 <script>
-    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
     import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
 
     export default {
@@ -126,7 +124,6 @@
         },
 
         components: {
-            Sidebar,
             MenuToCorporate
         },
 

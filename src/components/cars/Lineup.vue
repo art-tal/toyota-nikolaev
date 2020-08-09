@@ -23,12 +23,14 @@
                             <h2>{{model.name}}</h2> <h3 v-if="model.hybrid">+ Гібрид</h3>
                         </div>
                             <div class="here" v-if="isPrice(model)">
-                                <p>*Від <strong>{{model.carPrice.here}}&#8372;</strong></p>
+                                <p>*Від <strong>{{ priceСheck(model.carPrice.here) }}&#8372;</strong></p>
+<!--                                <p>*Від <strong>{{model.carPrice.here}}&#8372;</strong></p>-->
                                 <b>(для авто у наявності)</b>
                             </div>
 
                             <div class="there" v-if="isPrice(model)">
-                                <p>*Від <strong>{{model.carPrice.there}}&#8372;</strong></p>
+                                <p>*Від <strong>{{ priceСheck(model.carPrice.there) }}&#8372;</strong></p>
+<!--                                <p>*Від <strong>{{model.carPrice.there}}&#8372;</strong></p>-->
                                 <b>(авто під замовлення)</b>
                             </div>
 
@@ -146,6 +148,14 @@
                     return false;
                 }
 
+            },
+
+            priceСheck(price) {
+                if( price === 1000000000 ) {
+                    return "Ціни уточнюйте у менеджера";
+                } else {
+                    return price;
+                }
             },
 
             goSelectModel(model) {

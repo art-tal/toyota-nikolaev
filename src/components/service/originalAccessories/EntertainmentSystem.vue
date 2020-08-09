@@ -1,6 +1,5 @@
 <template>
     <section class="container-fluid">
-        <sidebar></sidebar>
         <menu-to-accessories/>
         <div v-html="pageBody"></div>
 <!--        <header>-->
@@ -30,7 +29,6 @@
 </template>
 
 <script>
-    import Sidebar from "../../permanent/Sidebar";
     import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
     import PageBody from "./../../../mixins/mixinPages";
 
@@ -38,7 +36,6 @@
         name: "EntertainmentSystem",
 
         components: {
-            Sidebar,
             MenuToAccessories
         },
 

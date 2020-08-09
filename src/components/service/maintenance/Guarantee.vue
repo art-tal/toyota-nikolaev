@@ -1,6 +1,5 @@
 <template>
     <main class="container-fluid">
-        <sidebar></sidebar>
         <menu-to-maintenance/>
         <div v-html="pageBody"></div>
 
@@ -39,7 +38,6 @@
 
 <script>
     import PageBody from "../../../mixins/mixinPages"
-    import Sidebar from "../../permanent/Sidebar";
     import MenuToMaintenance from "./../../../components/service/maintenance/MenuToMaintenance";
 
     export default {
@@ -97,7 +95,6 @@
         },
 
         components: {
-            Sidebar,
             MenuToMaintenance
         },
     }

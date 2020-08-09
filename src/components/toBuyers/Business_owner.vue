@@ -1,6 +1,5 @@
 <template>
     <main class="container-fluid">
-        <sidebar></sidebar>
         <menu-to-corporate/>
 
         <header>
@@ -70,7 +69,6 @@
 </template>
 
 <script>
-    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
     import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
     import FragnetLineup from "../toBuyers/FragnetLineup";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
@@ -86,7 +84,6 @@
 
         components: {
             FragnetLineup,
-            Sidebar,
             MenuToCorporate,
             Swiper,
             SwiperSlide,

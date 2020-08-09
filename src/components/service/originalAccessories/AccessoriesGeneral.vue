@@ -1,6 +1,5 @@
 <template>
     <section class="container-fluid">
-        <sidebar></sidebar>
         <menu-to-accessories/>
         <header>
             <h1>
@@ -28,7 +27,6 @@
 </template>
 
 <script>
-    import Sidebar from "../../permanent/Sidebar";
     import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
     import axios from "axios";
 
@@ -36,7 +34,6 @@
         name: "AccessoriesGeneral",
 
         components: {
-            Sidebar,
             MenuToAccessories
         },
 

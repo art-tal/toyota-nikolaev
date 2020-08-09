@@ -17,31 +17,31 @@
 
                     <ul class="d-flex d-md-block flex-row">
                         <li v-if="cont.isVisibleViber">
-                            <a class="viber" :href="viberContext + formatNumber(cont.viber)">
+                            <a class="viber" :href="viberContext + formatNumber(cont.viber)" target="_blank">
                                 <i class="fab fa-viber"></i>
                             </a>
                         </li>
 
                         <li v-if="cont.isVisibleMessenger">
-                            <a :href="'https://www.messenger.com/t/' + cont.messenger">
+                            <a :href="'https://www.messenger.com/t/' + cont.messenger" target="_blank">
                                 <i class="fab fa-facebook-messenger"></i>
                             </a>
                         </li>
 
                         <li v-if="cont.isVisibleSkype">
-                            <a :href="'skype:' + cont.skype + '?chat'">
+                            <a :href="'skype:' + cont.skype + '?chat'" target="_blank">
                                 <i class="fab fa-skype"></i>
                             </a>
                         </li>
 
                         <li v-if="cont.isVisibleTelegram">
-                            <a :href="'tg://resolve?domain=' + cont.telegram">
+                            <a :href="'tg://resolve?domain=' + cont.telegram" target="_blank">
                                 <i class="fab fa-telegram-plane"></i>
                             </a>
                         </li>
 
                         <li v-if="cont.isVisibleWhatsApp">
-                            <a :href="'whatsapp://send?phone=+' + formatNumber(cont.whatsapp)">
+                            <a :href="'whatsapp://send?phone=+' + formatNumber(cont.whatsapp)" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </li>
@@ -73,9 +73,10 @@
             },
 
         created() {
-            this.getContacts();
             this.identifyDevice();
-
+            if(this.show) {
+                this.getContacts();
+            }
         },
 
         methods: {
@@ -85,12 +86,14 @@
                         setTimeout( () => {this.show = false;},2000 );
                 } else {
                     this.show = true;
+                    this.getContacts();
                     setTimeout(() => {
                         $('.contacts').removeClass('close').addClass("show");
                     }, 5);
                     // this.show = true;
                 }
                 console.log(this.show);
+
             },
 
             getContacts() {
@@ -98,11 +101,15 @@
                     "http://lara.toyota.nikolaev.ua/ajax/workers",
                 )
                 .then( (response) => {
-                    this.contacts = response.data.filter( (contact) => {
-                        return  contact.isFront === 1;
-                    } );
-                    // console.log(this.contacts);
+                    console.log(response.data);
+                    this.contacts = response.data;
                 } )
+                    .then( () => {
+                        this.contacts = Object.values(this.contacts);
+                        this.contacts = this.contacts.filter( (contact) => {
+                            return  contact.isFront === 1;
+                        } );
+                    } )
                 .catch( (error) => {
                     console.log("Ошибка загрузки контактов");
                     console.log(error);
@@ -113,25 +120,23 @@
                 let format = "";
                 if(phone){
                     for ( let num of phone) {
-                        if( num === "+" || /\d/.test(num)){
+                        if( /\d/.test(num) ){
                             format = format + num;
                         }
                     }
                 }
 
                 if(format.startsWith('0')){
-                    return '+38' + format;
+                    return '38' + format;
                 }
 
                 if(format.startsWith('8')){
-                    return '+3' + format;
+                    return '3' + format;
                 }
 
                 if(format.startsWith('3')){
-                    return '+' + format;
+                    return format;
                 }
-
-                return format;
 
 
             },
@@ -140,11 +145,11 @@
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 
                     // console.log("Вы используете мобильное устройство (телефон или планшет).");
-                    this.viberContext = 'viber://add?number=+';
+                    this.viberContext = 'viber://add?number=';
 
                 } else {
                     console.log("Вы используете ПК.");
-                    this.viberContext = 'viber://chat?number=';
+                    this.viberContext = 'viber://chat?number=+';
                 }
             },
         },

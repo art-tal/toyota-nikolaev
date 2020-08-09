@@ -1,6 +1,5 @@
 <template>
     <main>
-        <sidebar></sidebar>
         <div v-html="pageBody"></div>
 
 
@@ -332,7 +331,6 @@
 
 <script>
     import PageBody from "../../mixins/mixinPages"
-    import Sidebar from "./../../components/permanent/Sidebar";//           for Laravel
 
     export default {
         name: "credit",
@@ -387,10 +385,6 @@
                     },
                 ],
             }
-        },
-
-        components: {
-            Sidebar
         },
 
         methods: {

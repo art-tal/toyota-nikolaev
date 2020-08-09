@@ -1,6 +1,5 @@
 <template>
     <section class="container-fluid">
-        <sidebar></sidebar>
         <menu-to-accessories/>
         <div v-html="pageBody"></div>
 <!--        <header>-->
@@ -216,14 +215,12 @@
 </template>
 
 <script>
-    import Sidebar from "../../permanent/Sidebar";
     import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
     import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "BabyCarSeats",
 
         components: {
-            Sidebar,
             MenuToAccessories
         },
 

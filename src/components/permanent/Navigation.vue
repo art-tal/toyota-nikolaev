@@ -121,20 +121,19 @@
 
             <div class="dealers col-xl-5 col-lg-4 col-md-1">
                 <ul class="navbar-nav mr-auto text-right">
-<!--                    <li class="nav-item active ">-->
-<!--                        <router-link-->
-<!--                                class="nav-link"-->
-<!--                                tag="a"-->
-<!--                                exact-->
-<!--                                active-class="active"-->
-<!--                                to="/"-->
-<!--                        >-->
-<!--                            <i class="fas fa-map-marker-alt"></i>-->
-<!--                            <span>Офіційні ділери</span>-->
-<!--                            <span class="sr-only">(current)</span>-->
-<!--                        </router-link>-->
+                    <li class="nav-item">
+                        <router-link
+                                class="nav-link"
+                                tag="a"
+                                exact
+                                to="https://www.toyota.ua/service-and-accessories/ssc"
+                        >
+                            <i class="fas fa-oil-can"></i>
+                            <span>Спеціальні сервісні кампанії</span>
+                            <span class="sr-only">(current)</span>
+                        </router-link>
 
-<!--                    </li>-->
+                    </li>
 <!--                    <li class="nav-item">-->
 <!--                        <router-link-->
 <!--                                class="nav-link"-->
@@ -150,21 +149,21 @@
                     <li class="nav-item dropdown">
                         <a
                                 class="nav-link"
-                                href="https://www.toyota.ua/service-and-accessories/ssc.json"
+                                href="https://www.toyota.ua/index.json#myToyota"
                                 target="_blank"
                         >
                             <i class="far fa-user"></i>
                             <span>Моя Toyota</span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <button class="btn btn-dark">Увійти</button>
-                            <a class="dropdown-item" href="#">Мої конфігурації</a>
-                            <a class="dropdown-item" href="#">Мої дилери</a>
-                            <a class="dropdown-item" href="#">Особистий кабінет</a>
-                            <a class="dropdown-item" href="#">Мої автомобілі</a>
-                            <a class="dropdown-item" href="#">Посібники користувача</a>
-                            <a class="dropdown-item" href="#">Планувальник подорожей</a>
-                        </div>
+<!--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                            <button class="btn btn-dark">Увійти</button>-->
+<!--                            <a class="dropdown-item" href="#">Мої конфігурації</a>-->
+<!--                            <a class="dropdown-item" href="#">Мої дилери</a>-->
+<!--                            <a class="dropdown-item" href="#">Особистий кабінет</a>-->
+<!--                            <a class="dropdown-item" href="#">Мої автомобілі</a>-->
+<!--                            <a class="dropdown-item" href="#">Посібники користувача</a>-->
+<!--                            <a class="dropdown-item" href="#">Планувальник подорожей</a>-->
+<!--                        </div>-->
                     </li>
 
                 </ul>

@@ -1,6 +1,5 @@
 <template>
     <section>
-        <sidebar></sidebar>
         <menu-to-corporate/>
         <header class="container-fluid">
             <h1>{{pageTitle}}</h1>
@@ -53,7 +52,6 @@
 <script>
     import PageBody from "../../mixins/mixinPages"
     import FragnetLineup from "../toBuyers/FragnetLineup";
-    import Sidebar from "./../../components/permanent/Sidebar";//       for Laravel
     import MenuToCorporate from "./../../components/toBuyers/MenuToCorporateSales"
 
     export default {
@@ -71,7 +69,6 @@
 
         components: {
             FragnetLineup,
-            Sidebar,
             MenuToCorporate,
         },
 

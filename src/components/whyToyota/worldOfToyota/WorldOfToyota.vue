@@ -1,6 +1,5 @@
 <template>
     <main class="container-fluid">
-        <sidebar></sidebar>
 
         <menu>
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -85,14 +84,9 @@
 </template>
 
 <script>
-    import Sidebar from "../../permanent/Sidebar";
 
     export default {
         name: "WorldOfToyota",
-
-        components: {
-            Sidebar,
-        },
 
         metaInfo() {
             return {

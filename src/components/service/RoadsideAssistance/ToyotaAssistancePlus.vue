@@ -1,6 +1,5 @@
 <template>
     <main class="container-fluid">
-        <sidebar></sidebar>
         <div v-html="pageBody"></div>
 
 <!--        <header>-->
@@ -63,14 +62,9 @@
 
 <script>
     import PageBody from "../../../mixins/mixinPages"
-    import Sidebar from "../../permanent/Sidebar";
 
     export default {
         name: "ToyotaAssistancePlus",
-
-        components: {
-            Sidebar
-        },
 
         mixins: [
             PageBody

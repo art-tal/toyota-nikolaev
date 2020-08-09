@@ -1,6 +1,5 @@
 <template>
     <main class="insurance container-fluid">
-        <sidebar></sidebar>
 
 
         <div v-html="pageBody"></div>
@@ -53,7 +52,6 @@
 
 <script>
     import PageBody from "../../mixins/mixinPages"
-    import Sidebar from "./../../components/permanent/Sidebar"; //               for Laravel
 
     export default {
         name: "Insurance",
@@ -105,10 +103,6 @@
                     },
                 ],
             }
-        },
-
-        components: {
-            Sidebar
         },
     }
 </script>

@@ -1,6 +1,5 @@
 <template>
     <section class="container-fluid">
-        <sidebar></sidebar>
         <menu-to-spare-parts/>
         <div v-html="pageBody"></div>
 <!--        <header>-->
@@ -69,14 +68,12 @@
 </template>
 
 <script>
-    import Sidebar from "../../permanent/Sidebar";
     import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
     import PageBody from "../../../mixins/mixinPages"
     export default {
         name: "AirFiltersOfSalon",
 
         components: {
-            Sidebar,
             MenuToSpareParts
         },
 

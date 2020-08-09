@@ -112,11 +112,68 @@
                 )
                 .then( (response) => {
                     this.workers = response.data;
-                    console.log(this.workers);
-                    this.workers.sort( (a, b) => { return a.dep_id - b.dep_id } );
+                    this.workers = Object.values(this.workers);
                     console.log(this.workers);
                 } )
+                    .then( () => {
+                        this.sortWorkers();
+                    } )
                 .catch( () => {} )
+            },
+
+            sortWorkers() {
+                let leadership = [];
+                let administration = [];
+                let managers = [];
+                let serviceStation = [];
+                let bookkeeping = [];
+                let otherDepartments = [];
+
+                this.workers.forEach( (worker) => {
+                    switch (worker.name_dep) {
+                        case "Руководство":
+                            leadership.push(worker);
+                            break;
+                        case "Администрация":
+                            administration.push(worker);
+                            break;
+                        case "Менеджеры":
+                            managers.push(worker);
+                            break;
+                        case "СТО":
+                            serviceStation.push(worker);
+                            break;
+                        case "Бухгалтерия":
+                            bookkeeping.push(worker);
+                            break;
+                        case "Другие отделы":
+                            otherDepartments.push(worker);
+                            break;
+                    }
+                });
+
+                leadership.sort( (a, b) => {
+                    return a.posInList - b.posInList;
+                } );
+                administration.sort( (a, b) => {
+                    return a.posInList - b.posInList;
+                } );
+                managers.sort( (a, b) => {
+                    return a.posInList - b.posInList;
+                } );
+                serviceStation.sort( (a, b) => {
+                    return a.posInList - b.posInList;
+                } );
+                bookkeeping.sort( (a, b) => {
+                    return a.posInList - b.posInList;
+                } );
+                otherDepartments.sort( (a, b) => {
+                    return a.posInList - b.posInList;
+                } );
+
+                this.workers = [];
+                this.workers = leadership.concat(administration, managers, serviceStation, bookkeeping, otherDepartments);
+
             },
         },
     }
