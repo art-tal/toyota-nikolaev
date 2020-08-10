@@ -57,16 +57,6 @@
                                 active-class="active"
                                 tag="a"
                                 exact
-                                to="/corporate_responsibility"
-                        >Корпоративна відповідальність</router-link>
-                    </li>
-
-                    <li class="nav-item">
-                        <router-link
-                                class="nav-link"
-                                active-class="active"
-                                tag="a"
-                                exact
                                 to="/faq"
                         >Зв’язатись з нами</router-link>
                     </li>

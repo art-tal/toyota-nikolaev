@@ -28,15 +28,15 @@
                         <a class="nav-link" href="#">Двигуни та характеристики</a>
                     </router-link>
 
-                    <router-link
-                            class="nav-item"
-                            tag="li"
-                            exact
-                            active-class="active"
-                            :to="'/prices/' + this.getID"
-                    >
-                        <a class="nav-link" href="#">Ціни</a>
-                    </router-link>
+<!--                    <router-link-->
+<!--                            class="nav-item"-->
+<!--                            tag="li"-->
+<!--                            exact-->
+<!--                            active-class="active"-->
+<!--                            :to="'/prices/' + this.getID"-->
+<!--                    >-->
+<!--                        <a class="nav-link" href="#">Ціни</a>-->
+<!--                    </router-link>-->
 
                     <router-link
                             class="nav-item"

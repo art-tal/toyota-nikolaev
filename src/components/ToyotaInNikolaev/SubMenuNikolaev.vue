@@ -83,15 +83,6 @@
                                 tag="a"
                                 exact
                                 active-class="active"
-                                to="/corporate_responsibility"
-                        >Корпоративна відповідальність</router-link>
-                    </li>
-
-                    <li class=" linked">
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
                                 to="/faq"
                         >Зв’язатись з нами</router-link>
                     </li>
@@ -119,7 +110,7 @@
                             <router-link
                                     tag="a"
                                     exact
-                                    to="/consultation"
+                                    to="/test_drive_step_1"
                             >
                                 <i class="far fa-calendar-alt"></i>
                                 <span>Замовити тест-драйв</span>

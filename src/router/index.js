@@ -15,7 +15,7 @@ import NewCars from "../components/cars/NewCars";
 import Model from "../components/cars/Model";
 import SelectModel from "../components/cars/SelectModel";
 import EnginesAndCharacteristics from "../components/cars/EnginesAndCharacteristics";
-import Prices from "../components/cars/Prices";
+// import Prices from "../components/cars/Prices";
 import ReliabilityAndGuarantee from "../components/cars/ReliabilityAndGuarantee";
 
 import Equipment from "../components/configurator/Equipment";
@@ -99,7 +99,6 @@ import WarrantyService from "../components/whyToyota/guarantee/WarrantyService";
 import QualityGuarantee from "../components/whyToyota/guarantee/QualityGuarantee";
 import ClientsCharter from "../components/whyToyota/guarantee/ClientsCharter";
 import ToyotaIchiban from "../components/ToyotaInNikolaev/ToyotaIchiban";
-import CorporateResponsibility from "../components/ToyotaInNikolaev/CorporateResponsibility";
 import Ecology from "../components/whyToyota/ecology/Ecology";
 import EnvironmentalMission from "../components/whyToyota/ecology/EnvironmentalMission";
 import BetterAir from "../components/whyToyota/ecology/BetterAir";
@@ -111,6 +110,8 @@ import ExclusiveProjects from "../components/ToyotaInNikolaev/ExclusiveProjects"
 import ExclusiveCar from "../components/ToyotaInNikolaev/ExclusiveCar";
 
 import Store from "./../store/store"
+import TestDriveStep1 from "../components/sharedLinks/test-drive/TestDriveStep1";
+import TestDriveStep2 from "../components/sharedLinks/test-drive/TestDriveStep2";
 
 
 
@@ -178,6 +179,18 @@ const route = new VueRouter({
             component: VypadkyShahrajstva,
         },
 
+        {
+            path: "/test_drive_step_1",
+            name: "test_drive_step_1",
+            component: TestDriveStep1,
+        },
+
+        {
+            path: "/test_drive_step_2",
+            name: "test_drive_step_2",
+            component: TestDriveStep2,
+        },
+
 
 
 
@@ -203,11 +216,11 @@ const route = new VueRouter({
             component: EnginesAndCharacteristics,
         },
 
-        {
-            path: '/prices/:id',
-            name: 'prices',
-            component: Prices,
-        },
+        // {
+        //     path: '/prices/:id',
+        //     name: 'prices',
+        //     component: Prices,
+        // },
 
         {
             path: '/reliability_and_guarantee/:id',
@@ -649,11 +662,6 @@ const route = new VueRouter({
             path: "/toyota_ichiban",
             name: "toyota_ichiban",
             component: ToyotaIchiban,
-        },
-        {
-            path: "/corporate_responsibility",
-            name: "corporate_responsibility",
-            component: CorporateResponsibility,
         },
 
         {

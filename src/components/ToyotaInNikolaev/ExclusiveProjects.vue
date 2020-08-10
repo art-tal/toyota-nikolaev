@@ -2,7 +2,7 @@
     <main>
         <menu-nikolaev/>
         <header>
-            <h1>Наші укслюзивні проекти</h1>
+            <h1>Наші екслюзивні проекти</h1>
         </header>
 
         <div class="body container row  justify-content-around">

@@ -16,7 +16,7 @@ export default new Vuex.Store ({
         fuelConsumption: 0,
         maxPower: 0,
         interior: {},
-        selectedAccessories: [],
+        // selectedAccessories: [],
 
         showInterior: false,
         showEquipment:false,
@@ -29,6 +29,8 @@ export default new Vuex.Store ({
             engineType: "",
             preview: "",
         },
+
+        testDrive: {},
 
         totalCost: 0,
     },
@@ -63,10 +65,10 @@ export default new Vuex.Store ({
         colored(state) {
             return state.color;
         },
-
-        getWheels(state) {
-            return state.wheels;
-        },
+        //
+        // getWheels(state) {
+        //     return state.wheels;
+        // },
 
         getInterior(state) {
             return state.interior;
@@ -76,9 +78,9 @@ export default new Vuex.Store ({
             return state.showInterior;
         },
 
-        accessories(state) {
-            return state.selectedAccessories;
-        },
+        // accessories(state) {
+        //     return state.selectedAccessories;
+        // },
 
         getConsultation(state) {
             return state.consultation;
@@ -95,6 +97,10 @@ export default new Vuex.Store ({
         preloader(state) {
             return state.showPreloader;
         },
+
+        getTestDrive(state) {
+            return state.testDrive;
+        }
 
 
 
@@ -133,12 +139,12 @@ export default new Vuex.Store ({
             localStorage.selectedAccessories = JSON.stringify(state.selectedAccessories);
         },
 
-        delAccessories(state, payload) {
-            let index = state.selectedAccessories.findIndex( arr => arr.type === payload.type && arr.id === payload.id);
-            state.selectedAccessories.splice(index, 1);
-            // console.log(state.selectedAccessories);
-            localStorage.selectedAccessories = JSON.stringify(state.selectedAccessories);
-        },
+        // delAccessories(state, payload) {
+        //     let index = state.selectedAccessories.findIndex( arr => arr.type === payload.type && arr.id === payload.id);
+        //     state.selectedAccessories.splice(index, 1);
+        //     // console.log(state.selectedAccessories);
+        //     localStorage.selectedAccessories = JSON.stringify(state.selectedAccessories);
+        // },
 
         setShowInterior(state, show) {
             state.showInterior = show;
@@ -150,6 +156,10 @@ export default new Vuex.Store ({
 
         setShowPreload(state, show) {
             state.showPreloader = show;
+        },
+
+        setTestDrive(state) {
+            state.testDrive = JSON.parse(localStorage.testDrive);
         },
 
 
