@@ -134,16 +134,16 @@
                         case "Руководство":
                             leadership.push(worker);
                             break;
-                        case "Администрация":
+                        case "Адміністрація":
                             administration.push(worker);
                             break;
-                        case "Менеджеры":
+                        case "Менеджери":
                             managers.push(worker);
                             break;
                         case "СТО":
                             serviceStation.push(worker);
                             break;
-                        case "Бухгалтерия":
+                        case "Бухгалтерія":
                             bookkeeping.push(worker);
                             break;
                         case "Другие отделы":
