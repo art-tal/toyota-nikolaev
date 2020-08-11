@@ -109,61 +109,61 @@
 
 
 
-                <div class="field form-group col-md-6 col-12">
-                    <label for="connection">Як з вами зручніше зв'язатись? <span>*</span></label>
-                    <select id="connection"
-                            :class="{'is-invalid' : $v.connection.$error}"
-                            v-model="connection"
-                            @blur="$v.connection.$touch()"
-                    >
-                        <option selected="selected" disabled="disabled" value="">Вибрати</option>
-                        <option value="По телефону" selected="selected">По телефону</option>
-                        <option value="По email">По email</option>
-                        <option value="По viber">По viber</option>
-                        <option value="По telegram">По telegram</option>
-                    </select>
+<!--                <div class="field form-group col-md-6 col-12">-->
+<!--                    <label for="connection">Як з вами зручніше зв'язатись? <span>*</span></label>-->
+<!--                    <select id="connection"-->
+<!--                            :class="{'is-invalid' : $v.connection.$error}"-->
+<!--                            v-model="connection"-->
+<!--                            @blur="$v.connection.$touch()"-->
+<!--                    >-->
+<!--                        <option selected="selected" disabled="disabled" value="">Вибрати</option>-->
+<!--                        <option value="По телефону" selected="selected">По телефону</option>-->
+<!--                        <option value="По email">По email</option>-->
+<!--                        <option value="По viber">По viber</option>-->
+<!--                        <option value="По telegram">По telegram</option>-->
+<!--                    </select>-->
 
-                    <div class="invalid-feedback" v-if="!$v.connection.required">Це поле є обов'язковим для заповненя.</div>
-                </div>
+<!--                    <div class="invalid-feedback" v-if="!$v.connection.required">Це поле є обов'язковим для заповненя.</div>-->
+<!--                </div>-->
 
-                <div class="field call_time form-group col-md-6 col-12">
-                    <label for="call_time_start">Зручний час для дзвінка: <span></span></label>
-                    <div class="wrap d-flex justify-content-between align-items-center">
-                        <select id="call_time_start"
-                                v-model="call_time_start"
-                        >
-                            <option selected="selected" disabled="disabled" value="">Вибрати</option>
-                            <option value="09:00">09:00</option>
-                            <option value="10:00">10:00</option>
-                            <option value="11:00">11:00</option>
-                            <option value="12:00">12:00</option>
-                            <option value="13:00">13:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="15:00">15:00</option>
-                            <option value="16:00">16:00</option>
-                            <option value="17:00">17:00</option>
-                            <option value="18:00">18:00</option>
-                        </select>
+<!--                <div class="field call_time form-group col-md-6 col-12">-->
+<!--                    <label for="call_time_start">Зручний час для дзвінка: <span></span></label>-->
+<!--                    <div class="wrap d-flex justify-content-between align-items-center">-->
+<!--                        <select id="call_time_start"-->
+<!--                                v-model="call_time_start"-->
+<!--                        >-->
+<!--                            <option selected="selected" disabled="disabled" value="">Вибрати</option>-->
+<!--                            <option value="09:00">09:00</option>-->
+<!--                            <option value="10:00">10:00</option>-->
+<!--                            <option value="11:00">11:00</option>-->
+<!--                            <option value="12:00">12:00</option>-->
+<!--                            <option value="13:00">13:00</option>-->
+<!--                            <option value="14:00">14:00</option>-->
+<!--                            <option value="15:00">15:00</option>-->
+<!--                            <option value="16:00">16:00</option>-->
+<!--                            <option value="17:00">17:00</option>-->
+<!--                            <option value="18:00">18:00</option>-->
+<!--                        </select>-->
 
-                        <span class="mx-4"> - </span>
+<!--                        <span class="mx-4"> - </span>-->
 
-                        <select id="call_time_end"
-                                v-model="call_time_end"
-                        >
-                            <option selected="selected" disabled="disabled" value="">Вибрати</option>
-                            <option value="09:00">09:00</option>
-                            <option value="10:00">10:00</option>
-                            <option value="11:00">11:00</option>
-                            <option value="12:00">12:00</option>
-                            <option value="13:00">13:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="15:00">15:00</option>
-                            <option value="16:00">16:00</option>
-                            <option value="17:00">17:00</option>
-                            <option value="18:00">18:00</option>
-                        </select>
-                    </div>
-                </div>
+<!--                        <select id="call_time_end"-->
+<!--                                v-model="call_time_end"-->
+<!--                        >-->
+<!--                            <option selected="selected" disabled="disabled" value="">Вибрати</option>-->
+<!--                            <option value="09:00">09:00</option>-->
+<!--                            <option value="10:00">10:00</option>-->
+<!--                            <option value="11:00">11:00</option>-->
+<!--                            <option value="12:00">12:00</option>-->
+<!--                            <option value="13:00">13:00</option>-->
+<!--                            <option value="14:00">14:00</option>-->
+<!--                            <option value="15:00">15:00</option>-->
+<!--                            <option value="16:00">16:00</option>-->
+<!--                            <option value="17:00">17:00</option>-->
+<!--                            <option value="18:00">18:00</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
 
                 <div class="field col-12">
                     <div class="info" :class="{ 'expand_info' : expandBlock }">
@@ -242,7 +242,7 @@
 
 
                 <div class="field col-12">
-                    <small class="font-italic">*  Попри те, що ми надаємо можливість записатися на пробну поїздку на будь-якій моделі з модельного ряду Toyota в Україні, не всі моделі наявні у всіх дилерів для тест-драйву. Актуальний модельний ряд, доступний для тест-драйву, уточнюйте, будь ласка, в обраного вами дилера Toyota.</small>
+                    <small class="font-italic">*  Попри те, що ми надаємо можливість записатися на пробну поїздку на будь-якій моделі з модельного ряду Toyota в Миколаєві, не всі моделі наявні для тест-драйву. Актуальний модельний ряд, доступний для тест-драйву, уточнюйте, будь ласка, у наших менеджерів.</small>
                 </div>
             </form>
 
@@ -384,9 +384,9 @@
                 email,
             },
 
-            connection: {
-                required,
-            },
+            // connection: {
+            //     required,
+            // },
 
             agree: {
                 consent(answer) {
@@ -458,7 +458,7 @@
             },
 
             clearConsult() {
-                setTimeout( () => {this.$router.push({name: "step_1"});}, 2500);
+                setTimeout( () => {history.go(-2);}, 2500);
             },
         },
 

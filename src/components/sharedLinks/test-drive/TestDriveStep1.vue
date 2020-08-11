@@ -141,9 +141,9 @@
         computed: {
             getTestModel() {
                 try {
-                    if(this.$store.getters.getTestDrive.model.name) {
+                    if( Object.keys(this.$store.getters.getTestDrive.model) > 0) {
                         return this.$store.getters.getTestDrive.model;
-                    } else if ( JSON.parse(localStorage.testModel).name ) {
+                    } else if ( Object.keys(JSON.parse(localStorage.testModel)) > 0 ) {
                         return JSON.parse(localStorage.testModel);
                     } else {
                         return "";
@@ -156,7 +156,7 @@
             },
 
             getEngine() {
-                if(this.$store.getters.getEngineAndGear.eng_id) {
+                if( Object.keys(this.$store.getters.getEngineAndGear) > 0) {
                     return this.$store.getters.getEngineAndGear;
                 } else {
                     return JSON.parse(localStorage.transmission);
@@ -164,15 +164,7 @@
             },
 
             getPhoto() {
-                try {
-                    if(this.$store.getters.getTestDrive.preview) {
-                        return 'http://lara.toyota.nikolaev.ua/storage/' + this.$store.getters.getTestDrive.preview;
-                    } else {
-                        return 'http://lara.toyota.nikolaev.ua/storage/' + localStorage.testPreview;
-                    }
-                } catch (e) {
-                    return this.photo;
-                }
+                    return 'http://lara.toyota.nikolaev.ua/storage/' + this.photo;
             },
         },
 
@@ -205,12 +197,14 @@
 
             getTestPosition() {
                 try{
-                    if (this.testModel.name) {
+                    if ( Object.keys(this.testModel).length > 0 ) {
                         this.saveTestModel(this.getTestModel);
                     } else {
-                        if (this.$store.getters.getModel.name) {
+                        if ( Object.keys(this.$store.getters.getModel) > 0 ) {
                             this.saveTestModel(this.$store.getters.getModel);
-                        } else if(JSON.parse(localStorage.model).name) {
+                        } else if( Object.keys( JSON.parse(localStorage.testModel) ) > 0) {
+                            this.saveTestModel(JSON.parse(localStorage.testModel));
+                        } else if( Object.keys( JSON.parse(localStorage.model) ) > 0) {
                             this.saveTestModel(JSON.parse(localStorage.model));
                         }
                         else {
@@ -236,6 +230,7 @@
                 this.electric = false;
                 this.hybrid = false;
                 this.lpg = false;
+                console.log(this.testModel);
                 this.$store.state.testDrive.model = this.testModel;
                 localStorage.testModel = JSON.stringify( this.testModel );
                 this.getEquipment();
@@ -278,6 +273,7 @@
                 this.testEngine = eng;
                 this.$store.state.testDrive.engineType = eng;
                 localStorage.testEngine = eng;
+                console.log(this.$store.state.testDrive);
             },
 
             findFuelType() {
@@ -331,8 +327,10 @@
                         let colors = response.data;
                         this.color = colors[0];
                         this.photo = this.color.preview;
+                        console.log(this.photo);
                         this.$store.state.testDrive.preview = this.color.preview;
                         localStorage.testPreview = this.color.preview;
+                        console.log(this.$store.state.testDrive);
                     } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные цвета");

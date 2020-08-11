@@ -111,7 +111,7 @@
     @import '../../styles/variables';
     
     main.container-fluid ::v-deep div {
-        margin: 0;
+        /*margin: 0;*/
         padding: 0;
         section {
             header {
@@ -138,7 +138,7 @@
                 h3 {
                     font-size: 1.8rem;
                     font-weight: bold;
-                    margin-bottom: 40px;
+                    margin: 40px 0;
                     text-align: center;
                     color: $font_color;
                 }

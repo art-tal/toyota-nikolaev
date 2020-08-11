@@ -108,6 +108,7 @@
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
                     this.models = response.data;
+                    console.log(this.models);
                     this.getPrices();
                 } )
                 .catch( (error) => {

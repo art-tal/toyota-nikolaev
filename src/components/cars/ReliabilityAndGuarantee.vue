@@ -171,7 +171,7 @@
                         tag="button"
                         class="col-6 btn btn-danger"
                         exact
-                        to="/consultation/step_1"
+                        to="/test_drive_step_1"
                 >
                     Замовити тест-драйв
                 </router-link>
