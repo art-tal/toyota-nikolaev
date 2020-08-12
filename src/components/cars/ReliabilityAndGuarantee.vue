@@ -288,7 +288,8 @@
 
         </section>
 
-        <section class="image ass">
+<!--        <section class="image ass" >-->
+        <section class="image ass" :style="`background-image: url(${modelVideo.photo})`">
             <div class="container">
                 <div class="info">
                     <span class="text-left">&#x201C;</span>
@@ -464,6 +465,7 @@
                     this.changeTitle();
                 })
                     .then( () => {this.getEquipment();} )
+                    .then( () => {this.getVideo();} )
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модели");
                         console.log(error);
@@ -847,7 +849,9 @@
 
         section.image {
             @include header-xl;
-            background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/corolla-sedan-road-assistance-desktop-1440x560_tcm-3046-1833946.jpg);
+            /*background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/corolla-sedan-road-assistance-desktop-1440x560_tcm-3046-1833946.jpg);*/
+            /*background-image: url(./../../img/images/corolla-sedan-road-assistance-desktop-1440x560_tcm-3046-1833946.jpg);*/
+            /*background-image: url(../../img/images/corolla-sedan-road-assistance-desktop-1440x560_tcm-3046-1833946.jpg);*/
             max-height: 600px;
             padding: 180px;
             .container {
@@ -865,7 +869,8 @@
                 }
             }
             &.rep {
-                background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/repairs%20image_tcm-3060-1724017_tcm-3046-1673704.jpg);
+                /*background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/repairs%20image_tcm-3060-1724017_tcm-3046-1673704.jpg);*/
+                background-image: url(./../../img/images/repairs%20image_tcm-3060-1724017_tcm-3046-1673704.jpg);
                 .container {
                     .info {
                         color: $font_color;

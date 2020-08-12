@@ -411,7 +411,8 @@
         header.container-fluid  {
             @include header-xl;
             padding-top: 70px;
-            background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/credit-1600x900_tcm-3046-165545.jpg');
+            /*background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/credit-1600x900_tcm-3046-165545.jpg');*/
+            background-image: url(../../img/background/credit-1600x900_tcm-3046-165545.jpg);
         }
         article.container {
             header {

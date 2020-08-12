@@ -33,7 +33,8 @@
 
     section.lineup.container-fluid {
         height: 56vh;
-        background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/rav4-hybrid-1600x450_tcm-3046-707555.jpg);
+        /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/rav4-hybrid-1600x450_tcm-3046-707555.jpg);*/
+        background-image: url(../../img/images/rav4-hybrid-1600x450_tcm-3046-707555.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         -webkit-background-size: cover;

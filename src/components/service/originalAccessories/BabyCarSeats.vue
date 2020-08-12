@@ -3,8 +3,8 @@
         <menu-to-accessories/>
         <div v-html="pageBody"></div>
 <!--        <header>-->
-<!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/dityachi-krisla-header-1600x900_tcm-3046-1543719.jpg"-->
-<!--                 alt="header">-->
+<!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/dityachi-krisla-header-1600x900_tcm-3046-1543719.jpg" alt="header">-->
+<!--            <img src="../../../img/background/dityachi-krisla-header-1600x900_tcm-3046-1543719.jpg" alt="header">-->
 <!--        </header>-->
 
 <!--        <div class="body container">-->
@@ -28,6 +28,7 @@
 
 <!--                        <div class="img col-md-6 col-12">-->
 <!--                            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/7_tcm-3046-1544882.jpg" alt="chair">-->
+<!--                            <img src="../../../img/images/babyCarSeats/7_tcm-3046-1544882.jpg" alt="chair">-->
 <!--                            <h4>Перед встановленням автокрісла уважно прочитайте інструкцію. Якщо є сумніви, зверніться до фахівця найближчого дилерського центру.</h4>-->
 <!--                        </div>-->
 <!--                    </article>-->
@@ -35,6 +36,7 @@
 <!--                    <article class="row">-->
 <!--                        <div class="img col-md-6 col-12">-->
 <!--                            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/6_tcm-3046-1546642.jpg" alt="important">-->
+<!--                            <img src="../../../img/images/babyCarSeats/6_tcm-3046-1546642.jpg" alt="important">-->
 <!--                            <h4>Важливо:<br>-->
 <!--                                Ніколи не купуйте дитині сидіння на виріст!<br>-->
 <!--                                Ніколи не купуйте крісло, яке вже було у використанні!</h4>-->
@@ -67,6 +69,7 @@
 
 <!--                        <div class="img col-md-6 col-12">-->
 <!--                            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/19_tcm-3046-1545973.jpg" alt="plase">-->
+<!--                            <img src="../../../img/images/babyCarSeats/19_tcm-3046-1545973.jpg" alt="plase">-->
 <!--                        </div>-->
 
 <!--                    </article>-->
@@ -74,6 +77,7 @@
 <!--                    <article class="row">-->
 <!--                        <div class="img col-md-6 col-12">-->
 <!--                            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/20_tcm-3046-1545987.jpg" alt="chair">-->
+<!--                            <img src="../../../img/images/babyCarSeats/20_tcm-3046-1545987.jpg" alt="chair">-->
 <!--                        </div>-->
 
 <!--                        <div class="wrap col-md-6 col-12">-->
@@ -105,6 +109,7 @@
 
 <!--                        <div class="img col-md-6 col-12">-->
 <!--                            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/9_tcm-3046-1546007.jpg" alt="pazl">-->
+<!--                            <img src="../../../img/images/babyCarSeats/9_tcm-3046-1546007.jpg" alt="pazl">-->
 <!--                        </div>-->
 <!--                    </article>-->
 <!--            </div>-->
@@ -132,14 +137,14 @@
 
 <!--                        <div class="img col-md-6 col-12">-->
 <!--                            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/2_tcm-3046-1546037.jpg"-->
-<!--                                 alt="BABY-SAFE PLUS">-->
+<!--                            <img src="../../../img/images/babyCarSeats/2_tcm-3046-1546037.jpg" alt="BABY-SAFE PLUS">-->
 <!--                        </div>-->
 <!--                    </article>-->
 
 <!--                    <article class="row">-->
 <!--                        <div class="img col-md-6 col-12 order-md-0 order-2 ">-->
 <!--                            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3_tcm-3046-1546163.jpg"-->
-<!--                                 alt="BABY-SAFE PLUS">-->
+<!--                            <img src="../../../img/images/babyCarSeats/3_tcm-3046-1546163.jpg" alt="BABY-SAFE PLUS">-->
 <!--                        </div>-->
 <!--                        <div class="wrap col-md-6 col-12">-->
 <!--                            <header>-->
@@ -176,14 +181,14 @@
 
 <!--                        <div class="img col-md-6 col-12">-->
 <!--                            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/4_tcm-3046-1546169.jpg"-->
-<!--                                 alt="DUO PLUS">-->
+<!--                            <img src="../../../img/images/babyCarSeats/4_tcm-3046-1546169.jpg" alt="DUO PLUS">-->
 <!--                        </div>-->
 <!--                    </article>-->
 
 <!--                    <article class="row">-->
 <!--                        <div class="img col-md-6 col-12 order-md-0 order-2">-->
 <!--                            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/5_tcm-3046-1544886.jpg"-->
-<!--                                 alt="KIDFIX XP">-->
+<!--                            <img src="../../../img/images/babyCarSeats/5_tcm-3046-1544886.jpg" alt="KIDFIX XP">-->
 <!--                        </div>-->
 <!--                        <div class="wrap col-md-6 col-12">-->
 <!--                            <header>-->

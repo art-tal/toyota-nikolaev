@@ -119,7 +119,8 @@
                 margin: 0;
                 padding: 70px 15px 20px;
 
-                background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/insurance-header_tcm-3046-165896.jpg');
+                /*background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/insurance-header_tcm-3046-165896.jpg');*/
+                background-image: url(../../img/background/insurance-header_tcm-3046-165896.jpg);
                 color: #ffffff;
                 h1 {
                     font-size: 4.4rem;

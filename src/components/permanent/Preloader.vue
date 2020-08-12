@@ -1,7 +1,7 @@
 <template>
     <div class="preloader_car">
         <div class="show_preloader">
-            <img src="../../img/toyota-ico-04.png" alt="icon">
+            <img src="../../img/icon/toyota-ico-04.png" alt="icon">
         </div>
     </div>
 </template>

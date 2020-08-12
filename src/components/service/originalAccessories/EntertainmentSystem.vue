@@ -100,7 +100,8 @@
         header {
             @include header-xl;
             max-height: 60vw;
-            background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/rear-entertainment-system-header_tcm-3046-273547.jpg);
+            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/rear-entertainment-system-header_tcm-3046-273547.jpg);*/
+            background-image: url(../../../img/background/rear-entertainment-system-header_tcm-3046-273547.jpg);
             margin-bottom: 50px;
             color: #ffffff;
 

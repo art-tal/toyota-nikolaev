@@ -22,17 +22,20 @@
                             <div class="carousel col-md-6 col-12">
                                 <swiper class="swiper" :options="swiperOption">
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-1_tcm-3046-634800.jpg" alt="Обкладинка альбому - модель Hybrid  ">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-1_tcm-3046-634800.jpg" alt="Обкладинка альбому - модель Hybrid  ">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-1-screen-1_tcm-3046-634800.jpg" alt="Обкладинка альбому - модель Hybrid  ">
                                         <p>Обкладинка альбому - модель Hybrid </p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-2_tcm-3046-635333.jpg" alt="USB">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-2_tcm-3046-635333.jpg" alt="USB">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-1-screen-2_tcm-3046-635333.jpg" alt="USB">
                                         <p>USB</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-3_tcm-3046-635334.jpg" alt="Радіо">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-3_tcm-3046-635334.jpg" alt="Радіо">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-1-screen-3_tcm-3046-635334.jpg" alt="Радіо">
                                         <p>Радіо</p>
                                     </swiper-slide>
 
@@ -54,17 +57,20 @@
                             <div class="carousel col-md-6 col-12">
                                 <swiper class="swiper" :options="swiperOption">
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-4_tcm-3046-634801.jpg" alt="Налаштування - модель Hybrid ">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-4_tcm-3046-634801.jpg" alt="Налаштування - модель Hybrid ">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-1-screen-4_tcm-3046-634801.jpg" alt="Налаштування - модель Hybrid ">
                                         <p>Налаштування - модель Hybrid</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-5_tcm-3046-635335.jpg" alt="Камера заднього огляду, яка виводиться на екран мультимедійної системи">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-5_tcm-3046-635335.jpg" alt="Камера заднього огляду, яка виводиться на екран мультимедійної системи">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-1-screen-5_tcm-3046-635335.jpg" alt="Камера заднього огляду, яка виводиться на екран мультимедійної системи">
                                         <p>Камера заднього огляду, яка виводиться на екран мультимедійної системи</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-6_tcm-3046-635336.jpg" alt="Система Hybrid - модель Hybrid ">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-1-screen-6_tcm-3046-635336.jpg" alt="Система Hybrid - модель Hybrid ">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-1-screen-6_tcm-3046-635336.jpg" alt="Система Hybrid - модель Hybrid ">
                                         <p>Система Hybrid - модель Hybrid </p>
                                     </swiper-slide>
 
@@ -84,17 +90,20 @@
                             <div class="carousel col-md-6 col-12">
                                 <swiper class="swiper" :options="swiperOption">
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-1_tcm-3046-634900.jpg" alt="Навігаційна система з функцією розділенного екрана">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-1_tcm-3046-634900.jpg" alt="Навігаційна система з функцією розділенного екрана">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-1_tcm-3046-634900.jpg" alt="Навігаційна система з функцією розділенного екрана">
                                         <p>Навігаційна система з функцією розділенного екрана</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-2_tcm-3046-635337.jpg" alt="3D карта міста">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-2_tcm-3046-635337.jpg" alt="3D карта міста">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-2_tcm-3046-635337.jpg" alt="3D карта міста">
                                         <p>3D карта міста</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-3_tcm-3046-635338.jpg" alt="Автоматична навігація">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-3_tcm-3046-635338.jpg" alt="Автоматична навігація">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-3_tcm-3046-635338.jpg" alt="Автоматична навігація">
                                         <p>Автоматична навігація</p>
                                     </swiper-slide>
 
@@ -117,17 +126,20 @@
                             <div class="carousel col-md-6 col-12">
                                 <swiper class="swiper" :options="swiperOption">
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-4_tcm-3046-634901.jpg" alt=" Google Street View™">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-4_tcm-3046-634901.jpg" alt=" Google Street View™">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-4_tcm-3046-634901.jpg" alt=" Google Street View™">
                                         <p> Google Street View™</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-5_tcm-3046-635339.jpg" alt="Online додатки">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-5_tcm-3046-635339.jpg" alt="Online додатки">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-5_tcm-3046-635339.jpg" alt="Online додатки">
                                         <p>Online додатки</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-6_tcm-3046-635340.jpg" alt="Заправні станції ">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-6_tcm-3046-635340.jpg" alt="Заправні станції ">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-6_tcm-3046-635340.jpg" alt="Заправні станції ">
                                         <p>Заправні станції </p>
                                     </swiper-slide>
 
@@ -139,17 +151,20 @@
                             <div class="carousel col-md-6 col-12">
                                 <swiper class="swiper" :options="swiperOption">
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-7_tcm-3046-634902.jpg" alt="Керування голосом">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-7_tcm-3046-634902.jpg" alt="Керування голосом">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-7_tcm-3046-634902.jpg" alt="Керування голосом">
                                         <p>Керування голосом</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-8_tcm-3046-635341.jpg" alt="Функція перетворення тексту в мову">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-8_tcm-3046-635341.jpg" alt="Функція перетворення тексту в мову">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-8_tcm-3046-635341.jpg" alt="Функція перетворення тексту в мову">
                                         <p>Функція перетворення тексту в мову</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-9_tcm-3046-635342.jpg" alt="Wi-Fi підключення ">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-2-screen-9_tcm-3046-635342.jpg" alt="Wi-Fi підключення ">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-2-screen-9_tcm-3046-635342.jpg" alt="Wi-Fi підключення ">
                                         <p>Wi-Fi підключення </p>
                                     </swiper-slide>
 
@@ -175,17 +190,20 @@
                             <div class="carousel col-md-6 col-12">
                                 <swiper class="swiper" :options="swiperOption">
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-3-screen-1-v2_tcm-3046-635343.jpg" alt="Обслуговування карт та допоміжних сервісів протягом 3 років">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-3-screen-1-v2_tcm-3046-635343.jpg" alt="Обслуговування карт та допоміжних сервісів протягом 3 років">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-3-screen-1-v2_tcm-3046-635343.jpg" alt="Обслуговування карт та допоміжних сервісів протягом 3 років">
                                         <p>Обслуговування карт та допоміжних сервісів протягом 3 років</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-3-screen-2_tcm-3046-634903.jpg" alt="Aha - Hybrid models">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-3-screen-2_tcm-3046-634903.jpg" alt="Aha - Hybrid models">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-3-screen-2_tcm-3046-634903.jpg" alt="Aha - Hybrid models">
                                         <p>Aha - Hybrid models</p>
                                     </swiper-slide>
 
                                     <swiper-slide>
-                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-3-screen-3_tcm-3046-635344.jpg" alt="Twitter">
+<!--                                        <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-section-3-screen-3_tcm-3046-635344.jpg" alt="Twitter">-->
+                                        <img src="../../../img/images/touch2/toyota-touch-2-2016-section-3-screen-3_tcm-3046-635344.jpg" alt="Twitter">
                                         <p>Twitter</p>
                                     </swiper-slide>
 
@@ -216,7 +234,8 @@
                 </header>
 
                 <div class="container">
-                    <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/home_bg_tcm-3046-632723.jpg" alt="try">
+<!--                    <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/home_bg_tcm-3046-632723.jpg" alt="try">-->
+                    <img src="../../../img/images/touch2/home_bg_tcm-3046-632723.jpg" alt="try">
                 </div>
 
             </article>
@@ -310,7 +329,8 @@
                 header {
                     @include header-xl;
                     max-height: 60vw;
-                    background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-header_tcm-3046-634725.jpg);
+                    /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-touch-2-2016-header_tcm-3046-634725.jpg);*/
+                    background-image: url(../../../img/background/toyota-touch-2-2016-header_tcm-3046-634725.jpg);
                     margin-bottom: 20px;
                     position: relative;
                     color: #FFFFFF;

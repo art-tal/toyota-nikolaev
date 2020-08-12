@@ -94,7 +94,8 @@
         header {
             @include header-xl;
             max-height: 60vw;
-            background-image: url('//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg');
+            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg);*/
+            background-image: url(../../../img/background/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg);
             margin-bottom: 50px;
 
             h1 {

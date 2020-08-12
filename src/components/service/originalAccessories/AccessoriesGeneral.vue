@@ -86,7 +86,8 @@
         header {
             @include header-xl;
             max-height: 60vw;
-            background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/header-aksesuary-1600x900_tcm-3046-1336869.jpg');
+            /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/header-aksesuary-1600x900_tcm-3046-1336869.jpg);*/
+            background-image: url(../../../img/background/header-aksesuary-1600x900_tcm-3046-1336869.jpg);
             margin-bottom: 50px;
 
             h1 {

@@ -11,6 +11,7 @@
 <!--            <div class="p">З Toyota BusinessPlus вибір службового авто став простішим. Якість авто гарантує йому надійність та легкість в користуванні. Наші консультанти завжди готові надати Вам персональну консультацію чи пропозицію на шляху до прийняття важливих рішень.</div>-->
 <!--            <h2>Причини працювати з Toyota BusinessPlus</h2>-->
 <!--            <img src="https://collection.toyota.ua/toyota-bp.jpg" alt="collection.toyota.ua">-->
+<!--            <img src="../../img/images/toyota-bp.jpg" alt="collection.toyota.ua">-->
 <!--            -->
 <!--            <ul class="row text-left p-0">-->
 <!--                <li class="col-md-6 col-12 px-5">-->
@@ -127,7 +128,8 @@
     section {
         header.container-fluid {
             @include header-xl;
-            background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/business-customers-company-car-1600x900_tcm-3046-663239.jpg');
+            /*background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/business-customers-company-car-1600x900_tcm-3046-663239.jpg');*/
+            background-image: url(../../img/background/business-customers-company-car-1600x900_tcm-3046-663239.jpg);
             /*background-repeat: no-repeat;*/
             /*background-position: center center;*/
             /*-webkit-background-size: cover;*/

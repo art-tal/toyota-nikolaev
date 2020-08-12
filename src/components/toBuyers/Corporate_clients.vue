@@ -10,35 +10,41 @@
 <!--            </header>-->
 <!--            <div class="body">-->
 <!--                <img src="//collection.toyota.ua/euro-sales.jpg" alt="Toyota BusinessPlus">-->
+<!--                <img src="../../img/images/euro-sales.jpg" alt="Toyota BusinessPlus">-->
 
 <!--                <ul class="icons d-flex justify-content-center align-items-end">-->
 <!--                    <li class="">-->
 <!--                        <span>Бізнес-центр</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-business_tcm-3046-901836.png" alt="business">-->
+<!--                        <img src="../../img/icon/toyota-business-reasons-icons-business_tcm-3046-901836.png" alt="business">-->
 <!--                        <div class="message">Підготовлені консультанти готові запропонувати найвигідніши способи придбання та обслуговування Ваших автомобілів.</div>-->
 <!--                    </li>-->
 
 <!--                    <li>-->
 <!--                        <span>Фінансові рішення</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-fsl_tcm-3046-901837.png" alt="finanse">-->
+<!--                        <img src="../../img/icon/toyota-business-reasons-icons-fsl_tcm-3046-901837.png" alt="finanse">-->
 <!--                        <div class="message">Наші всеосяжні фінансові рішення, адаптовані до Ваших потреб, пропонують альтернативні та економічно ефективні способи фінансування Вашого автопарку Toyota.</div>-->
 <!--                    </li>-->
 
 <!--                    <li>-->
 <!--                        <span>Розширений сервіс та технічне обслуговування</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-esm_tcm-3046-901834.png" alt="service">-->
+<!--                        <img src="../../img/icon/toyota-business-reasons-icons-esm_tcm-3046-901834.png" alt="service">-->
 <!--                        <div class="message">Для підтримки Вашого автопарку компанія пропонує спеціальні послуги, включаючи обслуговування, страхування, шиномонтаж.</div>-->
 <!--                    </li>-->
 
 <!--                    <li>-->
 <!--                        <span>Toyota Plus</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-trade_tcm-3046-901832.png" alt="Toyota Plus">-->
+<!--                        <img src="../../img/icon/toyota-business-reasons-icons-trade_tcm-3046-901832.png" alt="Toyota Plus">-->
 <!--                        <div class="message">Програма Toyota Plus - програма продажу автомобілів Toyota з пробігом.</div>-->
 <!--                    </li>-->
 
 <!--                    <li>-->
 <!--                        <span>Модельний ряд гібридних автомобілів</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-reasons-icons-hybrid_tcm-3046-901831.png" alt="lineup hybrid">-->
+<!--                        <img src="../../img/icon/toyota-business-reasons-icons-hybrid_tcm-3046-901831.png" alt="lineup hybrid">-->
 <!--                        <div class="message">Toyota – світовий лідер гібридних моделей з низьким рівнем викидів, що презентує найширший спектр гібридних автомобілів.</div>-->
 <!--                    </li>-->
 <!--                </ul>-->
@@ -59,7 +65,7 @@
 <!--                    </ul>-->
 <!--                </div>-->
 <!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-plus-eurocorp-toyota-in-the-world-map-v3_tcm-3046-901970.png"-->
-<!--                     alt="map">-->
+<!--                <img src="../../img/images/toyota-business-plus-eurocorp-toyota-in-the-world-map-v3_tcm-3046-901970.png" alt="map">-->
 <!--                <div class="facts">-->
 <!--                    <ul class="d-flex justify-content-between">-->
 <!--                        <li id="fact1">-->
@@ -102,31 +108,37 @@
 <!--                    <li>-->
 <!--                        <span>1937</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1937_tcm-3046-901991.png" alt="1937">-->
+<!--                        <img src="../../img/icon/toyota-business-today-icons-1937_tcm-3046-901991.png" alt="1937">-->
 <!--                        <div class="message">створено компанію Toyota Motor Co., Ltd</div>-->
 <!--                    </li>-->
 <!--                    <li>-->
 <!--                        <span>1987</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1987_tcm-3046-901990.png" alt="1987">-->
+<!--                        <img src="../../img/icon/toyota-business-today-icons-1987_tcm-3046-901990.png" alt="1987">-->
 <!--                        <div class="message">засновано Європейський технічний центр Toyota</div>-->
 <!--                    </li>-->
 <!--                    <li>-->
 <!--                        <span>1990</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-1990_tcm-3046-901989.png" alt="1990">-->
+<!--                        <img src="../../img/icon/toyota-business-today-icons-1990_tcm-3046-901989.png" alt="1990">-->
 <!--                        <div class="message">створено акціонерне товариство Toyota Motor Europe Marketing & Engineering S.A.</div>-->
 <!--                    </li>-->
 <!--                    <li>-->
 <!--                        <span>370.000</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-344109_tcm-3046-901988.png" alt="370.000">-->
+<!--                        <img src="../../img/icon/toyota-business-today-icons-344109_tcm-3046-901988.png" alt="370.000">-->
 <!--                        <div class="message">Кількість працівників (у світі)</div>-->
 <!--                    </li>-->
 <!--                    <li>-->
 <!--                        <span>72%</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-72_tcm-3046-901986.png" alt="72%">-->
+<!--                        <img src="../../img/icon/toyota-business-today-icons-72_tcm-3046-901986.png" alt="72%">-->
 <!--                        <div class="message">Відсоток проданих в Європі автомобілів Toyota, які зібрано в Європі.</div>-->
 <!--                    </li>-->
 <!--                    <li>-->
 <!--                        <span>+11 million</span>-->
 <!--                        <img src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-today-icons-9m_tcm-3046-901987.png" alt="+11 million">-->
+<!--                        <img src="../../img/icon/toyota-business-today-icons-9m_tcm-3046-901987.png" alt="+11 million">-->
 <!--                        <div class="message">Більше 11 мільйонів гібридів продано в усьому світі та понад 1 мільйон – в Європі. Частка продажу гібридних транспортних засобів становить близько 30% від усіх продажів компанії Toyota.</div>-->
 <!--                    </li>-->
 <!--                </ul>-->
@@ -139,6 +151,7 @@
 <!--&lt;!&ndash;            </header>&ndash;&gt;-->
 <!--            <div class="body">-->
 <!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-business-plus_tcm-3046-902077.png" alt="map">-->
+<!--                <img src="../../img/images/toyota-business-plus_tcm-3046-902077.png" alt="map">-->
 <!--            </div>-->
 <!--        </section>-->
 
@@ -234,7 +247,8 @@
             height: 80vh;
             width: 100%;
             padding-top: 50px;
-            background-image: url('//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/business-plus-sales-1600%D1%85900_tcm-3046-906757.jpg');
+            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/business-plus-sales-1600%D1%85900_tcm-3046-906757.jpg);*/
+            background-image: url(../../img/background/business-plus-sales-1600%D1%85900_tcm-3046-906757.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             -webkit-background-size: cover;
@@ -465,7 +479,8 @@
 
         section.lineup.container-fluid {
             height: 56vh;
-            background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/lc-200-1600x450_tcm-3046-1616903.jpg);
+            /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/lc-200-1600x450_tcm-3046-1616903.jpg);*/
+            background-image: url(../../img/images/lc-200-1600x450_tcm-3046-1616903.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             -webkit-background-size: cover;

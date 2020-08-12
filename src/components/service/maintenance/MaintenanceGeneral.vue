@@ -10,9 +10,10 @@
                 <router-link tag="article"
                              class="col-md-6 col-12"
                              exact
-                             to="/maintenance/principles"
+                             to="/principles"
                 >
-                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-maintenance-overview-taxonomy_tcm-3046-249528.jpg" alt="Технічне обслуговування автомобілів">
+<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-maintenance-overview-taxonomy_tcm-3046-249528.jpg" alt="Технічне обслуговування автомобілів">-->
+                    <img src="../../../img/images/toyota-maintenance-overview-taxonomy_tcm-3046-249528.jpg" alt="Технічне обслуговування автомобілів">
                     <h3>Технічне обслуговування автомобілів</h3>
                     <p>Фахівці сервісних центрів Toyota пройшли повний курс підготовки відповідно до суворих нормативів Toyota для того, щоб постійно підтримувати вашу «Тойоту» в ідеальному стані.</p>
                 </router-link>
@@ -20,9 +21,10 @@
                 <router-link tag="article"
                              class="col-md-6 col-12"
                              exact
-                             to="/maintenance/guarantee"
+                             to="/guarantee"
                 >
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-services-promise-spotlight.jpg_tcm-3046-58763.jpg" alt="Гарантія якості технічного обслуговування">
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-services-promise-spotlight.jpg_tcm-3046-58763.jpg" alt="Гарантія якості технічного обслуговування">-->
+                    <img src="../../../img/images/toyota-aftersales-2014-services-promise-spotlight.jpg_tcm-3046-58763.jpg" alt="Гарантія якості технічного обслуговування">
                     <h3>Гарантія якості технічного обслуговування</h3>
                     <p>Кому, як не нам, найкраще відомо все про ваш автомобіль! Адже ми його спроектували, виготовили і підготували майстрів для технічного обслуговування вашого авто.</p>
                 </router-link>
@@ -30,9 +32,10 @@
                 <router-link tag="article"
                              class="col-md-6 col-12"
                              exact
-                             to="/maintenance/lubricants"
+                             to="/lubricants"
                 >
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-oil-taxonomy_tcm-3046-249525.jpg" alt="Оригінальні мастильні матеріали Toyota">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-oil-taxonomy_tcm-3046-249525.jpg" alt="Оригінальні мастильні матеріали Toyota">-->
+                    <img src="../../../img/images/toyota-genuine-oil-taxonomy_tcm-3046-249525.jpg" alt="Оригінальні мастильні матеріали Toyota">
                     <h3>Оригінальні мастильні матеріали Toyota</h3>
                     <p>Усі оригінальні мастильні матеріали Toyota відповідають найсуворішим вимогам щодо якості та мають чудові експлуатаційні характеристики.</p>
                 </router-link>
@@ -99,7 +102,8 @@
         header {
             @include header-xl;
             height: 56vh;
-            background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-service-maintenance-focus_tcm-3046-65752.jpg);
+            /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-service-maintenance-focus_tcm-3046-65752.jpg);*/
+            background-image: url(../../../img/background/toyota-aftersales-2014-service-maintenance-focus_tcm-3046-65752.jpg);
             margin-bottom: 50px;
             h1 {
                 padding-top: 100px;

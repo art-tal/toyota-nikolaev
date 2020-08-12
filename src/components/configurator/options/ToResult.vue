@@ -24,7 +24,8 @@
             </article>
 
             <div class="image col-md-6 col-12">
-                <img src="https://webcarconfig.toyota-europe.com/toyota/img/toyota-visual.jpg" alt="photo">
+<!--                <img src="https://webcarconfig.toyota-europe.com/toyota/img/toyota-visual.jpg" alt="photo">-->
+                <img src="../../../img/images/toyota-visual-525x295.jpg" alt="photo">
             </div>
         </div>
     </section>

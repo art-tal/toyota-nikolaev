@@ -187,7 +187,9 @@
             </div>
 
 
-            <div class="poster" v-else :style="'background-image: url(' + modelVideo.poster + ')'">
+            <div class="poster" v-else >
+<!--                <img class="w-100" src="../../img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" :alt="model.name">-->
+<!--                <img class="w-100" :src="'../../img/images/'+modelVideo.poster" :alt="model.name">-->
                 <img class="w-100" :src="modelVideo.poster" :alt="model.name">
                 <div class="info text-left">
                     <h2>{{modelVideo.header}}</h2>
@@ -402,78 +404,93 @@
 
 
 
-            getVideo() {
-                try {
-                    switch(this.model.name.toLowerCase()) {
-
-                        case 'yaris':
-                            // this.modelVideo.poster = "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video-poster_tcm-3046-1618618.jpg";
-                            // this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video.mp4_tcm-3046-1622631.mp4";
-                            this.modelVideo.header = "Створений для міського життя";
-                            this.modelVideo.info = "Завдяки низці інтелектуальних функцій ви отримаєте ще більше задоволення від Yaris.";
-                            break;
-
-                        case 'corolla':
-                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg";
-                            this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-movie_tcm-3046-1681827.mp4";
-                            this.modelVideo.header = "Новий рівень керування гібридом";
-                            this.modelVideo.info = "Седан Corolla вперше представлено у гібридній варіації. Автомобіль напрочуд швидкий та спритний завдяки застосуванню інноваційного самозарядного гібридного двигуна. Інженери запровадили абсолютно новий підхід до дизайну та проєктування. Завдяки цьому найбільш продавана модель у світі відтепер має нові характеристики: витончений екстер’єр, повністю оновлений інтер’єр, низку удосконалених технологій та, що найважливіше, поліпшені функції безпеки. Седан Corolla повертається – відтепер він ще кращий.\n";
-                            break;
-
-                        case 'camry':
-                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-camry-2019-video-poster_tcm-3046-1592534.jpg";
-                            this.modelVideo.link = "http://t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-camry-2019-video.mp4_tcm-3046-1690156.mp4";
-                            this.modelVideo.header = "Нова Toyota Camry";
-                            this.modelVideo.info = "Нова Camry Hybrid являє собою ідеальну комбінацію. Модель поєднує всі переваги елегантного седана та гібрида Toyota. Автомобіль гарантує чудову динаміку руху, що виводить гібрид на наступний рівень.";
-                            break;
-
-                        case 'c-hr':
-                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-c-hr-2019-video-poster_tcm-3046-1775577.jpg";
-                            this.modelVideo.link = "http://t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-c-hr-2019-video_tcm-3046-1777521.mp4";
-                            this.modelVideo.header = "Залиште звичне позаду";
-                            this.modelVideo.info = "Вийдіть за рамки у світі, сповненому звичного.Порушуйте умовності та довіряйте неординарності. Toyota C-HR – емоційний, елегантний, прогресивний міський кросовер – діамант модельного ряду Toyota.";
-                            break;
-
-                        case 'rav4':
-                            this.modelVideo.poster = "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-2019-video-poster-v2_tcm-3046-1528190.jpg";
-                            this.modelVideo.link = "http://t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-2019-video_tcm-3046-1688758.mp4";
-                            this.modelVideo.header = "Жодних компромісів";
-                            this.modelVideo.info = "RAV4 створено бути керованим, а дизайн розроблений, щоб виділитися. Завдяки самозарядному та потужному гібридному приводу, ви насолоджуєтеся всіма перевагами електродвигуна, без незручностей. Просторий та зручний інтер’єр, надає відчуття комфорту під час подорожей по місту.";
-                            break;
-
-                        case 'highlander':
-                            this.modelVideo.poster = "";
-                            this.modelVideo.link = "";
-                            this.modelVideo.header = "";
-                            this.modelVideo.info = "";
-                            break;
-
-                        case 'land cruiser prado':
-                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-2019-video-poster_tcm-3046-1694671.jpg";
-                            this.modelVideo.link = "http://t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-2019-video.mp4_tcm-3046-1703639.mp4";
-                            this.modelVideo.header = "Функції, на які можна покластися";
-                            this.modelVideo.info = "Окрім легендарних характеристик, Land Cruiser підтримує низку унікальних функцій.";
-                            break;
-
-                        case 'land cruiser 200':
-                            this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-v8-2019-video-poster_tcm-3046-1705028.jpg";
-                            this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-v8-2019-movie.mp4_tcm-3046-1705078.mp4";
-                            this.modelVideo.header = "Функції, на які можна розраховувати";
-                            this.modelVideo.info = "Новий Land Cruiser 200 підтримує безліч передових функцій та поєднує потужність і практичність.";
-                            break;
-
-                        case 'hilux':
-                            this.modelVideo.poster = "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-video-poster_tcm-3046-1703624.jpg";
-                            this.modelVideo.link = "http://t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-movie-full.mp4_tcm-3046-1703620.mp4";
-                            this.modelVideo.header = "Впорається з будь-яким випробуванням";
-                            this.modelVideo.info = "У Hilux поєднуються міцність і потужність пікапа та інноваційні технології. Це новий досвід водіння.";
-                            break;
-                    }
-                } catch (e) {
-                    console.log("Видео пролетело");
-                }
-
-            },
+            // getVideo() {
+            //     try {
+            //         switch(this.model.name.toLowerCase()) {
+            //
+            //             case 'yaris':
+            //                 // this.modelVideo.poster = "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video-poster_tcm-3046-1618618.jpg";
+            //                 // this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video.mp4_tcm-3046-1622631.mp4";
+            //                 this.modelVideo.header = "Створений для міського життя";
+            //                 this.modelVideo.info = "Завдяки низці інтелектуальних функцій ви отримаєте ще більше задоволення від Yaris.";
+            //                 break;
+            //
+            //             case 'corolla':
+            //                 this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg";
+            //                 // this.modelVideo.poster = "../../img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg";
+            //                 this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-movie_tcm-3046-1681827.mp4";
+            //                 this.modelVideo.header = "Новий рівень керування гібридом";
+            //                 this.modelVideo.info = "Седан Corolla вперше представлено у гібридній варіації. Автомобіль напрочуд швидкий та спритний завдяки застосуванню інноваційного самозарядного гібридного двигуна. Інженери запровадили абсолютно новий підхід до дизайну та проєктування. Завдяки цьому найбільш продавана модель у світі відтепер має нові характеристики: витончений екстер’єр, повністю оновлений інтер’єр, низку удосконалених технологій та, що найважливіше, поліпшені функції безпеки. Седан Corolla повертається – відтепер він ще кращий.\n";
+            //                 this.modelVideo.photo = "./../../img/images/corolla-sedan-road-assistance-desktop-1440x560_tcm-3046-1833946.jpg"
+            //                 break;
+            //
+            //             case 'camry':
+            //                 this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-camry-2019-video-poster_tcm-3046-1592534.jpg";
+            //                 // this.modelVideo.poster = "../../img/images/toyota-camry-2019-video-poster_tcm-3046-1592534.jpg";
+            //                 this.modelVideo.link = "http://t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-camry-2019-video.mp4_tcm-3046-1690156.mp4";
+            //                 this.modelVideo.header = "Нова Toyota Camry";
+            //                 this.modelVideo.info = "Нова Camry Hybrid являє собою ідеальну комбінацію. Модель поєднує всі переваги елегантного седана та гібрида Toyota. Автомобіль гарантує чудову динаміку руху, що виводить гібрид на наступний рівень.";
+            //                 this.modelVideo.photo = "./../../img/images/camry-road-assistance-desktop-1440x560_tcm-3046-1842879.jpg"
+            //                 break;
+            //
+            //             case 'c-hr':
+            //                 this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-c-hr-2019-video-poster_tcm-3046-1775577.jpg";
+            //                 // this.modelVideo.poster = "../../img/images/toyota-c-hr-2019-video-poster_tcm-3046-1775577.jpg";
+            //                 this.modelVideo.link = "http://t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-c-hr-2019-video_tcm-3046-1777521.mp4";
+            //                 this.modelVideo.header = "Залиште звичне позаду";
+            //                 this.modelVideo.info = "Вийдіть за рамки у світі, сповненому звичного.Порушуйте умовності та довіряйте неординарності. Toyota C-HR – емоційний, елегантний, прогресивний міський кросовер – діамант модельного ряду Toyota.";
+            //                 this.modelVideo.photo = "./../../img/images/c-hr-road-assistance-desktop-1440x560_tcm-3046-1842884.jpg"
+            //                 break;
+            //
+            //             case 'rav4':
+            //                 this.modelVideo.poster = "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-2019-video-poster-v2_tcm-3046-1528190.jpg";
+            //                 // this.modelVideo.poster = "../../img/images/toyota-rav4-2019-video-poster-v2_tcm-3046-1528190.jpg";
+            //                 this.modelVideo.link = "http://t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-rav4-2019-video_tcm-3046-1688758.mp4";
+            //                 this.modelVideo.header = "Жодних компромісів";
+            //                 this.modelVideo.info = "RAV4 створено бути керованим, а дизайн розроблений, щоб виділитися. Завдяки самозарядному та потужному гібридному приводу, ви насолоджуєтеся всіма перевагами електродвигуна, без незручностей. Просторий та зручний інтер’єр, надає відчуття комфорту під час подорожей по місту.";
+            //                 this.modelVideo.photo = "./../../img/images/rav4-road-assistance-desktop1440x560_tcm-3046-1833947.jpg"
+            //                 break;
+            //
+            //             case 'highlander':
+            //                 this.modelVideo.poster = "";
+            //                 this.modelVideo.link = "";
+            //                 this.modelVideo.header = "";
+            //                 this.modelVideo.info = "";
+            //                 this.modelVideo.photo = "./../../img/images/highlander-1440x560_tcm-3046-1842893.jpg"
+            //                 break;
+            //
+            //             case 'land cruiser prado':
+            //                 this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-2019-video-poster_tcm-3046-1694671.jpg";
+            //                 // this.modelVideo.poster = "../../img/images/toyota-land-cruiser-2019-video-poster_tcm-3046-1694671.jpg";
+            //                 this.modelVideo.link = "http://t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-2019-video.mp4_tcm-3046-1703639.mp4";
+            //                 this.modelVideo.header = "Функції, на які можна покластися";
+            //                 this.modelVideo.info = "Окрім легендарних характеристик, Land Cruiser підтримує низку унікальних функцій.";
+            //                 this.modelVideo.photo = "./../../img/images/LCP-road-assistance-desktop-1440x560_tcm-3046-1843473.jpg"
+            //                 break;
+            //
+            //             case 'land cruiser 200':
+            //                 this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-v8-2019-video-poster_tcm-3046-1705028.jpg";
+            //                 // this.modelVideo.poster = "../../img/images/toyota-land-cruiser-v8-2019-video-poster_tcm-3046-1705028.jpg";
+            //                 this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-land-cruiser-v8-2019-movie.mp4_tcm-3046-1705078.mp4";
+            //                 this.modelVideo.header = "Функції, на які можна розраховувати";
+            //                 this.modelVideo.info = "Новий Land Cruiser 200 підтримує безліч передових функцій та поєднує потужність і практичність.";
+            //                 this.modelVideo.photo = "./../../img/images/LC200-road-assistance-desktop-1440x560_tcm-3046-1843751.jpg"
+            //                 break;
+            //
+            //             case 'hilux':
+            //                 this.modelVideo.poster = "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-video-poster_tcm-3046-1703624.jpg";
+            //                 // this.modelVideo.poster = "../../img/images/toyota-hilux-2019-video-poster_tcm-3046-1703624.jpg";
+            //                 this.modelVideo.link = "http://t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-movie-full.mp4_tcm-3046-1703620.mp4";
+            //                 this.modelVideo.header = "Впорається з будь-яким випробуванням";
+            //                 this.modelVideo.info = "У Hilux поєднуються міцність і потужність пікапа та інноваційні технології. Це новий досвід водіння.";
+            //                 this.modelVideo.photo = "./../../img/images/noviy-hilux-1600x900_tcm-3046-2029831.jpg"
+            //                 break;
+            //         }
+            //     } catch (e) {
+            //         console.log("Видео пролетело");
+            //     }
+            //
+            // },
 
             openVideo() {
                 this.showVideo = !this.showVideo;

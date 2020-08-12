@@ -1,7 +1,8 @@
 <template>
     <div class="fast_connection">
         <div class="show_contacts" @click="chowContacts()">
-            <img src="../../img/toyota-ico-01.png" alt="icon">
+<!--            <img src="../../img/toyota-ico-01.png" alt="icon">-->
+            <img src="../../img/icon/toyota-ico-01-100x68.png" alt="icon">
         </div>
 
         <div class="contacts" v-if="show">

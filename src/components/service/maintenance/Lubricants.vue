@@ -24,6 +24,7 @@
 <!--                    -->
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/t10-SAE-5W-30_tcm856-1233590_tcm-3046-165848.jpg" alt="SAE 5W-30">-->
+<!--                        <img src="../../../img/images/t10-SAE-5W-30_tcm856-1233590_tcm-3046-165848.jpg" alt="SAE 5W-30">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -41,6 +42,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/SAE-5W-30_tcm856-1231251_tcm-3046-165895.jpg" alt="SAE 5W-30 Premium">-->
+<!--                        <img src="../../../img/images/lubricants/SAE-5W-30_tcm856-1231251_tcm-3046-165895.jpg" alt="SAE 5W-30 Premium">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -57,6 +59,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/SAE-0W-30_tcm856-1142081_tcm-3046-165901.jpg" alt="SAE 0W-30">-->
+<!--                        <img src="../../../img/images/lubricants/SAE-0W-30_tcm856-1142081_tcm-3046-165901.jpg" alt="SAE 0W-30">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -73,6 +76,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/SAE-5W-40_tcm856-1142089_tcm-3046-165912.jpg" alt="SAE 5W-40">-->
+<!--                        <img src="../../../img/images/lubricants/SAE-5W-40_tcm856-1142089_tcm-3046-165912.jpg" alt="SAE 5W-40">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -88,6 +92,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/SAE%200W-20_tcm-3046-165960.jpg" alt="SAE 0W-20">-->
+<!--                        <img src="../../../img/images/lubricants/SAE 0W-20_tcm-3046-165960.jpg" alt="SAE 0W-20">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -103,6 +108,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/SAE-75W-90_tcm856-1142153_tcm-3046-165935.jpg" alt="SAE 75W-90">-->
+<!--                        <img src="../../../img/images/lubricants/SAE-75W-90_tcm856-1142153_tcm-3046-165935.jpg" alt="SAE 75W-90">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -118,6 +124,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/SAE-80W-90_tcm856-1142154_tcm-3046-165947.jpg" alt="SAE 80W-90">-->
+<!--                        <img src="../../../img/images/lubricants/SAE-80W-90_tcm856-1142154_tcm-3046-165947.jpg" alt="SAE 80W-90">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -133,6 +140,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/LSD-SAE-85W-90_tcm856-1142155_tcm-3046-165955.jpg" alt="LSD SAE 85W-90">-->
+<!--                        <img src="../../../img/images/lubricants/LSD-SAE-85W-90_tcm856-1142155_tcm-3046-165955.jpg" alt="LSD SAE 85W-90">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -148,6 +156,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/LT-75W-85_tcm856-1142156_tcm-3046-166060.jpg" alt="LSD LX 75W-85">-->
+<!--                        <img src="../../../img/images/lubricants/LT-75W-85_tcm856-1142156_tcm-3046-166060.jpg" alt="LSD LX 75W-85">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -162,6 +171,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Dexron-III_tcm856-1142158_tcm-3046-166135.jpg" alt="Dexron III">-->
+<!--                        <img src="../../../img/images/lubricants/Dexron-III_tcm856-1142158_tcm-3046-166135.jpg" alt="Dexron III">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -176,6 +186,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/T-IV_tcm856-1142159_tcm-3046-166137.jpg" alt="T IV">-->
+<!--                        <img src="../../../img/images/lubricants/T-IV_tcm856-1142159_tcm-3046-166137.jpg" alt="T IV">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -190,6 +201,7 @@
 
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/WS_tcm856-1142160_tcm-3046-166096.jpg" alt="WS">-->
+<!--                        <img src="../../../img/images/lubricants/WS_tcm856-1142160_tcm-3046-166096.jpg" alt="WS">-->
 <!--                    </div>-->
 <!--                </li>-->
 
@@ -274,7 +286,8 @@
         header {
             @include header-xl;
             max-height: 60vw;
-            background-image: url('//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/%D0%9E%D1%80%D0%B8%D0%B3%D1%96%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96_%D0%BC%D0%B0%D1%81%D1%82%D0%B8%D0%BB%D0%B0_tcm-3046-165533.jpg');
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/%D0%9E%D1%80%D0%B8%D0%B3%D1%96%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96_%D0%BC%D0%B0%D1%81%D1%82%D0%B8%D0%BB%D0%B0_tcm-3046-165533.jpg);*/
+            background-image: url(../../../img/background/original-lubricants.jpg);
             margin-bottom: 50px;
 
             h1 {

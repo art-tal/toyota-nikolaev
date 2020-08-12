@@ -279,19 +279,22 @@
                     }
                     &.new_car {
                         .background {
-                            background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/new-c-hr-960x416_tcm-3046-1769744.jpg);
+                            /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/new-c-hr-960x416_tcm-3046-1769744.jpg);*/
+                            background-image: url(./../img/images/new-c-hr-960x416_tcm-3046-1769744.jpg);
                         }
 
                     }
                     &.service {
                         .background {
-                            background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/480x416-Toyota-Service-2_tcm-3046-1771998.jpg);
+                            /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/480x416-Toyota-Service-2_tcm-3046-1771998.jpg);*/
+                            background-image: url(./../img/images/480x416-Toyota-Service-2_tcm-3046-1771998.jpg);
                         }
 
                     }
                     &.hybrid {
                         .background {
-                            background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-hybrid-480x416-new_tcm-3046-1772000.png);
+                            /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-hybrid-480x416-new_tcm-3046-1772000.png);*/
+                            background-image: url(./../img/images/toyota-hybrid-480x416-new_tcm-3046-1772000.png);
                         }
 
                     }

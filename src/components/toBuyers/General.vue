@@ -2,8 +2,8 @@
     <section>
         <menu-to-corporate/>
         <header class="container-fluid">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg"
-                 alt="lineup">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg" alt="lineup">-->
+            <img src="../../img/background/modelniy-ryad-toyota-v-ukraini-1600x900_tcm-3046-663235.jpg" alt="lineup">
         </header>
 
         <div class="body container">
@@ -17,7 +17,8 @@
                         exact
                         to="/corporate_sales/business_car"
                 >
-                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/company-car2_tcm-3046-663260.jpg" alt="business_car">
+<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/company-car2_tcm-3046-663260.jpg" alt="business_car">-->
+                    <img src="../../img/images/business-customers-company-car-350x197_tcm-3046-663239.jpg" alt="business_car">
                     <strong>Користувачам службових автомобілів</strong>
                     <p>Дізнайтеся більше про надійний модельний ряд Toyota та унікальну підтримку, яку ми забезпечуємо.</p>
                 </router-link>
@@ -29,7 +30,8 @@
                         exact
                         to="/corporate_sales/business_owner"
                 >
-                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Business-Sales_tcm-3046-663262.jpg" alt="business_owner">
+<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Business-Sales_tcm-3046-663262.jpg" alt="business_owner">-->
+                    <img src="../../img/images/b2b-350x197_tcm-3046-906751.jpg" alt="business_owner">
                     <strong>Бізнес для бізнесу</strong>
                     <p>Дізнайтеся про причини працювати з Toyota BusinessPlus</p>
                 </router-link>
@@ -41,7 +43,8 @@
                         exact
                         to="/corporate_sales/corporate_clients"
                 >
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Euro-Sales_tcm-3046-663264.jpg" alt="corporate_clients">
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Euro-Sales_tcm-3046-663264.jpg" alt="corporate_clients">-->
+                    <img src="../../img/images/business-plus-sales-350x197_tcm-3046-906757.jpg" alt="corporate_clients">
                     <strong>Корпоративні продажі</strong>
                     <p>Зв'яжіться з нашою мережею, аби дізнатися більше про продуктову лінійку Toyota та перелік послуг.</p>
                 </router-link>

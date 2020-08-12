@@ -15,13 +15,16 @@
             <div class="carousel">
                 <swiper class="swiper" :options="swiperOption">
                     <swiper-slide>
-                        <img src="//collection.toyota.ua/toyota-bp.jpg" alt="Slide 1">
+<!--                        <img src="//collection.toyota.ua/toyota-bp.jpg" alt="Slide 1">-->
+                        <img src="../../img/images/toyota-bp.jpg" alt="Slide 1">
                     </swiper-slide>
                     <swiper-slide>
-                        <img src="//collection.toyota.ua/business-to-business-hybrid-1140x360.jpg" alt="Slide 2">
+<!--                        <img src="//collection.toyota.ua/business-to-business-hybrid-1140x360.jpg" alt="Slide 2">-->
+                        <img src="../../img/images/business-to-business-hybrid-1140x360.jpg" alt="Slide 2">
                     </swiper-slide>
                     <swiper-slide>
-                        <img src="//s3-eu-west-1.amazonaws.com/tme-toyotaone-prev/toyotaone/glen/Business_tcm-10-721315.jpg" alt="Slide 3">
+<!--                        <img src="//s3-eu-west-1.amazonaws.com/tme-toyotaone-prev/toyotaone/glen/Business_tcm-10-721315.jpg" alt="Slide 3">-->
+                        <img src="../../img/images/Business_tcm-10-721315.jpg" alt="Slide 3">
                     </swiper-slide>
                 </swiper>
             </div>
@@ -160,7 +163,8 @@
         header {
             @include header-xl;
             padding-top: 50px;
-            background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/b2b-1600x900_tcm-3046-906751.jpg');
+            /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/b2b-1600x900_tcm-3046-906751.jpg);*/
+            background-image: url(../../img/background/b2b-1600x900_tcm-3046-906751.jpg);
         }
 
         .body.container {
