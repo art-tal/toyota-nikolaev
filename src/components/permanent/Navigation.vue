@@ -27,7 +27,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active dropdown">
+                            <li class="nav-item active dropdown lineup">
                                 <a class="nav-link dropdown-toggle"
                                    @click.prevent="activated()"
                                    role="button"
@@ -37,8 +37,8 @@
                                     <span>Автомобілі</span>
                                 </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <lineup></lineup>
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                    <lineup :show="show"></lineup>                                    :
                                 </div>
 
                             </li>
@@ -198,11 +198,21 @@
             SubMenuNikolaev,
         },
 
+        data() {
+            return {
+                show: false,
+            }
+        },
+
         created() {
             eventEmitter.$on("closeNavbar", () => {
                 console.log("emit");
                 this.closeNavigation();
             });
+
+            $(".lineup").on("click", () => {
+                this.show = true;
+            })
         },
 
         methods: {

@@ -106,7 +106,8 @@
         header {
             @include header-xl;
             padding-top: 50px;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-genuine-parts-focus_tcm-3046-65770.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2014-genuine-parts-focus_tcm-3046-65770.jpg);*/
+            background-image: url(../../../img/background/toyota-aftersales-2014-genuine-parts-focus_tcm-3046-65770.jpg);
             h1 {
                 text-align: center;
             }

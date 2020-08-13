@@ -51,6 +51,7 @@ export default {
                             this.page.body = this.page.body.replace("&laquo;", "«");
                             this.page.body = this.page.body.replace("&raquo;", "»");
                         }
+                        // console.log(this.page.body)
                     } )
                     .then( () => {
                         this.pageBody = this.page.body;

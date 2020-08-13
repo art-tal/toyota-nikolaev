@@ -24,7 +24,7 @@
 <!--                    -->
 <!--                    <div class="col-md-4 col-12">-->
 <!--                        <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/t10-SAE-5W-30_tcm856-1233590_tcm-3046-165848.jpg" alt="SAE 5W-30">-->
-<!--                        <img src="../../../img/images/t10-SAE-5W-30_tcm856-1233590_tcm-3046-165848.jpg" alt="SAE 5W-30">-->
+<!--                        <img src="../../../img/images/lubricants/t10-SAE-5W-30_tcm856-1233590_tcm-3046-165848.jpg" alt="SAE 5W-30">-->
 <!--                    </div>-->
 <!--                </li>-->
 

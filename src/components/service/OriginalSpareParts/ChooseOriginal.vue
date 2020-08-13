@@ -12,6 +12,7 @@
 <!--            <h1>Ризик і небезпека</h1>-->
 
 <!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Risk%20and%20dangers%20-%201600x900_tcm-3046-1383802.jpg" alt="/">-->
+<!--            <img src="../../../img/images/Risk%20and%20dangers%20-%201600x900_tcm-3046-1383802.jpg" alt="/">-->
 <!--            <span>Підроблені запасні частини можуть впливати не тільки на безпеку, а й спричиняти зайві фінансові витрати.</span>-->
 
 <!--            <div class="row">-->
@@ -232,12 +233,7 @@
         <article class="or">
             <h1>Оригінальні чи підроблені запасні частини?</h1>
             <div class="video">
-                <!--                <video width="100%"-->
-                <!--                       src="../../../video/Original_filter.mp4"-->
-                <!--                       controls="controls"-->
-                <!--                       type="video/mp4"-->
-                <!--                       poster="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/youtube-parts_tcm-3046-1399144.jpg">-->
-                <!--                </video>-->
+
 
                 <div class="img_button" @click="openVideo()">
                     <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/youtube-parts_tcm-3046-1399144.jpg" alt="Оригінальні чи підроблені запасні частини?">
@@ -246,7 +242,14 @@
                 <div class="open-video" v-if="showVideo">
                     <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MbJHw_WQRmk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <video width="100%"
+                           src="../../../video/Original_filter.mp4"
+                           controls="controls"
+                           type="video/mp4"
+                           poster="../../../img/images/youtube-parts_tcm-3046-1399144.jpg">
+                    </video>
+
+<!--                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MbJHw_WQRmk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                 </div>
 
 
@@ -334,7 +337,8 @@
             height: 420px;
             width: 100%;
             padding-top: 130px;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-688387_tcm-3046-688387.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-688387_tcm-3046-688387.jpg);*/
+            background-image: url(../../../img/background/Header_tcm-11-688387_tcm-3046-688387.jpg);
 
             h1 {
                 font-size: 5.4rem;

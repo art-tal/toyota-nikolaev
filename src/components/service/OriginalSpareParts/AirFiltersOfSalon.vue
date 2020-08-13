@@ -165,7 +165,8 @@
             height: 420px;
             /*width: 100%;*/
             padding-top: 100px;
-            background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-674173_tcm-3046-674173.jpg);
+            /*background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-674173_tcm-3046-674173.jpg);*/
+            background-image: url(../../../img/background/Header_tcm-11-674173_tcm-3046-674173.jpg);
             /*background-repeat: no-repeat;*/
             /*background-position: center center;*/
             /*-webkit-background-size: cover;*/

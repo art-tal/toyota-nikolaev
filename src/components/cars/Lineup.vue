@@ -87,6 +87,10 @@
     export default {
         name: "AllModell",
 
+        props: [
+            "show"
+        ],
+
 
         data() {
             return {
@@ -98,7 +102,21 @@
         },
 
         created() {
-            this.getModel();
+            if(this.show) {
+                this.getModel();
+            }
+
+
+        },
+
+        watch: {
+            show(value) {
+                if (value) {
+                    this.getModel();
+                }
+                console.log(value);
+                // return this.show;
+            }
         },
 
         methods: {
