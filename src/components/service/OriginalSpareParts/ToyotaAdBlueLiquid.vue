@@ -147,7 +147,8 @@
             @include header-xl;
             height: 420px;
             padding-top: 50px;
-            background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Adblue_Header-420_tcm-3046-729063.jpg);
+            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Adblue_Header-420_tcm-3046-729063.jpg);*/
+            background-image: url(../../../img/background/Adblue_Header-420_tcm-3046-729063.jpg);
             h1 {
                 text-align: center;
             }

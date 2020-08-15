@@ -13,8 +13,9 @@
                             tag="li"
                             exact
                             active-class="active"
-                            :to="'/select_model/' + this.getID"
+                            :to="'/models/' + this.getSlug"
                     >
+<!--                        :to="'/select_model/' + this.getID"-->
                         <a class="nav-link">Загальний огляд <span class="sr-only">(current)</span></a>
                     </router-link>
 
@@ -23,8 +24,9 @@
                             tag="li"
                             exact
                             active-class="active"
-                            :to="'/engines_and_characteristics/' + this.getID"
+                            :to="'/engines_and_characteristics/' + this.getSlug"
                     >
+<!--                        :to="'/engines_and_characteristics/' + this.getID"-->
                         <a class="nav-link" href="#">Двигуни та характеристики</a>
                     </router-link>
 
@@ -43,7 +45,7 @@
                             tag="li"
                             exact
                             active-class="active"
-                            :to="'/reliability_and_guarantee/' + this.getID"
+                            :to="'/reliability_and_guarantee/' + this.getSlug"
                     >
                         <a class="nav-link" href="#">Надійність та гарантія</a>
                     </router-link>
@@ -90,6 +92,16 @@
                     return localStorage.id;
                 }
             },
+
+            getSlug() {
+                if(this.$route.params.slug) {
+                    return this.$route.params.slug;
+                } else if( this.$store.getters.getModel.slug) {
+                    return JSON.parse(this.$store.getters.getModel).slug ;
+                } else {
+                    return localStorage.modelSlug;
+                }
+            }
         },
     }
 </script>

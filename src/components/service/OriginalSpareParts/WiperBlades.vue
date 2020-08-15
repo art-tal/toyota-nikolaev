@@ -134,12 +134,19 @@
         <div class="video">
 
             <div class="img_button" @click="openVideo()">
-                <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-688589.jpg" alt="Заміна щіток склоочисників">
+<!--                <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-688589.jpg" alt="Заміна щіток склоочисників">-->
+                <img src="../../../img/images/Video_tcm-3046-688589.jpg" alt="Заміна щіток склоочисників">
             </div>
 
             <div class="open-video" v-if="showVideo">
                 <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
+                <video width="100%"
+                       src="/"
+                       controls="controls"
+                       type="video/mp4"
+                       poster="../../../img/images/Video_tcm-3046-688589.jpg">
+                </video>
             </div>
         </div>
 
@@ -222,7 +229,8 @@
             @include header-xl;
             height: 420px;
             padding-top: 100px;
-            background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-688578_tcm-3046-688578.jpg);
+            /*background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-688578_tcm-3046-688578.jpg);*/
+            background-image: url(../../../img/background/Header_tcm-11-688578_tcm-3046-688578.jpg);
             color: #ffffff;
 
             h1 {

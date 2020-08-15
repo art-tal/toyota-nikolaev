@@ -323,7 +323,8 @@
         header {
             @include header-xl;
             padding-top: 300px;
-            background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/%D0%BE%D1%80%D0%B8%D0%B3%D1%96%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%97-toyota-1600x900_tcm-3046-688570.jpg);
+            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/%D0%BE%D1%80%D0%B8%D0%B3%D1%96%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D1%97-toyota-1600x900_tcm-3046-688570.jpg);*/
+            background-image: url(../../../img/background/rechargeable-batteries-toyota-1600x900_tcm-3046-688570.jpg);
             color: #ffffff;
             h2 {
                 text-align: center;

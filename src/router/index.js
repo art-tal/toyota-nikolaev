@@ -195,14 +195,28 @@ const route = new VueRouter({
 
 
 
+        // {
+        //     path: '/select_model/:id',
+        //     name: 'selectModel',
+        //     component: SelectModel,
+        //     children: [
+        //
+        //         {
+        //             path: '/select_model/:id/equipment',
+        //             name: 'Equipment',
+        //             component: Equipment,
+        //         },
+        //
+        //     ]
+        // },
         {
-            path: '/select_model/:id',
-            name: 'selectModel',
+            path: '/models/:slug',
+            name: 'models',
             component: SelectModel,
             children: [
 
                 {
-                    path: '/select_model/:id/equipment',
+                    path: '/models/:slug/equipment',
                     name: 'Equipment',
                     component: Equipment,
                 },
@@ -210,8 +224,13 @@ const route = new VueRouter({
             ]
         },
 
+        // {
+        //     path: '/engines_and_characteristics/:id',
+        //     name: 'engines_and_characteristics',
+        //     component: EnginesAndCharacteristics,
+        // },
         {
-            path: '/engines_and_characteristics/:id',
+            path: '/engines_and_characteristics/:slug',
             name: 'engines_and_characteristics',
             component: EnginesAndCharacteristics,
         },
@@ -222,8 +241,13 @@ const route = new VueRouter({
         //     component: Prices,
         // },
 
+        // {
+        //     path: '/reliability_and_guarantee/:id',
+        //     name: 'reliability_and_guarantee',
+        //     component: ReliabilityAndGuarantee,
+        // },
         {
-            path: '/reliability_and_guarantee/:id',
+            path: '/reliability_and_guarantee/:slug',
             name: 'reliability_and_guarantee',
             component: ReliabilityAndGuarantee,
         },

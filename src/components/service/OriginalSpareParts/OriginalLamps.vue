@@ -69,13 +69,20 @@
         <div class="video">
 
             <div class="img_button" @click="openVideo()">
-                <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-894252.jpg" alt="Оригінальні лампи Toyota">
+<!--                <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-894252.jpg" alt="Оригінальні лампи Toyota">-->
+                <img src="../../../img/images/Video_tcm-3046-894252.jpg" alt="Оригінальні лампи Toyota">
             </div>
 
             <div class="open-video" v-if="showVideo">
                 <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/LWyglvbefsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video width="100%"
+                       src="../../../video/original_lamps_toyota.mp4"
+                       controls="controls"
+                       type="video/mp4"
+                       poster="../../../img/images/Video_tcm-3046-894252.jpg">
+                </video>
+<!--                <iframe width="560" height="315" src="https://www.youtube.com/embed/LWyglvbefsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
             </div>
         </div>
 

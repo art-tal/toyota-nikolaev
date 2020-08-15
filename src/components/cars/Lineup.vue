@@ -183,8 +183,10 @@
             goSelectModel(model) {
                 this.$store.state.model = model;
                 this.dumpingOfStorage();
-                this.$router.push({name: "selectModel", params: {id: model.id}});
+                // this.$router.push({name: "selectModel", params: {id: model.id}});
+                this.$router.push({name: "models", params: {slug: model.slug}});
                 localStorage.id = model.id;
+                localStorage.slug = model.slug;
                 localStorage.model = JSON.stringify(model);
                 location.reload();
                 this.$store.mutations.mutationRender();
