@@ -27,7 +27,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active dropdown lineup">
+                            <li class="nav-item active dropdown lineup" @click="show = true">
                                 <a class="nav-link dropdown-toggle"
                                    @click.prevent="activated()"
                                    role="button"
@@ -38,7 +38,7 @@
                                 </a>
 
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                                    <lineup :show="show"></lineup>                                    :
+                                    <lineup v-if="show"></lineup>                                    :
                                 </div>
 
                             </li>
@@ -182,6 +182,8 @@
     import SubMenuService from "./../../components/service/SubMenuService";//                          for Laravel
     import SubMenuWhyToyota from "./../../components/whyToyota/SubMenuWhyToyota";//                     for Laravel
     import SubMenuNikolaev from "./../../components/ToyotaInNikolaev/SubMenuNikolaev";
+    // import lazyload from "../../directives/lazyload";
+
     import {eventEmitter} from "./../../main";
 
 
@@ -189,6 +191,10 @@
 
     export default {
         name: "Navigation",
+
+        // directives: {
+        //     lazyload,
+        // },
 
         components: {
             Lineup,
@@ -210,9 +216,6 @@
                 this.closeNavigation();
             });
 
-            $(".lineup").on("click", () => {
-                this.show = true;
-            })
         },
 
         methods: {

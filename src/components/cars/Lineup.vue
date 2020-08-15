@@ -82,14 +82,17 @@
 </template>
 
 <script>
+    // import lazyload from "../../directives/lazyload";
     import axios from 'axios';
 
     export default {
         name: "AllModell",
 
-        props: [
-            "show"
-        ],
+        // props: [
+        //     "show"
+        // ],
+
+
 
 
         data() {
@@ -102,21 +105,21 @@
         },
 
         created() {
-            if(this.show) {
+            // if(this.show) {
                 this.getModel();
-            }
+            // }
 
 
         },
 
         watch: {
-            show(value) {
-                if (value) {
-                    this.getModel();
-                }
-                console.log(value);
-                // return this.show;
-            }
+            // show(value) {
+            //     if (value) {
+            //         this.getModel();
+            //     }
+            //     console.log(value);
+            //     // return this.show;
+            // }
         },
 
         methods: {
