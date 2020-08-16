@@ -135,7 +135,7 @@
 
             <div class="img_button" @click="openVideo()">
 <!--                <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-688589.jpg" alt="Заміна щіток склоочисників">-->
-                <img src="../../../img/images/Video_tcm-3046-688589.jpg" alt="Заміна щіток склоочисників">
+                <img src="../../../img/images/poster/Video_tcm-3046-688589.jpg" alt="Заміна щіток склоочисників">
             </div>
 
             <div class="open-video" v-if="showVideo">
@@ -145,7 +145,7 @@
                        src="/"
                        controls="controls"
                        type="video/mp4"
-                       poster="../../../img/images/Video_tcm-3046-688589.jpg">
+                       poster="../../../img/images/poster/Video_tcm-3046-688589.jpg">
                 </video>
             </div>
         </div>

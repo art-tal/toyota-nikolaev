@@ -37,13 +37,19 @@
         <div class="video">
 
             <div class="img_button" @click="openVideo()">
-                <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-parts-2014-fuel-system-cleaner-movie_tcm-3046-284905.jpg" alt="/">
+                <img src="../../../img/images/poster/toyota-genuine-parts-2014-fuel-system-cleaner-movie_tcm-3046-284905.jpg" alt="/">
             </div>
 
             <div class="open-video" v-if="showVideo">
                 <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/wlz_iwBZkqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video width="100%"
+                       src="../../../video/FuelSystemCleaner.mp4"
+                       controls="controls"
+                       type="video/mp4"
+                       poster="../../../img/images/poster/toyota-genuine-parts-2014-fuel-system-cleaner-movie_tcm-3046-284905.jpg">
+                </video>
+<!--                <iframe width="560" height="315" src="https://www.youtube.com/embed/wlz_iwBZkqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
             </div>
         </div>
 
@@ -126,7 +132,8 @@
         header {
             @include header-xl;
             padding-top: 120px;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-parts-2014-fuel-system-cleaner-focus_tcm-3046-284899.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-genuine-parts-2014-fuel-system-cleaner-focus_tcm-3046-284899.jpg);*/
+            background-image: url(../../../img/background/toyota-genuine-parts-2014-fuel-system-cleaner-focus_tcm-3046-284899.jpg);
             color: #ffffff;
 
             h1 {

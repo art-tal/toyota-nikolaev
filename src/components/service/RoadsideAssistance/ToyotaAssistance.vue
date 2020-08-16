@@ -109,7 +109,8 @@
 
         header {
             @include header-xl;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Toyota-Assistance_tcm-3046-1600899.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Toyota-Assistance_tcm-3046-1600899.jpg);*/
+            background-image: url(../../../img/background/Toyota-Assistance_tcm-3046-1600899.jpg);
             h1 {
                 text-align: center;
             }

@@ -12,12 +12,18 @@
         <div class="video">
 
             <div class="img_button" @click="openVideo()">
-                <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-939662.jpg" alt="Оригінальне лобове скло">
+                <img src="../../../img/images/poster/Video_tcm-3046-939662.jpg" alt="Оригінальне лобове скло">
             </div>
 
             <div class="open-video" v-if="showVideo">
                 <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
+                <video width="100%"
+                       src="/"
+                       controls="controls"
+                       type="video/mp4"
+                       poster="../../../img/images/poster/Video_tcm-3046-939662.jpg">
+                </video>
                 <!--                    <iframe width="100%" height="50%" src="https://www.youtube.com/embed/Skn0N-g7Arw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
             </div>
         </div>
@@ -146,7 +152,8 @@
             @include header-xl;
             height: 420px;
             padding-top: 120px;
-            background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/header-windscreen_tcm-3046-939609.jpg);
+            /*background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/header-windscreen_tcm-3046-939609.jpg);*/
+            background-image: url(../../../img/background/header-windscreen_tcm-3046-939609.jpg);
             color: #ffffff;
             h1 {
                 text-align: center;

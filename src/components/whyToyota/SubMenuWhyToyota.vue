@@ -8,7 +8,7 @@
                             tag="a"
                             class="nav-link"
                             active-class="active"
-                            to="//world_of_toyota/news"
+                            to="/world_of_toyota/news"
                     >Світ «Тойоти»</router-link>
 
                     <ul>

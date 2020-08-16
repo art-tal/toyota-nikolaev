@@ -14,11 +14,11 @@
         <div class="video">
             <video width="100%"
                    height="auto"
-                   src="http://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/video_tcm-3046-908367.mp4"
+                   src="../../../video/video_tcm-3046-908367.mp4"
 
                    controls="controls"
                    type="video/mp4"
-                   poster="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/videoPlaceholder_tcm-3046-908391.jpg">
+                   poster="../../../img/images/poster/videoPlaceholder_tcm-3046-908391.jpg">
             </video>
         </div>
         
@@ -111,7 +111,8 @@
         header  {
             @include header-xl;
             padding-top: 70px;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/header_tcm-3046-908181.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/header_tcm-3046-908181.jpg);*/
+            background-image: url(../../../img/background/header_tcm-3046-908181.jpg);
             h1 {
                 color: #ffffff;
                 h2 {

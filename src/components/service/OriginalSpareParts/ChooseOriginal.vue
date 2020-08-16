@@ -236,7 +236,7 @@
 
 
                 <div class="img_button" @click="openVideo()">
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/youtube-parts_tcm-3046-1399144.jpg" alt="Оригінальні чи підроблені запасні частини?">
+                    <img src="../../../img/images/poster/youtube-parts_tcm-3046-1399144.jpg" alt="Оригінальні чи підроблені запасні частини?">
                 </div>
 
                 <div class="open-video" v-if="showVideo">
@@ -246,7 +246,7 @@
                            src="../../../video/Original_filter.mp4"
                            controls="controls"
                            type="video/mp4"
-                           poster="../../../img/images/youtube-parts_tcm-3046-1399144.jpg">
+                           poster="../../../img/images/poster/youtube-parts_tcm-3046-1399144.jpg">
                     </video>
 
 <!--                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MbJHw_WQRmk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->

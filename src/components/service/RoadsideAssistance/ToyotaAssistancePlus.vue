@@ -133,7 +133,8 @@
         header {
             @include header-xl;
             padding-top: 70px;
-            background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-assistance-plus-1440x430_tcm-3046-1186895.jpg);
+            /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-assistance-plus-1440x430_tcm-3046-1186895.jpg);*/
+            background-image: url(../../../img/background/toyota-assistance-plus-1440x430_tcm-3046-1186895.jpg);
             color: #ffffff;
 
             h1 {

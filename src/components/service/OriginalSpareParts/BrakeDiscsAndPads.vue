@@ -51,13 +51,20 @@
 
         <div class="video">
             <div class="img_button" @click="openVideo()">
-                <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Brakes-video_tcm-3046-702187.jpg" alt="Гальмівні диски та колодки Toyota  Зупиняють надійно та безпечно">
+<!--                <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Brakes-video_tcm-3046-702187.jpg" alt="Гальмівні диски та колодки Toyota  Зупиняють надійно та безпечно">-->
+                <img src="../../../img/images/poster/Brakes-video_tcm-3046-702187.jpg" alt="Гальмівні диски та колодки Toyota  Зупиняють надійно та безпечно">
             </div>
 
             <div class="open-video" v-if="showVideo">
                 <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/KIUNGfE-v_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video width="100%"
+                       src="../../../video/brake_discs_and_pads_toyota.mp4"
+                       controls="controls"
+                       type="video/mp4"
+                       poster="../../../img/images/poster/Brakes-video_tcm-3046-702187.jpg">
+                </video>
+<!--                <iframe width="560" height="315" src="https://www.youtube.com/embed/KIUNGfE-v_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
             </div>
         </div>
 
@@ -155,7 +162,8 @@
             height: 420px;
             /*width: 100%;*/
             padding-top: 120px;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-674174_tcm-3046-674174.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header_tcm-11-674174_tcm-3046-674174.jpg);*/
+            background-image: url(../../../img/background/Header_tcm-11-674174_tcm-3046-674174.jpg);
             /*background-repeat: no-repeat;*/
             /*background-position: center center;*/
             /*-webkit-background-size: cover;*/

@@ -72,7 +72,8 @@
                              :key="key"
                              @click="openArticle(article.id)"
                     >
-                        <div class="img" :style="'background-image: url(http://lara.toyota.nikolaev.ua/storage/' + article.image + ')'"></div>
+<!--                        <div class="img" :style="'background-image: url(http://lara.toyota.nikolaev.ua/storage/' + article.image + ')'"></div>-->
+                        <img class="img" :src="'http://lara.toyota.nikolaev.ua/storage/' + article.image">
                         <div class="category" v-if="article.category_id === 8" style="border-color: forestgreen; color: forestgreen">Новини</div>
                         <div class="category" v-else-if="article.category_id === 9" style="border-color: #E50000; color: #E50000">Новинки</div>
                         <div class="category" v-else-if="article.category_id === 10" style="border-color: blueviolet; color: blueviolet">Акції</div>
@@ -242,7 +243,8 @@
         header {
             @include header-xl;
             height: 56vh;
-            background-image: url("//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg");
+            /*background-image: url("//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg");*/
+            background-image: url(../../../img/background/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg);
             h1 {
                 text-align: center;
                 padding-top: 130px;
@@ -346,11 +348,13 @@
                         margin-bottom: 20px;
                         .img {
                             width: 100%;
-                            height: 300px;
+                            /*height: 300px;*/
                             background-repeat: no-repeat;
                             background-position: center center;
-                            -webkit-background-size: cover;
-                            background-size: cover;
+                            /*-webkit-background-size: cover;*/
+                            /*background-size: cover;*/
+                            -webkit-background-size: 100%;
+                            background-size: 100%;
                         }
                         .category {
                             border: 2px solid;
@@ -454,7 +458,7 @@
                             margin-bottom: 20px;
                             .img {
                                 width: 100%;
-                                height: 300px;
+                                /*height: 300px;*/
                                 background-repeat: no-repeat;
                                 background-position: center center;
                                 -webkit-background-size: cover;

@@ -56,7 +56,7 @@
         <div class="video">
             <div class="img_button" @click="openVideo()">
 <!--                <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Video_tcm-3046-674169.jpg" alt="Підтримуйте свою Toyota у формі, справною і свіжою завдяки повітряним фільтрам салону Toyota">-->
-                <img src="../../../img/images/Video_tcm-3046-674169.jpg" alt="Підтримуйте свою Toyota у формі, справною і свіжою завдяки повітряним фільтрам салону Toyota">
+                <img src="../../../img/images/poster/Video_tcm-3046-674169.jpg" alt="Підтримуйте свою Toyota у формі, справною і свіжою завдяки повітряним фільтрам салону Toyota">
             </div>
 
             <div class="open-video" v-if="showVideo">
@@ -66,7 +66,7 @@
                        src="../../../video/air_filters_of_salon_toyota.mp4"
                        controls="controls"
                        type="video/mp4"
-                       poster="../../../img/images/Video_tcm-3046-674169.jpg">
+                       poster="../../../img/images/poster/Video_tcm-3046-674169.jpg">
                 </video>
 <!--                <iframe width="100%" height="50%" src="https://www.youtube.com/embed/Skn0N-g7Arw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
             </div>

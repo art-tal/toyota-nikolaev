@@ -1,7 +1,9 @@
 <template>
     <article class="container-fluid">
-        <header :style="'background-image: url(' + photo + ')'">
-            <h1>{{article.title}}</h1>
+<!--        <header :style="'background-image: url(' + photo + ')'">-->
+        <header class="position-relative">
+            <img :src="photo" :alt="article.title">
+            <h1 class="position-absolute">{{article.title}}</h1>
         </header>
         <div class="body container">
             <div v-html="article.body"></div>
@@ -104,12 +106,18 @@
         padding: 0;
         margin: 0;
         header {
-            @include header-xl;
+            /*@include header-xl;*/
             margin-bottom: 50px;
+            img {
+                width: 100%;
+            }
             h1 {
                 font-size: 4.4rem;
                 color: #ffffff;
-                padding-top: 150px;
+                /*padding-top: 150px;*/
+                bottom: 20px;
+                left: 0;
+                width: 100%;
             }
         }
 
@@ -131,8 +139,8 @@
     @media (max-width: 767.9px) {
         article.container-fluid {
             header {
-                @include header-lg;
-                height: 56vw;
+                //@include header-lg;
+                /*height: 56vw;*/
                 h1 {
                     font-size: 3.5rem;
                     padding-top: 50px;
@@ -145,7 +153,7 @@
     @media (max-width: 575.9px) {
         article.container-fluid {
             header {
-                @include header-xs;
+                //@include header-xs;
             }
         }
     }

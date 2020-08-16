@@ -9,7 +9,8 @@
                 </div>
 
                 <div class="col-lg-6 col-md-3 col-12 text-right">
-                    <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/TGR%20Logo_tcm-3046-1252966.png" alt="TOYOTA GAZOO Racing logo">
+<!--                    <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/TGR%20Logo_tcm-3046-1252966.png" alt="TOYOTA GAZOO Racing logo">-->
+                    <img src="../../../img/images/WorldOfToyota/TGR_Logo_tcm-3046-1252966.png" alt="TOYOTA GAZOO Racing logo">
                 </div>
             </div>
 
@@ -30,7 +31,8 @@
             <h2>Історія ралі</h2>
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_rally-pedigree_555x329_tcm-3046-1253009.jpg" alt="photo">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_rally-pedigree_555x329_tcm-3046-1253009.jpg" alt="photo">-->
+                    <img src="../../../img/images/WorldOfToyota/wrc2018_rally-pedigree_555x329_tcm-3046-1253009.jpg" alt="photo">
                 </div>
 
                 <div class="col-lg-6 col-12 text-left">
@@ -75,7 +77,8 @@
                 </div>
 
                 <div class="col-lg-6 col-12">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_yaris-wrc_555x428_tcm-3046-1253503.jpg" alt="photo">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_yaris-wrc_555x428_tcm-3046-1253503.jpg" alt="photo">-->
+                    <img src="../../../img/images/WorldOfToyota/wrc2018_yaris-wrc_555x428_tcm-3046-1253503.jpg" alt="photo">
                 </div>
             </div>
 
@@ -95,12 +98,14 @@
         <div class="container rally-team">
             <h2>Знайомтеся з командою</h2>
             <p>Першокласна та готова розширювати межі в 2018 році, команда TOYOTA GAZOO Racing складається із пристрасних людей, яка базуються в м. Пупола, Фінляндія, на чолі з чотирикратним чемпіоном світу Томмі Мякіненом.</p>
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_meet-the-team_852x479_tcm-3046-1253542.jpg" alt="photo">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_meet-the-team_852x479_tcm-3046-1253542.jpg" alt="photo">-->
+            <img src="../../../img/images/WorldOfToyota/wrc2018_meet-the-team_852x479_tcm-3046-1253542.jpg" alt="photo">
 
             <div class="row team">
                 <div class="col-lg-6 col-12 row">
                     <div class="photo col-sm-6 col-12">
-                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/8b_tcm-3046-1255068.jpg" alt="photo">
+<!--                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/8b_tcm-3046-1255068.jpg" alt="photo">-->
+                        <img src="../../../img/images/WorldOfToyota/8b_tcm-3046-1255068.jpg" alt="photo">
                     </div>
                     <div class="col-sm-6 col-12">
                         <h4>Акіо Тойода</h4>
@@ -110,7 +115,8 @@
                 
                 <div class="col-lg-6 col-12 row">
                     <div class="photo col-sm-6 col-12">
-                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/7b_tcm-3046-1255070.jpg" alt="photo">
+<!--                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/7b_tcm-3046-1255070.jpg" alt="photo">-->
+                        <img src="../../../img/images/WorldOfToyota/7b_tcm-3046-1255070.jpg" alt="photo">
                     </div>
                     <div class="col-sm-6 col-12">
                         <h4>Томмі Мякінен</h4>
@@ -120,7 +126,8 @@
                 
                 <div class="col-lg-6 col-12 row">
                     <div class="photo col-sm-6 col-12">
-                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/1_tcm-3046-1253247.png" alt="photo">
+<!--                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/1_tcm-3046-1253247.png" alt="photo">-->
+                        <img src="../../../img/images/WorldOfToyota/1_tcm-3046-1253247.png" alt="photo">
                     </div>
                     <div class="col-sm-6 col-12">
                         <h4>Автомобіль № 7</h4>
@@ -133,7 +140,8 @@
                 
                 <div class="col-lg-6 col-12 row">
                     <div class="photo col-sm-6 col-12">
-                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2_tcm-3046-1253015.png" alt="photo">
+<!--                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2_tcm-3046-1253015.png" alt="photo">-->
+                        <img src="../../../img/images/WorldOfToyota/2_tcm-3046-1253015.png" alt="photo">
                     </div>
                     <div class="col-sm-6 col-12">
                         <h4>Автомобіль № 7</h4>
@@ -146,7 +154,8 @@
                 
                 <div class="col-lg-6 col-12 row">
                     <div class="photo col-sm-6 col-12">
-                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3_tcm-3046-1253014.png" alt="photo">
+<!--                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3_tcm-3046-1253014.png" alt="photo">-->
+                        <img src="../../../img/images/WorldOfToyota/3_tcm-3046-1253014.png" alt="photo">
                     </div>
                     <div class="col-sm-6 col-12">
                         <h4>Автомобіль № 8</h4>
@@ -159,7 +168,8 @@
                 
                 <div class="col-lg-6 col-12 row">
                     <div class="photo col-sm-6 col-12">
-                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/4_tcm-3046-1253011.png" alt="photo">
+<!--                        <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/4_tcm-3046-1253011.png" alt="photo">-->
+                        <img src="../../../img/images/WorldOfToyota/4_tcm-3046-1253011.png" alt="photo">
                     </div>
                     <div class="col-sm-6 col-12">
                         <h4>Автомобіль № 8</h4>
@@ -172,7 +182,8 @@
                 
                 <div class="col-lg-6 col-12 row">
                     <div class="photo col-sm-6 col-12">
-                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/5_tcm-3046-1253010.png" alt="photo">
+<!--                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/5_tcm-3046-1253010.png" alt="photo">-->
+                        <img src="../../../img/images/WorldOfToyota/5_tcm-3046-1253010.png" alt="photo">
                     </div>
                     <div class="col-sm-6 col-12">
                         <h4>Автомобіль № 9</h4>
@@ -185,7 +196,8 @@
                 
                 <div class="col-lg-6 col-12 row">
                     <div class="photo col-sm-6 col-12">
-                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/6_tcm-3046-1253012.png" alt="photo">
+<!--                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/6_tcm-3046-1253012.png" alt="photo">-->
+                        <img src="../../../img/images/WorldOfToyota/6_tcm-3046-1253012.png" alt="photo">
                     </div>
                     <div class="col-sm-6 col-12">
                         <h4>Автомобіль № 9</h4>
@@ -233,26 +245,31 @@
                     <p>Поєднання водійських навичок, змінних умов та світових локацій чемпіонату світу з ралі робить його дійсно разючим видовищем. Але, на відміну від кільцевих перегонів із загальним стартом, ралі – унікальні перегони, на яких суперники всього на кілька хвилин віддалені від перемоги.</p>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_guide-to-wrc_557x290_tcm-3046-1253345.jpg" alt="photo">
+<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_guide-to-wrc_557x290_tcm-3046-1253345.jpg" alt="photo">-->
+                    <img src="../../../img/images/WorldOfToyota/wrc2018_guide-to-wrc_557x290_tcm-3046-1253345.jpg" alt="photo">
                 </div>
             </div>
 
             <h2>Поверхня</h2>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_surface1_275x274_tcm-3046-1252972.jpg" alt="photo">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_surface1_275x274_tcm-3046-1252972.jpg" alt="photo">-->
+                    <img src="../../../img/images/WorldOfToyota/wrc2018_surface1_275x274_tcm-3046-1252972.jpg" alt="photo">
                     <h5>АСФАЛЬТ</h5>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_surface2_275x274_tcm-3046-1252973.jpg" alt="photo">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_surface2_275x274_tcm-3046-1252973.jpg" alt="photo">-->
+                    <img src="../../../img/images/WorldOfToyota/wrc2018_surface2_275x274_tcm-3046-1252973.jpg" alt="photo">
                     <h5>ГРАВІЙ</h5>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_surface3_275x274_tcm-3046-1252974.jpg" alt="photo">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_surface3_275x274_tcm-3046-1252974.jpg" alt="photo">-->
+                    <img src="../../../img/images/WorldOfToyota/wrc2018_surface3_275x274_tcm-3046-1252974.jpg" alt="photo">
                     <h5>СНІГ</h5>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_surface4_275x274_tcm-3046-1252975.jpg" alt="photo">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_surface4_275x274_tcm-3046-1252975.jpg" alt="photo">-->
+                    <img src="../../../img/images/WorldOfToyota/wrc2018_surface4_275x274_tcm-3046-1252975.jpg" alt="photo">
                     <h5>КОМБІНОВАНА ТРАСА</h5>
                 </div>
             </div>
@@ -285,6 +302,16 @@
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery1_fullsize_1600x1200_tcm-3046-1253045.jpg",
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery5_fullsize_1600x1200_tcm-3046-1253618.jpg",
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery6_fullsize_1600x1200_tcm-3046-1253051.jpg",
+
+                    // "../../../img/images/WorldOfToyota/wrc2018_gallery2_fullsize_1600x1200_tcm-3046-1253056.jpg",
+                    // "../../../img/images/WorldOfToyota/wrc2018_gallery3_fullsize_1600x1200_tcm-3046-1253615.jpg",
+                    // "../../../img/images/WorldOfToyota/wrc2018_gallery4_fullsize_1600x1200_tcm-3046-1253617.jpg",
+                    // "../../../img/images/WorldOfToyota/wrc2018_gallery7_fullsize_1600x1200_tcm-3046-1253048.jpg",
+                    // "../../../img/images/WorldOfToyota/wrc2018_gallery8_fullsize_1600x1200_tcm-3046-1253034.jpg",
+                    // "../../../img/images/WorldOfToyota/wrc2018_gallery1_fullsize_1600x1200_tcm-3046-1253045.jpg",
+                    // "../../../img/images/WorldOfToyota/wrc2018_gallery5_fullsize_1600x1200_tcm-3046-1253618.jpg",
+                    // "../../../img/images/WorldOfToyota/wrc2018_gallery6_fullsize_1600x1200_tcm-3046-1253051.jpg",
+
                 ],
 
                 swiperOptionTop: {
@@ -372,7 +399,8 @@
         padding: 0;
         header {
             @include header-xl;
-            background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_masthead_1600x900v2_tcm-3046-1253147.jpg);
+            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_masthead_1600x900v2_tcm-3046-1253147.jpg);*/
+            background-image: url(../../../img/background/wrc2018_masthead_1600x900v2_tcm-3046-1253147.jpg);
             color: #ffffff;
             position: relative;
             padding-top: 50px;
@@ -496,6 +524,7 @@
 
         .img.container-fluid {
             padding: 0;
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_full-width_1600x503_tcm-3046-1215946.jpg);*/
             background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_full-width_1600x503_tcm-3046-1215946.jpg);
             background-repeat: no-repeat;
             background-position: center center;
