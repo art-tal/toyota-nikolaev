@@ -12,9 +12,12 @@
                 </div>
             </div>
             <div class="header-image">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793509.jpg" alt="photo">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793508.png" alt="toyota">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793507.png" alt="cars">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793509.jpg" alt="photo">-->
+                <img src="../../../../img/background/3-BG_tcm-3046-793509.jpg" alt="photo">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793508.png" alt="toyota">-->
+                <img src="../../../../img/background/2-Copy_tcm-3046-793508.png" alt="toyota">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793507.png" alt="cars">-->
+                <img src="../../../../img/background/1-Car_tcm-3046-793507.png" alt="cars">
             </div>
         </header>
 
@@ -27,10 +30,14 @@
 
             </div>
 
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/2-2000GT-profile_tcm-3046-793517.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3-2000GT-headlight_tcm-3046-793547.jpg" alt="light" class="w-50">
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/4-2000GT-Wheel_tcm-3046-793549.jpg" alt="wheel" class="w-50">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/5-2000GT-Interior_tcm-3046-793548.jpg" alt="dashboard" class="W-100">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/2-2000GT-profile_tcm-3046-793517.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2-2000GT-profile_tcm-3046-793517.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3-2000GT-headlight_tcm-3046-793547.jpg" alt="light" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/3-2000GT-headlight_tcm-3046-793547.jpg" alt="light" class="w-50">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/4-2000GT-Wheel_tcm-3046-793549.jpg" alt="wheel" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/4-2000GT-Wheel_tcm-3046-793549.jpg" alt="wheel" class="w-50">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/5-2000GT-Interior_tcm-3046-793548.jpg" alt="dashboard" class="W-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/5-2000GT-Interior_tcm-3046-793548.jpg" alt="dashboard" class="W-100">
 
             <div class="block_right">
                 <p>Із першого погляду стає помітно, що GT створювався з думкою про водія. Маленький салон ідеальної форми орієнтований у першу чергу на потреби водія, а максимальна висота кузова не перевищує 116 см. Крім цього, салон навмисно зміщений назад, завдяки чому силует автомобіля вирізняється стрімкістю, енергійністю та ідеальністю пропорцій.</p>
@@ -114,6 +121,12 @@
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2000GT-Interior-THUMB_tcm-3046-795187.jpg",
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2000GT-Profile-THUMB_tcm-3046-795191.jpg",
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2000GT-Wheel-THUMB_tcm-3046-795195.jpg",
+
+                    // "../../../../img/images/WorldOfToyota/sport-car/2000GT-Front34-THUMB_tcm-3046-795161.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/2000GT-Headlight-THUMB_tcm-3046-795183.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/2000GT-Interior-THUMB_tcm-3046-795187.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/2000GT-Profile-THUMB_tcm-3046-795191.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/2000GT-Wheel-THUMB_tcm-3046-795195.jpg",
                 ],
 
 

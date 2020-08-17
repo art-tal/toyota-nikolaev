@@ -392,9 +392,9 @@
                 email,
             },
 
-            // connection: {
-            //     required,
-            // },
+            connection: {
+                required,
+            },
 
             agree: {
                 consent(answer) {
@@ -441,8 +441,8 @@
                     date: this.date,
                     time: this.time,
                     agree: this.agree,
-                    // connection: this.connection,
-                    // call_time: `від ${this.call_time_start} до ${this.call_time_end}`,
+                    connection: this.connection,
+                    call_time: `від ${this.call_time_start} до ${this.call_time_end}`,
                 };
                 // this.$store.state.openConsultation = !this.$store.state.openConsultation
                 axios.post(
@@ -450,7 +450,7 @@
                     testDrive,
                 )
                     .then( () => {
-                        // console.log("Данные переданы успешно!");
+                        console.log("Данные переданы успешно!");
                         this.success = true;
                         setTimeout( () => {this.success = false}, 2500 );
                         this.clearTestDrive();

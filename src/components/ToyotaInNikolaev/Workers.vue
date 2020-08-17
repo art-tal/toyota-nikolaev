@@ -131,7 +131,7 @@
 
                 this.workers.forEach( (worker) => {
                     switch (worker.name_dep) {
-                        case "Руководство":
+                        case "Керівництво":
                             leadership.push(worker);
                             break;
                         case "Адміністрація":

@@ -115,7 +115,8 @@
     main ::v-deep div {
         header.container-fluid {
             @include header-xl;
-            background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/%D1%82%D0%BE%D0%B9%D0%BE%D1%82%D0%B0_%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%96%D1%8F_tcm-3046-246829.jpg);
+            /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/%D1%82%D0%BE%D0%B9%D0%BE%D1%82%D0%B0_%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%96%D1%8F_tcm-3046-246829.jpg);*/
+            background-image: url(../../../img/background/%D1%82%D0%BE%D0%B9%D0%BE%D1%82%D0%B0_%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D1%96%D1%8F_tcm-3046-246829.jpg);
             padding-top: 25vh;
         }
 

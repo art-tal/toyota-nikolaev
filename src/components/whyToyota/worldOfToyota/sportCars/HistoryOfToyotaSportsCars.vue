@@ -12,9 +12,12 @@
                 </div>
             </div>
             <div class="header-image">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-792473.jpg" alt="photo">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-792474.png" alt="toyota">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Cars_tcm-3046-792475.png" alt="cars">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-792473.jpg" alt="photo">-->
+                <img src="../../../../img/background/3-BG_tcm-3046-792473.jpg" alt="photo">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-792474.png" alt="toyota">-->
+                <img src="../../../../img/background/2-Copy_tcm-3046-792474.png" alt="toyota">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Cars_tcm-3046-792475.png" alt="cars">-->
+                <img src="../../../../img/background/1-Cars_tcm-3046-792475.png" alt="cars">
             </div>
         </header>
 
@@ -27,13 +30,15 @@
                 </p>
                 <p>Завдяки надійності та економічності модель Sports 800 користувалась великою популярністю у національному автоспорті. У 1967 році цей автомобіль зайняв третє місце у перегонах «24 години Фуджі», фінішувавши відразу за двома Toyota 2000GT. Ця модель надовго залишиться у пам’яті вдячних шанувальників не лише як перший серійний спорткар Toyota, але й як справжній спорткар для ентузіастів.</p>
             </div>
-            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/2-Toyota-Sports800_tcm-3046-792826.jpg" alt="car">
+<!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/2-Toyota-Sports800_tcm-3046-792826.jpg" alt="car">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2-Toyota-Sports800_tcm-3046-792826.jpg" alt="car">
         </div>
 
         <continue></continue>
 
         <div class="next_part container-fluid">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2000GT-footer_tcm-3046-792830.jpg" alt="next car">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2000GT-footer_tcm-3046-792830.jpg" alt="next car">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2000GT-footer_tcm-3046-792830.jpg" alt="next car">
 
                 <router-link
                         tag="header"

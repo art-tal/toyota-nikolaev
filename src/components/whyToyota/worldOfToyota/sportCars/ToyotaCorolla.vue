@@ -12,9 +12,12 @@
                 </div>
             </div>
             <div class="header-image">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793762.jpg" alt="photo">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793761.png" alt="toyota">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793760.png" alt="cars">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793762.jpg" alt="photo">-->
+                <img src="../../../../img/background/3-BG_tcm-3046-793762.jpg" alt="photo">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793761.png" alt="toyota">-->
+                <img src="../../../../img/background/2-Copy_tcm-3046-793761.png" alt="toyota">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793760.png" alt="cars">-->
+                <img src="../../../../img/background/1-Car_tcm-3046-793760.png" alt="cars">
             </div>
         </header>
 
@@ -26,9 +29,12 @@
 
             </div>
 
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-CorollaAE86-Profile_tcm-3046-793768.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/3-CorollaAE86-Rear_tcm-3046-793769.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/4-CorollaAE86-Interior_tcm-3046-793770.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-CorollaAE86-Profile_tcm-3046-793768.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2-CorollaAE86-Profile_tcm-3046-793768.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/3-CorollaAE86-Rear_tcm-3046-793769.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/3-CorollaAE86-Rear_tcm-3046-793769.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/4-CorollaAE86-Interior_tcm-3046-793770.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/4-CorollaAE86-Interior_tcm-3046-793770.jpg" alt="car" class="w-50">
 
             <div class="block_right">
                 <p>Модель AE86 що оснащувалася високообертовим і харизматичним двигуном, об’ємом 1,6 л з двома розподільними валами з верхнім розташуванням (DOHC), що розвивав потужність у 124 «конячки». У поєднанні з динамічним задньоприводним шасі та заниженою посадкою AE86 перетворювалася на справжню мрію водія у її сконцентрованому вираженні. Завдяки цьому автомобіль швидко завоював довіру професійних учасників різноманітних перегонів і ралі, які хотіли отримати грайливу, надійну і швидку задньоприводну модель.</p>
@@ -38,10 +44,14 @@
 
             </div>
 
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/5-CorollaAE92-Front_tcm-3046-793778.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/6-CorollaAE92-Profile_tcm-3046-793779.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/7-CorollaAE92-Interior_tcm-3046-793780.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/8-CorollaAE92-Rear_tcm-3046-793781.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/5-CorollaAE92-Front_tcm-3046-793778.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/5-CorollaAE92-Front_tcm-3046-793778.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/6-CorollaAE92-Profile_tcm-3046-793779.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/6-CorollaAE92-Profile_tcm-3046-793779.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/7-CorollaAE92-Interior_tcm-3046-793780.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/7-CorollaAE92-Interior_tcm-3046-793780.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/8-CorollaAE92-Rear_tcm-3046-793781.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/8-CorollaAE92-Rear_tcm-3046-793781.jpg" alt="car" class="w-100">
 
             <div class="block_right">
                 <p>Автомобіль отримав тюнингований двигун з робочим об’ємом 1587 «кубиків», що був близьким родичем агрегату, яким оснащувався Corolla AE86 Levin. Маючи подвійний розподільний вал з верхнім розташуванням та одноточковою системою впорскування, цей двигун розвивав потужність у 130 к.с. за стандартом DIN і напрочуд жваво реагував на педаль акселератора. У поєднанні з масою, що становила усього 1075 кг, динаміка цього автомобіля була просто неймовірною для свого часу: розгін від 0 до 100 км/год. тривав менше 9 секунд, а максимальна швидкість наближалась до 200 км/год.</p>
@@ -80,7 +90,8 @@
         <continue></continue>
 
         <div class="next_part container-fluid">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/9-footer-MR2_tcm-3046-793752.jpg" alt="next car">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/9-footer-MR2_tcm-3046-793752.jpg" alt="next car">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/9-footer-MR2_tcm-3046-793752.jpg" alt="next car">
 
             <router-link
                     tag="header"
@@ -120,20 +131,22 @@
 
                 images: [
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/CorollaAE86-Front34-FULL_tcm-3046-795670.jpg",
-
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/CorollaAE86-Interior-FULL_tcm-3046-795674.jpg",
-
                     "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/CorollaAE86-Profile-FULL_tcm-3046-795678.jpg",
-
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/CorollaAE86-Rear34-FULL_tcm-3046-795682.jpg",
-
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/CorollaAE92-Front34-FULL_tcm-3046-795686.jpg",
-
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/CorollaAE92-Interior-FULL_tcm-3046-795699.jpg",
-
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/CorollaAE92-Profile-FULL_tcm-3046-795703.jpg",
-
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/CorollaAE92-Rear34-FULL_tcm-3046-795707.jpg",
+
+                    // "../../../../img/images/WorldOfToyota/sport-car/CorollaAE86-Front34-FULL_tcm-3046-795670.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/CorollaAE86-Interior-FULL_tcm-3046-795674.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/CorollaAE86-Profile-FULL_tcm-3046-795678.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/CorollaAE86-Rear34-FULL_tcm-3046-795682.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/CorollaAE92-Front34-FULL_tcm-3046-795686.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/CorollaAE92-Interior-FULL_tcm-3046-795699.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/CorollaAE92-Profile-FULL_tcm-3046-795703.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/CorollaAE92-Rear34-FULL_tcm-3046-795707.jpg",
                 ],
 
 

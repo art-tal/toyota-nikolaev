@@ -116,7 +116,8 @@
     main ::v-deep div {
         header.container-fluid {
             @include header-xl;
-            background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/khartiya-kliyentiv-1600x900_tcm-3046-1964732.jpg);
+            /*background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/khartiya-kliyentiv-1600x900_tcm-3046-1964732.jpg);*/
+            background-image: url(../../../img/background/khartiya-kliyentiv-1600x900_tcm-3046-1964732.jpg);
             color: #ffffff;
         }
 

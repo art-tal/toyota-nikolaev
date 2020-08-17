@@ -14,11 +14,13 @@
             <div class="museum d-flex flex-column flex-wrap">
                 <div class="coll">
                     <h4>Зали музею Лаувмана заповнені найкращими зразками столітньої автомобільної досконалості: блискучими кузовами автомобілів сяйвом форми, блиском легкосплавних дисків і ароматом старої шкіри у повітрі.</h4>
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-01_tcm-3046-403715.jpg" alt="З чого все почалося Toyoda AA">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-01_tcm-3046-403715.jpg" alt="З чого все почалося Toyoda AA">-->
+                    <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-01_tcm-3046-403715.jpg" alt="З чого все почалося Toyoda AA">
                 </div>
             </div>
 
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-02_tcm-3046-403727.jpg" alt="З чого все почалося Toyoda AA">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-02_tcm-3046-403727.jpg" alt="З чого все почалося Toyoda AA">-->
+            <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-02_tcm-3046-403727.jpg" alt="З чого все почалося Toyoda AA">
 
             <article class="row">
                 <div class="coll">
@@ -36,7 +38,8 @@
 
                         <p>Новий підрозділ потребував нового найменування, тому в 1937 році компанія провела конкурс на нову назву компанії. Після аналізу тисячі різних записів була заснована корпорація Toyota Motor Co. Ця назва була обрана перш за все через те, що японською вона складалася з восьми «щасливих» штрихів.</p>
 
-                        <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-03_tcm-3046-403742.jpg" alt="З чого все почалося Toyoda AA">
+<!--                        <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-03_tcm-3046-403742.jpg" alt="З чого все почалося Toyoda AA">-->
+                        <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-03_tcm-3046-403742.jpg" alt="З чого все почалося Toyoda AA">
                     </div>
                 </div>
             </article>
@@ -45,11 +48,17 @@
 
             <article class="row">
                 <div class="col-lg-3 d-none d-lg-block">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-04_tcm-3046-403761.jpg"  alt="З чого все почалося Toyoda AA">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-04_tcm-3046-403761.jpg"  alt="З чого все почалося Toyoda AA">-->
+                    <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-04_tcm-3046-403761.jpg"  alt="З чого все почалося Toyoda AA">
+<!--                    <header>-->
+<!--                        <h3>Несподівана</h3>-->
+<!--                        <h1>ЗНАХІДКА</h1>-->
+<!--                    </header>-->
                 </div>
 
                 <div class="col-lg-9 col-12 coll find">
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-04_tcm-3046-403761.jpg"  alt="З чого все почалося Toyoda AA" class="d-md-block">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-04_tcm-3046-403761.jpg"  alt="З чого все почалося Toyoda AA" class="d-md-block">-->
+<!--                    <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-04_tcm-3046-403761.jpg"  alt="З чого все почалося Toyoda AA" class="d-md-block">-->
 
                     <header>
                         <h3>Несподівана</h3>
@@ -93,17 +102,20 @@
 
             <div class="row review">
                 <div class="col-md-6 col-12">
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-06_tcm-3046-403764.jpg" alt="З чого все почалося Toyoda AA">
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-06_tcm-3046-403764.jpg" alt="З чого все почалося Toyoda AA">-->
+                    <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-06_tcm-3046-403764.jpg" alt="З чого все почалося Toyoda AA">
                     <p>Основною конструктивною деталлю оригінальної моделі АА є її розділене переднє скло, яке все ще залишається звуженим, пропонуючи водію більш відкритий огляд уздовж довгого капота. За період життя цього автомобіля непомітні двірники були переміщені з оригінального положення «зверху-вниз» на більш сучасний рівень капота, але це не змінює вигляд переднього скла.</p>
                 </div>
 
                 <div class="col-md-6 col-12">
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-07_tcm-3046-403763.jpg" alt="З чого все почалося Toyoda AA">
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-07_tcm-3046-403763.jpg" alt="З чого все почалося Toyoda AA">-->
+                    <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-07_tcm-3046-403763.jpg" alt="З чого все почалося Toyoda AA">
                     <p>Не дивно, що інтер’єр залишився таким, яким він був, коли автомобіль знайшли. Його якнайкраще можна описати словом «сільськогосподарський», але ваша уява допоможе заповнити прогалини, і скоро ви будете дивитися на порвані сидіння та обшивку і бачити, який вигляд він мав би новим.</p>
                 </div>
             </div>
 
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-08_tcm-3046-404494.jpg" alt="З чого все почалося Toyoda AA">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-08_tcm-3046-404494.jpg" alt="З чого все почалося Toyoda AA">-->
+            <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-08_tcm-3046-404494.jpg" alt="З чого все почалося Toyoda AA">
 
             <div class="row review">
                 <div class="col-md-4 col-12">
@@ -116,7 +128,8 @@
 
             <div class="row">
                 <div class="col-md-4 col-12">
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-09_tcm-3046-403765.jpg" alt="З чого все почалося Toyoda AA">
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-09_tcm-3046-403765.jpg" alt="З чого все почалося Toyoda AA">-->
+                    <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-09_tcm-3046-403765.jpg" alt="З чого все почалося Toyoda AA">
                 </div>
                 <article class="col-md-8 col-12 coll_2">
                     <header>
@@ -198,6 +211,16 @@
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-08-full_tcm-3046-413602.jpg",
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-09-full_tcm-3046-413604.jpg",
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-10-full_tcm-3046-413605.jpg",
+
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-01-full_tcm-3046-413591.jpg",
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-02-full_tcm-3046-413592.jpg",
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-03-full_tcm-3046-413595.jpg",
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-04-full_tcm-3046-413594.jpg",
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-05-full_tcm-3046-413596.jpg",
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-07-full_tcm-3046-413601.jpg",
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-08-full_tcm-3046-413602.jpg",
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-09-full_tcm-3046-413604.jpg",
+                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-10-full_tcm-3046-413605.jpg",
                 ],
 
 
@@ -290,7 +313,8 @@
     section {
         header.container-fluid {
             @include header-xl;
-            background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-focus-image-full_tcm-3046-403781.jpg);
+            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-focus-image-full_tcm-3046-403781.jpg);*/
+            background-image: url(../../../img/background/toyota-2015-world-of-toyota-where-it-all-began-focus-image-full_tcm-3046-403781.jpg);
             padding-top: 70px;
             h1 {
                 color: #ffffff;
@@ -446,7 +470,8 @@
 
         .container-fluid.img {
                 @include header-xl;
-                background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-05_tcm-3046-403762.jpg);
+                /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-05_tcm-3046-403762.jpg);*/
+                background-image: url(../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-05_tcm-3046-403762.jpg);
             height: 500px;
         }
 

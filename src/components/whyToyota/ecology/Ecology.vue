@@ -11,7 +11,8 @@
                             exact
                             to="/environmental_mission"
                     >
-                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/new_banner_EC_tcm-3046-617965.jpg" alt="Екологічна місія для кращого майбутнього">
+<!--                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/new_banner_EC_tcm-3046-617965.jpg" alt="Екологічна місія для кращого майбутнього">-->
+                        <img src="../../../img/background/new_banner_EC_tcm-3046-617965.jpg" alt="Екологічна місія для кращого майбутнього">
                     </router-link>
 
                 </swiper-slide>
@@ -22,7 +23,8 @@
                             exact
                             to="/better_air"
                     >
-                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Environment-compressor_tcm-3046-617964.jpg" alt="Краще повітря">
+<!--                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Environment-compressor_tcm-3046-617964.jpg" alt="Краще повітря">-->
+                        <img src="../../../img/background/Environment-compressor_tcm-3046-617964.jpg" alt="Краще повітря">
                         <h1 style="color: #202020">Краще повітря
                             <h2>Забезпечення сталої мобільності для всіх</h2>
                         </h1>
@@ -38,7 +40,8 @@
                             exact
                             to="/best_planet"
                     >
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Butterfly%201_tcm-3046-617969.jpg" alt="best_planet">
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Butterfly%201_tcm-3046-617969.jpg" alt="best_planet">-->
+                    <img src="../../../img/background/Butterfly-1_tcm-3046-617969.jpg" alt="best_planet">
                     <h1>Краща планета
                         <h2>Гармонійне майбутнє для людей, продуктів і планети</h2>
                     </h1>
@@ -53,7 +56,8 @@
                             exact
                             to="/better_life"
                     >
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-617970.jpg" alt="better_life">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-617970.jpg" alt="better_life">-->
+                    <img src="../../../img/background/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-617970.jpg" alt="better_life">
                     <h1>Краще життя
                         <h2>Створення майбутнього суспільства в гармонії з природою</h2>
                     </h1>
@@ -68,7 +72,8 @@
                             exact
                             to="/just_better"
                     >
-                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Section-1_Picture-frame4_tcm-3046-628343.jpg" alt="just_better">
+<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Section-1_Picture-frame4_tcm-3046-628343.jpg" alt="just_better">-->
+                    <img src="../../../img/background/Section-1_Picture-frame4_tcm-3046-628343.jpg" alt="just_better">
                     <h1>Просто краще
                         <h2>Безпечний, відповідальний та легальний бізнес</h2>
                     </h1>

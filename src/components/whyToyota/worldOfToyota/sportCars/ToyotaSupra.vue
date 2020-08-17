@@ -12,9 +12,12 @@
                 </div>
             </div>
             <div class="header-image">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793737.jpg" alt="photo">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793736.png" alt="toyota">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793735.png" alt="cars">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793737.jpg" alt="photo">-->
+                <img src="../../../../img/background/3-BG_tcm-3046-793737.jpg" alt="photo">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793736.png" alt="toyota">-->
+                <img src="../../../../img/background/2-Copy_tcm-3046-793736.png" alt="toyota">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793735.png" alt="cars">-->
+                <img src="../../../../img/background/1-Car_tcm-3046-793735.png" alt="cars">
             </div>
         </header>
 
@@ -27,10 +30,14 @@
 
             </div>
 
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-Supra-Profile_tcm-3046-793743.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/3-Supra-Rear-wing_tcm-3046-793744.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/4-Supra-Interior_tcm-3046-793745.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/5-Supra-Rear_tcm-3046-793746.jpg" alt="car" class="W-100">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-Supra-Profile_tcm-3046-793743.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2-Supra-Profile_tcm-3046-793743.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/3-Supra-Rear-wing_tcm-3046-793744.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/3-Supra-Rear-wing_tcm-3046-793744.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/4-Supra-Interior_tcm-3046-793745.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/4-Supra-Interior_tcm-3046-793745.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/5-Supra-Rear_tcm-3046-793746.jpg" alt="car" class="W-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/5-Supra-Rear_tcm-3046-793746.jpg" alt="car" class="W-100">
 
             <div class="block_right">
                 <p>Довгоочікуване четверте покоління Supra зразка 1993 року з довшим капотом і плавними лініями мало дуже багато спільного зі своїм предком – моделлю 2000GT. Легковагі матеріали (а навіть килимки виготовлялися з порожнистого волокна для зменшення маси) дали змогу інженерам зекономити 100 кг порівняно з моделлю-попередником. Supra, обладнана потужним 3-літровим двигуном з подвійним турбонаддувом, перетворювалася на автомобіль із справжнім вибуховим характером: японський новачок став причиною багатьох безсонних ночей італійських та німецьких виробників суперкарів.</p>
@@ -71,7 +78,8 @@
         <continue></continue>
 
         <div class="next_part container-fluid">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/6-Footer-Corolla_tcm-3046-793727.jpg" alt="next car">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/6-Footer-Corolla_tcm-3046-793727.jpg" alt="next car">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/6-Footer-Corolla_tcm-3046-793727.jpg" alt="next car">
 
             <router-link
                     tag="header"
@@ -115,6 +123,12 @@
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Supra-Profile-FULL_tcm-3046-795739.jpg",
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/3-Supra-Rear-wing_tcm-3046-793744.jpg",
                     "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Supra-Rear34-FULL_tcm-3046-795743.jpg",
+
+                    // "../../../../img/images/WorldOfToyota/sport-car/Supra-Front34-FULL_tcm-3046-795731.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/Supra-Interior-FULL_tcm-3046-795735.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/Supra-Profile-FULL_tcm-3046-795739.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/3-Supra-Rear-wing_tcm-3046-793744.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/Supra-Rear34-FULL_tcm-3046-795743.jpg",
                 ],
 
 

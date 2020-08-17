@@ -159,7 +159,7 @@
         },
 
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 200)
         },
 
         methods: {

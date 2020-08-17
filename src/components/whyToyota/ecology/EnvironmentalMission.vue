@@ -186,7 +186,8 @@
     main {
         header {
             @include header-xl;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/new_banner_EC_tcm-3046-617990.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/new_banner_EC_tcm-3046-617990.jpg);*/
+            background-image: url(../../../img/background/new_banner_EC_tcm-3046-617965.jpg);
         }
     }
     

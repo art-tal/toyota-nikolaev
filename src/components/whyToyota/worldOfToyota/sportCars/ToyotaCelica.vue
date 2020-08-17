@@ -12,9 +12,12 @@
                 </div>
             </div>
             <div class="header-image">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793712.png" alt="photo">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793711.png" alt="toyota">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793710.png" alt="cars">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793712.png" alt="photo">-->
+                <img src="../../../../img/background/3-BG_tcm-3046-793712.png" alt="photo">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793711.png" alt="toyota">-->
+                <img src="../../../../img/background/2-Copy_tcm-3046-793711.png" alt="toyota">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793710.png" alt="cars">-->
+                <img src="../../../../img/background/1-Car_tcm-3046-793710.png" alt="cars">
             </div>
         </header>
 
@@ -27,10 +30,14 @@
 
             </div>
 
-            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/2-Celica-Profile_tcm-3046-793718.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/3-Celica-Interior_tcm-3046-793719.jpg" alt="dashboard" class="w-50">
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/4-Celica-Intake_tcm-3046-793720.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/5-Celica-Front_tcm-3046-793721.jpg" alt="car" class="W-100">
+<!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/2-Celica-Profile_tcm-3046-793718.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2-Celica-Profile_tcm-3046-793718.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/3-Celica-Interior_tcm-3046-793719.jpg" alt="dashboard" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/3-Celica-Interior_tcm-3046-793719.jpg" alt="dashboard" class="w-50">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/4-Celica-Intake_tcm-3046-793720.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/4-Celica-Intake_tcm-3046-793720.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/5-Celica-Front_tcm-3046-793721.jpg" alt="car" class="W-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/5-Celica-Front_tcm-3046-793721.jpg" alt="car" class="W-100">
 
             <div class="block_right">
                 <p>Довго чекати на успіх команді не довелося. У 1990 році Карлос Сайнц (Carlos Sainz) став чемпіоном в особистому заліку (вперше серед японських виробників) та посів друге місце у заліку виробників. У 1992 році на світ з’явилася нова версія під назвою GT-Four RC (Rally Competition), що пройшла омологацію на відповідність стандартам WRC. Ця модель у 1993 і 1994 роках виборола чемпіонські титули в особистому заліку та у заліку виробників під керуванням Юхи Канкунена (Juha Kankkunen) і Дідьє Оріоля (Didier Auriol) відповідно.</p>
@@ -68,7 +75,8 @@
         <continue></continue>
 
         <div class="next_part container-fluid">
-            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/6-Footer-Supra_tcm-3046-793701.jpg" alt="next car">
+<!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/6-Footer-Supra_tcm-3046-793701.jpg" alt="next car">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/6-Footer-Supra_tcm-3046-793701.jpg" alt="next car">
 
             <router-link
                     tag="header"
@@ -108,14 +116,18 @@
 
                 images: [
                     "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Celica-Front34-FULL_tcm-3046-795274.jpg",
-
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Celica-Front-FULL_tcm-3046-795278.jpg",
-
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Celica-Intake-FULL_tcm-3046-795282.jpg",
-
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Celica-Interior-FULL_tcm-3046-795286.jpg",
-
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Celica-Profile-FULL_tcm-3046-795290.jpg",
+
+                    // "../../../../img/images/WorldOfToyota/sport-car/Celica-Front34-FULL_tcm-3046-795274.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/Celica-Front-FULL_tcm-3046-795278.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/Celica-Intake-FULL_tcm-3046-795282.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/Celica-Interior-FULL_tcm-3046-795286.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/Celica-Profile-FULL_tcm-3046-795290.jpg",
+
+
                 ],
 
 

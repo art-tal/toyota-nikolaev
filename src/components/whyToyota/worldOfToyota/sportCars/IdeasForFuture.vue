@@ -11,9 +11,12 @@
                 </div>
             </div>
             <div class="header-image">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-795006.jpg" alt="photo">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-795005.png" alt="toyota">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-795004.png" alt="cars">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-795006.jpg" alt="photo">-->
+                <img src="../../../../img/background/3-BG_tcm-3046-795006.jpg" alt="photo">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-795005.png" alt="toyota">-->
+                <img src="../../../../img/background/2-Copy_tcm-3046-795005.png" alt="toyota">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-795004.png" alt="cars">-->
+                <img src="../../../../img/background/1-Car_tcm-3046-795004.png" alt="cars">
             </div>
         </header>
 
@@ -25,9 +28,12 @@
                 <p>Сміливіший і простіший дизайн FT-1 став результатом прагнення компанії вдихнути у моделі Toyota більше енергії і пристрасті. Прискорення процесу пішло на користь FT-1, а вихід моделі припав на 40-ву річницю дизайнерської студії Toyota під назвою Calty Design Research зі Сполучених Штатів Америки.</p>
             </div>
 
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2-FT-1-Rear_tcm-3046-795012.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/3-FT-1-Rearwing_tcm-3046-795013.jpg" alt="light" class="w-50">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/4-FT-1-Engine_tcm-3046-795014.jpg" alt="wheel" class="w-50">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2-FT-1-Rear_tcm-3046-795012.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2-FT-1-Rear_tcm-3046-795012.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/3-FT-1-Rearwing_tcm-3046-795013.jpg" alt="light" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/3-FT-1-Rearwing_tcm-3046-795013.jpg" alt="light" class="w-50">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/4-FT-1-Engine_tcm-3046-795014.jpg" alt="wheel" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/4-FT-1-Engine_tcm-3046-795014.jpg" alt="wheel" class="w-50">
 
             <div class="block_right">
                 <h5>Автомобіль і водій як одне ціле</h5>
@@ -37,9 +43,12 @@
 
             </div>
 
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/5-S-FR-front34_tcm-3046-795020.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/6-S-FR-rear_tcm-3046-795021.jpg" alt="light" class="w-50">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/7-S-FR-Interior_tcm-3046-795022.jpg" alt="wheel" class="w-50">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/5-S-FR-front34_tcm-3046-795020.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/5-S-FR-front34_tcm-3046-795020.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/6-S-FR-rear_tcm-3046-795021.jpg" alt="light" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/6-S-FR-rear_tcm-3046-795021.jpg" alt="light" class="w-50">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/7-S-FR-Interior_tcm-3046-795022.jpg" alt="wheel" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/7-S-FR-Interior_tcm-3046-795022.jpg" alt="wheel" class="w-50">
 
             <div class="block_right">
                 <p>З урахуванням спортивної спадщини, що здатна викликати заздрість у будь-якого автовиробника, а також спрямування основних зусиль компанії на виготовлення ще кращих і приємніших у керуванні автомобілів та звабливих натяків на подальші перспективи майбутнє спорткарів Toyota може стати таким самим яскравим і незабутнім, як і багата на пам’ятні моменти історія.</p>
@@ -76,7 +85,8 @@
         <continue></continue>
 
         <div class="next_part container-fluid">
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/8-Footer-History_tcm-3046-794996.jpg" alt="next car">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/8-Footer-History_tcm-3046-794996.jpg" alt="next car">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/8-Footer-History_tcm-3046-794996.jpg" alt="next car">
 
             <router-link
                     tag="header"
@@ -124,6 +134,16 @@
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/S-FR-Interior-FULL_tcm-3046-795881.jpg",
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/S-FR-Rear34-FULL_tcm-3046-795905.jpg",
                     "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/FT-1-Engine-FULL_tcm-3046-795853.jpg",
+
+                    // "../../../../img/images/WorldOfToyota/sport-car/FT-1-Front34-FULL_tcm-3046-795857.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/FT-1-Interior-FULL_tcm-3046-795861.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/FT-1-Rear-FULL_tcm-3046-795865.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/FT-1-Rearwing-FULL_tcm-3046-795869.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/S-FR-Front34-FULL_tcm-3046-795873.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/S-FR-Front-FULL_tcm-3046-795877.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/S-FR-Interior-FULL_tcm-3046-795881.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/S-FR-Rear34-FULL_tcm-3046-795905.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/FT-1-Engine-FULL_tcm-3046-795853.jpg",
                 ],
 
 

@@ -12,9 +12,12 @@
                 </div>
             </div>
             <div class="header-image">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793797.png" alt="photo">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793796.png" alt="toyota">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793795.png" alt="cars">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-793797.png" alt="photo">-->
+                <img src="../../../../img/background/3-BG_tcm-3046-793797.png" alt="photo">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-793796.png" alt="toyota">-->
+                <img src="../../../../img/background/2-Copy_tcm-3046-793796.png" alt="toyota">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-793795.png" alt="cars">-->
+                <img src="../../../../img/background/1-Car_tcm-3046-793795.png" alt="cars">
             </div>
         </header>
 
@@ -26,10 +29,14 @@
 
             </div>
 
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2-MR2-profile_tcm-3046-793803.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3-MR2-interior_tcm-3046-793804.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/4-MR2-Rearwing_tcm-3046-793805.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/5-MR2-Front_tcm-3046-793806.jpg" alt="car" class="W-100">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/2-MR2-profile_tcm-3046-793803.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2-MR2-profile_tcm-3046-793803.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/3-MR2-interior_tcm-3046-793804.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/3-MR2-interior_tcm-3046-793804.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/4-MR2-Rearwing_tcm-3046-793805.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/4-MR2-Rearwing_tcm-3046-793805.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/5-MR2-Front_tcm-3046-793806.jpg" alt="car" class="W-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/5-MR2-Front_tcm-3046-793806.jpg" alt="car" class="W-100">
 
             <div class="block_right">
                 <p>Через п’ять років загальне визнання завоювала модель другого покоління, яка зберегла оригінальну компоновку з центральним розташуванням двигуна та жвавий характер, але водночас була орієнтована на вищий сегмент ринку. Більший за розмірами кузов з дещо екзотичнішим виглядом, салон кращої якості та удосконалена плавність ходу з підвищеним рівнем комфорту зробили MR2 ще привабливішим. Завдяки цьому друге покоління MR2 користувалося значним попитом ще десять років.</p>
@@ -69,7 +76,8 @@
         <continue></continue>
 
         <div class="next_part container-fluid">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/7-Footer-GT86_tcm-3046-793787.jpg" alt="next car">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/7-Footer-GT86_tcm-3046-793787.jpg" alt="next car">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/7-Footer-GT86_tcm-3046-793787.jpg" alt="next car">
 
             <router-link
                     tag="header"
@@ -109,14 +117,16 @@
 
                 images: [
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/MR2-Front34-FULL_tcm-3046-795770.jpg",
-
                     "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/MR2-Front-FULL_tcm-3046-795774.jpg",
-
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/MR2-Interior-FULL_tcm-3046-795778.jpg",
-
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/MR2-Profile-FULL_tcm-3046-795782.jpg",
-
                     "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/MR2-Rearwing-FULL_tcm-3046-795786.jpg",
+
+                    // "../../../../img/images/WorldOfToyota/sport-car/MR2-Front34-FULL_tcm-3046-795770.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/MR2-Front-FULL_tcm-3046-795774.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/MR2-Interior-FULL_tcm-3046-795778.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/MR2-Profile-FULL_tcm-3046-795782.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/MR2-Rearwing-FULL_tcm-3046-795786.jpg",
                 ],
 
 

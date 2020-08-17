@@ -42,48 +42,56 @@ import 'swiper/css/swiper.css'
                         pathName: 'history_of_toyota_sports_cars',
                         description: 'Маленький, легкий і кумедний. Історія наших спортивних автомобілів почалася з моделі Sports 800.',
                         img: "//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/navSlide01_tcm-3046-791187.png"
+                        // img: "./../../../../img/images/WorldOfToyota/sport-car/navSlide01_tcm-3046-791187.png"
                     },
                     {
                         header: "2000GT",
                         pathName: 'toyota_2000_gt',
                         description: 'Перший японський суперкар. Один з улюблених автомобілів Бонда і взірець дизайну спортивного авто донині.',
                         img: "//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/navSlide02_tcm-3046-792887.png"
+                        // img: "./../../../../img/images/WorldOfToyota/sport-car/navSlide02_tcm-3046-792887.png"
                     },
                     {
                         header: "CELICA",
                         pathName: 'toyota_celica',
                         description: '«Небесна» Celica возить людей по всьому світу вже понад 30 років.',
                         img: "//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/navSlide03_tcm-3046-792889.png"
+                        // img: "./../../../../img/images/WorldOfToyota/sport-car/navSlide03_tcm-3046-792889.png"
                     },
                     {
                         header: "SUPRA",
                         pathName: 'toyota_supra',
                         description: 'Довга, потужна і розкішна Supra, що не залишала байдужим нікого, ідеально пасувала до атмосфери 1980-х років.',
                         img: "//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/navSlide04_tcm-3046-792893.png"
+                        // img: "./../../../../img/images/WorldOfToyota/sport-car/navSlide04_tcm-3046-792893.png"
                     },
                     {
                         header: "COROLLA",
                         pathName: 'toyota_corolla',
                         description: 'За непринадним фасадом Corolla приховувалася справжня мрія водія.',
                         img: "//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/navSlide05_tcm-3046-792892.png"
+                        // img: "./../../../../img/images/WorldOfToyota/sport-car/navSlide05_tcm-3046-792892.png"
                     },
                     {
                         header: "MR2",
                         pathName: 'toyota_mr2',
                         description: 'Невеликий та динамічний MR2 справив досить значне враження і належить до автомобілів, які забути не просто.',
                         img: "//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/navSlide06_tcm-3046-792890.png"
+                        // img: "./../../../../img/images/WorldOfToyota/sport-car/navSlide06_tcm-3046-792890.png"
                     },
                     {
                         header: "GT86",
                         pathName: 'toyota_gt86',
                         description: 'GT86 з його нестримним характером ознаменував повернення до невимушеного і доступного задоволення від керування.',
                         img: "//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/navSlide07_tcm-3046-792888.png"
+                        // img: "./../../../../img/images/WorldOfToyota/sport-car/navSlide07_tcm-3046-792888.png"
                     },
                     {
                         header: "Ідеї щодо майбутнього",
                         pathName: 'IdeasForFuture',
                         description: 'Які сюрпризи може приховувати майбутнє спорткарів Toyota, що спирається на багате минуле марки...',
                         img: "//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/navSlide08_tcm-3046-792891.png"
+                        // img: "./../../../../img/images/WorldOfToyota/sport-car/navSlide08_tcm-3046-792891.png"
                     },
                 ],
 

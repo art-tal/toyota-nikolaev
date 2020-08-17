@@ -11,9 +11,12 @@
                 </div>
             </div>
             <div class="header-image">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-794965.jpg" alt="photo">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-794964.png" alt="toyota">
-                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-794963.png" alt="cars">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/3-BG_tcm-3046-794965.jpg" alt="photo">-->
+                <img src="../../../../img/background/3-BG_tcm-3046-794965.jpg" alt="photo">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/2-Copy_tcm-3046-794964.png" alt="toyota">-->
+                <img src="../../../../img/background/2-Copy_tcm-3046-794964.png" alt="toyota">
+<!--                <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/1-Car_tcm-3046-794963.png" alt="cars">-->
+                <img src="../../../../img/background/1-Car_tcm-3046-794963.png" alt="cars">
             </div>
         </header>
 
@@ -26,10 +29,14 @@
 
             </div>
 
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-GT86-Profile_tcm-3046-794971.jpg" alt="car" class="w-100">
-            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/3-GT86-Rear_tcm-3046-794972.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/4-GT86-Rearwing_tcm-3046-794973.jpg" alt="car" class="w-50">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/5-GT86-Interior_tcm-3046-794974.jpg" alt="car" class="W-100">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/2-GT86-Profile_tcm-3046-794971.jpg" alt="car" class="w-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/2-GT86-Profile_tcm-3046-794971.jpg" alt="car" class="w-100">
+<!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/3-GT86-Rear_tcm-3046-794972.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/3-GT86-Rear_tcm-3046-794972.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/4-GT86-Rearwing_tcm-3046-794973.jpg" alt="car" class="w-50">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/4-GT86-Rearwing_tcm-3046-794973.jpg" alt="car" class="w-50">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/5-GT86-Interior_tcm-3046-794974.jpg" alt="car" class="W-100">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/5-GT86-Interior_tcm-3046-794974.jpg" alt="car" class="W-100">
 
             <div class="block_right">
                 <p>Оригінальним дизайнерським рішенням є культові емблеми з цифрами 86, що прикрашають кермо GT86. Навіть діаметр вихлопної труби становить точно 86 мм, який має нагадувати про діаметр і хід поршня двигуна, що дорівнюють 86 мм, а також про службове позначення 86-ої моделі.</p>
@@ -71,7 +78,8 @@
         <continue></continue>
 
         <div class="next_part container-fluid">
-            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/7-Footer-Future_tcm-3046-794955.jpg" alt="next car">
+<!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/7-Footer-Future_tcm-3046-794955.jpg" alt="next car">-->
+            <img src="../../../../img/images/WorldOfToyota/sport-car/7-Footer-Future_tcm-3046-794955.jpg" alt="next car">
 
             <router-link
                     tag="header"
@@ -116,6 +124,13 @@
                     "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/GT86-Profile-FULL_tcm-3046-795822.jpg",
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/GT86-Rear34-FULL_tcm-3046-795826.jpg",
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/GT86-Rearwing-FULL_tcm-3046-795838.jpg",
+
+                    // "../../../../img/images/WorldOfToyota/sport-car/GT86-CorollaAE86-2000GT-FULL_tcm-3046-795810.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/GT86-Front34-FULL_tcm-3046-795814.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/GT86-Interior-FULL_tcm-3046-795818.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/GT86-Profile-FULL_tcm-3046-795822.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/GT86-Rear34-FULL_tcm-3046-795826.jpg",
+                    // "../../../../img/images/WorldOfToyota/sport-car/GT86-Rearwing-FULL_tcm-3046-795838.jpg",
                 ],
 
 
