@@ -1,3 +1,4 @@
+<script src="../../../node_modules/@vue/cli-service/webpack.config.js"></script>
 <template>
     <main class="selectModel">
         <sub-navigation></sub-navigation>
@@ -870,7 +871,8 @@
             }
             &.rep {
                 /*background-image: url(//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/repairs%20image_tcm-3060-1724017_tcm-3046-1673704.jpg);*/
-                background-image: url(./../../img/images/repairs%20image_tcm-3060-1724017_tcm-3046-1673704.jpg);
+                /*background-image: url(../../img/images/repairs image_tcm-3060-1724017_tcm-3046-1673704.jpg);*/
+                background-image: url("../../img/images/repairs image_tcm-3060-1724017_tcm-3046-1673704.jpg");
                 .container {
                     .info {
                         color: $font_color;

@@ -24,13 +24,13 @@
                 <div class="open-video" v-if="showVideo">
                     <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                    <video width="100%"
-                           src="../../../video/TOYOTA_GAZOO_Racing_WRC.mp4"
-                           controls="controls"
-                           type="video/mp4"
-                           poster="../../../img/images/poster/toyota-yaris-wrc-2018-01.jpg">
-                    </video>
-<!--                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AmvjLpmK844" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--                    <video width="100%"-->
+<!--                           src="../../../video/TOYOTA_GAZOO_Racing_WRC.mp4"-->
+<!--                           controls="controls"-->
+<!--                           type="video/mp4"-->
+<!--                           poster="../../../img/images/poster/toyota-yaris-wrc-2018-01.jpg">-->
+<!--                    </video>-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AmvjLpmK844" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -136,13 +136,13 @@
                 <div class="open-video" v-if="showVideo">
                     <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                    <video width="100%"
-                           src="../../../video/TOYOTA_GAZOO_Racing_WRC.mp4"
-                           controls="controls"
-                           type="video/mp4"
-                           poster="../../../img/images/poster/toyota-yaris-wrc-2018-01.jpg">
-                    </video>
-<!--                    <iframe  src="https://www.youtube.com/embed/cpE3U_wSoPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--                    <video width="100%"-->
+<!--                           src="../../../video/TOYOTA_GAZOO_Racing_WRC.mp4"-->
+<!--                           controls="controls"-->
+<!--                           type="video/mp4"-->
+<!--                           poster="../../../img/images/poster/toyota-yaris-wrc-2018-01.jpg">-->
+<!--                    </video>-->
+                    <iframe  src="https://www.youtube.com/embed/cpE3U_wSoPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
 

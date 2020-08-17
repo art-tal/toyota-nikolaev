@@ -122,16 +122,21 @@
             <div class="dealers col-xl-5 col-lg-4 col-md-1">
                 <ul class="navbar-nav mr-auto text-right">
                     <li class="nav-item">
-                        <router-link
-                                class="nav-link"
-                                tag="a"
-                                exact
-                                to="https://www.toyota.ua/service-and-accessories/ssc"
-                        >
+<!--                        <router-link-->
+<!--                                class="nav-link"-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                to="https://www.toyota.ua/service-and-accessories/ssc"-->
+<!--                        >-->
+<!--                            <i class="fas fa-oil-can"></i>-->
+<!--                            <span>Спеціальні сервісні кампанії</span>-->
+<!--                            <span class="sr-only">(current)</span>-->
+<!--                        </router-link>-->
+
+                        <a href="https://www.toyota.ua/service-and-accessories/ssc" class="nav-link" target="_blank">
                             <i class="fas fa-oil-can"></i>
                             <span>Спеціальні сервісні кампанії</span>
-                            <span class="sr-only">(current)</span>
-                        </router-link>
+                        </a>
 
                     </li>
 <!--                    <li class="nav-item">-->

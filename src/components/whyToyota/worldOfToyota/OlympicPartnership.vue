@@ -14,12 +14,14 @@
         <div class="video">
             <video width="100%"
                    height="auto"
-                   src="../../../video/video_tcm-3046-908367.mp4"
+                   src="https://d1hu588lul0tna.cloudfront.net/toyotaone/uaua/video_tcm-3046-908367.mp4"
 
                    controls="controls"
                    type="video/mp4"
                    poster="../../../img/images/poster/videoPlaceholder_tcm-3046-908391.jpg">
             </video>
+            src="../../../video/video_tcm-3046-908367.mp4"
+
         </div>
         
         

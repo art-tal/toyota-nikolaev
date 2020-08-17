@@ -341,7 +341,7 @@
                 margin: 0;
                 .welcome {
                     padding: 35px;
-                    background-image: url(../img/Toyota_cars_to_medics_2.jpg);
+                    background-image: url(../img/image-sm/Toyota_cars_to_medics_2-576.jpg);
                     background-repeat: no-repeat;
                     background-position: center center;
                     -webkit-background-size: cover;
@@ -373,7 +373,7 @@
                 margin: 0;
                 .welcome {
                     padding: 35px;
-                    background-image: url(../img/Toyota_cars_to_medics_2.jpg);
+                    background-image: url(../img/image-sm/Toyota_cars_to_medics_2-576.jpg);
                     background-repeat: no-repeat;
                     background-position: center center;
                     -webkit-background-size: cover;
@@ -394,6 +394,12 @@
                             padding: 10px 0 10px 5px;
                             i {
                                 font-size: 2rem;
+                            }
+                        }
+                        &.new_car {
+                            .background {
+                                /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/new-c-hr-960x416_tcm-3046-1769744.jpg);*/
+                                background-image: url(./../img/image-sm/new-c-hr-576x250_tcm-3046-1769744.jpg);
                             }
                         }
                     }
