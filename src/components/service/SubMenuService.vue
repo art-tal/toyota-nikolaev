@@ -39,6 +39,18 @@
                             >Оригінальні мастильні матеріали</router-link>
                         </li>
 
+                        <li class="linked">
+                            <a href="https://www.toyota.ua/service-and-accessories/tekhnichne-obslugovuvannya" target="_blank">
+                                <span>Калькулятор технічного обслуговування</span>
+                            </a>
+                        </li>
+
+                        <li class="linked">
+                            <a href="https://www.toyota.ua/service-and-accessories/ssc" target="_blank">
+                                <span>Спеціальні сервісні кампанії</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
 
