@@ -36,7 +36,7 @@
                     <li class="electric text-center" v-if="electric">
                         <input id="electric" type="radio" v-model="testEngine" value="Електричний" @click="setTestEngine('Електричний')">
                         <label for="electric">
-                            <img src="../../../img/bolt.png" alt="photo">
+                            <img src="../../../img/icon/bolt.png" alt="photo">
                             <span>Електричний</span>
                             <i class="fas fa-check"></i>
                         </label>
@@ -54,7 +54,7 @@
                     <li class="disel text-center" v-if="diesel">
                         <input id="disel" type="radio" v-model="testEngine" value="Дизельний" @click="setTestEngine('Дизельний')">
                         <label for="disel">
-                            <img src="../../../img/iconfinder_engine_172463-.png" alt="disel"><br>
+                            <img src="../../../img/icon/iconfinder_engine_172463-.png" alt="disel"><br>
                             <span>Дизельний</span>
                             <i class="fas fa-check"></i>
                         </label>
@@ -63,7 +63,7 @@
                     <li class="lpg text-center" v-if="lpg">
                         <input id="lpg" type="radio" v-model="testEngine" value="LPG" @click="setTestEngine('LPG')">
                         <label for="lpg">
-                            <img src="../../../img/lpg.png" alt="LPG" style="width: 40px;"><br>
+                            <img src="../../../img/icon/lpg.png" alt="LPG" style="width: 40px;"><br>
                             <span>LPG</span>
                             <i class="fas fa-check"></i>
                         </label>

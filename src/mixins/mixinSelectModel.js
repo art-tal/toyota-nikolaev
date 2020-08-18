@@ -300,8 +300,8 @@ export default {
                         break;
 
                     case 'corolla':
-                        this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg";
-                        // this.modelVideo.poster = "../../img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg";
+                        // this.modelVideo.poster = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg";
+                        this.modelVideo.poster = "./";//img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg
                         this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-corolla-sedan-2019-movie_tcm-3046-1681827.mp4";
                         // this.modelVideo.link = "../../video/toyota-corolla-sedan-2019-movie_tcm-3046-1681827.mp4";
                         this.modelVideo.header = "Новий рівень керування гібридом";

@@ -108,7 +108,7 @@
     main ::v-deep div {
         header {
             @include header-xl;
-            background-image: url(../../img/toyota_ng.jpg);
+            background-image: url(../../img/background/toyota_ng.jpg);
         }
 
         .body.container {

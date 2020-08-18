@@ -187,6 +187,8 @@
             </div>
 
 
+
+
             <div class="poster" v-else >
 <!--                <img class="w-100" src="../../img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" :alt="model.name">-->
 <!--                <img class="w-100" :src="'../../img/images/'+modelVideo.poster" :alt="model.name">-->
@@ -202,7 +204,7 @@
             </div>
 
         </div>
-
+        <img src="/src/img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" alt="">
         <section class="links container d-md-flex justify-content-between">
             <div class="link">
                 <i class="fas fa-calculator"></i>

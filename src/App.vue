@@ -10,6 +10,7 @@
 
 
       <fast-connection></fast-connection>
+      <go-up/>
       <preloader v-if="preloader"/>
       <app-footer></app-footer>
   </div>
@@ -20,6 +21,7 @@
     import Footer from "./components/permanent/Footer";
     import FastConnection from "./components/permanent/FastConnection";
     import Preloader from "./components/permanent/Preloader";
+    import GoUp from "./components/permanent/GoUp";
 
 export default {
   name: 'App',
@@ -28,6 +30,7 @@ export default {
       appFooter: Footer,
       FastConnection,
       Preloader,
+      GoUp
   },
 
     data() {

@@ -5,7 +5,8 @@
             <swiper class="swiper" :options="swiperOption">
 
                 <swiper-slide>
-                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-1_tcm-3046-616845.jpg" alt="Просто краще">
+<!--                    <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-1_tcm-3046-616845.jpg" alt="Просто краще">-->
+                    <img src="../../../img/background/Section-1_Carousel-1_tcm-3046-616845.jpg" alt="Просто краще">
                     <div class="title">
                         <h1>Просто краще</h1>
                         <h2>Серце нашої світової екологічної місії</h2>
@@ -14,7 +15,8 @@
                 </swiper-slide>
 
                 <swiper-slide>
-                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-2_tcm-3046-616846.jpg" alt="Просто краще">
+<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-2_tcm-3046-616846.jpg" alt="Просто краще">-->
+                    <img src="../../../img/background/Section-1_Carousel-2_tcm-3046-616846.jpg" alt="Просто краще">
                     <div class="title">
                         <h1>Просто краще</h1>
                         <h2>Шлях до сталої мобільності та еко-автомобіля</h2>
@@ -23,7 +25,8 @@
                 </swiper-slide>
 
                 <swiper-slide>
-                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-3_tcm-3046-616848.jpg" alt="Просто краще">
+<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Section-1_Carousel-3_tcm-3046-616848.jpg" alt="Просто краще">-->
+                    <img src="../../../img/background/Section-1_Carousel-3_tcm-3046-616848.jpg" alt="Просто краще">
                     <div class="title">
                         <h1>Просто краще</h1>
                         <h2>Працювати сьогодні, аби завтра світ був чистішим</h2>
@@ -32,7 +35,8 @@
                 </swiper-slide>
 
                 <swiper-slide>
-                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Section-1_Picture-frame4_tcm-3046-616853.jpg" alt="Просто краще">
+<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Section-1_Picture-frame4_tcm-3046-616853.jpg" alt="Просто краще">-->
+                    <img src="../../../img/background/Section-1_Picture-frame4_tcm-3046-628343.jpg" alt="Просто краще">
                     <div class="title">
                         <h1>Просто краще</h1>
                         <h2>Моніторинг та сертифікація</h2>
@@ -386,6 +390,7 @@
                 div {
                     img {
                         width: 100%;
+                        height: auto;
                         margin-bottom: 15px;
                     }
                 }

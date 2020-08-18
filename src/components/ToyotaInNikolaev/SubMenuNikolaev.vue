@@ -1,37 +1,7 @@
 <template>
     <div class="sub_nikolaev container-fluid">
         <div class="row">
-            <div class="col-xl-3 col-lg-6 col-12 linked">
-                <router-link
-                        exact
-                        tag="a"
-                        class="nav-link"
-                        active-class="active"
-                        to=""
-                >Клієнтська служба</router-link>
-
-                <ul>
-                    <li class=" linked">
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/customer_service"
-                        >Про службу</router-link>
-                    </li>
-
-                    <li class=" linked">
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/toyota_ichiban"
-                        >Премія Toyota Ichiban</router-link>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-12 linked">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12  linked">
                 <router-link
                         exact
                         tag="a"
@@ -98,11 +68,11 @@
                 </ul>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12 align-self-start linked">
+            <div class="col-xl-6 col-lg-4 d-lg-block d-none align-self-start linked">
 
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12">
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>

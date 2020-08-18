@@ -160,7 +160,7 @@
             margin-bottom: 68px;
             width: 100%;
             height: 80vh;
-            background-image: url(../../img/toyota-nikolaev-.jpg);
+            background-image: url(../../img/background/toyota-nikolaev-.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             -webkit-background-size: cover;

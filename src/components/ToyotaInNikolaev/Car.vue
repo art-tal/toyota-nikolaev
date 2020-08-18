@@ -149,37 +149,37 @@
 
         <div class="advantages row">
             <div class="col-sm-4 col-6">
-                <img src="../../img/icon-grant.png" alt="support">
+                <img src="../../img/icon/icon-grant.png" alt="support">
                 <span>Постгарантійна підтримка</span>
             </div>
 
             <div class="col-sm-4 col-6">
-                <img src="../../img/icon-buy.png" alt="buy">
+                <img src="../../img/icon/icon-buy.png" alt="buy">
                 <span>Прозора історія</span>
             </div>
 
             <div class="col-sm-4 col-6">
-                <img src="../../img/icon-speed.png" alt="speed">
+                <img src="../../img/icon/icon-speed.png" alt="speed">
                 <span>Перевірений пробіг</span>
             </div>
 
             <div class="col-sm-4 col-6">
-                <img src="../../img/icon-service.png" alt="service">
+                <img src="../../img/icon/icon-service.png" alt="service">
                 <span>Технічна перевірка</span>
             </div>
 
             <div class="col-sm-4 col-6">
-                <img src="../../img/icon-keys.png" alt="keys">
+                <img src="../../img/icon/icon-keys.png" alt="keys">
                 <span>Сів та поїхав</span>
             </div>
 
             <div class="col-sm-4 col-6">
-                <img src="../../img/icon-credit.png" alt="credit">
+                <img src="../../img/icon/icon-credit.png" alt="credit">
                 <span>Кредит та страхування</span>
             </div>
 
             <div class="col-sm-4 col-6">
-                <img src="../../img/icon-helpInRoad.png" alt="help in road">
+                <img src="../../img/icon/icon-helpInRoad.png" alt="help in road">
                 <span>Допомога на дорозі</span>
             </div>
         </div>

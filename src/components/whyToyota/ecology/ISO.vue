@@ -109,7 +109,8 @@
     main ::v-deep div {
         header {
             @include header-xl;
-            background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/iso-14001_tcm-3046-1427379.jpg);
+            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/iso-14001_tcm-3046-1427379.jpg);*/
+            background-image: url(../../../img/background/iso-14001_tcm-3046-1427379.jpg);
         }
 
         .body.container {

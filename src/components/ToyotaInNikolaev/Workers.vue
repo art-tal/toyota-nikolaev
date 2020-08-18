@@ -191,7 +191,7 @@
     main {
         header.container-fluid {
             @include header-xl;
-            background-image: url(../../img/salon_2.jpg);
+            background-image: url(../../img/background/salon_2.jpg);
             position: relative;
             h1 {
                 color: #ffffff;
