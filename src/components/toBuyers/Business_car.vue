@@ -129,7 +129,7 @@
         header.container-fluid {
             @include header-xl;
             /*background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/business-customers-company-car-1600x900_tcm-3046-663239.jpg');*/
-            background-image: url(../../img/background/business-customers-company-car-1600x900_tcm-3046-663239.jpg);
+            background-image: url(../../img/background/business-customers-company-car-1600x900_tcm-3046-663239-.jpg);
             /*background-repeat: no-repeat;*/
             /*background-position: center center;*/
             /*-webkit-background-size: cover;*/

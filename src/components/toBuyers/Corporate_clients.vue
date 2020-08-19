@@ -248,7 +248,7 @@
             width: 100%;
             padding-top: 50px;
             /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/business-plus-sales-1600%D1%85900_tcm-3046-906757.jpg);*/
-            background-image: url(../../img/background/business-plus-sales-1600х900_tcm-3046-906757.jpg);
+            background-image: url(../../img/background/business-plus-sales-1600х900_tcm-3046-906757-.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             -webkit-background-size: cover;

@@ -11,17 +11,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav text-lg-center text-left">
 
-                    <li class="nav-item">
-                        <router-link
-                                class="nav-link"
-                                active-class="active"
-                                tag="a"
-                                exact
-                                to="/business_car"
-                        >
-                            Користувачам службових автомобілів
-                        </router-link>
-                    </li>
+<!--                    <li class="nav-item">-->
+<!--                        <router-link-->
+<!--                                class="nav-link"-->
+<!--                                active-class="active"-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                to="/business_car"-->
+<!--                        >-->
+<!--                            Користувачам службових автомобілів-->
+<!--                        </router-link>-->
+<!--                    </li>-->
 
                     <li class="nav-item">
                         <router-link

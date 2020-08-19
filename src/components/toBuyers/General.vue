@@ -7,25 +7,25 @@
         </header>
 
         <div class="body container">
-            <p>Ласкаво просимо до Toyota BusinessPlus. Це Ваш бізнес-партнер, що наближає Ваш успіх та перевершує очікування. Розуміючи Ваші персональні бізнес-потреби, ми підберемо для Вас потрібний автомобіль, надамо поради та забезпечимо будь-яку необхідну підтримку.</p>
+            <p>Ласкаво просимо до Тойота Центр Миколаїв «КиТ-Т» . Це Ваш бізнес-партнер, що наближає Ваш успіх та перевершує очікування. Розуміючи Ваші персональні бізнес-потреби, ми підберемо для Вас потрібний автомобіль, надамо поради та забезпечимо будь-яку необхідну підтримку.</p>
             <h2>Що Вас цікавить?</h2>
             <section class="row">
-                <router-link
-                        tag="article"
-                        class="col-lg-4 col-12"
-                        active-class="active"
-                        exact
-                        to="/corporate_sales/business_car"
-                >
-<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/company-car2_tcm-3046-663260.jpg" alt="business_car">-->
-                    <img src="../../img/images/business-customers-company-car-350x197_tcm-3046-663239.jpg" alt="business_car">
-                    <strong>Користувачам службових автомобілів</strong>
-                    <p>Дізнайтеся більше про надійний модельний ряд Toyota та унікальну підтримку, яку ми забезпечуємо.</p>
-                </router-link>
+<!--                <router-link-->
+<!--                        tag="article"-->
+<!--                        class="col-lg-4 col-12"-->
+<!--                        active-class="active"-->
+<!--                        exact-->
+<!--                        to="/corporate_sales/business_car"-->
+<!--                >-->
+<!--&lt;!&ndash;                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/company-car2_tcm-3046-663260.jpg" alt="business_car">&ndash;&gt;-->
+<!--                    <img src="../../img/images/business-customers-company-car-350x197_tcm-3046-663239.jpg" alt="business_car">-->
+<!--                    <strong>Користувачам службових автомобілів</strong>-->
+<!--                    <p>Дізнайтеся більше про надійний модельний ряд Toyota та унікальну підтримку, яку ми забезпечуємо.</p>-->
+<!--                </router-link>-->
 
                 <router-link
                         tag="article"
-                        class="col-lg-4 col-12"
+                        class="col-lg-6 col-12"
                         active-class="active"
                         exact
                         to="/corporate_sales/business_owner"
@@ -38,7 +38,7 @@
 
                 <router-link
                         tag="article"
-                        class="col-lg-4 col-12"
+                        class="col-lg-6 col-12"
                         active-class="active"
                         exact
                         to="/corporate_sales/corporate_clients"
@@ -53,7 +53,7 @@
 
             <section>
                 <header>
-                    <h1>Toyota BusinessPlus - це більше переваг для Вашого бізнесу</h1>
+                    <h1>Toyota - це більше переваг для Вашого бізнесу</h1>
                 </header>
                 <div class="links row">
                     <div class="col-md-6 col-12">

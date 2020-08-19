@@ -10,7 +10,7 @@
             <div class="p">{{pageExcerpt}}</div>
 
 
-            <h2>Причини для роботи з Toyota BusinessPlus</h2>
+            <h2>Причини для роботи з Тойота Центр Миколаїв «КиТ-Т»</h2>
 
             <div class="carousel">
                 <swiper class="swiper" :options="swiperOption">
@@ -164,7 +164,7 @@
             @include header-xl;
             padding-top: 50px;
             /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/b2b-1600x900_tcm-3046-906751.jpg);*/
-            background-image: url(../../img/background/b2b-1600x900_tcm-3046-906751.jpg);
+            background-image: url(../../img/background/b2b-1600x900_tcm-3046-906751-.jpg);
         }
 
         .body.container {
@@ -194,6 +194,7 @@
 
             article.row {
                 div {
+                    margin-bottom: 15px;
                     h3 {
                         font-size: 1.8rem;
                         margin-bottom: 24px;

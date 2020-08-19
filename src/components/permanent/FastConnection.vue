@@ -1,11 +1,10 @@
 <template>
     <div class="fast_connection">
         <div class="show_contacts" @click="chowContacts()">
-<!--            <img src="../../img/toyota-ico-01.png" alt="icon">-->
             <img src="../../img/icon/toyota-ico-01-100x68.png" alt="icon" title="Швидкий зв'язок">
         </div>
 
-        <div class="contacts flex-md-row flex-column" v-if="show">
+        <div class="contacts d-flex flex-md-row flex-column flex-nowrap" v-if="show">
             <i class="far fa-times-circle" @click="chowContacts()"></i>
 
             <div class="dep flex-grow-1 mr-md-4 mr-0 mb-4 mb-md-0">
@@ -302,6 +301,7 @@
                 z-index: 250;
             }
             .dep {
+                width: auto;
                 background-color: rgba(0,0,0,0.1);
                 border: 1px solid rgba(0,0,0,0.1);
                 border-radius: 20px;
@@ -314,7 +314,7 @@
                         padding: 10px;
                         .photo {
                             position: relative;
-                            width: 100%;
+                            /*width: 100%;*/
                             padding-top: 100%;
                             border-radius: 50%;
                             overflow: hidden;
@@ -322,6 +322,7 @@
                                 position: absolute;
                                 top: 0;
                                 left: 0;
+                                /*width: 100px;*/
                                 width: 100%;
                             }
                         }
