@@ -5,51 +5,105 @@
             <img src="../../img/icon/toyota-ico-01-100x68.png" alt="icon" title="Швидкий зв'язок">
         </div>
 
-        <div class="contacts" v-if="show">
+        <div class="contacts flex-md-row flex-column" v-if="show">
             <i class="far fa-times-circle" @click="chowContacts()"></i>
-            <div class="d-flex justify-content-center flex-md-row flex-column">
-                <div class="cont d-flex d-md-block align-items-center"
-                     v-for="(cont, key) in contacts"
-                     :key="key"
-                >
-                    <div class="photo" :title="cont.name">
-                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + cont.photo" :alt="cont.name">
+
+            <div class="dep flex-grow-1 mr-md-4 mr-0 mb-4 mb-md-0">
+                <h3>Сервісні консультанти</h3>
+                <div class="d-flex justify-content-center flex-md-row flex-column">
+                    <div class="cont d-flex d-md-block align-items-center"
+                         v-for="(cont, key) in contactsService"
+                         :key="key"
+                    >
+                        <div class="photo" :title="cont.name">
+                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + cont.photo" :alt="cont.name">
+                        </div>
+
+                        <ul class="d-flex d-md-block flex-row">
+                            <li v-if="cont.isVisibleViber">
+                                <a class="viber" :href="viberContext + formatNumber(cont.viber)" target="_blank">
+                                    <i class="fab fa-viber"></i>
+                                </a>
+                            </li>
+
+                            <li v-if="cont.isVisibleMessenger">
+                                <a :href="'https://www.messenger.com/t/' + cont.messenger" target="_blank">
+                                    <i class="fab fa-facebook-messenger"></i>
+                                </a>
+                            </li>
+
+                            <li v-if="cont.isVisibleSkype">
+                                <a :href="'skype:' + cont.skype + '?chat'" target="_blank">
+                                    <i class="fab fa-skype"></i>
+                                </a>
+                            </li>
+
+                            <li v-if="cont.isVisibleTelegram">
+                                <a :href="'tg://resolve?domain=' + cont.telegram" target="_blank">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
+                            </li>
+
+                            <li v-if="cont.isVisibleWhatsApp">
+                                <a :href="'whatsapp://send?phone=+' + formatNumber(cont.whatsapp)" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </li>
+                        </ul>
+
                     </div>
-
-                    <ul class="d-flex d-md-block flex-row">
-                        <li v-if="cont.isVisibleViber">
-                            <a class="viber" :href="viberContext + formatNumber(cont.viber)" target="_blank">
-                                <i class="fab fa-viber"></i>
-                            </a>
-                        </li>
-
-                        <li v-if="cont.isVisibleMessenger">
-                            <a :href="'https://www.messenger.com/t/' + cont.messenger" target="_blank">
-                                <i class="fab fa-facebook-messenger"></i>
-                            </a>
-                        </li>
-
-                        <li v-if="cont.isVisibleSkype">
-                            <a :href="'skype:' + cont.skype + '?chat'" target="_blank">
-                                <i class="fab fa-skype"></i>
-                            </a>
-                        </li>
-
-                        <li v-if="cont.isVisibleTelegram">
-                            <a :href="'tg://resolve?domain=' + cont.telegram" target="_blank">
-                                <i class="fab fa-telegram-plane"></i>
-                            </a>
-                        </li>
-
-                        <li v-if="cont.isVisibleWhatsApp">
-                            <a :href="'whatsapp://send?phone=+' + formatNumber(cont.whatsapp)" target="_blank">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                        </li>
-                    </ul>
-
                 </div>
             </div>
+
+            <div class="dep flex-grow-1">
+                <h3>Відділ продажу</h3>
+                <div class="d-flex justify-content-center flex-md-row flex-column">
+                    <div class="cont d-flex d-md-block align-items-center"
+                         v-for="(cont, key) in contactsSale"
+                         :key="key"
+                    >
+                        <div class="photo" :title="cont.name">
+                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + cont.photo" :alt="cont.name">
+                        </div>
+
+                        <ul class="d-flex d-md-block flex-row">
+                            <li v-if="cont.isVisibleViber">
+                                <a class="viber" :href="viberContext + formatNumber(cont.viber)" target="_blank">
+                                    <i class="fab fa-viber"></i>
+                                </a>
+                            </li>
+
+                            <li v-if="cont.isVisibleMessenger">
+                                <a :href="'https://www.messenger.com/t/' + cont.messenger" target="_blank">
+                                    <i class="fab fa-facebook-messenger"></i>
+                                </a>
+                            </li>
+
+                            <li v-if="cont.isVisibleSkype">
+                                <a :href="'skype:' + cont.skype + '?chat'" target="_blank">
+                                    <i class="fab fa-skype"></i>
+                                </a>
+                            </li>
+
+                            <li v-if="cont.isVisibleTelegram">
+                                <a :href="'tg://resolve?domain=' + cont.telegram" target="_blank">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
+                            </li>
+
+                            <li v-if="cont.isVisibleWhatsApp">
+                                <a :href="'whatsapp://send?phone=+' + formatNumber(cont.whatsapp)" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
 
 
@@ -70,6 +124,9 @@
                 viberContext: 'viber://chat?number=+',
 
                 contacts: [],
+                contactsService: [],
+                contactsSale: [],
+
                 }
             },
 
@@ -109,6 +166,14 @@
                         this.contacts = Object.values(this.contacts);
                         this.contacts = this.contacts.filter( (contact) => {
                             return  contact.isFront === 1;
+                        } );
+                    } )
+                    .then( () => {
+                        this.contactsService = this.contacts.filter( contact => {
+                            return contact.name_dep === 'СТО'
+                        } );
+                        this.contactsSale = this.contacts.filter( contact => {
+                            return contact.name_dep === 'Менеджери'
                         } );
                     } )
                 .catch( (error) => {
@@ -208,7 +273,7 @@
 
         .contacts {
             width: 700px;
-            padding: 10px 10px 0;
+            padding: 10px 10px;
             background-color: rgba(240,240,240,0.9);
             border-radius: 30px;
             position: fixed;
@@ -236,53 +301,61 @@
                 font-size: 25px;
                 z-index: 250;
             }
-            div {
-                .cont {
-                    flex: 1;
-                    padding: 10px;
-                    .photo {
-                        position: relative;
-                        width: 100%;
-                        padding-top: 100%;
-                        border-radius: 50%;
-                        overflow: hidden;
-                        img {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                        }
-                    }
-                    ul {
-                        margin: 0;
-                        padding: 0;
-                        list-style-type: none;
-                        li {
-                            display: inline-block;
-                            border-radius: 50%;
-                            background-color: #fff;
+            .dep {
+                background-color: rgba(0,0,0,0.1);
+                border: 1px solid rgba(0,0,0,0.1);
+                border-radius: 20px;
+                /*&:first-child {*/
+                /*    margin-right: 10px;*/
+                /*}*/
+                div {
+                    .cont {
+                        flex: 1;
+                        padding: 10px;
+                        .photo {
                             position: relative;
-                            top: -20px;
-                            margin: 2px;
-                            a {
-                                display: block;
-                                padding: 5px;
-                                i {
-                                    font-size: 30px;
-                                    &.fa-viber {
-                                        color: #815DF5;
-                                    }
-                                    &.fa-facebook-messenger {
-                                        color: #1877F2;
-                                    }
-                                    &.fa-skype {
-                                        color: #01AFEB;
-                                    }
-                                    &.fa-telegram-plane {
-                                        color: #2AA1DD;
-                                    }
-                                    &.fa-whatsapp {
-                                        color: #2CC64E;
+                            width: 100%;
+                            padding-top: 100%;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            img {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                            }
+                        }
+                        ul {
+                            margin: 0;
+                            padding: 0;
+                            list-style-type: none;
+                            li {
+                                display: inline-block;
+                                border-radius: 50%;
+                                background-color: #fff;
+                                position: relative;
+                                top: -20px;
+                                margin: 2px;
+                                a {
+                                    display: block;
+                                    padding: 5px;
+                                    i {
+                                        font-size: 30px;
+                                        &.fa-viber {
+                                            color: #815DF5;
+                                        }
+                                        &.fa-facebook-messenger {
+                                            color: #1877F2;
+                                        }
+                                        &.fa-skype {
+                                            color: #01AFEB;
+                                        }
+                                        &.fa-telegram-plane {
+                                            color: #2AA1DD;
+                                        }
+                                        &.fa-whatsapp {
+                                            color: #2CC64E;
+                                        }
                                     }
                                 }
                             }
@@ -290,6 +363,7 @@
                     }
                 }
             }
+
         }
     }
 
@@ -301,7 +375,7 @@
             .contacts {
                 width: auto;
                 position: absolute;
-                top: 20px;
+                top: 85px;
                 left: 20px;
                 .cont {
 

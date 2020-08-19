@@ -219,7 +219,7 @@
                     <div class="col-lg-6 col-12 order-lg-0 order-2 text-left">
                         <h2>Аксесуари</h2>
                         <p>Відкрийте для себе асортимент аксесуарів, розроблених спеціально для вашої Corolla City та створіть свою наступну Toyota у декілька простих кроків.</p>
-                        <button class="btn btn-light" @click="goToEquipment()">Cтворіть свою {{model.name}}</button>
+<!--                        <button class="btn btn-light" @click="goToEquipment()">Cтворіть свою {{model.name}}</button>-->
                     </div>
 
                     <div class="col-lg-6 col-12">
@@ -255,14 +255,25 @@
 
             <div class="link">
                 <i class="far fa-calendar-alt"></i>
-                <h3>Замовити онлайн-консультацію</h3>
+                <h3>Замовити тест-драйв</h3>
                 <router-link
                         tag="button"
                         class="btn btn-light"
                         exact
-                        to="/consultation/step_1"
-                >Замовити онлайн-консультацію</router-link>
+                        to="/test_drive_step_1"
+                >Замовити тест-драйв</router-link>
             </div>
+
+<!--            <div class="link">-->
+<!--                <i class="far fa-calendar-alt"></i>-->
+<!--                <h3>Замовити онлайн-консультацію</h3>-->
+<!--                <router-link-->
+<!--                        tag="button"-->
+<!--                        class="btn btn-light"-->
+<!--                        exact-->
+<!--                        to="/consultation/step_1"-->
+<!--                >Замовити онлайн-консультацію</router-link>-->
+<!--            </div>-->
         </section>
 
 

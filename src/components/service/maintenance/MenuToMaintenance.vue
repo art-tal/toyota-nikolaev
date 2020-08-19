@@ -17,7 +17,7 @@
                                 exact
                                 to="/principles"
                         >
-                            Принципи
+                            Переваги
                         </router-link>
                     </li>
 

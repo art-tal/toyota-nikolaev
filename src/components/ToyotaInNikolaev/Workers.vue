@@ -37,7 +37,7 @@
                         <i class="fab fa-facebook-messenger"></i>
                         <span>{{worker.messenger}}</span>
                     </h4>
-                    <h5>Години роботи: <span>Пн-Пт: 8:30-19:00; Сб: 9:00-17:00, Нд – Вихідний</span></h5>
+                    <h5>Години роботи: <span>Пн-Пт: 9:00-18:00; Сб: 10:00-17:00, Нд – Вихідний</span></h5>
                 </div>
                 <div class="col-md-4 col-12">
                     <img :src="'http://lara.toyota.nikolaev.ua/storage/' + worker.photo" :alt="worker.name">
@@ -146,7 +146,7 @@
                         case "Бухгалтерія":
                             bookkeeping.push(worker);
                             break;
-                        case "Другие отделы":
+                        case "Персонал":
                             otherDepartments.push(worker);
                             break;
                     }
@@ -172,7 +172,7 @@
                 } );
 
                 this.workers = [];
-                this.workers = leadership.concat(administration, managers, serviceStation, bookkeeping, otherDepartments);
+                this.workers = leadership.concat(managers, administration, bookkeeping, serviceStation, otherDepartments);
 
             },
         },

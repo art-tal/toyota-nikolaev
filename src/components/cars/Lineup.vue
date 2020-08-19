@@ -42,26 +42,36 @@
                 <div class="tools">
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
-                        <li class="contact">
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    to="/faq"
-                            >
-                                <i class="fas fa-phone"></i>
-                                <span>Часті запитання</span>
-                            </router-link>
-                        </li>
+<!--                        <li class="contact">-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    to="/faq"-->
+<!--                            >-->
+<!--                                <i class="fas fa-phone"></i>-->
+<!--                                <span>Часті запитання</span>-->
+<!--                            </router-link>-->
+<!--                        </li>-->
                         <li class="test_drive">
                             <router-link
                                     tag="a"
                                     exact
-                                    to="/consultation"
+                                    to="/test_drive_step_1"
                             >
                                 <i class="far fa-calendar-alt"></i>
-                                <span>Замовити онлайн консультацію</span>
+                                <span>Замовити тест-драйв</span>
                             </router-link>
                         </li>
+<!--                        <li class="test_drive">-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    to="/consultation"-->
+<!--                            >-->
+<!--                                <i class="far fa-calendar-alt"></i>-->
+<!--                                <span>Замовити онлайн консультацію</span>-->
+<!--                            </router-link>-->
+<!--                        </li>-->
                         <li class="download">
                             <router-link
                                     tag="a"

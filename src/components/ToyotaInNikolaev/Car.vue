@@ -138,8 +138,8 @@
                         <router-link class="btn btn-danger"
                                      tag="button"
                                      exact
-                                     to="/consultation/step_1">
-                            Надіслати заявку
+                                     to="/test_drive_step_1">
+                            Надіслати заявку на тест-драйв
                         </router-link>
 
                     </footer>

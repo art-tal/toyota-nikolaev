@@ -3,24 +3,24 @@
         <div class="row">
             <article class="col-md-6 col-12 text-left">
                 <header>
-                    <h1>Дальнейшие шаги</h1>
+                    <h1>Подальші кроки</h1>
                 </header>
                 <div class="body">
                     <p>
-                        Перейдите к итоговой странице, чтобы посмотреть полную информацию о выбранном автомобиле
+                        Перейдіть до підсумкової сторінки, щоб подивитися повну інформацію про обраний автомобіль
                     </p>
                 </div>
-                <footer>
-                    <router-link
-                            tag="button"
-                            class="btn btn-danger"
-                            exact
-                            to="/configurator/result"
-                    >
-                        <span>Перейтик итогам</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </router-link>
-                </footer>
+<!--                <footer>-->
+<!--                    <router-link-->
+<!--                            tag="button"-->
+<!--                            class="btn btn-danger"-->
+<!--                            exact-->
+<!--                            to="/configurator/result"-->
+<!--                    >-->
+<!--                        <span>Перейти до підсумків</span>-->
+<!--                        <i class="fas fa-chevron-right"></i>-->
+<!--                    </router-link>-->
+<!--                </footer>-->
             </article>
 
             <div class="image col-md-6 col-12">

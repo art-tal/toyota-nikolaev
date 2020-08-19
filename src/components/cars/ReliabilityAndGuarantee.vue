@@ -1,4 +1,3 @@
-<script src="../../../node_modules/@vue/cli-service/webpack.config.js"></script>
 <template>
     <main class="selectModel">
         <sub-navigation></sub-navigation>
@@ -222,7 +221,7 @@
                             </div>
                             
                             
-                            <a href="">Положення та умови</a>
+<!--                            <a href="">Положення та умови</a>-->
 
                             <a href="" class="more" @click.prevent="showMoreInfo() " v-if="showMore">Згорнути</a>
                             <a href="" class="more" @click.prevent="showMoreInfo()" v-else>Показати більше</a>
@@ -246,7 +245,7 @@
                             </div>
 
 
-                            <a href="">Положення та умови</a>
+<!--                            <a href="">Положення та умови</a>-->
 
                             <a href="" class="more" @click.prevent="showMoreInfo() " v-if="showMore">Згорнути</a>
                             <a href="" class="more" @click.prevent="showMoreInfo()" v-else>Показати більше</a>

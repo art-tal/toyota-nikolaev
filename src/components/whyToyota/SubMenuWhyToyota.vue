@@ -266,17 +266,17 @@
                             </router-link>
                         </li>
 
-                        <li class="linked">
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/faq"
-                            >
-                                <i class="fas fa-phone"></i>
-                                <span>Часті запитання</span>
-                            </router-link>
-                        </li>
+<!--                        <li class="linked">-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/faq"-->
+<!--                            >-->
+<!--                                <i class="fas fa-phone"></i>-->
+<!--                                <span>Часті запитання</span>-->
+<!--                            </router-link>-->
+<!--                        </li>-->
                     </ol>
                 </div>
             </div>

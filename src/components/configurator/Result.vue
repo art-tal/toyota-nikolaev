@@ -128,10 +128,18 @@
                                 </router-link>
                             </li>
                             <li>
-                                <a href.prevent="#" @click.prevent="openConsult()">
+                                <router-link
+                                        tag="a"
+                                        exact
+                                        to="/test_drive_step_1"
+                                >
                                     <i class="far fa-life-ring"></i>
-                                    <span>Онлайн консультація</span>
-                                </a>
+                                    <span>Замовити тест-драйв</span>
+                                </router-link>
+<!--                                <a href.prevent="#" @click.prevent="openConsult()">-->
+<!--                                    <i class="far fa-life-ring"></i>-->
+<!--                                    <span>Онлайн консультація</span>-->
+<!--                                </a>-->
                             </li>
 <!--                            <li>-->
 <!--                                <a href.prevent="#" target="_blank">-->

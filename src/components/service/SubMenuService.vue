@@ -18,7 +18,7 @@
                                     exact
                                     active-class="active"
                                     to="/principles"
-                            >Принципи</router-link>
+                            >Переваги</router-link>
                         </li>
 
                         <li class=" linked">
@@ -236,17 +236,17 @@
                                 <span>Завантажити брошури</span>
                             </router-link>
                         </li>
-                        <li class="download linked">
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/faq"
-                            >
-                                <i class="fas fa-phone"></i>
-                                <span>Часті запитання</span>
-                            </router-link>
-                        </li>
+<!--                        <li class="download linked">-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/faq"-->
+<!--                            >-->
+<!--                                <i class="fas fa-phone"></i>-->
+<!--                                <span>Часті запитання</span>-->
+<!--                            </router-link>-->
+<!--                        </li>-->
                     </ol>
                 </div>
             </div>

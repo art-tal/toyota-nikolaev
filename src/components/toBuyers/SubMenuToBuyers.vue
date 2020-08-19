@@ -32,14 +32,14 @@
                 >Корпоративні продажі</router-link>
 
                 <ul>
-                    <li class=" linked">
-                        <router-link
-                                tag="a"
-                                exact
-                                active-class="active"
-                                to="/business_car"
-                        >Користувачам службових автомобілів</router-link>
-                    </li>
+<!--                    <li class=" linked">-->
+<!--                        <router-link-->
+<!--                                tag="a"-->
+<!--                                exact-->
+<!--                                active-class="active"-->
+<!--                                to="/business_car"-->
+<!--                        >Користувачам службових автомобілів</router-link>-->
+<!--                    </li>-->
 
                     <li class=" linked">
                         <router-link
@@ -83,17 +83,17 @@
                                 <span>Завантажити брошури</span>
                             </router-link>
                         </li>
-                        <li class="download linked">
-                            <router-link
-                                    tag="a"
-                                    exact
-                                    active-class="active"
-                                    to="/faq"
-                            >
-                                <i class="fas fa-phone"></i>
-                                <span>Часті запитання</span>
-                            </router-link>
-                        </li>
+<!--                        <li class="download linked">-->
+<!--                            <router-link-->
+<!--                                    tag="a"-->
+<!--                                    exact-->
+<!--                                    active-class="active"-->
+<!--                                    to="/faq"-->
+<!--                            >-->
+<!--                                <i class="fas fa-phone"></i>-->
+<!--                                <span>Часті запитання</span>-->
+<!--                            </router-link>-->
+<!--                        </li>-->
 
                     </ol>
                 </div>

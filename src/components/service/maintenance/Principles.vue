@@ -15,6 +15,8 @@
 <!--            <div class="p">Персонал дилерських центрів Toyota спілкується із клієнтами, адже ваша думка про рівень обслуговування є важливою для подальшого покращення.</div>-->
 <!--            <div class="p">Дізнайтесь що нового у найближчого дилера Toyota, для того щоб завжди бути в курсі останніх подій.</div>-->
 <!--        </div>-->
+
+
     </main>
 </template>
 
@@ -109,7 +111,8 @@
             margin-bottom: 68px;
             h3 {
                 font-size: 2.2rem;
-                margin: 68px 0;
+                margin: 30px 0;
+                color: $font_color;
             }
             h2 {
                 font-size: 4.5rem;
@@ -123,6 +126,28 @@
                 margin-bottom: 30px;
                 text-align: left;
             }
+
+            h4 {
+                text-align: left;
+                font-size: 1.8rem;
+                margin-top: 20px;
+                font-weight: normal;
+            }
+            h5 {
+                text-align: left;
+                font-size: 1.6rem;
+                margin-top: 10px;
+                font-weight: bold;
+            }
+
+            a {
+                color: $font_color;
+                text-decoration: underline;
+                &:hover {
+                    color: #E50000;
+                }
+            }
+
         }
     }
 

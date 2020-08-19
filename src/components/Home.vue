@@ -89,8 +89,8 @@
                 >
                     <div class="background"></div>
                         <header>
-                            <span>ЗВ’ЯЗАТИСЯ З ОФІЦІЙНИМ ДИЛЕРОМ </span>
-                            <h1 class="text-uppercase">СЕРВІСНІ СТАНЦІЇ TOYOTA ПРАЦЮЮТЬ</h1>
+                            <span>ЗВЯЖІТЬСЯ З НАМИ</span>
+                            <h1 class="text-uppercase">СЕРВІС "КиТ-Т" ПРАЦЮЄ</h1>
                         </header>
                         <span class="btn-go text-center">
                             <i class="fas fa-chevron-right"></i>
