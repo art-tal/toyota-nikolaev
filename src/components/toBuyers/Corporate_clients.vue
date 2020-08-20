@@ -740,6 +740,7 @@
             section.container.business_plus {
                 header {
                     padding: 30px 0;
+                    background-image: url(../../img/background-sm/business-plus-sales-1600х900_tcm-3046-906757-.jpg);
                     .p {
                         margin-bottom: 30px;
                         font-size: 1.8rem;
@@ -907,6 +908,7 @@
 
             section.container.business_plus {
                 header {
+                    background-image: url(../../img/background-sm/business-plus-sales-1600х900_tcm-3046-906757-.jpg);
                     padding: 30px 0;
                     .p {
                         margin-bottom: 30px;

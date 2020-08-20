@@ -182,6 +182,7 @@
         main ::v-deep div {
             header.container-fluid {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/quality-header_tcm-3046-164060.jpg);
             }
         }
     }
@@ -190,6 +191,7 @@
         main ::v-deep div {
             header.container-fluid {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/quality-header_tcm-3046-164060.jpg);
             }
 
             .body.container {

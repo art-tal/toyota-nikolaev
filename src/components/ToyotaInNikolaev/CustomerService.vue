@@ -130,7 +130,8 @@
     main ::v-deep div {
         header {
             @include header-xl;
-            background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/customer-service-header_tcm-3046-164011.jpg);
+            /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/customer-service-header_tcm-3046-164011.jpg);*/
+            background-image: url(../../img/background/customer-service-header_tcm-3046-164011.jpg);
         }
 
         .body.container {
@@ -244,6 +245,7 @@
         main ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../img/background-sm/customer-service-header_tcm-3046-164011.jpg);
             }
 
             .body.container {
@@ -282,6 +284,7 @@
         main ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../img/background-sm/customer-service-header_tcm-3046-164011.jpg);
             }
 
             .body.container {

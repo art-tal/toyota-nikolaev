@@ -164,6 +164,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/toyota-aftersales-2014-genuine-parts-focus_tcm-3046-65770.jpg);
                 height: 40vh;
                 padding-top: 20px;
             }
@@ -181,6 +182,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/toyota-aftersales-2014-genuine-parts-focus_tcm-3046-65770.jpg);
                 height: 20vh;
                 min-height: 180px;
                 max-height: 280px;

@@ -255,6 +255,7 @@
         section {
             header.container-fluid {
                 @include header-sm;
+                background-image: url(../../img/background-sm/business-customers-company-car-1600x900_tcm-3046-663239-.jpg);
                 /*min-height: 180px;*/
                 /*height: 56vw;*/
                 max-height: 480px;
@@ -304,6 +305,7 @@
         section {
             header.container-fluid {
                 @include header-xs;
+                background-image: url(../../img/background-sm/business-customers-company-car-1600x900_tcm-3046-663239-.jpg);
                 /*min-height: 180px;*/
                 height: 56vw;
                 max-height: 480px;

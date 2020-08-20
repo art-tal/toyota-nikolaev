@@ -842,6 +842,7 @@
         section.container-fluid {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/wrc2018_masthead_1600x900v2_tcm-3046-1253147.jpg);
                 padding-top: 20px;
 
                 .row {
@@ -958,6 +959,7 @@
         section.container-fluid {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/wrc2018_masthead_1600x900v2_tcm-3046-1253147.jpg);
                 padding-top: 20px;
                 .row {
                     width: 100%;

@@ -189,6 +189,7 @@
         main ::v-deep div {
             header.container-fluid {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/toyota-garantie_tcm-3046-246829.jpg);
                 padding-top: 10vh;
             }
 
@@ -206,6 +207,7 @@
         main ::v-deep div {
             header.container-fluid {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/toyota-garantie_tcm-3046-246829.jpg);
                 padding-top: 5vh;
             }
 

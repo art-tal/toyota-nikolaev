@@ -388,6 +388,7 @@
 
             section.body.container {
                 header {
+                    background-image: url(../../../img/background-sm/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg);
                     margin-bottom: 0;
                     h1 {
                         font-size: 3rem;

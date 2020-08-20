@@ -24,7 +24,7 @@
                         <span v-if="equipment.body_type"> - {{equipment.body_type}}</span>
                     </h4>
                     <h5 :style="{'color': fontColor}" class="text-left">
-                        Від <strong>{{equipment.equipPrice | formattedPrice}}&#8372;</strong>
+                        Від <strong>{{equipment.equipPrice | formattedPrice}} грн.</strong>
                     </h5>
                 </div>
             </div>

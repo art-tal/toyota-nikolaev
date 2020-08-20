@@ -358,6 +358,8 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/original-lubricants.jpg);
+
             }
 
             .body.container {
@@ -398,6 +400,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/original-lubricants.jpg);
                 width: 100%;
                 height: 56vw;
                 max-height: 380px;

@@ -89,7 +89,7 @@
                             <h1 class="col-12">Підсумкова ціна</h1>
                         </header>
                         <div class="row">
-                            <p class="font-weight-bold text-right">{{getColor.min_price | formattedPrice}}&#8372;</p>
+                            <p class="font-weight-bold text-right">{{getColor.min_price | formattedPrice}} грн.</p>
 <!--                            <p class="font-weight-bold text-right">{{getTotalCost | formattedPrice}}&#8372;</p>-->
                         </div>
 
@@ -101,7 +101,7 @@
 
             <aside class="col-lg-4 col-12" v-if="showAside">
                 <div class="header text-left">
-                    <h2 class="font-weight-bold">{{getColor.min_price | formattedPrice}}&#8372;</h2>
+                    <h2 class="font-weight-bold">{{getColor.min_price | formattedPrice}} грн.</h2>
                     <p>Ціна</p>
                     <i class="fas fa-times" @click="openBlock()"></i>
                 </div>
@@ -191,18 +191,13 @@
 
 <script>
     import formattedPrice from "../../filters/price_format";
-    // import Consult from "./Consult"
     // import {eventEmitter} from "../../app";//           for Laravel
 
     export default {
         name: "Result",
 
-        components: {
-            // Consult,
-        },
-
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 500)
         },
 
         data() {

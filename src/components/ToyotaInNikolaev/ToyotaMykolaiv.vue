@@ -132,6 +132,7 @@
     @media (max-width: 767.9px) {
         main.container-fluid {
             header {
+                background-image: url(../../img/background-sm/toyota-nikolaev-.jpg);
                 height: 56vw;
                 margin-bottom: 30px;
                 h1 {

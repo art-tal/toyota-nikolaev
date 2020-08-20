@@ -284,7 +284,8 @@
     import axios from 'axios';
     import MixinSelectModel from "../../mixins/mixinSelectModel";
     import Equipment from "./../../components/configurator/Equipment";//            for Laravel
-    import SubNavigation from "./../../components/cars/SubNavigation";//
+    import SubNavigation from "./../../components/cars/SubNavigation";
+    //
 
     export default {
         name: "EnginesAndCharacteristics",
@@ -345,7 +346,7 @@
 
         mounted() {
             this.getEngine();
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1000);
 
         },
 

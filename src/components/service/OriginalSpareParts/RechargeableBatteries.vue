@@ -392,6 +392,7 @@
         section.container-fluid ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/rechargeable-batteries-toyota-1600x900_tcm-3046-688570.jpg);
                 padding-top: 25vw;
                 h1 {
                     font-size: 5vw;

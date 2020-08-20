@@ -517,6 +517,7 @@
         section.container-fluid {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/Header_tcm-3046-778346.jpg);
                 padding-top: 50px;
                 h1 {
                     img {
@@ -584,6 +585,7 @@
         section.container-fluid{
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/Header_tcm-3046-778346.jpg);
                 h1 {
                     img {
                         width: 100%;

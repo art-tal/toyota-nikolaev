@@ -23,13 +23,13 @@
                             <h2>{{model.name}}</h2> <h3 v-if="model.hybrid">+ Гібрид</h3>
                         </div>
                             <div class="here" v-if="isPrice(model)">
-                                <p>*Від <strong>{{ priceСheck(model.carPrice.here) }}&#8372;</strong></p>
+                                <p>*Від <strong>{{ priceСheck(model.carPrice.here) | formattedPrice }} грн.</strong></p>
 <!--                                <p>*Від <strong>{{model.carPrice.here}}&#8372;</strong></p>-->
                                 <b>(для авто у наявності)</b>
                             </div>
 
                             <div class="there" v-if="isPrice(model)">
-                                <p>*Від <strong>{{ priceСheck(model.carPrice.there) }}&#8372;</strong></p>
+                                <p>*Від <strong>{{ priceСheck(model.carPrice.there) | formattedPrice }} грн.</strong></p>
 <!--                                <p>*Від <strong>{{model.carPrice.there}}&#8372;</strong></p>-->
                                 <b>(авто під замовлення)</b>
                             </div>
@@ -92,18 +92,16 @@
 </template>
 
 <script>
-    // import lazyload from "../../directives/lazyload";
     import axios from 'axios';
+    import formattedPrice from "../../filters/price_format";
+
 
     export default {
         name: "AllModell",
 
-        // props: [
-        //     "show"
-        // ],
-
-
-
+        filters: {
+            formattedPrice
+        },
 
         data() {
             return {

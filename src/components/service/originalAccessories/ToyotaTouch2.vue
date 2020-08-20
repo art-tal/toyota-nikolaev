@@ -552,6 +552,7 @@
                 .container {
                     header {
                         @include header-sm;
+                        background-image: url(../../../img/background-sm/toyota-touch-2-2016-header_tcm-3046-634725.jpg);
                         h1 {
                             padding-top: 15px;
                             font-size: 2.4rem;
@@ -647,6 +648,7 @@
                 .container {
                     header {
                         @include header-xs;
+                        background-image: url(../../../img/background-sm/toyota-touch-2-2016-header_tcm-3046-634725.jpg);
                         width: 100%;
                         height: 56vw;
                         max-height: 380px;

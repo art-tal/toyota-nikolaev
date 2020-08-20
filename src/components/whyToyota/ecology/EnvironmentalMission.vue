@@ -278,6 +278,7 @@
         main {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/new_banner_EC_tcm-3046-617965.jpg);
             }
         }
 
@@ -313,6 +314,7 @@
         main {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/new_banner_EC_tcm-3046-617965.jpg);
             }
         }
 

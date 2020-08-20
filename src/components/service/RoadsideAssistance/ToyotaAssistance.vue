@@ -206,6 +206,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/Toyota-Assistance_tcm-3046-1600899.jpg);
             }
 
             section.container {
@@ -224,6 +225,7 @@
     @media (max-width: 575.9px) {
         main.container-fluid ::v-deep div {
             header {
+                background-image: url(../../../img/background-sm/Toyota-Assistance_tcm-3046-1600899.jpg);
                 height: auto;
                 min-height: 180px;
                 padding-top: 10px;

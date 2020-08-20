@@ -164,7 +164,8 @@
             @include header-xl;
             height: 420px;
             padding-top: 100px;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header-toyota-genuine-bulbs_tcm-3046-688373.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header-toyota-genuine-bulbs_tcm-3046-688373.jpg);*/
+            background-image: url(../../../img/background/Header-toyota-genuine-bulbs_tcm-3046-688373.jpg);
             color: #ffffff;
 
             h1 {
@@ -266,6 +267,7 @@
 
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/Header-toyota-genuine-bulbs_tcm-3046-688373.jpg);
                 max-height: 420px;
                 padding-top: 20px;
             }

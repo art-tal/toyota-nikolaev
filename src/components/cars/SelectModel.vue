@@ -102,7 +102,7 @@
             <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="selectedColor.min_price">
                 <p>Від</p>
                 <span class="h2 d-block font-weight-bolder">
-                    {{selectedColor.min_price | formattedPrice}}&#8372;
+                    {{selectedColor.min_price | formattedPrice}} грн.
                 </span>
             </div>
 
@@ -181,7 +181,7 @@
                        controls="controls"
                        autoplay
                        type="video/mp4"
-                       :poster="modelVideo.poster">
+                       :poster="'../../img/' + dirImg + '/' + modelVideo.poster">
                 </video>
                 <i class="fas fa-times" @click="openVideo()" v-if="showVideo"></i>
             </div>
@@ -192,7 +192,8 @@
             <div class="poster" v-else >
 <!--                <img class="w-100" src="../../img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" :alt="model.name">-->
 <!--                <img class="w-100" :src="'../../img/images/'+modelVideo.poster" :alt="model.name">-->
-                <img class="w-100" :src="modelVideo.poster" :alt="model.name">
+                <img class="w-100" :src="'../../img/' + dirImg + '/' + modelVideo.poster" :alt="model.name">
+<!--                <img class="w-100" src="./../../img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" :alt="model.name">-->
                 <div class="info text-left">
                     <h2>{{modelVideo.header}}</h2>
                     <p>{{modelVideo.info}}</p>
@@ -259,12 +260,10 @@
     import axios from 'axios';
     import {eventEmitter} from "../../main";
     import MixinSelectModel from "../../mixins/mixinSelectModel";
+    import ImageSizeMixin from "./../../mixins/imageSizeMixin";
     import Equipment from "./../../components/configurator/Equipment";//            for Laravel
     import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
-
-
-
-    // import formattedPrice from "../../filters/price_format";
+    import formattedPrice from "../../filters/price_format";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
 
@@ -276,8 +275,13 @@
             SubNavigation,
         },
 
+        filters: {
+            formattedPrice
+        },
+
         mixins: [
-            MixinSelectModel
+            MixinSelectModel,
+            ImageSizeMixin
         ],
 
         data() {

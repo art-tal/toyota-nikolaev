@@ -188,6 +188,7 @@
         main ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/iso-14001_tcm-3046-1427379.jpg);
                 h1.container {
                     font-size: 3.5rem !important;
                     h2 {
@@ -214,6 +215,7 @@
         main ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/iso-14001_tcm-3046-1427379.jpg);
             }
 
             .body.container {

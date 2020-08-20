@@ -114,7 +114,7 @@
 
                     <li class="d-flex justify-content-between">
                         <span class="flex-grow-1">Ціна</span>
-                        <span class="text-left">{{car.price}} &#8372;</span>
+                        <span class="text-left">{{car.price | formattedPrice}} грн.</span>
                     </li>
                 </ul>
 
@@ -188,7 +188,7 @@
 
 <script>
     import axios from "axios"
-    // import formattedPrice from "../../filters/price_format";
+    import formattedPrice from "../../filters/price_format";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
     import 'swiper/css/swiper.css';
 
@@ -232,9 +232,9 @@
             SwiperSlide
         },
 
-        // filters: {
-        //     // formattedPrice,
-        // },
+        filters: {
+            formattedPrice,
+        },
 
         created() {
             this.id = this.$route.params['id'];

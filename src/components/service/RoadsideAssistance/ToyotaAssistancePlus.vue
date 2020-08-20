@@ -264,6 +264,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/toyota-assistance-plus-1440x430_tcm-3046-1186895.jpg);
             }
 
             section.container {
@@ -284,6 +285,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/toyota-assistance-plus-1440x430_tcm-3046-1186895.jpg);
             }
 
             section.container {

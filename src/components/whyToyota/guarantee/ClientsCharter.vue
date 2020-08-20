@@ -180,6 +180,7 @@
         main ::v-deep div {
             header.container-fluid {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/khartiya-kliyentiv-1600x900_tcm-3046-1964732.jpg);
             }
         }
     }
@@ -188,6 +189,7 @@
         main ::v-deep div {
             header.container-fluid {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/khartiya-kliyentiv-1600x900_tcm-3046-1964732.jpg);
             }
 
             .body.container {

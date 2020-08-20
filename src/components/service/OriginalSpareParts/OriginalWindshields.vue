@@ -255,6 +255,7 @@
 
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/header-windscreen_tcm-3046-939609.jpg);
                 max-height: 420px;
                 padding-top: 20px;
 

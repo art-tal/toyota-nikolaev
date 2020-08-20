@@ -157,6 +157,7 @@
         main.container-fluid {
             header  {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/toyota-aftersales-2014-service-maintenance-focus_tcm-3046-65752.jpg);
             }
         }
     }
@@ -165,6 +166,7 @@
         main.container-fluid {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/toyota-aftersales-2014-service-maintenance-focus_tcm-3046-65752.jpg);
             }
         }
     }

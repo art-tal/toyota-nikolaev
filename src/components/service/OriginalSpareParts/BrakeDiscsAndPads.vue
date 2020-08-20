@@ -268,6 +268,7 @@
 
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/Header_tcm-11-674174_tcm-3046-674174.jpg);
                 /*min-height: 180px;*/
                 max-height: 420px;
                 /*height: 56vw;*/

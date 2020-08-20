@@ -158,6 +158,7 @@
         section.container-fluid ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/rear-entertainment-system-header_tcm-3046-273547.jpg);
                 h1 {
                     padding-top: 100px;
                 }
@@ -169,6 +170,7 @@
         section.container-fluid ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/rear-entertainment-system-header_tcm-3046-273547.jpg);
                 width: 100%;
                 height: 56vw;
                 max-height: 380px;

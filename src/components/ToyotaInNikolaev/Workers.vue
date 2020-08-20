@@ -324,6 +324,7 @@
         main {
             header.container-fluid {
                 @include header-sm;
+                background-image: url(../../img/background-sm/salon_2.jpg);
                 position: relative;
                 h1 {
                     position: absolute;
@@ -374,6 +375,7 @@
         main {
             header.container-fluid {
                 @include header-xs;
+                background-image: url(../../img/background-sm/salon_2.jpg);
                 position: relative;
                 h1 {
                     position: absolute;

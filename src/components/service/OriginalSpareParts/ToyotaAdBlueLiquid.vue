@@ -240,6 +240,7 @@
 
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/Adblue_Header-420_tcm-3046-729063.jpg);
                 max-height: 420px;
                 padding-top: 20px;
 

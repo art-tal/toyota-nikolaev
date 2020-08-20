@@ -590,6 +590,7 @@
         main ::v-deep div {
             header.container-fluid  {
                 @include header-sm;
+                background-image: url(../../img/background-sm/credit-1600x900_tcm-3046-165545.jpg);
                 h1 {
                     font-size: 3rem;
 
@@ -654,6 +655,7 @@
         main ::v-deep div {
             header.container-fluid  {
                 @include header-xs;
+                background-image: url(../../img/background-sm/credit-1600x900_tcm-3046-165545.jpg);
                 width: 100%;
                 h1 {
                     width: 100%;

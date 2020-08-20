@@ -181,7 +181,8 @@
         header {
             @include header-xl;
             padding-top: 70px;
-            background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B8%D1%82%D0%B8_%D0%B1%D1%80%D0%BE%D1%88%D1%83%D1%80%D1%83_1600x900_tcm-3046-830653.jpg');
+            /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B8%D1%82%D0%B8_%D0%B1%D1%80%D0%BE%D1%88%D1%83%D1%80%D1%83_1600x900_tcm-3046-830653.jpg);*/
+            background-image: url(../../img/background/download_1600x900_tcm-3046-830653.jpg);
         }
 
         section.container{
@@ -288,6 +289,7 @@
         main.container-fluid {
             header {
                 @include header-sm;
+                background-image: url(../../img/background-sm/download_1600x900_tcm-3046-830653.jpg);
             }
             section.container{
                 header {
@@ -311,6 +313,7 @@
         main.container-fluid {
             header {
                 @include header-xs;
+                background-image: url(../../img/background-sm/download_1600x900_tcm-3046-830653.jpg);
             }
 
             section.container{

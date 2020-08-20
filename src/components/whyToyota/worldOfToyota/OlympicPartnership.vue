@@ -204,6 +204,7 @@
         section.container-fluid {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/header_tcm-3046-908181.jpg);
                 padding-top: 50px;
             h2 {
                 font-size: 3rem;
@@ -234,6 +235,7 @@
         section.container-fluid {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/header_tcm-3046-908181.jpg);
                 width: 100%;
             }
 

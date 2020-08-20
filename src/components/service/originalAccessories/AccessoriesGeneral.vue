@@ -229,6 +229,7 @@
         section.container-fluid {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/header-aksesuary-1600x900_tcm-3046-1336869.jpg);
                 h1 {
                     padding-top: 15px;
                 }
@@ -253,6 +254,7 @@
         section.container-fluid {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/header-aksesuary-1600x900_tcm-3046-1336869.jpg);
                 width: 100%;
                 h1 {
                     width: 100%;

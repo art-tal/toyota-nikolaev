@@ -149,6 +149,7 @@
         main ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../img/background-sm/toyota_ng.jpg);
             }
         }
     }
@@ -157,6 +158,7 @@
         main ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../img/background-sm/toyota_ng.jpg);
             }
 
             .body.container {

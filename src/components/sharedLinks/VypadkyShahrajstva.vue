@@ -110,7 +110,8 @@
     main ::v-deep div {
         header.container-fluid {
             @include header-xl;
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header-1600x900_tcm-3046-712523.jpg);
+            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Header-1600x900_tcm-3046-712523.jpg);*/
+            background-image: url(../../img/background/Header-1600x900_tcm-3046-712523.jpg);
             text-align: center;
             h1 {
                 color: $font_color;
@@ -180,6 +181,7 @@
         main ::v-deep div {
             header.container-fluid {
                 @include header-sm;
+                background-image: url(../../img/background-sm/Header-1600x900_tcm-3046-712523.jpg);
                 h1 {
                     color: #FFFFFF !important;
                 }
@@ -208,6 +210,7 @@
         main ::v-deep div {
             header.container-fluid {
                 @include header-xs;
+                background-image: url(../../img/background-sm/Header-1600x900_tcm-3046-712523.jpg);
                 h1 {
                     color: #FFFFFF !important;
                 }

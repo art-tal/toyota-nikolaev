@@ -301,6 +301,7 @@
         main.container-fluid {
             header {
                 @include header-sm;
+                background-image: url(../../img/background-sm/b2b-1600x900_tcm-3046-906751-.jpg);
                 height: 40vh;
                 padding-top: 20px;
             }
@@ -350,6 +351,7 @@
         main.container-fluid {
             header {
                 @include header-xs;
+                background-image: url(../../img/background-sm/b2b-1600x900_tcm-3046-906751-.jpg);
                 height: 30vh;
                 max-height: 380px;
                 padding-top: 15px;

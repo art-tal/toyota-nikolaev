@@ -233,6 +233,7 @@
         section.container-fluid ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/toyota-genuine-parts-2014-fuel-system-cleaner-focus_tcm-3046-284899.jpg);
             }
 
             .p {
@@ -257,6 +258,7 @@
         section.container-fluid ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/toyota-genuine-parts-2014-fuel-system-cleaner-focus_tcm-3046-284899.jpg);
                 width: 100%;
                 h1 {
                     width: 100%;

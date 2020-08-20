@@ -170,6 +170,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/toyota-service-header-1600x900_tcm-3046-1139710.jpg);
                 h2 {
                     font-size: 2.0rem;
                 }
@@ -181,6 +182,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/toyota-service-header-1600x900_tcm-3046-1139710.jpg);
                 width: 100%;
                 h1 {
                     width: 100%;

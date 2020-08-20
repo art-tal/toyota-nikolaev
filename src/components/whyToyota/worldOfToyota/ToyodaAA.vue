@@ -755,6 +755,7 @@
         section {
             header.container-fluid {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/toyota-2015-world-of-toyota-where-it-all-began-focus-image-full_tcm-3046-403781.jpg);
                 padding-top: 40px;
             }
 
@@ -1007,6 +1008,7 @@
         section {
             header.container-fluid {
                 @include header-xs;
+                background-image: url(../../../img/background-sm/toyota-2015-world-of-toyota-where-it-all-began-focus-image-full_tcm-3046-403781.jpg);
                 padding-top: 40px;
             }
 

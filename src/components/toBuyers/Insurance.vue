@@ -172,6 +172,7 @@
             section {
                 header {
                     @include header-sm;
+                    background-image: url(../../img/background-sm/insurance-header_tcm-3046-165896.jpg);
                 }
             }
         }
@@ -182,6 +183,7 @@
             section {
                 header {
                     @include header-xs;
+                    background-image: url(../../img/background-sm/insurance-header_tcm-3046-165896.jpg);
                 }
             }
         }

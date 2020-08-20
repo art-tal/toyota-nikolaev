@@ -500,6 +500,7 @@
         section.container-fluid ::v-deep div {
 
             header {
+                background-image: url(../../../img/background-sm/Header_tcm-11-688387_tcm-3046-688387.jpg);
                 h1 {
                     font-size: 4.5rem;
                 }
@@ -536,6 +537,7 @@
         section.container-fluid ::v-deep div {
 
             header {
+                background-image: url(../../../img/background-sm/Header_tcm-11-688387_tcm-3046-688387.jpg);
                 min-height: 180px;
                 max-height: 420px;
                 height: 56vw;

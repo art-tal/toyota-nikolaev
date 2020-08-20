@@ -347,6 +347,7 @@
 
             header {
                 @include header-sm;
+                background-image: url(../../../img/background-sm/Header_tcm-11-688578_tcm-3046-688578.jpg);
                 max-height: 420px;
                 padding-top: 20px;
 

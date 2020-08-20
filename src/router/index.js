@@ -11,11 +11,8 @@ import FormFeedBack from "../components/sharedLinks/FormFeedBack";
 import VypadkyShahrajstva from "../components/sharedLinks/VypadkyShahrajstva";
 
 
-import NewCars from "../components/cars/NewCars";
-import Model from "../components/cars/Model";
 import SelectModel from "../components/cars/SelectModel";
 import EnginesAndCharacteristics from "../components/cars/EnginesAndCharacteristics";
-// import Prices from "../components/cars/Prices";
 import ReliabilityAndGuarantee from "../components/cars/ReliabilityAndGuarantee";
 
 import Equipment from "../components/configurator/Equipment";
@@ -129,18 +126,6 @@ const route = new VueRouter({
             path: '/lineup',
             name: 'Lineup',
             component: Lineup,
-        },
-
-        {
-            path: '/new_cars',
-            name: 'new_cars',
-            component: NewCars,
-        },
-
-        {
-            path: '/model',
-            name: 'model',
-            component: Model,
         },
 
         {
