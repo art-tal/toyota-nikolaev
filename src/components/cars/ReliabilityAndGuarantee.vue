@@ -65,12 +65,12 @@
 
                                     <div
                                             class="nav-item sample"
-                                            @click="setColor(color, key)"
+                                            @click="setColor(color)"
                                     >
 
                                         <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
                                              :alt="color.color_name"
-                                             :title="color.color_name + ')'"
+                                             :title="color.color_name"
                                         >
                                         <div class="check text-center" v-if="color.selected">
                                             <i class="fas fa-check"></i>
@@ -289,7 +289,8 @@
         </section>
 
 <!--        <section class="image ass" >-->
-        <section class="image ass" :style="`background-image: url(${modelVideo.photo})`">
+        <section class="image ass" :style="'background-image: url(' + getImage + ')'">
+<!--        <section class="image ass" :style="'background-image: url(' + getImage + ')'">-->
             <div class="container">
                 <div class="info">
                     <span class="text-left">&#x201C;</span>
@@ -332,6 +333,7 @@
 <script>
     import axios from 'axios';
     import MixinSelectModel from "../../mixins/mixinSelectModel";
+    import ImageSizeMixin from "./../../mixins/imageSizeMixin";
 
     import Equipment from "./../../components/configurator/Equipment";//            for Laravel
     import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
@@ -345,7 +347,8 @@
         },
 
         mixins: [
-            MixinSelectModel
+            MixinSelectModel,
+            ImageSizeMixin
         ],
 
         data() {
@@ -392,7 +395,7 @@
         },
 
         created() {
-            this.id = this.$route.params.id;
+            // this.id = this.$route.params.id;
             this.getModel();
         },
 
@@ -425,17 +428,21 @@
             },
 
             getID() {
-                if(this.$route.params.id) {
-                    return this.$route.params.id;
-                } else if( this.$store.getters.getModelId) {
+               if( this.$store.getters.getModelId) {
                     return this.$store.getters.getModelId;
                 } else {
                     return localStorage.id;
                 }
             },
 
+            getImage() {
+                if (this.modelVideo.photo) {
+                    return require('../../img/' + this.dirImg + '/' + this.modelVideo.photo);
+                } else {
+                    return ""
+                }
 
-
+            },
 
         },
 
@@ -458,7 +465,7 @@
             getModel() {
                 axios.get(
                     "http://lara.toyota.nikolaev.ua/ajax/all_model",
-                    {params: {id: this.id}},
+                    {params: {id: this.getID}},
                 ).then((response) => {
                     this.model = response.data[0];
                     this.modelTitle = this.model.name;

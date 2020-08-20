@@ -73,7 +73,7 @@
 
                                         <img :src="'http://lara.toyota.nikolaev.ua/storage/' + color.color_image"
                                              :alt="color.color_name"
-                                             :title="color.color_name + ')'"
+                                             :title="color.color_name"
                                         >
                                         <div class="check text-center" v-if="color.selected">
                                             <i class="fas fa-check"></i>
@@ -181,19 +181,14 @@
                        controls="controls"
                        autoplay
                        type="video/mp4"
-                       :poster="'../../img/' + dirImg + '/' + modelVideo.poster">
+                       :poster="getPoster">
                 </video>
                 <i class="fas fa-times" @click="openVideo()" v-if="showVideo"></i>
             </div>
 
-
-
-
             <div class="poster" v-else >
-<!--                <img class="w-100" src="../../img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" :alt="model.name">-->
-<!--                <img class="w-100" :src="'../../img/images/'+modelVideo.poster" :alt="model.name">-->
-                <img class="w-100" :src="require('../../img/' + dirImg + '/' + modelVideo.poster)" :alt="model.name">
-<!--                <img class="w-100" src="./../../img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" :alt="model.name">-->
+<!--                <img class="w-100" :src="require('../../img/' + dirImg + '/' + modelVideo.poster)" :alt="model.name">-->
+                <img class="w-100" :src="getPoster" :alt="model.name">
                 <div class="info text-left">
                     <h2>{{modelVideo.header}}</h2>
                     <p>{{modelVideo.info}}</p>
@@ -205,6 +200,20 @@
             </div>
 
         </div>
+
+        <div class="poster" v-else >
+            <!--                <img class="w-100" :src="require('../../img/' + dirImg + '/' + modelVideo.poster)" :alt="model.name">-->
+            <img class="w-100" :src="getPoster" :alt="model.name">
+            <div class="info text-left">
+                <h2>{{modelVideo.header}}</h2>
+                <p>{{modelVideo.info}}</p>
+            </div>
+
+            <button class="btn btn-play" @click="openVideo()">
+                <i class="fas fa-play"></i>
+            </button>
+        </div>
+
         <img src="/src/img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" alt="">
         <section class="links container d-md-flex justify-content-between">
             <div class="link">
@@ -368,6 +377,10 @@
                 } else {
                     return localStorage.id;
                 }
+            },
+
+            getPoster() {
+                return require('../../img/' + this.dirImg + '/' + this.modelVideo.poster);
             },
 
         },

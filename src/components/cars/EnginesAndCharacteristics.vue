@@ -340,7 +340,7 @@
         },
 
         created() {
-            this.id = this.$route.params.id;
+            // this.id = this.$route.params.id;
             this.getModel();
         },
 
@@ -366,6 +366,14 @@
                 }
             },
 
+            getID() {
+                if( this.$store.getters.getModelId) {
+                    return this.$store.getters.getModelId;
+                } else {
+                    return localStorage.id;
+                }
+            },
+
             computedEquipment() {
                 return this.$store.getters.equip;
             },
@@ -377,7 +385,7 @@
             getModel() {
                 axios.get(
                     "http://lara.toyota.nikolaev.ua/ajax/all_model",
-                    {params: {id: this.id}},
+                    {params: {id: this.getID}},
                 ).then( (response) => {
                     this.model = response.data[0];
 ///////////////////////////////////////////////////////ЗАГЛУШКА
@@ -407,10 +415,7 @@
                             this.equipment = this.equipments[0];
                             localStorage.equipment = JSON.stringify( this.equipments[0] );
                         }
-
-
                         localStorage.mod_id = this.equipment.mod_id;
-
                         this.equipmentTitle = this.equipment.mod_name;
                     } )
                     .then( () => {this.getColors();} )

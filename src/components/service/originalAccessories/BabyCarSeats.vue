@@ -1,11 +1,12 @@
 <template>
     <section class="container-fluid">
         <menu-to-accessories/>
-        <div v-html="pageBody"></div>
-<!--        <header>-->
+        <header>
 <!--            <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/dityachi-krisla-header-1600x900_tcm-3046-1543719.jpg" alt="header">-->
 <!--            <img src="../../../img/background/dityachi-krisla-header-1600x900_tcm-3046-1543719.jpg" alt="header">-->
-<!--        </header>-->
+            <img :src="require('../../../img/' + dirBG + '/dityachi-krisla-header-1600x900_tcm-3046-1543719.jpg')" alt="header">
+        </header>
+        <div v-html="pageBody"></div>
 
 <!--        <div class="body container">-->
 <!--                <h1>«Від обережності до безпеки. Шлях відповідальних батьків»</h1>-->
@@ -222,6 +223,7 @@
 <script>
     import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
     import PageBody from "../../../mixins/mixinPages"
+    import imageSizeMixin from "../../../mixins/imageSizeMixin";
     export default {
         name: "BabyCarSeats",
 
@@ -230,7 +232,8 @@
         },
 
         mixins: [
-            PageBody
+            PageBody,
+            imageSizeMixin
         ],
 
         data() {
@@ -276,6 +279,10 @@
                     },
                 ],
             }
+        },
+
+        created() {
+            this.identifyDevice();
         },
     }
 </script>

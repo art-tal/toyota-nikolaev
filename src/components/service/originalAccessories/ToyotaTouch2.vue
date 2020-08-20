@@ -235,7 +235,8 @@
 
                 <div class="container">
 <!--                    <img src="//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/home_bg_tcm-3046-632723.jpg" alt="try">-->
-                    <img src="../../../img/images/touch2/home_bg_tcm-3046-632723.jpg" alt="try">
+<!--                    <img src="../../../img/images/touch2/home_bg_tcm-3046-632723.jpg" alt="try">-->
+                    <img :src="require('../../../img/' + getDir + '/touch2/home_bg_tcm-3046-632723.jpg')" alt="try">
                 </div>
 
             </article>
@@ -254,9 +255,14 @@
     import MenuToAccessories from "./../../../components/service/originalAccessories/MenuToAccessories";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
     import 'swiper/css/swiper.css';
+    import imageSizeMixin from "../../../mixins/imageSizeMixin";
 
     export default {
         name: "ToyotaTouch2",
+
+        mixins: [
+            imageSizeMixin,
+        ],
 
         components: {
             MenuToAccessories,
@@ -273,6 +279,10 @@
                     }
                 }
             }
+        },
+
+        created() {
+            this.identifyDevice();
         },
 
         mounted() {
@@ -311,6 +321,12 @@
             ],
         }
     },
+
+        computed: {
+            getDir() {
+                return this.dirImg;
+            }
+        },
     }
 </script>
 
