@@ -1,7 +1,7 @@
 <template>
     <section class="lineup container-fluid text-left">
         <header class="container">
-            <h1>Широкий модельний ряд. Розвинена дилерська мережа</h1>
+<!--            <h1>Широкий модельний ряд</h1>-->
         </header>
         <footer class="container">
             <!--                <button class="btn btn-light">Открой для себя Toyota Hybrid</button>-->
@@ -33,15 +33,12 @@
 
     section.lineup.container-fluid {
         height: 56vh;
-        /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/rav4-hybrid-1600x450_tcm-3046-707555.jpg);*/
         background-image: url(../../img/images/rav4-hybrid-1600x450_tcm-3046-707555.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         -webkit-background-size: cover;
         background-size: cover;
     header {
-    /*width: 1170px;*/
-    /*margin: auto;*/
     h1 {
         padding-top: 150px;
         padding-bottom: 100px;
@@ -84,6 +81,7 @@
                 height: 56vw;
                 min-height: 220px;
                 header {
+                    background-image: url(../../img/image-sm/rav4-hybrid-1600x450_tcm-3046-707555.jpg);
                     h1 {
                         font-size: 5vw;
                         padding-top: 30px;

@@ -6,7 +6,8 @@
 
                 <swiper-slide>
 <!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-817965.jpg" alt="Краще життя">-->
-                    <img src="../../../img/background/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-617970.jpg" alt="Краще життя">
+<!--                    <img src="../../../img/background/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-617970.jpg" alt="Краще життя">-->
+                    <img :src="require('../../../img/' + dirBG + '/BL_Homepage_Carousel_Picture1-1V2_tcm-3046-617970.jpg')" alt="Краще життя">
                     <div class="title">
                         <h1>Краще життя</h1>
                         <h2>Формування майбутнього суспільства в гармонії з природою</h2>
@@ -15,7 +16,8 @@
 
                 <swiper-slide>
 <!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Raising-Awareness_1600x900_tcm-3046-765901.jpg" alt="Краще життя">-->
-                    <img src="../../../img/background/Raising-Awareness_1600x900_tcm-3046-765901.jpg" alt="Краще життя">
+<!--                    <img src="../../../img/background/Raising-Awareness_1600x900_tcm-3046-765901.jpg" alt="Краще життя">-->
+                    <img :src="require('../../../img/' + dirBG + '/Raising-Awareness_1600x900_tcm-3046-765901.jpg')" alt="Краще життя">
                     <div class="title">
                         <h1>Підвищення обізнаності</h1>
                         <h2>Винесення питань навколишнього середовища на перше місце у  помислах, планах та діях TOYOTA</h2>
@@ -24,8 +26,7 @@
                 </swiper-slide>
 
                 <swiper-slide>
-<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture3NEW3_tcm-3046-765902.jpg" alt="Краще життя">-->
-                    <img src="../../../img/background/BL_Homepage_Carousel_Picture3NEW3_tcm-3046-765902.jpg" alt="Краще життя">
+                    <img :src="require('../../../img/' + dirBG + '/BL_Homepage_Carousel_Picture3NEW3_tcm-3046-765902.jpg')" alt="Краще життя">
                     <div class="title">
                         <h1>Біорізноманіття</h1>
                         <h2>Допомога у збереженні екосистеми планети</h2>
@@ -34,8 +35,7 @@
                 </swiper-slide>
 
                 <swiper-slide>
-<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/BL_Homepage_Carousel_Picture4_tcm-3046-816670.jpg" alt="Краще життя">-->
-                    <img src="../../../img/background/BL_Homepage_Carousel_Picture4_tcm-3046-816670.jpg" alt="Краще життя">
+                    <img :src="require('../../../img/' + dirBG + '/BL_Homepage_Carousel_Picture4_tcm-3046-816670.jpg')" alt="Краще життя">
                     <div class="title">
                         <h1>Прогресивне мислення</h1>
                         <h2>Створення кращого світу для наших дітей</h2>
@@ -90,6 +90,7 @@
     import MenuEcology from "./../../../components/whyToyota/ecology/MenuEcology";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+    import imageSizeMixin from "../../../mixins/imageSizeMixin";
 
     export default {
         name: "BetterLife",
@@ -101,7 +102,8 @@
         },
 
         mixins: [
-            PageBody
+            PageBody,
+            imageSizeMixin
         ],
 
         metaInfo() {

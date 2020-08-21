@@ -8,8 +8,7 @@
                 <swiper-slide
                         style="background-color: rgba(0,0,0,.1);"
                 >
-<!--                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Carousel%202_tcm-3046-559422.jpg" alt="Краще повітря">-->
-                        <img src="../../../img/background/Carousel-2_tcm-3046-559422.jpg" alt="Краще повітря">
+                        <img :src="require('../../../img/' + dirBG + '/Carousel-2_tcm-3046-559422.jpg')" alt="Краще повітря">
                     <div class="title">
                         <h1 style="color: #202020">Краще повітря</h1>
                         <h2>Створення екологічно чистих автомобілів для світу</h2>
@@ -17,8 +16,7 @@
                 </swiper-slide>
 
                 <swiper-slide>
-<!--                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Carousel%203_tcm-3046-559423.jpg" alt="Краще повітря">-->
-                        <img src="../../../img/background/Carousel-3_tcm-3046-559423.jpg" alt="Краще повітря">
+                        <img :src="require('../../../img/' + dirBG + '/Carousel-3_tcm-3046-559423.jpg')" alt="Краще повітря">
                     <div class="title">
                         <h1 style="color: #202020">Краще повітря</h1>
                         <h2>Створення екологічно чистих автомобілів для світу</h2>
@@ -28,8 +26,7 @@
                 <swiper-slide
                         style="color: #ffffff"
                 >
-<!--                        <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Carousel%204_tcm-3046-577527.jpg" alt="Краще повітря">-->
-                        <img src="../../../img/background/Carousel-4_tcm-3046-577527.jpg" alt="Краще повітря">
+                        <img :src="require('../../../img/' + dirBG + '/Carousel-4_tcm-3046-577527.jpg')" alt="Краще повітря">
                     <div class="title">
                         <h1 style="color: #202020">Краще повітря</h1>
                         <h2>Створення екологічно чистих автомобілів для світу</h2>
@@ -39,8 +36,7 @@
                 <swiper-slide
                         style="color: #ffffff;"
                 >
-<!--                        <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Section%201_Carousel_PRODpicture%2001_tcm-3046-551899.jpg" alt="Краще повітря">-->
-                        <img src="../../../img/background/Section-1_Carousel_PRODpicture-01_tcm-3046-551899.jpg" alt="Краще повітря">
+                        <img :src="require('../../../img/' + dirBG + '/Section-1_Carousel_PRODpicture-01_tcm-3046-551899.jpg')" alt="Краще повітря">
                     <div class="title">
                         <h1>Краще життя</h1>
                         <h2>Створення майбутнього суспільства в гармонії з природою</h2>
@@ -166,6 +162,7 @@
     import MenuEcology from "./../../../components/whyToyota/ecology/MenuEcology";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+    import imageSizeMixin from "../../../mixins/imageSizeMixin";
 
     export default {
         name: "BetterAir",
@@ -177,7 +174,8 @@
         },
 
         mixins: [
-            PageBody
+            PageBody,
+            imageSizeMixin
         ],
 
         metaInfo() {

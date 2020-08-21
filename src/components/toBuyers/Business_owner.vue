@@ -16,15 +16,18 @@
                 <swiper class="swiper" :options="swiperOption">
                     <swiper-slide>
 <!--                        <img src="//collection.toyota.ua/toyota-bp.jpg" alt="Slide 1">-->
-                        <img src="../../img/images/toyota-bp.jpg" alt="Slide 1">
+<!--                        <img src="../../img/images/toyota-bp.jpg" alt="Slide 1">-->
+                        <img :src="require('../../img/' + dirImg + '/toyota-bp.jpg')" alt="Slide 1">
                     </swiper-slide>
                     <swiper-slide>
 <!--                        <img src="//collection.toyota.ua/business-to-business-hybrid-1140x360.jpg" alt="Slide 2">-->
-                        <img src="../../img/images/business-to-business-hybrid-1140x360.jpg" alt="Slide 2">
+<!--                        <img src="../../img/images/business-to-business-hybrid-1140x360.jpg" alt="Slide 2">-->
+                        <img :src="require('../../img/' + dirImg + '/business-to-business-hybrid-1140x360.jpg')" alt="Slide 2">
                     </swiper-slide>
                     <swiper-slide>
 <!--                        <img src="//s3-eu-west-1.amazonaws.com/tme-toyotaone-prev/toyotaone/glen/Business_tcm-10-721315.jpg" alt="Slide 3">-->
-                        <img src="../../img/images/Business_tcm-10-721315.jpg" alt="Slide 3">
+<!--                        <img src="../../img/images/Business_tcm-10-721315.jpg" alt="Slide 3">-->
+                        <img :src="require('../../img/' + dirImg + '/Business_tcm-10-721315.jpg')" alt="Slide 3">
                     </swiper-slide>
                 </swiper>
             </div>
@@ -77,12 +80,14 @@
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
     import 'swiper/css/swiper.css';
     import PageBody from "../../mixins/mixinPages";
+    import imageSizeMixin from "../../mixins/imageSizeMixin";
 
     export default {
         name: "Business_owner",
 
         mixins: [
-            PageBody
+            PageBody,
+            imageSizeMixin
         ],
 
         components: {
@@ -151,6 +156,10 @@
                     },
                 ],
             }
+        },
+
+        created() {
+
         },
     }
 </script>

@@ -97,7 +97,7 @@
             @include header-xl;
             max-height: 60vw;
             /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg);*/
-            background-image: url(../../../img/background/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg);
+            background-image: url(../../../img/background/dsc-2339.jpg);
             margin-bottom: 50px;
 
             h1 {
@@ -200,7 +200,7 @@
         main.container-fluid ::v-deep div{
             header  {
                 @include header-sm;
-                background-image: url(../../../img/background-sm/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg);
+                background-image: url(../../../img/background-sm/dsc-2339.jpg);
                 h1 {
                     font-size: 3rem;
                     padding-top: 150px;
@@ -214,7 +214,7 @@
         main.container-fluid ::v-deep div {
             header {
                 @include header-xs;
-                background-image: url(../../../img/background-sm/toyota-aftersales-2017-service-promise-header_tcm-3046-1058645.jpg);
+                background-image: url(../../../img/background-sm/dsc-2339.jpg);
                 width: 100%;
                 height: 56vw;
                 max-height: 320px;

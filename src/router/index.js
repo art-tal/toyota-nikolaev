@@ -176,24 +176,6 @@ const route = new VueRouter({
             component: TestDriveStep2,
         },
 
-
-
-
-
-        // {
-        //     path: '/select_model/:id',
-        //     name: 'selectModel',
-        //     component: SelectModel,
-        //     children: [
-        //
-        //         {
-        //             path: '/select_model/:id/equipment',
-        //             name: 'Equipment',
-        //             component: Equipment,
-        //         },
-        //
-        //     ]
-        // },
         {
             path: '/models/:slug',
             name: 'models',
@@ -209,28 +191,13 @@ const route = new VueRouter({
             ]
         },
 
-        // {
-        //     path: '/engines_and_characteristics/:id',
-        //     name: 'engines_and_characteristics',
-        //     component: EnginesAndCharacteristics,
-        // },
         {
             path: '/engines_and_characteristics/:slug',
             name: 'engines_and_characteristics',
             component: EnginesAndCharacteristics,
         },
 
-        // {
-        //     path: '/prices/:id',
-        //     name: 'prices',
-        //     component: Prices,
-        // },
 
-        // {
-        //     path: '/reliability_and_guarantee/:id',
-        //     name: 'reliability_and_guarantee',
-        //     component: ReliabilityAndGuarantee,
-        // },
         {
             path: '/reliability_and_guarantee/:slug',
             name: 'reliability_and_guarantee',
@@ -240,7 +207,6 @@ const route = new VueRouter({
 
         {
             path: '/configurator',
-            // path: '/configurator/:id_params',
             name: 'Configurator',
             component: Configurator,
             children: [
@@ -638,16 +604,6 @@ const route = new VueRouter({
             component: ClientsCharter,
         },
 
-        // {
-        //     path: "/hybrid_innovations",
-        //     name: "hybrid_innovations",
-        //     component: HybridInnovations,
-        // },
-        // {
-        //     path: "/hybrid_drive",
-        //     name: "hybrid_drive",
-        //     component: HybridDrive,
-        // },
 
 
         {

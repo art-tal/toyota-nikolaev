@@ -8,7 +8,7 @@
 
 <!--      <equipments></equipments>-->
 
-
+        <sidebar/>
       <fast-connection></fast-connection>
       <go-up/>
       <preloader v-if="preloader"/>
@@ -19,6 +19,7 @@
 <script>
     import Navigation from "./components/permanent/Navigation";
     import Footer from "./components/permanent/Footer";
+    import Sidebar from "./components/permanent/Sidebar";
     import FastConnection from "./components/permanent/FastConnection";
     import Preloader from "./components/permanent/Preloader";
     import GoUp from "./components/permanent/GoUp";
@@ -28,9 +29,10 @@ export default {
   components: {
       Navigation,
       appFooter: Footer,
+      Sidebar,
       FastConnection,
       Preloader,
-      GoUp
+      GoUp,
   },
 
     data() {

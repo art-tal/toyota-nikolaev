@@ -73,7 +73,7 @@
                 <article class="col-12 block_link new_car" @click="goToConsult()">
                     <div class="background"></div>
                     <header>
-                        <span class="text-uppercase">ЗАМОВИТИ ОНЛАЙН КОНСУЛЬТАЦІЮ</span>
+                        <span class="text-uppercase">ЗАМОВИТИ ТЕСТ-ДРАЙВ</span>
                         <h1>Щодо придбання нових автомобілів</h1>
                     </header>
                     <span class="btn-go text-center">
@@ -164,7 +164,7 @@
 
         methods: {
             goToConsult() {
-                this.$router.push({name: 'consultation'});
+                this.$router.push({name: 'test_drive_step_1'});
             },
 
             goToHybrid() {

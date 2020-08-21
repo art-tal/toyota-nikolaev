@@ -18,7 +18,7 @@
                                     exact
                                     active-class="active"
                                     to="/principles"
-                            >Переваги</router-link>
+                            >Переваги оригінальних аксесуарів</router-link>
                         </li>
 
                         <li class=" linked">

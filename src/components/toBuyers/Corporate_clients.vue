@@ -270,7 +270,7 @@
             }
 
             .body {
-                padding-bottom: 100px;
+                padding-bottom: 10px;
                 img {
                     width: 100%;
                     margin-bottom: 68px;
@@ -620,6 +620,30 @@
 
                 .body {
                     ul.icons {
+                        justify-content: space-around !important;
+                        align-items: start !important;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        li {
+                            flex: 1;
+                            height: auto;
+                            span {
+                                display: block;
+                                height: 100px;
+                            }
+                            img {
+                                margin-top: 10px;
+                            }
+                            .message {
+                                display: block;
+                                position: static;
+                                width: 100%;
+                                margin-top: 15px;
+                                padding: 0 5px;
+                            }
+                        }
+                    }
+                    /*ul.icons {
                         li {
                             &:hover {
                                 .message {
@@ -628,7 +652,7 @@
 
                             }
                         }
-                    }
+                    }*/
                 }
             }
 
@@ -636,7 +660,7 @@
                 margin-bottom: 30px;
                 .body.container {
                     .legend {
-                        top: 239px;
+                        top: 249px;
                         left: 55px;
                         ul {
                             li {
@@ -735,12 +759,12 @@
                 height: 40vh;
                 min-height: 180px;
                 padding-top: 20px;
+                background-image: url(../../img/background-sm/business-plus-sales-1600х900_tcm-3046-906757-.jpg);
             }
 
             section.container.business_plus {
                 header {
                     padding: 30px 0;
-                    background-image: url(../../img/background-sm/business-plus-sales-1600х900_tcm-3046-906757-.jpg);
                     .p {
                         margin-bottom: 30px;
                         font-size: 1.8rem;
@@ -751,12 +775,58 @@
                 }
 
                 .body {
-                    padding-bottom: 100px;
+                    padding-bottom: 20px;
                     img {
                         margin-bottom: 30px;
                     }
+
                     ul.icons {
-                        /*margin-bottom: 75px;*/
+                         justify-content: space-around !important;
+                         align-items: start !important;
+                         width: 100%;
+                         margin-bottom: 20px;
+                         li {
+                             flex: 50% !important;
+                             /*height: ;*/
+                             span {
+                                 display: block;
+                                 height: 120px;
+                             }
+                             img {
+                                 margin-top: 10px;
+                             }
+                             .message {
+                                 display: none;
+                                 position: static;
+                                 width: 100%;
+                                 margin-top: 15px;
+                                 padding: 0 5px;
+                             }
+
+                             &:hover {
+                                 span {
+                                     display: block;
+                                     /*width: 220px;*/
+                                 }
+                                 img {
+                                     transform: scale(1);
+                                 }
+                                 .message {
+                                     display: block;
+                                     position: absolute;
+                                     width: 100%;
+                                     bottom: -60px;
+                                     left: 0;
+                                     height: 50px;
+                                     font-size: 1.2rem;
+                                 }
+
+                             }
+                         }
+                     }
+
+                    /*ul.icons {
+                        /*margin-bottom: 75px;
                         li {
                             height: 180px;
                             span {
@@ -786,7 +856,7 @@
 
                             }
                         }
-                    }
+                    }*/
                 }
             }
 
@@ -797,7 +867,7 @@
                 font-size: 1.1rem;
                 .body.container {
                     .legend {
-                        top: 170px;
+                        top: 185px;
                         left: 45px;
                         ul {
                             li {
@@ -886,7 +956,7 @@
 
             section.lineup.container-fluid {
                 height: 40vw;
-                min-height: 380px;
+                min-height: 380px;background-image: url(../../img/image-sm/lc-200-1600x450_tcm-3046-1616903.jpg);
                 header {
                     h1 {
                         padding-top: 50px;
@@ -904,11 +974,11 @@
                 height: 30vh;
                 min-height: 180px;
                 max-height: 380px;
+                background-image: url(../../img/background-sm/business-plus-sales-1600х900_tcm-3046-906757-.jpg);
             }
 
             section.container.business_plus {
                 header {
-                    background-image: url(../../img/background-sm/business-plus-sales-1600х900_tcm-3046-906757-.jpg);
                     padding: 30px 0;
                     .p {
                         margin-bottom: 30px;
@@ -967,19 +1037,19 @@
                 }
                 .body.container {
                     .legend {
-                        top: 113px;
+                        top: 31vw;
                         left: 35px;
                         ul {
                             li {
                                 height: auto;
-                                padding: 0;
+                                padding: 0 0 3px;
                                 width: 150px;
                                 h3 {
-                                    font-size: 0.9rem;
+                                    font-size: 1.5vw;
                                     margin: 0;
                                 }
                                 span {
-                                    font-size: 0.6rem;
+                                    font-size: 1.3vw;
                                     line-height: 0.75;
                                 }
                                 &:nth-child(3) {
@@ -1058,6 +1128,7 @@
                 max-height: 380px;
                 height: 56vw;
                 min-height: 220px;
+                background-image: url(../../img/image-sm/lc-200-1600x450_tcm-3046-1616903.jpg);
                 header {
                     h1 {
                         font-size: 5vw;

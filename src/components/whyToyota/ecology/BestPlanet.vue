@@ -6,32 +6,28 @@
 
 
                 <swiper-slide>
-<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Carousel%201_tcm-3046-569048.jpg" alt="Краща планета">-->
-                    <img src="../../../img/background/Butterfly-1_tcm-3046-617969.jpg" alt="Краща планета">
+                    <img :src="require('../../../img/' + dirBG + '/Butterfly-1_tcm-3046-617969.jpg')" alt="Краща планета">
                     <h1 style="color: #202020">Краща планета
                         <h2>Утилізація відходів - ключ до захисту наших природних ресурсів</h2>
                     </h1>
                 </swiper-slide>
 
                 <swiper-slide>
-<!--                    <img src="//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/Section-1_carousel_picture-4OK_tcm-3046-569049.jpg" alt="Краща планета">-->
-                    <img src="../../../img/background/Section-1_carousel_picture-4OK_tcm-3046-569049.jpg" alt="Краща планета">
+                    <img :src="require('../../../img/' + dirBG + '/Section-1_carousel_picture-4OK_tcm-3046-569049.jpg')" alt="Краща планета">
                     <h1 style="color: #202020">Краща планета
                         <h2>Утилізація відходів - ключ до захисту наших природних ресурсів</h2>
                     </h1>
                 </swiper-slide>
 
                 <swiper-slide>
-<!--                    <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/Carousel%203_tcm-3046-569047.jpg" alt="Краща планета">-->
-                    <img src="../../../img/background/Carousel-3_tcm-3046-569047.jpg" alt="Краща планета">
+                    <img :src="require('../../../img/' + dirBG + '/Carousel-3_tcm-3046-569047.jpg')" alt="Краща планета">
                     <h1 style="color: #202020">Краща планета
                         <h2>Утилізація відходів - ключ до захисту наших природних ресурсів</h2>
                     </h1>
                 </swiper-slide>
 
                 <swiper-slide>
-<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Section-1_carousel_tcm-3046-569046.jpg" alt="Краща планета">-->
-                    <img src="../../../img/background/Section-1_carousel_tcm-3046-569046.jpg" alt="Краща планета">
+                    <img :src="require('../../../img/' + dirBG + '/Section-1_carousel_tcm-3046-569046.jpg')" alt="Краща планета">
                     <h1 style="color: #202020">Краща планета
                         <h2>Утилізація відходів - ключ до захисту наших природних ресурсів</h2>
                     </h1>
@@ -179,6 +175,7 @@
     import MenuEcology from "./../../../components/whyToyota/ecology/MenuEcology";
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+    import imageSizeMixin from "../../../mixins/imageSizeMixin";
 
     export default {
         name: "BestPlanet",
@@ -190,7 +187,8 @@
         },
 
         mixins: [
-            PageBody
+            PageBody,
+            imageSizeMixin
         ],
 
         metaInfo() {

@@ -99,7 +99,7 @@
             <h2>Знайомтеся з командою</h2>
             <p>Першокласна та готова розширювати межі в 2018 році, команда TOYOTA GAZOO Racing складається із пристрасних людей, яка базуються в м. Пупола, Фінляндія, на чолі з чотирикратним чемпіоном світу Томмі Мякіненом.</p>
 <!--            <img src="//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_meet-the-team_852x479_tcm-3046-1253542.jpg" alt="photo">-->
-            <img src="../../../img/images/WorldOfToyota/wrc2018_meet-the-team_852x479_tcm-3046-1253542.jpg" alt="photo">
+            <img :src="require('../../../img/' + dirImg + '/WorldOfToyota/wrc2018_meet-the-team_852x479_tcm-3046-1253542.jpg')" alt="photo">
 
             <div class="row team">
                 <div class="col-lg-6 col-12 row">
@@ -215,7 +215,7 @@
             <div class="carousel" @click="show()">
                 <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
                     <swiper-slide v-for="(img, key) in images" :key="key">
-                        <img :src="img" alt="photo">
+                        <img :src="require('../../../img/' + dirImg + '/WorldOfToyota/' + img )" alt="photo">
                         <span><i class="fas fa-search"></i></span>
                     </swiper-slide>
 
@@ -230,7 +230,7 @@
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
                     <swiper-slide v-for="(img, key) in images"
                                   :key="key"
-                                  :style="'background-image: url(' + img + ')'"></swiper-slide>
+                                  :style="'background-image: url(' + require('../../../img/' + dirImg + '/WorldOfToyota/' + img ) + ')'"></swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
                     <div class="swiper-button-prev" slot="button-prev"></div>
                     <div class="swiper-button-next" slot="button-next"></div>
@@ -280,9 +280,15 @@
 <script>
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+    import imageSizeMixin from "../../../mixins/imageSizeMixin";
 
     export default {
         name: "ToyotaAtRally",
+
+        mixins: [
+            imageSizeMixin
+        ],
+
         components: {
             Swiper,
             SwiperSlide
@@ -294,23 +300,23 @@
                 showCarousel: false,
 
                 images: [
-                    "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery2_fullsize_1600x1200_tcm-3046-1253056.jpg",
-                    "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery3_fullsize_1600x1200_tcm-3046-1253615.jpg",
-                    "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery4_fullsize_1600x1200_tcm-3046-1253617.jpg",
-                    "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery7_fullsize_1600x1200_tcm-3046-1253048.jpg",
-                    "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery8_fullsize_1600x1200_tcm-3046-1253034.jpg",
-                    "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery1_fullsize_1600x1200_tcm-3046-1253045.jpg",
-                    "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery5_fullsize_1600x1200_tcm-3046-1253618.jpg",
-                    "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery6_fullsize_1600x1200_tcm-3046-1253051.jpg",
+                    // "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery2_fullsize_1600x1200_tcm-3046-1253056.jpg",
+                    // "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery3_fullsize_1600x1200_tcm-3046-1253615.jpg",
+                    // "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery4_fullsize_1600x1200_tcm-3046-1253617.jpg",
+                    // "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery7_fullsize_1600x1200_tcm-3046-1253048.jpg",
+                    // "//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery8_fullsize_1600x1200_tcm-3046-1253034.jpg",
+                    // "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery1_fullsize_1600x1200_tcm-3046-1253045.jpg",
+                    // "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery5_fullsize_1600x1200_tcm-3046-1253618.jpg",
+                    // "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_gallery6_fullsize_1600x1200_tcm-3046-1253051.jpg",
 
-                    // "../../../img/images/WorldOfToyota/wrc2018_gallery2_fullsize_1600x1200_tcm-3046-1253056.jpg",
-                    // "../../../img/images/WorldOfToyota/wrc2018_gallery3_fullsize_1600x1200_tcm-3046-1253615.jpg",
-                    // "../../../img/images/WorldOfToyota/wrc2018_gallery4_fullsize_1600x1200_tcm-3046-1253617.jpg",
-                    // "../../../img/images/WorldOfToyota/wrc2018_gallery7_fullsize_1600x1200_tcm-3046-1253048.jpg",
-                    // "../../../img/images/WorldOfToyota/wrc2018_gallery8_fullsize_1600x1200_tcm-3046-1253034.jpg",
-                    // "../../../img/images/WorldOfToyota/wrc2018_gallery1_fullsize_1600x1200_tcm-3046-1253045.jpg",
-                    // "../../../img/images/WorldOfToyota/wrc2018_gallery5_fullsize_1600x1200_tcm-3046-1253618.jpg",
-                    // "../../../img/images/WorldOfToyota/wrc2018_gallery6_fullsize_1600x1200_tcm-3046-1253051.jpg",
+                    "wrc2018_gallery2_fullsize_1600x1200_tcm-3046-1253056.jpg",
+                    "wrc2018_gallery3_fullsize_1600x1200_tcm-3046-1253615.jpg",
+                    "wrc2018_gallery4_fullsize_1600x1200_tcm-3046-1253617.jpg",
+                    "wrc2018_gallery7_fullsize_1600x1200_tcm-3046-1253048.jpg",
+                    "wrc2018_gallery8_fullsize_1600x1200_tcm-3046-1253034.jpg",
+                    "wrc2018_gallery1_fullsize_1600x1200_tcm-3046-1253045.jpg",
+                    "wrc2018_gallery5_fullsize_1600x1200_tcm-3046-1253618.jpg",
+                    "wrc2018_gallery6_fullsize_1600x1200_tcm-3046-1253051.jpg",
 
                 ],
 
@@ -399,7 +405,6 @@
         padding: 0;
         header {
             @include header-xl;
-            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/wrc2018_masthead_1600x900v2_tcm-3046-1253147.jpg);*/
             background-image: url(../../../img/background/wrc2018_masthead_1600x900v2_tcm-3046-1253147.jpg);
             color: #ffffff;
             position: relative;
@@ -525,7 +530,7 @@
         .img.container-fluid {
             padding: 0;
             /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_full-width_1600x503_tcm-3046-1215946.jpg);*/
-            background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/wrc2018_full-width_1600x503_tcm-3046-1215946.jpg);
+            background-image: url(../../../img/images/WorldOfToyota/wrc2018_full-width_1600x503_tcm-3046-1215946.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             -webkit-background-size: cover;
@@ -920,6 +925,7 @@
             }
 
             .img.container-fluid {
+                background-image: url(../../../img/image-sm/WorldOfToyota/wrc2018_full-width_1600x503_tcm-3046-1215946.jpg);
                 height: 60vw;
             }
 
@@ -1033,6 +1039,8 @@
             }
 
             .img.container-fluid {
+                background-image: url(../../../img/image-sm/WorldOfToyota/wrc2018_full-width_1600x503_tcm-3046-1215946.jpg);
+
                 height: 50vw;
             }
 

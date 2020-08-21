@@ -20,7 +20,7 @@
             </div>
 
 <!--            <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-02_tcm-3046-403727.jpg" alt="З чого все почалося Toyoda AA">-->
-            <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-02_tcm-3046-403727.jpg" alt="З чого все почалося Toyoda AA">
+            <img :src="require('../../../img/' + dirImg + '/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-02_tcm-3046-403727.jpg')" alt="З чого все почалося Toyoda AA">
 
             <article class="row">
                 <div class="coll">
@@ -115,7 +115,7 @@
             </div>
 
 <!--            <img src="//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-article-image-08_tcm-3046-404494.jpg" alt="З чого все почалося Toyoda AA">-->
-            <img src="../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-08_tcm-3046-404494.jpg" alt="З чого все почалося Toyoda AA">
+            <img :src="require('../../../img/' + dirImg + '/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-08_tcm-3046-404494.jpg')" alt="З чого все почалося Toyoda AA">
 
             <div class="row review">
                 <div class="col-md-4 col-12">
@@ -152,6 +152,7 @@
                     >
                         <span><i class="fas fa-search"></i></span>
                     </swiper-slide>
+<!--                    :style="'background-image: url(' + require( + '../../../img/' + dirImg + '/WorldOfToyota/' + img ) + ')'"-->
 
 
                     <div class="swiper-button-prev" slot="button-prev" @click.stop=""></div>
@@ -187,9 +188,14 @@
 <script>
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+    import imageSizeMixin from "../../../mixins/imageSizeMixin";
 
     export default {
         name: "ToyodaAA",
+
+        mixins: [
+            imageSizeMixin
+        ],
 
         components: {
             Swiper,
@@ -212,15 +218,15 @@
                     "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-09-full_tcm-3046-413604.jpg",
                     "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-10-full_tcm-3046-413605.jpg",
 
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-01-full_tcm-3046-413591.jpg",
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-02-full_tcm-3046-413592.jpg",
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-03-full_tcm-3046-413595.jpg",
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-04-full_tcm-3046-413594.jpg",
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-05-full_tcm-3046-413596.jpg",
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-07-full_tcm-3046-413601.jpg",
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-08-full_tcm-3046-413602.jpg",
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-09-full_tcm-3046-413604.jpg",
-                    // "../../../img/images/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-10-full_tcm-3046-413605.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-01-full_tcm-3046-413591.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-02-full_tcm-3046-413592.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-03-full_tcm-3046-413595.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-04-full_tcm-3046-413594.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-05-full_tcm-3046-413596.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-07-full_tcm-3046-413601.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-08-full_tcm-3046-413602.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-09-full_tcm-3046-413604.jpg",
+                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-10-full_tcm-3046-413605.jpg",
                 ],
 
 
@@ -313,7 +319,6 @@
     section {
         header.container-fluid {
             @include header-xl;
-            /*background-image: url(//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-focus-image-full_tcm-3046-403781.jpg);*/
             background-image: url(../../../img/background/toyota-2015-world-of-toyota-where-it-all-began-focus-image-full_tcm-3046-403781.jpg);
             padding-top: 70px;
             h1 {
@@ -880,6 +885,7 @@
 
             .container-fluid.img {
                 @include header-sm;
+                background-image: url(../../../img/image-sm/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-05_tcm-3046-403762.jpg);
                 height: 220px;
             }
 
@@ -1102,6 +1108,7 @@
 
             .container-fluid.img {
                 @include header-sm;
+                background-image: url(../../../img/image-sm/WorldOfToyota/toyota-2015-world-of-toyota-where-it-all-began-article-image-05_tcm-3046-403762.jpg);
                 height: 220px;
             }
         }

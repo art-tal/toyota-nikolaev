@@ -120,7 +120,13 @@
 
         },
 
-        watch: {
+        mounted() {
+            setTimeout(() => {
+                this.$store.commit("setShowPreload", false);
+            }, 1000);
+        },
+
+            watch: {
             // show(value) {
             //     if (value) {
             //         this.getModel();

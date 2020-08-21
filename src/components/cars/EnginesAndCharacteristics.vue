@@ -285,7 +285,7 @@
     import MixinSelectModel from "../../mixins/mixinSelectModel";
     import Equipment from "./../../components/configurator/Equipment";//            for Laravel
     import SubNavigation from "./../../components/cars/SubNavigation";
-    //
+
 
     export default {
         name: "EnginesAndCharacteristics",

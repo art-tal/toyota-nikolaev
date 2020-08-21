@@ -107,7 +107,6 @@
     main ::v-deep div {
         header.container-fluid {
             @include header-xl;
-            /*background-image: url(//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/quality-header_tcm-3046-164060.jpg);*/
             background-image: url(../../../img/background/quality-header_tcm-3046-164060.jpg);
             color: #ffffff;
         }
