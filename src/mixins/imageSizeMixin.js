@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 export default {
     data() {
         return {
@@ -8,18 +10,21 @@ export default {
 
     created() {
         this.identifyDevice();
+        $(window).resize( () => {
+            this.identifyDevice();
+        } )
     },
 
     methods: {
         identifyDevice() {
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 
-                console.log("Вы используете мобильное устройство (телефон или планшет).");
+                // console.log("Вы используете мобильное устройство (телефон или планшет).");
                 this.dirImg = "image-sm";
                 this.dirBG = "background-sm"
 
             } else {
-                console.log("Вы используете ПК.");
+                // console.log("Вы используете ПК.");
                 this.dirImg = "images";
                 this.dirBG = "background"
             }

@@ -215,7 +215,8 @@
             <div class="carousel" @click="show()">
                 <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
                     <swiper-slide v-for="(img, key) in images" :key="key">
-                        <img :src="require('../../../img/' + dirImg + '/WorldOfToyota/' + img )" alt="photo">
+<!--                        <img :src="require('../../../img/' + dirImg + '/WorldOfToyota/' + img )" alt="photo">-->
+                        <img :src="require('../../../img/image-sm/WorldOfToyota/' + img )" alt="photo">
                         <span><i class="fas fa-search"></i></span>
                     </swiper-slide>
 

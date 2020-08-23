@@ -81,8 +81,16 @@
         position: fixed;
         z-index: 999;
         top: 25vh;
-        right: 5px;
+        right: -50px;
         background-color: #f0f0f0;
+        /*background-color: rgba(240,240,240,0.3);*/
+        &:hover {
+            right: 5px;
+            transition-property: right;
+            transition-duration: 1s;
+            transition-delay: 100ms;
+
+        }
         ul {
             margin: 0;
             padding: 0;
@@ -90,7 +98,10 @@
             list-style-type: none;
             li {
                 width: 100%;
-                padding: 15px 5px 0;
+                padding: 0 5px 0;
+                &:first-child {
+                    padding: 10px 5px 0;
+                }
                 a {
                     display: inline-block;
                     position: relative;

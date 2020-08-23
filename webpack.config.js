@@ -2,12 +2,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(mp4|avi|mkv)$/i,
+                test: /\.(mov|mp4)$/,
                 use: [
                     {
                         loader: 'file-loader',
-                    },
-                ],
+                        options: {
+                            name: '[path][name].[ext]'
+                        }
+                    }
+                ]
             },
         ],
     },

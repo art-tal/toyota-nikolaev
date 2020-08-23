@@ -148,11 +148,12 @@
                 <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
                     <swiper-slide v-for="(img, key) in images"
                                   :key="key"
-                                  :style="'background-image: url(' + img + ')'"
+                                  :style="'background-image: url(' + require('../../../img/images/WorldOfToyota/' +  img ) + ')'"
                     >
                         <span><i class="fas fa-search"></i></span>
                     </swiper-slide>
 <!--                    :style="'background-image: url(' + require( + '../../../img/' + dirImg + '/WorldOfToyota/' + img ) + ')'"-->
+<!--                    :style="'background-image: url(' + img + ')'"-->
 
 
                     <div class="swiper-button-prev" slot="button-prev" @click.stop=""></div>
@@ -165,7 +166,7 @@
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
                     <swiper-slide v-for="(img, key) in images"
                                   :key="key"
-                                  :style="'background-image: url(' + img + ')'"></swiper-slide>
+                                  :style="'background-image: url(' + require('../../../img/' + dirImg + '/WorldOfToyota/' +  img ) + ')'"></swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
                     <div class="swiper-button-prev" slot="button-prev"></div>
                     <div class="swiper-button-next" slot="button-next"></div>
@@ -194,7 +195,7 @@
         name: "ToyodaAA",
 
         mixins: [
-            imageSizeMixin
+            imageSizeMixin,
         ],
 
         components: {
@@ -208,25 +209,25 @@
                 showCarousel: false,
 
                 images: [
-                    "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-01-full_tcm-3046-413591.jpg",
-                    "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-02-full_tcm-3046-413592.jpg",
-                    "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-03-full_tcm-3046-413595.jpg",
-                    "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-04-full_tcm-3046-413594.jpg",
-                    "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-05-full_tcm-3046-413596.jpg",
-                    "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-07-full_tcm-3046-413601.jpg",
-                    "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-08-full_tcm-3046-413602.jpg",
-                    "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-09-full_tcm-3046-413604.jpg",
-                    "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-10-full_tcm-3046-413605.jpg",
+                    // "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-01-full_tcm-3046-413591.jpg",
+                    // "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-02-full_tcm-3046-413592.jpg",
+                    // "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-03-full_tcm-3046-413595.jpg",
+                    // "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-04-full_tcm-3046-413594.jpg",
+                    // "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-05-full_tcm-3046-413596.jpg",
+                    // "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-07-full_tcm-3046-413601.jpg",
+                    // "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-08-full_tcm-3046-413602.jpg",
+                    // "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-09-full_tcm-3046-413604.jpg",
+                    // "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/toyota-2015-world-of-toyota-where-it-all-began-gallery-image-10-full_tcm-3046-413605.jpg",
 
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-01-full_tcm-3046-413591.jpg",
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-02-full_tcm-3046-413592.jpg",
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-03-full_tcm-3046-413595.jpg",
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-04-full_tcm-3046-413594.jpg",
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-05-full_tcm-3046-413596.jpg",
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-07-full_tcm-3046-413601.jpg",
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-08-full_tcm-3046-413602.jpg",
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-09-full_tcm-3046-413604.jpg",
-                    // "toyota-2015-world-of-toyota-where-it-all-began-gallery-image-10-full_tcm-3046-413605.jpg",
+                    "toyota-3046-413591.jpg",
+                    "toyota-3046-413592.jpg",
+                    "toyota-3046-413595.jpg",
+                    "toyota-3046-413594.jpg",
+                    "toyota-3046-413596.jpg",
+                    "toyota-3046-413601.jpg",
+                    "toyota-3046-413602.jpg",
+                    "toyota-3046-413604.jpg",
+                    "toyota-3046-413605.jpg",
                 ],
 
 

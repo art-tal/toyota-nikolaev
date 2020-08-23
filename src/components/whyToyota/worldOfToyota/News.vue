@@ -243,7 +243,6 @@
         header {
             @include header-xl;
             height: 56vh;
-            /*background-image: url("//t1-cms-2.images.toyota-europe.com/toyotaone/uaua/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg");*/
             background-image: url(../../../img/background/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg);
             h1 {
                 text-align: center;

@@ -62,13 +62,14 @@
             <div class="open-video" v-if="showVideo">
                 <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                <video width="100%"
-                       src="../../../video/air_filters_of_salon_toyota.mp4"
-                       controls="controls"
-                       type="video/mp4"
-                       poster="../../../img/images/poster/Video_tcm-3046-674169.jpg">
-                </video>
-<!--                <iframe width="100%" height="50%" src="https://www.youtube.com/embed/Skn0N-g7Arw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--                <video width="100%"-->
+<!--                       src="../../../video/air_filters_of_salon_toyota.mp4"-->
+<!--                       controls="controls"-->
+<!--                       type="video/mp4"-->
+<!--                       poster="../../../img/images/poster/Video_tcm-3046-674169.jpg">-->
+<!--                </video>-->
+<!--                src="../../../video/air_filters_of_salon_toyota.mp4"-->
+                <iframe width="100%" height="50%" src="https://www.youtube.com/embed/Skn0N-g7Arw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -76,7 +77,8 @@
 
 <script>
     import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
-    import PageBody from "../../../mixins/mixinPages"
+    import PageBody from "../../../mixins/mixinPages";
+
     export default {
         name: "AirFiltersOfSalon",
 
