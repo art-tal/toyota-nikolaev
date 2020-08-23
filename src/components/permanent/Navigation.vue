@@ -4,7 +4,7 @@
 
             <nav class="col-xl-7 col-lg-12 navbar navbar-expand-xl navbar-light">
                 <router-link
-                        class="navbar-brand"
+                        class="navbar-brand position-relative"
                         tag="a"
                         exact
                         active-class="active"
@@ -605,5 +605,6 @@
         background-position: center center;
         -webkit-background-size: 70%;
         background-size: 70%;
+        z-index: 1000;
     }
 </style>
