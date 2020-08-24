@@ -67,10 +67,15 @@
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
                         <li class="servies linked">
-                            <a href="#">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/lineup"
+                            >
                                 <i class="fas fa-car"></i>
                                 <span>Конфігуратор</span>
-                            </a>
+                            </router-link>
                         </li>
                         <li class="dilers linked">
                             <router-link

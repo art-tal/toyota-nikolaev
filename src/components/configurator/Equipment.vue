@@ -183,6 +183,7 @@
                 this.$store.state.equipment = equipment;
                 localStorage.equipment = JSON.stringify(equipment);
                 localStorage.mod_id = equipment.mod_id;
+                console.log(equipment);
                 setTimeout(() => {eventEmitter.$emit('selectedEquipment');},100);
             },
 

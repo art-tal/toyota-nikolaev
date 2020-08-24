@@ -71,7 +71,6 @@
                     </ul>
                     </div>
                 </nav>
-<!--                <router-view></router-view>-->
                 <colors v-if="showOption"></colors>
                 <interior v-else></interior>
             </div>
@@ -89,7 +88,7 @@
     import 'swiper/css/swiper.css'
     import Colors from "./../../components/configurator/options/Colors";
     import Interior from "./../../components/configurator/options/Interior";
-    import ToResult from "./../../components/configurator/options/ToResult";//           for Laravel
+    import ToResult from "./../../components/configurator/options/ToResult";
 
     // import Accessories from "./../../components/configurator/options/Accessories";//     for Laravel
     // import Price from "./../../components/configurator/options/Price";//                 for Laravel
@@ -144,8 +143,6 @@
             this.model = JSON.parse( localStorage.model );
             this.equipment = JSON.parse( localStorage.equipment );
             this.color = JSON.parse( localStorage.color );
-            // this.wheels = JSON.parse( localStorage.wheel );
-            // this.$router.push('colors');
         },
 
 
@@ -197,9 +194,9 @@
 
             photo() {
                     if (this.$store.getters.colored.code) {
-                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.getEngineType}/${this.$store.getters.colored.color_code}/${this.getInterior.interior_code}/image-${this.corner}.jpg`;
+                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.slug.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.getEngineType}/${this.$store.getters.colored.color_code}/${this.getInterior.interior_code}/image-${this.corner}.jpg`;
                     } else {
-                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.name.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.getEngineType}/${JSON.parse(localStorage.color).color_code}/${this.getInterior.interior_code}/image-${this.corner}.jpg`;
+                        return `http://lara.toyota.nikolaev.ua/storage/configurator/${this.model.slug.toLowerCase()}/${this.equipment.mod_name.toLowerCase()}/${this.getEngineType}/${JSON.parse(localStorage.color).color_code}/${this.getInterior.interior_code}/image-${this.corner}.jpg`;
                     }
             },
 

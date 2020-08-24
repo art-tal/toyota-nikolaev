@@ -153,6 +153,7 @@ export default {
 
         checkEquipment() {
             let equipFromJson = JSON.parse(localStorage.equipment);
+            let setEquip = false;
 
             if (Object.keys(equipFromJson) > 0) {
                 if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
@@ -163,9 +164,15 @@ export default {
                             localStorage.mod_id = this.equipment.mod_id;
                             localStorage.equipment = JSON.stringify( this.equipment );
                             this.$store.commit("setEquipment");
+                            setEquip = true;
                             return true;
                         }
                     });
+                    if (!setEquip) {
+                        this.equipment = this.equipments[0];
+                        localStorage.equipment = JSON.stringify( this.equipment );
+                        this.$store.commit("setEquipment");
+                    }
 
                 }
             } else {

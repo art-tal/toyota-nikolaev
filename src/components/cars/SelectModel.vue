@@ -345,9 +345,8 @@
         },
 
         created() {
-            this.id = this.$route.params.id;
+            // this.id = this.$route.params.id;
             this.getModel();
-            this.getEquipment();
 
             eventEmitter.$on('selectedEquipment',
                 () => {
@@ -362,17 +361,13 @@
 
         },
 
-
-
         computed: {
             photo() {
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.selectedColor.preview;
             },
 
             getID() {
-                if(this.$route.params.id) {
-                    return this.$route.params.id;
-                } else if( this.$store.getters.getModelId) {
+               if( this.$store.getters.getModelId) {
                     return this.$store.getters.getModelId;
                 } else {
                     return localStorage.id;
@@ -385,7 +380,6 @@
 
         },
 
-
         methods: {
 
             getModel() {
@@ -397,10 +391,12 @@
 ///////////////////////////////////////////////////////ЗАГЛУШКА//
                         this.getVideo();
 //////////////////////////////////////////////////////
-
                         this.modelTitle = this.model.name;
                         this.changeTitle();
                     } )
+                        .then( () => {
+                            this.getEquipment();
+                        } )
                         .catch( (error) => {
                             console.log("Ошибка, не возможно загрузить доступные модели");
                             console.log(error);
