@@ -109,7 +109,7 @@ import ExclusiveCar from "../components/ToyotaInNikolaev/ExclusiveCar";
 import Store from "./../store/store"
 import TestDriveStep1 from "../components/sharedLinks/test-drive/TestDriveStep1";
 import TestDriveStep2 from "../components/sharedLinks/test-drive/TestDriveStep2";
-
+import Error404 from "../components/Error404"
 
 
 
@@ -120,6 +120,12 @@ const route = new VueRouter({
             path: "/",
             name: "home",
             component: Home,
+        },
+
+        {
+            path: "*",
+            name: "error_404",
+            component: Error404,
         },
 
         {
