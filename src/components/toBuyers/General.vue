@@ -33,7 +33,7 @@
 <!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/Business-Sales_tcm-3046-663262.jpg" alt="business_owner">-->
                     <img src="../../img/images/b2b-350x197_tcm-3046-906751.jpg" alt="business_owner">
                     <strong>Бізнес для бізнесу</strong>
-                    <p>Дізнайтеся про причини працювати з Toyota BusinessPlus</p>
+                    <p>Дізнайтеся про причини працювати з Toyota</p>
                 </router-link>
 
                 <router-link

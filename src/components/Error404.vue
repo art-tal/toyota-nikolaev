@@ -33,6 +33,9 @@
         mixins: [
             imageSizeMixin
         ],
+        mounted() {
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 50)
+        },
     }
 </script>
 

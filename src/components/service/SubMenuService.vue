@@ -17,8 +17,8 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/principles"
-                            >Переваги оригінальних аксесуарів</router-link>
+                                    to="/advantages"
+                            >Переваги технічного обслуговування</router-link>
                         </li>
 
                         <li class=" linked">
@@ -64,6 +64,15 @@
                     >Оригінальні аксесуари</router-link>
 
                     <ul>
+                        <li class=" linked">
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/accessories_general"
+                            >Переваги оригінальних аксесуарів</router-link>
+                        </li>
+
                         <li class=" linked">
                             <router-link
                                     tag="a"

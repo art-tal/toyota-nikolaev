@@ -15,9 +15,9 @@
                                 active-class="active"
                                 tag="a"
                                 exact
-                                to="/principles"
+                                to="/advantages"
                         >
-                            Переваги
+                            Переваги технічного обслуговування
                         </router-link>
                     </li>
 

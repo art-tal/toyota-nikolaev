@@ -63,7 +63,7 @@ import About from "../components/ToyotaInNikolaev/About";
 import Where from "../components/ToyotaInNikolaev/Where";
 
 
-import Principles from "../components/service/maintenance/Principles";
+import Advantages from "../components/service/maintenance/Advantages";
 import MaintenanceGeneral from "../components/service/maintenance/MaintenanceGeneral";
 import Guarantee from "../components/service/maintenance/Guarantee";
 import Lubricants from "../components/service/maintenance/Lubricants";
@@ -355,9 +355,9 @@ const route = new VueRouter({
             component: MaintenanceGeneral,
         },
         {
-            path: "/principles",
-            name: "principles",
-            component: Principles,
+            path: "/advantages",
+            name: "advantages",
+            component: Advantages,
         },
         {
             path: "/guarantee",

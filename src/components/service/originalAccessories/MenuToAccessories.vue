@@ -15,6 +15,16 @@
                                 active-class="active"
                                 tag="a"
                                 exact
+                                to="/accessories_general"
+                        >Переваги оригінальних аксесуарів</router-link>
+                    </li>
+
+                    <li class="nav-item">
+                        <router-link
+                                class="nav-link"
+                                active-class="active"
+                                tag="a"
+                                exact
                                 to="/entertainment_system"
                         >Модульна розважальна система</router-link>
                     </li>

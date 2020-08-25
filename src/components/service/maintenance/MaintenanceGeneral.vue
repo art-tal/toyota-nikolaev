@@ -10,11 +10,10 @@
                 <router-link tag="article"
                              class="col-md-6 col-12"
                              exact
-                             to="/principles"
+                             to="/advantages"
                 >
-<!--                    <img src="//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-maintenance-overview-taxonomy_tcm-3046-249528.jpg" alt="Технічне обслуговування автомобілів">-->
-                    <img src="../../../img/images/toyota-maintenance-overview-taxonomy_tcm-3046-249528.jpg" alt="Технічне обслуговування автомобілів">
-                    <h3>Технічне обслуговування автомобілів</h3>
+                    <img src="../../../img/images/dsc-2339.jpg" alt="Технічне обслуговування автомобілів">
+                    <h3>Переваги технічного обслуговування</h3>
                     <p>Фахівці сервісних центрів Toyota пройшли повний курс підготовки відповідно до суворих нормативів Toyota для того, щоб постійно підтримувати вашу «Тойоту» в ідеальному стані.</p>
                 </router-link>
 
