@@ -1011,7 +1011,7 @@
                     padding: 50px 20px 10px 20px;
                 }
                 .compare {
-                    margin: 0px 20px;
+                    margin: 0 20px;
                 }
                 .carView {
                     margin: 0 20px;
@@ -1031,7 +1031,8 @@
 
                     .carColors{
                         position: absolute;
-                        bottom: -60px;
+                        bottom: -100px;
+                        right: calc(50% - 120px);
                         text-align: center;
                     }
                 }
@@ -1179,7 +1180,8 @@
                     .carColors{
                         width: auto;
                         position: absolute;
-                        bottom: -85px;
+                        bottom: -260px;
+                        right: calc(50% - 120px);
                     }
                 }
             }

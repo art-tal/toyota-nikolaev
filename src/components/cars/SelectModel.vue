@@ -846,7 +846,7 @@
                     }
 
                     .carColors{
-                        bottom: -60px;
+                        bottom: -100px;
                         right: calc(50% - 120px);
                         text-align: center;
                     }
@@ -955,7 +955,7 @@
                     }
 
                     .carColors{
-                        bottom: -85px;
+                        bottom: -150px;
                         right: calc(50% - 120px);
                     }
                 }
@@ -1081,7 +1081,7 @@
                     }
 
                     .carColors{
-                        bottom: -75px;
+                        bottom: -140px;
                         right: calc(50% - 120px);
                     }
                 }

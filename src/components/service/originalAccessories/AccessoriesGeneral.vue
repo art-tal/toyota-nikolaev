@@ -125,8 +125,10 @@
             @include header-xl;
             max-height: 60vw;
             /*background-image: url(//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/header-aksesuary-1600x900_tcm-3046-1336869.jpg);*/
-            background-image: url(../../../img/background/header-aksesuary-1600x900_tcm-3046-1336869.jpg);
+            /*background-image: url(../../../img/background/header-aksesuary-1600x900_tcm-3046-1336869.jpg);*/
+            background-image: url(../../../img/background/LC200_7.jpg);
             margin-bottom: 50px;
+            color: #F0F0F0;
 
             h1 {
                 padding-top: 70px;
@@ -229,7 +231,8 @@
         section.container-fluid {
             header {
                 @include header-sm;
-                background-image: url(../../../img/background-sm/header-aksesuary-1600x900_tcm-3046-1336869.jpg);
+                /*background-image: url(../../../img/background-sm/header-aksesuary-1600x900_tcm-3046-1336869.jpg);*/
+                background-image: url(../../../img/background-sm/LC200_7.jpg);
                 h1 {
                     padding-top: 15px;
                 }
@@ -254,7 +257,7 @@
         section.container-fluid {
             header {
                 @include header-xs;
-                background-image: url(../../../img/background-sm/header-aksesuary-1600x900_tcm-3046-1336869.jpg);
+                background-image: url(../../../img/background-sm/LC200_7.jpg);
                 width: 100%;
                 h1 {
                     width: 100%;

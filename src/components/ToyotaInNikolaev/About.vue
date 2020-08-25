@@ -27,12 +27,60 @@
 <!--            <p>Ми цінуємо кожного клієнта і щодня строго дотримуємося основного правила - «Клієнт - понад усе».</p>-->
 <!--            <p><strong>Особисто для Вас це означає, що кожен раз, сідаючи в крісло водія автомобіля марки Toyota і запускаючи двигун, Ви будете почувати себе повністю впевненими, знаючи, що автомобіль, за кермом якого Ви сидите, спроектовано та виготовлено згідно з найвищими нормативами контролю якості та надійності. Для компанії «Тойота» якість - це не обіцянка, а стиль життя!</strong></p>-->
 <!--        </div>-->
+
+        <section class="reviews container">
+            <header>
+                <h1>Відгуки</h1>
+            </header>
+            <div class="body">
+                <div class="row">
+                    <div class="review col-lg-3 col-md-4 col-sm-6 col-12"
+                         v-for="(rev) in reviews"
+                         :key="rev.id"
+                    >
+                        <div class="card" @click="openBrowsing(rev.photo)">
+                            <img :src="'http://lara.toyota.nikolaev.ua/storage/' + rev.photo"
+                                 alt="review"
+                                 class="card-img-top"
+                            >
+                            <hr>
+                            <div class="card-body">
+                                <h3 class="card-title">{{rev.organization}}</h3>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+<!--                    <div class="review col-lg-3 col-md-4 col-sm-6 col-12"-->
+<!--                         v-for="(rev) in reviews"-->
+<!--                         :key="rev.id"-->
+<!--                         @click="openBrowsing(rev.photo)"-->
+<!--                    >-->
+<!--                        <img :src="'http://lara.toyota.nikolaev.ua/storage/' + rev.photo" alt="review">-->
+<!--                        <h3>{{rev.organization}}</h3>-->
+<!--                    </div>-->
+                </div>
+
+                <div class="browsing" v-if="showBrowsing">
+                    <i class="far fa-times-circle"></i>
+                    <img :src="getSelectedImg" alt="review">
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
 <script>
+    import axios from "axios";
     import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
-    import PageBody from "../../mixins/mixinPages"
+    import PageBody from "../../mixins/mixinPages";
 
     export default {
         name: "About",
@@ -48,6 +96,10 @@
         data() {
             return {
                 id: 38,
+
+                reviews: [],
+                showBrowsing: false,
+                selectedImg: '',
             }
         },
 
@@ -90,6 +142,36 @@
             }
         },
 
+        created() {
+            this.getReviews();
+        },
+
+        computed: {
+            getSelectedImg() {
+                return "http://lara.toyota.nikolaev.ua/storage/" + this.selectedImg;
+            }
+        },
+
+        methods: {
+            getReviews() {
+                axios.get(
+                    "http://lara.toyota.nikolaev.ua/ajax/reviews"
+                )
+                .then( (response) => {
+                    this.reviews = response.data;
+                    console.log(this.reviews);
+                } )
+                .catch( (error) => {
+                    console.log(error);
+                } )
+            },
+
+            openBrowsing(img) {
+                this.showBrowsing = true;
+                this.selectedColor = img;
+            },
+        }
+
         // mounted() {
         //     setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
         // },
@@ -124,6 +206,59 @@
                 padding: 0;
                 li {
                     font-size: 1.8rem;
+                }
+            }
+        }
+    }
+
+    main {
+        position: relative;
+        section.reviews {
+            header {
+                margin-bottom: 30px;
+                h1 {
+                    font-size: 3.5rem;
+                    font-weight: bolder;
+                }
+            }
+
+            .body {
+                .row {
+                    padding: 0;
+
+                    .review {
+                        padding: 30px;
+                        .card {
+                            height: 100%;
+                            border: 2px solid #ccc;
+                            border-radius: 10px;
+                            background-color: #eee;
+                            img {
+                                width: 100%;
+                            }
+                            hr {border-bottom: 2px solid #cccccc }
+                            h3.card-title {
+                                font-size: 1.4rem;
+                                font-weight: bold;
+                            }
+                        }
+
+                    }
+                }
+
+                .browsing {
+                    position: fixed;
+                    top: 10px;
+                    bottom: 10px;
+                    width: auto;
+                    img {
+                        height: 100%;
+                    }
+                    i.far.fa-times-circle {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                    }
                 }
             }
         }
