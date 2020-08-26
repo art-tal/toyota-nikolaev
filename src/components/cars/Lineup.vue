@@ -108,7 +108,7 @@
                 models: [],
                 prices: [],
 
-                showFAQ: false,
+                // showFAQ: false,
             }
         },
 
@@ -208,9 +208,9 @@
 
 
 
-            faq() {
-                this.showFAQ = !this.showFAQ;
-            },
+            // faq() {
+            //     this.showFAQ = !this.showFAQ;
+            // },
 
             dumpingOfStorage() {
                 localStorage.mod_id = 0;

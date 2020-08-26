@@ -324,6 +324,7 @@
                     console.log("Данные переданы успешно!");
                     this.success = true;
                     setTimeout( () => {this.success = false}, 2500 );
+                    this.clearForm();
                 } )
                 .catch( (error) => {
                     console.log(" Ошибка передачи данных");
@@ -332,6 +333,14 @@
                     setTimeout( () => {this.error = false}, 2500 );
                 } );
 
+
+            },
+
+            clearForm() {
+                setTimeout( () => {
+                    // history.go(-2);
+                    this.$router.push({name: "home"});
+                }, 2500);
 
             },
         }

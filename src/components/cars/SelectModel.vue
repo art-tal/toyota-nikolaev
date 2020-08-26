@@ -107,13 +107,13 @@
             </div>
 
             <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption">
-                <p>Споживання пального</p>
+                <p>Споживання пального (міський цикл)</p>
                 <span class="h1">{{computedColor.fuel_consumption}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
 
             <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption_city">
-                <p>Споживання пального</p>
+                <p>Споживання пального (заміський цикл)</p>
                 <span class="h1">{{computedColor.fuel_consumption_city}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>

@@ -108,13 +108,13 @@
             </div>
 
             <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption">
-                <p>Споживання пального</p>
+                <p>Споживання пального (міський цикл)</p>
                 <span class="h1">{{computedColor.fuel_consumption}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
 
             <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption_city">
-                <p>Споживання пального</p>
+                <p>Споживання пального (заміський цикл)</p>
                 <span class="h1">{{computedColor.fuel_consumption_city}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
@@ -219,7 +219,15 @@
                     <div class="col-lg-6 col-12 order-lg-0 order-2 text-left">
                         <h2>Аксесуари</h2>
                         <p>Відкрийте для себе асортимент аксесуарів, розроблених спеціально для вашої Corolla City та створіть свою наступну Toyota у декілька простих кроків.</p>
-<!--                        <button class="btn btn-light" @click="goToEquipment()">Cтворіть свою {{model.name}}</button>-->
+                        <router-link
+                                tag="button"
+                                class="btn btn-light"
+                                exact
+                                to="/accessories_general"
+                        >
+                            Cтворіть свою {{model.name}}
+                        </router-link>
+                        <!--<button class="btn btn-light" @click="goToEquipment()">Cтворіть свою {{model.name}}</button>-->
                     </div>
 
                     <div class="col-lg-6 col-12">
@@ -609,6 +617,10 @@
                                                 @include button;
                                                 color: $font-color;
                                                 background-color: #fff;
+                                                &:hover {
+                                                    background-color: #E50000;
+                                                    color: #FFFFFF;
+                                                }
                                             }
 
                                         }
@@ -670,9 +682,13 @@
                             margin: 30px 0;
                             font-size: 2.2rem;
                         }
-                        button {
+                        button.btn.btn-light {
                             @include button;
                             background-color: #f0f0f0;
+                            &:hover {
+                                background-color: #E50000;
+                                color: #FFFFFF;
+                            }
                         }
                         img {
                             width: 100%;
@@ -699,6 +715,10 @@
                 button.btn.btn-light {
                     @include button;
                     background-color: #f0f0f0;
+                    &:hover {
+                        background-color: #E50000;
+                        color: #FFFFFF;
+                    }
                 }
             }
         }

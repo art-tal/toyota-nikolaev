@@ -3,14 +3,12 @@ $border: 1px solid #f0f0f0;
 
 @mixin button {
   width: 250px;
-  //height: 40px;
   border: none;
   border-radius: 20px;
   font-size: 14px;
   box-sizing: border-box;
   padding: 10px 20px;
   position: relative;
-  //filter: brightness(90%);
 }
 
 @mixin button_link {
