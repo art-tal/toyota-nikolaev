@@ -810,7 +810,8 @@
 
                     .carColors{
                         position: absolute;
-                        bottom: -60px;
+                        bottom: -100px;
+                        right: calc(50% - 120px);
                         text-align: center;
                     }
                 }
@@ -911,9 +912,9 @@
                     }
 
                     .carColors{
-                        width: 100%;
                         position: absolute;
-                        bottom: -140px;
+                        bottom: -270px;
+                        right: calc(50% - 120px);
                     }
                 }
             }

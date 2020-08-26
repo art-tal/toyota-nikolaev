@@ -46,7 +46,7 @@
                     Розміщена на цьому сайті інформація щодо характеристик продукції, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою). Така інформація може не бути остаточною і підлягає уточненню у відповідного дилерського центру Toyota.
                 </p>
             </div>
-            <div class="col-6 social">
+            <div class="col-md-6 col-12 social">
                 <a href="https://www.youtube.com/user/ToyotaUkraine" target="_blank">
 <!--                    <img src="../../img/icons8-youtube-squared.png" alt="icons8-youtube-squared.svg">-->
                     <img src="../../img/icon/icons8-youtube-squared-32x32.png" alt="youtube">
@@ -197,6 +197,9 @@
                         width: 32px;
                         height: 32px;
                         padding-left: 10px;
+                        &:first-child {
+                            padding-left: 0;
+                        }
                         img {
                             width: 32px;
                             opacity: 0.5;
