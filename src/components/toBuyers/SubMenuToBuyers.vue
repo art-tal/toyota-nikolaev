@@ -70,11 +70,10 @@
                             <router-link
                                     tag="a"
                                     exact
-                                    active-class="active"
-                                    to="/lineup"
+                                    to="/test_drive_step_1"
                             >
-                                <i class="fas fa-car"></i>
-                                <span>Конфігуратор</span>
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Замовити тест-драйв</span>
                             </router-link>
                         </li>
                         <li class="dilers linked">

@@ -229,10 +229,15 @@
                     <h2 class="font-weight-bold">Інструменти покупця</h2>
                     <ol>
                         <li class="servies linked">
-                            <a href="#">
-                                <i class="fas fa-car"></i>
-                                <span>Конфігуратор</span>
-                            </a>
+                            <router-link
+                                    tag="a"
+                                    exact
+                                    active-class="active"
+                                    to="/download_brochures"
+                            >
+                                <i class="fas fa-wrench"></i>
+                                <span>Замовити ТО</span>
+                            </router-link>
                         </li>
                         <li class="dilers linked">
                             <router-link

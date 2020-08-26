@@ -84,7 +84,7 @@
                                     </ul>
                                     <footer class="row">
                                         <button @click="applyTransmission(trans)"
-                                                class="btn btn-outline-danger col-lg-5 col-12 text-center">
+                                                class="choice btn btn-outline-danger col-lg-5 col-12 text-center">
                                             <span class="align-middle">Прийняти</span>
                                         </button>
                                     </footer>

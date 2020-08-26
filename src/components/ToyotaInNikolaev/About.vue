@@ -38,11 +38,12 @@
                          v-for="(rev) in reviews"
                          :key="rev.id"
                     >
-                        <div class="card" @click="openBrowsing(rev.photo)">
+                        <div class="card" @click="openBrowsing(rev)">
                             <img :src="'http://lara.toyota.nikolaev.ua/storage/' + rev.photo"
                                  alt="review"
                                  class="card-img-top"
                             >
+                            <i class="fas fa-search-plus"></i>
                             <hr>
                             <div class="card-body">
                                 <h3 class="card-title">{{rev.organization}}</h3>
@@ -67,13 +68,17 @@
 <!--                        <h3>{{rev.organization}}</h3>-->
 <!--                    </div>-->
                 </div>
-
-                <div class="browsing" v-if="showBrowsing">
-                    <i class="far fa-times-circle"></i>
-                    <img :src="getSelectedImg" alt="review">
-                </div>
             </div>
         </section>
+
+        <div class="browsing" v-if="show">
+            <div class="browsing_wrap">
+                <i class="far fa-times-circle" @click="showBrowsing = false"></i>
+                <img :src="getSelectedImg" alt="review">
+            </div>
+
+        </div>
+
     </main>
 </template>
 
@@ -149,7 +154,11 @@
         computed: {
             getSelectedImg() {
                 return "http://lara.toyota.nikolaev.ua/storage/" + this.selectedImg;
-            }
+            },
+
+            show() {
+                return this.showBrowsing;
+            },
         },
 
         methods: {
@@ -166,9 +175,10 @@
                 } )
             },
 
-            openBrowsing(img) {
+            openBrowsing(review) {
                 this.showBrowsing = true;
-                this.selectedColor = img;
+                this.selectedImg = review.photo;
+
             },
         }
 
@@ -229,12 +239,32 @@
                     .review {
                         padding: 30px;
                         .card {
+                            position: relative;
                             height: 100%;
                             border: 2px solid #ccc;
                             border-radius: 10px;
                             background-color: #eee;
+                            &:hover {
+                                cursor: pointer;
+                                transform: scale(1.1);
+                                transition-property: transform;
+                                transition-duration: 1000ms;
+                                i.fas.fa-search-plus {
+                                    opacity: 1;
+                                    transition-property: opacity;
+                                    transition-duration: 1000ms;
+                                }
+                            }
                             img {
                                 width: 100%;
+                            }
+                            i.fas.fa-search-plus {
+                                opacity: 0;
+                                font-size: 7rem;
+                                color: rgba(0,0,0,0.2);
+                                position: absolute;
+                                top: 25%;
+                                left: 33%;
                             }
                             hr {border-bottom: 2px solid #cccccc }
                             h3.card-title {
@@ -245,23 +275,38 @@
 
                     }
                 }
-
-                .browsing {
-                    position: fixed;
-                    top: 10px;
-                    bottom: 10px;
-                    width: auto;
-                    img {
-                        height: 100%;
-                    }
-                    i.far.fa-times-circle {
-                        position: absolute;
-                        top: 10px;
-                        right: 10px;
-                    }
-                }
             }
         }
+
+        .browsing {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1000;
+            background-color: rgba(255,255,255,0.8);
+            .browsing_wrap {
+                margin: 0 auto;
+                width: auto;
+                height: 100%;
+                position: relative;
+                img {
+                    height: 100%;
+                    border: 1px solid #595D60;
+                }
+                i.far.fa-times-circle {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    color: #595D60;
+                    font-size: 2.5rem;
+                }
+            }
+
+        }
+
+
     }
 
     @media (min-width: 992px) and (max-width: 1199.9px) {
