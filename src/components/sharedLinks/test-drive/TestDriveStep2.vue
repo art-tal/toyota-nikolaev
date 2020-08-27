@@ -430,6 +430,7 @@
 
             onSubmit() {
                 const testDrive = {
+                    photo: this.getPhoto,
                     model: this.model.name,
                     engineType: this.getTestEngine,
                     firstName: this.firstName,
@@ -444,7 +445,8 @@
                     connection: this.connection,
                     call_time: `від ${this.call_time_start} до ${this.call_time_end}`,
                 };
-                // this.$store.state.openConsultation = !this.$store.state.openConsultation
+                localStorage.testDrive = JSON.stringify(testDrive);
+                this.$store.commit("setTestDrive");
                 axios.post(
                     'http://lara.toyota.nikolaev.ua/ajax/consultation',
                     testDrive,
