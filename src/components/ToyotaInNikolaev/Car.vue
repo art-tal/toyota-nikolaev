@@ -134,13 +134,13 @@
                         (050) 692-11-11
                     </p>
                     <footer>
-<!--                        <button class="btn btn-danger">Надіслати заявку</button>-->
-                        <router-link class="btn btn-danger"
-                                     tag="button"
-                                     exact
-                                     to="/test_drive_step_1">
-                            Надіслати заявку на тест-драйв
-                        </router-link>
+                        <button class="btn btn-danger" @click="setCar()">Надіслати заявку на тест-драйв</button>
+<!--                        <router-link class="btn btn-danger"-->
+<!--                                     tag="button"-->
+<!--                                     exact                                     -->
+<!--                                     to="/test_drive_step_1">-->
+<!--                            Надіслати заявку на тест-драйв-->
+<!--                        </router-link>-->
 
                     </footer>
                 </article>
@@ -238,7 +238,7 @@
 
         created() {
             this.id = this.$route.params['id'];
-            console.log(this.id);
+            // console.log(this.id);
             this.getCar(this.id);
             // this.getModification();
             // this.getColor();
@@ -252,10 +252,10 @@
                 const swiperThumbs = this.$refs.swiperThumbs.$swiper;
                 swiperTop.controller.control = swiperThumbs;
                 swiperThumbs.controller.control = swiperTop;
-
-                setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
-
             });
+
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1000);
+
         },
 
         methods: {
@@ -266,10 +266,10 @@
                 )
                     .then( (response) => {
                         this.car = response.data[0];
-                        console.log(this.car);
+                        // console.log(this.car);
                         this.images = JSON.parse( this.car.image );
                         this.image = this.images[0];
-                        console.log(this.images);
+                        // console.log(this.images);
                         this.modelTitle = this.car.model;
                         this.modificationTitle = this.car.modification;
                     } )
@@ -277,6 +277,12 @@
                         console.log("Ошибка, не возможно загрузить имеющиеся автомобили");
                         console.log(error);
                     })
+            },
+
+            setCar() {
+                this.$set(this.car, "name", this.car.model );
+                localStorage.model = JSON.stringify(this.car);
+                this.$router.push({name: "test_drive_step_1"});
             },
 
             // changeImg(img) {

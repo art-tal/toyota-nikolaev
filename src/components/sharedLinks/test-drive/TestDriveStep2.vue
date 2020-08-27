@@ -461,8 +461,6 @@
                         console.log(testDrive);
                         this.error = true;
                         setTimeout( () => {this.error = false}, 2500 );
-
-                        // history.go(-2);
                     } );
 
 
@@ -470,7 +468,9 @@
 
             clearForm() {
                 setTimeout( () => {
-                    // history.go(-2);
+                    localStorage.testModel = "";
+                    localStorage.testCar = "";
+                    this.$store.state.testDrive = "";
                     this.$router.push({name: "cars_available"});
                     }, 2500);
 

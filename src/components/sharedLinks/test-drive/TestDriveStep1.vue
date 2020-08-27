@@ -139,20 +139,18 @@
         },
 
         computed: {
-            getTestModel() {
+            getModel() {
                 try {
-                    if( Object.keys(this.$store.getters.getTestDrive.model) > 0) {
-                        return this.$store.getters.getTestDrive.model;
-                    } else if ( Object.keys(JSON.parse(localStorage.testModel)) > 0 ) {
-                        return JSON.parse(localStorage.testModel);
+                    if ( Object.keys(JSON.parse(localStorage.model)).length > 0 ) {
+                        console.log(JSON.parse(localStorage.model));
+                        return JSON.parse(localStorage.model);
                     } else {
-                        return "";
+                        return null;
                     }
                 } catch (e) {
                     // console.log(e);
-                    return "";
+                    return null;
                 }
-
             },
 
             getEngine() {
@@ -196,24 +194,43 @@
             },
 
             getTestPosition() {
-                try{
-                    if ( Object.keys(this.testModel).length > 0 ) {
-                        this.saveTestModel(this.getTestModel);
+                // try{
+                //     if ( Object.keys(this.testModel).length > 0 ) {
+                //         this.saveTestModel(this.getTestModel);
+                //     } else {
+                //         if ( Object.keys(this.$store.getters.getModel) > 0 ) {
+                //             this.saveTestModel(this.$store.getters.getModel);
+                //         } else if( Object.keys( JSON.parse(localStorage.testModel) ) > 0) {
+                //             this.saveTestModel(JSON.parse(localStorage.testModel));
+                //         } else if( Object.keys( JSON.parse(localStorage.model) ) > 0) {
+                //             this.saveTestModel(JSON.parse(localStorage.model));
+                //         }
+                //         else {
+                //             this.saveTestModel(this.models[0]);
+                //         }
+                //     }
+                // } catch (e) {
+                //     console.log(e);
+                //     this.saveTestModel(this.models[0]);
+                // }
+                // this.getEquipment();
+
+
+                try {
+                    if ( Object.keys(this.getModel).length > 0 ) {
+                        // this.testModel = this.models.find( (mod) => {
+                        //     mod.name.toLowerCase() === this.getModel.name.toLowerCase()} );
+                        // console.log(this.testModel);
+                        this.saveTestModel(this.models.find( (mod) => {
+                            mod.name.toLowerCase() === this.getModel.name.toLowerCase()} ));
                     } else {
-                        if ( Object.keys(this.$store.getters.getModel) > 0 ) {
-                            this.saveTestModel(this.$store.getters.getModel);
-                        } else if( Object.keys( JSON.parse(localStorage.testModel) ) > 0) {
-                            this.saveTestModel(JSON.parse(localStorage.testModel));
-                        } else if( Object.keys( JSON.parse(localStorage.model) ) > 0) {
-                            this.saveTestModel(JSON.parse(localStorage.model));
-                        }
-                        else {
-                            this.saveTestModel(this.models[0]);
-                        }
+                        console.log("models[0]");
+                        this.saveTestModel(this.models[0]);
                     }
-                } catch (e) {
-                    console.log(e);
+                }catch (e) {
                     this.saveTestModel(this.models[0]);
+                    console.log('CATCH');
+                    console.log(e);
                 }
                 this.getEquipment();
             },
@@ -221,7 +238,8 @@
             saveTestModel(model) {
                 this.testModel = model;
                 this.$store.state.testDrive.model = model;
-                localStorage.testModel = JSON.stringify(model);
+                localStorage.model = JSON.stringify(model);
+                // this.photo = model.image;
             },
 
             changeModel() {

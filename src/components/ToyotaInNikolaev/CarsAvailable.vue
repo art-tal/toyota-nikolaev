@@ -18,7 +18,7 @@
                     >
                         <img :src="'http://lara.toyota.nikolaev.ua/storage/' + car.main_image" :alt="car.name"  class="card-img-top">
                         <div>
-                            <h3 class="card-title">{{car.name}} {{car.modification}} {{car.color}}</h3>
+                            <h3 class="card-title">{{car.model}} {{car.modification}} {{car.color}}</h3>
                             <p class="card-text">ціна {{car.price | formattedPrice}} грн.* | {{car.year}} р.в.</p>
                         </div>
 

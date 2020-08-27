@@ -63,6 +63,17 @@ export default {
     },
 
     computed: {
+
+        getID() {
+            if( this.$store.getters.getModelId) {
+                return this.$store.getters.getModelId;
+            } else if(localStorage.id) {
+                return localStorage.id;
+            } else {
+                return this.findID();
+            }
+        },
+
         computedEquipment() {
             return this.$store.getters.equip;
         },
@@ -115,6 +126,24 @@ export default {
 
     methods: {
 
+        findID() {
+            let models = [];
+            let slug = this.$route.params.slug;
+            console.log(slug);
+            axios.get(
+                "http://lara.toyota.nikolaev.ua/ajax/all_model"
+            ).then( (response) => {
+                models = response.data;
+            } )
+                .then( () => {
+                    this.model = models.find( (mod) => {mod.slug === slug} )
+                } )
+                .catch( (error) => {
+                    console.log("Ошибка, не возможно загрузить доступные модели");
+                    console.log(error);
+                });
+        },
+
         choice() {
             this.showEquipment = !this.showEquipment;
         },
@@ -134,6 +163,7 @@ export default {
         },
 
         getEquipment() {
+            console.log("getEquipment");
             axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod`,
                 {params: {id: this.getID}})
                 .then( (response) => {
@@ -151,7 +181,43 @@ export default {
                 } );
         },
 
+        getPrices() {
+            console.log("getPrices");
+            axios.get(
+                `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
+                {params: {id: this.equipment.mod_id}}
+            )
+                .then( (response) => {
+                    this.prices = response.data;
+                    // console.log(response.data);
+
+                    this.setPrice();
+                } )
+                .catch( (error) => {
+                    console.log("Ошибка загрузки цен");
+                    console.log(error);
+                } )
+        },
+
+        setPrice() {
+            console.log("setPrice");
+            let keysPrice = Object.keys(this.prices);
+            console.log("1");
+
+            this.equipments.forEach( (equip) => {
+                keysPrice.forEach( (pr) => {
+                    if(equip.model_name_pivot.toLowerCase() === pr.toLowerCase()) {
+                        this.$set(equip, "equipPrice", this.prices[pr] );
+                    }
+                } );
+            } );
+            this.checkEquipment();
+            console.log("2");
+
+        },
+
         checkEquipment() {
+            console.log("checkEquipment");
             let equipFromJson = JSON.parse(localStorage.equipment);
             let setEquip = false;
 
@@ -183,73 +249,6 @@ export default {
 
 
 
-        },
-
-        getPrices() {
-            axios.get(
-                `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
-                {params: {id: this.equipment.mod_id}}
-            )
-                .then( (response) => {
-                    this.prices = response.data;
-                    // console.log(response.data);
-
-                    this.setPrice();
-                } )
-                .catch( (error) => {
-                    console.log("Ошибка загрузки цен");
-                    console.log(error);
-                } )
-        },
-
-        setPrice() {
-            let keysPrice = Object.keys(this.prices);
-            // console.log(keysPrice);
-
-            this.equipments.forEach( (equip) => {
-                keysPrice.forEach( (pr) => {
-                    if(equip.model_name_pivot.toLowerCase() === pr.toLowerCase()) {
-                        this.$set(equip, "equipPrice", this.prices[pr] );
-                    }
-                } );
-            } );
-
-            this.checkEquipment();
-
-        },
-
-        getEngine() {
-            axios.get(
-                'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
-                // {params: {id: this.id_equip} },
-                {params: {id: this.computedEquipment.mod_id} },
-            )
-                .then( (response) => {
-                    this.transmissions = response.data;
-                    // console.log(this.transmissions);
-                    this.transmission = this.transmissions[0];
-                    localStorage.transmission = JSON.stringify( this.transmission);
-                    // console.log(this.idEquip, this.transmission);
-                    if (!this.transmission) {
-                        this.transmission = {
-                            eng_name: "none",
-                        }
-                    }
-                } )
-                .catch( (error) => {
-                    console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
-                    console.log(error);
-                } );
-        },
-
-        activated(trans) {
-            this.$store.state.engineAndGear = trans;
-            localStorage.transmission = JSON.stringify(trans);
-
-            $(".trans").on('click', function () {
-                $(".trans").removeClass('active');
-                $(this).addClass('active');
-            })
         },
 
         getColors() {
@@ -294,6 +293,40 @@ export default {
             this.$store.commit("setColorDefault", color);
             localStorage.color = JSON.stringify( color );
             this.getFontColor();
+        },
+
+        getEngine() {
+            axios.get(
+                'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
+                // {params: {id: this.id_equip} },
+                {params: {id: this.computedEquipment.mod_id} },
+            )
+                .then( (response) => {
+                    this.transmissions = response.data;
+                    // console.log(this.transmissions);
+                    this.transmission = this.transmissions[0];
+                    localStorage.transmission = JSON.stringify( this.transmission);
+                    // console.log(this.idEquip, this.transmission);
+                    if (!this.transmission) {
+                        this.transmission = {
+                            eng_name: "none",
+                        }
+                    }
+                } )
+                .catch( (error) => {
+                    console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
+                    console.log(error);
+                } );
+        },
+
+        activated(trans) {
+            this.$store.state.engineAndGear = trans;
+            localStorage.transmission = JSON.stringify(trans);
+
+            $(".trans").on('click', function () {
+                $(".trans").removeClass('active');
+                $(this).addClass('active');
+            })
         },
 
         getVideo() {

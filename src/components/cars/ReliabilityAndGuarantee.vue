@@ -427,13 +427,13 @@
                 return this.$store.getters.equip;
             },
 
-            getID() {
-               if( this.$store.getters.getModelId) {
-                    return this.$store.getters.getModelId;
-                } else {
-                    return localStorage.id;
-                }
-            },
+            // getID() {
+            //    if( this.$store.getters.getModelId) {
+            //         return this.$store.getters.getModelId;
+            //     } else {
+            //         return localStorage.id;
+            //     }
+            // },
 
             getImage() {
                 if (this.modelVideo.photo) {

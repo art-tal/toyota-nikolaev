@@ -374,13 +374,13 @@
                 }
             },
 
-            getID() {
-                if( this.$store.getters.getModelId) {
-                    return this.$store.getters.getModelId;
-                } else {
-                    return localStorage.id;
-                }
-            },
+            // getID() {
+            //     if( this.$store.getters.getModelId) {
+            //         return this.$store.getters.getModelId;
+            //     } else {
+            //         return localStorage.id;
+            //     }
+            // },
 
             computedEquipment() {
                 return this.$store.getters.equip;
@@ -397,7 +397,11 @@
                 ).then( (response) => {
                     this.model = response.data[0];
 ///////////////////////////////////////////////////////ЗАГЛУШКА
-                    this.model.seats  = 5;
+                    if (this.model.name.toLowerCase() === 'hilux') {
+                        this.model.seats = 7;
+                    } else {
+                        this.model.seats = 5;
+                    }
 //////////////////////////////////////////////////////
                     this.modelTitle = this.model.name;
                     this.changeTitle();

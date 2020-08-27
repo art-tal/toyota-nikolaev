@@ -214,7 +214,6 @@
             </button>
         </div>
 
-        <img src="/src/img/images/toyota-corolla-sedan-2019-video-poster_tcm-3046-1559760.jpg" alt="">
         <section class="links container d-md-flex justify-content-between">
             <div class="link">
                 <i class="fas fa-calculator"></i>
@@ -366,16 +365,9 @@
                 return 'http://lara.toyota.nikolaev.ua/storage/' + this.selectedColor.preview;
             },
 
-            getID() {
-               if( this.$store.getters.getModelId) {
-                    return this.$store.getters.getModelId;
-                } else {
-                    return localStorage.id;
-                }
-            },
-
             getPoster() {
                 return require('../../img/' + this.dirImg + '/' + this.modelVideo.poster);
+                // return require('../../img/' + this.dirImg + '/poster/' + this.modelVideo.poster);
             },
 
         },
@@ -404,28 +396,39 @@
             },
 
             checkEquipment() {
-                let equipFromJson = JSON.parse(localStorage.equipment);
+                // try{
+                if(localStorage.equipment){
+                    let equipFromJson = JSON.parse(localStorage.equipment);
+                    if (Object.keys(equipFromJson) > 0) {
+                        if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
 
-                if (Object.keys(equipFromJson) > 0) {
-                    if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
+                            this.equipments.forEach( equip => {
+                                if ( equip.mod_id === equipFromJson.mod_id ) {
+                                    this.equipment = equip;
+                                    localStorage.mod_id = this.equipment.mod_id;
+                                    localStorage.equipment = JSON.stringify( this.equipment );
+                                    this.$store.commit("setEquipment");
+                                    return true;
+                                }
+                            });
 
-                        this.equipments.forEach( equip => {
-                            if ( equip.mod_id === equipFromJson.mod_id ) {
-                                this.equipment = equip;
-                                localStorage.mod_id = this.equipment.mod_id;
-                                localStorage.equipment = JSON.stringify( this.equipment );
-                                this.$store.commit("setEquipment");
-                                return true;
-                            }
-                        });
-
+                        }
                     }
                 }
 
 
-                this.equipment = this.equipments[0];
-                localStorage.equipment = JSON.stringify( this.equipment );
-                this.$store.commit("setEquipment");
+
+
+                    this.equipment = this.equipments[0];
+                    localStorage.equipment = JSON.stringify( this.equipment );
+                    this.$store.commit("setEquipment");
+                // } catch (e) {
+                //
+                //     this.equipment = this.equipments[0];
+                //     localStorage.equipment = JSON.stringify( this.equipment );
+                //     this.$store.commit("setEquipment");
+                // }
+
             },
 
 

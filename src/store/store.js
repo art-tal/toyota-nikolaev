@@ -32,6 +32,8 @@ export default new Vuex.Store ({
 
         testDrive: {},
 
+        testCar: {},
+
         totalCost: 0,
     },
 
@@ -100,7 +102,11 @@ export default new Vuex.Store ({
 
         getTestDrive(state) {
             return state.testDrive;
-        }
+        },
+
+        getTestCar(state) {
+            return state.testCar;
+        },
 
 
 
@@ -162,7 +168,9 @@ export default new Vuex.Store ({
             state.testDrive = JSON.parse(localStorage.testDrive);
         },
 
-
+        setTestCar(state) {
+            state.testCar = JSON.parse(localStorage.testCar);
+        },
 
         recordTotalCost(state, payload) {
             state.totalCost = payload;
