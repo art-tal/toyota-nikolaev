@@ -119,6 +119,7 @@
                     </article>
             </div>
         </div>
+
     </main>
 </template>
 
@@ -184,13 +185,16 @@
     }
 
     main.container-fluid {
+        width: 100%;
         padding: 0;
         .row {
             width: 100%;
             padding: 0;
             margin: 0;
             .welcome {
+                width: 100%;
                 padding: 35px;
+                box-sizing: border-box;
                 h2 {
                     font-size: 3rem;
                     line-height: 1.3;
@@ -199,10 +203,8 @@
                 .button_block.row {
                     justify-content: space-between;
                     align-content: flex-start;
-                    /*.div {*/
                         button.btn.btn-light {
                             @include button;
-                            /*width: 250px !important;*/
                             background-color: #fff;
                             border: 2px solid #f0f0f0;
                             margin-bottom: 20px;
@@ -213,7 +215,6 @@
                                 transition: all 1s;
                             }
                         }
-                    /*}*/
                 }
             }
 
@@ -335,7 +336,6 @@
         main.container-fluid {
             padding: 0;
             .row {
-                width: 100%;
                 padding: 0;
                 margin: 0;
                 .welcome {
@@ -351,7 +351,9 @@
                 }
 
                 .links {
+                    width: 100%;
                     .block_link {
+                        width: 100%;
                         height: 50vh;
                         -webkit-background-size: cover;
                         background-size: cover;
@@ -364,10 +366,8 @@
 
     @media ( max-width: 575.9px ) {
         main.container-fluid {
-            min-width: 470px;
             padding: 0;
             .row {
-                width: 100%;
                 padding: 0;
                 margin: 0;
                 .welcome {
@@ -379,6 +379,11 @@
                     background-size: cover;
                     h2 {
                         color: #f0f0f0;
+                        width: calc(100% - 70px);
+                        margin-right: 0;
+                    }
+                    .button_block.row {
+                        width: 70%;
                     }
                 }
 
@@ -397,7 +402,6 @@
                         }
                         &.new_car {
                             .background {
-                                /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/new-c-hr-960x416_tcm-3046-1769744.jpg);*/
                                 background-image: url(./../img/image-sm/new-c-hr-576x250_tcm-3046-1769744.jpg);
                             }
                         }

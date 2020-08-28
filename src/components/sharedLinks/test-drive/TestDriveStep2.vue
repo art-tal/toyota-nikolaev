@@ -455,7 +455,8 @@
                         console.log("Данные переданы успешно!");
                         this.success = true;
                         setTimeout( () => {this.success = false}, 2500 );
-                        this.clearForm();
+                        // this.clearForm();
+                        this.$router.push({name: "test_drive_exit"});
                     } )
                     .catch( (error) => {
                         console.log(" Ошибка передачи данных");
@@ -468,15 +469,15 @@
 
             },
 
-            clearForm() {
-                setTimeout( () => {
-                    localStorage.testModel = "";
-                    localStorage.testCar = "";
-                    this.$store.state.testDrive = "";
-                    this.$router.push({name: "cars_available"});
-                    }, 2500);
-
-            },
+            // clearForm() {
+            //     setTimeout( () => {
+            //         localStorage.testModel = "";
+            //         localStorage.testCar = "";
+            //         this.$store.state.testDrive = "";
+            //         this.$router.push({name: "cars_available"});
+            //         }, 2500);
+            //
+            // },
         },
 
         components: {

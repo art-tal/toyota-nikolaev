@@ -84,7 +84,19 @@
                 </div>
             </div>
         </section>
-    </div>
+
+        <section class="advertisement container">
+            <header>
+                <h1>Акційні пропозиції</h1>
+            </header>
+            <div class="body row">
+                <img src="../../../img/photo_2020-08-28_10-33-49.jpg" alt="" class="d-block col-4">
+                <img src="../../../img/photo_2020-08-28_16-05-01.jpg" alt="" class="d-block col-4">
+                <img src="../../../img/photo_2020-08-28_16-05-02.jpg" alt="" class="d-block col-4">
+            </div>
+
+        </section>
+</div>
 </template>
 
 <script>
@@ -375,6 +387,32 @@
                         &:hover {
                             cursor: pointer;
                         }
+                    }
+                }
+            }
+        }
+
+        section.advertisement.container {
+            margin-top: 50px;
+            header {
+                background: none;
+                height: auto;
+                margin-bottom: 30px;
+                h1 {
+                    padding-top: 0;
+                    font-size: 3.5rem;
+                }
+            }
+
+            .body.row {
+                img {
+                    position: relative;
+                    width: 100%;
+                    &:hover {
+                        transform: scale(2);
+                        z-index: 500;
+                        transition-property: all;
+                        transition-duration: 1s;
                     }
                 }
             }
