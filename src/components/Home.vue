@@ -14,14 +14,11 @@
                                 active-class="active"
                                 to="/cars_available"
                         >
-                            <!--                            <i class="fas fa-phone"></i>-->
                             <span>Авто в наявності</span>
                         </router-link>
                     </div>
 
-<!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-<!--                        <button class="btn btn-light">Корпоративні продажі</button>-->
                         <router-link
                                 tag="button"
                                 class="btn btn-light"
@@ -29,12 +26,10 @@
                                 active-class="active"
                                 to="/general"
                         >
-<!--                            <i class="fas fa-phone"></i>-->
                             <span>Корпоративні продажі</span>
                         </router-link>
                     </div>
 
-<!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
                         <router-link
                                 tag="button"
@@ -43,14 +38,11 @@
                                 active-class="active"
                                 to="/exclusive_projects"
                         >
-                            <!--                            <i class="fas fa-phone"></i>-->
                             <span>Екслюзивні проекти</span>
                         </router-link>
                     </div>
 
-<!--                    <br/>-->
                     <div class="col-lg-12 col-md-5 col-12 p-0">
-<!--                        <button class="btn btn-light">Новини Toyota</button>-->
                         <router-link
                                 tag="button"
                                 class="btn btn-light"
@@ -58,7 +50,6 @@
                                 active-class="active"
                                 to="world_of_toyota/news"
                         >
-                            <!--                            <i class="fas fa-phone"></i>-->
                             <span>Новини Toyota</span>
                         </router-link>
                     </div>
@@ -96,16 +87,6 @@
                             <i class="fas fa-chevron-right"></i>
                         </span>
                 </router-link>
-<!--                <article class="col-md-6 col-12 block_link service" @click="goToService()">-->
-<!--                    <header>-->
-<!--                        <span>ЗВ’ЯЗАТИСЯ З ОФІЦІЙНИМ ДИЛЕРОМ </span>-->
-<!--                        <h1 class="text-uppercase">СЕРВІСНІ СТАНЦІЇ TOYOTA ПРАЦЮЮТЬ</h1>-->
-<!--                    </header>-->
-<!--                    <span class="btn-go text-center">-->
-<!--                            <i class="fas fa-chevron-right"></i>-->
-<!--                        </span>-->
-<!--                </article>-->
-
 
                     <article class="col-md-6 col-12 block_link hybrid" @click="goToHybrid">
                         <div class="background"></div>
@@ -226,14 +207,11 @@
                     height: calc(50vh - 35px);
                     position: relative;
                     overflow: hidden;
-                    /*align-content: flex-end;*/
                     .background {
                         width: 100%;
                         height: 100%;
                         background-repeat: no-repeat;
                         background-position: center center;
-                        /*-webkit-background-size: 100%;*/
-                        /*background-size: 100%;*/
                         -webkit-background-size: cover;
                         background-size: cover;
                     }
@@ -269,8 +247,6 @@
                     }
                     &:hover {
                         .background {
-                            /*-webkit-background-size: 130%;*/
-                            /*background-size: 130%;*/
                             transform: scale(1.3);
                             transition: all 1s;
                             cursor: pointer;
@@ -279,21 +255,18 @@
                     }
                     &.new_car {
                         .background {
-                            /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/new-c-hr-960x416_tcm-3046-1769744.jpg);*/
                             background-image: url(./../img/images/new-c-hr-960x416_tcm-3046-1769744.jpg);
                         }
 
                     }
                     &.service {
                         .background {
-                            /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/480x416-Toyota-Service-2_tcm-3046-1771998.jpg);*/
                             background-image: url(./../img/images/480x416-Toyota-Service-2_tcm-3046-1771998.jpg);
                         }
 
                     }
                     &.hybrid {
                         .background {
-                            /*background-image: url(//d1hu588lul0tna.cloudfront.net/toyotaone/uaua/toyota-hybrid-480x416-new_tcm-3046-1772000.png);*/
                             background-image: url(./../img/images/toyota-hybrid-480x416-new_tcm-3046-1772000.png);
                         }
 

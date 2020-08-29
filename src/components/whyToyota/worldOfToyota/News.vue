@@ -90,17 +90,25 @@
                 <h1>Акційні пропозиції</h1>
             </header>
             <div class="body row">
-                <img src="../../../img/photo_2020-08-28_10-33-49.jpg" alt="" class="d-block col-4">
-                <img src="../../../img/photo_2020-08-28_16-05-01.jpg" alt="" class="d-block col-4">
-                <img src="../../../img/photo_2020-08-28_16-05-02.jpg" alt="" class="d-block col-4">
+                <img src="../../../img/advertisement/photo_2020-08-28_10-33-49.jpg" alt="" class="d-block col-4" @click="goToImage('photo_2020-08-28_10-33-49.jpg')">
+                <img src="../../../img/advertisement/photo_2020-08-28_16-05-01.jpg" alt="" class="d-block col-4" @click="goToImage('photo_2020-08-28_16-05-01.jpg')">
+                <img src="../../../img/advertisement/photo_2020-08-28_16-05-02.jpg" alt="" class="d-block col-4" @click="goToImage('photo_2020-08-28_16-05-02.jpg')">
             </div>
 
+        </section>
+
+        <section class="advertisement_view container-fluid position-fixed" v-if="showAdvertisement" @click.self="showAdvertisement = false">
+            <i class="far fa-times-circle position-absolute" @click.stop="showAdvertisement = false"></i>
+            <div class="image_wrap">
+                <img :src="require('../../../img/advertisement/' + getAdvertisement)" alt="Advertisement" class="advertisement_img">
+            </div>
         </section>
 </div>
 </template>
 
 <script>
     import axios from "axios"
+    import $ from "jquery"
 
     export default {
         name: "News",
@@ -120,6 +128,9 @@
 
                 newsAll: [],
                 newsFiltered: [],
+
+                advertisement: '',
+                showAdvertisement: true,
             }
         },
 
@@ -158,6 +169,10 @@
 
         created() {
             this.getNews();
+            this.size();
+            $(window).on("resize", () => {
+                this.size();
+            });
         },
 
         mounted() {
@@ -182,6 +197,11 @@
                         } )
                 }
 
+            },
+
+            getAdvertisement() {
+                this.size();
+                return this.advertisement;
             },
         },
 
@@ -240,6 +260,22 @@
                             this.stocks = 10;
                         }
                         break;
+                }
+            },
+
+            goToImage(url) {
+                this.advertisement = url;
+                this.showAdvertisement = true;
+                console.log(this.advertisement);
+                console.log(this.showAdvertisement);
+            },
+
+            size() {
+                let imgWidth = $('.advertisement_img').width();
+                // let imgHeight = $('.advertisement_img').height;
+                console.log(imgWidth);
+                if( imgWidth > window.innerWidth ) {
+                    $(".advertisement_img").css("width", "100%");
                 }
             }
         },
@@ -414,6 +450,29 @@
                         transition-property: all;
                         transition-duration: 1s;
                     }
+                }
+            }
+        }
+
+        section.advertisement_view.container-fluid {
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background-color: rgba(255,255,255,0.7);
+            z-index: 1000;
+            i {
+                top: 15px;
+                right: 15px;
+                font-size: 2.5rem;
+                color: #595D60;
+            }
+            .image_wrap {
+                width: auto;
+                height: auto;
+                margin: auto;
+                img {
+                    height: 100vh;
                 }
             }
         }

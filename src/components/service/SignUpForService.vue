@@ -507,7 +507,7 @@
         header.container-fluid {
             width: 100%;
             height: 80vh;
-            background-image: url('//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/1600%D1%85900_Toyota_Service_1_tcm-3046-1797152.jpg');
+            background-image: url(../../img/background/Toyota_Service_1_tcm-3046-1797152.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             -webkit-background-size: cover;
@@ -646,6 +646,7 @@
         main {
             min-width: 350px;
             header.container-fluid {
+                background-image: url(../../img/background-sm/Toyota_Service_1_tcm-3046-1797152.jpg);
                 height: 56vw;
                 max-height: 380px;
                 h1.container {
@@ -682,6 +683,7 @@
         main {
             min-width: 350px;
             header.container-fluid {
+                background-image: url(../../img/background-sm/Toyota_Service_1_tcm-3046-1797152.jpg);
                 height: 56vw;
                 max-height: 380px;
                 h1.container {
