@@ -455,7 +455,6 @@
                         console.log("Данные переданы успешно!");
                         this.success = true;
                         setTimeout( () => {this.success = false}, 2500 );
-                        // this.clearForm();
                         this.$router.push({name: "test_drive_exit"});
                     } )
                     .catch( (error) => {
@@ -463,7 +462,7 @@
                         console.log(error);
                         console.log(testDrive);
                         this.error = true;
-                        this.$router.push({name: "test_drive_exit"});
+                        // this.$router.push({name: "test_drive_exit"});
                         setTimeout( () => {this.error = false}, 2500 );
                     } );
 

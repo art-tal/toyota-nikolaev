@@ -30,6 +30,8 @@ export default new Vuex.Store ({
             preview: "",
         },
 
+        requestToService: {},
+
         testDrive: {},
 
         testCar: {},
@@ -108,6 +110,10 @@ export default new Vuex.Store ({
             return state.testCar;
         },
 
+        getServiceCar(state) {
+            return state.requestToService;
+        },
+
 
 
     },
@@ -162,6 +168,10 @@ export default new Vuex.Store ({
 
         setShowPreload(state, show) {
             state.showPreloader = show;
+        },
+
+        setService(state) {
+            state.requestToService = JSON.parse( localStorage.requestToService );
         },
 
         setTestDrive(state) {

@@ -8,6 +8,7 @@ import FAQ from "../components/sharedLinks/FAQ";
 import LegalInformation from "../components/sharedLinks/LegalInformation";
 import CookieSettings from "../components/sharedLinks/CookieSettings";
 import FormFeedBack from "../components/sharedLinks/FormFeedBack";
+import FeedBackExit from "../components/sharedLinks/FeedBackExit";
 import VypadkyShahrajstva from "../components/sharedLinks/VypadkyShahrajstva";
 
 
@@ -41,6 +42,7 @@ import Corporate_clients from "../components/toBuyers/Corporate_clients";
 import General from "../components/toBuyers/General";
 
 import SignUpForService from "../components/service/SignUpForService";
+import SignUpForServiceExit from "../components/service/SignUpForServiceExit";
 
 import News from "../components/whyToyota/worldOfToyota/News";
 import Article from "../components/whyToyota/worldOfToyota/Article";
@@ -164,6 +166,11 @@ const route = new VueRouter({
             path: '/form_feed_back',
             name: 'form_feed_back',
             component: FormFeedBack,
+        },
+        {
+            path: '/feed_back_exit',
+            name: 'feed_back_exit',
+            component: FeedBackExit,
         },
 
         {
@@ -354,6 +361,12 @@ const route = new VueRouter({
             path: "/service",
             name: "service",
             component: SignUpForService,
+        },
+
+        {
+            path: "/sign_up_for_service_exit",
+            name: "sign_up_for_service_exit",
+            component: SignUpForServiceExit,
         },
 
 
