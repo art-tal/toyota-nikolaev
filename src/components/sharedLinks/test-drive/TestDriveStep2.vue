@@ -463,6 +463,7 @@
                         console.log(error);
                         console.log(testDrive);
                         this.error = true;
+                        this.$router.push({name: "test_drive_exit"});
                         setTimeout( () => {this.error = false}, 2500 );
                     } );
 

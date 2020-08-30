@@ -90,17 +90,16 @@
                 <h1>Акційні пропозиції</h1>
             </header>
             <div class="body row">
-                <img src="../../../img/advertisement/photo_2020-08-28_10-33-49.jpg" alt="" class="d-block col-4" @click="goToImage('photo_2020-08-28_10-33-49.jpg')">
-                <img src="../../../img/advertisement/photo_2020-08-28_16-05-01.jpg" alt="" class="d-block col-4" @click="goToImage('photo_2020-08-28_16-05-01.jpg')">
-                <img src="../../../img/advertisement/photo_2020-08-28_16-05-02.jpg" alt="" class="d-block col-4" @click="goToImage('photo_2020-08-28_16-05-02.jpg')">
+                <img src="../../../img/advertisement/photo_2020-08-28_10-33-49.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_10-33-49.jpg')">
+                <img src="../../../img/advertisement/photo_2020-08-28_16-05-01.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_16-05-01.jpg')">
+                <img src="../../../img/advertisement/photo_2020-08-28_16-05-02.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_16-05-02.jpg')">
             </div>
-
         </section>
 
-        <section class="advertisement_view container-fluid position-fixed" v-if="showAdvertisement" @click.self="showAdvertisement = false">
+        <section class="advertisement_view container-fluid position-fixed" v-if="showAdvertisement" @click="showAdvertisement = false">
             <i class="far fa-times-circle position-absolute" @click.stop="showAdvertisement = false"></i>
             <div class="image_wrap">
-                <img :src="require('../../../img/advertisement/' + getAdvertisement)" alt="Advertisement" class="advertisement_img">
+                <img :src="'../../../img/advertisement/' + getAdvertisement" alt="Advertisement" class="advertisement_img">
             </div>
         </section>
 </div>
@@ -108,7 +107,6 @@
 
 <script>
     import axios from "axios"
-    import $ from "jquery"
 
     export default {
         name: "News",
@@ -169,10 +167,6 @@
 
         created() {
             this.getNews();
-            this.size();
-            $(window).on("resize", () => {
-                this.size();
-            });
         },
 
         mounted() {
@@ -200,7 +194,6 @@
             },
 
             getAdvertisement() {
-                this.size();
                 return this.advertisement;
             },
         },
@@ -265,19 +258,12 @@
 
             goToImage(url) {
                 this.advertisement = url;
-                this.showAdvertisement = true;
+                if (window.innerWidth > 767.9) {
+                    this.showAdvertisement = true;
+                }
                 console.log(this.advertisement);
                 console.log(this.showAdvertisement);
             },
-
-            size() {
-                let imgWidth = $('.advertisement_img').width();
-                // let imgHeight = $('.advertisement_img').height;
-                console.log(imgWidth);
-                if( imgWidth > window.innerWidth ) {
-                    $(".advertisement_img").css("width", "100%");
-                }
-            }
         },
     }
 </script>
@@ -445,7 +431,7 @@
                     position: relative;
                     width: 100%;
                     &:hover {
-                        transform: scale(2);
+                        transform: scale(1.1);
                         z-index: 500;
                         transition-property: all;
                         transition-duration: 1s;
@@ -461,6 +447,7 @@
             left: 0;
             background-color: rgba(255,255,255,0.7);
             z-index: 1000;
+            padding: 50px;
             i {
                 top: 15px;
                 right: 15px;
@@ -472,19 +459,28 @@
                 height: auto;
                 margin: auto;
                 img {
-                    height: 100vh;
+                    width: 80%;
                 }
             }
         }
 
     }
 
+
     @media (max-width: 767.9px) {
         .container-fluid {
+            header {
+                @include header-xl;
+                height: 56vh;
+                background-image: url(../../../img/background-sm/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg);
+                h1 {
+                    text-align: center;
+                    padding-top: 130px;
+                }
+            }
 
             section.body.container {
                 header {
-                    background-image: url(../../../img/background-sm/Toyota-2014-Cityscape-1600x900_tcm-3046-72516.jpg);
                     margin-bottom: 0;
                     h1 {
                         font-size: 3rem;
@@ -493,6 +489,9 @@
 
                 }
                 .body {
+                    header {
+                        background: none;
+                    }
                     .categories {
                         margin-bottom: 30px;
                         .checkbox {
@@ -583,6 +582,21 @@
                 }
             }
 
+        }
+
+        section.advertisement.container {
+            margin-top: 40px;
+            header {
+                h1 {
+                    font-size: 3rem;
+                }
+            }
+
+            .body.row {
+                img {
+                    margin-bottom: 30px;
+                }
+            }
         }
     }
 
