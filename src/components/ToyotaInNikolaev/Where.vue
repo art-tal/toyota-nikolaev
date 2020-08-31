@@ -12,18 +12,23 @@
 <!--            <p>Офіційний дилерський центр Тойота Центр Миколаїв «КиТ-Т» надасть Вам можливість отримати справжню насолоду від володіння автомобілями марки Toyota, починаючи з моменту їх придбання і до моменту їх подальшого продажу.</p>-->
 <!--            <p>Ми цінуємо кожного клієнта і щодня чітко дотримуємося основного правила: «Клієнт - понад усе». Ми будемо раді бачити Вас в нашому дилерському центрі і готові обговорити всі питання, що цікавлять Вас за адресою: <b>Тойота Центр Миколаїв «КиТ-Т», м. Миколаїв, Херсонське шосе, 109.</b></p>-->
 <!--        </div>-->
+        <google-map :name="name"/>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNTj7qhTo59bX2bFTe_A9JAjYv2NuF40M"></script>
     </main>
 </template>
 
 <script>
     import MenuNikolaev from "./../../components/ToyotaInNikolaev/MenuNikolaev";
     import PageBody from "./../../mixins/mixinPages";
+    import GoogleMap from "./../../components/ToyotaInNikolaev/GoogleMap";
+    import google from ''
 
     export default {
         name: "Where",
 
         components: {
-            MenuNikolaev
+            MenuNikolaev,
+            GoogleMap
         },
 
         mixins: [
@@ -33,6 +38,8 @@
         data() {
             return {
                 id: 41,
+
+                name: "toyota-nikolaev"
             }
         },
 

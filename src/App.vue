@@ -7,12 +7,14 @@
 
 
 <!--      <equipments></equipments>-->
+<!--      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNTj7qhTo59bX2bFTe_A9JAjYv2NuF40M"></script>-->
 
         <sidebar/>
       <fast-connection></fast-connection>
       <go-up/>
       <preloader v-if="preloader"/>
       <app-footer></app-footer>
+
   </div>
 </template>
 

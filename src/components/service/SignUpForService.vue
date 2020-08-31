@@ -472,7 +472,7 @@
                     agree: this.agree,
                 };
                 localStorage.requestToService = JSON.stringify(requestToService);
-                this.$store.commit("setService")
+                this.$store.commit("setService");
                 axios.post(
                     "http://lara.toyota.nikolaev.ua/ajax/service",
                     requestToService,
@@ -488,7 +488,7 @@
                         console.log("Ошибка передачи формы");
                         console.log(error);
                         this.error = true;
-                        this.$router.push({name: "test_drive_exit"});
+                        this.$router.push({name: "sign_up_for_service_exit"});
                         // setTimeout( () => {this.error = false}, 2500 );
                     } )
             },

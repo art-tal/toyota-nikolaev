@@ -8,13 +8,13 @@
         <div class="body">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12">
-                    <img src="../../img/image-sm/service.jpg" alt="car">
+                    <img src="../../img/image-sm/service.jpg" alt="service"/>
                 </div>
 
                 <div class="col-lg-6 col-12 info">
                     <article class="row">
                         <div class="col-1">
-                            <i class="fas fa-car"></i>
+                            <i class="fas fa-wrench"></i>
                         </div>
                         <div class="col-11">
                             <h3>Оберіть послугу</h3>
