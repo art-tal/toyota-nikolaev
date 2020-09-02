@@ -85,7 +85,7 @@
             </div>
         </section>
 
-        <section class="advertisement container">
+        <section class="advertisements container">
             <header>
                 <h1>Акційні пропозиції</h1>
             </header>
@@ -99,7 +99,7 @@
         <section class="advertisement_view container-fluid position-fixed" v-if="showAdvertisement" @click="showAdvertisement = false">
             <i class="far fa-times-circle position-absolute" @click.stop="showAdvertisement = false"></i>
             <div class="image_wrap">
-                <img :src="'../../../img/advertisement/' + getAdvertisement" alt="Advertisement" class="advertisement_img">
+                <img :src="require('../../../img/advertisement/' + getAdvertisement)" alt="Advertisement" class="advertisement_img">
             </div>
         </section>
 </div>
@@ -128,7 +128,7 @@
                 newsFiltered: [],
 
                 advertisement: '',
-                showAdvertisement: true,
+                showAdvertisement: false,
             }
         },
 
@@ -414,7 +414,8 @@
             }
         }
 
-        section.advertisement.container {
+        section.advertisements.container {
+            display: block !important;
             margin-top: 50px;
             header {
                 background: none;
@@ -584,7 +585,7 @@
 
         }
 
-        section.advertisement.container {
+        section.advertisements.container {
             margin-top: 40px;
             header {
                 h1 {

@@ -14,6 +14,8 @@ import App from './App.vue'
 
 
 
+
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -29,6 +31,9 @@ Vue.use(VueMeta, {
 });
 Vue.use(Inputmask);
 Vue.use(VueAwesomeSwiper);
+
+
+
 
 
 Vue.config.productionTip = false;

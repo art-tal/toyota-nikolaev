@@ -344,8 +344,9 @@
         },
 
         created() {
+            this.findID();
             // this.id = this.$route.params.id;
-            this.getModel();
+            // this.getModel();
 
             eventEmitter.$on('selectedEquipment',
                 () => {
@@ -389,47 +390,49 @@
                         .then( () => {
                             this.getEquipment();
                         } )
+                        // .then( () => {
+                        // } )
                         .catch( (error) => {
                             console.log("Ошибка, не возможно загрузить доступные модели");
                             console.log(error);
                         })
             },
 
-            checkEquipment() {
-                // try{
-                if(localStorage.equipment){
-                    let equipFromJson = JSON.parse(localStorage.equipment);
-                    if (Object.keys(equipFromJson) > 0) {
-                        if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
-
-                            this.equipments.forEach( equip => {
-                                if ( equip.mod_id === equipFromJson.mod_id ) {
-                                    this.equipment = equip;
-                                    localStorage.mod_id = this.equipment.mod_id;
-                                    localStorage.equipment = JSON.stringify( this.equipment );
-                                    this.$store.commit("setEquipment");
-                                    return true;
-                                }
-                            });
-
-                        }
-                    }
-                }
-
-
-
-
-                    this.equipment = this.equipments[0];
-                    localStorage.equipment = JSON.stringify( this.equipment );
-                    this.$store.commit("setEquipment");
-                // } catch (e) {
-                //
-                //     this.equipment = this.equipments[0];
-                //     localStorage.equipment = JSON.stringify( this.equipment );
-                //     this.$store.commit("setEquipment");
-                // }
-
-            },
+            // checkEquipment() {
+            //     // try{
+            //     if(localStorage.equipment){
+            //         let equipFromJson = JSON.parse(localStorage.equipment);
+            //         if (Object.keys(equipFromJson) > 0) {
+            //             if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
+            //
+            //                 this.equipments.forEach( equip => {
+            //                     if ( equip.mod_id === equipFromJson.mod_id ) {
+            //                         this.equipment = equip;
+            //                         localStorage.mod_id = this.equipment.mod_id;
+            //                         localStorage.equipment = JSON.stringify( this.equipment );
+            //                         this.$store.commit("setEquipment");
+            //                         return true;
+            //                     }
+            //                 });
+            //
+            //             }
+            //         }
+            //     }
+            //
+            //
+            //
+            //
+            //         this.equipment = this.equipments[0];
+            //         localStorage.equipment = JSON.stringify( this.equipment );
+            //         this.$store.commit("setEquipment");
+            //     // } catch (e) {
+            //     //
+            //     //     this.equipment = this.equipments[0];
+            //     //     localStorage.equipment = JSON.stringify( this.equipment );
+            //     //     this.$store.commit("setEquipment");
+            //     // }
+            //
+            // },
 
 
 

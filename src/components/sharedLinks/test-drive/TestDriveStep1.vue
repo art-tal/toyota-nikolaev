@@ -221,8 +221,16 @@
                         // this.testModel = this.models.find( (mod) => {
                         //     mod.name.toLowerCase() === this.getModel.name.toLowerCase()} );
                         // console.log(this.testModel);
-                        this.saveTestModel(this.models.find( (mod) => {
-                            mod.name.toLowerCase() === this.getModel.name.toLowerCase()} ));
+                        // let car = this.models.find( (mod) => {
+                        //     mod.name.toLowerCase() === this.getModel.name.toLowerCase()} );
+                        let car;
+                        this.models.forEach( (mod) => {
+                            if( mod.name.toLowerCase() === this.getModel.name.toLowerCase() ) {
+                                car = mod;
+                            }
+                            } );
+
+                        this.saveTestModel(car);
                     } else {
                         console.log("models[0]");
                         this.saveTestModel(this.models[0]);

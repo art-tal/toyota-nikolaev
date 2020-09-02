@@ -233,7 +233,7 @@
                                     tag="a"
                                     exact
                                     active-class="active"
-                                    to="/download_brochures"
+                                    to="/service"
                             >
                                 <i class="fas fa-wrench"></i>
                                 <span>Замовити ТО</span>

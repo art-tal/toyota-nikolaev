@@ -50,6 +50,9 @@ export default {
         formattedPrice,
     },
 
+    created() {
+    },
+
     mounted() {
         this.showEquipment = false;
 
@@ -70,12 +73,14 @@ export default {
             } else if(localStorage.id) {
                 return localStorage.id;
             } else {
-                return this.findID();
+                // return this.findID();
             }
         },
 
         computedEquipment() {
-            return this.$store.getters.equip;
+            // console.log(this.$store.getters.equip);
+            // return this.$store.getters.equip;
+            return this.equipment;
         },
 
         computedColor() {
@@ -136,8 +141,24 @@ export default {
                 models = response.data;
             } )
                 .then( () => {
-                    this.model = models.find( (mod) => {mod.slug === slug} )
+                    console.log(models);
+                    // this.model = models.find( (mod) => {
+                    //     mod.slug.toLowerCase() === slug.toLowerCase();
+                    // } );
+                    models.forEach( (mod) => {
+                        if (mod.slug.toLowerCase() === slug.toLowerCase() ) {
+                            this.model = mod;
+                        }
+                    } );
+                    console.log(this.model);
+                    // return this.model.id;
                 } )
+                .then( () => {this.getVideo();} )
+                .then( () => {
+                    this.modelTitle = this.model.name;
+                    this.changeTitle();
+                } )
+                .then( () => {this.getEquipment()} )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модели");
                     console.log(error);
@@ -170,6 +191,7 @@ export default {
                     this.equipments = response.data;
                     this.equipment = this.equipments[0];
                     this.equipmentTitle = this.equipment.mod_name;
+                    console.log(this.equipment);
                 } )
 
                 .then( () => {this.getPrices();} )
@@ -218,36 +240,51 @@ export default {
 
         checkEquipment() {
             console.log("checkEquipment");
-            let equipFromJson = JSON.parse(localStorage.equipment);
+            let equipFromJson;
             let setEquip = false;
+            try{
+                equipFromJson = JSON.parse(localStorage.equipment);
 
-            if (Object.keys(equipFromJson) > 0) {
-                if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
+                if (Object.keys(equipFromJson) > 0) {
+                    if(equipFromJson.model_name_pivot.toLowerCase().includes(this.model.name.toLowerCase())) {
 
-                    this.equipments.forEach( equip => {
-                        if ( equip.mod_id === equipFromJson.mod_id ) {
-                            this.equipment = equip;
+                        this.equipments.forEach( equip => {
+                            if ( equip.mod_id === equipFromJson.mod_id ) {
+                                this.equipment = equip;
+                                localStorage.mod_id = this.equipment.mod_id;
+                                localStorage.equipment = JSON.stringify( this.equipment );
+                                this.$store.commit("setEquipment");
+                                console.log(localStorage.mod_id, this.equipment);
+                                setEquip = true;
+                                return true;
+                            }
+                        });
+                        if (!setEquip) {
+                            this.equipment = this.equipments[0];
                             localStorage.mod_id = this.equipment.mod_id;
                             localStorage.equipment = JSON.stringify( this.equipment );
+                            console.log(localStorage.mod_id, this.equipment);
                             this.$store.commit("setEquipment");
-                            setEquip = true;
-                            return true;
                         }
-                    });
-                    if (!setEquip) {
-                        this.equipment = this.equipments[0];
-                        localStorage.equipment = JSON.stringify( this.equipment );
-                        this.$store.commit("setEquipment");
-                    }
 
+                    }
+                } else {
+                    this.equipment = this.equipments[0];
+                    localStorage.mod_id = this.equipment.mod_id;
+                    localStorage.equipment = JSON.stringify( this.equipment );
+                    this.$store.commit("setEquipment");
+                    console.log(localStorage.mod_id, this.equipment);
                 }
-            } else {
+            } catch (e) {
                 this.equipment = this.equipments[0];
+                localStorage.mod_id = this.equipment.mod_id;
                 localStorage.equipment = JSON.stringify( this.equipment );
                 this.$store.commit("setEquipment");
+                console.log(localStorage.mod_id, this.equipment);
             }
 
 
+            console.log(3);
 
         },
 
