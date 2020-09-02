@@ -194,35 +194,8 @@
             },
 
             getTestPosition() {
-                // try{
-                //     if ( Object.keys(this.testModel).length > 0 ) {
-                //         this.saveTestModel(this.getTestModel);
-                //     } else {
-                //         if ( Object.keys(this.$store.getters.getModel) > 0 ) {
-                //             this.saveTestModel(this.$store.getters.getModel);
-                //         } else if( Object.keys( JSON.parse(localStorage.testModel) ) > 0) {
-                //             this.saveTestModel(JSON.parse(localStorage.testModel));
-                //         } else if( Object.keys( JSON.parse(localStorage.model) ) > 0) {
-                //             this.saveTestModel(JSON.parse(localStorage.model));
-                //         }
-                //         else {
-                //             this.saveTestModel(this.models[0]);
-                //         }
-                //     }
-                // } catch (e) {
-                //     console.log(e);
-                //     this.saveTestModel(this.models[0]);
-                // }
-                // this.getEquipment();
-
-
                 try {
                     if ( Object.keys(this.getModel).length > 0 ) {
-                        // this.testModel = this.models.find( (mod) => {
-                        //     mod.name.toLowerCase() === this.getModel.name.toLowerCase()} );
-                        // console.log(this.testModel);
-                        // let car = this.models.find( (mod) => {
-                        //     mod.name.toLowerCase() === this.getModel.name.toLowerCase()} );
                         let car;
                         this.models.forEach( (mod) => {
                             if( mod.name.toLowerCase() === this.getModel.name.toLowerCase() ) {
@@ -308,13 +281,13 @@
                         case "Бензин".toLowerCase():
                             this.petrol = true;
                             break;
-                        case "Дизел".toLowerCase():
+                        case "Дизель".toLowerCase():
                             this.diesel = true;
                             break;
                         case "Електро".toLowerCase():
                             this.electric = true;
                             break;
-                        case "ГIбрид".toLowerCase():
+                        case "Гібрид".toLowerCase():
                             this.hybrid = true;
                             break;
                         case "LPG".toLowerCase():
@@ -333,7 +306,7 @@
                 switch (eng.fuel_type.toLowerCase()) {
                     case "Бензин".toLowerCase():
                         return "Бензиновий";
-                    case "Дизел".toLowerCase():
+                    case "Дизель".toLowerCase():
                         return "Дизельний";
                     case "Електро".toLowerCase():
                         return "Електричний"

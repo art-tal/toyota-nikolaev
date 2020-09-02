@@ -85,21 +85,29 @@
             </div>
         </section>
 
-        <section class="advertisements container">
+        <section class="promotions container">
             <header>
                 <h1>Акційні пропозиції</h1>
             </header>
             <div class="body row">
-                <img src="../../../img/advertisement/photo_2020-08-28_10-33-49.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_10-33-49.jpg')">
-                <img src="../../../img/advertisement/photo_2020-08-28_16-05-01.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_16-05-01.jpg')">
-                <img src="../../../img/advertisement/photo_2020-08-28_16-05-02.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_16-05-02.jpg')">
+                <img v-for="(promo, key) in promotions"
+                     :key="key"
+                     :src="'http://lara.toyota.nikolaev.ua/storage/' + promo.image"
+                     :alt="'Promotion-' + key"
+                     class="d-block col-md-4 col-12"
+                     @click="goToImage(promo.image)"
+                >
+<!--                <img src="../../../img/promotion/photo_2020-08-28_10-33-49.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_10-33-49.jpg')">-->
+<!--                <img src="../../../img/promotion/photo_2020-08-28_16-05-01.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_16-05-01.jpg')">-->
+<!--                <img src="../../../img/promotion/photo_2020-08-28_16-05-02.jpg" alt="" class="d-block col-md-4 col-12" @click="goToImage('photo_2020-08-28_16-05-02.jpg')">-->
             </div>
         </section>
 
-        <section class="advertisement_view container-fluid position-fixed" v-if="showAdvertisement" @click="showAdvertisement = false">
-            <i class="far fa-times-circle position-absolute" @click.stop="showAdvertisement = false"></i>
+        <section class="promotion_view container-fluid position-fixed" v-if="showPromotion" @click="showPromotion = false">
+            <i class="far fa-times-circle position-absolute" @click.stop="showPromotion = false"></i>
             <div class="image_wrap">
-                <img :src="require('../../../img/advertisement/' + getAdvertisement)" alt="Advertisement" class="advertisement_img">
+<!--                <img :src="require('../../../img/promotion/' + getPromotionImg)" alt="Promotion" class="promotion_img">-->
+                <img :src="'http://lara.toyota.nikolaev.ua/storage/' + getPromotionImg" alt="Promotion" class="promotion_img">
             </div>
         </section>
 </div>
@@ -127,8 +135,9 @@
                 newsAll: [],
                 newsFiltered: [],
 
-                advertisement: '',
-                showAdvertisement: false,
+                promotions: [],
+                promotion: '',
+                showPromotion: false,
             }
         },
 
@@ -167,6 +176,7 @@
 
         created() {
             this.getNews();
+            this.getPromotion();
         },
 
         mounted() {
@@ -193,8 +203,8 @@
 
             },
 
-            getAdvertisement() {
-                return this.advertisement;
+            getPromotionImg() {
+                return this.promotion;
             },
         },
 
@@ -256,13 +266,32 @@
                 }
             },
 
-            goToImage(url) {
-                this.advertisement = url;
+            getPromotion() {
+                let urlPromotion = 'http://toyota.nikolaev.ua/ajax/promotions';
                 if (window.innerWidth > 767.9) {
-                    this.showAdvertisement = true;
+                    urlPromotion = 'http://toyota.nikolaev.ua/ajax/promotions'
+                } else {
+                    urlPromotion = 'http://toyota.nikolaev.ua/ajax/promotions-small'
                 }
-                console.log(this.advertisement);
-                console.log(this.showAdvertisement);
+                axios.get(
+                    urlPromotion
+                )
+                .then( (response) => {
+                    this.promotions = response.data;
+                    console.log(this.promotions);
+                } )
+                .catch( (error) => {
+                    console.log(error);
+                } )
+            },
+
+            goToImage(url) {
+                this.promotion = url;
+                if (window.innerWidth > 767.9) {
+                    this.showPromotion = true;
+                }
+                console.log(this.promotion);
+                console.log(this.showPromotion);
             },
         },
     }
@@ -414,7 +443,7 @@
             }
         }
 
-        section.advertisements.container {
+        section.promotions.container {
             display: block !important;
             margin-top: 50px;
             header {
@@ -441,7 +470,7 @@
             }
         }
 
-        section.advertisement_view.container-fluid {
+        section.promotion_view.container-fluid {
             width: 100%;
             height: 100vh;
             top: 0;
@@ -585,7 +614,7 @@
 
         }
 
-        section.advertisements.container {
+        section.promotions.container {
             margin-top: 40px;
             header {
                 h1 {
