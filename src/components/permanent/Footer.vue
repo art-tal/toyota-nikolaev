@@ -28,15 +28,13 @@
 
                 <div class="map col-md-6 col-12 text-right">
                     <a href="" class="up" @click.prevent="top()">Нагору</a>
-<!--                    <div class="mapSite">-->
-<!--                        <a href="#">-->
-<!--                            <span>Карта сайту</span>-->
-<!--                            <i class="fas fa-chevron-down"></i>-->
-<!--                        </a>-->
-<!--                        <div class="mapSiteDown">-->
-
-<!--                        </div>-->
-<!--                    </div>-->
+                    <div class="mapSite">
+                        <a href="#" @click.prevent="showMap()">
+                            <span>Карта сайту</span>
+                            <i class="fas fa-chevron-up" v-if="show"></i>
+                            <i class="fas fa-chevron-down" v-else></i>
+                        </a>
+                    </div>
 
                 </div>
             </div>
@@ -65,6 +63,9 @@
                 </a>
             </div>
         </div>
+
+            <map-site v-if="show"></map-site>
+
         </div>
 
         <div class="info container-fluid px-0">
@@ -141,12 +142,28 @@
 </template>
 
 <script>
+    import mapSite from "@/components/permanent/mapSite";
+
     export default {
         name: "Footer",
+
+        components: {
+            mapSite,
+        },
+
+        data() {
+            return {
+                show: false,
+            }
+        },
 
         methods: {
             top() {
                 window.scrollTo(pageXOffset, 0);
+            },
+
+            showMap() {
+                this.show = !this.show;
             },
         },
     }

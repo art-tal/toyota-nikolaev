@@ -58,13 +58,14 @@
             <div class="open-video" v-if="showVideo">
                 <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                <video width="100%"
-                       src="../../../video/brake_discs_and_pads_toyota.mp4"
-                       controls="controls"
-                       type="video/mp4"
-                       poster="../../../img/images/poster/Brakes-video_tcm-3046-702187.jpg">
-                </video>
-<!--                <iframe width="560" height="315" src="https://www.youtube.com/embed/KIUNGfE-v_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--                <video width="100%"-->
+<!--                       :src="vidos"-->
+<!--                       controls="controls"-->
+<!--                       type="video/mp4"-->
+<!--                >-->
+<!--                </video>-->
+<!--                poster="../../../img/images/poster/Brakes-video_tcm-3046-702187.jpg"-->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/KIUNGfE-v_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -72,6 +73,7 @@
 </template>
 
 <script>
+    import brack from "../../../video/brake_discs_and_pads_toyota.mp4"
     import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
     import PageBody from "../../../mixins/mixinPages"
     export default {
@@ -89,6 +91,7 @@
             return {
                 id: 22,
                 // showVideo: false,
+                vidos: brack,
             }
         },
 
