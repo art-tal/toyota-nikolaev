@@ -172,6 +172,36 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <h4>
+                    <a href="https://www.toyota.ua/service-and-accessories/ssc" class="nav-link" target="_blank">
+                        <span>Спеціальні сервісні кампанії</span>
+                    </a>
+                </h4>
+            </li>
+            <li>
+                <h4>
+                    <router-link
+                            tag="a"
+                            exact
+                            to="/test_drive_step_1"
+                    >
+                        <span>Замовити тест-драйв</span>
+                    </router-link>
+                </h4>
+            </li>
+            <li>
+                <h4>
+                    <router-link
+                            tag="a"
+                            exact
+                            active-class="active"
+                            to="/download_brochures"
+                    >
+                        <span>Завантажити брошури</span>
+                    </router-link>
+                </h4>
+            </li>
         </ul>
     </section>
 </template>
@@ -231,11 +261,10 @@
             list-style-type: none;
             padding: 0;
             text-align: left;
-            height: 240px;
             column-count: 4;
             column-gap: 10px;
             li {
-                margin: 15px 0;
+                margin: 0 0 15px ;
                 padding: 0;
                 h4 {
                     font-size: 1.5rem;
@@ -261,6 +290,42 @@
             color: $font_color;
             text-decoration: underline;
         }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.9px) {
+        section.mapSite.container {
+            ul.main_list {
+                column-count: 3;
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.9px) {
+        section.mapSite.container {
+            ul.main_list {
+                column-count: 2;
+            }
+        }
+    }
+
+    @media (max-width: 575.9px) {
+        section.mapSite.container {
+            ul.main_list {
+                column-count: 2;
+                li {
+                    h4 {
+                        font-size: 1.4rem;
+                    }
+                    ul.sub {
+                        li.item {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+            }
+        }
+
     }
 
 </style>
