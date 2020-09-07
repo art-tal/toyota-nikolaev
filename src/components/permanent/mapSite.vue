@@ -8,8 +8,8 @@
                         v-for="(model, key) in models"
                         :key="key"
                     >
-                        <a href="#" @click.prevent="goSelectModel(model)"></a>
-                        {{model.name}}
+                        <a href="#" @click.prevent="goSelectModel(model)">{{model.name}}</a>
+
                     </li>
                 </ul>
             </li>
@@ -235,7 +235,7 @@
 
             goSelectModel(model) {
                 this.$store.state.model = model;
-                // this.dumpingOfStorage();
+                this.dumpingOfStorage();
                 localStorage.id = model.id;
                 localStorage.slug = model.slug;
                 localStorage.model = JSON.stringify(model);
@@ -243,6 +243,22 @@
                 // location.reload();
                 // this.$store.mutations.mutationRender();
             },
+
+
+            dumpingOfStorage() {
+                localStorage.mod_id = 0;
+                localStorage.equipment = "";
+                // localStorage.model = "";
+                localStorage.totalCost = 0;
+                // localStorage.id = 0;
+                localStorage.interior = "";
+                localStorage.wheel = "";
+                localStorage.color = "";
+                localStorage.transmission = "";
+                localStorage.consultModel = "";
+                localStorage.selectedAccessories = "";
+
+            }
         },
     }
 </script>
@@ -271,6 +287,7 @@
                     font-weight: bold;
                     a {
                         padding: 0;
+                        cursor: pointer;
                     }
                 }
                 ul.sub {
@@ -279,6 +296,7 @@
                     li.item {
                         margin: 5px 0;
                         font-size: 1.3rem;
+
                     }
                 }
             }

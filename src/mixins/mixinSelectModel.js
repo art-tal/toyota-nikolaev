@@ -78,9 +78,25 @@ export default {
         },
 
         computedEquipment() {
+            try {
+                if (Object.keys(this.$store.getters.equip).length > 0 ) {
+                    return this.$store.getters.equip;
+                } else if (Object.keys(JSON.parse(localStorage.equipment)).length > 0 ) {
+                    return JSON.parse(localStorage.equipment);
+                } else {
+                    return this.equipment;
+                }
+            } catch (e) {
+                return this.equipment;
+            }
+
+
+
+
             // console.log(this.$store.getters.equip);
             // return this.$store.getters.equip;
-            return this.equipment;
+
+            //
         },
 
         computedColor() {

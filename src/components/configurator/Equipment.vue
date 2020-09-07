@@ -62,6 +62,7 @@
                 equipments: [],
                 equipment: {},
                 fontColor: "#202020",
+                firstOpen: null,
 
                 prices: [],
 
@@ -84,6 +85,7 @@
         created() {
             this.$store.state.model = JSON.parse( localStorage.model );
             this.color = this.$store.getters.colored;
+            this.firstOpen = true;
             this.getEquipment();
             this.getFontColor();
             eventEmitter.$on('select', () => {this.activeted()})
@@ -184,7 +186,11 @@
                 localStorage.equipment = JSON.stringify(equipment);
                 localStorage.mod_id = equipment.mod_id;
                 console.log(equipment);
-                setTimeout(() => {eventEmitter.$emit('selectedEquipment');},100);
+                if(!this.firstOpen) {
+                    setTimeout(() => {eventEmitter.$emit('selectedEquipment');},100);
+                }
+                this.firstOpen = false;
+
             },
 
             getFontColor: function () {
