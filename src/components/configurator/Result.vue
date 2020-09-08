@@ -131,6 +131,9 @@
                                 <router-link
                                         tag="a"
                                         exact
+                                        :disabled="disableButtonDrive"
+                                        :title="titleButton"
+                                        :style="disableButtonDrive?'color: #ccc': 'color: #202020'"
                                         to="/test_drive_step_1"
                                 >
                                     <i class="far fa-life-ring"></i>
@@ -191,13 +194,19 @@
 
 <script>
     import formattedPrice from "../../filters/price_format";
+    import MixinTestDrive from "./../../mixins/mixinTestDrive"
     // import {eventEmitter} from "../../app";//           for Laravel
 
     export default {
         name: "Result",
 
+        mixins: [
+            MixinTestDrive,
+        ],
+
         mounted() {
-            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 500)
+            setTimeout(() => {this.$store.commit("setShowPreload", false);}, 500);
+            this.getCarForTestDrive();
         },
 
         data() {
@@ -230,7 +239,6 @@
         computed: {
             getModel() {
                 // return this.$store.getters.getModel;
-
                 if(this.$store.getters.getModel.id) {
                     return this.$store.getters.getModel;
                 } else {

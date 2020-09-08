@@ -171,6 +171,8 @@
                         tag="button"
                         class="col-6 btn btn-danger"
                         exact
+                        :disabled="disableButtonDrive"
+                        :title="titleButton"
                         to="/test_drive_step_1"
                 >
                     Замовити тест-драйв
@@ -333,6 +335,7 @@
 <script>
     import axios from 'axios';
     import MixinSelectModel from "../../mixins/mixinSelectModel";
+    import MixinTestDrive from "../../mixins/mixinTestDrive";
     import ImageSizeMixin from "./../../mixins/imageSizeMixin";
 
     import Equipment from "./../../components/configurator/Equipment";//            for Laravel
@@ -343,12 +346,13 @@
 
         components: {
             Equipment,
-            SubNavigation
+            SubNavigation,
         },
 
         mixins: [
             MixinSelectModel,
-            ImageSizeMixin
+            ImageSizeMixin,
+            MixinTestDrive
         ],
 
         data() {

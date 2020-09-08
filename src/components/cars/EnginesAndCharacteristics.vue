@@ -193,6 +193,8 @@
                         tag="button"
                         class="col-6 btn btn-danger"
                         exact
+                        :disabled="disableButtonDrive"
+                        :title="titleButton"
                         to="/test_drive_step_1"
                 >
                     Замовити тест-драйв
@@ -291,6 +293,7 @@
 <script>
     import axios from 'axios';
     import MixinSelectModel from "../../mixins/mixinSelectModel";
+    import MixinTestDrive from "../../mixins/mixinTestDrive";
     import Equipment from "./../../components/configurator/Equipment";//            for Laravel
     import SubNavigation from "./../../components/cars/SubNavigation";
 
@@ -304,7 +307,8 @@
         },
 
         mixins: [
-            MixinSelectModel
+            MixinSelectModel,
+            MixinTestDrive,
         ],
 
         data() {
@@ -350,6 +354,7 @@
         created() {
             // this.id = this.$route.params.id;
             this.getModel();
+
         },
 
         mounted() {
@@ -403,6 +408,7 @@
                         this.model.seats = 5;
                     }
 //////////////////////////////////////////////////////
+                    console.log(this.model);
                     this.modelTitle = this.model.name;
                     this.changeTitle();
                 } )

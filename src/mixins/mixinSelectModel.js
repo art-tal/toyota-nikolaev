@@ -175,6 +175,7 @@ export default {
                     this.changeTitle();
                 } )
                 .then( () => {this.getEquipment()} )
+                .then( () => {this.getCarForTestDrive()} )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные модели");
                     console.log(error);
@@ -317,6 +318,7 @@ export default {
                 } )
                 .then( () => {this.slides = $('#slides').width() / 3 * this.colors.length;} )
                 .then( () => { this.checkColor() } )
+                // .then( () => {this.getCarForTestDrive()} )
                 .catch( (error) => {
                     console.log("Ошибка, не возможно загрузить доступные цвета");
                     console.log(error);

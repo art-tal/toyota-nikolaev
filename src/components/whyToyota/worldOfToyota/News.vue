@@ -115,6 +115,7 @@
 
 <script>
     import axios from "axios"
+    import $ from "jquery"
 
     export default {
         name: "News",
@@ -181,6 +182,7 @@
 
         mounted() {
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500);
+            $(window).on("resize", this.sizeImg);
         },
 
         computed: {
@@ -289,10 +291,27 @@
                 this.promotion = url;
                 if (window.innerWidth > 767.9) {
                     this.showPromotion = true;
+                    setTimeout( this.sizeImg, 50);
+                    // this.sizeImg();
                 }
                 console.log(this.promotion);
                 console.log(this.showPromotion);
             },
+
+            sizeImg() {
+                let img = $('.promotion_view .image_wrap img');
+                let w = $(img).width();
+                let h = $(img).height();
+                let top = $(img).offset().top;
+                let left = $(img).offset().left;
+                if( top + h > window.innerHeight + window.scrollY) {
+                    $(img).height('90vh').css('width', 'auto');
+                }
+                if (left + w > window.innerWidth + window.screenLeft) {
+                    $(img).width('90%').css('height', 'auto');
+                }
+
+            }
         },
     }
 </script>
@@ -477,7 +496,7 @@
             left: 0;
             background-color: rgba(255,255,255,0.7);
             z-index: 1000;
-            padding: 50px;
+            padding: 20px;
             i {
                 top: 15px;
                 right: 15px;

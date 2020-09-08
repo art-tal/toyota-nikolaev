@@ -148,6 +148,8 @@
                         tag="button"
                         class="col-6 btn btn-danger"
                         exact
+                        :disabled="disableButtonDrive"
+                        :title="titleButton"
                         to="/test_drive_step_1"
                 >
                     Замовити тест-драйв
@@ -272,6 +274,7 @@
     import Equipment from "./../../components/configurator/Equipment";//            for Laravel
     import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
     import formattedPrice from "../../filters/price_format";
+    import MixinTestDrive from "./../../mixins/mixinTestDrive"
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
 
@@ -289,7 +292,8 @@
 
         mixins: [
             MixinSelectModel,
-            ImageSizeMixin
+            ImageSizeMixin,
+            MixinTestDrive,
         ],
 
         data() {
@@ -382,6 +386,7 @@
                         {params: {id: this.getID}},
                     ).then( (response) => {
                         this.model = response.data[0];
+                        console.log(this.model);
 ///////////////////////////////////////////////////////ЗАГЛУШКА//
                         this.getVideo();
 //////////////////////////////////////////////////////

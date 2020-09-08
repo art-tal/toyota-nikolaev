@@ -218,13 +218,28 @@
                 } )
                 .then( () => {
                     let cars = [];
-                    this.models.forEach( mod => {
-                        testDriveCars.forEach( car => {
-                            if (car.includes(mod.name)){
-                                cars.push(mod);
+                    // this.models.forEach( mod => {
+                    //     testDriveCars.forEach( car => {
+                    //         if (car.includes(mod.name)){
+                    //             cars.push(mod);
+                    //         }
+                    //     } )
+                    // });
+
+                    testDriveCars.forEach( car => {
+                        this.models.forEach( mod => {
+                            if(car.includes(mod.name)) {
+                                if(car.toLowerCase().includes('hybrid')) {
+                                    let modHybrid = Object.assign({}, mod);
+                                    modHybrid.name = modHybrid.name + " Hybrid";
+                                    cars.push(modHybrid);
+                                } else {
+                                    cars.push(mod);
+                                }
+
                             }
                         } )
-                    });
+                    } )
                     this.models = cars;
                 } )
                     .then( () => {
@@ -298,8 +313,13 @@
                 )
                     .then( (response) => {
                         this.engines = response.data;
-                        this.findFuelType();
-                        this.setTestEngine( this.fuelType(this.engines[0]) )
+                        this.findFuelType();//не удалять
+                        if (this.testModel.name.toLowerCase().includes("hybrid")) {
+                            this.setTestEngine("Гібрид")
+                        } else {
+                            this.setTestEngine( this.fuelType(this.engines[0]) );
+                        }
+                        // this.setTestEngine( this.fuelType(this.engines[0]) )
                     } )
                     .catch( (error) => {
                         console.log("Ошибка, невозможно загрузить информацию о двигателях и КПП");
