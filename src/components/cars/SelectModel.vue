@@ -352,6 +352,7 @@
                 () => {
                 this.showEquipment = false;
                 this.changeTitle();
+                this.getColors();
             } );
 
         },

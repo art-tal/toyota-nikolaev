@@ -73,7 +73,6 @@
 </template>
 
 <script>
-    import brack from "../../../video/brake_discs_and_pads_toyota.mp4"
     import MenuToSpareParts from "./../../../components/service/OriginalSpareParts/MenuToSpareParts";
     import PageBody from "../../../mixins/mixinPages"
     export default {
@@ -90,8 +89,7 @@
         data() {
             return {
                 id: 22,
-                // showVideo: false,
-                vidos: brack,
+                showVideo: false,
             }
         },
 

@@ -22,62 +22,71 @@
                     </option>
                 </select>
 
-                <h4>Автомобіль з яким двигуном вас цікавить?</h4>
-                <div class="engine_type d-flex justify-content-between">
-                    <li class="hybrid text-center" v-if="hybrid">
-                        <input id="hybrid" type="radio" v-model="testEngine" value="Гібридний (бензин)" @click="setTestEngine('Гібридний (бензин)')">
-                        <label for="hybrid">
-                            <i class="fas fa-leaf"></i>
-                            <span>Гібирний (бензин)</span>
-                            <i class="fas fa-check"></i>
-                        </label>
-                    </li>
 
-                    <li class="electric text-center" v-if="electric">
-                        <input id="electric" type="radio" v-model="testEngine" value="Електричний" @click="setTestEngine('Електричний')">
-                        <label for="electric">
-                            <img src="../../../img/icon/bolt.png" alt="photo">
-                            <span>Електричний</span>
-                            <i class="fas fa-check"></i>
-                        </label>
-                    </li>
 
-                    <li class="petrol text-center" v-if="petrol">
-                        <input id="petrol" type="radio" v-model="testEngine" value="Бензиновий" @click="setTestEngine('Бензиновий')">
-                        <label for="petrol">
-                            <i class="fas fa-gas-pump"></i>
-                            <span>Бензиновий</span>
-                            <i class="fas fa-check"></i>
-                        </label>
-                    </li>
+<!--    НЕ УДАЛЯТЬ! ПОЗЖЕ БУДЕТ ВОССТАНОВЛЕНО        -->
 
-                    <li class="disel text-center" v-if="diesel">
-                        <input id="disel" type="radio" v-model="testEngine" value="Дизельний" @click="setTestEngine('Дизельний')">
-                        <label for="disel">
-                            <img src="../../../img/icon/iconfinder_engine_172463-.png" alt="disel"><br>
-                            <span>Дизельний</span>
-                            <i class="fas fa-check"></i>
-                        </label>
-                    </li>
+<!--                <h4>Автомобіль з яким двигуном вас цікавить?</h4>-->
+<!--                <div class="engine_type d-flex justify-content-between">-->
+<!--                    <li class="hybrid text-center" v-if="hybrid">-->
+<!--                        <input id="hybrid" type="radio" v-model="testEngine" value="Гібридний (бензин)" @click="setTestEngine('Гібридний (бензин)')">-->
+<!--                        <label for="hybrid">-->
+<!--                            <i class="fas fa-leaf"></i>-->
+<!--                            <span>Гібирний (бензин)</span>-->
+<!--                            <i class="fas fa-check"></i>-->
+<!--                        </label>-->
+<!--                    </li>-->
 
-                    <li class="lpg text-center" v-if="lpg">
-                        <input id="lpg" type="radio" v-model="testEngine" value="LPG" @click="setTestEngine('LPG')">
-                        <label for="lpg">
-                            <img src="../../../img/icon/lpg.png" alt="LPG" style="width: 40px;"><br>
-                            <span>LPG</span>
-                            <i class="fas fa-check"></i>
-                        </label>
-                    </li>
+<!--                    <li class="electric text-center" v-if="electric">-->
+<!--                        <input id="electric" type="radio" v-model="testEngine" value="Електричний" @click="setTestEngine('Електричний')">-->
+<!--                        <label for="electric">-->
+<!--                            <img src="../../../img/icon/bolt.png" alt="photo">-->
+<!--                            <span>Електричний</span>-->
+<!--                            <i class="fas fa-check"></i>-->
+<!--                        </label>-->
+<!--                    </li>-->
 
-                    <li class="whatever text-center" v-if="engines.length > 1">
-                        <input id="whatever" type="radio" v-model="testEngine" value="Не має значення" @click="setTestEngine('Не має значення')">
-                        <label for="whatever">
-                            <i class="fas fa-random"></i>
-                            <span>Без різниці</span>
-                            <i class="fas fa-check"></i>
-                        </label>
-                    </li>
-                </div>
+<!--                    <li class="petrol text-center" v-if="petrol">-->
+<!--                        <input id="petrol" type="radio" v-model="testEngine" value="Бензиновий" @click="setTestEngine('Бензиновий')">-->
+<!--                        <label for="petrol">-->
+<!--                            <i class="fas fa-gas-pump"></i>-->
+<!--                            <span>Бензиновий</span>-->
+<!--                            <i class="fas fa-check"></i>-->
+<!--                        </label>-->
+<!--                    </li>-->
+
+<!--                    <li class="disel text-center" v-if="diesel">-->
+<!--                        <input id="disel" type="radio" v-model="testEngine" value="Дизельний" @click="setTestEngine('Дизельний')">-->
+<!--                        <label for="disel">-->
+<!--                            <img src="../../../img/icon/iconfinder_engine_172463-.png" alt="disel"><br>-->
+<!--                            <span>Дизельний</span>-->
+<!--                            <i class="fas fa-check"></i>-->
+<!--                        </label>-->
+<!--                    </li>-->
+
+<!--                    <li class="lpg text-center" v-if="lpg">-->
+<!--                        <input id="lpg" type="radio" v-model="testEngine" value="LPG" @click="setTestEngine('LPG')">-->
+<!--                        <label for="lpg">-->
+<!--                            <img src="../../../img/icon/lpg.png" alt="LPG" style="width: 40px;"><br>-->
+<!--                            <span>LPG</span>-->
+<!--                            <i class="fas fa-check"></i>-->
+<!--                        </label>-->
+<!--                    </li>-->
+
+<!--                    <li class="whatever text-center" v-if="engines.length > 1">-->
+<!--                        <input id="whatever" type="radio" v-model="testEngine" value="Не має значення" @click="setTestEngine('Не має значення')">-->
+<!--                        <label for="whatever">-->
+<!--                            <i class="fas fa-random"></i>-->
+<!--                            <span>Без різниці</span>-->
+<!--                            <i class="fas fa-check"></i>-->
+<!--                        </label>-->
+<!--                    </li>-->
+<!--                </div>-->
+
+                <!--    НЕ УДАЛЯТЬ! ПОЗЖЕ БУДЕТ ВОССТАНОВЛЕНО        -->
+
+
+
             </form>
 
             <div class="col-lg-5 col-12">
@@ -182,15 +191,46 @@
             getModels() {
                 axios({
                     method: 'get',
+                    // url: "http://lara.toyota.nikolaev.ua/ajax/test_drive_car",
                     url: "http://lara.toyota.nikolaev.ua/ajax/all_model",
                 }).then( (response) => {
                     this.models = response.data;
-                    this.getTestPosition();
+                    console.log(this.models);
+
                 } )
+                    .then( () => {
+                        this.getCarForTestDrive();
+                    } )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные модели");
                         console.log(error);
                     })
+            },
+
+            getCarForTestDrive() {
+                let testDriveCars = [];
+                axios.get(
+                    "http://lara.toyota.nikolaev.ua/ajax/test_drive_car"
+                )
+                .then( (response) => {
+                    testDriveCars = response.data;
+                    console.log(testDriveCars);
+                } )
+                .then( () => {
+                    let cars = [];
+                    this.models.forEach( mod => {
+                        testDriveCars.forEach( car => {
+                            if (car.includes(mod.name)){
+                                cars.push(mod);
+                            }
+                        } )
+                    });
+                    this.models = cars;
+                } )
+                    .then( () => {
+                        this.getTestPosition();
+                    } )
+
             },
 
             getTestPosition() {
@@ -441,6 +481,7 @@
                 @include button;
                 background-color: #E50000;
                 font-size: 1.7rem;
+                margin-top: 50px;
             }
         }
     }

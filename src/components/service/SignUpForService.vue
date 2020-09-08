@@ -21,22 +21,31 @@
 
                 <div class="field form-group col-md-6 col-12">
                     <label for="model">Модель <span>*</span></label>
-                        <select name="model"
-                                id="model"
-                                v-model="model"
-                                :class="{'is-invalid' : $v.model.$error}"
-                                @blur="$v.model.$touch()"
-                        >
-                            <option selected="selected" disabled="disabled" value="">Вибрати</option>
-                            <option :value="model"
-                                    v-for="(model, key) in models"
-                                    :key="key"
-                            >
-                                {{model.name}}
-                            </option>
-                        </select>
+<!--                        <select name="model"-->
+<!--                                id="model"-->
+<!--                                v-model="model"-->
+<!--                                :class="{'is-invalid' : $v.model.$error}"-->
+<!--                                @blur="$v.model.$touch()"-->
+<!--                        >-->
+<!--                            <option selected="selected" disabled="disabled" value="">Вибрати</option>-->
+<!--                            <option :value="model"-->
+<!--                                    v-for="(model, key) in models"-->
+<!--                                    :key="key"-->
+<!--                            >-->
+<!--                                {{model.name}}-->
+<!--                            </option>-->
+<!--                        </select>-->
+                    <input type="text"
+                           name="model"
+                           id="model"
+                           v-model="model"
+                           :class="{'is-invalid' : $v.model.$error}"
+                           @blur="$v.model.$touch()"
+                    >
 
                     <div class="invalid-feedback"  v-if="!$v.model.required">Це поле є обов'язковим для заповненя.</div>
+                    <div class="invalid-feedback"  v-if="!$v.model.alfaName">Для введення допускається тільки латиньські букви та цифри.</div>
+
                 </div>
 
                 <div class="field form-group col-md-6 col-12">
@@ -360,6 +369,10 @@
         validations: {
           model: {
               required,
+              alfaName(str) {
+                  const regexp = /[-'a-zA-Z0-9\s]+/;
+                  return regexp.test(str);
+              }
           },
           service: {
               required,
