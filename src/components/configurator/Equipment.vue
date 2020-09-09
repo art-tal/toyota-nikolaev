@@ -123,6 +123,8 @@
             color() {
                 return this.color;
             },
+
+
         },
 
         methods: {
@@ -198,26 +200,59 @@
                     switch(this.color.rgb.toLowerCase()){
                         case '#000000'.toLowerCase():
                         case '#030303'.toLowerCase():
+                        case '#030f16'.toLowerCase():
+                        case '#191d28'.toLowerCase():
+                        case '#151618'.toLowerCase():
+                        case '#191b27'.toLowerCase():
+                        case '#27282a'.toLowerCase():
+                        case '#403e3f'.toLowerCase():
+                        case '#4c4d51'.toLowerCase():
+                        case '#727874'.toLowerCase():
+                        case '#4e4f53'.toLowerCase():
+                        case '#98999b'.toLowerCase():
+                        case '#b4ae9c'.toLowerCase():
+                        case '#999798'.toLowerCase():
+                        case '#0c0e0f'.toLowerCase():
+                        case '#29282e'.toLowerCase():
+                        case '#121d2f'.toLowerCase():
+                        case '#2b3e69'.toLowerCase():
                         case '#182B66'.toLowerCase():
+                        case '#1a499c'.toLowerCase():
                         case '#1d50aa'.toLowerCase():
+                        case '#63717c'.toLowerCase():
                         case '#5C5653'.toLowerCase():
+                        case '#271913'.toLowerCase():
+                        case '#604d4d'.toLowerCase():
+                        case '#4c2925'.toLowerCase():
                         case '#60101e'.toLowerCase():
+                        case '#931722'.toLowerCase():
+                        case '#a13511'.toLowerCase():
+                        case '#6c1a20'.toLowerCase():
                         case '#740310'.toLowerCase():
                         case '#7a766f'.toLowerCase():
+                        case '#8d8682'.toLowerCase():
                         case '#7c7a7a'.toLowerCase():
                         case '#7d8489'.toLowerCase():
                         case '#817e6e'.toLowerCase():
                         case '#8c0414'.toLowerCase():
+                        case '#c9021a'.toLowerCase():
                         case '#97a4ac'.toLowerCase():
                         case '#aeabac'.toLowerCase():
-                        case '#b4ae9c'.toLowerCase():
+                        case '#bea691'.toLowerCase():
                         case '#ff0000'.toLowerCase():
                             return this.fontColor = '#FFFFFF';
+                        case '#a0b3bd'.toLowerCase():
                         case '#727270'.toLowerCase():
+                        case '#a2a3a7'.toLowerCase():
+                        case '#d5dad6'.toLowerCase():
+                        case '#9a9fa3'.toLowerCase():
+                        case '#dce1dd'.toLowerCase():
                         case '#d7dcd9'.toLowerCase():
                         case '#EDE7E1'.toLowerCase():
+                        case '#e1e2dd'.toLowerCase():
                         case '#f2f2f0'.toLowerCase():
                         case '#fafafa'.toLowerCase():
+                        case '#eeeded'.toLowerCase():
                         case '#FFFFFF'.toLowerCase():
                             return this.fontColor = '#202020';
                     }

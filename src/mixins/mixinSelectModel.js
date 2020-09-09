@@ -51,6 +51,13 @@ export default {
     },
 
     created() {
+        eventEmitter.$on('selectedEquipment',
+            () => {
+                this.showEquipment = false;
+                console.log("change equipment");
+                this.changeTitle();
+                this.getColors();
+            } );
     },
 
     mounted() {
@@ -90,17 +97,14 @@ export default {
                 return this.equipment;
             }
 
-
-
-
-            // console.log(this.$store.getters.equip);
-            // return this.$store.getters.equip;
-
-            //
         },
 
         computedColor() {
             return this.$store.getters.colored;
+        },
+
+        getSelectedColor() {
+            return this.selectedColor;
         },
 
         fontColored() {
@@ -150,14 +154,14 @@ export default {
         findID() {
             let models = [];
             let slug = this.$route.params.slug;
-            console.log(slug);
+            // console.log(slug);
             axios.get(
                 "http://lara.toyota.nikolaev.ua/ajax/all_model"
             ).then( (response) => {
                 models = response.data;
             } )
                 .then( () => {
-                    console.log(models);
+                    // console.log(models);
                     // this.model = models.find( (mod) => {
                     //     mod.slug.toLowerCase() === slug.toLowerCase();
                     // } );
@@ -166,7 +170,7 @@ export default {
                             this.model = mod;
                         }
                     } );
-                    console.log(this.model);
+                    // console.log(this.model);
                     // return this.model.id;
                 } )
                 .then( () => {this.getVideo();} )
@@ -201,7 +205,7 @@ export default {
         },
 
         getEquipment() {
-            console.log("getEquipment");
+            // console.log("getEquipment");
             axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod`,
                 {params: {id: this.getID}})
                 .then( (response) => {
@@ -221,7 +225,7 @@ export default {
         },
 
         getPrices() {
-            console.log("getPrices");
+            // console.log("getPrices");
             axios.get(
                 `http://lara.toyota.nikolaev.ua/ajax/id_mod_price`,
                 {params: {id: this.equipment.mod_id}}
@@ -239,9 +243,9 @@ export default {
         },
 
         setPrice() {
-            console.log("setPrice");
+            // console.log("setPrice");
             let keysPrice = Object.keys(this.prices);
-            console.log("1");
+            // console.log("1");
 
             this.equipments.forEach( (equip) => {
                 keysPrice.forEach( (pr) => {
@@ -251,12 +255,12 @@ export default {
                 } );
             } );
             this.checkEquipment();
-            console.log("2");
+            // console.log("2");
 
         },
 
         checkEquipment() {
-            console.log("checkEquipment");
+            // console.log("checkEquipment");
             let equipFromJson;
             let setEquip = false;
             try{
@@ -271,7 +275,7 @@ export default {
                                 localStorage.mod_id = this.equipment.mod_id;
                                 localStorage.equipment = JSON.stringify( this.equipment );
                                 this.$store.commit("setEquipment");
-                                console.log(localStorage.mod_id, this.equipment);
+                                // console.log(localStorage.mod_id, this.equipment);
                                 setEquip = true;
                                 return true;
                             }
@@ -280,7 +284,7 @@ export default {
                             this.equipment = this.equipments[0];
                             localStorage.mod_id = this.equipment.mod_id;
                             localStorage.equipment = JSON.stringify( this.equipment );
-                            console.log(localStorage.mod_id, this.equipment);
+                            // console.log(localStorage.mod_id, this.equipment);
                             this.$store.commit("setEquipment");
                         }
 
@@ -290,29 +294,30 @@ export default {
                     localStorage.mod_id = this.equipment.mod_id;
                     localStorage.equipment = JSON.stringify( this.equipment );
                     this.$store.commit("setEquipment");
-                    console.log(localStorage.mod_id, this.equipment);
+                    // console.log(localStorage.mod_id, this.equipment);
                 }
             } catch (e) {
                 this.equipment = this.equipments[0];
                 localStorage.mod_id = this.equipment.mod_id;
                 localStorage.equipment = JSON.stringify( this.equipment );
                 this.$store.commit("setEquipment");
-                console.log(localStorage.mod_id, this.equipment);
+                // console.log(localStorage.mod_id, this.equipment);
             }
 
 
-            console.log(3);
+            // console.log(3);
 
         },
 
         getColors() {
             axios.get(
                 `http://lara.toyota.nikolaev.ua/ajax/mod_color`,
-                {params: {id: this.equipment.mod_id} },//
+                // {params: {id: this.equipment.mod_id} },//
+                {params: {id: this.computedEquipment.mod_id} },//
             )
                 .then( (response) => {
                     this.colors = response.data;
-                    // console.log(this.colors);
+                    console.log(this.colors);
                     this.colors.forEach( (c) => { this.$set(c, "selected", false) } );
 
                 } )
@@ -337,7 +342,7 @@ export default {
             if ( !findColor ) {
                 this.setColor(this.colors[0]);
             }
-
+        this.getCarForTestDrive();
         },
 
         setColor(color) {
@@ -348,20 +353,21 @@ export default {
             this.$store.commit("setColorDefault", color);
             localStorage.color = JSON.stringify( color );
             this.getFontColor();
+            console.log(this.selectedColor);
         },
 
         getEngine() {
             axios.get(
                 'http://lara.toyota.nikolaev.ua/ajax/mod_eng_gear',
                 // {params: {id: this.id_equip} },
-                {params: {id: this.computedEquipment.mod_id} },
+                {params: {id: this.equipment.mod_id} },
             )
                 .then( (response) => {
                     this.transmissions = response.data;
                     // console.log(this.transmissions);
                     this.transmission = this.transmissions[0];
                     localStorage.transmission = JSON.stringify( this.transmission);
-                    // console.log(this.idEquip, this.transmission);
+                    // console.log(this.transmission);
                     if (!this.transmission) {
                         this.transmission = {
                             eng_name: "none",
@@ -492,26 +498,59 @@ export default {
                 switch(this.computedColor.rgb.toLowerCase()){
                     case '#000000'.toLowerCase():
                     case '#030303'.toLowerCase():
+                    case '#030f16'.toLowerCase():
+                    case '#191d28'.toLowerCase():
+                    case '#151618'.toLowerCase():
+                    case '#191b27'.toLowerCase():
+                    case '#27282a'.toLowerCase():
+                    case '#403e3f'.toLowerCase():
+                    case '#4c4d51'.toLowerCase():
+                    case '#727874'.toLowerCase():
+                    case '#4e4f53'.toLowerCase():
+                    case '#98999b'.toLowerCase():
+                    case '#b4ae9c'.toLowerCase():
+                    case '#999798'.toLowerCase():
+                    case '#0c0e0f'.toLowerCase():
+                    case '#29282e'.toLowerCase():
+                    case '#121d2f'.toLowerCase():
+                    case '#2b3e69'.toLowerCase():
                     case '#182B66'.toLowerCase():
+                    case '#1a499c'.toLowerCase():
                     case '#1d50aa'.toLowerCase():
+                    case '#63717c'.toLowerCase():
                     case '#5C5653'.toLowerCase():
+                    case '#271913'.toLowerCase():
+                    case '#604d4d'.toLowerCase():
+                    case '#4c2925'.toLowerCase():
                     case '#60101e'.toLowerCase():
+                    case '#931722'.toLowerCase():
+                    case '#a13511'.toLowerCase():
+                    case '#6c1a20'.toLowerCase():
                     case '#740310'.toLowerCase():
                     case '#7a766f'.toLowerCase():
+                    case '#8d8682'.toLowerCase():
                     case '#7c7a7a'.toLowerCase():
                     case '#7d8489'.toLowerCase():
                     case '#817e6e'.toLowerCase():
                     case '#8c0414'.toLowerCase():
+                    case '#c9021a'.toLowerCase():
                     case '#97a4ac'.toLowerCase():
                     case '#aeabac'.toLowerCase():
-                    case '#b4ae9c'.toLowerCase():
+                    case '#bea691'.toLowerCase():
                     case '#ff0000'.toLowerCase():
                         return this.fontColor = '#FFFFFF';
+                    case '#a0b3bd'.toLowerCase():
                     case '#727270'.toLowerCase():
+                    case '#a2a3a7'.toLowerCase():
+                    case '#d5dad6'.toLowerCase():
+                    case '#9a9fa3'.toLowerCase():
+                    case '#dce1dd'.toLowerCase():
                     case '#d7dcd9'.toLowerCase():
                     case '#EDE7E1'.toLowerCase():
+                    case '#e1e2dd'.toLowerCase():
                     case '#f2f2f0'.toLowerCase():
                     case '#fafafa'.toLowerCase():
+                    case '#eeeded'.toLowerCase():
                     case '#FFFFFF'.toLowerCase():
                         return this.fontColor = '#202020';
                 }
@@ -556,29 +595,60 @@ export default {
                 switch(rgb.toLowerCase()){
                     case '#000000'.toLowerCase():
                     case '#030303'.toLowerCase():
+                    case '#030f16'.toLowerCase():
+                    case '#191d28'.toLowerCase():
+                    case '#151618'.toLowerCase():
+                    case '#191b27'.toLowerCase():
+                    case '#27282a'.toLowerCase():
                         return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 70) +  ")";
+                    case '#403e3f'.toLowerCase():
+                    case '#4c4d51'.toLowerCase():
+                    case '#727874'.toLowerCase():
+                    case '#4e4f53'.toLowerCase():
+                    case '#98999b'.toLowerCase():
+                    case '#b4ae9c'.toLowerCase():
+                    case '#999798'.toLowerCase():
+                    case '#0c0e0f'.toLowerCase():
+                    case '#29282e'.toLowerCase():
+                    case '#121d2f'.toLowerCase():
+                    case '#2b3e69'.toLowerCase():
                     case '#182B66'.toLowerCase():
+                    case '#1a499c'.toLowerCase():
                     case '#1d50aa'.toLowerCase():
+                    case '#63717c'.toLowerCase():
                     case '#5C5653'.toLowerCase():
+                    case '#271913'.toLowerCase():
+                    case '#604d4d'.toLowerCase():
+                    case '#4c2925'.toLowerCase():
                     case '#60101e'.toLowerCase():
-                    case '#727270'.toLowerCase():
+                    case '#931722'.toLowerCase():
+                    case '#a13511'.toLowerCase():
+                    case '#6c1a20'.toLowerCase():
                     case '#740310'.toLowerCase():
                     case '#7a766f'.toLowerCase():
+                    case '#8d8682'.toLowerCase():
                     case '#7c7a7a'.toLowerCase():
                     case '#7d8489'.toLowerCase():
                     case '#817e6e'.toLowerCase():
                     case '#8c0414'.toLowerCase():
+                    case '#c9021a'.toLowerCase():
                     case '#97a4ac'.toLowerCase():
                     case '#aeabac'.toLowerCase():
-                    case '#b4ae9c'.toLowerCase():
-                    case '#c9021a'.toLowerCase():
+                    case '#bea691'.toLowerCase():
                     case '#ff0000'.toLowerCase():
-
                         return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, 50) +  ")";
+                    case '#a0b3bd'.toLowerCase():
+                    case '#727270'.toLowerCase():
+                    case '#a2a3a7'.toLowerCase():
+                    case '#d5dad6'.toLowerCase():
+                    case '#9a9fa3'.toLowerCase():
+                    case '#dce1dd'.toLowerCase():
                     case '#d7dcd9'.toLowerCase():
                     case '#EDE7E1'.toLowerCase():
+                    case '#e1e2dd'.toLowerCase():
                     case '#f2f2f0'.toLowerCase():
                     case '#fafafa'.toLowerCase():
+                    case '#eeeded'.toLowerCase():
                     case '#FFFFFF'.toLowerCase():
                         return "linear-gradient( to bottom, " + rgb + ", " + this.lightenDarkenColor(rgb, -50) + ")";
                     default:

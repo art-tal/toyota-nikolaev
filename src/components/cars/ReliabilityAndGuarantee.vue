@@ -404,7 +404,7 @@
         },
 
         mounted() {
-            this.getEngine();
+            // this.getEngine();
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1500)
 
         },
@@ -485,25 +485,34 @@
 
 
             getEquipment() {
-                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.id}`)
+                axios.get(`http://lara.toyota.nikolaev.ua/ajax/id_mod?id=${this.getID}`)
                     .then((response) => {
                         this.equipments = response.data;
+                        console.log(this.equipments);
                         this.equipment = this.equipments[0];
+                        console.log(this.equipment);
                     })
                     .then( () => {
-                        if ( this.computedEquipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
-                            this.equipment = this.computedEquipment;
-                        } else {
+                        try{
+                            if ( this.computedEquipment.model_name_pivot.toLowerCase().includes( this.model.name.toLowerCase() ) ) {
+                                this.equipment = this.computedEquipment;
+                            } else {
+                                this.equipment = this.equipments[0];
+                                localStorage.equipment = JSON.stringify( this.equipments[0] );
+                            }
+                        } catch (e) {
                             this.equipment = this.equipments[0];
                             localStorage.equipment = JSON.stringify( this.equipments[0] );
                         }
 
 
-                        localStorage.mod_id = this.equipment.mod_id;
 
+                        localStorage.mod_id = this.equipment.mod_id;
+                        console.log("RaG");
                         this.equipmentTitle = this.equipment.mod_name;
                     } )
                     .then( () => {this.getColors();} )
+                    .then( () => {this.getEngine();} )
                     .catch((error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
                         console.log(error);

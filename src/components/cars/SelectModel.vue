@@ -99,32 +99,37 @@
         <div class="specifications row justify-content-center align-items-end">
 
 
-            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="selectedColor.min_price">
+            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="getSelectedColor.min_price">
+<!--            <div class="price col-xl-2 col-md-3 col-6 text-md-left text-center" v-if="selectedColor.min_price">-->
                 <p>Від</p>
                 <span class="h2 d-block font-weight-bolder">
-                    {{selectedColor.min_price | formattedPrice}} грн.
+                    {{computedColor.min_price | formattedPrice}} грн.
                 </span>
             </div>
 
-            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption">
+<!--            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption">-->
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="getSelectedColor.fuel_consumption">
                 <p>Споживання пального (міський цикл)</p>
                 <span class="h1">{{computedColor.fuel_consumption}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
 
-            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption_city">
+<!--            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="computedColor.fuel_consumption_city">-->
+            <div class="fuelConsumption col-xl-2 col-md-3 col-6" v-if="getSelectedColor.fuel_consumption_city">
                 <p>Споживання пального (заміський цикл)</p>
                 <span class="h1">{{computedColor.fuel_consumption_city}}</span>
                 <span class="font-weight-bold"> л/100 км</span>
             </div>
 
-            <div class="maxPower col-xl-2 col-md-3 col-6" v-if="computedColor.horspower">
+<!--            <div class="maxPower col-xl-2 col-md-3 col-6" v-if="computedColor.horspower">-->
+            <div class="maxPower col-xl-2 col-md-3 col-6" v-if="getSelectedColor.horspower">
                 <p>Максимальна потужність</p>
                 <span class="h1">{{computedColor.horspower}}</span>
                 <span class="font-weight-bold"> к.с.</span>
             </div>
 
-            <div class="maxSpeed col-xl-2 col-md-3 col-6" v-if="computedColor.max_speed">
+<!--            <div class="maxSpeed col-xl-2 col-md-3 col-6" v-if="computedColor.max_speed">-->
+            <div class="maxSpeed col-xl-2 col-md-3 col-6" v-if="getSelectedColor.max_speed">
                 <p>Максимальна швидкість</p>
                 <span class="h1">{{computedColor.max_speed}}</span>
                 <span class="font-weight-bold"> км/г</span>
@@ -268,13 +273,13 @@
 
 <script>
     import axios from 'axios';
-    import {eventEmitter} from "../../main";
+    // import {eventEmitter} from "../../main";
     import MixinSelectModel from "../../mixins/mixinSelectModel";
     import ImageSizeMixin from "./../../mixins/imageSizeMixin";
-    import Equipment from "./../../components/configurator/Equipment";//            for Laravel
-    import SubNavigation from "./../../components/cars/SubNavigation";//             for Laravel
-    import formattedPrice from "../../filters/price_format";
     import MixinTestDrive from "./../../mixins/mixinTestDrive"
+    import Equipment from "./../../components/configurator/Equipment";
+    import SubNavigation from "./../../components/cars/SubNavigation";
+    import formattedPrice from "../../filters/price_format";
 
     // import {eventEmitter} from "./../../app";//                                     for Laravel
 
@@ -350,14 +355,15 @@
         created() {
             this.findID();
             // this.id = this.$route.params.id;
-            // this.getModel();
-
-            eventEmitter.$on('selectedEquipment',
-                () => {
-                this.showEquipment = false;
-                this.changeTitle();
-                this.getColors();
-            } );
+            // // this.getModel();
+            //
+            // eventEmitter.$on('selectedEquipment',
+            //     () => {
+            //     this.showEquipment = false;
+            //     console.log("change equipment");
+            //     this.changeTitle();
+            //     this.getColors();
+            // } );
 
         },
 
@@ -375,7 +381,14 @@
                 return require('../../img/' + this.dirImg + '/' + this.modelVideo.poster);
                 // return require('../../img/' + this.dirImg + '/poster/' + this.modelVideo.poster);
             },
+        },
 
+        watch: {
+
+            equipment() {
+                console.log(this.equipment);
+                this.getColor();
+            },
         },
 
         methods: {
@@ -386,7 +399,7 @@
                         {params: {id: this.getID}},
                     ).then( (response) => {
                         this.model = response.data[0];
-                        console.log(this.model);
+                        // console.log(this.model);
 ///////////////////////////////////////////////////////ЗАГЛУШКА//
                         this.getVideo();
 //////////////////////////////////////////////////////

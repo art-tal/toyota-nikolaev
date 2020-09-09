@@ -294,7 +294,7 @@
     import axios from 'axios';
     import MixinSelectModel from "../../mixins/mixinSelectModel";
     import MixinTestDrive from "../../mixins/mixinTestDrive";
-    import Equipment from "./../../components/configurator/Equipment";//            for Laravel
+    import Equipment from "./../../components/configurator/Equipment";
     import SubNavigation from "./../../components/cars/SubNavigation";
 
 
@@ -354,11 +354,12 @@
         created() {
             // this.id = this.$route.params.id;
             this.getModel();
+            // this.findID();
 
         },
 
         mounted() {
-            this.getEngine();
+            // this.getEngine();
             setTimeout(() => {this.$store.commit("setShowPreload", false);}, 1000);
 
         },
@@ -437,6 +438,7 @@
                         this.equipmentTitle = this.equipment.mod_name;
                     } )
                     .then( () => {this.getColors();} )
+                    .then( () => {this.getEngine();} )
                     .catch( (error) => {
                         console.log("Ошибка, не возможно загрузить доступные модификации");
                         console.log(error);
