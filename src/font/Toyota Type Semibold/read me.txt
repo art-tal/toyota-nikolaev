@@ -1,0 +1,12 @@
+<link href="//db.onlinewebfonts.com/c/453c30f61f42e715218a487d5978f27f?family=ToyotaType-Semibold" rel="stylesheet" type="text/css"/>
+
+@import url(//db.onlinewebfonts.com/c/453c30f61f42e715218a487d5978f27f?family=ToyotaType-Semibold);
+
+@font-face {font-family: "ToyotaType-Semibold"; 
+src: url("//db.onlinewebfonts.com/t/453c30f61f42e715218a487d5978f27f.eot"); 
+src: url("//db.onlinewebfonts.com/t/453c30f61f42e715218a487d5978f27f.eot?#iefix") format("embedded-opentype"), 
+url("//db.onlinewebfonts.com/t/453c30f61f42e715218a487d5978f27f.woff2") format("woff2"), 
+url("//db.onlinewebfonts.com/t/453c30f61f42e715218a487d5978f27f.woff") format("woff"), 
+url("//db.onlinewebfonts.com/t/453c30f61f42e715218a487d5978f27f.ttf") format("truetype"), 
+url("//db.onlinewebfonts.com/t/453c30f61f42e715218a487d5978f27f.svg#ToyotaType-Semibold") format("svg"); 
+}

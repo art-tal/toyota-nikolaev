@@ -1,0 +1,5 @@
+<link href="//db.onlinewebfonts.com/c/46520ab4f9b49d8358ed63f2354664c6?family=Toyota+Display" rel="stylesheet" type="text/css"/>
+
+@import url(//db.onlinewebfonts.com/c/46520ab4f9b49d8358ed63f2354664c6?family=Toyota+Display);
+
+@font-face {font-family: "Toyota Display"; src: url("//db.onlinewebfonts.com/t/46520ab4f9b49d8358ed63f2354664c6.eot"); src: url("//db.onlinewebfonts.com/t/46520ab4f9b49d8358ed63f2354664c6.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/46520ab4f9b49d8358ed63f2354664c6.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/46520ab4f9b49d8358ed63f2354664c6.woff") format("woff"), url("//db.onlinewebfonts.com/t/46520ab4f9b49d8358ed63f2354664c6.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/46520ab4f9b49d8358ed63f2354664c6.svg#Toyota Display") format("svg"); }

@@ -1,0 +1,5 @@
+<link href="//db.onlinewebfonts.com/c/d3408d83ee968f29640973fa28afd066?family=ToyotaType-Light" rel="stylesheet" type="text/css"/>
+
+@import url(//db.onlinewebfonts.com/c/d3408d83ee968f29640973fa28afd066?family=ToyotaType-Light);
+
+@font-face {font-family: "ToyotaType-Light"; src: url("//db.onlinewebfonts.com/t/d3408d83ee968f29640973fa28afd066.eot"); src: url("//db.onlinewebfonts.com/t/d3408d83ee968f29640973fa28afd066.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d3408d83ee968f29640973fa28afd066.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d3408d83ee968f29640973fa28afd066.woff") format("woff"), url("//db.onlinewebfonts.com/t/d3408d83ee968f29640973fa28afd066.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d3408d83ee968f29640973fa28afd066.svg#ToyotaType-Light") format("svg"); }

@@ -1,0 +1,5 @@
+<link href="//db.onlinewebfonts.com/c/c895cf2bf362bc35f9a3be9d28a0a63c?family=ToyotaType-Book" rel="stylesheet" type="text/css"/>
+
+@import url(//db.onlinewebfonts.com/c/c895cf2bf362bc35f9a3be9d28a0a63c?family=ToyotaType-Book);
+
+@font-face {font-family: "ToyotaType-Book"; src: url("//db.onlinewebfonts.com/t/c895cf2bf362bc35f9a3be9d28a0a63c.eot"); src: url("//db.onlinewebfonts.com/t/c895cf2bf362bc35f9a3be9d28a0a63c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c895cf2bf362bc35f9a3be9d28a0a63c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c895cf2bf362bc35f9a3be9d28a0a63c.woff") format("woff"), url("//db.onlinewebfonts.com/t/c895cf2bf362bc35f9a3be9d28a0a63c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c895cf2bf362bc35f9a3be9d28a0a63c.svg#ToyotaType-Book") format("svg"); }

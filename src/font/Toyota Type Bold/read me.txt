@@ -1,0 +1,5 @@
+<link href="//db.onlinewebfonts.com/c/edc9e16a9dd21292d1f402798a3f3028?family=ToyotaType-Bold" rel="stylesheet" type="text/css"/>
+
+@import url(//db.onlinewebfonts.com/c/edc9e16a9dd21292d1f402798a3f3028?family=ToyotaType-Bold);
+
+@font-face {font-family: "ToyotaType-Bold"; src: url("//db.onlinewebfonts.com/t/edc9e16a9dd21292d1f402798a3f3028.eot"); src: url("//db.onlinewebfonts.com/t/edc9e16a9dd21292d1f402798a3f3028.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/edc9e16a9dd21292d1f402798a3f3028.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/edc9e16a9dd21292d1f402798a3f3028.woff") format("woff"), url("//db.onlinewebfonts.com/t/edc9e16a9dd21292d1f402798a3f3028.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/edc9e16a9dd21292d1f402798a3f3028.svg#ToyotaType-Bold") format("svg"); }

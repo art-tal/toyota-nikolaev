@@ -1,0 +1,5 @@
+<link href="//db.onlinewebfonts.com/c/5ed8da50826369dfd20fd9e532593c99?family=ToyotaType-Regular" rel="stylesheet" type="text/css"/>
+
+@import url(//db.onlinewebfonts.com/c/5ed8da50826369dfd20fd9e532593c99?family=ToyotaType-Regular);
+
+@font-face {font-family: "ToyotaType-Regular"; src: url("//db.onlinewebfonts.com/t/5ed8da50826369dfd20fd9e532593c99.eot"); src: url("//db.onlinewebfonts.com/t/5ed8da50826369dfd20fd9e532593c99.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5ed8da50826369dfd20fd9e532593c99.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5ed8da50826369dfd20fd9e532593c99.woff") format("woff"), url("//db.onlinewebfonts.com/t/5ed8da50826369dfd20fd9e532593c99.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5ed8da50826369dfd20fd9e532593c99.svg#ToyotaType-Regular") format("svg"); }

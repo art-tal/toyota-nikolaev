@@ -1,0 +1,5 @@
+<link href="//db.onlinewebfonts.com/c/c81131f5129a0928f5447c4d35d4f87a?family=Toyota+Text" rel="stylesheet" type="text/css"/>
+
+@import url(//db.onlinewebfonts.com/c/c81131f5129a0928f5447c4d35d4f87a?family=Toyota+Text);
+
+@font-face {font-family: "Toyota Text"; src: url("//db.onlinewebfonts.com/t/c81131f5129a0928f5447c4d35d4f87a.eot"); src: url("//db.onlinewebfonts.com/t/c81131f5129a0928f5447c4d35d4f87a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c81131f5129a0928f5447c4d35d4f87a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c81131f5129a0928f5447c4d35d4f87a.woff") format("woff"), url("//db.onlinewebfonts.com/t/c81131f5129a0928f5447c4d35d4f87a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c81131f5129a0928f5447c4d35d4f87a.svg#Toyota Text") format("svg"); }
