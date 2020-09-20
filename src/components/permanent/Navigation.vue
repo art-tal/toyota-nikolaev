@@ -286,6 +286,7 @@
                             }
                             .dropdown-menu {
                                 box-sizing: border-box;
+                                /*width: calc(100vw - ;*/
                                 width: 100vw;
                                 margin: 0 -15px;
                                 background-color: #f0f0f0;

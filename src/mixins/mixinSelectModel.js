@@ -479,7 +479,8 @@ export default {
                     case 'hilux':
                         // this.modelVideo.poster = "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-video-poster_tcm-3046-1703624.jpg";
                         this.modelVideo.poster = "toyota-hilux-2020-gallery-01.jpg";
-                        this.modelVideo.link = "http://t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-movie-full.mp4_tcm-3046-1703620.mp4";
+                        // this.modelVideo.link = "http://t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-hilux-2019-movie-full.mp4_tcm-3046-1703620.mp4";
+                        this.modelVideo.link = "";
                         // this.modelVideo.link = "../../video/toyota-hilux-2019-movie-full.mp4_tcm-3046-1703620.mp4";
                         this.modelVideo.header = "Впорається з будь-яким випробуванням";
                         this.modelVideo.info = "У Hilux поєднуються міцність і потужність пікапа та інноваційні технології. Це новий досвід водіння.";

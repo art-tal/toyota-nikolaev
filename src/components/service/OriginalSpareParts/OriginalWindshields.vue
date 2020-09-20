@@ -18,13 +18,13 @@
             <div class="open-video" v-if="showVideo">
                 <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
-                <video width="100%"
-                       src="/"
-                       controls="controls"
-                       type="video/mp4"
-                       poster="../../../img/images/poster/Video_tcm-3046-939662.jpg">
-                </video>
-                <!--                    <iframe width="100%" height="50%" src="https://www.youtube.com/embed/Skn0N-g7Arw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--                <video width="100%"-->
+<!--                       src="/"-->
+<!--                       controls="controls"-->
+<!--                       type="video/mp4"-->
+<!--                       poster="../../../img/images/poster/Video_tcm-3046-939662.jpg">-->
+<!--                </video>-->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/NkRu9fPxXx8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 

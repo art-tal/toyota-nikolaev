@@ -1,5 +1,23 @@
+@import "/font.css";
+
 $font_color: #202020;
 $border: 1px solid #f0f0f0;
+$font_bold: ToyotaType-Semibold, "Toyota Display-Bold", "Toyota Text-Bold", "Arial Black";
+
+
+
+*{
+  font-family: ToyotaType, "Toyota Display-Regular", "Toyota Text-Regular", Arial, sans-serif;
+}
+
+i {
+  font-family: "Font Awesome 5 Free";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font_bold;
+}
+
 
 @mixin button {
   width: 250px;

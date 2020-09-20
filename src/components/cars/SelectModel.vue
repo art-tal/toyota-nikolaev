@@ -216,7 +216,7 @@
                 <p>{{modelVideo.info}}</p>
             </div>
 
-            <button class="btn btn-play" @click="openVideo()">
+            <button class="btn btn-play" @click="openVideo()" v-if="modelVideo.link">
                 <i class="fas fa-play"></i>
             </button>
         </div>

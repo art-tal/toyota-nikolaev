@@ -16,6 +16,32 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]'
+                }
+            },
+            {
+                // css
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: { sourceMap: true }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            config: { path: `./postcss.config.js` }
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
                     {

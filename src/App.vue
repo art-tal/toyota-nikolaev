@@ -57,7 +57,10 @@ export default {
 </script>
 
 <style>
-#app {
+    /*@import "/src/styles/font.css";*/
+
+
+    #app {
     width: 100%;
     min-width: 350px;
     min-height: 100vh;

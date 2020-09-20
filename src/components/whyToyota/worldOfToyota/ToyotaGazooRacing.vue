@@ -24,12 +24,12 @@
                     <div class="close text-right"><i class="fas fa-times" @click="openVideo()"></i></div>
 
 <!--                    <video width="100%"-->
-<!--                           src="../../../video/TOYOTA_GAZOO_Racing_WRC.mp4"-->
+<!--                           src="../../../video/Toyota_GR_Yaris_Reveal.mp4"-->
 <!--                           controls="controls"-->
 <!--                           type="video/mp4"-->
 <!--                           poster="../../../img/images/poster/toyota-yaris-wrc-2018-01.jpg">-->
 <!--                    </video>-->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AmvjLpmK844" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/s2A7KEynXfA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

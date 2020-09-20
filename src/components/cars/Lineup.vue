@@ -237,7 +237,10 @@
     @import '../../styles/variables';
 
     section.container-fluid {
+        box-sizing: border-box;
         background-color: #F0F0F0;
+        width: 100%;
+        padding: 0;
         .car_type {
             padding: 6px 40px 6px 73px;
             background-color: #f0f0f0;
@@ -254,6 +257,7 @@
         }
 
         .row {
+            box-sizing: border-box;
             margin: 0;
             padding: 0 44px 0 74px;
             .all_model {
@@ -283,6 +287,7 @@
                             display: inline-block;
                             font-size: 1.3rem;
                             text-transform: uppercase;
+                            font-family: ToyotaType-Semibold, "Toyota Text-BoldItalic", "Toyota Display-Bold", Arial, sans-serif;
                             color: #00A0F0;
                             font-weight: bold;
                             font-style: italic;
@@ -303,12 +308,13 @@
                             position: absolute;
                             top: 20px;
                             left: 20px;
-                            color: #E50000;
+                            /*color: #E50000;*/
+                            font-family: $font_bold;
                             text-transform: uppercase;
                             font-size: 1.4rem;
                             font-weight: bold;
                             border: none;
-                            font-style: italic;
+                            /*font-style: italic;*/
                         }
                     }
 
