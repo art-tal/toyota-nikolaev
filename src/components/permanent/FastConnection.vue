@@ -21,31 +21,37 @@
                         <ul class="d-flex d-md-block flex-row">
                             <li v-if="cont.isVisibleViber">
                                 <a class="viber" :href="viberContext + formatNumber(cont.viber)" target="_blank">
-                                    <i class="fab fa-viber"></i>
+<!--                                    <i class="fab fa-viber"></i>-->
+                                    <img src="../../img/icon/Viber_icon-icons.com_66792.svg" alt="viber">
                                 </a>
                             </li>
 
                             <li v-if="cont.isVisibleMessenger">
                                 <a :href="'https://www.messenger.com/t/' + cont.messenger" target="_blank">
-                                    <i class="fab fa-facebook-messenger"></i>
+<!--                                    <i class="fab fa-facebook-messenger"></i>-->
+                                    <img src="../../img/icon/social_facebook_messenger_icon-icons.com_66150.svg"
+                                         alt="messenger">
                                 </a>
                             </li>
 
                             <li v-if="cont.isVisibleSkype">
                                 <a :href="'skype:' + cont.skype + '?chat'" target="_blank">
-                                    <i class="fab fa-skype"></i>
+<!--                                    <i class="fab fa-skype"></i>-->
+                                    <img src="../../img/icon/skype_icon-icons.com_66679.svg" alt="skype">
                                 </a>
                             </li>
 
                             <li v-if="cont.isVisibleTelegram">
                                 <a :href="'tg://resolve?domain=' + cont.telegram" target="_blank">
-                                    <i class="fab fa-telegram-plane"></i>
+<!--                                    <i class="fab fa-telegram-plane"></i>-->
+                                    <img src="../../img/icon/telegram_logo_icon_147228.svg" alt="telegram">
                                 </a>
                             </li>
 
                             <li v-if="cont.isVisibleWhatsApp">
                                 <a :href="'whatsapp://send?phone=+' + formatNumber(cont.whatsapp)" target="_blank">
-                                    <i class="fab fa-whatsapp"></i>
+<!--                                    <i class="fab fa-whatsapp"></i>-->
+                                    <img src="../../img/icon/iconfinder-whatsapp-4661617_122497.svg" alt="whatsapp">
                                 </a>
                             </li>
                         </ul>
@@ -68,31 +74,37 @@
                         <ul class="d-flex d-md-block flex-row">
                             <li v-if="cont.isVisibleViber">
                                 <a class="viber" :href="viberContext + formatNumber(cont.viber)" target="_blank">
-                                    <i class="fab fa-viber"></i>
+<!--                                    <i class="fab fa-viber"></i>-->
+                                    <img src="../../img/icon/Viber_icon-icons.com_66792.svg" alt="viber">
                                 </a>
                             </li>
 
                             <li v-if="cont.isVisibleMessenger">
                                 <a :href="'https://www.messenger.com/t/' + cont.messenger" target="_blank">
-                                    <i class="fab fa-facebook-messenger"></i>
+<!--                                    <i class="fab fa-facebook-messenger"></i>-->
+                                    <img src="../../img/icon/social_facebook_messenger_icon-icons.com_66150.svg"
+                                         alt="messenger">
                                 </a>
                             </li>
 
                             <li v-if="cont.isVisibleSkype">
                                 <a :href="'skype:' + cont.skype + '?chat'" target="_blank">
-                                    <i class="fab fa-skype"></i>
+<!--                                    <i class="fab fa-skype"></i>-->
+                                    <img src="../../img/icon/skype_icon-icons.com_66679.svg" alt="skype">
                                 </a>
                             </li>
 
                             <li v-if="cont.isVisibleTelegram">
                                 <a :href="'tg://resolve?domain=' + cont.telegram" target="_blank">
-                                    <i class="fab fa-telegram-plane"></i>
+<!--                                    <i class="fab fa-telegram-plane"></i>-->
+                                    <img src="../../img/icon/telegram_logo_icon_147228.svg" alt="telegram">
                                 </a>
                             </li>
 
                             <li v-if="cont.isVisibleWhatsApp">
                                 <a :href="'whatsapp://send?phone=+' + formatNumber(cont.whatsapp)" target="_blank">
-                                    <i class="fab fa-whatsapp"></i>
+<!--                                    <i class="fab fa-whatsapp"></i>-->
+                                    <img src="../../img/icon/iconfinder-whatsapp-4661617_122497.svg" alt="whatsapp">
                                 </a>
                             </li>
                         </ul>
@@ -223,6 +235,10 @@
 
 <style lang="scss" scoped>
     @import '../../styles/variables';
+
+    i {
+        font-family: "Font Awesome 5 Free";
+    }
     
     @keyframes rotate_icon {
         from {
@@ -339,8 +355,13 @@
                                 margin: 2px;
                                 a {
                                     display: block;
-                                    padding: 5px;
-                                    i {
+                                    padding: 2px;
+                                    width: 40px;
+                                    height: 40px;
+                                    img {
+                                        width: 100%;
+                                    }
+                                    /*i {
                                         font-size: 30px;
                                         &.fa-viber {
                                             color: #815DF5;
@@ -357,7 +378,7 @@
                                         &.fa-whatsapp {
                                             color: #2CC64E;
                                         }
-                                    }
+                                    }*/
                                 }
                             }
                         }
@@ -386,23 +407,19 @@
                         padding: 0 !important;
                         img {
                             position: static;
-                            /*width: 100px !important;*/
                         }
 
                     }
                     ul {
-                        /*left: 170px;*/
-                        /*top: calc(50% - 31px);*/
-                        /*padding: 5px;*/
-                        /*background-color: rgba(240,240,240,0.9);*/
-                        /*border-radius: 5px;*/
                         li {
                             position: static !important;
                             align-items: center;
                             a {
-                                i {
-                                    font-size: 48px !important;
-                                }
+                                width: 50px !important;
+                                height: 50px !important;
+                                /*i {*/
+                                /*    font-size: 48px !important;*/
+                                /*}*/
                             }
                         }
                     }
