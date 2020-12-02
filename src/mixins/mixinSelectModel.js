@@ -394,11 +394,14 @@ export default {
             try {
                 switch(this.model.name.toLowerCase()) {
 
-                    case 'yaris':
-                        // this.modelVideo.poster = "//t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video-poster_tcm-3046-1618618.jpg";
-                        // this.modelVideo.link = "http://t1-cms-2.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2019-video.mp4_tcm-3046-1622631.mp4";
-                        this.modelVideo.header = "Створений для міського життя";
-                        this.modelVideo.info = "Завдяки низці інтелектуальних функцій ви отримаєте ще більше задоволення від Yaris.";
+                    case "новый yaris":
+                        // this.modelVideo.poster = "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2020-video-poster_tcm-3046-1937437.jpg";
+                        this.modelVideo.poster = "toyota-yaris-2020-video-poster_tcm-3046-1937437.jpg";
+                        this.modelVideo.link = "http://t1-cms-3.images.toyota-europe.com/toyotaone/uaua/toyota-yaris-2020-video-v3.mp4_tcm-3046-1937428.mp4";
+                        this.modelVideo.header = "Навіщо зупинятися?";
+                        this.modelVideo.info = "Новий Yaris — ідеальний автомобіль, створений для міського життя. Він поєднує в собі прогресивну гібридну технологію з неперевершеним дизайном та завжди готовий до руху. Адже якщо є енергія продовжувати шлях, навіщо зупинятися?";
+                        // this.modelVideo.photo = "//t1-cms-1.images.toyota-europe.com/toyotaone/uaua/road-assistance-desktop_tcm-3046-1673707.jpg"
+                        this.modelVideo.photo = "road-assistance-desktop_tcm-3046-1673707.jpg"
                         break;
 
                     case 'corolla':
@@ -487,10 +490,13 @@ export default {
                         // this.modelVideo.photo = "//t1-cms-4.images.toyota-europe.com/toyotaone/uaua/noviy-hilux-1600x900_tcm-3046-2029831.jpg"
                         this.modelVideo.photo = "toyota-hilux-2020-gallery-02-full_tcm-3046-2017443.jpg";
                         break;
+
                 }
             } catch (e) {
                 console.log("Видео пролетело");
+                alert('error');
             }
+
 
         },
 
@@ -503,6 +509,7 @@ export default {
                     case '#191d28'.toLowerCase():
                     case '#151618'.toLowerCase():
                     case '#191b27'.toLowerCase():
+                    case '#1c3277'.toLowerCase():
                     case '#27282a'.toLowerCase():
                     case '#403e3f'.toLowerCase():
                     case '#4c4d51'.toLowerCase():
@@ -519,6 +526,7 @@ export default {
                     case '#1a499c'.toLowerCase():
                     case '#1d50aa'.toLowerCase():
                     case '#63717c'.toLowerCase():
+                    case '#525252'.toLowerCase():
                     case '#5C5653'.toLowerCase():
                     case '#271913'.toLowerCase():
                     case '#604d4d'.toLowerCase():
@@ -538,6 +546,7 @@ export default {
                     case '#97a4ac'.toLowerCase():
                     case '#aeabac'.toLowerCase():
                     case '#bea691'.toLowerCase():
+                    case '#c21d26'.toLowerCase():
                     case '#ff0000'.toLowerCase():
                         return this.fontColor = '#FFFFFF';
                     case '#a0b3bd'.toLowerCase():
@@ -550,6 +559,7 @@ export default {
                     case '#EDE7E1'.toLowerCase():
                     case '#e1e2dd'.toLowerCase():
                     case '#f2f2f0'.toLowerCase():
+                    case '#f6fcfe'.toLowerCase():
                     case '#fafafa'.toLowerCase():
                     case '#eeeded'.toLowerCase():
                     case '#FFFFFF'.toLowerCase():
@@ -620,6 +630,7 @@ export default {
                     case '#5C5653'.toLowerCase():
                     case '#271913'.toLowerCase():
                     case '#604d4d'.toLowerCase():
+                    case '#496386'.toLowerCase():
                     case '#4c2925'.toLowerCase():
                     case '#60101e'.toLowerCase():
                     case '#931722'.toLowerCase():

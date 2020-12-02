@@ -176,9 +176,7 @@
         </div>
 
 
-        <div class="video container-fluid p-0 m-0"
-             v-if="modelVideo.link"
-        >
+        <div class="video container-fluid p-0 m-0" v-if="modelVideo.link">
 
             <div class="player" v-if="showVideo">
                 <video
@@ -220,6 +218,8 @@
                 <i class="fas fa-play"></i>
             </button>
         </div>
+
+
 
         <section class="links container d-md-flex justify-content-between">
             <div class="link">
@@ -399,7 +399,6 @@
                         {params: {id: this.getID}},
                     ).then( (response) => {
                         this.model = response.data[0];
-                        // console.log(this.model);
 ///////////////////////////////////////////////////////ЗАГЛУШКА//
                         this.getVideo();
 //////////////////////////////////////////////////////
